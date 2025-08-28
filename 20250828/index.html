@@ -255,16 +255,106 @@
             padding: 2px 5px;
             border-radius: 3px;
         }
+        /* Mobile Viewer (Default) */
+        body {
+            font-size: 15px;
+            padding: 15px;
+        }
+        .container {
+            padding: 15px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        h1 {
+            font-size: 1.8em;
+            padding-bottom: 8px;
+        }
+        h2 {
+            font-size: 1.4em;
+            margin-top: 25px;
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        h4 {
+            font-size: 1em;
+            margin-top: 15px;
+            padding-left: 10px;
+        }
+        .column-layout {
+            flex-direction: column;
+        }
+        .column-item {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2980b9, #1abc9c);
+            z-index: -1;
+        }
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .highlight-box .icon {
+            margin-right: 6px;
+            font-size: 18px;
+        }
+        .zoom-button {
+            top: 10px;
+            right: 10px;
+            padding: 8px 12px;
+            font-size: 0.9em;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+        }
+        
         /* PC Viewer */
         @media (min-width: 769px) {
             body {
                 font-size: 16px;
+                padding: 20px;
             }
             .container {
                 max-width: 1000px;
+                padding: 30px;
             }
             p {
                 font-size: 15px;
+                line-height: 1.7;
             }
             .section {
                 margin-bottom: 40px;
@@ -282,53 +372,43 @@
             h4 {
                 font-size: 1.2em;
             }
+            .column-layout {
+                flex-direction: row;
+                gap: 20px;
+            }
+            .column-item {
+                width: 100%;
+                min-width: 200px;
+                margin-bottom: 0;
+            }
+            .highlight {
+                background-color: #f9e79f;
+                padding: 2px 5px;
+                border-radius: 3px;
+            }
             .card {
                 background: white;
                 border-radius: 8px;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                 padding: 25px;
                 margin-bottom: 20px;
-                transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
-                z-index: 1;
             }
             .card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
                 height: 4px;
-                background: linear-gradient(90deg, #3498db, #2980b9, #1abc9c);
-                z-index: -1;
-            }
-            .card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             }
             .highlight-box {
                 background-color: #f8f9fa;
                 border-left: 4px solid #3498db;
                 padding: 15px 20px;
                 margin: 20px 0;
-                position: relative;
-                border-radius: 0 8px 8px 0;
-                overflow: hidden;
-            }
-            .highlight-box::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(circle at top right, rgba(52,152,219,0.2) 0%, rgba(255,255,255,0) 60%);
-                z-index: -1;
             }
             .highlight-box .icon {
                 margin-right: 8px;
                 font-size: 20px;
+            }
+            iframe {
+                width: 560px;
+                height: 315px;
             }
         }
         
@@ -521,19 +601,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>FAST學習法深度解析報告</h1>
+        <h1>🚀 FAST學習法深度解析報告 📚</h1>
 <div style="text-align: center; margin: 20px 0;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/asKv0k06_P4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></iframe>
 </div>
 
         <div class="section">
             <div class="section-content">
-                <p><span class="icon">info</span> <strong class="key-text">執行摘要</strong></p>
+                <p><span class="icon">info</span> <strong class="key-text">📋 執行摘要</strong></p>
                 <p>本報告將探討由「薑餅資」頻道主——一位醫師——分享的「FAST學習法」。鑑於傳統學習方法效率低下、導致死記硬背卻無法應用知識，且使學習過程枯燥乏味的問題，此學習法提供了一套系統性的四步驟架構，旨在協助學習者在有限時間內快速吸收知識、有效內化並應用於實際生活，最終享受學習過程。此方法整合了《超牢記憶法》(Make It Stick)、《這才是學習》(How Learning Works) 和 《超速學習》(Ultralearning) 等書籍的技巧，涵蓋了從預習、建構知識、視覺化思考到整理複習的完整流程。</p>
             </div>
         </div>
 
-        <h2 id="background">背景</h2>
+        <h2 id="background">🌟 背景</h2>
         <p class="data-source-line" 
 
         <p class="data-source-line" data-source-line="51">此內容專注於<strong>學習方法</strong>、<strong>認知科學</strong> 以及<strong>筆記策略</strong> 領域。分享者身為醫師，特別強調了在醫學領域中需要不斷吸收新資訊、卻常面臨死記硬背後容易遺忘、且知識難以實際應用於臨床的困境。</p>
@@ -544,7 +624,7 @@
         <h3 id="problem">問題</h3>
         <p class="data-source-line" data-source-line="61">核心問題在於傳統學習方式未能有效促進知識的<strong>吸收與內化</strong>。學生常為了應付考試而死記硬背，導致考試後即忘記所學，且所學知識在實際應用時發現毫無用處。這種學習模式不僅低效，也使得學習成為一件枯燥且充滿壓力的事。</p>
 
-        <h2 id="themes-and-conclusions">主題與結論</h2>
+        <h2 id="themes-and-conclusions">🎯 主題與結論</h2>
         <p class="data-source-line" data-source-line="67">「Fast 學習法」是一個由四個步驟組成的架構，旨在幫助我們在有限時間內快速吸收知識並實際應用到生活中，同時提升學習的效率和深度。這四個步驟環環相扣，共同作用以達成高效學習：</p>
 
         <h3 id="familiarize">Familiarize (熟悉)</h3>
@@ -588,7 +668,7 @@
         <h3 id="conclusion">結論</h3>
         <p class="data-source-line" data-source-line="141">影片明確指出，透過應用「FAST學習法」，學習者能夠克服傳統學習的盲點，有效提升學習效率和記憶力，並將所學知識轉化為可實際操作的智慧。這不僅能讓學習變得不再枯燥乏味，更能讓人從中獲得成就感，甚至開始享受學習過程。</p>
 
-        <h2 id="core-argument-matrix">核心論點矩陣</h2>
+        <h2 id="core-argument-matrix">📊 核心論點矩陣</h2>
         <div class="table-container">
             <table border="1">
                 <thead>
@@ -628,7 +708,7 @@
             </table>
         </div>
 
-        <h2 id="detailed-arguments">各論點詳述</h2>
+        <h2 id="detailed-arguments">🔍 各論點詳述</h2>
 
         <h3 id="detailed-familiarize">F: 熟悉</h3>
         <p class="data-source-line" data-source-line="177">「熟悉」是「FAST學習法」的第一步，旨在透過事前準備，讓大腦為即將到來的正式學習做好「暖身」。這個步驟的核心概念是<strong>前導效應</strong>，即在正式學習新資訊前，先接觸相關詞彙，以<strong>喚醒既有的背景知識</strong>。這樣做能讓大腦更流暢地進入學習狀態，更容易理解新概念，因為大腦在處理新資訊時會主動尋找與舊知識的連結，將新知識整合到既有知識網絡中。</p>
@@ -716,7 +796,7 @@
 
         <p class="data-source-line" data-source-line="296">透過這些整理技巧，圖表的可讀性顯著提升，學習者能清晰辨識知識起點、推理流程和關鍵內容，從而提升學習效率。</p>
 
-        <h2 id="learning-flowchart">學習流程圖 (FAST Learning Flowchart)</h2>
+        <h2 id="learning-flowchart">🔄 學習流程圖 (FAST Learning Flowchart)</h2>
         <p class="data-source-line" data-source-line="300">以下流程圖概括了「FAST學習法」的四個主要步驟及其子步驟：</p>
     <pre class="mermaid">
 graph TD
