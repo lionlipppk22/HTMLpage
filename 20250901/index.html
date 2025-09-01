@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我所當求的 - 專業的信心與有憐憫的服侍</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#667eea',
+                primaryTextColor: '#333',
+                primaryBorderColor: '#764ba2',
+                lineColor: '#667eea',
+                sectionBkgColor: '#f8f9fa',
+                altSectionBkgColor: '#e9ecef',
+                gridColor: '#dee2e6',
+                tertiaryColor: '#6c757d'
+            }
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .content.zoomed {
+            transform: scale(1.1);
+            transform-origin: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            position: relative;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+            border-left: 5px solid;
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            color: #e74c3c;
+            margin: 20px 0 15px 0;
+            border-left: 3px solid #e74c3c;
+            padding-left: 15px;
+        }
+
+        .section h4 {
+            font-size: 1.2em;
+            color: #9b59b6;
+            margin: 15px 0 10px 0;
+            border-left: 2px solid #9b59b6;
+            padding-left: 10px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .key-point {
+            background: linear-gradient(45deg, #ffeb3b, #ffc107);
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .column-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .column {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .column:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            animation: gradientMove 10s ease-in-out infinite;
+        }
+
+        .method-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .method-card h4 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .method-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .method-card li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .method-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        .mobile-layout {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .mobile-layout .container {
+            padding: 10px;
+        }
+
+        .mobile-layout .content {
+            padding: 20px;
+        }
+
+        .mobile-layout .section {
+            padding: 15px;
+        }
+
+        .mobile-layout h1 {
+            font-size: 2em;
+        }
+
+        .mobile-layout h2 {
+            font-size: 1.5em;
+        }
+
+        .mobile-layout h3 {
+            font-size: 1.3em;
+        }
+
+        .mobile-layout h4 {
+            font-size: 1.1em;
+        }
+
+        .mobile-layout p {
+            font-size: 1em;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes breathe {
+            0%, 100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+            50% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-50px) translateY(-30px); }
+            50% { transform: translateX(50px) translateY(50px); }
+            75% { transform: translateX(-30px) translateY(30px); }
+        }
+
+        .highlight {
+            background: #b0b0b0;
+            color: #303030;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .emphasis {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .blue-emphasis {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .green-emphasis {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .purple-emphasis {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+
+        .orange-emphasis {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .youtube-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        .poem-section {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .poem-section h3 {
+            color: #2d3436;
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
+        }
+
+        .prayer-paragraph {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .mermaid-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+            overflow-x: auto;
+        }
+
+        .mermaid-container .mermaid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .mermaid-container svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .poem-verse {
+            font-size: 1.2em;
+            line-height: 2;
+            color: #2d3436;
+            font-style: italic;
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .poem-verse:nth-child(1) { animation-delay: 0s; }
+        .poem-verse:nth-child(2) { animation-delay: 0.5s; }
+        .poem-verse:nth-child(3) { animation-delay: 1s; }
+        .poem-verse:nth-child(4) { animation-delay: 1.5s; }
+        .poem-verse:nth-child(5) { animation-delay: 2s; }
+        .poem-verse:nth-child(6) { animation-delay: 2.5s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>我所當求的</h1>
+            <p class="subtitle">專業的信心與有憐憫的服侍：裝備自己，成為上帝莊稼的及時工人</p>
+        </header>
+
+        <main class="content" id="main-content">
+            <!-- 敬拜與詩句 -->
+            <section class="section" data-source-line="4" data-id="worship-poetry">
+                <h2>🎵 敬拜</h2>
+                <div class="youtube-embed">
+                    <iframe src="https://www.youtube.com/live/xTf3ptDxcE8?si=pDe2XptYCaoixHuJ"
+                            title="敬拜影片"
+                            frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="poem-section">
+                    <h3>🌸 詩句</h3>
+                    <div class="poem-verse">春暉普照憐憫溢，溫柔慰藉暖人肌。</div>
+                    <div class="poem-verse">瓦器雖微光芒現，恩典漣漣化漣漪。</div>
+                    <br>
+                    <div class="poem-verse">生命北斗指方向，破開迷霧伴月光。</div>
+                    <div class="poem-verse">縱歷風霜無懼色，新芽破土見芬芳。</div>
+                </div>
+            </section>
+
+            <!-- 執行摘要 -->
+            <section class="section" data-source-line="18" data-id="executive-summary">
+                <h2>🎯 執行摘要</h2>
+                <div class="key-point">
+                    <p>本報告旨在闡述講者關於基督徒信心與服侍的<span class="emphasis">核心論點</span>：建立在對上帝旨意清晰理解之上的<span class="blue-emphasis">「專業的信心」</span>與<span class="green-emphasis">「有憐憫的服侍」</span>。</p>
+                </div>
+                <p>講者透過婚禮、電影導演及聖經經文等多重比喻，挑戰聽眾對信仰的傳統認知，強調信仰不應僅停留在情緒價值或表層理解，而應是一種積極、投入、且需充分裝備的生命狀態。</p>
+                <p>基督徒應視自己為上帝莊稼的<span class="purple-emphasis">「工人」</span>，不僅要憑信心仰望神，更要透過專業的預備、持續的學習和一顆動了憐憫心腸的服侍，將悔改的福音帶給世上有需要的人。</p>
+            </section>
+
+            <!-- 背景 -->
+            <section class="section" data-source-line="21" data-id="background">
+                <h2>📋 背景</h2>
+                <div class="column-layout">
+                    <div class="column">
+                        <h3>🕐 時間</h3>
+                        <p>本演講發生於當代，講者引用了現代社會的現象，如短視頻文化、暢銷書趨勢以及教會崇拜時間的調整等，反映了當前信徒在信仰實踐中可能面臨的挑戰與誤解。</p>
+                    </div>
+                    <div class="column">
+                        <h3>🎵 領域</h3>
+                        <p>本文獻的核心領域是基督教神學，特別聚焦於信仰實踐、崇拜學、宣教學以及基督徒的個人靈命成長與事奉呼召。</p>
+                    </div>
+                    <div class="column">
+                        <h3>👥 目標受眾</h3>
+                        <p>演講的對象顯然是基督徒群體，包括神學生、教會同工、敬拜團成員以及所有尋求深化信仰理解的信徒。講者頻繁使用「我們」來與聽眾建立連結。</p>
+                    </div>
+                    <div class="column">
+                        <h3>❗ 問題</h3>
+                        <ul>
+                            <li><span class="emphasis">對信心的誤解</span>：許多信徒可能將信心視為一種盲目或被動的接受</li>
+                            <li><span class="blue-emphasis">崇拜的淺薄化</span>：崇拜活動可能偏向於追求情緒價值</li>
+                            <li><span class="green-emphasis">事奉的非專業化</span>：基督徒在傳福音和服侍時可能缺乏應有的專業知識</li>
+                            <li><span class="purple-emphasis">教會工人缺乏</span>：上帝的莊稼成熟，但做工的人卻很少</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>🎯 目標</h3>
+                        <ul>
+                            <li>澄清「憑信心」的真正意涵</li>
+                            <li>提升崇拜的深度與廣度</li>
+                            <li>呼召並裝備「專業的基督徒」和「工人」</li>
+                            <li>鼓勵信徒在日常生活中積極預備</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>⚠️ 限制</h3>
+                        <p>資訊來自口語演講錄音，其內容結構可能較為自由，不如書面文章嚴謹。講者透過個人經歷和對話式語氣傳達信息，某些細節可能需要聽眾自行推斷或補充背景知識。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 大綱/流程圖 -->
+            <section class="section" data-source-line="39" data-id="flowchart">
+                <h2>📊 大綱/流程圖</h2>
+                <div class="key-point">
+                    <h3>🎯 核心：從被動信徒轉向專業工人</h3>
+                </div>
+
+                <div class="column-layout">
+                    <div class="method-card">
+                        <h4>🌟 婚禮現場的啟發</h4>
+                        <ul>
+                            <li>新娘進場 → 教會作為基督的新婦</li>
+                            <li>我們的「我願意」：服侍的承諾</li>
+                            <li>踏上未知之路：憑信心</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-card">
+                        <h4>🤔 信仰實踐的挑戰與反思</h4>
+                        <ul>
+                            <li>流行書籍與情緒價值</li>
+                            <li>兒歌歌詞與經文誤解</li>
+                            <li>基督徒是「工具人」嗎？</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-card">
+                        <h4>🎬 上帝的導演角色與我們的自由</h4>
+                        <ul>
+                            <li>三種導演風格的比喻</li>
+                            <li>上帝作為有計畫的導演</li>
+                            <li>在愛中求上帝的國與義</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-card">
+                        <h4>❤️ 耶穌的榜樣：憐憫與悔改的福音</h4>
+                        <ul>
+                            <li>耶穌傳講天國的福音</li>
+                            <li>看見人的需要：動了憐憫的心腸</li>
+                            <li>醫治與權能的真實動機</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-card">
+                        <h4>🌾 莊稼熟了，工人缺乏：專業化的呼召</h4>
+                        <ul>
+                            <li>「莊稼多，工人少」的困境</li>
+                            <li>專業的信仰服侍：如同醫生</li>
+                            <li>聖靈的引導與我們的預備</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-card">
+                        <h4>🎓 裝備自己：從學習到實踐</h4>
+                        <ul>
+                            <li>傳福音的專業性</li>
+                            <li>個人見證與故事的力量</li>
+                            <li>在苦難中站立的見證</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 主題與結論 -->
+            <section class="section" data-source-line="78" data-id="topic-conclusions">
+                <h2>🎯 主題與結論</h2>
+                <div class="key-point">
+                    <h3>📝 主題</h3>
+                    <p><span class="emphasis">專業的信心與有憐憫的服侍：裝備自己，成為上帝莊稼的及時工人</span></p>
+                </div>
+
+                <div class="card">
+                    <h3>💡 結論</h3>
+                    <p>綜合講者闡述，我認為本演講的核心結論為：基督徒的信心絕非被動或盲目的，而是一種對上帝旨意有清晰理解、積極預備並付諸行動的<span class="blue-emphasis">「專業」承諾</span>。</p>
+                    <p>真正的服侍源於<span class="green-emphasis">憐憫的心腸</span>，並需結合專業裝備，使信徒能有效傳揚悔改的福音，而非僅提供情緒價值。</p>
+                    <p>我們被呼召成為上帝莊稼的<span class="purple-emphasis">「工人」</span>，這不僅指專職事奉者，更指每一位信徒，都應當預備自己，在聖靈的帶領下，以知識、行動與愛，活出基督的生命，並在苦難中站立，成為見證。</p>
+
+                    <h4>🔍 範疇</h4>
+                    <p>本報告的範疇涵蓋了個人靈命成長、教會崇拜實踐、神學教育的重要性、傳福音的方法與動機、以及基督徒在世俗挑戰中的角色與回應。它不僅探討了信仰的理論層面，更著重於其在日常生活和事奉中的實際應用和深度轉化。</p>
+                </div>
+            </section>
+
+            <!-- 核心論點卡片 -->
+            <section class="section" data-source-line="85" data-id="core-arguments">
+                <h2>🎴 核心論點卡片</h2>
+
+                <div class="column-layout">
+                    <div class="card">
+                        <h3>🎯 核心論點一：信心的深度與「我願意」的承諾</h3>
+                        <h4>📖 定義</h4>
+                        <p><span class="blue-emphasis">信心</span>不僅僅是對上帝存在的相信，更是一種主動的<span class="emphasis">「我願意」承諾</span>，這份承諾如同婚禮上的誓言，引導我們踏上一條即使前路不明，卻憑著對主的信任而堅定不移的服侍之路。</p>
+
+                        <h4>🔧 方法/步驟</h4>
+                        <div class="method-card">
+                            <ul>
+                                <li>認知呼召：認識到信仰生活如同進入婚姻，需要全身心的投入與委身</li>
+                                <li>憑信踏入：在未完全清楚未來景況下，憑著對上帝的信賴做出服侍的決定</li>
+                                <li>面對未知：承認服侍之路充滿不確定性，並在緊張與興奮並存的狀態中前行</li>
+                            </ul>
+                        </div>
+
+                        <h4>💡 例子</h4>
+                        <ul>
+                            <li>神學生們在面試時雖然緊張顫抖，但他們內心唯一確定的就是「我願意服侍」的決心</li>
+                            <li>講者自己年輕時蒙召，雖不知未來如何，但憑著一份單純的感動認定傳道是最好的志業</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🎯 核心論點二：超越情緒價值的敬拜與專業的聖經理解</h3>
+                        <h4>📖 定義</h4>
+                        <p>真正的敬拜是從<span class="green-emphasis">「聚集」到「朝見神」</span>的過程，其核心是聆聽上帝的話語並學習敬畏，而非僅僅是唱詩歌或追求短暫的情緒激發。同時，對聖經的理解應具備專業性，避免斷章取義或將其作為占卜工具。</p>
+
+                        <h4>🔧 方法/步驟</h4>
+                        <div class="method-card">
+                            <ul>
+                                <li>心靈聚集：透過唱詩等方式將心思意念集中，預備心朝見神</li>
+                                <li>聆聽話語：崇拜的關鍵是專注聆聽上帝的話語，並從中學習敬畏</li>
+                                <li>世代傳承：將所學的教導兒女，確保信仰的傳承</li>
+                                <li>專業解經：學習在聖靈引導下，專業且完整地理解聖經，避免誤用經文</li>
+                            </ul>
+                        </div>
+
+                        <h4>💡 例子</h4>
+                        <ul>
+                            <li>兒歌歌詞引用經文「禱告無所求，只要信就必得著」若無完整解釋，可能導致誤解</li>
+                            <li>在美國有教會為配合高爾夫球友而將禮拜縮短至32分鐘，顯示了崇拜本質可能被犧牲</li>
+                            <li>網紅「打卡」式拍照卻不品嚐食物的比喻，諷刺了只參與崇拜儀式卻不領受神話語的現象</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🎯 核心論點三：上帝是引導的導演，我們是參與的演員</h3>
+                        <h4>📖 定義</h4>
+                        <p>上帝是掌管宇宙的導演，祂對我們的生命有著終極計畫，這計畫在基督裡是穩固不變的。我們並非無意識的工具人，而是有自主性的演員，在祂的引導下，可以有自身的發揮與選擇，但最終會被祂的愛帶回正道。</p>
+
+                        <h4>🔧 方法/步驟</h4>
+                        <div class="method-card">
+                            <ul>
+                                <li>認識上帝的宏大計畫：理解耶穌基督道成肉身，為我們預備了通往天國的道路</li>
+                                <li>在愛中尋求旨意：禱告應以尋求「上帝的國和上帝的義」為核心</li>
+                                <li>順服與彈性：在上帝的終極計畫下，我們可以有自己的發揮，但祂的愛會引導我們回到正軌</li>
+                            </ul>
+                        </div>
+
+                        <h4>💡 例子</h4>
+                        <ul>
+                            <li>綠魔演員將導演分為三種：嚴格依劇本、隨性拍攝後剪輯、以及給予方向並協同合作。他最喜歡第三種，喻指上帝與我們的關係</li>
+                            <li>即使我們在路上「亂跑」，上帝也會用愛將我們帶回祂所預定的道路</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 更多核心論點 -->
+            <section class="section" data-source-line="121" data-id="more-core-arguments">
+                <div class="column-layout">
+                    <div class="card">
+                        <h3>🎯 核心論點四：從憐憫心腸發出的悔改福音與事奉</h3>
+                        <h4>📖 定義</h4>
+                        <p>真正的福音是<span class="emphasis">悔改的福音</span>，它呼喚人們認識罪並歸向上帝。而傳揚福音與行使神蹟奇事，必須源於像耶穌一樣動了憐憫心腸，而非為個人驕傲或能力展現。</p>
+
+                        <h4>🔧 方法/步驟</h4>
+                        <div class="method-card">
+                            <ul>
+                                <li>體會基督的心腸：培養對受苦之人的深刻同情，感受如同「內臟翻攪」般的憐憫</li>
+                                <li>醫治與行動：從憐憫出發，為有需要的人禱告、行醫治，或以其他方式提供幫助</li>
+                                <li>傳揚悔改信息：在關懷的同時，清晰地傳講悔改與救贖的福音</li>
+                            </ul>
+                        </div>
+
+                        <h4>💡 例子</h4>
+                        <ul>
+                            <li>耶穌看見困苦流離的人，如同羊沒有牧人一般，就動了憐憫的心腸，醫治各種病症，宣講天國福音</li>
+                            <li>邪術師西門想買權能是為了驕傲，反面證明了能力的動機需純潔</li>
+                            <li>宣教士用衣袖擦拭吸毒者的污穢，並在接納中呼喚他們回轉，是憐憫與福音結合的典範</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🎯 核心論點五：成為專業的基督徒與上帝莊稼的工人</h3>
+                        <h4>📖 定義</h4>
+                        <p><span class="purple-emphasis">專業的基督徒</span>是指在信仰生活與事奉上，如同專業人士般具備知識、技能與委身，能夠清晰闡述信仰、有效服侍他人，並不斷學習和裝備自己的人。他們是上帝莊稼所需要的工人。</p>
+
+                        <h4>🔧 方法/步驟</h4>
+                        <div class="method-card">
+                            <ul>
+                                <li>持續學習與裝備：積極參與教會課程、神學院教育，深化對聖經和神學的理解</li>
+                                <li>預備見證：練習如何清晰、有條理地分享個人信仰經歷和福音信息，不迴避敏感問題</li>
+                                <li>聖靈引導下的努力：在聖靈的幫助下勤奮預備事奉，而非期待即興或盲目地被帶領</li>
+                                <li>群體性事奉：認識到教會是基督的新婦，事奉是群體性的，每個人都是這個「新娘」的一部分</li>
+                            </ul>
+                        </div>
+
+                        <h4>💡 例子</h4>
+                        <ul>
+                            <li>講者在美國大學帶查經班，透過吃飯大會吸引人，並有計畫地帶領信主、訓練、然後差派</li>
+                            <li>馬來西亞女學生在火災前一天主動尋求聆聽耶穌的故事，提醒我們需要隨時預備好傳講福音</li>
+                            <li>埃及教會在逼迫中反而人數增多，因信徒在苦難中站立得穩，成為有力的見證</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 可執行建議 -->
+            <section class="section" data-source-line="171" data-id="actionable-recommendations">
+                <h2>🎯 可執行建議</h2>
+                <p>以下是針對不同角色提供的SMART（具體、可衡量、可達成、相關、有時限）可執行建議：</p>
+
+                <div class="card">
+                    <h3>🎧 個別基督徒</h3>
+                    <div class="key-point">
+                        <p><span class="emphasis">目標</span>：每週至少花3小時進行有系統的聖經學習和靈修，並每月與至少一位非信徒分享一次福音故事，為期六個月。</p>
+                    </div>
+
+                    <div class="column-layout">
+                        <div class="method-card">
+                            <h4>📚 深化聖經理解</h4>
+                            <ul>
+                                <li>參加教會的聖經課程或神學院的學分班</li>
+                                <li>學習正確的解經原則，理解經文的上下文和神學意涵</li>
+                                <li>避免斷章取義的解經方式</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>❤️ 培養憐憫心腸</h4>
+                            <ul>
+                                <li>刻意練習觀察身邊人的需要</li>
+                                <li>每天為至少三位有需要的人禱告</li>
+                                <li>思考如何透過實際行動表達關懷，如參與社區服務或探訪</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>🗣️ 預備福音見證</h4>
+                            <ul>
+                                <li>練習以清晰、簡潔的方式闡述個人信仰經歷和福音核心信息</li>
+                                <li>利用教會提供的傳福音訓練課程</li>
+                                <li>與小組成員互相演練，確保能在他人需要時「專業」地分享</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>🙏 積極參與敬拜</h4>
+                            <ul>
+                                <li>不將崇拜僅視為儀式，而應是全身心投入聆聽上帝話語的過程</li>
+                                <li>在唱詩時思考歌詞的意義</li>
+                                <li>在講道時專注筆記，會後反思並應用所學</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 教會領袖與敬拜團隊建議 -->
+            <section class="section" data-source-line="182" data-id="church-leaders">
+                <div class="card">
+                    <h3>🎼 教會領袖與敬拜團隊</h3>
+                    <div class="key-point">
+                        <p><span class="emphasis">目標</span>：在未來一年內，將崇拜流程設計得更強調「聆聽上帝話語」與「學習敬畏」，並為敬拜團隊提供至少兩次關於「敬拜神學」與「聖靈引導下預備」的專業訓練。</p>
+                    </div>
+
+                    <div class="column-layout">
+                        <div class="method-card">
+                            <h4>🎵 設計深度崇拜流程</h4>
+                            <ul>
+                                <li>重新評估崇拜時間分配，確保講道時間充足</li>
+                                <li>鼓勵會眾在聽道時有反思和回應的空間</li>
+                                <li>減少過度追求情緒張力的元素，轉而引導會眾進入深層的屬靈連結</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>🎓 提升敬拜團隊專業度</h4>
+                            <ul>
+                                <li>為敬拜團隊提供敬拜學與音樂專業訓練</li>
+                                <li>強調對歌詞的深入理解</li>
+                                <li>在聖靈引導下進行充分預備的重要性，而非僅依賴即興或個人恩賜</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>📢 推廣福音裝備課程</h4>
+                            <ul>
+                                <li>開設系統性的「傳福音訓練」課程</li>
+                                <li>教導信徒如何清晰地分享福音</li>
+                                <li>處理常見的信仰疑問，並在日常生活中實踐憐憫的事奉</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>👨‍🏫 樹立牧者榜樣</h4>
+                            <ul>
+                                <li>牧師與長執應率先示範對聖經的專業理解</li>
+                                <li>從憐憫出發的事奉態度</li>
+                                <li>在聖靈帶領下勤奮預備的榜樣</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 神學教育機構建議 -->
+            <section class="section" data-source-line="190" data-id="theological-education">
+                <div class="card">
+                    <h3>🏫 神學教育機構</h3>
+                    <div class="key-point">
+                        <p><span class="emphasis">目標</span>：在未來三年內，將課程設計更緊密結合理論與實踐，強調培養學生「憐憫心腸」與「宣教熱情」，並提供更多數位學習管道以擴大專業信仰裝備的覆蓋面。</p>
+                    </div>
+
+                    <div class="column-layout">
+                        <div class="method-card">
+                            <h4>💼 強化實踐神學課程</h4>
+                            <ul>
+                                <li>在神學課程中，加入更多關於「憐憫事奉」、「宣教實踐」和「福音溝通技巧」的實作訓練</li>
+                                <li>鼓勵學生走出課堂，在實際場景中操練信仰</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>👤 培養全人牧者</h4>
+                            <ul>
+                                <li>除了神學知識外，也重視培養學生的靈命品格</li>
+                                <li>特別是體會基督心腸的深度憐憫</li>
+                                <li>使其在面對苦難時能以愛與專業回應</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>💻 擴展數位學習管道</h4>
+                            <ul>
+                                <li>開設更多線上學分班或課程</li>
+                                <li>讓更多在職信徒和教會同工有機會接受系統性的神學裝備</li>
+                                <li>培養「專業的基督徒」</li>
+                            </ul>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>💭 鼓勵對話與反思</h4>
+                            <ul>
+                                <li>鼓勵神學生在學習中敢於提出疑問、挑戰既有觀念</li>
+                                <li>從中尋求更深層次的真理</li>
+                                <li>避免盲從或迷信</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 禱告 -->
+            <section class="section" data-source-line="162" data-id="prayer">
+                <h2>🙏 禱告</h2>
+                <div class="poem-section">
+                    <div class="prayer-paragraph">
+                        <p>天父，我們深知，這份紮根於祢的信心，並非源於人的聰明才智或字句的束縛。正如祢的話語所說：「並不是我們憑自己能承擔甚麼事；我們所能承擔的，乃是出於神。他叫我們能作新約的執事，不是憑著字句，乃是憑著精意；因為那字句是叫人死，精意是叫人活。」（哥林多後書3章5至6節）主啊，懇求祢用聖靈開啟他的心竅，賜下那叫人活潑的「精意」。願他不僅在頭腦上明白祢的話語，更能在靈裡與祢的旨意深切連結，讓祢的真理如同清澈的活水，自然流淌在他生命之中。願他領受的智慧是來自祢深邃的啟示，成為他行事為人的北極星，指引他無論身處何種職分或崗位，都能以超越世俗的眼光，看見祢的心意，活出基督門徒獨特的光彩。</p>
+                    </div>
+
+                    <div class="prayer-paragraph">
+                        <p>我們也為他心中那份渴望，以無私的謙卑、滿有憐憫之心來服侍周圍之人的心志，向祢禱告。親愛的主，正如祢的話語所應許：「願頌讚歸與我們的主耶穌基督的父神，就是發憐憫的父，賜各樣安慰的神。我們在一切患難中，他就安慰我們，叫我們能用神所賜的安慰去安慰那遭各樣患難的人。」（哥林多後書1章3至4節）願祢繼續以豐盛的慈愛與安慰充滿他的生命，使他能深刻體會祢憐憫的心腸。願他在人生的旅途中，無論經歷何種風雨或考驗，都能從祢那裡領受深邃的平安與溫柔的安慰。更願他能將這份從祢而來的安慰，如涓涓細流般，流向那些在他周圍，正經歷挑戰、內心感到重擔，或在困境中尋求突破的人們。願他成為祢愛與恩典的管道，以謙卑的姿態，用實際的行動去關懷、去扶持、去點亮他人的生命。</p>
+                    </div>
+
+                    <div class="prayer-paragraph">
+                        <p>主啊，我們也深知，在活出這份扎實的信心與憐憫的服侍過程中，難免會遇到考驗，正如祢的話語提醒我們：「我們有這寶貝放在瓦器裡，要顯明這莫大的能力是出於神，不是出於我們。我們四面受敵，卻不被困住；心裡作難，卻不致失望；遭逼迫，卻不被丟棄；打倒了，卻不致死亡。」（哥林多後書4章7至9節）在生命的道路上，或許會有被考驗的時刻，感到四面受敵、心裡作難的低谷，甚至面對難以言喻的壓力與挑戰。但我們禱告，願他時刻謹記，他這看似脆弱的「瓦器」裡，所承載的是祢莫大的能力和寶貴的福音。願這份對祢堅定的盼望，如同深埋土中的種子，在任何艱難的環境中，都能汲取祢的生命活水，發芽生長，最終破土而出，經歷屬靈的甦醒與自由。願他深信，一切的阻礙都將成為彰顯祢榮耀的踏腳石，引導他走向更深刻的突破。</p>
+                    </div>
+
+                    <div class="prayer-paragraph">
+                        <p>我們將這位親愛的弟兄/姊妹，以及他生命中所有的渴望與前行的動力，全然交託在祢滿有慈愛和權能的聖手之中。願祢的美善旨意成就在他身上，直到那日與祢面對面。奉主耶穌基督的聖名，阿們。</p>
+                    </div>
+                </div>
+                <h2>🎵 敬拜</h2>
+                <div class="youtube-embed">
+                    <iframe src="https://www.youtube.com/embed/skfvueij950"
+                            title="敬拜影片"
+                            frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>                
+            </section>
+
+            <!-- Mermaid 流程圖 -->
+            <section class="section" data-source-line="200" data-id="mermaid-flowchart">
+                <h2>📊 完整主題流程圖</h2>
+                <div class="key-point">
+                    <h3>🎯 從婚禮啟發到專業基督徒的完整旅程</h3>
+                </div>
+
+                <div class="mermaid-container">
+                    <div class="mermaid">
+graph TD
+    %% 開始：婚禮啟發
+    A[🌟 婚禮現場的啟發<br/>新娘進場] --> A1{💒 教會作為基督的新婦}
+    A1 --> A2[💍 我們的「我願意」<br/>服侍的承諾]
+    A2 --> A3[🚶‍♀️ 踏上未知之路<br/>憑信心前行]
+
+    %% 信仰挑戰
+    B[🤔 信仰實踐的挑戰<br/>與反思] --> B1{📚 流行書籍與情緒價值}
+    B1 --> B2[🎵 兒歌歌詞與經文誤解]
+    B2 --> B3[🔧 基督徒是「工具人」嗎？]
+
+    %% 上帝的角色
+    C[🎬 上帝的導演角色<br/>與我們的自由] --> C1{🎭 三種導演風格的比喻}
+    C1 --> C2[📋 上帝作為有計畫的導演]
+    C2 --> C3[❤️ 在愛中求上帝的國與義]
+
+    %% 耶穌的榜樣
+    D[🙏 耶穌的榜樣<br/>憐憫與悔改的福音] --> D1{📖 耶穌傳講天國的福音}
+    D1 --> D2{👀 看見人的需要<br/>動了憐憫的心腸}
+    D2 --> D3[⚕️ 醫治與權能的真實動機]
+
+    %% 工人缺乏
+    E[🌾 莊稼熟了，工人缺乏<br/>專業化的呼召] --> E1{🚜 「莊稼多，工人少」的困境}
+    E1 --> E2{👨‍⚕️ 專業的信仰服侍<br/>如同醫生}
+    E2 --> E3[🕊️ 聖靈的引導與我們的預備]
+
+    %% 裝備自己
+    F[🎓 裝備自己<br/>從學習到實踐] --> F1{📣 傳福音的專業性}
+    F1 --> F2[📖 個人見證與故事的力量]
+    F2 --> F3[💪 在苦難中站立的見證]
+
+    %% 聖靈工作
+    G[🔥 聖靈的工作與更新] --> G1{✨ 聖靈幫助認識真理<br/>勝過老我}
+    G1 --> G2[🙌 讚美、服侍、禱告<br/>愛人的更新]
+
+    %% 總結
+    H[🏆 總結：成為專業的基督徒] --> H1{👥 不僅是牧者<br/>更是所有信徒的呼召}
+    H1 --> H2[🎓 幫助神學院培養更多牧者]
+    H2 --> H3[⏰ 成為及時的工人<br/>活出使命]
+
+    %% 流程連接
+    A --> B --> C --> D --> E --> F --> G --> H
+
+    %% 樣式設定
+    classDef startStyle fill:#ffeaa7,stroke:#d63031,stroke-width:3px,color:#333
+    classDef jesusStyle fill:#fdcb6e,stroke:#e17055,stroke-width:3px,color:#333
+    classDef spiritStyle fill:#a29bfe,stroke:#6c5ce7,stroke-width:3px,color:#fff
+    classDef endStyle fill:#55efc4,stroke:#00b894,stroke-width:3px,color:#333
+    classDef defaultStyle fill:#f8f9fa,stroke:#667eea,stroke-width:2px,color:#333
+
+    class A startStyle
+    class D jesusStyle
+    class G spiritStyle
+    class H endStyle
+    class A1,A2,A3,B1,B2,B3,C1,C2,C3,E1,E2,E3,F1,F2,F3,H1,H2,H3 defaultStyle
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let isMobile = false;
+        let isZoomed = false;
+        let effectsEnabled = true;
+
+        function fadeIn(element, duration = 1000) {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = `opacity ${duration}ms ease-out, transform ${duration}ms ease-out`;
+
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 10);
+        }
+
+        function toggleLayout() {
+            const content = document.getElementById('main-content');
+            const container = document.querySelector('.container');
+
+            if (isMobile) {
+                container.classList.remove('mobile-layout');
+                content.classList.remove('mobile-layout');
+                fadeIn(content, 500);
+                isMobile = false;
+            } else {
+                container.classList.add('mobile-layout');
+                content.classList.add('mobile-layout');
+                fadeIn(content, 500);
+                isMobile = true;
+            }
+        }
+
+        function toggleZoom() {
+            const content = document.getElementById('main-content');
+
+            if (isZoomed) {
+                content.classList.remove('zoomed');
+                fadeIn(content, 300);
+                isZoomed = false;
+            } else {
+                content.classList.add('zoomed');
+                fadeIn(content, 300);
+                isZoomed = true;
+            }
+        }
+
+        function toggleEffects() {
+            const sections = document.querySelectorAll('.section');
+            const gradientBg = document.querySelector('.gradient-bg');
+
+            if (effectsEnabled) {
+                sections.forEach(section => {
+                    section.style.animation = 'none';
+                    fadeIn(section, 500);
+                });
+                gradientBg.style.animation = 'none';
+                fadeIn(gradientBg, 500);
+                effectsEnabled = false;
+            } else {
+                sections.forEach(section => {
+                    section.style.animation = 'breathe 3s ease-in-out infinite';
+                    fadeIn(section, 500);
+                });
+                gradientBg.style.animation = 'gradientMove 10s ease-in-out infinite';
+                fadeIn(gradientBg, 500);
+                effectsEnabled = true;
+            }
+        }
+
+        function createDynamicGradient() {
+            const gradientBg = document.querySelector('.gradient-bg');
+            let hue = 0;
+
+            setInterval(() => {
+                hue = (hue + 1) % 360;
+                gradientBg.style.background = `linear-gradient(${hue}deg, hsl(${hue}, 70%, 60%), hsl(${(hue + 60) % 360}, 70%, 60%), hsl(${(hue + 120) % 360}, 70%, 60%))`;
+            }, 100);
+        }
+
+        function highlightKeyPoints() {
+            const keyTerms = ['專業的信心', '憐憫的服侍', '我願意', '工人', '莊稼', '敬拜', '福音', '悔改', '聖靈', '上帝'];
+
+            keyTerms.forEach(term => {
+                const regex = new RegExp(`(?<!<[^>]*)(${term})(?![^<]*>)`, 'g');
+                document.body.innerHTML = document.body.innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+            });
+        }
+
+        function addInteractiveElements() {
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    if (effectsEnabled) {
+                        this.style.transform = 'translateY(-5px)';
+                        fadeIn(this, 200);
+                    }
+                });
+
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    fadeIn(this, 200);
+                });
+
+                section.addEventListener('click', function() {
+                    if (effectsEnabled) {
+                        this.classList.toggle('highlight');
+                        fadeIn(this, 300);
+                    }
+                });
+            });
+        }
+
+        function addSmoothScrolling() {
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        function initializePage() {
+            createDynamicGradient();
+            addInteractiveElements();
+            addSmoothScrolling();
+            initializeMermaid();
+
+            // 添加淡入效果到主要元素
+            const mainContent = document.getElementById('main-content');
+            const header = document.querySelector('.header');
+            const sections = document.querySelectorAll('.section');
+
+            if (mainContent) fadeIn(mainContent, 800);
+            if (header) fadeIn(header, 600);
+
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    fadeIn(section, 500);
+                }, index * 200);
+            });
+
+            // 添加視覺提示
+            console.log('🎨 我所當求的 - 專業的信心與有憐憫的服侍 已加載完成');
+            console.log('📱 點擊右上角按鈕切換佈局');
+            console.log('🔍 點擊縮放按鈕調整內容大小');
+            console.log('✨ 點擊特效按鈕開關動態效果');
+            console.log('📊 Mermaid 流程圖已初始化');
+        }
+
+        // 頁面加載完成後初始化
+        document.addEventListener('DOMContentLoaded', initializePage);
+
+        // Mermaid 圖表初始化檢查
+        function initializeMermaid() {
+            if (typeof mermaid !== 'undefined') {
+                mermaid.init(undefined, '.mermaid');
+            } else {
+                // 如果 Mermaid 未加載，顯示備用內容
+                const mermaidContainers = document.querySelectorAll('.mermaid');
+                mermaidContainers.forEach(container => {
+                    container.innerHTML = '<div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;"><p>📊 流程圖需要 JavaScript 支持才能顯示</p><p>請確保您的瀏覽器支持現代 JavaScript 功能</p></div>';
+                });
+            }
+        }
+
+        // 響應式處理
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768 && !isMobile) {
+                toggleLayout();
+                const content = document.getElementById('main-content');
+                fadeIn(content, 400);
+            } else if (window.innerWidth > 768 && isMobile) {
+                toggleLayout();
+                const content = document.getElementById('main-content');
+                fadeIn(content, 400);
+            }
+        });
+    </script>
+</body>
+</html>
