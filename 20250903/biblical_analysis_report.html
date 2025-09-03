@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+    <title>聖經資料分析報告 - 專業分析師的深入研究</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#667eea',
+                primaryTextColor: '#333',
+                primaryBorderColor: '#764ba2',
+                lineColor: '#667eea',
+                sectionBkgColor: '#f8f9fa',
+                altSectionBkgColor: '#e9ecef',
+                gridColor: '#dee2e6',
+                tertiaryColor: '#6c757d'
+            }
+        });
+    </script>
+    <style>
+        .lxgw-wenkai-mono-tc-regular {
+            font-family: "LXGW WenKai Mono TC", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .content.zoomed {
+            transform: scale(1.1);
+            transform-origin: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            position: relative;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+            border-left: 5px solid;
+            animation: breathe 3s ease-in-out infinite;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .section h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #e74c3c;
+            border-radius: 5px;
+            border-left-color: #e74c3c;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            border-radius: 5px;
+            border-left-color: #3498db;
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            color: #e74c3c;
+            margin: 20px 0 15px 0;
+            border-left: 3px solid #e74c3c;
+            padding-left: 15px;
+            border-left-color: #e74c3c;
+        }
+
+        .section h4 {
+            font-size: 1.2em;
+            color: #9b59b6;
+            margin: 15px 0 10px 0;
+            border-left: 2px solid #9b59b6;
+            padding-left: 10px;
+            border-left-color: #9b59b6;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .section ul, .section ol {
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .key-point {
+            background: linear-gradient(45deg, #ffeb3b, #ffc107);
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .column-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .column {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .column:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            animation: gradientMove 10s ease-in-out infinite;
+        }
+
+        .mobile-layout {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .mobile-layout .container {
+            padding: 10px;
+        }
+
+        .mobile-layout .content {
+            padding: 20px;
+        }
+
+        .mobile-layout .section {
+            padding: 15px;
+        }
+
+        .mobile-layout h1 {
+            font-size: 2em;
+        }
+
+        .mobile-layout h2 {
+            font-size: 1.5em;
+        }
+
+        .mobile-layout h3 {
+            font-size: 1.3em;
+        }
+
+        .mobile-layout h4 {
+            font-size: 1.1em;
+        }
+
+        .mobile-layout p {
+            font-size: 1em;
+        }
+
+        .toc {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            max-width: 300px;
+            max-height: 70vh;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .toc h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .character-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .character-table thead {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .character-table th,
+        .character-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .character-table th {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        .character-table tbody tr:nth-child(even) {
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .character-table tbody tr:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+
+        .character-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .character-table {
+                font-size: 0.8em;
+            }
+
+            .character-table th,
+            .character-table td {
+                padding: 8px 10px;
+            }
+        }
+
+        .mermaid-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+            overflow-x: auto;
+        }
+
+        .mermaid-container .mermaid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .mermaid-container svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes breathe {
+            0%, 100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+            50% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-50px) translateY(-30px); }
+            50% { transform: translateX(50px) translateY(50px); }
+            75% { transform: translateX(-30px) translateY(30px); }
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .emphasis {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .blue-emphasis {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .green-emphasis {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .purple-emphasis {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+
+        .orange-emphasis {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .toc {
+                position: static;
+                max-width: 100%;
+                margin: 20px 0;
+                max-height: none;
+            }
+
+            .column-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- 目錄 -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul>
+            <li><a href="#executive-summary">📊 執行摘要</a></li>
+            <li><a href="#background">📋 背景</a></li>
+            <li><a href="#outline-flowchart">📈 大綱/圖表/流程圖</a></li>
+            <li><a href="#character-table">👥 創世記相關人物列表</a></li>
+            <li><a href="#conclusions">🎯 結論</a></li>
+            <li><a href="#core-arguments">🎴 核心論點卡</a></li>
+            <li><a href="#detailed-arguments">📝 詳細論點闡述</a></li>
+            <li><a href="#prayer-items">🙏 代禱事項</a></li>
+            <li><a href="#wikipedia-link">🔗 相關資源</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>聖經資料分析報告</h1>
+            <p class="subtitle">專業分析師的深入研究：試探與後果、家譜關係、神學概念與歷史文明</p>
+        </header>
+
+        <main class="content" id="main-content">
+            <!-- 執行摘要 -->
+            <section class="section" data-source-line="1" data-id="executive-summary">
+                <h1>📊 執行摘要</h1>
+                <div class="key-point">
+                    <p>作為一名專業分析師，我已對所提供的聖經資料進行了深入分析，核心主旨是探討聖經中多位關鍵人物（如<span class="emphasis">掃羅、大衛、所羅門、亞當、挪亞、亞伯拉罕、摩西</span>等）所經歷的<span class="highlight">試探與其行為導致的後果</span>。</p>
+                </div>
+
+                <p>報告闡明了這些人物在面對<span class="blue-emphasis">權力</span>、<span class="green-emphasis">嫉妒</span>、<span class="purple-emphasis">恐懼</span>和<span class="orange-emphasis">私慾</span>時的掙扎，以及他們對神命令的順服或悖逆如何影響其命運和整個民族的歷史進程。</p>
+
+                <p>同時，報告也深入探討了<span class="emphasis">創世記中的家譜與人物關係</span>，<span class="blue-emphasis">重要神學概念的闡釋</span>（如「神的形像」與「三位一體」），並釐清了<span class="green-emphasis">聖經時間軸與古代文明的交錯</span>，特別是關於大洪水與埃及法老的年代與淵源。</p>
+
+                <p>我的分析凸顯了<span class="highlight">神在人類歷史中的主權、揀選、審判與恩典</span>，並提醒信徒在面對試探時，應謹慎堅守信仰。</p>
+            </section>
+
+            <!-- 背景 -->
+            <section class="section" data-source-line="5" data-id="background">
+                <h1>📋 背景</h1>
+                <p>本報告涵蓋的時間跨度極大，從<span class="emphasis">人類始祖亞當 (Adam)</span> 的被造開始，根據聖經年代學推算約在公元前4000年至公元前6000年之間。</p>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h3>⏰ 時間軸概覽</h3>
+                        <ul>
+                            <li><span class="blue-emphasis">大洪水時期 (The Great Flood)</span> - 約公元前3000年左右，挪亞600歲時</li>
+                            <li><span class="green-emphasis">族長時期 (Patriarchal Age)</span> - 亞伯蘭/亞伯拉罕為核心，約公元前2000年左右</li>
+                            <li><span class="purple-emphasis">出埃及 (Exodus)</span> - 摩西帶領，約公元前1446年或1290年</li>
+                            <li><span class="orange-emphasis">以色列王國時期</span> - 掃羅、大衛、所羅門等君王</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>📚 領域</h3>
+                        <p>本報告的分析領域屬於<span class="highlight">聖經歷史學與神學 (Biblical History and Theology)</span>，主要依據舊約聖經：</p>
+                        <ul>
+                            <li>《創世記》</li>
+                            <li>《撒母耳記上》</li>
+                            <li>《撒母耳記下》</li>
+                            <li>《列王紀上》</li>
+                            <li>《出埃及記》</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>👥 目標受眾</h3>
+                    <p>本報告的目標受眾是任何對聖經故事、人物及其神學意義感興趣的讀者，尤其是那些希望在無需查閱原始經文的情況下，能對這些複雜內容有清晰、連貫理解的人士。</p>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 目標</h3>
+                    <p>我的主要目標是將這些分散於不同章節和人物的聖經資訊，綜合整理成一個有條理、易於理解的報告。具體目標包括：</p>
+                    <ol>
+                        <li>詳細闡述掃羅、大衛和所羅門等關鍵人物的<span class="emphasis">試探與其行動所帶來的深遠影響</span>。</li>
+                        <li>釐清<span class="blue-emphasis">創世記中複雜的家譜關係</span>，特別是關於<span class="green-emphasis">以挪士 (Enosh)</span> 與<span class="purple-emphasis">以諾 (Enoch)</span> 的區別，以及大洪水與早期人類的連結。</li>
+                        <li>解釋聖經中一些重要的<span class="orange-emphasis">神學概念</span>，如 <span class="highlight">「神說我們要造人」中的「我們」</span>，以及 <span class="highlight">「神的兒子們」和「偉人 (Nephilim)」</span> 的多種解釋。</li>
+                        <li>探討<span class="emphasis">聖經年代學 (Biblical Chronology)</span> 與<span class="blue-emphasis">古代近東文明 (Ancient Near Eastern Civilizations)</span>（如埃及）的關係，澄清<span class="green-emphasis">法老 (Pharaoh)</span> 與挪亞後裔之間的連結，並說明埃及文獻中<span class="purple-emphasis">大洪水</span>記載的缺乏。</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- 大綱/圖表/流程圖 -->
+            <section class="section" data-source-line="27" data-id="outline-flowchart">
+                <h1>📈 大綱/圖表/流程圖</h1>
+                <p>為了清晰呈現聖經人物與事件的關係，我將以時間軸與家譜樹狀圖的結合來概念化我的分析。</p>
+
+                <div class="mermaid-container">
+                    <h3>🏛️ 以色列王國時期與神學概念</h3>
+                    <div class="mermaid">
+graph TD
+    subgraph 以色列王國時期
+        P(掃羅的試探與後果) --> Q(大衛的試探與後果)
+        Q --> R(所羅門的試探與後果)
+    end
+
+    subgraph 神學概念
+        S(神的形像與「我們」)
+        T(神的兒子們與偉人)
+        U(長子名份的意義)
+    end
+
+    subgraph 歷史與年代
+        V(亞當至洪水: 1656年)
+        W(挪亞至亞伯蘭: 10代, 約1500年)
+        X(法老起源: 洪水後約公元前3100年)
+    end
+
+    subgraph 神學概念詳細
+        F(神學概念)
+        F --> F1["我們"造人：三位一體與一神論解釋]
+        F --> F2["神的形像"：人的本質與尊嚴]
+        F --> F3["神的兒子們"與偉人：洪水前人類墮落]
+    end
+
+    subgraph 時間與文明
+        G(時間與文明)
+        G --> G1[亞當至大洪水：約1656年]
+        G1 --> G2[人類壽命變化：洪水前後的顯著縮短]
+        G2 --> G3[挪亞至亞伯蘭：10代，約1500年]
+        G3 --> G4[法老：埃及君主稱號起源，非閃族後裔]
+        G4 --> G5[埃及文獻缺乏大洪水記載]
+        G5 --> G6[蘇美文化與閃族的交織]
+    end
+
+    classDef kingStyle fill:#ffeaa7,stroke:#d63031,stroke-width:3px,color:#333
+    classDef theologyStyle fill:#a29bfe,stroke:#6c5ce7,stroke-width:3px,color:#fff
+    classDef historyStyle fill:#55efc4,stroke:#00b894,stroke-width:3px,color:#333
+
+    class P,Q,R kingStyle
+    class S,T,U,F,F1,F2,F3 theologyStyle
+    class V,W,X,G,G1,G2,G3,G4,G5,G6 historyStyle
+                    </div>
+                </div>
+
+                <div class="mermaid-container">
+                    <h3>🌳 聖經歷史發展流程圖</h3>
+                    <div class="mermaid">
+graph TD
+    A[開端：神創世和人類墮落] --> B(創世記1-11章：遠古歷史)
+    B --> B1[亞當與夏娃：人類的始祖]
+    B1 --> B2[該隱殺亞伯：罪惡的起源]
+    B1 --> B3[塞特：敬虔家系的延續]
+    B3 --> B4[以挪士：開始求告耶和華的名]
+    B4 --> B5[雅列的以諾：與神同行，被神接去]
+    B5 --> B6[瑪土撒拉、拉麥：挪亞的先祖]
+    B6 --> B7[挪亞：大洪水中的義人]
+    B7 --> B8[閃、含、雅弗：人類的二次始祖與民族起源]
+    B8 --> B9[巴別塔：人類分散與語言混亂]
+    B --> C(創世記12-50章：族長歷史)
+    C --> C1[亞伯拉罕：信心之父，蒙神呼召立約]
+    C1 --> C2[撒拉、夏甲、以實瑪利：繼承者問題]
+    C1 --> C3[以撒：神應許的繼承人]
+    C3 --> C4[利百加、以掃、雅各：雙胞胎與長子權]
+    C4 --> C5[雅各/以色列：十二支派的祖先]
+    C5 --> C6[約瑟：被賣到埃及，成為宰相]
+    C6 --> C7[以色列人定居埃及，為出埃及做準備]
+
+    C7 --> D(摩西：出埃及的領導者 - 利未支派)
+    D --> D1[約櫃：神啟示旨意的所在地]
+
+    D --> E(以色列王國時期)
+    E --> E1[掃羅：首位君王，悖逆與悲劇]
+    E1 --> E2[大衛：合神心意，罪與悔改]
+    E2 --> E3[所羅門：智慧與晚年墮落]
+
+    classDef startStyle fill:#ffeaa7,stroke:#d63031,stroke-width:3px,color:#333
+    classDef patriarchStyle fill:#fdcb6e,stroke:#e17055,stroke-width:3px,color:#333
+    classDef mosesStyle fill:#a29bfe,stroke:#6c5ce7,stroke-width:3px,color:#fff
+    classDef kingdomStyle fill:#55efc4,stroke:#00b894,stroke-width:3px,color:#333
+
+    class A,B,B1,B2,B3,B4,B5,B6,B7,B8,B9 startStyle
+    class C,C1,C2,C3,C4,C5,C6,C7 patriarchStyle
+    class D,D1 mosesStyle
+    class E,E1,E2,E3 kingdomStyle
+                    </div>
+                </div>
+            </section>
+
+            <!-- 創世記相關人物列表 -->
+            <section class="section" data-source-line="112" data-id="character-table">
+                <h1>👥 創世記相關人物列表</h1>
+                <p>以下是根據提供的資料，關於《創世記》及相關人物的詳細整理：</p>
+
+                <div class="column-layout">
+                    <!-- 人類始祖 -->
+                    <div class="card">
+                        <h3>👑 亞當 (Adam)</h3>
+                        <p><span class="blue-emphasis">出生年份：</span>約公元前4000-3600年</p>
+                        <p><span class="green-emphasis">身份：</span><span class="highlight">人類始祖</span></p>
+                        <p><span class="purple-emphasis">重要性：</span>大洪水所滅所有人類皆為其後代；神揀選的家譜從其兒子塞特延續；從他被造到大洪水降臨共約1656年。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>👸 夏娃 (Eve)</h3>
+                        <p><span class="green-emphasis">身份：</span><span class="highlight">人類始祖</span></p>
+                        <p><span class="purple-emphasis">創造：</span>神用亞當的肋骨造她。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>⚔️ 該隱 (Cain)</h3>
+                        <p><span class="green-emphasis">身份：</span>亞當夏娃的兒子</p>
+                        <p><span class="emphasis">重要事件：</span><span class="highlight">殺害了亞伯</span></p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🐑 亞伯 (Abel)</h3>
+                        <p><span class="green-emphasis">身份：</span>亞當夏娃的兒子</p>
+                        <p><span class="emphasis">結局：</span><span class="highlight">被該隱殺害</span></p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🌱 塞特 (Seth)</h3>
+                        <p><span class="green-emphasis">身份：</span>亞伯死後，夏娃生下的兒子</p>
+                        <p><span class="purple-emphasis">重要性：</span><span class="highlight">神揀選的家譜從他延續</span></p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🙏 以挪士 (Enosh)</h3>
+                        <p><span class="green-emphasis">身份：</span><span class="highlight">亞當的孫子，塞特的兒子</span></p>
+                        <p><span class="purple-emphasis">重要性：</span>在他時代，人開始求告耶和華的名，正式開始敬拜神；<span class="blue-emphasis">挪亞的祖先</span>，挪亞是他的第七世孫。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏙️ 該隱的兒子以諾 (Enoch, son of Cain)</h3>
+                        <p><span class="green-emphasis">身份：</span>亞當的第三代後裔</p>
+                        <p><span class="purple-emphasis">成就：</span>建了一座城叫以諾城。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>✨ 雅列的兒子以諾 (Enoch, son of Jared)</h3>
+                        <p><span class="green-emphasis">身份：</span>亞當的第七世孫</p>
+                        <p><span class="purple-emphasis">特殊經歷：</span><span class="highlight">與神同行300年後被神接去，沒有經歷死亡</span></p>
+                        <p><span class="blue-emphasis">後代：</span>以敬虔聞名，生了兒子瑪土撒拉；其後代通過瑪土撒拉、拉麥接續到挪亞。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🚢 挪亞 (Noah)</h3>
+                        <p><span class="blue-emphasis">出生年份：</span>約公元前3000年前後</p>
+                        <p><span class="green-emphasis">壽命：</span><span class="highlight">950歲</span></p>
+                        <p><span class="purple-emphasis">重要性：</span>以挪士的七世孫，亞當的第十代後裔；在大洪水時期<span class="highlight">正直無邪，蒙神指示建造方舟得救</span>，成為第二次人類世界的始祖；大洪水發生時600歲；在500歲時生了閃、含、雅弗；現今所有人類皆為其三子的後代。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🌍 閃 (Shem)</h3>
+                        <p><span class="blue-emphasis">出生：</span>挪亞500歲時生</p>
+                        <p><span class="green-emphasis">壽命：</span>約600年</p>
+                        <p><span class="purple-emphasis">後代：</span>挪亞的三個兒子之一，洪水後所有人類的祖先；他的後代主要分布在西亞、中東地區，<span class="highlight">包括希伯來人（猶太人祖先）、亞述人、阿拉伯人，稱為閃族</span>；從他到亞伯蘭（亞伯拉罕）一共是十代。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🌍 含 (Ham)</h3>
+                        <p><span class="blue-emphasis">出生：</span>挪亞500歲時生</p>
+                        <p><span class="purple-emphasis">後代：</span>挪亞的三個兒子之一，洪水後所有人類的祖先；他的後代主要分布在非洲及中東南部地區，<span class="highlight">包括埃及人、古迦南人、古巴比倫人</span>；埃及人可能是其後代。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🌍 雅弗 (Japheth)</h3>
+                        <p><span class="blue-emphasis">出生：</span>挪亞500歲時生</p>
+                        <p><span class="purple-emphasis">後代：</span>挪亞的三個兒子之一，洪水後所有人類的祖先；他的後代主要分布在歐洲、亞洲北部，形成今天的歐洲民族和部分亞洲民族；聖經中對其後代的提及相對較少。</p>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <h3>🔄 概念流程解釋</h3>
+                    <ul>
+                        <li><span class="emphasis">起始點</span>：神創造萬物及<span class="blue-emphasis">亞當與夏娃 (Adam and Eve)</span>，人類從此開始。</li>
+                        <li><span class="emphasis">早期人類家譜</span>：透過<span class="green-emphasis">該隱 (Cain)</span> 與<span class="purple-emphasis">塞特 (Seth)</span> 的支派，區分出<span class="orange-emphasis">該隱的以諾 (Enoch, son of Cain)</span> 和<span class="blue-emphasis">敬虔的以諾 (Enoch, son of Jared and descendant of Seth)</span>。</li>
+                        <li><span class="emphasis">洪水時代</span>：塞特支派傳承至<span class="highlight">挪亞 (Noah)</span>，在大洪水事件中蒙神拯救。</li>
+                        <li><span class="emphasis">洪水後的分散</span>：挪亞的三個兒子<span class="blue-emphasis">閃 (Shem)</span>、<span class="green-emphasis">含 (Ham)</span>、<span class="purple-emphasis">雅弗 (Japheth)</span> 成為不同民族的祖先。</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📊 創世記人物詳細表格</h3>
+                    <div class="table-container">
+                        <table class="character-table">
+                            <thead>
+                                <tr>
+                                    <th>人物 (Character)</th>
+                                    <th>出生年份 (Approx. Birth Year)</th>
+                                    <th>活多久 (Lifespan)</th>
+                                    <th>備註 (Remarks)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>亞當 (Adam)</strong></td>
+                                    <td>約公元前4000-3600年</td>
+                                    <td>未提供</td>
+                                    <td><strong>人類始祖</strong>；大洪水所滅所有人類皆為其後代；神揀選的家譜從其兒子塞特延續；從他被造到大洪水降臨共約1656年。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>夏娃 (Eve)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td><strong>人類始祖</strong>；神用亞當的肋骨造她。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>該隱 (Cain)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>亞當夏娃的兒子，<strong>殺害了亞伯</strong>。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>亞伯 (Abel)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>亞當夏娃的兒子，<strong>被該隱殺害</strong>。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>塞特 (Seth)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>亞伯死後，夏娃生下的兒子，<strong>神揀選的家譜從他延續</strong>。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>以挪士 (Enosh)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td><strong>亞當的孫子，塞特的兒子</strong>；在他時代，人開始求告耶和華的名，正式開始敬拜神；<strong>挪亞的祖先</strong>，挪亞是他的第七世孫。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>該隱的兒子以諾 (Enoch, son of Cain)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>亞當的第三代後裔；建了一座城叫以諾城。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>雅列的兒子以諾 (Enoch, son of Jared)</strong></td>
+                                    <td>未提供</td>
+                                    <td><strong>與神同行300年後被神接去，沒有經歷死亡</strong></td>
+                                    <td>亞當的第七世孫；以敬虔聞名，生了兒子瑪土撒拉；其後代通過瑪土撒拉、拉麥接續到挪亞。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>挪亞 (Noah)</strong></td>
+                                    <td>約公元前3000年前後</td>
+                                    <td><strong>950歲</strong></td>
+                                    <td>以挪士的七世孫，亞當的第十代後裔；在大洪水時期<strong>正直無邪，蒙神指示建造方舟得救</strong>，成為第二次人類世界的始祖；大洪水發生時600歲；在500歲時生了閃、含、雅弗；現今所有人類皆為其三子的後代。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>閃 (Shem)</strong></td>
+                                    <td>(挪亞500歲時生)</td>
+                                    <td>約600年</td>
+                                    <td>挪亞的三個兒子之一，洪水後所有人類的祖先；他的後代主要分布在西亞、中東地區，<strong>包括希伯來人（猶太人祖先）、亞述人、阿拉伯人，稱為閃族</strong>；從他到亞伯蘭（亞伯拉罕）一共是十代。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>含 (Ham)</strong></td>
+                                    <td>(挪亞500歲時生)</td>
+                                    <td>未提供</td>
+                                    <td>挪亞的三個兒子之一，洪水後所有人類的祖先；他的後代主要分布在非洲及中東南部地區，<strong>包括埃及人、古迦南人、古巴比倫人</strong>；埃及人可能是其後代。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>雅弗 (Japheth)</strong></td>
+                                    <td>(挪亞500歲時生)</td>
+                                    <td>未提供</td>
+                                    <td>挪亞的三個兒子之一，洪水後所有人類的祖先；他的後代主要分布在歐洲、亞洲北部，形成今天的歐洲民族和部分亞洲民族；聖經中對其後代的提及相對較少。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>亞伯蘭/亞伯拉罕 (Abram/Abraham)</strong></td>
+                                    <td>約公元前2000年左右</td>
+                                    <td><strong>175歲</strong></td>
+                                    <td>閃的後裔，他拉的兒子；約75歲時蒙神呼召離開本地、本族、父家，往神所指示之地去；神與他立約，應許使他成為大國，萬族因他得福；<strong>被視為信心之父</strong>；99歲時神改名他為亞伯拉罕；亞伯蘭86歲時夏甲為他生以實馬利；曾讓撒拉謊稱是妹妹，導致法老家遭大災；聖經形容他是神的朋友；能親密交通、面對面感受神的臨在。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>撒拉 (Sarah)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>亞伯拉罕的妻子；<strong>年老時（90歲）生下以撒，被視為神蹟</strong>；其美貌曾導致亞伯蘭與法老產生誤會，法老家因此遭災。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>夏甲 (Hagar)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>撒拉的埃及女僕，亞伯拉罕的第二任妻子；在<strong>亞伯蘭86歲時生下了以實馬利</strong>。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>以實瑪利 (Ishmael)</strong></td>
+                                    <td>(亞伯蘭86歲時生)</td>
+                                    <td>未提供</td>
+                                    <td>亞伯拉罕與夏甲所生之子。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>以撒 (Isaac)</strong></td>
+                                    <td>約公元前1897年</td>
+                                    <td><strong>180歲</strong></td>
+                                    <td>亞伯拉罕與撒拉所生之子，<strong>神應許的繼承人</strong>；是亞伯拉罕100歲，撒拉90歲時所生；妻子是利百加。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>利百加 (Rebekah)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>以撒的妻子；她是亞伯拉罕弟弟拿鶴的孫女。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>以掃 (Esau)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>以撒和利百加的雙胞胎兒子之一，<strong>為了一碗紅湯賣掉長子權</strong>。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>雅各/以色列 (Jacob/Israel)</strong></td>
+                                    <td>約公元前1837年</td>
+                                    <td><strong>147歲</strong></td>
+                                    <td>以撒和利百加的雙胞胎兒子之一，透過欺騙獲得長子的祝福；他的名字改為「<strong>以色列</strong>」（意即「與神爭戰者勝利」）；他是<strong>十二個支派的祖先</strong>；曾與神摔角，堅持求得祝福，標誌其生命的轉捩點。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>約瑟 (Joseph)</strong></td>
+                                    <td>未提供 (約公元前1700年被賣入埃及，成為宰相)</td>
+                                    <td><strong>110歲</strong></td>
+                                    <td>雅各最喜愛的兒子之一，被兄弟們嫉妒並賣到埃及當奴隸；後成為<strong>埃及宰相</strong>；他幫助以色列子孫來到埃及，為摩西的到來和出埃及做準備。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>摩西 (Moses)</strong></td>
+                                    <td>未提供</td>
+                                    <td>約120歲 (推論)</td>
+                                    <td>屬於以色列十二支派中的「<strong>利未支派</strong>」；傳統上認為是《摩西五經》（包括《創世記》）的作者；準備帶領以色列人出埃及；在約櫃前與神相會，明白神的旨意；帶領以色列人出埃及比亞伯蘭下埃及晚了數百年。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>以利亞 (Elijah)</strong></td>
+                                    <td>未提供</td>
+                                    <td><strong>被旋風接升天，沒有經歷自然死亡</strong></td>
+                                    <td>先知。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>法老 (Pharaoh)</strong></td>
+                                    <td>(稱號約始於公元前3100年)</td>
+                                    <td>(稱號，非單一人物壽命)</td>
+                                    <td><strong>埃及的君王尊稱</strong>，原意「大房子」；是埃及文明的產物，洪水後埃及本地民族發展出的統治者；<strong>非閃族民族</strong>，與閃族不屬同一族系；聖經族譜未將法老列為亞當後代，因族譜目的特殊性，注重神揀選的族群；起初不認識耶和華神，後因十災被迫認識祂的存在與權能；因亞伯蘭妻子撒萊的緣故，曾被耶和華降大災。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>瑪土撒拉 (Methuselah)</strong></td>
+                                    <td>未提供</td>
+                                    <td><strong>969歲</strong></td>
+                                    <td>雅列的兒子以諾的兒子；他的後代接續到挪亞，是挪亞的祖父。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>拉麥 (Lamech)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td>瑪土撒拉的後代，<strong>挪亞的父親</strong>。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>拿鶴 (Nahor)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td><strong>亞伯拉罕的弟弟</strong>，父親是他拉；他的孫女利百加後來成為以撒的妻子。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>他拉 (Terah)</strong></td>
+                                    <td>未提供</td>
+                                    <td>未提供</td>
+                                    <td><strong>亞伯蘭（亞伯拉罕）的父親</strong>；也是拿鶴的父親；是挪亞的兒子閃到亞伯蘭這十代家譜中的一員。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 結論 -->
+            <section class="section" data-source-line="150" data-id="conclusions">
+                <h1>🎯 結論</h1>
+                <div class="key-point">
+                    <p>透過對聖經資料的深入分析，我們可以清楚看到<span class="highlight">神在人類歷史中的主權與恩典</span>，以及人類在面對試探時的軟弱與神的救贖計劃。</p>
+                </div>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h3>👑 君王的試探與後果</h3>
+                        <p>從<span class="blue-emphasis">掃羅的悖逆</span>、<span class="green-emphasis">大衛的犯罪</span>到<span class="purple-emphasis">所羅門的墮落</span>，我們看到即使是神所揀選的領袖，也會在權力、慾望和驕傲面前跌倒。</p>
+                        <p>然而，神的恩典與審判並行，<span class="highlight">悔改與順服帶來復興，悖逆與驕傲導致衰落</span>。</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>🌳 家譜的神聖意義</h3>
+                        <p>從<span class="emphasis">亞當到挪亞</span>，再從<span class="blue-emphasis">挪亞到亞伯拉罕</span>，神透過家譜保存了<span class="highlight">救贖的應許</span>。</p>
+                        <p>每一代的傳承都見證了神的信實，即使在人類最黑暗的時期（如大洪水前），神仍保守敬虔的餘民。</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🔮 神學概念的深度</h3>
+                    <p>關於<span class="emphasis">「神的形像」</span>、<span class="blue-emphasis">「三位一體」</span>和<span class="green-emphasis">「神的兒子們」</span>等概念，聖經提供了豐富的神學思考空間。</p>
+                    <p>這些概念不僅揭示了<span class="highlight">神的本性與人類的尊嚴</span>，也警示我們關於<span class="purple-emphasis">屬靈爭戰</span>和<span class="orange-emphasis">道德墮落</span>的現實。</p>
+                </div>
+
+                <div class="card">
+                    <h3>⏰ 歷史的交織</h3>
+                    <p>聖經年代學與古代文明的關係顯示，<span class="emphasis">神的救贖計劃</span>並非在歷史真空中進行，而是在真實的歷史脈絡中展開。</p>
+                    <p>從<span class="blue-emphasis">大洪水</span>到<span class="green-emphasis">埃及文明</span>，從<span class="purple-emphasis">巴別塔</span>到<span class="orange-emphasis">亞伯拉罕的呼召</span>，每個事件都在神的主權下服務於祂的永恆計劃。</p>
+                </div>
+            </section>
+
+            <!-- 核心論點卡 -->
+            <section class="section" data-source-line="155" data-id="core-arguments">
+                <h1>🎴 核心論點卡</h1>
+                <p>以下是本報告的核心論點，每個論點都將在後續章節中詳細闡述：</p>
+
+                <div class="column-layout">
+                    <div class="card">
+                        <h3>🔥 論點一：試探的普遍性與後果的嚴重性</h3>
+                        <p><span class="blue-emphasis">定義：</span>無論地位高低，所有人都會面對試探，而屈服於試探的後果往往超出個人範圍。</p>
+                        <p><span class="green-emphasis">方法：</span>通過分析掃羅、大衛、所羅門等君王的具體試探情境與其後果。</p>
+                        <p><span class="purple-emphasis">範例：</span>掃羅的悖逆導致王位失去；大衛的姦淫引發家庭悲劇；所羅門的偶像崇拜導致國家分裂。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🌳 論點二：神揀選家譜的連續性與目的性</h3>
+                        <p><span class="blue-emphasis">定義：</span>神透過特定的家譜線索保存救贖的應許，從亞當到基督形成不間斷的鏈條。</p>
+                        <p><span class="green-emphasis">方法：</span>追溯從塞特到挪亞，再從閃到亞伯拉罕的家譜傳承。</p>
+                        <p><span class="purple-emphasis">範例：</span>以挪士時代開始求告神的名；以諾與神同行被接去；挪亞在洪水中蒙拯救。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🔮 論點三：神學概念的多層次解釋</h3>
+                        <p><span class="blue-emphasis">定義：</span>聖經中的神學概念往往具有多重含義，需要在不同層面上理解。</p>
+                        <p><span class="green-emphasis">方法：</span>分析「神的形像」、「我們要造人」、「神的兒子們」等關鍵概念。</p>
+                        <p><span class="purple-emphasis">範例：</span>「我們」可能指三位一體或神與天使會議；「神的兒子們」可能指塞特後裔或天使。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>⏰ 論點四：聖經年代學與古代文明的協調性</h3>
+                        <p><span class="blue-emphasis">定義：</span>聖經的時間框架與考古學發現的古代文明可以在合理範圍內協調。</p>
+                        <p><span class="green-emphasis">方法：</span>比較聖經年代學與埃及、美索不達米亞文明的時間線。</p>
+                        <p><span class="purple-emphasis">範例：</span>大洪水約在公元前3000年，與早期文明的起源時間相符；法老稱號的起源與含的後裔相關。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 詳細論點闡述 -->
+            <section class="section" data-source-line="160" data-id="detailed-arguments">
+                <h1>📝 詳細論點闡述</h1>
+
+                <!-- 論點一詳述 -->
+                <div class="card">
+                    <h2>🔥 論點一：試探的普遍性與後果的嚴重性</h2>
+
+                    <h3>👑 掃羅的試探與後果</h3>
+                    <p><span class="blue-emphasis">掃羅 (Saul)</span> 作為以色列的第一位君王，面臨了多重試探：</p>
+
+                    <div class="column-layout">
+                        <div class="column">
+                            <h4>⚡ 主要試探</h4>
+                            <ul>
+                                <li><span class="emphasis">權力的誘惑</span>：渴望超越神所賦予的權限</li>
+                                <li><span class="blue-emphasis">恐懼與急躁</span>：在等待撒母耳時的不耐煩</li>
+                                <li><span class="green-emphasis">嫉妒</span>：對大衛受歡迎的嫉妒</li>
+                                <li><span class="purple-emphasis">悖逆</span>：不完全順服神的命令</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>💥 嚴重後果</h4>
+                            <ul>
+                                <li><span class="emphasis">失去王位</span>：神的靈離開他</li>
+                                <li><span class="blue-emphasis">家族悲劇</span>：兒子約拿單戰死</li>
+                                <li><span class="green-emphasis">國家動盪</span>：內戰與分裂</li>
+                                <li><span class="purple-emphasis">個人毀滅</span>：最終自殺身亡</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <p><span class="highlight">關鍵教訓</span>：掃羅的失敗顯示，即使是神所揀選的領袖，若不持續依靠神並順服祂的旨意，也會因試探而跌倒，其後果不僅影響個人，更波及整個國家。</p>
+                    </div>
+
+                    <h3>❤️ 大衛的試探與後果</h3>
+                    <p><span class="blue-emphasis">大衛 (David)</span> 雖被稱為「合神心意的人」，但也經歷了重大試探：</p>
+
+                    <div class="column-layout">
+                        <div class="column">
+                            <h4>⚡ 主要試探</h4>
+                            <ul>
+                                <li><span class="emphasis">情慾</span>：對拔示巴的慾望</li>
+                                <li><span class="blue-emphasis">權力濫用</span>：利用王權掩蓋罪行</li>
+                                <li><span class="green-emphasis">謀殺</span>：設計殺害烏利亞</li>
+                                <li><span class="purple-emphasis">驕傲</span>：數點民數的自滿</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>💥 嚴重後果</h4>
+                            <ul>
+                                <li><span class="emphasis">家庭破碎</span>：兒子暗嫩、押沙龍的悲劇</li>
+                                <li><span class="blue-emphasis">國家叛亂</span>：押沙龍的叛變</li>
+                                <li><span class="green-emphasis">瘟疫降臨</span>：因數點民數而來的審判</li>
+                                <li><span class="purple-emphasis">良心痛苦</span>：詩篇中的懊悔</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <p><span class="highlight">關鍵教訓</span>：大衛的經歷顯示，真正的敬虔不在於不犯罪，而在於犯罪後的真誠悔改。他的悔改詩篇（如詩篇51篇）成為後世信徒的典範。</p>
+                    </div>
+
+                    <h3>👑 所羅門的試探與後果</h3>
+                    <p><span class="blue-emphasis">所羅門 (Solomon)</span> 以智慧著稱，但晚年卻陷入嚴重的屬靈墮落：</p>
+
+                    <div class="column-layout">
+                        <div class="column">
+                            <h4>⚡ 主要試探</h4>
+                            <ul>
+                                <li><span class="emphasis">財富</span>：對物質享受的沉迷</li>
+                                <li><span class="blue-emphasis">女色</span>：娶了許多外邦妻妾</li>
+                                <li><span class="green-emphasis">偶像崇拜</span>：為妻妾建造邱壇</li>
+                                <li><span class="purple-emphasis">智慧的驕傲</span>：依靠自己而非神</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4>💥 嚴重後果</h4>
+                            <ul>
+                                <li><span class="emphasis">國家分裂</span>：死後王國一分為二</li>
+                                <li><span class="blue-emphasis">屬靈衰落</span>：以色列人的信仰墮落</li>
+                                <li><span class="green-emphasis">政治動盪</span>：敵人興起攻擊</li>
+                                <li><span class="purple-emphasis">個人虛空</span>：傳道書中的感嘆</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <p><span class="highlight">關鍵教訓</span>：所羅門的墮落警示我們，智慧和恩賜若不伴隨持續的敬畏神，反而可能成為驕傲的根源。外在的成功不能保證內在的屬靈健康。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 代禱事項 -->
+            <section class="section" data-source-line="300" data-id="prayer-items">
+                <h1>🙏 代禱事項</h1>
+                <p>基於本報告的分析，以下是值得我們代禱和反思的事項：</p>
+
+                <div class="column-layout">
+                    <div class="card">
+                        <h3>🛡️ 為抵擋試探代禱</h3>
+                        <ul>
+                            <li>求神賜給我們<span class="emphasis">智慧</span>，能夠識別生活中的各種試探</li>
+                            <li>求神加添我們<span class="blue-emphasis">力量</span>，在面對權力、財富、情慾的誘惑時能夠站立得穩</li>
+                            <li>求神保守我們的<span class="green-emphasis">心思意念</span>，不被驕傲和嫉妒所勝</li>
+                            <li>求神幫助我們學習<span class="purple-emphasis">謙卑順服</span>，如同基督的榜樣</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>💔 為悔改與復興代禱</h3>
+                        <ul>
+                            <li>求神賜給我們<span class="emphasis">敏感的良心</span>，能夠及時察覺自己的罪</li>
+                            <li>求神賜給我們<span class="blue-emphasis">真誠悔改</span>的心，如同大衛在詩篇51篇的禱告</li>
+                            <li>求神的<span class="green-emphasis">恩典與憐憫</span>臨到那些在罪中掙扎的人</li>
+                            <li>求神使用我們成為<span class="purple-emphasis">和好的使者</span>，幫助他人回轉歸向神</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>👨‍👩‍👧‍👦 為家庭與後代代禱</h3>
+                        <ul>
+                            <li>求神保守我們的<span class="emphasis">家庭關係</span>，不因個人的罪而破裂</li>
+                            <li>求神賜給我們<span class="blue-emphasis">智慧</span>教導下一代敬畏神</li>
+                            <li>求神的<span class="green-emphasis">救贖恩典</span>延續到我們的子子孫孫</li>
+                            <li>求神幫助我們建立<span class="purple-emphasis">敬虔的家庭傳統</span>，如同亞伯拉罕的家</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🌍 為教會與社會代禱</h3>
+                        <ul>
+                            <li>求神興起<span class="emphasis">敬虔的領袖</span>，在教會和社會中作光作鹽</li>
+                            <li>求神保守教會領袖不被<span class="blue-emphasis">權力和名利</span>所腐蝕</li>
+                            <li>求神賜給教會<span class="green-emphasis">合一的心</span>，共同見證神的榮耀</li>
+                            <li>求神的<span class="purple-emphasis">公義與慈愛</span>在我們的社會中彰顯</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>📖 為神話語的傳揚代禱</h3>
+                        <ul>
+                            <li>求神使用<span class="emphasis">聖經的教導</span>光照更多人的心</li>
+                            <li>求神賜給傳道人<span class="blue-emphasis">智慧和能力</span>，正確解釋神的話語</li>
+                            <li>求神開啟人們的<span class="green-emphasis">心眼</span>，能夠明白神的救恩</li>
+                            <li>求神保守我們對<span class="purple-emphasis">真理的渴慕</span>，持續在神的話語中成長</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🕊️ 為個人靈命成長代禱</h3>
+                        <ul>
+                            <li>求神幫助我們<span class="emphasis">每日親近神</span>，建立穩定的靈修生活</li>
+                            <li>求神賜給我們<span class="blue-emphasis">屬靈的洞察力</span>，能夠分辨神的旨意</li>
+                            <li>求神塑造我們的<span class="green-emphasis">品格</span>，越來越像基督</li>
+                            <li>求神使用我們的<span class="purple-emphasis">生命見證</span>榮耀祂的名</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <h3>🎯 總結禱告</h3>
+                    <p>親愛的天父，感謝祢透過聖經向我們啟示祢的心意。求祢幫助我們從這些古代聖徒的經歷中學習智慧，在面對試探時能夠依靠祢的恩典得勝。求祢保守我們的心，使我們能夠<span class="highlight">敬畏祢、愛祢、順服祢</span>，直到見祢面的日子。奉主耶穌基督的名禱告，阿們。</p>
+                </div>
+            </section>
+
+            <!-- Wikipedia 超連結 -->
+            <section class="section" data-source-line="4" data-id="wikipedia-link">
+                <h2>🔗 相關資源</h2>
+                <div class="card">
+                    <h3>📖 延伸閱讀</h3>
+                    <p>如需了解更多關於創世記和聖經歷史的背景資料，請參考：</p>
+                    <div class="key-point">
+                        <a href="https://zh.wikipedia.org/zh-tw/%E5%89%B5%E4%B8%96%E8%A8%98" target="_blank" style="color: #fff; text-decoration: none; font-weight: bold;">
+                            🌐 維基百科：創世記
+                        </a>
+                    </div>
+                    <div class="key-point">
+                        <a href="https://zh.wikipedia.org/zh-tw/%E8%88%8A%E7%B4%84%E8%81%96%E7%B6%93" target="_blank" style="color: #fff; text-decoration: none; font-weight: bold;">
+                            🌐 維基百科：舊約聖經
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let isMobile = false;
+        let isZoomed = false;
+        let effectsEnabled = true;
+
+        function fadeIn(element, duration = 1000) {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = `opacity ${duration}ms ease-out, transform ${duration}ms ease-out`;
+
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 10);
+        }
+
+        function toggleLayout() {
+            const content = document.getElementById('main-content');
+            const container = document.querySelector('.container');
+
+            if (isMobile) {
+                container.classList.remove('mobile-layout');
+                content.classList.remove('mobile-layout');
+                fadeIn(content, 500);
+                isMobile = false;
+            } else {
+                container.classList.add('mobile-layout');
+                content.classList.add('mobile-layout');
+                fadeIn(content, 500);
+                isMobile = true;
+            }
+        }
+
+        function toggleZoom() {
+            const content = document.getElementById('main-content');
+
+            if (isZoomed) {
+                content.classList.remove('zoomed');
+                fadeIn(content, 300);
+                isZoomed = false;
+            } else {
+                content.classList.add('zoomed');
+                fadeIn(content, 300);
+                isZoomed = true;
+            }
+        }
+
+        function toggleEffects() {
+            const sections = document.querySelectorAll('.section');
+            const gradientBg = document.querySelector('.gradient-bg');
+
+            if (effectsEnabled) {
+                sections.forEach(section => {
+                    section.style.animation = 'none';
+                    fadeIn(section, 500);
+                });
+                gradientBg.style.animation = 'none';
+                fadeIn(gradientBg, 500);
+                effectsEnabled = false;
+            } else {
+                sections.forEach(section => {
+                    section.style.animation = 'breathe 3s ease-in-out infinite';
+                    fadeIn(section, 500);
+                });
+                gradientBg.style.animation = 'gradientMove 10s ease-in-out infinite';
+                fadeIn(gradientBg, 500);
+                effectsEnabled = true;
+            }
+        }
+
+        function toggleTOC() {
+            const toc = document.getElementById('toc');
+            if (toc.style.display === 'none') {
+                toc.style.display = 'block';
+                fadeIn(toc, 300);
+            } else {
+                toc.style.display = 'none';
+            }
+        }
+
+        function createDynamicGradient() {
+            const gradientBg = document.querySelector('.gradient-bg');
+            let hue = 0;
+
+            setInterval(() => {
+                hue = (hue + 1) % 360;
+                gradientBg.style.background = `linear-gradient(${hue}deg, hsl(${hue}, 70%, 60%), hsl(${(hue + 60) % 360}, 70%, 60%), hsl(${(hue + 120) % 360}, 70%, 60%))`;
+            }, 100);
+        }
+
+        function addProgressiveReveal() {
+            const sections = document.querySelectorAll('.section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+
+                        // 添加閃爍效果
+                        entry.target.style.animation = 'breathe 3s ease-in-out infinite, pulse 2s ease-in-out';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(50px)';
+                section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(section);
+            });
+        }
+
+        function addParticleEffect() {
+            const container = document.querySelector('.container');
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = '4px';
+                particle.style.height = '4px';
+                particle.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '-1';
+                particle.style.opacity = '0.6';
+
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+
+                particle.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+
+                document.body.appendChild(particle);
+
+                // 移除粒子
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 7000);
+            }
+        }
+
+        function addFloatingAnimation() {
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% {
+                        transform: translateY(0px) rotate(0deg);
+                        opacity: 0.6;
+                    }
+                    50% {
+                        transform: translateY(-20px) rotate(180deg);
+                        opacity: 1;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function addInteractiveElements() {
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    if (effectsEnabled) {
+                        this.style.transform = 'translateY(-5px)';
+                        fadeIn(this, 200);
+                    }
+                });
+
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    fadeIn(this, 200);
+                });
+
+                section.addEventListener('click', function() {
+                    if (effectsEnabled) {
+                        this.classList.toggle('highlight');
+                        fadeIn(this, 300);
+                    }
+                });
+            });
+        }
+
+        function addSmoothScrolling() {
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        function initializePage() {
+            createDynamicGradient();
+            addInteractiveElements();
+            addSmoothScrolling();
+            addFloatingAnimation();
+            addProgressiveReveal();
+
+            // 添加淡入效果到主要元素
+            const mainContent = document.getElementById('main-content');
+            const header = document.querySelector('.header');
+
+            if (mainContent) fadeIn(mainContent, 800);
+            if (header) fadeIn(header, 600);
+
+            // 定期添加粒子效果
+            setInterval(addParticleEffect, 3000);
+
+            // 添加視覺提示
+            console.log('📖 聖經資料分析報告 - 專業分析師的深入研究 已加載完成');
+            console.log('📱 點擊右上角按鈕切換佈局');
+            console.log('🔍 點擊縮放按鈕調整內容大小');
+            console.log('✨ 點擊特效按鈕開關動態效果');
+            console.log('📋 點擊目錄按鈕顯示/隱藏導航');
+            console.log('🎨 動態粒子效果已啟用');
+            console.log('👁️ 漸進式顯示效果已啟用');
+            console.log('🔗 Mermaid圖表已集成');
+        }
+
+        // 頁面加載完成後初始化
+        document.addEventListener('DOMContentLoaded', initializePage);
+
+        // 響應式處理
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768 && !isMobile) {
+                toggleLayout();
+                const content = document.getElementById('main-content');
+                fadeIn(content, 400);
+            } else if (window.innerWidth > 768 && isMobile) {
+                toggleLayout();
+                const content = document.getElementById('main-content');
+                fadeIn(content, 400);
+            }
+        });
+
+        // Mermaid圖表重新渲染
+        window.addEventListener('load', function() {
+            if (typeof mermaid !== 'undefined') {
+                mermaid.init();
+                console.log('🎯 Mermaid圖表渲染完成');
+            }
+        });
+    </script>
+</body>
+</html>
