@@ -418,6 +418,23 @@
             border-radius: 8px;
         }
 
+        /* SVG centering for all SVG containers */
+        .mermaid-container,
+        .card svg,
+        .section svg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mermaid-container svg,
+        .card svg,
+        .section svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
         @media (max-width: 768px) {
             .controls {
                 position: static;
@@ -489,14 +506,11 @@
 
         <main class="content" id="main-content">
             <div style="text-align: center; margin: 20px 0;">
-                <iframe src="https://www.youtube.com/watch?v=NtP3xT53dkU"
-                        title="Bill Tiger Asia Fund Founder Bill Hwang Sentenced to 18 Years in Prison"
-                        frameborder="0"
-                        width="560"
-                        height="315"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                </iframe>
+                <a href="https://www.youtube.com/watch?v=NtP3xT53dkU" target="_blank">
+                    <img src="https://img.youtube.com/vi/NtP3xT53dkU/maxresdefault.jpg"
+                         alt="Bill Tiger Asia Fund Founder Bill Hwang Sentenced to 18 Years in Prison"
+                         style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                </a>
             </div>
             <!-- 執行摘要 -->
             <section class="section" data-source-line="1" data-id="executive-summary">
