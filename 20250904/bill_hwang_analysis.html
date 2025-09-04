@@ -50,11 +50,7 @@
             text-rendering: optimizeLegibility;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+
 
         .header {
             text-align: center;
@@ -110,10 +106,23 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
+        .control-btn.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        /* Layout transition effects */
+        body {
+            transition: max-width 0.3s ease, margin 0.3s ease;
+        }
+
+        .container, .content, .section {
+            transition: padding 0.3s ease;
+        }
+
         .content {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            padding: 40px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
@@ -128,7 +137,6 @@
         .section {
             margin-bottom: 40px;
             position: relative;
-            padding: 20px;
             border-radius: 15px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
             border-left: 5px solid;
@@ -252,41 +260,83 @@
             animation: gradientMove 10s ease-in-out infinite;
         }
 
-        .mobile-layout {
-            max-width: 768px;
+        /* Mobile-first responsive design */
+        .container {
+            max-width: 100%;
             margin: 0 auto;
-        }
-
-        .mobile-layout .container {
-            padding: 10px;
-        }
-
-        .mobile-layout .content {
-            padding: 20px;
-        }
-
-        .mobile-layout .section {
             padding: 15px;
         }
 
-        .mobile-layout h1 {
+        .content {
+            padding: 20px;
+        }
+
+        .section {
+            padding: 15px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+        }
+
+        .section h1 {
             font-size: 2em;
         }
 
-        .mobile-layout h2 {
+        .section h2 {
             font-size: 1.5em;
         }
 
-        .mobile-layout h3 {
+        .section h3 {
             font-size: 1.3em;
         }
 
-        .mobile-layout h4 {
+        .section h4 {
             font-size: 1.1em;
         }
 
-        .mobile-layout p {
+        .section p {
             font-size: 1em;
+        }
+
+        /* PC/Desktop layout (768px and above) */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1200px;
+                padding: 20px;
+            }
+
+            .content {
+                padding: 40px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .section h1 {
+                font-size: 2.5em;
+            }
+
+            .section h2 {
+                font-size: 2em;
+            }
+
+            .section h3 {
+                font-size: 1.5em;
+            }
+
+            .section h4 {
+                font-size: 1.2em;
+            }
+
+            .section p {
+                font-size: 1.1em;
+            }
         }
 
         .toc {
@@ -435,23 +485,50 @@
             border-radius: 8px;
         }
 
-        @media (max-width: 768px) {
+        .example-section {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            border: 2px solid #27ae60;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .link-preview {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        .link-preview:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-preview img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Mobile-specific adjustments (max-width: 767px) */
+        @media (max-width: 767px) {
             .controls {
                 position: static;
                 justify-content: center;
                 margin-bottom: 20px;
+                flex-wrap: wrap;
             }
 
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            .section {
-                padding: 15px;
+            .control-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
             }
 
             .toc {
@@ -459,16 +536,48 @@
                 max-width: 100%;
                 margin: 20px 0;
                 max-height: none;
+                padding: 15px;
             }
 
             .column-layout {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
-            iframe {
-                width: 100%;
-                height: auto;
-                max-width: 560px;
+            .mermaid-container {
+                padding: 15px;
+                overflow-x: auto;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        /* Large desktop layout (1200px and above) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1400px;
+            }
+
+            .content {
+                padding: 50px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 3em;
+            }
+
+            .section h1 {
+                font-size: 2.8em;
+            }
+
+            .section h2 {
+                font-size: 2.2em;
             }
         }
     </style>
@@ -477,7 +586,7 @@
     <div class="gradient-bg"></div>
     
     <div class="controls">
-        <button class="control-btn" onclick="toggleLayout()" title="切換佈局">📱</button>
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
         <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
         <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
         <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
@@ -487,21 +596,27 @@
     <div class="toc" id="toc">
         <h3>📋 目錄</h3>
         <ul>
-            <li><a href="#executive-summary">📊 執行摘要</a></li>
-            <li><a href="#background">📋 背景</a></li>
-            <li><a href="#timeline-flowchart">📈 時間軸與流程圖</a></li>
-            <li><a href="#core-arguments">🎴 核心論點卡</a></li>
-            <li><a href="#detailed-analysis">📝 詳細分析</a></li>
-            <li><a href="#reflection">💭 反思與警示</a></li>
-            <li><a href="#conclusion">🎯 結論</a></li>
-            <li><a href="#resources">🔗 相關資源</a></li>
+            <li><a href="#summary">📊 摘要</a></li>
+            <li><a href="#introduction">👨‍💼 自介</a></li>
+            <li><a href="#timeline">⏰ 時間</a></li>
+            <li><a href="#fields">🏛️ 涉及領域</a></li>
+            <li><a href="#accusations">⚖️ 被指控問題</a></li>
+            <li><a href="#reflection">💭 反思</a></li>
+            <li><a href="#flowchart">📈 大綱/流程圖</a></li>
+            <li><a href="#conclusion">🎯 結論及範疇</a></li>
+            <li><a href="#core-arguments">🎴 基督核心論點卡</a></li>
+            <li><a href="#detailed-reflection">📝 論點的反思</a></li>
+            <li><a href="#investment-calling">🙏 投資召命與信仰之路</a></li>
         </ul>
     </div>
 
     <div class="container">
         <header class="header">
             <h1>黃聖國（Bill Hwang）人生與事業深度分析報告</h1>
-            <p class="subtitle">信仰與金融的交錯：從神聖召命到Archegos崩潰的深度反思</p>
+            <p class="subtitle">回顧並審視黃聖國的人生與事業：信仰與金融的交錯反思</p>
+            <div id="layout-indicator" style="margin-top: 15px; padding: 8px 16px; background: rgba(102, 126, 234, 0.1); border-radius: 20px; display: inline-block; font-size: 0.9em; color: #667eea;">
+                📱 Mobile Layout (預設)
+            </div>
         </header>
 
         <main class="content" id="main-content">
@@ -512,67 +627,62 @@
                          style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
                 </a>
             </div>
-            <!-- 執行摘要 -->
-            <section class="section" data-source-line="1" data-id="executive-summary">
-                <h1>📊 執行摘要</h1>
+            <!-- 摘要 -->
+            <section class="section" data-source-line="4" data-id="summary">
+                <h2 id="summary">📊 摘要</h2>
                 <div class="key-point">
-                    <p>作為一名深度分析師，我對<span class="emphasis">黃聖國（Bill Hwang）</span>的人生軌跡與Archegos Capital Management事件進行了全面審視。核心發現是：一位<span class="highlight">虔誠的福音派基督徒</span>如何在追求<span class="blue-emphasis">「神聖召命」</span>的過程中，逐漸偏離了聖經的金融倫理原則。</p>
+                    <p>主內弟兄姐妹們，今日，我帶著沉重的心，卻也帶著一份深切的反思與領悟，以自介在此陳述我對過去金融生涯，尤其是Archegos Capital Management事件的體悟。這份體悟是透過聖經的真理。</p>
                 </div>
 
-                <p>黃聖國將投資視為<span class="green-emphasis">上帝賜予的天職</span>，創立了名為「Archegos」（希臘文意為「領路者」）的家族辦公室，期望<span class="purple-emphasis">以神的視角進行投資</span>。然而，在追求巨大財務成功的過程中，他卻不自覺地滑向了<span class="orange-emphasis">「榮耀神學」</span>的陷阱，誤將世俗成功視為神恩寵的直接證據。</p>
+                <p>我過去的金融事業，尤其是我對Archegos Capital Management的營運，原初立意是將投資視為我<span class="highlight">「神聖指定」（divinely appointed）</span>的呼召，旨在以<span class="blue-emphasis">「神的視角」（God's perspective）</span>來<span class="green-emphasis">「建立神的國度」（build up the kingdom of God）</span>。然而，在追求巨大的財務成功的過程中，我卻不自覺地滑向了<span class="purple-emphasis">「榮耀神學」（Theology of Glory）</span>的陷阱，誤將世俗的成功與財富累積視為上帝恩寵的直接證據。</p>
 
-                <p>最終，他的<span class="emphasis">高槓桿集中持股策略</span>導致了2021年3月的災難性崩潰，給全球銀行造成<span class="highlight">超過100億美元的損失</span>，並於2024年被判處18年監禁。此案例深刻警示我們：<span class="blue-emphasis">良好的動機必須伴隨智慧的執行</span>，信仰原則需要確實落實於每一個商業決策中。</p>
+                <p>這使我偏離了聖經中關於<span class="orange-emphasis">「管家職分」（Stewardship）</span>、追求<span class="emphasis">「公義」（Justice）</span>和實踐<span class="blue-emphasis">「仁愛」（Love/Charity）</span>的真正金融價值觀。我的集中持股、高度槓桿以及對風險衍生性金融商品（Risky Derivatives）的運用，最終導致了Archegos的災難性崩潰，給多家國際銀行造成數十億美元的損失，我的員工也蒙受了巨大的財富損失，同時也嚴重損害了我所珍視的信仰在世人眼中的形象。</p>
+
+                <p>此事件警示我們，僅有良好的動機是不夠的，更需將信仰的原則確實落實於每一個商業決策之中，警惕<span class="emphasis">「貪婪」（greed）</span>與<span class="purple-emphasis">「謊言」（lying）</span>對金融倫理的侵蝕。</p>
             </section>
 
-            <!-- 背景 -->
-            <section class="section" data-source-line="5" data-id="background">
-                <h1>📋 背景</h1>
-                <p>黃聖國的故事橫跨了從<span class="emphasis">1964年出生於韓國</span>到<span class="blue-emphasis">2024年被判監禁</span>的六十年人生歷程，涵蓋了金融、信仰、法律與倫理的多重層面。</p>
+            <!-- 自介 -->
+            <section class="section" data-source-line="10" data-id="introduction">
+                <h2 id="introduction">👨‍💼 我的自介：Bill Hwang——一位在信仰中尋求引導的投資者</h2>
+                <p>我是<span class="emphasis">1964年出生在韓國</span>，在高中畢業後，我隨家人移民到美國。後來我在加州大學洛杉磯分校（UCLA）取得了學位，並在卡內基梅隆大學（Carnegie Mellon University）獲得了工商管理碩士學位。我的生命歷程，特別是我的金融事業，都與我的基督信仰密不可分。</p>
 
-                <div class="column-layout">
-                    <div class="column">
-                        <h3>👨‍👩‍👧‍👦 家庭背景</h3>
-                        <ul>
-                            <li><span class="blue-emphasis">父親是牧師</span> - 從小浸潤在基督教氛圍中</li>
-                            <li><span class="green-emphasis">1983年父親離世</span> - 與母親搬到洛杉磯</li>
-                            <li><span class="purple-emphasis">麥當勞夜班工作</span> - 支付學費，學會節儉</li>
-                            <li><span class="orange-emphasis">信仰根基深厚</span> - 成為虔誠福音派基督徒</li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <h3>🎓 教育與職業</h3>
-                        <ul>
-                            <li><span class="blue-emphasis">UCLA學士學位</span></li>
-                            <li><span class="green-emphasis">卡內基梅隆MBA</span></li>
-                            <li><span class="purple-emphasis">師從Julian Robertson</span> - 老虎基金創辦人</li>
-                            <li><span class="orange-emphasis">2001年創立老虎亞洲基金</span></li>
-                        </ul>
-                    </div>
-                </div>
+                <h3 id="family-background">👨‍👩‍👧‍👦 我的父母與家庭背景</h3>
+                <p>我的家庭背景對我影響深遠：</p>
+                <ul>
+                    <li><span class="blue-emphasis">我的父親是一位牧師</span>。這讓我從小就浸潤在基督教的氛圍中，也為我日後堅定的信仰奠定了基礎。</li>
+                    <li>在我們移民到拉斯維加斯後不久，<span class="green-emphasis">我的父親在1983年不幸離世</span>。</li>
+                    <li>父親去世後，我和母親搬到了洛杉磯。為了支持家庭並支付我的學費，我甚至曾經在<span class="purple-emphasis">麥當勞上夜班工作</span>。這段經歷讓我學會了節儉，也更堅定了我對信仰的依靠。</li>
+                    <li>關於我<span class="orange-emphasis">母親</span>，我永遠感激她與我一同度過那段艱難的歲月。</li>
+                </ul>
 
-                <div class="card">
-                    <h3>🏛️ 涉及領域</h3>
-                    <p>此事件主要涉及<span class="highlight">金融投資管理</span>、<span class="blue-emphasis">企業倫理</span>、<span class="green-emphasis">法律事務</span>以及<span class="purple-emphasis">宗教與商業的交界</span>。它探討了高風險金融策略、對沖基金與家族辦公室的監管差異、員工權益保障，以及如何在商業環境中持守或偏離信仰原則的深刻問題。</p>
-                </div>
+                <h3 id="mentors">🎓 我的導師與指引</h3>
+                <p>在華爾街，我曾有幸成為對沖基金泰斗 <span class="emphasis">羅伯遜（Julian Robertson）</span> 的門生。他是老虎基金（Tiger Management）的創辦人。</p>
+                <ul>
+                    <li>在羅伯遜先生的支持下，我於2001年創立了<span class="blue-emphasis">老虎亞洲基金（Tiger Asia Management）</span>。這段師徒關係對我的職業生涯起到了關鍵的啟蒙作用。</li>
+                    <li>即便後來我在商業上遭遇挫折，將老虎亞洲基金轉變為家族辦公室並改名為Archegos，羅伯遜先生的影響力一直伴隨著我。</li>
+                </ul>
 
-                <div class="card">
-                    <h3>⏰ 時間範圍</h3>
-                    <p>分析時間跨度從<span class="emphasis">1964年出生</span>到<span class="blue-emphasis">2024年判刑</span>，重點關注：</p>
-                    <ol>
-                        <li><span class="green-emphasis">2001-2012年</span>：老虎亞洲基金時期</li>
-                        <li><span class="purple-emphasis">2013-2021年</span>：Archegos Capital Management興衰</li>
-                        <li><span class="orange-emphasis">2021-2024年</span>：法律訴訟與審判</li>
-                    </ol>
-                </div>
+                <h3 id="faith-teachings">⛪ 我的教會教導與信仰理念</h3>
+                <p>我是<span class="highlight">虔誠的福音派基督徒</span>。我的信仰不僅是個人精神的支柱，更是我投資和生活理念的核心。</p>
+                <ul>
+                    <li><span class="green-emphasis">對上帝的熱愛超越金錢：</span> 我曾 <span class="emphasis">公開表示，「我喜歡上帝勝過金錢」</span>。因此，我努力減少個人名下的資金，將其用於上帝喜悅的事情。</li>
+                    <li><span class="purple-emphasis">投資是我的天職：</span> 我將投資視為我從上帝那裡領受的 <span class="highlight">「天職」</span>。我努力 <span class="blue-emphasis">「以上帝的視角，按照上帝的時機進行投資」</span>。我相信要 <span class="orange-emphasis">「按照上帝的話語和聖靈的能力進行投資」</span>，這是一種 <span class="emphasis">「無所畏懼的投資方式」</span>，因為我 <span class="green-emphasis">「不懼怕死亡或金錢」</span>。</li>
+                    <li><span class="blue-emphasis">以取悅上帝為目標：</span> 我期許自己能成為一位「偉大投資者」，投資於<span class="highlight">對社會有益的公司</span>。例如，我曾投資領英（LinkedIn），因為我相信它助人發揮工作潛力，而我會問自己：「我認為上帝喜歡它（領英）嗎？當然！我就像一個孩子，想知道今天可做什麼，可在哪裏投資才能取悅上帝」。</li>
+                    <li><span class="purple-emphasis">Archegos的意義：</span> 我的家族辦公室名為「Archegos Capital Management」。這個詞在希臘文中是 <span class="emphasis">「領路者」（One who leads the way）</span> 的意思，特別是指《希伯來書》中形容耶穌為我們救恩的「創始者」或「領路者」。這象徵著我視自身在金融界中的角色，是為上帝國度「領路」。</li>
+                </ul>
             </section>
 
-            <!-- 時間軸與流程圖 -->
-            <section class="section" data-source-line="27" data-id="timeline-flowchart">
-                <h1>📈 時間軸與流程圖</h1>
-                <p>以下流程圖展示了黃聖國從虔誠信徒到金融罪犯的轉變軌跡，以及Archegos事件的發展脈絡。</p>
-
-                <div class="mermaid-container">
-                    <h3>🏛️ 黃聖國人生與事業發展流程圖</h3>
+            <!-- 慈善事業 -->
+            <section class="section" data-source-line="35" data-id="charity">
+                <h3 id="charity-work">💝 慈善與教會支持</h3>
+                <div class="card">
+                    <p>我是 <span class="highlight">「恩典與慈悲基金會」（Grace and Mercy Foundation）的聯合創始人</span>。截至2018年底，該基金會的資產接近5億美元。透過基金會和個人資產，我向美國和韓國的教堂提供資助。</p>
+                    <ul>
+                        <li>我是<span class="blue-emphasis">加州著名的富勒神學院（Fuller Theological Seminary）的受託人</span>。</li>
+                        <li>我們也支持了許多福音派機構和大型教會，包括聖經博物館、國際正義使命、監獄團契、青年歸主、愛家協會、國王學院，以及像布魯克林會幕教會、救贖主長老教會和都會社群教會等。</li>
+                        <li>在我的基金會辦公室，我也 <span class="green-emphasis">定期舉辦聖經閱讀活動</span>。</li>
+                    </ul>
+                </div>
                     <div class="mermaid">
 graph TD
     subgraph 信仰歷程
@@ -610,297 +720,369 @@ graph TD
                         <li><span class="purple-emphasis">2021年3月崩潰</span>：保證金追繳引發連鎖反應，帝國瞬間倒塌</li>
                     </ul>
                 </div>
+                <div class="example-section">
+                    <h4>面對挑戰</h4>
+                    <p>儘管我的高風險投資策略最終導致Archegos的崩潰，並引發了外界對我管理方式的質疑，例如訴訟中提到的 <span class="emphasis">「邪教式文化」</span> 和要求員工「不容置疑的忠誠」，我依然相信我在盡力履行作為上帝管家的職責。對我而言，成功與否並非衡量信仰的唯一標準，聖經教導我們誠實、慈善、智慧和勤奮。即使在挫折中，我依然努力在金融的複雜世界中活出我的信仰。我的信仰是我生命中最重要的部分，它不僅指引我的個人生活，也塑造了我的投資哲學和慈善事業。</p>
+                </div>
             </section>
 
-            <!-- 核心論點卡 -->
-            <section class="section" data-source-line="155" data-id="core-arguments">
+            <!-- 時間 -->
+            <section class="section" data-source-line="53" data-id="timeline">
+                <h2 id="timeline">⏰ 時間</h2>
+                <p>我的人生故事與Archegos Capital Management的興衰，橫跨了數十年。我於1964年出生於南韓，1982年移民美國。在金融界的早期，我曾為著名投資者朱利安·羅伯遜（Julian Robertson）的「老虎管理」（Tiger Management）工作。</p>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h4>🌱 早期階段 (1964-2001)</h4>
+                        <ul>
+                            <li><span class="blue-emphasis">1964年</span> - 出生於南韓</li>
+                            <li><span class="green-emphasis">1982年</span> - 移民美國</li>
+                            <li><span class="purple-emphasis">1983年</span> - 父親離世</li>
+                            <li><span class="orange-emphasis">UCLA學士</span> - 加州大學洛杉磯分校</li>
+                            <li><span class="emphasis">Carnegie Mellon MBA</span> - 卡內基梅隆大學</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>📈 事業發展 (2001-2012)</h4>
+                        <ul>
+                            <li><span class="blue-emphasis">2001年</span> - 創立老虎亞洲管理</li>
+                            <li><span class="green-emphasis">資產高峰</span> - 超過50億美元</li>
+                            <li><span class="purple-emphasis">2012年</span> - 內幕交易調查</li>
+                            <li><span class="orange-emphasis">SEC處罰</span> - 證券交易委員會</li>
+                            <li><span class="emphasis">香港禁令</span> - 四年交易禁止</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h4>🏢 Archegos時期 (2013-2021)</h4>
+                        <ul>
+                            <li><span class="blue-emphasis">2013年</span> - 成立Archegos家族辦公室</li>
+                            <li><span class="green-emphasis">2020年3月</span> - 資產15億美元</li>
+                            <li><span class="purple-emphasis">2021年初</span> - 資產超過350億美元</li>
+                            <li><span class="orange-emphasis">2021年3月</span> - 崩潰事件</li>
+                            <li><span class="emphasis">銀行損失</span> - 超過100億美元</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>⚖️ 法律後果 (2022-2024)</h4>
+                        <ul>
+                            <li><span class="blue-emphasis">2022年4月</span> - 聯邦逮捕</li>
+                            <li><span class="green-emphasis">多項罪名</span> - 證券詐欺、電匯詐欺、勒索</li>
+                            <li><span class="purple-emphasis">2024年7月</span> - 罪名成立</li>
+                            <li><span class="orange-emphasis">2024年11月</span> - 判處18年監禁</li>
+                            <li><span class="emphasis">資產縮水</span> - 從300億降至5500萬美元</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 涉及領域 -->
+            <section class="section" data-source-line="57" data-id="fields">
+                <h2 id="fields">🏛️ 涉及領域</h2>
+                <p>此事件主要涉及<span class="highlight">「金融」（finance）</span>、<span class="blue-emphasis">「投資管理」（investment management）</span>、<span class="green-emphasis">「企業倫理」（corporate ethics）</span>、<span class="purple-emphasis">「法律事務」（legal affairs）</span>以及<span class="orange-emphasis">「宗教與商業的交界」（intersection of religion and business）</span>。</p>
+
+                <div class="card">
+                    <p>它探討了高風險金融策略、對沖基金與家族辦公室的監管差異、員工權益的保障，以及如何在商業環境中持守或偏離信仰原則的深刻問題。</p>
+                </div>
+            </section>
+
+            <!-- 被指控問題 -->
+            <section class="section" data-source-line="62" data-id="accusations">
+                <h2 id="accusations">⚖️ 被指控問題</h2>
+                <p>核心問題在於我如何被指控在Archegos Capital Management的運營中，透過看似虔誠的信仰包裝，實則採取了不道德甚至非法的手段：</p>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h4>🔴 濫用信仰建立「邪教式文化」</h4>
+                        <p>我被指控將自己塑造成<span class="emphasis">「神聖指定」（divinely appointed）</span>的領導者，要求員工絕對忠誠，並透過<span class="blue-emphasis">「強制性年度週末靜修」（mandatory annual weekend retreats）</span>等方式進行思想控制，公開貶低質疑我投資決策的員工。</p>
+                    </div>
+                    <div class="column">
+                        <h4>💰 「獎金操縱」與「The Plan」計畫</h4>
+                        <p>我被指控設立名為<span class="green-emphasis">「The Plan」</span>的投資計畫，強制員工將年度獎金的至少25%投入其中，並以<span class="purple-emphasis">「不貢獻，無獎金」（no contribution, no bonus）</span>的訊息施壓，這實質上成為了我的<span class="orange-emphasis">「無息貸款」（interest-free loan）</span>，剝奪了員工對自身財富的自主權。</p>
+                    </div>
+                </div>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h4>📊 魯莽且被控非法的交易行為</h4>
+                        <p>我採用<span class="emphasis">「大規模槓桿」（massive leverage）</span>、<span class="blue-emphasis">「風險衍生性金融商品」（risky derivatives）</span>和<span class="green-emphasis">「集中持股」（concentrated positions）</span>的策略，對少數幾支股票進行巨額押注，當市場變動時，未能滿足<span class="purple-emphasis">「保證金追繳」</span>，導致公司倒閉並造成市場巨大損失。</p>
+                    </div>
+                    <div class="column">
+                        <h4>🔍 信息不透明與詐欺指控</h4>
+                        <p>Archegos透過<span class="orange-emphasis">「總收益互換」（Total Return Swaps, TRS）</span>規避了監管披露要求，掩蓋了其真實的市場風險，並被指控向銀行和投資者提供虛假和誤導性信息以獲取信用。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 反思 -->
+            <section class="section" data-source-line="70" data-id="reflection">
+                <h2 id="reflection">💭 反思</h2>
+                <div class="key-point">
+                    <ul>
+                        <li>闡明在信仰名義下，我的行為如何偏離聖經的金融倫理。</li>
+                        <li>警示金融專業人士應警惕<span class="emphasis">「榮耀神學」</span>的誘惑，轉而擁抱<span class="blue-emphasis">「十字架神學」（Theology of the Cross）</span>的謙卑與誠實。</li>
+                        <li>呼籲金融市場加強監管，特別是對家族辦公室等較少受規管實體的監督，以防止類似事件再次發生。</li>
+                        <li>鼓勵所有參與金融活動的人，無論職位高低，都能將<span class="green-emphasis">「管家職分」</span>、<span class="purple-emphasis">「公義」</span>和<span class="orange-emphasis">「仁愛」</span>的原則融入日常決策，促進<span class="highlight">「救贖金融」（Redemptive Finance）</span>的發展。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 大綱/流程圖 -->
+            <section class="section" data-source-line="77" data-id="flowchart">
+                <h2 id="flowchart">📈 大綱/流程圖</h2>
+                <p>以下是黃聖國事件的發展流程，旨在從時間順序和因果關係上，呈現個人職業生涯的轉折與Archegos的興衰：</p>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h4>🌱 1. 早期生涯與信仰啟蒙</h4>
+                        <ul>
+                            <li>我出生於南韓，後移民美國，父親是牧師，我自幼受基督教信仰薰陶。</li>
+                            <li>在金融界嶄露頭角，曾是知名投資者朱利安·羅伯遜的門生。</li>
+                            <li>創立老虎亞洲管理對沖基金，一度資產超過50億美元。</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>⚠️ 2. 首次挫折與轉型</h4>
+                        <ul>
+                            <li>2012年，老虎亞洲管理因<span class="emphasis">「內幕交易」</span>調查而關閉，我被SEC處罰，並被香港禁止交易四年。</li>
+                            <li>在困難中，我開始更頻繁地閱讀聖經，並決定將投資作為<span class="blue-emphasis">「神聖指定」</span>的職分，以財富<span class="green-emphasis">「建立神的國度」</span>。</li>
+                            <li>2013年，我轉型成立了規管較少的<span class="purple-emphasis">「家族辦公室」</span>——Archegos Capital Management。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-layout">
+                    <div class="column">
+                        <h4>📈 3. Archegos的快速崛起與爭議行為</h4>
+                        <ul>
+                            <li>Archegos資產從2020年3月的15億美元，飆升至2021年初的350億美元以上。</li>
+                            <li>我對外宣稱以<span class="highlight">「神的視角」</span>投資，但我被指控在公司內部建立了一種<span class="emphasis">「邪教式文化」</span>，要求員工對我個人絕對忠誠。</li>
+                            <li>我被指設立<span class="blue-emphasis">「The Plan」</span>計畫，強制員工將年度獎金的至少25%投入其中，並以<span class="green-emphasis">「不貢獻，無獎金」</span>施壓，這實質上成為我的<span class="purple-emphasis">「無息貸款」</span>。</li>
+                            <li>我對質疑我投資決策的員工進行公開貶低，壓制異見。</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>💥 4. 魯莽的金融操作與最終隕落</h4>
+                        <ul>
+                            <li>Archegos嚴重依賴<span class="orange-emphasis">「大規模槓桿」</span>和<span class="emphasis">「風險衍生性金融商品」</span>（特別是「總收益互換」），進行<span class="blue-emphasis">「集中持股」</span>策略，對維亞康姆哥倫比亞廣播公司（ViacomCBS）和探索公司（Discovery）等少數幾支股票進行巨額押注。</li>
+                            <li>我的策略使Archegos的市場部位從100億美元飆升至1600億美元，遠超其披露的股東地位，並規避了監管。</li>
+                            <li>2021年3月下旬，隨著市場形勢惡化，我對這些公司的押注失利，股價暴跌。</li>
+                            <li>我未能滿足全球多家主要經紀商（包括瑞士信貸、野村、摩根士丹利、瑞銀等）發出的<span class="green-emphasis">「保證金追繳」</span>要求。</li>
+                            <li>這些銀行被迫<span class="purple-emphasis">「清算」（liquidate）</span>其持股作為抵押品，引發了市場上史無前例的<span class="highlight">「大拍賣」</span>，造成銀行總計超過100億美元的巨大損失，Credit Suisse一家就損失了55億美元。</li>
+                            <li>Archegos Capital Management最終崩潰倒閉。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-section">
+                    <h4>⚖️ 5. 法律後果與個人審判</h4>
+                    <ul>
+                        <li>Archegos前董事總經理布蘭登·沙利文（Brendan Sullivan）提起5.5億美元訴訟，指控我導致他及其他員工損失了應得的<span class="emphasis">「遞延報酬」（deferred compensation）</span>和<span class="blue-emphasis">「遣散費」（severance）</span>。</li>
+                        <li>2022年4月，我與我的前財務長帕特里克·哈利根（Patrick Halligan）被聯邦政府逮捕，並被指控犯有<span class="green-emphasis">「詐欺訴訟」</span>、<span class="purple-emphasis">「證券詐欺」</span>、<span class="orange-emphasis">「電匯詐欺」</span>和<span class="highlight">「勒索」</span>等罪名。</li>
+                        <li>我的律師辯稱我的投資策略是標準的<span class="emphasis">「價值投資」（value-investing）</span>，不構成<span class="blue-emphasis">「市場操縱」（market manipulation）</span>。</li>
+                        <li>我在2024年7月被判10項罪名成立，並於同年11月被判處18年監禁，我的個人淨資產也從峰值時的300億美元降至約5500萬美元。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 結論及範疇 -->
+            <section class="section" data-source-line="111" data-id="conclusion">
+                <h2 id="conclusion">🎯 結論及範疇</h2>
+                <div class="key-point">
+                    <p>我如何從一個深信上帝旨意的投資者，走向一場由信仰、野心與金融冒險交織而成的災難。我的核心論點是：<span class="highlight">在追求財富和影響力的過程中，我誤解了聖經中關於「榮耀神」的真正含義，落入了「榮耀神學」的陷阱，偏離了金融活動應當體現的「管家職分」、「公義」與「仁愛」的核心價值，最終導致了個人與企業的覆滅。</span></p>
+                </div>
+
+                <p>我的分析範圍涵蓋了我個人的信仰歷程、Archegos Capital Management的運營模式、其導致市場動盪的交易策略，以及隨後引發的法律與倫理後果。</p>
+
+                <p>我的案例是一個深刻的警示，它提醒所有在商業領域，特別是金融界的人，信仰不能成為脫離倫理和法律規範的藉口。真正的<span class="blue-emphasis">「榮耀神」</span>不是透過累積世俗的巨大成功和財富來實現，而是透過在每一個決策中忠實地履行<span class="green-emphasis">「管家職分」</span>、維護<span class="purple-emphasis">「公義」</span>和實踐<span class="orange-emphasis">「仁愛」</span>。</p>
+
+                <p>我的故事揭示了當<span class="emphasis">「貪婪」</span>與<span class="highlight">「謊言」</span>侵蝕了信仰的初衷時，即使是<span class="blue-emphasis">「神聖指定」</span>的職分，也可能導致毀滅性的後果。金融作為一種上帝所創造的資源分配工具，本應是促進繁榮與互助的渠道，卻在我手中被過度槓桿和不透明操作所扭曲，未能體現其應有的神聖目的。</p>
+            </section>
+
+            <!-- 基督核心論點卡 -->
+            <section class="section" data-source-line="117" data-id="core-arguments">
+                <h2 id="core-arguments">🎴 基督核心論點卡</h2>
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;background:#404040;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="779" height="416" viewBox="0 0 779 416"><style class="text-font-style fontImports" data-font-family="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;amp;display=block);</style><g id="items" style="isolation: isolate"><g id="blend" style="mix-blend-mode: normal"><g id="g-root-sy_0_cu_18mjso51w1p24p-fill" data-item-order="-127819" transform="translate(18.128005981445312, 66)"><g id="sy_0_cu_18mjso51w1p24p-fill-merged" stroke="none" fill="#e8e8e8" fill-opacity="1"><g><path d="M94.251 283C94.251 279.692 94.251 264.059 90.581 261C85.673 256.91 79.222 257.967 71.003 259.313C66.158 260.106 60.699 261 54.581 261C40.172 261 34.916 252.865 36.581 242.5C38.086 233.126 36.69 232.097 34.11 230.193C33.637 229.844 33.123 229.465 32.581 229C29.081 226 27.581 220 30.581 216.5C26.581 212 24.437 207.155 27.081 203C30.581 197.5 29.581 192 23.081 190.5C22.626 190.395 22.144 190.225 21.507 190C20.497 189.644 19.099 189.151 16.811 188.565C13.081 187.61 5.872 179.431 13.081 169.5C15.876 165.649 18.632 162.27 21.153 159.18C27.65 151.216 32.581 145.171 32.581 137.91C32.581 135.155 31.862 133.224 31.033 131C29.908 127.977 28.581 124.413 28.581 117.5C28.581 58.129 76.71 10 136.081 10C195.451 10 243.581 58.129 243.581 117.5C243.581 155.855 223.833 180.246 216.722 189.028L216.65 189.117C210.104 197.204 200.65 208.932 200.65 225.5 V283C200.65 287.226 195.05 301.554 145.666 301.554C96.283 301.554 94.251 286.308 94.251 283 M136 208C185.706 208 226 167.706 226 118C226 68.294 185.706 28 136 28C86.294 28 46 68.294 46 118C46 167.706 86.294 208 136 208"></path></g></g></g><g id="g-root-sy_3_cu_146qajp1w1p2wy-fill" data-item-order="-127815" transform="translate(255.55181884765625, 232.69677734375)"><g id="sy_3_cu_146qajp1w1p2wy-fill-merged" stroke="none" fill="#ffe711" fill-opacity="1"><g><path d="M151.687 48.046L174.576 61.516L151.466 74.603 V67.694C101.293 65.675 54.576 49.954 15.026 24.167L10 20.89L17.1 10L22.126 13.277C59.659 37.749 103.965 52.696 151.632 54.688 V48.046"></path></g></g></g><g id="g-root-sy_2_cu_vbprdx1w1p0jv-fill" data-item-order="-127811" transform="translate(270.12799072265625, 156.220947265625)"><g id="sy_2_cu_vbprdx1w1p0jv-fill-merged" stroke="none" fill="#43dd93" fill-opacity="1"><g><path d="M137 36.558L160 23.279L137 10 V16.779 H10 V29.779 H137 V36.558"></path></g></g></g><g id="g-root-sy_1_cu_i0990l1w1p24s-fill" data-item-order="-127807" transform="translate(255.55181884765625, 42.813232421875)"><g id="sy_1_cu_i0990l1w1p24s-fill-merged" stroke="none" fill="#4f91fc" fill-opacity="1"><g><path d="M151.687 36.557L174.576 23.087L151.466 10 V16.909C101.293 18.928 54.576 34.649 15.026 60.436L10 63.713L17.1 74.603L22.126 71.326C59.659 46.854 103.965 31.907 151.632 29.915 V36.557"></path></g></g></g><g id="g-root-ic_shee_1hckmat1w188p7-fill" data-item-order="0" transform="translate(432.1279602050781, 38)"></g><g id="g-root-tx__qn5p7p1w140zn-fill" data-item-order="0" transform="translate(480.1279602050781, 44)"><g id="tx__qn5p7p1w140zn-fill-merged" stroke="none" fill="#4f91fc" fill-opacity="1"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">榮耀神學</tspan></text></g></g></g><g id="g-root-tx__v2z7c51w1407e-fill" data-item-order="0" transform="translate(480.1279602050781, 80)"><g id="tx__v2z7c51w1407e-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 20px Roboto, sans-serif; white-space: pre;" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">避免偏離管家職分，專注於謙</tspan><tspan x="12" y="58" dominant-baseline="ideographic">卑和服務。</tspan></text></g></g></g><g id="g-root-tx__dkfqw51w1p2x1-fill" data-item-order="0" transform="translate(78.12799072265625, 122)"><g id="tx__dkfqw51w1p2x1-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="13.5" y="42" dominant-baseline="ideographic">我們應該如</tspan><tspan x="13.5" y="72" dominant-baseline="ideographic">何避免這些</tspan><tspan x="38.5" y="102" dominant-baseline="ideographic">陷阱？</tspan></text></g></g></g><g id="g-root-ic_2_4gonol1w187ib-fill" data-item-order="0" transform="translate(432.1279602050781, 152)"></g><g id="g-root-tx__18efpph1w13ymh-fill" data-item-order="0" transform="translate(480.1279602050781, 152)"><g id="tx__18efpph1w13ymh-fill-merged" stroke="none" fill="#43dd93" fill-opacity="1"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">邪教式文化</tspan></text></g></g></g><g id="g-root-tx__1hjfr391w1p3i8-fill" data-item-order="0" transform="translate(480.1279602050781, 188)"><g id="tx__1hjfr391w1p3i8-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 20px Roboto, sans-serif; white-space: pre;" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">優先考慮公義和仁愛，以建立</tspan><tspan x="12" y="58" dominant-baseline="ideographic">健康的企業文化。</tspan></text></g></g></g><g id="g-root-ic_plan_dcbnxh1w13zes-fill" data-item-order="0" transform="translate(432.1279602050781, 266)"></g><g id="g-root-tx__1lz997p1w1p2pz-fill" data-item-order="0" transform="translate(480.1279602050781, 260)"><g id="tx__1lz997p1w1p2pz-fill-merged" stroke="none" fill="#ffe711" fill-opacity="1"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">魯莽交易</tspan></text></g></g></g><g id="g-root-tx__9lplx1w1p1c6-fill" data-item-order="0" transform="translate(480.1279602050781, 296)"><g id="tx__9lplx1w1p1c6-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 20px Roboto, sans-serif; white-space: pre;" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">追求豐碩時保持誠實和智慧。</tspan></text></g></g></g><g id="g-root-sy_0_cu_18mjso51w1p24p-stroke" data-item-order="-127819" transform="translate(18.128005981445312, 66)"><g id="sy_0_cu_18mjso51w1p24p-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 94.251091 283.0001C 94.251091 279.6921 94.251091 264.0588 90.580691 261.0001C 85.673191 256.9105 79.221891 257.9669 71.002791 259.3128C 66.158191 260.1062 60.699491 261.0001 54.580591 261.0001C 40.172391 261.0001 34.916291 252.8652 36.580591 242.5C 38.085791 233.1262 36.690491 232.0968 34.110291 230.1933C 33.636791 229.8439 33.123391 229.4652 32.580691 229C 29.080691 226 27.580691 220 30.580691 216.5C 26.580691 212 24.436891 207.1545 27.080691 203C 30.580691 197.5 29.580691 192 23.080691 190.5C 22.626291 190.3951 22.143591 190.2249 21.506591 190.0003C 20.496691 189.6442 19.098891 189.1514 16.811191 188.5654C 13.080691 187.6097 5.871991 179.4306 13.080691 169.5C 15.876091 165.6491 18.632391 162.2701 21.152991 159.1801C 27.649591 151.2162 32.580691 145.1712 32.580691 137.9105C 32.580691 135.1548 31.861691 133.224 31.033391 130.9995C 29.907991 127.9771 28.580691 124.4125 28.580691 117.5C 28.580691 58.1294 76.710091 10 136.080691 10C 195.451291 10 243.580691 58.1294 243.580691 117.5C 243.580691 155.8549 223.832691 180.2462 216.722491 189.0282L 216.650291 189.1173C 210.103591 197.2037 200.650291 208.932 200.650291 225.5L 200.650291 283.0001C 200.650291 287.2262 195.049991 301.5538 145.666391 301.5538C 96.282791 301.5538 94.251091 286.308 94.251091 283.0001ZM 136.000091 208C 185.705691 208 226.000091 167.7056 226.000091 118C 226.000091 68.2944 185.705691 28 136.000091 28C 86.294491 28 46.000091 68.2944 46.000091 118C 46.000091 167.7056 86.294491 208 136.000091 208Z"></path></g></g></g><g id="g-root-sy_3_cu_146qajp1w1p2wy-stroke" data-item-order="-127815" transform="translate(255.55181884765625, 232.69677734375)"><g id="sy_3_cu_146qajp1w1p2wy-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 151.6874 48.0459L 174.5757 61.5164L 151.4657 74.6031L 151.5234 67.6944C 101.2928 65.675 54.5757 49.9538 15.026 24.1668L 10 20.8897L 17.1003 10L 22.1263 13.277C 59.6594 37.7492 103.9649 52.6957 151.6319 54.688L 151.6874 48.0459Z"></path></g></g></g><g id="g-root-sy_2_cu_vbprdx1w1p0jv-stroke" data-item-order="-127811" transform="translate(270.12799072265625, 156.220947265625)"><g id="sy_2_cu_vbprdx1w1p0jv-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 137 36.5581L 160 23.2791L 137 10L 137 16.7791L 10 16.7791L 10 29.7791L 137 29.7791L 137 36.5581Z"></path></g></g></g><g id="g-root-sy_1_cu_i0990l1w1p24s-stroke" data-item-order="-127807" transform="translate(255.55181884765625, 42.813232421875)"><g id="sy_1_cu_i0990l1w1p24s-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 151.6874 36.5572L 174.5757 23.0867L 151.4657 10L 151.5234 16.9086C 101.2928 18.9281 54.5757 34.6493 15.026 60.4363L 10 63.7133L 17.1003 74.6031L 22.1263 71.326C 59.6594 46.8539 103.9649 31.9074 151.6319 29.9151L 151.6874 36.5572Z"></path></g></g></g><g id="g-root-ic_shee_1hckmat1w188p7-stroke" data-item-order="0" transform="translate(432.1279602050781, 38)"><g id="ic_shee_1hckmat1w188p7-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 28 45.25C 34.917999 45.25 40 29.5 40 23.5C 40 17.5 35.686001 10.75 28 10.75C 20.313999 10.75 16 17.5 16 23.5C 16 29.5 21.082001 45.25 28 45.25ZM 23.584 25.375C 23.791107 25.375 23.959 25.542892 23.959 25.75M 23.209 25.75C 23.208599 25.650421 23.24798 25.554806 23.318392 25.484392C 23.388805 25.413979 23.484421 25.374599 23.584 25.375M 23.584 26.125C 23.484421 26.125401 23.388805 26.08602 23.318392 26.015608C 23.24798 25.945194 23.208599 25.849579 23.209 25.75M 23.959 25.75C 23.959 25.957108 23.791107 26.125 23.584 26.125M 33.334 25.375C 33.234421 25.374599 33.138805 25.413979 33.068394 25.484392C 32.997978 25.554806 32.958599 25.650421 32.959 25.75M 33.709 25.75C 33.709 25.542892 33.541107 25.375 33.334 25.375M 33.334 26.125C 33.541107 26.125 33.709 25.957108 33.709 25.75M 32.959 25.75C 32.958599 25.849579 32.997978 25.945194 33.068394 26.015608C 33.138805 26.08602 33.234421 26.125401 33.334 26.125M 28 40.75L 28 45.25M 25.75 38.5L 28 40.75L 30.25 38.5M 16 23.866001L 10.75 31.75C 11.388029 33.226685 12.896796 34.131943 14.5 34M 40 23.866001L 45.25 31.75C 44.611973 33.226685 43.103203 34.131943 41.5 34"></path></g></g></g><g id="g-root-tx__qn5p7p1w140zn-stroke" data-item-order="0" transform="translate(480.1279602050781, 44)"></g><g id="g-root-tx__v2z7c51w1407e-stroke" data-item-order="0" transform="translate(480.1279602050781, 80)"></g><g id="g-root-tx__dkfqw51w1p2x1-stroke" data-item-order="0" transform="translate(78.12799072265625, 122)"></g><g id="g-root-ic_2_4gonol1w187ib-stroke" data-item-order="0" transform="translate(432.1279602050781, 152)"><g id="ic_2_4gonol1w187ib-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 12.25 18.25L 43.75 18.25M 28 21.25L 28 12.25M 13 36.25L 17.5 18.25L 22 36.25M 24.25 37C 24.25 40.727921 21.227922 43.75 17.5 43.75C 13.772079 43.75 10.75 40.727921 10.75 37C 10.75 36.585785 11.085787 36.25 11.5 36.25L 23.5 36.25C 23.914213 36.25 24.25 36.585785 24.25 37ZM 43 36.25L 38.5 18.25L 34 36.25M 31.75 37C 31.75 40.727921 34.772079 43.75 38.5 43.75C 42.227921 43.75 45.25 40.727921 45.25 37C 45.25 36.585785 44.914215 36.25 44.5 36.25L 32.5 36.25C 32.085785 36.25 31.75 36.585785 31.75 37Z"></path></g></g></g><g id="g-root-tx__18efpph1w13ymh-stroke" data-item-order="0" transform="translate(480.1279602050781, 152)"></g><g id="g-root-tx__1hjfr391w1p3i8-stroke" data-item-order="0" transform="translate(480.1279602050781, 188)"></g><g id="g-root-ic_plan_dcbnxh1w13zes-stroke" data-item-order="0" transform="translate(432.1279602050781, 266)"><g id="ic_plan_dcbnxh1w13zes-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 12.1315 14.8405L 26.6005 14.8405C 26.6005 14.8405 27.616001 14.8405 27.616001 15.856L 27.616001 24.700001C 27.616001 24.700001 27.616001 25.7155 26.6005 25.7155L 12.1315 25.7155C 12.1315 25.7155 11.116 25.7155 11.116 24.700001L 11.116 15.856C 11.116 15.856 11.116 14.8405 12.1315 14.8405M 15.1105 14.8405L 16.627001 12.7405C 17.117346 12.02198 17.962296 11.63032 18.827499 11.7205L 20.2945 11.7205C 21.160103 11.630419 22.005447 12.021995 22.4965 12.7405L 24.013 14.8405M 11.116 19.3405L 17.527 19.3405M 21.240999 19.3405L 27.652 19.3405M 18.277 18.568001L 20.453499 18.568001C 20.453499 18.568001 21.203499 18.568001 21.203499 19.318001L 21.203499 21.2395C 21.203499 21.2395 21.203499 21.9895 20.453499 21.9895L 18.277 21.9895C 18.277 21.9895 17.527 21.9895 17.527 21.2395L 17.527 19.318001C 17.527 19.318001 17.527 18.568001 18.277 18.568001M 29.363501 33.4105L 43.8325 33.4105C 43.8325 33.4105 44.848 33.4105 44.848 34.426003L 44.848 43.27C 44.848 43.27 44.848 44.2855 43.8325 44.2855L 29.363501 44.2855C 29.363501 44.2855 28.348 44.2855 28.348 43.27L 28.348 34.426003C 28.348 34.426003 28.348 33.4105 29.363501 33.4105M 32.341 33.4105L 33.857498 31.310499C 34.349358 30.593082 35.194309 30.202263 36.059502 30.292L 37.526501 30.292C 38.39135 30.201832 39.236069 30.59281 39.727001 31.310499L 41.2435 33.4105M 28.348 37.9105L 34.759003 37.9105M 38.473 37.9105L 44.884003 37.9105M 35.509003 37.136497L 37.685501 37.136497C 37.685501 37.136497 38.435501 37.136497 38.435501 37.886497L 38.435501 39.807999C 38.435501 39.807999 38.435501 40.557999 37.685501 40.557999L 35.509003 40.557999C 35.509003 40.557999 34.759003 40.557999 34.759003 39.807999L 34.759003 37.886497C 34.759003 37.886497 34.759003 37.136497 35.509003 37.136497M 42.615997 22.450001C 42.615997 18.929184 39.761814 16.075001 36.240997 16.075001L 33.241001 16.075001M 36.240997 13.072001L 33.241001 16.072001L 36.240997 19.072001M 13.366 32.200001C 13.366 35.720818 16.220184 38.574997 19.740999 38.574997L 22.741001 38.574997M 19.740999 41.571999L 22.741001 38.571999L 19.740999 35.571999"></path></g></g></g><g id="g-root-tx__1lz997p1w1p2pz-stroke" data-item-order="0" transform="translate(480.1279602050781, 260)"></g><g id="g-root-tx__9lplx1w1p1c6-stroke" data-item-order="0" transform="translate(480.1279602050781, 296)"></g></g></g><path id="w4ju31h1wlleki" d="M65.283 12.757a.35.35 0 0 0 .584.157l5.203-5.141-6.183 3.523.396 1.461zm-2.216-11.7a.35.35 0 0 0-.522.305v3.111l3.276-1.868-2.754-1.548zm3.728 2.105l-4.25 2.421v2.445l6.391-3.644-2.141-1.222zm4.708 3.303a.35.35 0 0 0 0-.609l-1.592-.9-7.365 4.199v1.782a.35.35 0 0 0 .523.305l8.435-4.777z M44.542 2.513c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm59.171 0c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm-85.951 7.636h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.819 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zm72.662 2.86h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.82 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zM99.096 10.149H97.85v-8.45h1.246v4.895l2.68-2.559h1.738l-2.633 2.535 2.715 3.578h-1.556l-2.077-2.707-.867.844v1.863zm6.053-6.114h-1.255v6.113h1.255V4.035zm-59.2 0h-1.255v6.113h1.255V4.035zm5.584 6.113V1.697h1.255v2.695c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27v-3.68c0-.408-.214-1.339-1.315-1.339-.968 0-1.342.756-1.342 1.339v3.681h-1.255zm-4.76-4.894V4.039h.621a.45.45 0 0 0 .45-.45v-.855h1.251v1.305h1.309v1.215h-1.309v3.109c0 .293.105.664.648.664.365 0 .531-.035.736-.07v1.137s-.361.113-.857.113c-1.398 0-1.777-1.051-1.777-1.788V5.254h-1.071zM36.528 4.039h-1.394l2.191 6.106h1.125l1.234-3.918 1.238 3.918h1.129l2.188-6.106h-1.383l-1.359 3.93-1.256-3.93h-1.124l-1.242 3.957-1.348-3.957zM26.212 7.141c-.02 1.566 1.187 3.129 3.223 3.129 1.566 0 2.383-.918 2.734-1.719L31.172 8c-.315.399-.801 1.094-1.738 1.094-1.145 0-1.825-.781-1.891-1.52h4.625c.074-.284.148-.995-.03-1.559-.336-1.064-1.221-2.102-2.839-2.102s-3.088 1.152-3.088 3.227zm1.363-.75h3.348c-.055-.43-.566-1.301-1.623-1.301a1.79 1.79 0 0 0-1.725 1.301zm-8.758.75c.038 1.758 1.277 3.133 3.145 3.133 1.074 0 1.723-.477 1.961-.672v.547h1.242V1.703h-1.258v2.888c-.414-.36-1.062-.68-1.93-.68-1.91 0-3.198 1.473-3.16 3.23zm1.309-.08c0 1.119.723 1.978 1.836 1.978a1.88 1.88 0 0 0 1.94-1.904c0-1.371-1.011-1.99-1.972-1.99s-1.805.798-1.805 1.916zm76.683-.028C96.771 5.275 95.532 3.9 93.664 3.9c-1.074 0-1.723.477-1.961.672v-.547h-1.242v8.22h1.258V9.583c.414.36 1.063.68 1.93.68 1.91 0 3.198-1.473 3.16-3.23zm-1.309.08c0-1.119-.723-1.978-1.836-1.978a1.88 1.88 0 0 0-1.94 1.904c0 1.371 1.011 1.99 1.972 1.99S95.5 8.231 95.5 7.113zM106.441 10.173V4.036h1.254v.382c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27V6.492c0-.408-.214-1.339-1.315-1.339-.969 0-1.342.756-1.342 1.339v3.681h-1.254zm-30.383-.021V1.824h1.084l4.215 5.777V1.824h1.32v8.328h-1.094l-4.207-5.796v5.796h-1.319zM5.24 10.149H4V2.377h1.014l2.664 3.597 2.654-3.592h1.03v7.766h-1.256V4.762L7.678 8.068 5.24 4.742v5.407z" transform="translate(642.1279296875, 381.553955078125)" fill="#ababab88" stroke="none"></path></svg>                
-                <h1>🎴 核心論點卡</h1>
-                <p>以下是本分析報告的三大核心論點，每個論點都揭示了黃聖國如何從虔誠信徒走向金融災難：</p>
 
-                <div class="column-layout">
-                    <div class="card">
-                        <h3>🔥 論點一：偏離「管家職分」的「榮耀神學」陷阱</h3>
-                        <p><span class="blue-emphasis">定義：</span>將世俗成功誤解為神恩寵的直接證據，忽略了基督信仰中的謙卑與服務教導。</p>
-                        <p><span class="green-emphasis">表現：</span>黃聖國將投資視為「神聖召命」，公司命名為「Archegos」（耶穌的稱號），認為財務成功是神的認可。</p>
-                        <p><span class="purple-emphasis">後果：</span>過度自信導致高風險策略，最終偏離了聖經教導的「智慧」與「謹慎」原則。</p>
+                <div class="card">
+                    <h3>1. 偏離「管家職分」的「榮耀神學」陷阱</h3>
+                    <h4>定義</h4>
+                    <p><span class="purple-emphasis">「榮耀神學」</span>是指一種傾向於將世俗的成功、財富和權力視為上帝直接恩寵和祝福的標誌，而忽略了基督信仰中對苦難、謙卑和服務的<span class="blue-emphasis">「十字架神學」（Theology of the Cross）</span>教導。<span class="green-emphasis">「管家職分」</span>則是指人類受上帝委託，管理祂所創造的一切資源（包括時間、才能和財富），並為之負責任的態度，其目的是榮耀上帝、造福他人。</p>
+
+                    <h4>所用的方法/步驟</h4>
+                    <ul>
+                        <li>我曾深信投資是我的<span class="highlight">「神聖職分」</span>，並公開聲明<span class="emphasis">「我以神的視角投資，按照祂的時機」</span>以及<span class="blue-emphasis">「我試圖按照神的話語和聖靈的能力投資」</span>，認為這是一種<span class="green-emphasis">「無懼的投資方式」</span>。</li>
+                        <li>我捐贈數千萬美元給多個基督教事工和機構，包括富勒神學院、聖經博物館、國際正義使命、監獄團契和青年生命等，以此表達我<span class="purple-emphasis">「建立神的國度」</span>的意圖。</li>
+                        <li>然而，我將Archegos命名為<span class="orange-emphasis">「領路者」（Archegos）</span>，此詞在希臘新約中指耶穌基督，這可能反映出我將自己定位為某種<span class="emphasis">「神聖指定」（divinely appointed）</span>的領導者。</li>
+                        <li>這種心態可能導致我將我的金融成就視為神對我個人能力和信仰的直接<span class="blue-emphasis">「認可」（divine endorsement）</span>，使我的投資策略帶有過度的自信和冒險性，忽略了成功和失敗<span class="green-emphasis">「並不可靠地衡量神的恩寵」（notoriously unreliable gauges of divine favor）</span>。</li>
+                    </ul>
+
+                    <div class="example-section">
+                        <h4>範例</h4>
+                        <ul>
+                            <li>我認為成功就會被解釋為<span class="purple-emphasis">「神的認可」</span>，甚至世俗觀察者也會稱讚我的投資敏銳度和大膽。</li>
+                            <li>我的投資策略被指控為<span class="orange-emphasis">「高風險」（incredibly risky）</span>且<span class="emphasis">「有些可疑」（somewhat sketchy）</span>，這與聖經提倡的<span class="blue-emphasis">「智慧」（wise）</span>和<span class="green-emphasis">「謹慎」（prudent）</span>的「管家職分」形成對比。</li>
+                            <li>雖然我生活簡樸，開著現代休旅車，並熱衷於聖經閱讀和慈善捐贈，但在財務決策上，我所採用的<span class="highlight">「大規模槓桿」</span>和<span class="purple-emphasis">「集中持股」</span>顯示我對風險的態度已超越了聖經教導的<span class="emphasis">「謹慎冒險」</span>。</li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="card">
-                        <h3>⚖️ 論點二：漠視「公義」與「仁愛」的企業文化</h3>
-                        <p><span class="blue-emphasis">定義：</span>在企業內部建立控制性氛圍，要求員工絕對忠誠，並透過不公平手段剝奪員工權益。</p>
-                        <p><span class="green-emphasis">表現：</span>強制員工參與「The Plan」投資計畫，將25%年終獎金作為無息貸款；公開貶低質疑者。</p>
-                        <p><span class="purple-emphasis">後果：</span>員工損失數億美元應得報酬，違背聖經「公平對待工人」的教導。</p>
-                    </div>
+                <div class="card">
+                    <h3>2. 漠視「公義」與「仁愛」的「邪教式」企業文化與獎金操縱</h3>
+                    <h4>定義</h4>
+                    <p><span class="blue-emphasis">「公義」</span>是指以禮相待，尊重人作為人的權利，並確保公平的待遇，因為上帝愛所有人。<span class="green-emphasis">「仁愛」</span>則是指關心他人，以他人的福祉為目標，給予他人應有的尊重，即便對方是陌生人。<span class="purple-emphasis">「邪教式文化」</span>是指在企業內部建立一種高度控制的氛圍，要求員工對領導者表現出不容置疑的忠誠，並壓制異議。</p>
 
-                    <div class="card">
-                        <h3>💸 論點三：缺乏「誠實」與「智慧」的魯莽交易</h3>
-                        <p><span class="blue-emphasis">定義：</span>採用過度槓桿、集中持股和不透明手段，追求快速巨大回報而忽視風險。</p>
-                        <p><span class="green-emphasis">表現：</span>使用總收益互換規避披露，市場部位從100億飆升至1600億美元，集中押注少數股票。</p>
-                        <p><span class="purple-emphasis">後果：</span>引發全球金融震盪，銀行損失超過100億美元，被判證券詐欺等罪名。</p>
+                    <h4>所用的方法/步驟</h4>
+                    <ul>
+                        <li>我被指控在Archegos建立了一種<span class="emphasis">「邪教式文化」</span>，要求員工對我個人表現出<span class="orange-emphasis">「絕對忠誠」（unquestionable loyalty）</span>。</li>
+                        <li>我會舉辦<span class="highlight">「強制性年度週末靜修」</span>，員工在壓力下被迫公開表達對上帝、對我以及對公司的感謝。</li>
+                        <li>當員工透過電子郵件對我的投資決策提出質疑時，我會將質疑的郵件<span class="blue-emphasis">「抄送全公司郵件公開貶低」（publicly denigrated via company-wide emails）</span>，製造一種<span class="green-emphasis">「有毒文化」（toxic culture）</span>，壓制批評聲音。</li>
+                        <li>我設立了名為<span class="purple-emphasis">「The Plan」</span>的投資計畫，強制員工將其年度獎金的<span class="emphasis">「至少25%」（minimum of 25%）</span>投入其中，並在員工得知獎金數額之前就要求承諾參與。</li>
+                        <li>Archegos高階主管明確傳達<span class="orange-emphasis">「不貢獻，無獎金」（no contribution, no bonus）</span>的訊息，這對員工構成了巨大的壓力，使其無法自主處置其應得報酬。</li>
+                        <li><span class="highlight">「The Plan」</span>被指控實質上是我個人的<span class="blue-emphasis">「無息貸款」</span>，我得以利用員工的資金進行投資而無需支付利息。</li>
+                    </ul>
+
+                    <div class="example-section">
+                        <h4>範例</h4>
+                        <ul>
+                            <li>我的前董事總經理布蘭登·沙利文提起5.5億美元的訴訟，聲稱因此損失了5000萬美元的應得報酬，並代表其他員工追討總計5億美元的損失。</li>
+                            <li>儘管Archegos高階主管曾承諾支付<span class="green-emphasis">「遞延報酬」</span>，但所有員工至今未收到任何款項，也未獲得<span class="purple-emphasis">「遣散費」</span>。這與聖經中關於<span class="emphasis">「不可乘人之危謀利」</span>和<span class="orange-emphasis">「公平對待工人」</span>的教導相悖。</li>
+                            <li>這種對員工財務自主權的剝奪，以及對異議的壓制，明顯違反了<span class="highlight">「公義」</span>和<span class="blue-emphasis">「仁愛」</span>的原則，未能以尊重和關懷的態度對待同事。</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- 詳細分析 -->
-            <section class="section" data-source-line="160" data-id="detailed-analysis">
-                <h1>📝 詳細分析</h1>
+            <div class="card">
+                <h3>3. 追求「豐碩」卻缺乏「誠實」與「智慧」的魯莽交易</h3>
+                <h4>定義</h4>
+                <p>聖經教導金融應促進<span class="green-emphasis">「豐碩」（fruitfulness）</span>，使資源增長，造福社會。然而，這必須基於<span class="blue-emphasis">「誠實」（honesty）</span>、<span class="purple-emphasis">「智慧」（wisdom）</span>和<span class="orange-emphasis">「勤奮」（work hard）</span>的原則，避免<span class="emphasis">「貪婪」</span>與<span class="highlight">「謊言」</span>的罪。魯莽交易是指採用過度風險、缺乏透明度，甚至違反法律規範的策略，以求快速或巨大回報。</p>
 
-                <!-- 論點一詳述 -->
-                <div class="card">
-                    <h2>🔥 論點一：偏離「管家職分」的「榮耀神學」陷阱</h2>
+                <h4>所用的方法/步驟</h4>
+                <ul>
+                    <li>Archegos的交易策略嚴重依賴<span class="emphasis">「大規模槓桿」</span>，使用<span class="blue-emphasis">「風險衍生性金融商品」</span>（特別是「總收益互換」），以相對較少的自有資本控制巨大的市場部位。</li>
+                    <li>我的公司採取<span class="green-emphasis">「集中持股」</span>策略，將巨額資金押注在少數幾支股票上，如維亞康姆哥倫比亞廣播公司和探索公司，這使得投資組合極易受單一股票波動影響。</li>
+                    <li>透過<span class="purple-emphasis">「總收益互換」</span>，Archegos能夠規避某些<span class="orange-emphasis">「披露要求」</span>，保持其真實的市場風險和持股規模對公眾和監管機構隱藏。</li>
+                    <li>我被指控透過<span class="highlight">「泵和吹捧計劃」</span>人為地抬高其持股價格，讓投資者誤以為價格上漲是自然供需的結果。</li>
+                    <li>Archegos的業務夥伴也因我對證券投資組合的<span class="emphasis">「虛假和誤導性陳述」</span>而蒙受損失，這些陳述旨在獲取來自投資銀行和經紀商的信用。</li>
+                    <li>當我的押注失利時，Archegos無法滿足<span class="blue-emphasis">「保證金追繳」</span>，導致經紀商強制<span class="green-emphasis">「清算」</span>持股，引發市場<span class="purple-emphasis">「大拍賣」</span>，對全球銀行造成了超過100億美元的巨大損失。</li>
+                </ul>
 
-                    <h3>🙏 信仰初衷與神聖召命</h3>
-                    <p>黃聖國的信仰根基深厚，<span class="blue-emphasis">父親是牧師</span>，自幼在基督教氛圍中成長。他真誠地將投資視為<span class="highlight">上帝賜予的神聖召命</span>，公開表示：</p>
-
-                    <div class="key-point">
-                        <ul>
-                            <li>「我<span class="emphasis">以神的視角投資，按照祂的時機</span>」</li>
-                            <li>「我嘗試<span class="blue-emphasis">根據上帝的話語和聖靈的能力投資</span>」</li>
-                            <li>「我<span class="green-emphasis">喜歡上帝勝過金錢</span>」</li>
-                            <li>「這是一種<span class="purple-emphasis">無所畏懼的投資方式</span>」</li>
-                        </ul>
-                    </div>
-
-                    <h3>💰 慈善事業與建立神國</h3>
-                    <p>他確實將信仰付諸行動，透過<span class="emphasis">恩典與慈悲基金會</span>慷慨捐贈：</p>
-
-                    <div class="column-layout">
-                        <div class="column">
-                            <h4>🏛️ 支持機構</h4>
-                            <ul>
-                                <li><span class="blue-emphasis">富勒神學院</span> - 擔任受託人</li>
-                                <li><span class="green-emphasis">聖經博物館</span></li>
-                                <li><span class="purple-emphasis">國際正義使命</span></li>
-                                <li><span class="orange-emphasis">監獄團契</span></li>
-                                <li><span class="emphasis">青年生命</span></li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h4>💵 資金規模</h4>
-                            <ul>
-                                <li>基金會資產：<span class="highlight">超過5億美元</span></li>
-                                <li>個人捐贈：<span class="blue-emphasis">數千萬美元</span></li>
-                                <li>支持範圍：<span class="green-emphasis">美國與韓國教會</span></li>
-                                <li>定期活動：<span class="purple-emphasis">辦公室聖經閱讀</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>⚠️ 榮耀神學的危險陷阱</h3>
-                    <p>然而，<span class="emphasis">「榮耀神學」</span>的危險在於將世俗成功誤解為神恩寵的直接顯現：</p>
-
-                    <div class="key-point">
-                        <p><span class="highlight">關鍵問題</span>：黃聖國將公司命名為「Archegos」（希臘文「領路者」，耶穌的稱號），可能反映出他將自己視為某種「神聖指定」的領導者，並將巨大的財務成功解讀為上帝對他行動的明確「認可」。</p>
-                    </div>
-
-                    <p>當Archegos資產從<span class="blue-emphasis">15億美元飆升至350億美元</span>時，這種成功強化了他的自信，使他相信自己的投資決策具有超乎尋常的智慧。然而，聖經的真理提醒我們：<span class="emphasis">世俗的成功與失敗並不可靠地衡量神的恩寵</span>。</p>
-                </div>
-
-                <!-- 論點二詳述 -->
-                <div class="card">
-                    <h2>⚖️ 論點二：漠視「公義」與「仁愛」的企業文化</h2>
-
-                    <h3>👥 「邪教式」企業文化</h3>
-                    <p>儘管黃聖國口中談論信仰，但在Archegos內部，他被指控建立了一種<span class="emphasis">「邪教式文化」</span>：</p>
-
-                    <div class="column-layout">
-                        <div class="column">
-                            <h4>🎭 控制手段</h4>
-                            <ul>
-                                <li><span class="emphasis">強制性年度週末靜修</span> - 員工被迫公開表忠</li>
-                                <li><span class="blue-emphasis">公開貶低質疑者</span> - 全公司郵件羞辱</li>
-                                <li><span class="green-emphasis">絕對忠誠要求</span> - 不容置疑的服從</li>
-                                <li><span class="purple-emphasis">思想控制機制</span> - 壓制異議聲音</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h4>💔 違背聖經原則</h4>
-                            <ul>
-                                <li><span class="emphasis">缺乏謙卑</span> - 自視為神聖領導者</li>
-                                <li><span class="blue-emphasis">漠視尊嚴</span> - 公開羞辱員工</li>
-                                <li><span class="green-emphasis">壓制真理</span> - 拒絕接受質疑</li>
-                                <li><span class="purple-emphasis">濫用權威</span> - 超越合理管理範圍</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>💸 「The Plan」獎金操縱</h3>
-                    <p>最令人痛心的是<span class="emphasis">「The Plan」投資計畫</span>，這被指控為對員工權益的嚴重侵犯：</p>
-
-                    <div class="key-point">
-                        <h4>🚨 操作手法</h4>
-                        <ul>
-                            <li><span class="emphasis">強制參與</span>：員工必須將年終獎金的<span class="highlight">至少25%</span>投入</li>
-                            <li><span class="blue-emphasis">預先承諾</span>：在得知獎金數額前就要求承諾參與</li>
-                            <li><span class="green-emphasis">威脅施壓</span>：「不貢獻，無獎金」的明確訊息</li>
-                            <li><span class="purple-emphasis">無息貸款</span>：實質上成為黃聖國的個人資金來源</li>
-                        </ul>
-                    </div>
-
-                    <h3>💔 員工損失與法律後果</h3>
-                    <p>這種不公平安排導致了嚴重後果：</p>
+                <div class="example-section">
+                    <h4>範例</h4>
                     <ul>
-                        <li><span class="emphasis">布蘭登·沙利文</span>提起<span class="highlight">5.5億美元訴訟</span>，聲稱損失5000萬美元</li>
-                        <li><span class="blue-emphasis">員工集體損失</span>總計約<span class="highlight">5億美元</span>的應得報酬</li>
-                        <li><span class="green-emphasis">未獲遣散費</span>，所有承諾的遞延報酬都化為泡影</li>
-                        <li><span class="purple-emphasis">違背聖經教導</span>：「不可乘人之危」、「按時給付工資」</li>
+                        <li>我的公司曾利用瑞士信貸（Credit Suisse）、野村（Nomura）、高盛（Goldman Sachs）和摩根士丹利（Morgan Stanley）等銀行進行交易，這些銀行因我的策略而遭受了數十億美元的損失，其中瑞士信貸單一損失達55億美元，最終因此關閉了其主要經紀業務。</li>
+                        <li>前瑞銀風險經理布萊恩·費爾班克斯作證指出，我謊報了Archegos滿足保證金追繳的能力，導致瑞銀增加風險敞口。實際上，我的公司67%的資產集中在單一倉位。</li>
+                        <li>我因<span class="orange-emphasis">「證券詐欺」</span>、<span class="emphasis">「電匯詐欺」</span>和<span class="highlight">「勒索」</span>等罪名被聯邦政府起訴並定罪，這直接證明我的交易行為已超越了商業失敗的範疇，觸及了法律與倫理的底線。聖經強調<span class="blue-emphasis">「不可說謊」</span>、<span class="green-emphasis">「不可貪戀」</span>和<span class="purple-emphasis">「謹慎行事」</span>，我的行為明顯違背了這些教導。</li>
                     </ul>
                 </div>
+            </div>
 
-                <!-- 論點三詳述 -->
-                <div class="card">
-                    <h2>💸 論點三：缺乏「誠實」與「智慧」的魯莽交易</h2>
-
-                    <h3>📈 高風險交易策略</h3>
-                    <p>黃聖國的投資策略建立在三個危險基石之上，嚴重偏離了聖經教導的<span class="emphasis">「智慧」</span>與<span class="blue-emphasis">「謹慎」</span>原則：</p>
-
-                    <div class="column-layout">
-                        <div class="column">
-                            <h4>⚡ 大規模槓桿</h4>
-                            <ul>
-                                <li><span class="emphasis">借貸放大</span>：用少量自有資本控制巨大市場部位</li>
-                                <li><span class="blue-emphasis">風險倍增</span>：市場部位從100億飆升至1600億美元</li>
-                                <li><span class="green-emphasis">脆弱結構</span>：極易受市場波動影響</li>
-                                <li><span class="purple-emphasis">違背謹慎</span>：超越合理風險管理範圍</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h4>🎯 集中持股</h4>
-                            <ul>
-                                <li><span class="emphasis">少數押注</span>：巨額資金集中於幾支股票</li>
-                                <li><span class="blue-emphasis">主要標的</span>：ViacomCBS、Discovery等</li>
-                                <li><span class="green-emphasis">單點風險</span>：67%資產集中在單一倉位</li>
-                                <li><span class="purple-emphasis">缺乏分散</span>：違背風險管理基本原則</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>🕳️ 不透明操作與規避監管</h3>
-                    <p>更嚴重的是，Archegos透過<span class="emphasis">總收益互換</span>等金融工具規避監管：</p>
-
-                    <div class="key-point">
-                        <h4>🚨 違法行為指控</h4>
-                        <ul>
-                            <li><span class="emphasis">規避披露</span>：隱藏真實市場風險和持股規模</li>
-                            <li><span class="blue-emphasis">市場操縱</span>：透過「泵和吹捧」人為抬高股價</li>
-                            <li><span class="green-emphasis">虛假陳述</span>：向銀行提供誤導性信息獲取信用</li>
-                            <li><span class="purple-emphasis">謊報能力</span>：隱瞞無法滿足保證金追繳的事實</li>
-                        </ul>
-                    </div>
-
-                    <h3>💥 災難性後果</h3>
-                    <p>當策略失敗時，後果極其嚴重：</p>
-                    <ul>
-                        <li><span class="emphasis">全球震盪</span>：引發史無前例的市場「大拍賣」</li>
-                        <li><span class="blue-emphasis">銀行巨損</span>：瑞士信貸損失55億美元，最終關閉主要經紀業務</li>
-                        <li><span class="green-emphasis">總損失</span>：全球銀行損失<span class="highlight">超過100億美元</span></li>
-                        <li><span class="purple-emphasis">法律制裁</span>：被判證券詐欺、電匯詐欺、勒索等罪名</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- 反思與警示 -->
-            <section class="section" data-source-line="300" data-id="reflection">
-                <h1>💭 反思與警示</h1>
-
-                <div class="key-point">
-                    <p><span class="highlight">核心警示</span>：案例深刻提醒我們，<span class="emphasis">信仰不能成為脫離倫理和法律規範的藉口</span>。真正的「榮耀神」不是透過累積世俗的巨大成功來實現，而是透過在每一個決策中忠實履行「管家職分」、維護「公義」和實踐「仁愛」。</p>
-                </div>
-
-                <div class="column-layout">
-                    <div class="card">
-                        <h3>⛪ 對信仰群體的警示</h3>
-                        <ul>
-                            <li><span class="emphasis">警惕榮耀神學</span>：不要將世俗成功等同於神的祝福</li>
-                            <li><span class="blue-emphasis">擁抱十字架神學</span>：真正的榮耀在於謙卑與服務</li>
-                            <li><span class="green-emphasis">落實管家職分</span>：忠實管理神所託付的資源</li>
-                            <li><span class="purple-emphasis">持守聖經原則</span>：在商業決策中體現公義與仁愛</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3>🏦 對金融業的警示</h3>
-                        <ul>
-                            <li><span class="emphasis">加強監管</span>：特別是對家族辦公室等較少受規管實體</li>
-                            <li><span class="blue-emphasis">風險管理</span>：避免過度槓桿和集中持股</li>
-                            <li><span class="green-emphasis">透明度要求</span>：防止規避披露的不當行為</li>
-                            <li><span class="purple-emphasis">倫理教育</span>：強化金融從業人員的道德培訓</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3>👥 對員工權益的警示</h3>
-                        <ul>
-                            <li><span class="emphasis">保護機制</span>：建立員工權益保障制度</li>
-                            <li><span class="blue-emphasis">異議權利</span>：確保員工能安全表達不同意見</li>
-                            <li><span class="green-emphasis">財務自主</span>：禁止強制性投資計畫</li>
-                            <li><span class="purple-emphasis">法律救濟</span>：提供有效的維權途徑</li>
-                        </ul>
-                    </div>
-                </div>
+            <!-- 論點的反思 -->
+            <section class="section" data-source-line="168" data-id="detailed-reflection">
+                <h2 id="detailed-reflection">📝 論點的反思</h2>
 
                 <div class="card">
-                    <h3>📖 聖經金融倫理的重申</h3>
+                    <h3>1. 偏離「管家職分」的「榮耀神學」陷阱</h3>
+                    <p>回顧我的金融旅程，我深感痛心，因為我曾將我的投資才能視為上帝的恩賜，將金融成功看作是榮耀上帝的途徑。這種想法本身，若能持守謙卑與服務的心，本可造福社會。我確實公開表示，我<span class="emphasis">「以神的視角投資，按照祂的時機」</span>，並試圖<span class="blue-emphasis">「按照神的話語和聖靈的能力投資」</span>，認為這是一種<span class="green-emphasis">「無懼的投資方式」</span>。</p>
+
+                    <p>我真心相信我的財富累積能夠<span class="purple-emphasis">「建立神的國度」</span>，因此慷慨捐贈了數千萬美元給眾多基督教事工和教育機構，如富勒神學院、聖經博物館、國際正義使命等，希望我的財富能為信仰做出貢獻。然而，這份熱忱卻被一種隱藏的<span class="orange-emphasis">「榮耀神學」</span>所侵蝕。</p>
+
+                    <p><span class="highlight">「榮耀神學」</span>的危險在於，它傾向於將世俗的成功與財富，誤解為上帝恩寵和祝福的直接顯現。我被指控將我的公司命名為<span class="emphasis">「Archegos」</span>，這在希臘新約中意為「領路者」，也是指耶穌基督的一個稱號，這無形中可能助長了我將自己視為某種<span class="blue-emphasis">「神聖指定」</span>的領導者或工具的自負。</p>
+
+                    <p>這種心態使我深信自己的投資決策具有超乎尋常的智慧和洞察力，並將我的巨大成功——例如Archegos資產從15億美元飆升至350億美元——解讀為上帝對我行動的明確<span class="green-emphasis">「認可」</span>。然而，聖經的真理提醒我們，世俗的成功與失敗<span class="purple-emphasis">「並不可靠地衡量神的恩寵」</span>，這正是<span class="orange-emphasis">「十字架神學」</span>所強調的。真正的榮耀不在於外在的輝煌，而在於內心的謙卑、犧牲和對上帝旨意的忠實。</p>
+
+                    <p>我的投資策略，儘管以信仰為名，卻充滿了過度的<span class="emphasis">「高風險」</span>和<span class="highlight">「可疑」</span>之處，包括<span class="blue-emphasis">「大規模槓桿」</span>和<span class="green-emphasis">「集中持股」</span>。雖然我個人生活節儉，駕駛一輛現代休旅車，並定期在我的基金會辦公室主持聖經閱讀，致力於信仰生活，但這些外在的表現並未能有效約束我在金融決策上的冒險。</p>
+
+                    <p>真正的<span class="purple-emphasis">「管家職分」</span>要求我們在管理上帝所賜的資源時，必須具備<span class="orange-emphasis">「智慧」</span>、<span class="emphasis">「勤奮」</span>和<span class="highlight">「謹慎」</span>。我過度依賴<span class="blue-emphasis">「借來的錢」</span>來放大我的投資頭寸，並且將巨額資金集中投向少數幾支股票，這本身就是一種極其脆弱且不負責任的行為，遠離了聖經所教導的<span class="green-emphasis">「謹慎冒險」</span>和分散風險的原則。我的失敗正證明了，即使是出於良好動機，若缺乏敬畏和自省，對<span class="purple-emphasis">「榮耀神學」</span>的過度追求，最終只會帶來毀滅性的後果。</p>
+                </div>
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;background:#404040;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="568" height="408" viewBox="0 0 568 408"><style class="text-font-style fontImports" data-font-family="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;amp;display=block);</style><g id="items" style="isolation: isolate"><g id="blend" style="mix-blend-mode: normal"><g id="g-root-cp_1_g-1_1lz9vcl1uxfggf-fill" data-item-order="-162230" transform="translate(32, 164)"><g id="cp_1_g-1_1lz9vcl1uxfggf-fill-merged" stroke="none" fill="#43dd93" fill-opacity="1"><g><path d="M10 52C10 28.804 28.804 10 52 10 H100C116.827 10 131.342 19.895 138.045 34.184C133.829 34.577 129.821 35.581 126.06 37.128C120.892 28.09 111.157 22 100 22 H52C35.431 22 22 35.431 22 52C22 68.568 35.431 82 52 82C68.136 82 84.29 82.221 100.425 81.997C104.611 81.939 108.589 81.024 112.193 79.419C122.685 74.746 130 64.227 130 52C130 50.844 129.935 49.703 129.807 48.581C133.411 46.976 137.389 46.061 141.575 46.003C141.855 47.962 142 49.964 142 52C142 69.554 131.231 84.593 115.939 90.87C112.199 92.405 108.189 93.416 104 93.812C102.683 93.936 101.349 94 100 94 H52C28.804 94 10 75.196 10 52"></path></g></g></g><g id="g-root-cp_2_g-2_1hjgd851uxfh8o-fill" data-item-order="-162226" transform="translate(122, 188)"><g id="cp_2_g-2_1hjgd851uxfh8o-fill-merged" stroke="none" fill="#a6da37" fill-opacity="1"><g><path d="M52 82C40.842 82 31.107 75.909 25.939 66.87C22.199 68.405 18.189 69.416 14 69.812C20.655 84.103 35.172 94 52 94 H100C116.828 94 131.345 84.103 138.047 69.812C133.811 69.416 129.801 68.405 126.061 66.87C120.893 75.909 111.158 82 100 82 H52 M10.425 57.997C10.145 56.038 10 54.036 10 52C10 34.457 20.783 19.412 36.06 13.128C39.821 11.581 43.829 10.578 48.045 10.184C49.347 10.062 50.666 10 52 10 H100C101.334 10 102.653 10.062 103.955 10.184C108.171 10.578 112.179 11.581 115.94 13.128C131.217 19.412 142 34.457 142 52C142 54.036 141.855 56.038 141.575 57.997C137.389 57.939 133.411 57.024 129.807 55.419C129.935 54.297 130 53.156 130 52C130 39.773 122.685 29.254 112.193 24.581C108.589 22.976 104.611 22.061 100.425 22.003C92.287 21.89 84.143 21.905 76 21.938C67.857 21.905 59.713 21.89 51.575 22.003C47.389 22.061 43.411 22.976 39.807 24.581C29.315 29.254 22 39.773 22 52C22 53.156 22.065 54.297 22.193 55.419C18.589 57.024 14.611 57.939 10.425 57.997 M10.425 57.997C10.283 57.999 10.142 58 10 58 M141.575 57.997C141.717 57.999 141.858 58 142 58"></path></g></g></g><g id="g-root-cp_3_g-3_1cu9qt11uxgtfl-fill" data-item-order="-162222" transform="translate(212, 164)"><g id="cp_3_g-3_1cu9qt11uxgtfl-fill-merged" stroke="none" fill="#ffe711" fill-opacity="1"><g><path d="M100 22C111.158 22 120.893 28.091 126.061 37.13C129.801 35.595 133.811 34.584 138 34.188C131.345 19.897 116.828 10 100 10 H52C35.172 10 20.655 19.897 13.953 34.188C18.189 34.584 22.199 35.595 25.939 37.13C31.107 28.091 40.842 22 52 22 H100 M141.575 46.003C141.855 47.962 142 49.964 142 52C142 69.543 131.217 84.588 115.94 90.872C112.179 92.419 108.171 93.423 103.955 93.816C102.653 93.938 101.334 94 100 94 H52C50.666 94 49.347 93.938 48.045 93.816C43.829 93.423 39.821 92.419 36.06 90.872C20.783 84.588 10 69.543 10 52C10 49.964 10.145 47.962 10.425 46.003C14.611 46.061 18.589 46.976 22.193 48.581C22.065 49.703 22 50.844 22 52C22 64.227 29.315 74.746 39.807 79.419C43.411 81.024 47.389 81.939 51.575 81.997C59.713 82.11 67.857 82.095 76 82.062C84.143 82.095 92.287 82.11 100.425 81.997C104.611 81.939 108.589 81.024 112.193 79.419C122.685 74.746 130 64.227 130 52C130 50.844 129.935 49.703 129.807 48.581C133.411 46.976 137.389 46.061 141.575 46.003 M141.575 46.003C141.717 46.001 141.858 46 142 46 M10.425 46.003C10.283 46.001 10.142 46 10 46"></path></g></g></g><g id="g-root-cp_4_g-4_13ymqk51uxgu8a-fill" data-item-order="-162218" transform="translate(302, 188)"><g id="cp_4_g-4_13ymqk51uxgu8a-fill-merged" stroke="none" fill="#f79438" fill-opacity="1"><g><path d="M52 82C40.842 82 31.107 75.909 25.939 66.87C22.199 68.405 18.189 69.416 14 69.812C20.655 84.103 35.172 94 52 94 H100C116.828 94 131.345 84.103 138.047 69.812C133.811 69.416 129.801 68.405 126.061 66.87C120.893 75.909 111.158 82 100 82 H52 M10.425 57.997C10.145 56.038 10 54.036 10 52C10 34.457 20.783 19.412 36.06 13.128C39.821 11.581 43.829 10.578 48.045 10.184C49.347 10.062 50.666 10 52 10 H100C101.334 10 102.653 10.062 103.955 10.184C108.171 10.578 112.179 11.581 115.94 13.128C131.217 19.412 142 34.457 142 52C142 54.036 141.855 56.038 141.575 57.997C137.389 57.939 133.411 57.024 129.807 55.419C129.935 54.297 130 53.156 130 52C130 39.773 122.685 29.254 112.193 24.581C108.589 22.976 104.611 22.061 100.425 22.003C92.287 21.89 84.143 21.905 76 21.938C67.857 21.905 59.713 21.89 51.575 22.003C47.389 22.061 43.411 22.976 39.807 24.581C29.315 29.254 22 39.773 22 52C22 53.156 22.065 54.297 22.193 55.419C18.589 57.024 14.611 57.939 10.425 57.997 M10.425 57.997C10.283 57.999 10.142 58 10 58 M141.575 57.997C141.717 57.999 141.858 58 142 58"></path></g></g></g><g id="g-root-cp_5_g-5_zit8fp1uxgv0j-fill" data-item-order="-162214" transform="translate(392, 164)"><g id="cp_5_g-5_zit8fp1uxgv0j-fill-merged" stroke="none" fill="#fb6762" fill-opacity="1"><g><path d="M142 52C142 28.804 123.196 10 100 10 H52C35.173 10 20.658 19.895 13.955 34.184C18.171 34.577 22.179 35.581 25.94 37.128C31.108 28.09 40.843 22 52 22 H100C116.568 22 130 35.431 130 52C130 68.568 116.568 82 100 82C83.864 82 67.71 82.221 51.575 81.997C47.389 81.939 43.411 81.024 39.807 79.419C29.315 74.746 22 64.227 22 52C22 50.844 22.065 49.703 22.193 48.581C18.589 46.976 14.611 46.061 10.425 46.003C10.145 47.962 10 49.964 10 52C10 69.554 20.769 84.593 36.061 90.87C39.801 92.405 43.811 93.416 48 93.812C49.317 93.936 50.651 94 52 94 H100C123.196 94 142 75.196 142 52"></path></g></g></g><g id="g-root-tx__m7z75h1uxgtfo-fill" data-item-order="0" transform="translate(208, 38)"><g id="tx__m7z75h1uxgtfo-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="16" y="34" dominant-baseline="ideographic">聖經金融倫理</tspan></text></g></g></g><g id="g-root-tx__zs6j1x1uxjmrw-fill" data-item-order="0" transform="translate(80, 86)"><g id="tx__zs6j1x1uxjmrw-fill-merged" stroke="none" fill="#43dd93" fill-opacity="1"><g><text style="font: bold 11.7px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="11.7px" font-family="Roboto, sans-serif"><tspan x="16.3" y="29" dominant-baseline="ideographic">誠實</tspan></text></g></g></g><g id="g-root-tx__v48ut11uxl14w-fill" data-item-order="0" transform="translate(260, 86)"><g id="tx__v48ut11uxl14w-fill-merged" stroke="none" fill="#ffe711" fill-opacity="1"><g><text style="font: bold 11.7px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="11.7px" font-family="Roboto, sans-serif"><tspan x="16.3" y="29" dominant-baseline="ideographic">公義</tspan></text></g></g></g><g id="g-root-tx__qpoaut1uxl3bg-fill" data-item-order="0" transform="translate(440, 86)"><g id="tx__qpoaut1uxl3bg-fill-merged" stroke="none" fill="#fb6762" fill-opacity="1"><g><text style="font: bold 11.7px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="11.7px" font-family="Roboto, sans-serif"><tspan x="16.3" y="29" dominant-baseline="ideographic">謙卑</tspan></text></g></g></g><g id="g-root-tx__1q5qfhx1uxl3id-fill" data-item-order="0" transform="translate(38, 116)"><g id="tx__1q5qfhx1uxl3id-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 10px Roboto, sans-serif; white-space: pre;" font-size="10px" font-family="Roboto, sans-serif"><tspan x="15" y="21" dominant-baseline="ideographic">確保金融交易的透明度和</tspan><tspan x="50" y="33" dominant-baseline="ideographic">真實性。</tspan></text></g></g></g><g id="g-root-tx__hsscfp1uxl2pt-fill" data-item-order="0" transform="translate(224, 116)"><g id="tx__hsscfp1uxl2pt-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 10px Roboto, sans-serif; white-space: pre;" font-size="10px" font-family="Roboto, sans-serif"><tspan x="14" y="21" dominant-baseline="ideographic">促進公平和保護弱勢群</tspan><tspan x="54" y="33" dominant-baseline="ideographic">體。</tspan></text></g></g></g><g id="g-root-tx__deu9kl1uxl1ql-fill" data-item-order="0" transform="translate(398, 116)"><g id="tx__deu9kl1uxl1ql-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 10px Roboto, sans-serif; white-space: pre;" font-size="10px" font-family="Roboto, sans-serif"><tspan x="15" y="21" dominant-baseline="ideographic">提醒人們對神和自身局限</tspan><tspan x="50" y="33" dominant-baseline="ideographic">的敬畏。</tspan></text></g></g></g><g id="g-root-ic_1_408ad1uxfg99-fill" data-item-order="0" transform="translate(80, 188)"></g><g id="g-root-ic_scal_4lp2id1uxjmrn-fill" data-item-order="0" transform="translate(260, 188)"></g><g id="g-root-ic_pray_voj91uxgvt9-fill" data-item-order="0" transform="translate(440, 188)"></g><g id="g-root-ic_owl_140ic511ux9slj-fill" data-item-order="0" transform="translate(170, 212)"></g><g id="g-root-ic_1_18hkp9x1ux8f7k-fill" data-item-order="0" transform="translate(350, 212)"></g><g id="g-root-tx__1cuwe7p1uxl1xi-fill" data-item-order="0" transform="translate(170, 296)"><g id="tx__1cuwe7p1uxl1xi-fill-merged" stroke="none" fill="#a6da37" fill-opacity="1"><g><text style="font: bold 11.7px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="11.7px" font-family="Roboto, sans-serif"><tspan x="16.3" y="29" dominant-baseline="ideographic">智慧</tspan></text></g></g></g><g id="g-root-tx__8x5c6t1uxl3ii-fill" data-item-order="0" transform="translate(350, 296)"><g id="tx__8x5c6t1uxl3ii-fill-merged" stroke="none" fill="#f79438" fill-opacity="1"><g><text style="font: bold 11.7px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="11.7px" font-family="Roboto, sans-serif"><tspan x="16.3" y="29" dominant-baseline="ideographic">仁愛</tspan></text></g></g></g><g id="g-root-tx__zjfvud1uxl3if-fill" data-item-order="0" transform="translate(128, 326)"><g id="tx__zjfvud1uxl3if-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 10px Roboto, sans-serif; white-space: pre;" font-size="10px" font-family="Roboto, sans-serif"><tspan x="15" y="21" dominant-baseline="ideographic">鼓勵謹慎和戰略性風險管</tspan><tspan x="60" y="33" dominant-baseline="ideographic">理。</tspan></text></g></g></g><g id="g-root-tx__1unfcvp1uxl1qj-fill" data-item-order="0" transform="translate(314, 326)"><g id="tx__1unfcvp1uxl1qj-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 10px Roboto, sans-serif; white-space: pre;" font-size="10px" font-family="Roboto, sans-serif"><tspan x="14" y="21" dominant-baseline="ideographic">強調關心他人和社會福</tspan><tspan x="54" y="33" dominant-baseline="ideographic">祉。</tspan></text></g></g></g><g id="g-root-cp_1_g-1_1lz9vcl1uxfggf-stroke" data-item-order="-162230" transform="translate(32, 164)"><g id="cp_1_g-1_1lz9vcl1uxfggf-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 10 52C 10 28.804 28.804 10 52 10L 100 10C 116.8266 10 131.3421 19.8951 138.045 34.1838C 133.829 34.5775 129.8212 35.581 126.0602 37.128C 120.8915 28.0904 111.157 22 100 22L 52 22C 35.4315 22 22 35.4315 22 52C 22 68.5685 35.4315 82 52 82C 68.1364 82 84.2902 82.221 100.4249 81.9971C 104.6106 81.9389 108.589 81.0236 112.1927 79.4188C 122.6851 74.7459 130 64.2272 130 52C 130 50.844 129.9346 49.7032 129.8073 48.5813C 133.411 46.9764 137.3894 46.0611 141.5751 46.0029C 141.8551 47.9616 142 49.9639 142 52C 142 69.5541 131.2308 84.5929 115.9388 90.8701C 112.1992 92.4051 108.1892 93.4162 104 93.812C 102.6834 93.9364 101.3491 94 100 94L 52 94C 28.804 94 10 75.196 10 52Z"></path></g></g></g><g id="g-root-cp_2_g-2_1hjgd851uxfh8o-stroke" data-item-order="-162226" transform="translate(122, 188)"><g id="cp_2_g-2_1hjgd851uxfh8o-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 52 82C 40.8422 82 31.1071 75.9087 25.9388 66.8701C 22.1992 68.4051 18.1892 69.4162 14 69.812L 13.9531 69.812C 20.655 84.103 35.1717 94 52 94L 76 94L 100 94C 116.8283 94 131.345 84.103 138.047 69.812L 138 69.812C 133.8108 69.4162 129.8008 68.4051 126.0612 66.8701C 120.8929 75.9087 111.1578 82 100 82L 76 82L 52 82ZM 10.4249 57.9971C 10.1449 56.0384 10 54.0361 10 52C 10 34.4567 20.7831 19.4121 36.0602 13.128C 39.8212 11.581 43.829 10.5775 48.045 10.1838C 49.347 10.0622 50.6662 10 52 10L 76 10L 100 10C 101.3338 10 102.653 10.0622 103.955 10.1838C 108.171 10.5775 112.1788 11.581 115.9398 13.128C 131.2169 19.4121 142 34.4567 142 52C 142 54.0361 141.8551 56.0384 141.5751 57.9971C 137.3894 57.9389 133.411 57.0236 129.8073 55.4188C 129.9346 54.2968 130 53.156 130 52C 130 39.7728 122.6851 29.2541 112.1927 24.5813C 108.589 22.9764 104.6106 22.0611 100.4249 22.0029C 92.2868 21.89 84.1431 21.9048 76 21.9385C 67.8569 21.9048 59.7132 21.89 51.5751 22.0029C 47.3894 22.0611 43.411 22.9764 39.8073 24.5813C 29.3149 29.2541 22 39.7728 22 52C 22 53.156 22.0654 54.2968 22.1927 55.4188C 18.589 57.0236 14.6106 57.9389 10.4249 57.9971ZM 10.4249 57.9971C 10.2835 57.999 10.1419 58 10 58M 141.5751 57.9971C 141.7165 57.999 141.8581 58 142 58"></path></g></g></g><g id="g-root-cp_3_g-3_1cu9qt11uxgtfl-stroke" data-item-order="-162222" transform="translate(212, 164)"><g id="cp_3_g-3_1cu9qt11uxgtfl-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 100 22C 111.1578 22 120.8929 28.0913 126.0612 37.1299C 129.8008 35.5949 133.8108 34.5838 138 34.188L 138.047 34.188C 131.345 19.897 116.8283 10 100 10L 52 10C 35.1717 10 20.655 19.897 13.9531 34.188L 14 34.188C 18.1892 34.5838 22.1992 35.5949 25.9388 37.1299C 31.1072 28.0913 40.8422 22 52 22L 100 22ZM 141.5751 46.003C 141.8551 47.9616 142 49.9639 142 52C 142 69.5433 131.2169 84.5879 115.9398 90.872C 112.1788 92.419 108.171 93.4225 103.955 93.8162C 102.653 93.9378 101.3338 94 100 94L 52 94C 50.6662 94 49.347 93.9378 48.045 93.8162C 43.829 93.4225 39.8211 92.419 36.0602 90.872C 20.7831 84.5879 10 69.5433 10 52C 10 49.9639 10.1449 47.9616 10.4249 46.0029C 14.6106 46.0611 18.589 46.9764 22.1927 48.5812C 22.0654 49.7032 22 50.844 22 52C 22 64.2272 29.3149 74.7459 39.8073 79.4187C 43.411 81.0236 47.3894 81.9389 51.5751 81.997C 59.7132 82.11 67.8569 82.0952 76 82.0615C 84.1431 82.0952 92.2868 82.11 100.4249 81.9971C 104.6106 81.9389 108.589 81.0236 112.1927 79.4188C 122.6851 74.7459 130 64.2272 130 52C 130 50.844 129.9346 49.7032 129.8073 48.5813C 133.411 46.9764 137.3894 46.0611 141.5751 46.003ZM 141.5751 46.003C 141.7165 46.001 141.8581 46 142 46M 10.4249 46.0029C 10.2835 46.001 10.1419 46 10.000001 46"></path></g></g></g><g id="g-root-cp_4_g-4_13ymqk51uxgu8a-stroke" data-item-order="-162218" transform="translate(302, 188)"><g id="cp_4_g-4_13ymqk51uxgu8a-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 52 82C 40.8422 82 31.1071 75.9087 25.9388 66.8701C 22.1992 68.4051 18.1892 69.4162 14 69.812L 13.9531 69.812C 20.655 84.103 35.1717 94 52 94L 76 94L 100 94C 116.8283 94 131.345 84.103 138.047 69.812L 138 69.812C 133.8108 69.4162 129.8008 68.4051 126.0612 66.8701C 120.8929 75.9087 111.1578 82 100 82L 76 82L 52 82ZM 10.4249 57.9971C 10.1449 56.0384 10 54.0361 10 52C 10 34.4567 20.7831 19.4121 36.0602 13.128C 39.8212 11.581 43.829 10.5775 48.045 10.1838C 49.347 10.0622 50.6662 10 52 10L 76 10L 100 10C 101.3338 10 102.653 10.0622 103.955 10.1838C 108.171 10.5775 112.1788 11.581 115.9398 13.128C 131.2169 19.4121 142 34.4567 142 52C 142 54.0361 141.8551 56.0384 141.5751 57.9971C 137.3894 57.9389 133.411 57.0236 129.8073 55.4188C 129.9346 54.2968 130 53.156 130 52C 130 39.7728 122.6851 29.2541 112.1927 24.5813C 108.589 22.9764 104.6106 22.0611 100.4249 22.0029C 92.2868 21.89 84.1431 21.9048 76 21.9385C 67.8569 21.9048 59.7132 21.89 51.5751 22.0029C 47.3894 22.0611 43.411 22.9764 39.8073 24.5813C 29.3149 29.2541 22 39.7728 22 52C 22 53.156 22.0654 54.2968 22.1927 55.4188C 18.589 57.0236 14.6106 57.9389 10.4249 57.9971ZM 10.4249 57.9971C 10.2835 57.999 10.1419 58 10 58M 141.5751 57.9971C 141.7165 57.999 141.8581 58 142 58"></path></g></g></g><g id="g-root-cp_5_g-5_zit8fp1uxgv0j-stroke" data-item-order="-162214" transform="translate(392, 164)"><g id="cp_5_g-5_zit8fp1uxgv0j-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2" stroke-opacity="1"><g><path d="M 142 52C 142 28.804 123.196 10 100 10L 52 10C 35.1734 10 20.6579 19.8951 13.955 34.1838C 18.171 34.5775 22.1788 35.581 25.9398 37.128C 31.1085 28.0904 40.843 22 52 22L 100 22C 116.5685 22 130 35.4315 130 52C 130 68.5685 116.5685 82 100 82C 83.8636 82 67.7098 82.221 51.5751 81.9971C 47.3894 81.9389 43.411 81.0236 39.8073 79.4188C 29.3149 74.7459 22 64.2272 22 52C 22 50.844 22.0654 49.7032 22.1927 48.5813C 18.589 46.9764 14.6106 46.0611 10.4249 46.0029C 10.1449 47.9616 10 49.9639 10 52C 10 69.5541 20.7692 84.5929 36.0612 90.8701C 39.8008 92.4051 43.8108 93.4162 48 93.812C 49.3166 93.9364 50.6509 94 52 94L 100 94C 123.196 94 142 75.196 142 52Z"></path></g></g></g><g id="g-root-tx__m7z75h1uxgtfo-stroke" data-item-order="0" transform="translate(208, 38)"></g><g id="g-root-tx__zs6j1x1uxjmrw-stroke" data-item-order="0" transform="translate(80, 86)"></g><g id="g-root-tx__v48ut11uxl14w-stroke" data-item-order="0" transform="translate(260, 86)"></g><g id="g-root-tx__qpoaut1uxl3bg-stroke" data-item-order="0" transform="translate(440, 86)"></g><g id="g-root-tx__1q5qfhx1uxl3id-stroke" data-item-order="0" transform="translate(38, 116)"></g><g id="g-root-tx__hsscfp1uxl2pt-stroke" data-item-order="0" transform="translate(224, 116)"></g><g id="g-root-tx__deu9kl1uxl1ql-stroke" data-item-order="0" transform="translate(398, 116)"></g><g id="g-root-ic_1_408ad1uxfg99-stroke" data-item-order="0" transform="translate(80, 188)"><g id="ic_1_408ad1uxfg99-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 27.25 45.343002C 27.25 45.343002 24.219999 44.005001 22.101999 43.220497C 20.713001 42.704498 20.910999 40.3615 21.715 39.4795C 23.124735 38.097862 23.821089 36.144867 23.603498 34.182999C 23.723768 32.900612 23.288761 31.628159 22.408607 30.68778C 21.528454 29.747402 20.287533 29.229248 19 29.2645C 17.712467 29.229248 16.471546 29.747402 15.591393 30.68778C 14.711239 31.628159 14.276232 32.900612 14.3965 34.182999C 14.178911 36.144867 14.875263 38.097862 16.285 39.4795C 17.089001 40.3615 17.286999 42.704498 15.898 43.220497C 13.78 44.005001 10.75 45.343002 10.75 45.343002M 45.25 45.343002C 45.25 45.343002 42.220001 44.005001 40.102001 43.220497C 38.713001 42.704498 38.910999 40.3615 39.715 39.4795C 41.124737 38.097862 41.821087 36.144867 41.6035 34.182999C 41.719662 32.464119 40.868526 30.823694 39.396286 29.928955C 37.924042 29.034214 36.075958 29.034214 34.603714 29.928955C 33.131474 30.823694 32.280338 32.464119 32.3965 34.182999C 32.178909 36.144867 32.875263 38.097862 34.284996 39.4795C 35.089001 40.3615 35.286999 42.704498 33.897999 43.220497C 31.780001 44.005001 28.75 45.343002 28.75 45.343002M 31.75 10.843L 37.75 10.843C 38.578426 10.843 39.25 11.514573 39.25 12.343L 39.25 22.843C 39.25 23.671427 38.578426 24.343 37.75 24.343L 31.75 24.343L 27.25 28.843L 27.25 24.343L 16.75 24.343C 15.921573 24.343 15.25 23.671427 15.25 22.843L 15.25 12.343C 15.25 11.514573 15.921573 10.843 16.75 10.843L 22.75 10.843M 27.25 19.8445L 27.25 21.3445M 27.25 12.3445L 27.25 13.8445M 24.25 19.843L 28.75 19.843C 29.578428 19.843 30.25 19.171427 30.25 18.343C 30.25 17.514572 29.578428 16.843 28.75 16.843L 25.75 16.843C 24.921572 16.843 24.25 16.171427 24.25 15.343C 24.25 14.514573 24.921572 13.843 25.75 13.843L 30.25 13.843"></path></g></g></g><g id="g-root-ic_scal_4lp2id1uxjmrn-stroke" data-item-order="0" transform="translate(260, 188)"><g id="ic_scal_4lp2id1uxjmrn-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 35.171501 43.843002C 35.247723 44.071854 35.209221 44.323402 35.068039 44.518982C 34.926849 44.714561 34.700214 44.830299 34.459 44.829998L 21.541 44.829998C 21.299786 44.830299 21.073149 44.714561 20.931963 44.518982C 20.790777 44.323402 20.752275 44.071854 20.828499 43.843002L 21.526001 41.753502C 21.809294 40.903778 22.6043 40.330482 23.5 40.329998L 32.5 40.329998C 33.395699 40.330482 34.190704 40.903778 34.473999 41.753498ZM 31 40.329998L 25 40.329998L 25 38.829998C 25 37.173145 26.343145 35.829998 28 35.829998C 29.656855 35.829998 31 37.173145 31 38.829998ZM 10 10M 28 35.829998L 28 17.83M 30.25 15.58C 30.25 16.822641 29.242641 17.83 28 17.83C 26.75736 17.83 25.75 16.822641 25.75 15.58C 26.069292 14.171607 26.603552 12.820778 27.334002 11.575C 27.462873 11.326135 27.719746 11.169883 28 11.169883C 28.280254 11.169883 28.537127 11.326135 28.666 11.575C 29.397421 12.820304 29.931744 14.171288 30.25 15.58ZM 10 10M 14.5 20.83L 41.5 20.83M 10 10M 17.5 20.83L 17.5 28.33M 22.695999 28.33C 22.91482 28.32778 23.123692 28.42124 23.267853 28.585873C 23.412016 28.750507 23.477085 28.969891 23.445999 29.186501C 23.024672 32.143349 20.492718 34.340096 17.506001 34.340096C 14.519283 34.340096 11.987329 32.143349 11.566 29.186501C 11.534915 28.969891 11.599984 28.750507 11.744145 28.585873C 11.888308 28.42124 12.097181 28.32778 12.316 28.33ZM 10 10M 38.5 20.83L 38.5 28.33M 32.938 28.33C 32.821377 28.330612 32.710144 28.379181 32.630417 28.464298C 32.550686 28.549416 32.509491 28.663586 32.516499 28.779999C 32.743469 31.835308 35.235855 34.228867 38.297836 34.3321C 41.359825 34.435333 44.007763 32.21508 44.439999 29.181999C 44.471085 28.965389 44.406013 28.746006 44.261856 28.581373C 44.117691 28.41674 43.908817 28.32328 43.689999 28.3255Z"></path></g></g></g><g id="g-root-ic_pray_voj91uxgvt9-stroke" data-item-order="0" transform="translate(440, 188)"><g id="ic_pray_voj91uxgvt9-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 23.126501 15.625C 23.126501 17.696068 24.805431 19.375 26.876501 19.375C 28.947567 19.375 30.626501 17.696068 30.626501 15.625C 30.626501 13.553932 28.947567 11.875 26.876501 11.875C 24.805431 11.875 23.126501 13.553932 23.126501 15.625ZM 37.376499 44.125L 26.876501 44.125C 25.924904 44.125282 25.076027 43.52689 24.756481 42.630547C 24.436935 41.734207 24.71583 40.733761 25.452999 40.132004L 32.542 34.343498L 30.142 26.7145L 24.400002 30.700001C 23.51034 31.316259 22.397814 31.518105 21.348366 31.253658C 20.29892 30.989212 19.414892 30.284264 18.9235 29.32L 16.7215 25.8265C 16.058758 24.774811 16.374062 23.384993 17.425751 22.722252C 18.477438 22.059509 19.867258 22.374813 20.530001 23.4265L 22.490499 26.539L 30.099998 21.277C 30.687925 20.870523 31.434008 20.767569 32.110046 20.999622C 32.786087 21.23168 33.311653 21.771137 33.526001 22.452999L 37 33.507999C 37.441425 34.951946 36.973789 36.519791 35.813499 37.486L 33.193001 39.626499L 37.375 39.626499C 38.617641 39.626503 39.625 40.633858 39.625 41.876503C 39.625 43.119141 38.617641 44.126503 37.375 44.126503ZM 33.626499 39.625L 31.376501 39.625"></path></g></g></g><g id="g-root-ic_owl_140ic511ux9slj-stroke" data-item-order="0" transform="translate(170, 212)"><g id="ic_owl_140ic511ux9slj-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 10.75 32.5C 10.75 36.227921 13.772079 39.25 17.5 39.25C 21.227922 39.25 24.25 36.227921 24.25 32.5C 24.25 28.772079 21.227922 25.75 17.5 25.75C 13.772079 25.75 10.75 28.772079 10.75 32.5ZM 31.75 32.5C 31.75 36.227921 34.772079 39.25 38.5 39.25C 42.227921 39.25 45.25 36.227921 45.25 32.5C 45.25 28.772079 42.227921 25.75 38.5 25.75C 34.772079 25.75 31.75 28.772079 31.75 32.5ZM 28 45.25L 24.625 40.1875C 25.350063 39.042706 26.649124 38.393173 28 38.5C 29.350742 38.393856 30.649471 39.043221 31.375 40.1875ZM 24.25 22.75C 24.25 22.75 10.75 22.75 10.75 10.75ZM 31.75 22.75L 45.25 10.75C 45.25 22.75 31.75 22.75 31.75 22.75ZM 10.75 39.3745L 10.75 45.25M 14.926 19.75C 13.607732 21.278511 12.567959 23.026527 11.854 24.914499M 45.25 39.3745L 45.25 45.25M 41.073997 19.75C 42.392746 21.278725 43.432564 23.027323 44.146 24.916M 38.154999 17.049999C 32.10247 12.642159 23.897532 12.642159 17.844999 17.050001M 15.25 32.5C 15.25 33.742641 16.25736 34.75 17.5 34.75C 18.742641 34.75 19.75 33.742641 19.75 32.5C 19.75 31.25736 18.742641 30.25 17.5 30.25C 16.25736 30.25 15.25 31.25736 15.25 32.5ZM 36.25 32.5C 36.25 33.742641 37.257362 34.75 38.5 34.75C 39.742641 34.75 40.75 33.742641 40.75 32.5C 40.75 31.25736 39.742641 30.25 38.5 30.25C 37.257362 30.25 36.25 31.25736 36.25 32.5Z"></path></g></g></g><g id="g-root-ic_1_18hkp9x1ux8f7k-stroke" data-item-order="0" transform="translate(350, 212)"><g id="ic_1_18hkp9x1ux8f7k-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 28.299999 33.216999L 22.8715 27.559C 21.895367 26.582243 21.653688 25.090488 22.2715 23.855499L 22.2715 23.855501C 22.73267 22.932833 23.609316 22.288151 24.627495 22.122913C 25.645674 21.957674 26.681208 22.29203 27.4105 23.0215L 28.297001 23.9065L 29.181999 23.0215C 29.911291 22.29203 30.946823 21.957674 31.965004 22.122913C 32.983181 22.288151 33.859829 22.932833 34.320999 23.855499L 34.320999 23.855501C 34.939293 25.090416 34.697571 26.582468 33.721001 27.559ZM 29.411499 18.573999L 25.643499 14.8C 23.88608 13.042281 21.036421 13.042281 19.279001 14.8L 13.102 20.983C 11.328539 22.755953 10.558513 25.297943 11.05 27.757L 12.946 37.241501C 13.228189 38.650955 14.541449 39.610497 15.969999 39.450996L 15.97 39.451C 17.278585 39.306038 18.304409 38.260147 18.424 36.948997L 18.7495 33.367001L 27.235001 41.852501C 27.799919 42.437401 28.636477 42.671974 29.42314 42.466068C 30.209805 42.260155 30.824156 41.645805 31.030067 40.859142C 31.235975 40.072475 31.001402 39.235916 30.4165 38.671001L 33.068501 41.322998C 33.947506 42.201275 35.372025 42.200806 36.250462 41.32196C 37.128895 40.443111 37.128689 39.018593 36.25 38.139999L 34.658501 36.550003C 35.537518 37.428623 36.962318 37.428467 37.841145 36.549644C 38.719967 35.670822 38.720123 34.246017 37.841499 33.366997L 34.658501 30.185499C 35.537094 31.064188 36.961609 31.064394 37.840462 30.185961C 38.719307 29.307526 38.719772 27.883007 37.841499 27.004M 34.658501 36.550003L 31.837 33.7285M 31.476999 39.731499L 28.2055 36.459999M 29.820999 15.3415L 30.356501 14.806C 32.113922 13.048281 34.963581 13.048281 36.721001 14.806L 42.897999 20.983C 44.671463 22.755953 45.44149 25.297943 44.950001 27.757L 43.054001 37.241501C 42.771847 38.650322 41.459507 39.609661 40.031502 39.450996L 40.031502 39.451C 39.848312 39.430096 39.667511 39.391926 39.491501 39.337002"></path></g></g></g><g id="g-root-tx__1cuwe7p1uxl1xi-stroke" data-item-order="0" transform="translate(170, 296)"></g><g id="g-root-tx__8x5c6t1uxl3ii-stroke" data-item-order="0" transform="translate(350, 296)"></g><g id="g-root-tx__zjfvud1uxl3if-stroke" data-item-order="0" transform="translate(128, 326)"></g><g id="g-root-tx__1unfcvp1uxl1qj-stroke" data-item-order="0" transform="translate(314, 326)"></g></g></g><path id="w1cvj1md1wbnabs" d="M65.283 12.757a.35.35 0 0 0 .584.157l5.203-5.141-6.183 3.523.396 1.461zm-2.216-11.7a.35.35 0 0 0-.522.305v3.111l3.276-1.868-2.754-1.548zm3.728 2.105l-4.25 2.421v2.445l6.391-3.644-2.141-1.222zm4.708 3.303a.35.35 0 0 0 0-.609l-1.592-.9-7.365 4.199v1.782a.35.35 0 0 0 .523.305l8.435-4.777z M44.542 2.513c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm59.171 0c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm-85.951 7.636h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.819 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zm72.662 2.86h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.82 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zM99.096 10.149H97.85v-8.45h1.246v4.895l2.68-2.559h1.738l-2.633 2.535 2.715 3.578h-1.556l-2.077-2.707-.867.844v1.863zm6.053-6.114h-1.255v6.113h1.255V4.035zm-59.2 0h-1.255v6.113h1.255V4.035zm5.584 6.113V1.697h1.255v2.695c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27v-3.68c0-.408-.214-1.339-1.315-1.339-.968 0-1.342.756-1.342 1.339v3.681h-1.255zm-4.76-4.894V4.039h.621a.45.45 0 0 0 .45-.45v-.855h1.251v1.305h1.309v1.215h-1.309v3.109c0 .293.105.664.648.664.365 0 .531-.035.736-.07v1.137s-.361.113-.857.113c-1.398 0-1.777-1.051-1.777-1.788V5.254h-1.071zM36.528 4.039h-1.394l2.191 6.106h1.125l1.234-3.918 1.238 3.918h1.129l2.188-6.106h-1.383l-1.359 3.93-1.256-3.93h-1.124l-1.242 3.957-1.348-3.957zM26.212 7.141c-.02 1.566 1.187 3.129 3.223 3.129 1.566 0 2.383-.918 2.734-1.719L31.172 8c-.315.399-.801 1.094-1.738 1.094-1.145 0-1.825-.781-1.891-1.52h4.625c.074-.284.148-.995-.03-1.559-.336-1.064-1.221-2.102-2.839-2.102s-3.088 1.152-3.088 3.227zm1.363-.75h3.348c-.055-.43-.566-1.301-1.623-1.301a1.79 1.79 0 0 0-1.725 1.301zm-8.758.75c.038 1.758 1.277 3.133 3.145 3.133 1.074 0 1.723-.477 1.961-.672v.547h1.242V1.703h-1.258v2.888c-.414-.36-1.062-.68-1.93-.68-1.91 0-3.198 1.473-3.16 3.23zm1.309-.08c0 1.119.723 1.978 1.836 1.978a1.88 1.88 0 0 0 1.94-1.904c0-1.371-1.011-1.99-1.972-1.99s-1.805.798-1.805 1.916zm76.683-.028C96.771 5.275 95.532 3.9 93.664 3.9c-1.074 0-1.723.477-1.961.672v-.547h-1.242v8.22h1.258V9.583c.414.36 1.063.68 1.93.68 1.91 0 3.198-1.473 3.16-3.23zm-1.309.08c0-1.119-.723-1.978-1.836-1.978a1.88 1.88 0 0 0-1.94 1.904c0 1.371 1.011 1.99 1.972 1.99S95.5 8.231 95.5 7.113zM106.441 10.173V4.036h1.254v.382c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27V6.492c0-.408-.214-1.339-1.315-1.339-.969 0-1.342.756-1.342 1.339v3.681h-1.254zm-30.383-.021V1.824h1.084l4.215 5.777V1.824h1.32v8.328h-1.094l-4.207-5.796v5.796h-1.319zM5.24 10.149H4V2.377h1.014l2.664 3.597 2.654-3.592h1.03v7.766h-1.256V4.762L7.678 8.068 5.24 4.742v5.407z" transform="translate(432, 374)" fill="#ababab88" stroke="none"></path></svg>                    
-                    <p>黃聖國的失敗提醒我們，聖經中的金融倫理原則不可忽視：</p>
-                    <ol>
-                        <li><span class="emphasis">誠實</span>：「不可說謊」、「光明磊落」</li>
-                        <li><span class="blue-emphasis">智慧</span>：「謹慎行事」、「分散風險」</li>
-                        <li><span class="green-emphasis">公義</span>：「公平交易」、「保護弱者」</li>
-                        <li><span class="purple-emphasis">仁愛</span>：「關心他人」、「造福社會」</li>
-                        <li><span class="orange-emphasis">謙卑</span>：「敬畏神」、「承認有限」</li>
-                    </ol>
-                </div>
+				
             </section>
 
-            <!-- 結論 -->
-            <section class="section" data-source-line="350" data-id="conclusion">
-                <h1>🎯 結論</h1>
+            <div class="card">
+                <h3>2. 漠視「公義」與「仁愛」的「邪教式」企業文化與獎金操縱</h3>
+                <p>我現在以一位經歷風浪的老牧師心態反思，我曾被指控在Archegos Capital Management內部建立的<span class="emphasis">「企業文化」</span>令人不安。儘管我口中談論信仰，但在實際管理中，我被指控製造了一種<span class="purple-emphasis">「邪教式文化」</span>，要求員工對我個人表現出<span class="orange-emphasis">「絕對忠誠」</span>。這種忠誠，並非基於共同的使命或相互尊重，而是透過壓制異見和不公平的財務安排來維繫。</p>
 
-                <div class="key-point">
-                    <p>黃聖國的故事是一個<span class="highlight">深刻的悲劇</span>，它揭示了當<span class="emphasis">「貪婪」與「謊言」侵蝕信仰初衷</span>時，即使是「神聖指定」的職分，也可能導致毀滅性的後果。</p>
-                </div>
+                <p>具體而言，我被指控會組織<span class="highlight">「強制性年度週末靜修」</span>。在這些場合，員工們聲稱在巨大壓力下，被迫公開表達對上帝、對我以及對公司的感謝。這種公開表忠的行為，已超越了正常的團隊建設或信仰分享，更像是一種思想控制的機制，旨在強化我作為<span class="blue-emphasis">「神聖指定」</span>領導者的權威，並消除任何潛在的異議。</p>
 
-                <p>他從一個<span class="blue-emphasis">虔誠的牧師之子</span>，成長為<span class="green-emphasis">華爾街的投資高手</span>，再到<span class="purple-emphasis">慈善事業的大捐助者</span>，最終卻因為<span class="orange-emphasis">偏離聖經原則</span>而淪為<span class="emphasis">金融罪犯</span>。這個轉變過程警示我們：</p>
+                <p>當有員工透過電子郵件質疑我的投資決策時，我被指控會將這些質疑的郵件<span class="green-emphasis">「抄送全公司郵件公開貶低」</span>，這種行為直接營造了一種<span class="emphasis">「有毒文化」</span>，讓員工因懼怕被公開羞辱而不敢發聲，從而助長了我的決策權力和獨斷專行。</p>
 
-                <div class="column-layout">
-                    <div class="column">
-                        <h3>🔍 根本問題</h3>
-                        <ul>
-                            <li><span class="emphasis">榮耀神學陷阱</span>：將成功視為神恩寵的證據</li>
-                            <li><span class="blue-emphasis">權力腐蝕</span>：絕對權力導致絕對腐敗</li>
-                            <li><span class="green-emphasis">監管漏洞</span>：家族辦公室缺乏有效監督</li>
-                            <li><span class="purple-emphasis">道德盲點</span>：以信仰之名行不義之事</li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <h3>💡 深層教訓</h3>
-                        <ul>
-                            <li><span class="emphasis">信仰與行為一致</span>：言行必須相符</li>
-                            <li><span class="blue-emphasis">謙卑勝過成功</span>：內在品格比外在成就重要</li>
-                            <li><span class="green-emphasis">制度勝過個人</span>：需要系統性的制衡機制</li>
-                            <li><span class="purple-emphasis">長遠勝過短期</span>：可持續發展比快速致富重要</li>
-                        </ul>
-                    </div>
-                </div>
+                <p>更令人痛心的是，我被指控透過<span class="purple-emphasis">「The Plan」</span>這一獎金計畫，嚴重侵犯了員工的<span class="orange-emphasis">「公義」</span>權利，並缺乏<span class="highlight">「仁愛」</span>的關懷。華爾街的年度獎金是員工收入的重要組成部分，但在Archegos，我卻<span class="blue-emphasis">「強制」</span>員工將其年度獎金的<span class="green-emphasis">「至少25%」</span>投入到由我個人控制的「The Plan」中。更為惡劣的是，員工必須在得知他們實際獎金數額之前，就預先承諾參與此計畫。Archegos高階主管明確傳達<span class="emphasis">「不貢獻，無獎金」</span>的訊息，這讓員工幾乎沒有選擇餘地。</p>
 
-                <div class="card">
-                    <h3>🌟 救贖的可能</h3>
-                    <p>儘管黃聖國的故事以悲劇收場，但它也提醒我們<span class="highlight">救贖的可能性</span>。正如聖經所教導的，<span class="emphasis">真正的悔改</span>能帶來<span class="blue-emphasis">生命的更新</span>。他的案例可以成為：</p>
+                <p>這種安排，按照訴訟的指控，實質上成為了我個人的<span class="purple-emphasis">「無息貸款」</span>。我得以在不支付任何利息的情況下，利用員工的辛勤所得進行我的投資。這不僅剝奪了員工對其自身財富的自由處置權，也使他們的應得報酬暴露在巨大的風險之中。我的前董事總經理布蘭登·沙利文便聲稱因此損失了5000萬美元的應得報酬，並為其他員工追討總計5億美元的損失。</p>
+
+                <p>儘管Archegos高階主管曾承諾支付<span class="orange-emphasis">「遞延報酬」</span>，但員工們最終未收到任何款項，也未獲得<span class="highlight">「遣散費」</span>。這種行為，明顯違反了聖經中<span class="blue-emphasis">「不可乘人之危」</span>、<span class="green-emphasis">「按時給付工資」</span>和<span class="emphasis">「公平交易」</span>的教導，漠視了員工的基本權利和尊嚴，既無<span class="purple-emphasis">「公義」</span>可言，更遑論<span class="orange-emphasis">「仁愛」</span>的體現。</p>
+            </div>
+
+            <div class="card">
+                <h3>3. 追求「豐碩」卻缺乏「誠實」與「智慧」的魯莽交易</h3>
+                <p>我曾一度相信，我的投資策略能夠帶來巨大的<span class="green-emphasis">「豐碩」</span>，為神的國度創造更多資源。然而，如今我認識到，這種追求豐碩的方式卻嚴重缺乏聖經所強調的<span class="blue-emphasis">「誠實」</span>與<span class="purple-emphasis">「智慧」</span>。我被指控在Archegos Capital Management的交易中，採取了極度<span class="emphasis">「魯莽」</span>甚至被控<span class="orange-emphasis">「非法」</span>的手段，這最終導致了公司的毀滅和金融市場的動盪。</p>
+
+                <p>我的投資策略主要建立在三個危險的基石之上：首先是<span class="highlight">「大規模槓桿」</span>。我利用借來的巨額資金來放大我的投資頭寸，這意味著我用相對較少的自有資本，控制了巨大的市場份額。根據檢察官的指控，我的市場部位曾從100億美元飆升至1600億美元。雖然這在市場有利時能夠迅速累積財富，但風險也被成倍放大。</p>
+
+                <p>其次，我廣泛使用了<span class="blue-emphasis">「風險衍生性金融商品」</span>，特別是<span class="green-emphasis">「總收益互換」</span>。這種金融工具允許我獲得股票價格變動的收益或損失，而無需實際持有這些股票。這使得Archegos能夠在不實際擁有股票的情況下，對特定公司建立巨大的<span class="purple-emphasis">「集中持股」</span>，甚至超出了這些公司公開披露的股東規模。</p>
+
+                <p>更為關鍵的是，透過這種<span class="orange-emphasis">「總收益互換」</span>的安排，Archegos得以<span class="emphasis">「規避某些披露要求」</span>，將我真實的市場風險和持股規模對公眾和監管機構隱藏。這種<span class="highlight">「不透明」</span>的做法，與聖經中<span class="blue-emphasis">「誠實」</span>和<span class="green-emphasis">「光明磊落」</span>的教導背道而馳。</p>
+
+                <p>我被指控透過<span class="purple-emphasis">「泵和吹捧計劃」</span>人為地抬高其持股價格，讓投資者誤以為價格上漲是自然供需的結果，這直接構成<span class="orange-emphasis">「市場操縱」</span>，並涉及<span class="emphasis">「詐欺訴訟」</span>。同時，檢察官指控我的公司向合作銀行和經紀商提供了<span class="highlight">「虛假和誤導性陳述」</span>以獲取信用，這進一步暴露了我的不<span class="blue-emphasis">「誠實」</span>。</p>
+
+                <p>前瑞銀風險經理布萊恩·費爾班克斯的證詞便指出，我謊報了Archegos滿足<span class="green-emphasis">「保證金追繳」</span>的能力，導致瑞銀在不知情的情況下增加了風險敞口，最終蒙受巨額損失。</p>
+
+                <p>當我對維亞康姆哥倫比亞廣播公司（ViacomCBS）和探索公司（Discovery）等股票的巨額押注失利時，我的策略迅速導致了災難。由於無法滿足經紀商發出的<span class="purple-emphasis">「保證金追繳」</span>要求，這些銀行別無選擇，只能迅速<span class="orange-emphasis">「清算」</span>其作為抵押品的持股，這引發了市場上被稱為<span class="emphasis">「大拍賣」</span>的震盪。</p>
+
+                <p>這次事件給全球多家大型銀行造成了總計超過100億美元的損失，其中瑞士信貸單一損失就達55億美元，最終導致其關閉了主要經紀業務。我被判犯有<span class="highlight">「證券詐欺」</span>、<span class="blue-emphasis">「電匯詐欺」</span>和<span class="green-emphasis">「勒索」</span>等罪名，這不僅是商業上的失敗，更是對金融市場<span class="purple-emphasis">「誠信」</span>的嚴重破壞。聖經告誡我們<span class="orange-emphasis">「貪財是萬惡之根」</span>，我的案例深刻地提醒我們，若金融活動偏離了<span class="emphasis">「誠實」</span>與<span class="highlight">「智慧」</span>的基礎，即使以<span class="blue-emphasis">「神的視角」</span>為名，也終將走向毀滅。</p>
+            </div>
+
+            <!-- 投資召命與信仰之路 -->
+            <section class="section" data-source-line="200" data-id="investment-calling">
+                <h2 id="investment-calling">🙏 我的投資召命與信仰之路</h2>
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;background:#404040;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="408" viewBox="0 0 900 408"><style class="text-font-style fontImports" data-font-family="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;amp;display=block);</style><g id="items" style="isolation: isolate"><g id="blend" style="mix-blend-mode: normal"><g id="g-root-sy_4_cu_141qucm1vrjvgi-fill" data-item-order="-64506" transform="translate(478, 224)"><g id="sy_4_cu_141qucm1vrjvgi-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M81.469 86.464C81.815 87.751 82 89.104 82 90.5C82 99.06 75.06 106 66.5 106C63.433 106 60.575 105.109 58.169 103.573C56.496 104.481 54.561 105 52.5 105C49.212 105 46.247 103.68 44.151 101.565C43.147 101.849 42.09 102 41 102C34.373 102 29 96.404 29 89.5C29 88.374 29.143 87.283 29.411 86.246C27.315 84.326 26 81.566 26 78.5C26 74.9 27.812 71.723 30.574 69.831C29.569 67.943 29 65.788 29 63.5C29 56.044 35.044 50 42.5 50C43.036 50 43.566 50.031 44.086 50.092C47.713 47.518 52.175 46 57 46C62.757 46 67.997 48.161 71.919 51.698C73.024 51.248 74.233 51 75.5 51C80.747 51 85 55.253 85 60.5C85 62.899 84.111 65.09 82.644 66.762C84.733 69.227 86 72.46 86 76C86 80.162 84.249 83.899 81.469 86.464 M18 14C18 11.791 16.209 10 14 10C11.791 10 10 11.791 10 14C10 16.209 11.791 18 14 18C16.209 18 18 16.209 18 14"></path></g></g><g id="sy_4_cu_141qucm1vrjvgi-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M18 34C18 38.418 21.582 42 26 42C30.418 42 34 38.418 34 34C34 29.582 30.418 26 26 26C21.582 26 18 29.582 18 34"></path></g></g></g><g id="g-root-sy_3_cu_qqwt2e1vrjtvn-fill" data-item-order="-64502" transform="translate(338, 224)"><g id="sy_3_cu_qqwt2e1vrjtvn-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M28.274 49.699C27.102 49.247 25.83 49 24.5 49C18.701 49 14 53.701 14 59.5C14 60.412 14.116 61.297 14.335 62.141C11.636 65.308 10 69.457 10 74C10 79.69 12.567 84.764 16.576 88.063C16.203 89.14 16 90.296 16 91.5C16 97.299 20.701 102 26.5 102C27.29 102 28.06 101.913 28.8 101.747C31.354 104.365 34.979 106 39 106C43.501 106 47.507 103.951 50.068 100.768C51.652 102.158 53.728 103 56 103C60.971 103 65 98.971 65 94C65 93.139 64.879 92.307 64.654 91.519C67.982 87.645 70 82.563 70 77C70 72.663 68.773 68.618 66.656 65.211C66.881 64.176 67 63.102 67 62C67 53.716 60.284 47 52 47C50.211 47 48.495 47.313 46.904 47.888C44.542 46.682 41.853 46 39 46C34.933 46 31.199 47.386 28.274 49.699 M86 14C86 11.791 84.209 10 82 10C79.791 10 78 11.791 78 14C78 16.209 79.791 18 82 18C84.209 18 86 16.209 86 14"></path></g></g><g id="sy_3_cu_qqwt2e1vrjtvn-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M62 34C62 38.418 65.582 42 70 42C74.418 42 78 38.418 78 34C78 29.582 74.418 26 70 26C65.582 26 62 29.582 62 34"></path></g></g></g><g id="g-root-sy_2_cu_hv9sti1vrjuoc-fill" data-item-order="-64498" transform="translate(510, 128)"><g id="sy_2_cu_hv9sti1vrjuoc-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M83 70C87.95 70 92.519 68.402 96.194 65.706C97.782 66.533 99.586 67 101.5 67C107.851 67 113 61.851 113 55.5C113 52.514 111.862 49.794 109.996 47.75C112.435 45.827 114 42.846 114 39.5C114 37.08 113.182 34.852 111.806 33.076C111.934 32.237 112 31.376 112 30.5C112 21.387 104.837 14 96 14C95.009 14 94.04 14.093 93.099 14.271C90.011 11.613 85.95 10 81.5 10C76.933 10 72.774 11.7 69.658 14.483C68.661 14.169 67.6 14 66.5 14C60.701 14 56 18.701 56 24.5C56 27.072 56.925 29.428 58.46 31.254C56.915 33.417 56 36.098 56 39C56 41.302 56.575 43.464 57.584 45.339C55.359 47.746 54 50.964 54 54.5C54 61.956 60.044 68 67.5 68C69.122 68 70.677 67.714 72.118 67.19C75.327 68.978 79.041 70 83 70 M18 40C18 37.791 16.209 36 14 36C11.791 36 10 37.791 10 40C10 42.209 11.791 44 14 44C16.209 44 18 42.209 18 40"></path></g></g><g id="sy_2_cu_hv9sti1vrjuoc-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M28 40C28 44.418 31.582 48 36 48C40.418 48 44 44.418 44 40C44 35.582 40.418 32 36 32C31.582 32 28 35.582 28 40"></path></g></g></g><g id="g-root-sy_1_cu_4kfrja1vrjt3h-fill" data-item-order="-64494" transform="translate(278, 128)"><g id="sy_1_cu_4kfrja1vrjt3h-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M20.598 19C20.565 19 20.533 19 20.5 19C14.701 19 10 23.701 10 29.5C10 32.574 11.321 35.339 13.426 37.259C13.148 38.459 13 39.712 13 41C13 41.745 13.049 42.478 13.145 43.196C11.788 45.301 11 47.809 11 50.5C11 57.956 17.044 64 24.5 64C24.847 64 25.19 63.987 25.53 63.961C29.172 67.682 34.308 70 40 70C45.641 70 50.737 67.723 54.373 64.059C55.621 64.662 57.021 65 58.5 65C63.747 65 68 60.747 68 55.5C68 52.629 66.726 50.055 64.712 48.313C67.948 45.469 70 41.232 70 36.5C70 32.425 68.478 28.717 65.99 25.95C65.996 25.801 66 25.651 66 25.5C66 20.253 61.747 16 56.5 16C55.921 16 55.353 16.052 54.802 16.151C50.681 12.338 45.12 10 39 10C31.475 10 24.794 13.535 20.598 19 M114 40C114 37.791 112.209 36 110 36C107.791 36 106 37.791 106 40C106 42.209 107.791 44 110 44C112.209 44 114 42.209 114 40"></path></g></g><g id="sy_1_cu_4kfrja1vrjt3h-fill-merged" stroke="none" fill="#545454" fill-opacity="1"><g><path d="M80 40C80 44.418 83.582 48 88 48C92.418 48 96 44.418 96 40C96 35.582 92.418 32 88 32C83.582 32 80 35.582 80 40"></path></g></g></g><g id="g-root-tx__1cwrjty1vrjvv1-fill" data-item-order="0" transform="translate(278, 38)"><g id="tx__1cwrjty1vrjvv1-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15.5" y="39" dominant-baseline="ideographic">我們應該專注於哪個行動以從</tspan><tspan x="78" y="69" dominant-baseline="ideographic">金融失敗中學習？</tspan></text></g></g></g><g id="g-root-ic_face_4m9eu1vrjtvq-fill" data-item-order="0" transform="translate(410, 122)"></g><g id="g-root-tx__ddl1ra1vrjv9f-fill" data-item-order="0" transform="translate(182, 146)"><g id="tx__ddl1ra1vrjv9f-fill-merged" stroke="none" fill="#ffe711" fill-opacity="1"><g><text style="font: 20px Roboto, sans-serif; white-space: pre;" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">警示他人</tspan></text></g></g></g><g id="g-root-ic_mone_2r0h21vrjtok-fill" data-item-order="0" transform="translate(290, 140)"></g><g id="g-root-ic_scal_1ut1d0m1vr8kjn-fill" data-item-order="0" transform="translate(566, 140)"></g><g id="g-root-tx__dikug61vr8ljd-fill" data-item-order="0" transform="translate(626, 146)"><g id="tx__dikug61vr8ljd-fill-merged" stroke="none" fill="#4f91fc" fill-opacity="1"><g><text style="font: 20px Roboto, sans-serif; white-space: pre;" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">推動改革</tspan></text></g></g></g><g id="g-root-tx__qp1k4m1vrjtoi-fill" data-item-order="0" transform="translate(14, 182)"><g id="tx__qp1k4m1vrjtoi-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="20" y="28" dominant-baseline="ideographic">避免他人犯同樣的錯誤並促進集體學</tspan><tspan x="230" y="46" dominant-baseline="ideographic">習。</tspan></text></g></g></g><g id="g-root-tx__18kow861vr8kr1-fill" data-item-order="0" transform="translate(626, 182)"><g id="tx__18kow861vr8kr1-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="31" dominant-baseline="ideographic">改善金融監管以防止未來的失敗。</tspan></text></g></g></g><g id="g-root-tx__zlxfdy1vrfls5-fill" data-item-order="0" transform="translate(242, 278)"><g id="tx__zlxfdy1vrfls5-fill-merged" stroke="none" fill="#43dd93" fill-opacity="1"><g><text style="font: 20px Roboto, sans-serif; white-space: pre;" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">深化反思</tspan></text></g></g></g><g id="g-root-ic_1_detwrq1vrfo5q-fill" data-item-order="0" transform="translate(350, 272)"></g><g id="g-root-ic_1_1upwwfa1vr8kcv-fill" data-item-order="0" transform="translate(506, 272)"></g><g id="g-root-tx__8zmvqe1vr8m4u-fill" data-item-order="0" transform="translate(566, 278)"><g id="tx__8zmvqe1vr8m4u-fill-merged" stroke="none" fill="#fb6762" fill-opacity="1"><g><text style="font: 20px Roboto, sans-serif; white-space: pre;" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">見證恩典</tspan></text></g></g></g><g id="g-root-tx__1q87z1i1vrfls4-fill" data-item-order="0" transform="translate(62, 314)"><g id="tx__1q87z1i1vrfls4-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="17" y="28" dominant-baseline="ideographic">重新評估信仰與商業之間的關係以獲得</tspan><tspan x="197" y="46" dominant-baseline="ideographic">道德見解。</tspan></text></g></g></g><g id="g-root-tx__mb3e3q1vr8kjx-fill" data-item-order="0" transform="translate(566, 314)"><g id="tx__mb3e3q1vr8kjx-fill-merged" stroke="none" fill="#f4f4f4" fill-opacity="1"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="28" dominant-baseline="ideographic">認識到即使在失敗中也能體驗到神的慈</tspan><tspan x="12" y="46" dominant-baseline="ideographic">愛。</tspan></text></g></g></g><g id="g-root-sy_4_cu_141qucm1vrjvgi-stroke" data-item-order="-64506" transform="translate(478, 224)"><g id="sy_4_cu_141qucm1vrjvgi-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 81.4692 86.4636C 81.8154 87.7506 82 89.1037 82 90.5C 82 99.0604 75.0604 106 66.5 106C 63.4334 106 60.5749 105.1095 58.1688 103.5729C 56.4958 104.4813 54.5612 105 52.5 105C 49.2123 105 46.2468 103.6804 44.1509 101.5646C 43.1468 101.8485 42.0904 102 41 102C 34.3726 102 29 96.4036 29 89.5C 29 88.3742 29.1429 87.2832 29.4107 86.2456C 27.3145 84.3259 26 81.5665 26 78.5C 26 74.8998 27.8119 71.7228 30.5736 69.8312C 29.5692 67.9429 29 65.7879 29 63.5C 29 56.0442 35.0442 50 42.5 50C 43.0365 50 43.5656 50.0313 44.0858 50.0922C 47.7125 47.5181 52.1748 46 57 46C 62.757 46 67.9975 48.161 71.9185 51.6983C 73.0238 51.2481 74.2329 51 75.5 51C 80.7467 51 85 55.2533 85 60.5C 85 62.8989 84.1108 65.0901 82.6441 66.7621C 84.7332 69.2273 86 72.4602 86 76C 86 80.1617 84.249 83.8993 81.4692 86.4636ZM 18 14C 18 11.7909 16.2091 10 14 10C 11.7909 10 10 11.7909 10 14C 10 16.2091 11.7909 18 14 18C 16.2091 18 18 16.2091 18 14Z"></path></g></g><g id="sy_4_cu_141qucm1vrjvgi-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 18 34C 18 38.418278 21.581722 42 26 42C 30.418278 42 34 38.418278 34 34C 34 29.581722 30.418278 26 26 26C 21.581722 26 18 29.581722 18 34"></path></g></g></g><g id="g-root-sy_3_cu_qqwt2e1vrjtvn-stroke" data-item-order="-64502" transform="translate(338, 224)"><g id="sy_3_cu_qqwt2e1vrjtvn-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 28.2735 49.6985C 27.1024 49.2473 25.8301 49 24.5 49C 18.701 49 14 53.701 14 59.5C 14 60.4121 14.1163 61.297 14.3349 62.1407C 11.6359 65.3079 10 69.4575 10 74C 10 79.6905 12.5673 84.7643 16.5755 88.0628C 16.2026 89.1397 16 90.2962 16 91.5C 16 97.299 20.701 102 26.5 102C 27.2901 102 28.0599 101.9127 28.8001 101.7473C 31.3536 104.3652 34.9788 106 39 106C 43.5014 106 47.5067 103.9514 50.0677 100.7683C 51.6517 102.1577 53.7275 103 56 103C 60.9706 103 65 98.9706 65 94C 65 93.1394 64.8792 92.3069 64.6536 91.5188C 67.9818 87.6447 70 82.5635 70 77C 70 72.6626 68.7733 68.6183 66.6556 65.2107C 66.8812 64.1763 67 63.102 67 62C 67 53.7157 60.2843 47 52 47C 50.2108 47 48.4947 47.3133 46.9037 47.8879C 44.5425 46.6823 41.8533 46 39 46C 34.9329 46 31.1993 47.3862 28.2735 49.6985ZM 86 14C 86 11.7909 84.2091 10 82 10C 79.7909 10 78 11.7909 78 14C 78 16.2091 79.7909 18 82 18C 84.2091 18 86 16.2091 86 14Z"></path></g></g><g id="sy_3_cu_qqwt2e1vrjtvn-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 62 34C 62 38.418278 65.581722 42 70 42C 74.418278 42 78 38.418278 78 34C 78 29.581722 74.418278 26 70 26C 65.581722 26 62 29.581722 62 34"></path></g></g></g><g id="g-root-sy_2_cu_hv9sti1vrjuoc-stroke" data-item-order="-64498" transform="translate(510, 128)"><g id="sy_2_cu_hv9sti1vrjuoc-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 83 70C 87.9502 70 92.5185 68.4023 96.1944 65.7057C 97.7818 66.5326 99.5863 67 101.5 67C 107.8513 67 113 61.8513 113 55.5C 113 52.5141 111.8621 49.794 109.9962 47.7498C 112.4346 45.827 114 42.8463 114 39.5C 114 37.0802 113.1815 34.8516 111.8062 33.076C 111.9338 32.2366 112 31.3763 112 30.5C 112 21.3873 104.8366 14 96 14C 95.0095 14 94.04 14.0928 93.0993 14.2705C 90.0114 11.6132 85.9496 10 81.5 10C 76.9328 10 72.7743 11.6996 69.658 14.4832C 68.6613 14.1693 67.6004 14 66.5 14C 60.701 14 56 18.701 56 24.5C 56 27.0722 56.9249 29.4283 58.4602 31.2541C 56.9145 33.4174 56 36.0976 56 39C 56 41.3016 56.5751 43.4636 57.5841 45.3388C 55.3594 47.7456 54 50.9641 54 54.5C 54 61.9558 60.0442 68 67.5 68C 69.1219 68 70.677 67.714 72.1175 67.1897C 75.3267 68.9782 79.0413 70 83 70ZM 18 40C 18 37.7909 16.2091 36 14 36C 11.7909 36 10 37.7909 10 40C 10 42.2091 11.7909 44 14 44C 16.2091 44 18 42.2091 18 40Z"></path></g></g><g id="sy_2_cu_hv9sti1vrjuoc-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 28 40C 28 44.418278 31.581722 48 36 48C 40.418278 48 44 44.418278 44 40C 44 35.581722 40.418278 32 36 32C 31.581722 32 28 35.581722 28 40"></path></g></g></g><g id="g-root-sy_1_cu_4kfrja1vrjt3h-stroke" data-item-order="-64494" transform="translate(278, 128)"><g id="sy_1_cu_4kfrja1vrjt3h-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 20.598 19.0005C 20.5653 19.0002 20.5327 19 20.5 19C 14.701 19 10 23.701 10 29.5C 10 32.5738 11.3208 35.3392 13.4259 37.2594C 13.1475 38.4594 13 39.7119 13 41C 13 41.7449 13.0493 42.4779 13.1448 43.1957C 11.7875 45.3013 11 47.8087 11 50.5C 11 57.9558 17.0442 64 24.5 64C 24.8465 64 25.19 63.9869 25.5299 63.9613C 29.172 67.6819 34.3084 70 40 70C 45.6415 70 50.7374 67.7226 54.3734 64.0594C 55.6214 64.6621 57.0212 65 58.5 65C 63.7467 65 68 60.7467 68 55.5C 68 52.6285 66.726 50.0545 64.7124 48.3125C 67.9476 45.4694 70 41.2324 70 36.5C 70 32.4248 68.4781 28.717 65.9895 25.9503C 65.9965 25.801 66 25.6509 66 25.5C 66 20.2533 61.7467 16 56.5 16C 55.9205 16 55.3531 16.0519 54.8022 16.1513C 50.6815 12.3382 45.1199 10 39 10C 31.475 10 24.7941 13.5352 20.598 19.0005ZM 114 40C 114 37.7909 112.2091 36 110 36C 107.7909 36 106 37.7909 106 40C 106 42.2091 107.7909 44 110 44C 112.2091 44 114 42.2091 114 40Z"></path></g></g><g id="sy_1_cu_4kfrja1vrjt3h-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ababab" stroke-width="2" stroke-opacity="1"><g><path d="M 80 40C 80 44.418278 83.581722 48 88 48C 92.418278 48 96 44.418278 96 40C 96 35.581722 92.418278 32 88 32C 83.581722 32 80 35.581722 80 40"></path></g></g></g><g id="g-root-tx__1cwrjty1vrjvv1-stroke" data-item-order="0" transform="translate(278, 38)"></g><g id="g-root-ic_face_4m9eu1vrjtvq-stroke" data-item-order="0" transform="translate(410, 122)"><g id="ic_face_4m9eu1vrjtvq-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-opacity="1"><g><path d="M 46.599998 39.681999C 43.599998 36.681999 37.599998 35.181999 34.599998 38.181999M 16.9 45.681999C 16.6 44.482002 16.6 43.281998 16.6 41.781998C 16.6 25.581999 29.799999 12.382 46 12.382C 62.199997 12.382 75.399994 25.581999 75.399994 41.781998C 75.399994 52.582001 69.699997 61.882004 61 66.981995M 40.449997 77.800003C 46.449997 75.399994 45.324997 70.111 44.125 65.311005L 53.677002 61.612C 55.891281 60.755096 57.049278 58.316589 56.314003 56.059002L 56.313999 56.058998C 55.93375 54.891376 55.08989 53.931606 53.980541 53.405022C 52.871193 52.878433 51.594067 52.831413 50.449001 53.275002L 32.875 60.084999C 31.375 60.685001 29.575001 59.485001 29.575001 57.985001L 29.458 55.144001C 29.410076 53.986492 28.88414 52.900726 28.005583 52.145561C 27.127028 51.390404 25.974579 51.03352 24.823002 51.160004L 24.823 51.16C 22.704519 51.393932 21.100885 53.183647 21.1 55.315002L 21.1 67.584999C 21.1 75.385002 28.299999 81.084999 35.800003 79.284996C 35.800003 79.284996 38.949997 78.399994 40.449997 77.800003ZM 31.825001 27.681999C 31.20368 27.681999 30.700001 27.178322 30.700001 26.556999C 30.700001 25.93568 31.20368 25.431999 31.825001 25.431999M 31.825001 27.681999C 32.44632 27.681999 32.950001 27.178322 32.950001 26.556999C 32.950001 25.93568 32.44632 25.431999 31.825001 25.431999M 47.800003 27.681999C 47.17868 27.681999 46.675003 27.178322 46.675003 26.556999C 46.675003 25.93568 47.17868 25.431999 47.800003 25.431999M 47.800003 27.681999C 48.421322 27.681999 48.925003 27.178322 48.925003 26.556999C 48.925003 25.93568 48.421322 25.431999 47.800003 25.431999"></path></g></g></g><g id="g-root-tx__ddl1ra1vrjv9f-stroke" data-item-order="0" transform="translate(182, 146)"></g><g id="g-root-ic_mone_2r0h21vrjtok-stroke" data-item-order="0" transform="translate(290, 140)"><g id="ic_mone_2r0h21vrjtok-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#ffe711" stroke-width="2" stroke-opacity="1"><g><path d="M 38.5 31.75L 35.4505 31.75C 34.485104 31.74888 33.654839 32.433281 33.471714 33.381149C 33.288586 34.329018 33.804161 35.273434 34.7005 35.632L 37.796501 36.869499C 38.690758 37.229313 39.204437 38.172573 39.021519 39.118992C 38.8386 40.065407 38.010433 40.749325 37.046501 40.75L 34 40.75M 10 10M 36.25 42.25L 36.25 40.751499M 27.25 36.25C 27.250002 41.220566 31.279438 45.25 36.25 45.25C 41.220566 45.25 45.25 41.220566 45.25 36.25C 45.25 31.279438 41.220566 27.250002 36.25 27.250002C 31.279438 27.250002 27.250002 31.279438 27.250002 36.25ZM 10 10M 36.25 31.751501L 36.25 30.25M 23.5 34.75L 10.75 34.75C 10.770237 33.036259 11.126994 31.343193 11.8 29.767C 12.535 28.2955 15.6085 27.275501 19.466499 25.8475C 20.509001 25.460501 20.338001 22.737999 19.875999 22.2295C 18.385429 20.617722 17.654102 18.446115 17.865999 16.261C 17.732338 14.870908 18.182484 13.487801 19.108715 12.442661C 20.034946 11.397521 21.35392 10.784393 22.75 10.75C 24.14608 10.784393 25.465054 11.397521 26.391285 12.442661C 27.317516 13.487801 27.767662 14.870908 27.634001 16.261C 27.847502 18.445225 27.118399 20.616711 25.630001 22.2295C 25.168001 22.737999 24.997 25.460501 26.039499 25.8475C 26.720501 26.099499 27.375999 26.338001 28 26.570499"></path></g></g></g><g id="g-root-ic_scal_1ut1d0m1vr8kjn-stroke" data-item-order="0" transform="translate(566, 140)"><g id="ic_scal_1ut1d0m1vr8kjn-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#4f91fc" stroke-width="2" stroke-opacity="1"><g><path d="M 35.171501 43.843002C 35.247723 44.071854 35.209221 44.323402 35.068039 44.518982C 34.926849 44.714561 34.700214 44.830299 34.459 44.829998L 21.541 44.829998C 21.299786 44.830299 21.073149 44.714561 20.931963 44.518982C 20.790777 44.323402 20.752275 44.071854 20.828499 43.843002L 21.526001 41.753502C 21.809294 40.903778 22.6043 40.330482 23.5 40.329998L 32.5 40.329998C 33.395699 40.330482 34.190704 40.903778 34.473999 41.753498ZM 31 40.329998L 25 40.329998L 25 38.829998C 25 37.173145 26.343145 35.829998 28 35.829998C 29.656855 35.829998 31 37.173145 31 38.829998ZM 10 10M 28 35.829998L 28 17.83M 30.25 15.58C 30.25 16.822641 29.242641 17.83 28 17.83C 26.75736 17.83 25.75 16.822641 25.75 15.58C 26.069292 14.171607 26.603552 12.820778 27.334002 11.575C 27.462873 11.326135 27.719746 11.169883 28 11.169883C 28.280254 11.169883 28.537127 11.326135 28.666 11.575C 29.397421 12.820304 29.931744 14.171288 30.25 15.58ZM 10 10M 14.5 20.83L 41.5 20.83M 10 10M 17.5 20.83L 17.5 28.33M 22.695999 28.33C 22.91482 28.32778 23.123692 28.42124 23.267853 28.585873C 23.412016 28.750507 23.477085 28.969891 23.445999 29.186501C 23.024672 32.143349 20.492718 34.340096 17.506001 34.340096C 14.519283 34.340096 11.987329 32.143349 11.566 29.186501C 11.534915 28.969891 11.599984 28.750507 11.744145 28.585873C 11.888308 28.42124 12.097181 28.32778 12.316 28.33ZM 10 10M 38.5 20.83L 38.5 28.33M 32.938 28.33C 32.821377 28.330612 32.710144 28.379181 32.630417 28.464298C 32.550686 28.549416 32.509491 28.663586 32.516499 28.779999C 32.743469 31.835308 35.235855 34.228867 38.297836 34.3321C 41.359825 34.435333 44.007763 32.21508 44.439999 29.181999C 44.471085 28.965389 44.406013 28.746006 44.261856 28.581373C 44.117691 28.41674 43.908817 28.32328 43.689999 28.3255Z"></path></g></g></g><g id="g-root-tx__dikug61vr8ljd-stroke" data-item-order="0" transform="translate(626, 146)"></g><g id="g-root-tx__qp1k4m1vrjtoi-stroke" data-item-order="0" transform="translate(14, 182)"></g><g id="g-root-tx__18kow861vr8kr1-stroke" data-item-order="0" transform="translate(626, 182)"></g><g id="g-root-tx__zlxfdy1vrfls5-stroke" data-item-order="0" transform="translate(242, 278)"></g><g id="g-root-ic_1_detwrq1vrfo5q-stroke" data-item-order="0" transform="translate(350, 272)"><g id="ic_1_detwrq1vrfo5q-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#43dd93" stroke-width="2" stroke-opacity="1"><g><path d="M 40.074997 34.824997L 40.074997 40.074997M 35.574997 36.51955L 35.574997 42.625C 35.574997 42.625 32.424999 44.875 28.075001 44.875C 23.725029 44.875 20.575031 42.625 20.575031 42.625L 20.575031 36.51955M 10 10M 16.075031 34.824997L 28.075001 39.324997L 40.074997 34.824997L 28.075001 30.325001L 16.075031 34.824997ZM 15.625 23.875C 14.725 23.875 14.125 23.275002 14.125 22.375L 14.125 17.875C 14.125 16.975 14.725 16.375 15.625 16.375L 17.875 16.375C 18.775 16.375 19.375 16.975 19.375 17.875L 19.375 22.375C 19.375 23.275002 18.775 23.875 17.875 23.875L 15.625 23.875ZM 16.825031 23.875L 16.825031 26.875M 38.125 19.825001C 37.224998 19.825001 36.625 19.225 36.625 18.325001L 36.625 12.625C 36.625 11.725 37.224998 11.125 38.125 11.125L 40.375 11.125C 41.275002 11.125 41.875 11.725 41.875 12.625L 41.875 18.325001C 41.875 19.225 41.275002 19.825001 40.375 19.825001L 38.125 19.825001ZM 10 10M 39.324997 19.825001L 39.324997 23.275015M 29.125 13.825C 30.025002 13.825 30.625 14.425 30.625 15.325L 30.625 19.825001C 30.625 20.725 30.025002 21.325001 29.125 21.325001L 26.875 21.325001C 25.974998 21.325001 25.375 20.725 25.375 19.825001L 25.375 15.325C 25.375 14.425 25.974998 13.825 26.875 13.825L 29.125 13.825ZM 28.075001 11.275009L 28.075001 13.825M 28.075001 21.325001L 28.075001 24.775015"></path></g></g></g><g id="g-root-ic_1_1upwwfa1vr8kcv-stroke" data-item-order="0" transform="translate(506, 272)"><g id="ic_1_1upwwfa1vr8kcv-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#fb6762" stroke-width="2" stroke-opacity="1"><g><path d="M 28.327 37.184498C 28.185541 37.332115 27.989952 37.415581 27.7855 37.415581C 27.581049 37.415581 27.385458 37.332115 27.243999 37.184498L 21.5755 31.273001C 20.457764 30.15465 20.181036 28.446548 20.8885 27.032499L 20.8885 27.032499C 21.416449 25.976311 22.419922 25.238287 23.585438 25.048988C 24.750956 24.859688 25.93642 25.242188 26.7715 26.077L 27.7855 27.091L 28.7995 26.077C 29.634579 25.242188 30.820044 24.859688 31.985561 25.048988C 33.151077 25.238287 34.154549 25.976311 34.682499 27.032499L 34.682499 27.032499C 35.391109 28.44561 35.116215 30.153591 34 31.272999ZM 41.810501 16.75C 42.091827 17.031239 42.249916 17.412708 42.25 17.810499L 42.25 43.75C 42.25 44.578426 41.578426 45.25 40.75 45.25L 15.25 45.25C 14.421573 45.25 13.75 44.578426 13.75 43.75L 13.75 12.25C 13.75 11.421573 14.421573 10.75 15.25 10.75L 35.189499 10.75C 35.587292 10.750085 35.968761 10.908176 36.25 11.1895Z"></path></g></g></g><g id="g-root-tx__8zmvqe1vr8m4u-stroke" data-item-order="0" transform="translate(566, 278)"></g><g id="g-root-tx__1q87z1i1vrfls4-stroke" data-item-order="0" transform="translate(62, 314)"></g><g id="g-root-tx__mb3e3q1vr8kjx-stroke" data-item-order="0" transform="translate(566, 314)"></g></g></g><path id="w1lxe04m1w1glql" d="M65.283 12.757a.35.35 0 0 0 .584.157l5.203-5.141-6.183 3.523.396 1.461zm-2.216-11.7a.35.35 0 0 0-.522.305v3.111l3.276-1.868-2.754-1.548zm3.728 2.105l-4.25 2.421v2.445l6.391-3.644-2.141-1.222zm4.708 3.303a.35.35 0 0 0 0-.609l-1.592-.9-7.365 4.199v1.782a.35.35 0 0 0 .523.305l8.435-4.777z M44.542 2.513c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm59.171 0c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm-85.951 7.636h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.819 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zm72.662 2.86h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.82 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zM99.096 10.149H97.85v-8.45h1.246v4.895l2.68-2.559h1.738l-2.633 2.535 2.715 3.578h-1.556l-2.077-2.707-.867.844v1.863zm6.053-6.114h-1.255v6.113h1.255V4.035zm-59.2 0h-1.255v6.113h1.255V4.035zm5.584 6.113V1.697h1.255v2.695c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27v-3.68c0-.408-.214-1.339-1.315-1.339-.968 0-1.342.756-1.342 1.339v3.681h-1.255zm-4.76-4.894V4.039h.621a.45.45 0 0 0 .45-.45v-.855h1.251v1.305h1.309v1.215h-1.309v3.109c0 .293.105.664.648.664.365 0 .531-.035.736-.07v1.137s-.361.113-.857.113c-1.398 0-1.777-1.051-1.777-1.788V5.254h-1.071zM36.528 4.039h-1.394l2.191 6.106h1.125l1.234-3.918 1.238 3.918h1.129l2.188-6.106h-1.383l-1.359 3.93-1.256-3.93h-1.124l-1.242 3.957-1.348-3.957zM26.212 7.141c-.02 1.566 1.187 3.129 3.223 3.129 1.566 0 2.383-.918 2.734-1.719L31.172 8c-.315.399-.801 1.094-1.738 1.094-1.145 0-1.825-.781-1.891-1.52h4.625c.074-.284.148-.995-.03-1.559-.336-1.064-1.221-2.102-2.839-2.102s-3.088 1.152-3.088 3.227zm1.363-.75h3.348c-.055-.43-.566-1.301-1.623-1.301a1.79 1.79 0 0 0-1.725 1.301zm-8.758.75c.038 1.758 1.277 3.133 3.145 3.133 1.074 0 1.723-.477 1.961-.672v.547h1.242V1.703h-1.258v2.888c-.414-.36-1.062-.68-1.93-.68-1.91 0-3.198 1.473-3.16 3.23zm1.309-.08c0 1.119.723 1.978 1.836 1.978a1.88 1.88 0 0 0 1.94-1.904c0-1.371-1.011-1.99-1.972-1.99s-1.805.798-1.805 1.916zm76.683-.028C96.771 5.275 95.532 3.9 93.664 3.9c-1.074 0-1.723.477-1.961.672v-.547h-1.242v8.22h1.258V9.583c.414.36 1.063.68 1.93.68 1.91 0 3.198-1.473 3.16-3.23zm-1.309.08c0-1.119-.723-1.978-1.836-1.978a1.88 1.88 0 0 0-1.94 1.904c0 1.371 1.011 1.99 1.972 1.99S95.5 8.231 95.5 7.113zM106.441 10.173V4.036h1.254v.382c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27V6.492c0-.408-.214-1.339-1.315-1.339-.969 0-1.342.756-1.342 1.339v3.681h-1.254zm-30.383-.021V1.824h1.084l4.215 5.777V1.824h1.32v8.328h-1.094l-4.207-5.796v5.796h-1.319zM5.24 10.149H4V2.377h1.014l2.664 3.597 2.654-3.592h1.03v7.766h-1.256V4.762L7.678 8.068 5.24 4.742v5.407z" transform="translate(764, 374)" fill="#ababab88" stroke="none"></path></svg>                </div>
+                <div class="card">
+                    <h3>我的投資召命與信仰理念</h3>
+                    <p>我深信我的投資事業是上帝賜予的<span class="highlight">神聖召命</span>。我曾將公司命名為「Archegos」，這個希臘新約中意指「領路者」或「先驅」的詞語，用以描述耶穌，這反映了我在信仰中<span class="emphasis">將自己視為「神聖指定」的領導者</span>。我向韓國聽眾表示，我<span class="blue-emphasis">以神的視角進行投資，根據祂的時機</span>。我也曾說過，我<span class="green-emphasis">嘗試根據上帝的話語和聖靈的能力進行投資</span>，這是一種<span class="purple-emphasis">無所畏懼的投資方式</span>，我不害怕死亡或金錢。</p>
 
-                <div class="key-point">
-                    <p><span class="highlight">最終思考</span>：金融作為神所創造的資源分配工具，本應促進繁榮與互助。黃聖國的失敗提醒我們，只有當我們真正以<span class="emphasis">「管家職分」</span>的心態，在<span class="blue-emphasis">「公義」</span>與<span class="green-emphasis">「仁愛」</span>的原則指導下進行金融活動時，才能實現其神聖的目的。</p>
+                    <p>我父親是牧師，自小我的信仰便根植於心。在商業上遭遇的一些挫折，反而重新喚醒我對宗教的興趣。我努力成為一位偉大的投資者，並將投資視為透過我的基金會（Grace and Mercy Foundation） <span class="orange-emphasis">資助基督教事工</span>的管道。我曾表示，<span class="emphasis">我喜歡上帝勝過金錢</span>，並認為上帝會喜愛像 LinkedIn 這樣有助於人們發揮潛力、對社會有益的公司。在紐約市，我個人生活簡樸，並定期主持聖經閱讀會。</p>
+                </div>
+
+                <div class="card">
+                    <h3>我的投資策略與面對挑戰</h3>
+                    <p>我在投資上的策略，是基於對我所信仰的公司進行<span class="blue-emphasis">集中持股</span>。我的律師也曾辯稱，這是一種<span class="green-emphasis">標準的投資策略</span>，不構成「市場操縱」。我利用<span class="purple-emphasis">總收益互換 (total return swaps)</span> 等金融工具，尋求放大投資回報。在我看來，這是一種<span class="orange-emphasis">無所畏懼的投資</span>，因為我相信這是遵循上帝旨意的結果。</p>
+
+                    <p>當市場狀況惡化，我的經紀商開始要求<span class="emphasis">追繳保證金 (margin calls)</span> 時，我對自己的策略仍抱持信心。我曾與主要銀行進行電話會議，對迅速平倉並恢復穩定表達樂觀態度。雖然最終局勢惡化，導致許多銀行蒙受數十億美元損失，這是一個艱難的時刻。</p>
+                </div>
+
+                <div class="card">
+                    <h3>法律訴訟與我的回應</h3>
+                    <p>面對聯邦政府對我的<span class="highlight">詐欺和勒索</span>等指控，我<span class="emphasis">拒不認罪</span>。我的律師團隊堅稱我的策略只是集中持股，是業界標準做法。我也曾試圖挑戰檢察官在審判中引入大量交易數據的行為，認為他們「嚴重失職」。我獲准以<span class="blue-emphasis">1億美元的保釋金</span> 獲釋，其中包含 500 萬美元現金，並繳交了妻子護照，承諾留在三州地區。</p>
+
+                    <p>在法庭上，我曾陳述我的淨資產已大幅減少至 5500 萬美元。儘管最終陪審團裁定我十項罪名成立，並被判處 18 年監禁，我的律師仍在努力爭取減刑，提出居家監禁的請求。甚至有前高階主管 Bob Foresman 為我請求寬大處理，強調我在審判中被忽視的信仰虔誠與慈善貢獻。法官則認為，我的請求「荒謬」，判決是為了「警示他人」。</p>
+                </div>
+
+                <div class="example-section">
+                    <h3>對我行為的反思與聖經教義的檢視</h3>
+                    <p>然而，我知道外界對我的行為存在諸多批評與疑問。一些人認為，我可能落入了 <span class="purple-emphasis">「榮耀神學」 (theology of glory)</span> 的陷阱，將投資上的成功視為上帝眷顧的直接證明。但《Mockingbird Magazine》的文章也提醒我們，<span class="orange-emphasis">成功與失敗並非衡量神眷顧的可靠標準</span>。十字架的事件複雜化了這種看法，指出上帝的榮耀不總是顯現於世俗的成功。</p>
+
+                    <p>還有指控稱，我在 Archegos 內部建立了一種 <span class="emphasis">「邪教式文化」</span>，要求員工對我絕對忠誠。這包括強制員工將年終獎金的<span class="blue-emphasis">至少 25% 投入一個名為 「The Plan」</span>的投資計畫，該計畫被指是我的<span class="green-emphasis">無息貸款</span>。當員工對我的投資決策提出質疑時，我也被指控公開貶低他們。</p>
+
+                    <p>這些行為，我知道，與聖經教義中強調的<span class="purple-emphasis">誠信、正直、謙卑和愛鄰舍</span>的原則 形成鮮明對比。聖經教導我們，金融專業人士有義務將客戶利益置於個人利益之上，並在面對風險時保持謹慎。我的高槓桿和冒險交易 最終導致了巨大的損失，這也與聖經中關於<span class="orange-emphasis">謹慎冒險</span>和<span class="emphasis">不應乘人之危牟利</span>的教導有所出入。</p>
+
+                    <p>甚至在面臨追繳保證金時，我被指控說謊，未能誠實披露公司的真實情況，而<span class="highlight">說謊正是對金融業造成巨大傷害的罪惡之一</span>。</p>
+
+                    <p>儘管我全力在信仰中尋求引導，但外界的指控和最終的法律判決，都讓我不得不反思我的實際行為與我所宣稱的信仰原則之間是否存在巨大落差。我深知，金融業雖是神創造的基礎，旨在榮耀神、行管理、公義和仁愛，但它也<span class="blue-emphasis">極易被貪婪和欺詐所腐蝕</span>，這確實削弱了榮耀上帝、管理、公義和仁愛的服務。</p>
+
+                    <p>或許，我的案例也成為了對他人的警示，提醒我們即使在信仰的引導下，仍需時刻警醒，確保行為符合真正的公義與愛。</p>
                 </div>
             </section>
-
             <!-- 相關資源 -->
             <section class="section" data-source-line="400" data-id="resources">
                 <h1>🔗 相關資源</h1>
@@ -928,30 +1110,58 @@ graph TD
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section>            
         </main>
     </div>
 
     <script>
-        // 全局變量
         let isZoomed = false;
-        let isMobileLayout = false;
         let effectsEnabled = true;
+        let isMobileLayout = true; // Default to mobile layout
         let tocVisible = false;
 
-        // 切換佈局模式
         function toggleLayout() {
             const body = document.body;
+            const layoutBtn = document.getElementById('layout-btn');
+            const layoutIndicator = document.getElementById('layout-indicator');
             isMobileLayout = !isMobileLayout;
 
             if (isMobileLayout) {
-                body.classList.add('mobile-layout');
+                // Switch to mobile layout
+                body.style.maxWidth = '768px';
+                body.style.margin = '0 auto';
+                layoutBtn.innerHTML = '📱';
+                layoutBtn.title = '切換到PC佈局';
+                layoutIndicator.innerHTML = '📱 Mobile Layout (目前)';
+
+                // Force mobile styles
+                const container = document.querySelector('.container');
+                const content = document.querySelector('.content');
+                const sections = document.querySelectorAll('.section');
+
+                if (container) container.style.padding = '15px';
+                if (content) content.style.padding = '20px';
+                sections.forEach(section => section.style.padding = '15px');
+
             } else {
-                body.classList.remove('mobile-layout');
+                // Switch to PC layout
+                body.style.maxWidth = 'none';
+                body.style.margin = '0';
+                layoutBtn.innerHTML = '💻';
+                layoutBtn.title = '切換到Mobile佈局';
+                layoutIndicator.innerHTML = '💻 PC Layout (目前)';
+
+                // Force PC styles
+                const container = document.querySelector('.container');
+                const content = document.querySelector('.content');
+                const sections = document.querySelectorAll('.section');
+
+                if (container) container.style.padding = '20px';
+                if (content) content.style.padding = '40px';
+                sections.forEach(section => section.style.padding = '20px');
             }
         }
 
-        // 切換縮放
         function toggleZoom() {
             const content = document.getElementById('main-content');
             isZoomed = !isZoomed;
@@ -963,10 +1173,9 @@ graph TD
             }
         }
 
-        // 切換特效
         function toggleEffects() {
-            effectsEnabled = !effectsEnabled;
             const sections = document.querySelectorAll('.section');
+            effectsEnabled = !effectsEnabled;
 
             sections.forEach(section => {
                 if (effectsEnabled) {
@@ -977,7 +1186,6 @@ graph TD
             });
         }
 
-        // 切換目錄
         function toggleTOC() {
             const toc = document.getElementById('toc');
             tocVisible = !tocVisible;
@@ -989,152 +1197,62 @@ graph TD
             }
         }
 
-        // 平滑滾動到錨點
-        function smoothScrollTo(targetId) {
-            const target = document.getElementById(targetId);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
 
-        // 動態梯度背景效果
-        function createDynamicGradient() {
-            const gradientBg = document.querySelector('.gradient-bg');
-            if (!gradientBg) return;
-
-            let angle = 0;
-            setInterval(() => {
-                angle += 1;
-                const gradient = `linear-gradient(${angle}deg,
-                    hsl(${(angle * 2) % 360}, 70%, 60%),
-                    hsl(${(angle * 3) % 360}, 70%, 70%),
-                    hsl(${(angle * 4) % 360}, 70%, 65%))`;
-                gradientBg.style.background = gradient;
-            }, 100);
-        }
-
-        // 呼吸燈效果增強
-        function enhanceBreathingEffect() {
-            const keyPoints = document.querySelectorAll('.key-point');
-            keyPoints.forEach((point, index) => {
-                point.style.animationDelay = `${index * 0.5}s`;
-            });
-        }
-
-        // 滾動視差效果
-        function addParallaxEffect() {
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelector('.gradient-bg');
-                if (parallax) {
-                    const speed = scrolled * 0.5;
-                    parallax.style.transform = `translateY(${speed}px)`;
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-            });
-        }
-
-        // 卡片懸停效果增強
-        function enhanceCardEffects() {
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-10px) scale(1.02)';
-                    card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0) scale(1)';
-                    card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
-                });
-            });
-        }
-
-        // 文字打字機效果
-        function addTypewriterEffect() {
-            const title = document.querySelector('.header h1');
-            if (!title) return;
-
-            const text = title.textContent;
-            title.textContent = '';
-
-            let i = 0;
-            const typeInterval = setInterval(() => {
-                title.textContent += text.charAt(i);
-                i++;
-                if (i >= text.length) {
-                    clearInterval(typeInterval);
-                }
-            }, 100);
-        }
-
-        // 初始化所有效果
-        function initializeEffects() {
-            createDynamicGradient();
-            enhanceBreathingEffect();
-            addParallaxEffect();
-            enhanceCardEffects();
-
-            // 延遲執行打字機效果
-            setTimeout(addTypewriterEffect, 500);
-        }
-
-        // 響應式處理
-        function handleResponsive() {
-            const handleResize = () => {
-                if (window.innerWidth <= 768) {
-                    document.body.classList.add('mobile-layout');
-                    isMobileLayout = true;
-                } else {
-                    document.body.classList.remove('mobile-layout');
-                    isMobileLayout = false;
-                }
-            };
-
-            window.addEventListener('resize', handleResize);
-            handleResize(); // 初始檢查
-        }
-
-        // 頁面載入完成後初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeEffects();
-            handleResponsive();
-
-            // 為目錄連結添加平滑滾動
-            const tocLinks = document.querySelectorAll('.toc a');
-            tocLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1);
-                    smoothScrollTo(targetId);
-                });
             });
         });
 
-        // 鍵盤快捷鍵
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey || e.metaKey) {
-                switch(e.key) {
-                    case 'm':
-                        e.preventDefault();
-                        toggleLayout();
-                        break;
-                    case 'z':
-                        e.preventDefault();
-                        toggleZoom();
-                        break;
-                    case 'e':
-                        e.preventDefault();
-                        toggleEffects();
-                        break;
-                    case 't':
-                        e.preventDefault();
-                        toggleTOC();
-                        break;
-                }
-            }
+        // Add breathing effect to key points
+        document.querySelectorAll('.key-point').forEach(element => {
+            element.style.animation = 'pulse 2s ease-in-out infinite';
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default mobile layout
+            const body = document.body;
+            const layoutBtn = document.getElementById('layout-btn');
+
+            // Apply mobile layout by default
+            body.style.maxWidth = '768px';
+            body.style.margin = '0 auto';
+            layoutBtn.innerHTML = '📱';
+            layoutBtn.title = '切換到PC佈局';
+
+            // Add fade-in animation to sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
         });
     </script>
 </body>
