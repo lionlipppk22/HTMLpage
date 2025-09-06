@@ -1,0 +1,48 @@
+body {
+    font-family: 'Microsoft JhengHei', 'PingFang SC', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+.file-list {
+    list-style: none;
+    padding: 0;
+}
+.file-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.file-item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.file-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.file-link:hover {
+    text-decoration: underline;
+}
+.file-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}

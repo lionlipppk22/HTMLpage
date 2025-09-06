@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="step1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f91fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1ac3fb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="step2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1ac3fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#43dd93;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="step3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43dd93;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a6da37;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="step4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a6da37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffe711;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">顯化願望的步驟</text>
+  
+  <!-- Step 1: Recognition and Clarification -->
+  <g transform="translate(100, 100)">
+    <path d="M 0 0 L 150 0 L 130 40 L -20 40 Z" fill="url(#step1)"/>
+    <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">認知與釐清</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">清楚地定義你的願望，</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">避免負面焦點。</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 250 120 L 300 120" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Thought and Frequency Alignment -->
+  <g transform="translate(320, 100)">
+    <path d="M 0 0 L 150 0 L 130 40 L -20 40 Z" fill="url(#step2)"/>
+    <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">思想與頻率校準</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">選擇正向思想，與宇宙</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">對齊。</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 470 120 L 520 120" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: Feeling and Emotional Resonance -->
+  <g transform="translate(540, 100)">
+    <path d="M 0 0 L 150 0 L 130 40 L -20 40 Z" fill="url(#step3)"/>
+    <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">感覺與情緒共振</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">感受擁有願望的愉悅，</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">創造正向能量。</text>
+  </g>
+  
+  <!-- Curved arrow down -->
+  <path d="M 615 140 Q 615 200 450 250" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Belief and Allowing -->
+  <g transform="translate(320, 270)">
+    <path d="M 0 0 L 150 0 L 130 40 L -20 40 Z" fill="url(#step4)"/>
+    <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">相信與允許</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">相信你的願望已經實</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">現，放開懷疑。</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M 395 310 L 395 360" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 5: Receiving and Action -->
+  <g transform="translate(320, 380)">
+    <ellipse cx="65" cy="30" rx="80" ry="30" fill="#ffe711"/>
+    <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">接收與行動</text>
+    <text x="65" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">接收宇宙的禮物，採取</text>
+    <text x="65" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">行動實現你的願望。</text>
+  </g>
+  
+  <!-- Energy flow visualization -->
+  <g opacity="0.3">
+    <circle cx="150" cy="500" r="5" fill="#4f91fc">
+      <animate attributeName="r" values="5;15;5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="500" r="5" fill="#1ac3fb">
+      <animate attributeName="r" values="5;15;5" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="500" r="5" fill="#43dd93">
+      <animate attributeName="r" values="5;15;5" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="500" r="5" fill="#a6da37">
+      <animate attributeName="r" values="5;15;5" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="750" cy="500" r="5" fill="#ffe711">
+      <animate attributeName="r" values="5;15;5" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Energy flow line -->
+  <path d="M 100 500 L 800 500" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+  <text x="450" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667eea">能量流動與顯化過程</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#667eea"/>
+    </marker>
+  </defs>
+</svg>

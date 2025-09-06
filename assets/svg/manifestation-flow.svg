@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f91fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1ac3fb;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#grad1)" opacity="0.1"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">顯化流程圖</text>
+  
+  <!-- Flow Steps -->
+  <!-- Step 1: Intention -->
+  <circle cx="150" cy="120" r="40" fill="url(#grad2)" opacity="0.8"/>
+  <text x="150" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">意圖</text>
+  <text x="150" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">設定清晰願望</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 190 120 L 230 120" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Visualization -->
+  <circle cx="270" cy="120" r="40" fill="url(#grad2)" opacity="0.8"/>
+  <text x="270" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">觀想</text>
+  <text x="270" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">視覺化願望</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 310 120 L 350 120" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: Emotion -->
+  <circle cx="390" cy="120" r="40" fill="url(#grad2)" opacity="0.8"/>
+  <text x="390" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">情感</text>
+  <text x="390" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">感受喜悅</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M 430 120 L 470 120" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Belief -->
+  <circle cx="510" cy="120" r="40" fill="url(#grad2)" opacity="0.8"/>
+  <text x="510" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">信念</text>
+  <text x="510" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">深信不疑</text>
+  
+  <!-- Arrow 4 -->
+  <path d="M 550 120 L 590 120" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 5: Manifestation -->
+  <circle cx="630" cy="120" r="40" fill="#43dd93" opacity="0.8"/>
+  <text x="630" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">顯化</text>
+  <text x="630" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">願望實現</text>
+  
+  <!-- Energy Flow -->
+  <path d="M 100 250 Q 400 200 700 250" stroke="#764ba2" stroke-width="2" fill="none" opacity="0.6"/>
+  <text x="400" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#764ba2">能量流動</text>
+  
+  <!-- Universe Connection -->
+  <circle cx="400" cy="320" r="60" fill="none" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+  <text x="400" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#667eea">宇宙法則</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#667eea"/>
+    </marker>
+  </defs>
+</svg>
