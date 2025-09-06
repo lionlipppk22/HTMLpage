@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 文件索引 (包含子文件夾)</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 { 
+            color: #2c3e50; 
+            text-align: center; 
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .stats {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #3498db;
+        }
+        .file-list { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .file-item { 
+            padding: 16px 20px; 
+            margin-bottom: 10px; 
+            border-left: 5px solid #27ae60; 
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+        .file-item:hover { 
+            background: linear-gradient(to right, #f0f8ff, #f8f9fa);
+            transform: translateX(8px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .file-link { 
+            text-decoration: none; 
+            color: #2980b9; 
+            font-weight: 600;
+            font-size: 17px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .file-link:hover { 
+            text-decoration: underline; 
+            color: #1a5276;
+        }
+        .file-folder {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .file-date { 
+            color: #7f8c8d; 
+            font-size: 14px; 
+            background: #ecf0f1;
+            padding: 2px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        .file-size {
+            color: #7f8c8d;
+            font-size: 14px;
+            background: #f8f9fa;
+            padding: 2px 10px;
+            border-radius: 12px;
+            border: 1px solid #dfe6e9;
+        }
+        .file-path {
+            color: #95a5a6;
+            font-size: 13px;
+            margin-top: 5px;
+            font-family: 'Consolas', monospace;
+            width: 100%;
+        }
+        .loading { 
+            text-align: center; 
+            color: #7f8c8d; 
+            font-style: italic;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .error {
+            color: #c0392b;
+            text-align: center;
+            padding: 25px;
+            background: #fdedec;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        .empty { 
+            text-align: center; 
+            color: #7f8c8d; 
+            font-style: italic; 
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .progress {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f5e8;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .folder-tree {
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #8bc34a;
+        }
+        .folder-item {
+            padding: 5px 0;
+            color: #558b2f;
+            font-family: 'Consolas', monospace;
+        }
+        .depth-0 { margin-left: 0px; }
+        .depth-1 { margin-left: 20px; }
+        .depth-2 { margin-left: 40px; }
+        .depth-3 { margin-left: 60px; }
+        .depth-4 { margin-left: 80px; }
+        .depth-5 { margin-left: 100px; }
+    </style>
+</head>
+<body>
+    <h1>📁 HTML 文件索引 (包含所有子文件夾)</h1>
+    
+    <div id="stats" class="stats">
+        狀態: 準備就緒，正在掃描文件...
+    </div>
+    
+    <div id="folderTree" class="folder-tree" style="display: none;">
+        <h3>📂 掃描的文件夾結構:</h3>
+        <div id="folderList"></div>
+    </div>
+    
+    <div id="content" class="loading">
+        <p>🔍 正在掃描當前目錄和所有子文件夾中的 HTML 文件...</p>
+        <p>請稍候，這可能需要一些時間，取決於文件數量</p>
+    </div>
+
+    <script>
+        class HTMLFileScanner {
+            constructor() {
+                this.allFiles = [];
+                this.scannedFolders = new Set();
+                this.folderStructure = {};
+                this.stats = {
+                    totalFiles: 0,
+                    totalFolders: 0,
+                    scanStartTime: 0,
+                    scanTime: 0
+                };
+            }
+
+            // 主入口
+            async start() {
+                this.stats.scanStartTime = Date.now();
+                this.updateStats('狀態: 正在初始化掃描...');
+                
+                try {
+                    // 方法1: 嘗試使用服務器目錄列表 (如果支持)
+                    const success = await this.scanWithDirectoryList();
+                    
+                    if (!success) {
+                        // 方法2: 備用方案 - 猜測常見文件夾結構
+                        this.updateStats('狀態: 目錄列表不可用，使用備用方案...');
+                        await this.scanWithFallback();
+                    }
+                    
+                    // 排序並顯示結果
+                    this.sortAndDisplay();
+                    
+                } catch (error) {
+                    console.error('掃描錯誤:', error);
+                    this.showError(`掃描失敗: ${error.message}`);
+                }
+            }
+
+            // 方法1: 使用服務器目錄列表 (推薦)
+            async scanWithDirectoryList() {
+                this.updateStats('狀態: 嘗試使用目錄列表功能...');
+                
+                try {
+                    // 獲取根目錄列表
+                    const rootFiles = await this.fetchDirectory('./');
+                    if (!rootFiles) return false;
+                    
+                    // 添加到結果
+                    this.addFiles(rootFiles, './');
+                    
+                    // 遞歸掃描子文件夾
+                    await this.scanSubdirectories(rootFiles);
+                    
+                    return true;
+                } catch (error) {
+                    console.warn('目錄列表掃描失敗:', error);
+                    return false;
+                }
+            }
+
+            // 獲取單個目錄的內容
+            async fetchDirectory(path) {
+                try {
+                    const response = await fetch(path, {
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                    
+                    if (!response.ok) return null;
+                    
+                    const html = await response.text();
+                    return this.parseDirectoryHTML(html, path);
+                } catch (error) {
+                    console.warn(`無法獲取目錄 ${path}:`, error);
+                    return null;
+                }
+            }
+
+            // 解析目錄列表 HTML
+            parseDirectoryHTML(html, basePath) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const files = [];
+                
+                // 常見目錄列表選擇器
+                const selectors = [
+                    'a[href]',           // Apache
+                    'table a[href]',     // Nginx
+                    'pre a[href]'        // 簡單列表
+                ];
+                
+                let links = [];
+                for (const selector of selectors) {
+                    links = links.concat(Array.from(doc.querySelectorAll(selector)));
+                    if (links.length > 0) break;
+                }
+                
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    const text = link.textContent.trim();
+                    
+                    if (!href || href.startsWith('?') || href === '../' || 
+                        href === basePath || href === basePath.replace('./', '')) {
+                        return;
+                    }
+                    
+                    // 判斷是文件還是文件夾
+                    const isDirectory = href.endsWith('/');
+                    const name = isDirectory ? href.slice(0, -1) : href;
+                    const fullPath = this.joinPath(basePath, href);
+                    
+                    // 提取日期和大小
+                    const info = this.extractFileInfo(link, isDirectory);
+                    
+                    files.push({
+                        name: name,
+                        path: fullPath,
+                        isDirectory: isDirectory,
+                        date: info.date,
+                        size: info.size,
+                        rawText: text
+                    });
+                });
+                
+                return files;
+            }
+
+            // 遞歸掃描子文件夾
+            async scanSubdirectories(files) {
+                const folderPromises = [];
+                
+                for (const file of files) {
+                    if (file.isDirectory && !this.scannedFolders.has(file.path)) {
+                        this.scannedFolders.add(file.path);
+                        this.stats.totalFolders++;
+                        this.addToFolderStructure(file.path, file.name);
+                        
+                        // 並發掃描子文件夾
+                        const promise = (async () => {
+                            const subFiles = await this.fetchDirectory(file.path);
+                            if (subFiles) {
+                                this.addFiles(subFiles, file.path);
+                                await this.scanSubdirectories(subFiles); // 遞歸
+                            }
+                        })();
+                        
+                        folderPromises.push(promise);
+                    }
+                }
+                
+                // 等待所有子文件夾掃描完成
+                if (folderPromises.length > 0) {
+                    this.updateStats(`狀態: 正在掃描 ${folderPromises.length} 個子文件夾...`);
+                    await Promise.all(folderPromises);
+                }
+            }
+
+            // 方法2: 備用方案 - 猜測文件夾結構
+            async scanWithFallback() {
+                this.updateStats('狀態: 使用備用方案掃描常見文件夾...');
+                
+                // 常見文件夾模式
+                const commonFolders = [
+                    // 日期格式文件夾
+                    ...this.generateDateFolders(365 * 3), // 過去3年
+                    // 常見名稱
+                    'docs', 'documents', 'articles', 'posts', 'pages',
+                    'html', 'web', 'site', 'content', 'files',
+                    '2023', '2024', '2025', 'archive', 'old',
+                    'news', 'blog', 'products', 'services'
+                ];
+                
+                const filePromises = [];
+                
+                // 1. 檢查常見文件夾
+                for (const folder of commonFolders) {
+                    filePromises.push(this.checkFolderExists(folder));
+                }
+                
+                // 2. 檢查深層文件夾
+                for (let depth = 1; depth <= 3; depth++) {
+                    const deepFolders = this.generateDeepFolders(depth);
+                    for (const folder of deepFolders) {
+                        filePromises.push(this.checkFolderExists(folder));
+                    }
+                }
+                
+                // 3. 檢查常見文件名
+                const commonFiles = this.generateCommonFiles();
+                for (const file of commonFiles) {
+                    filePromises.push(this.checkFileExists(file));
+                }
+                
+                // 並發處理所有檢查
+                this.updateStats(`狀態: 正在檢查 ${filePromises.length} 個可能的路徑...`);
+                const results = await Promise.allSettled(filePromises);
+                
+                // 處理結果
+                for (const result of results) {
+                    if (result.status === 'fulfilled' && result.value) {
+                        const { type, path, name, parent } = result.value;
+                        
+                        if (type === 'file') {
+                            this.allFiles.push({
+                                name: name,
+                                path: path,
+                                folder: parent,
+                                date: new Date(0),
+                                size: null
+                            });
+                            this.stats.totalFiles++;
+                        } else if (type === 'folder') {
+                            this.scannedFolders.add(path);
+                            this.stats.totalFolders++;
+                            this.addToFolderStructure(path, name);
+                        }
+                    }
+                }
+            }
+
+            // 檢查文件夾是否存在
+            async checkFolderExists(folderPath) {
+                try {
+                    const response = await fetch(folderPath, { 
+                        method: 'HEAD',
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                    
+                    if (response.ok) {
+                        return { type: 'folder', path: folderPath, name: this.getFolderName(folderPath) };
+                    }
+                } catch (error) {
+                    // 忽略錯誤
+                }
+                return null;
+            }
+
+            // 檢查文件是否存在
+            async checkFileExists(filePath) {
+                try {
+                    const response = await fetch(filePath, { 
+                        method: 'HEAD',
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                    
+                    if (response.ok && filePath.match(/\.html?$/i) && filePath !== 'index.html') {
+                        const parent = this.getParentFolder(filePath);
+                        return { 
+                            type: 'file', 
+                            path: filePath, 
+                            name: this.getFileName(filePath),
+                            parent: parent
+                        };
+                    }
+                } catch (error) {
+                    // 忽略錯誤
+                }
+                return null;
+            }
+
+            // 生成日期文件夾 (如 20240808, 2024-08-08)
+            generateDateFolders(days) {
+                const folders = [];
+                const today = new Date();
+                
+                for (let i = 0; i < days; i++) {
+                    const date = new Date(today);
+                    date.setDate(date.getDate() - i);
+                    
+                    // 格式: YYYYMMDD
+                    const yyyymmdd = date.toISOString().slice(0, 10).replace(/-/g, '');
+                    folders.push(yyyymmdd);
+                    
+                    // 格式: YYYY-MM-DD
+                    const yyyy_mm_dd = date.toISOString().slice(0, 10);
+                    folders.push(yyyy_mm_dd);
+                    
+                    // 格式: YYYY/MM/DD (深層)
+                    const year = date.getFullYear();
+                    const month = String(date.getMonth() + 1).padStart(2, '0');
+                    const day = String(date.getDate()).padStart(2, '0');
+                    folders.push(`${year}/${month}/${day}`);
+                    folders.push(`${year}/${month}`);
+                }
+                
+                return folders;
+            }
+
+            // 生成深層文件夾結構
+            generateDeepFolders(depth) {
+                const folders = [];
+                const commonNames = ['docs', 'articles', 'pages', 'posts', 'content'];
+                
+                if (depth === 1) {
+                    return commonNames;
+                }
+                
+                for (let d = 2; d <= depth; d++) {
+                    for (const name of commonNames) {
+                        for (let i = 0; i < 5; i++) {
+                            if (d === 2) {
+                                folders.push(`${name}/${i}`);
+                            } else if (d === 3) {
+                                folders.push(`${name}/${i}/${i}`);
+                            }
+                        }
+                    }
+                }
+                
+                return folders;
+            }
+
+            // 生成常見文件名
+            generateCommonFiles() {
+                const files = [];
+                const commonNames = [
+                    'index', 'home', 'main', 'page', 'article', 'post', 'doc',
+                    'news', 'blog', 'product', 'service', 'about', 'contact'
+                ];
+                
+                // 根目錄文件
+                for (const name of commonNames) {
+                    files.push(`${name}.html`);
+                    files.push(`${name}.htm`);
+                }
+                
+                // 日期文件名
+                const today = new Date();
+                for (let i = 0; i < 30; i++) {
+                    const date = new Date(today);
+                    date.setDate(date.getDate() - i);
+                    const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
+                    
+                    files.push(`${dateStr}.html`);
+                    files.push(`${dateStr}_post.html`);
+                    files.push(`post_${dateStr}.html`);
+                }
+                
+                return files;
+            }
+
+            // 提取文件信息 (日期、大小)
+            extractFileInfo(element, isDirectory) {
+                const parentText = element.parentElement?.textContent || '';
+                let date = new Date(0);
+                let size = null;
+                
+                // 日期模式
+                const datePatterns = [
+                    /\d{4}[-年]\d{1,2}[-月]\d{1,2}/,           // 2023-08-15
+                    /\d{4}\/\d{1,2}\/\d{1,2}/,                 // 2023/08/15  
+                    /\d{1,2}[-月]\d{1,2}[-日]\s*\d{4}/,         // 8月15日 2023
+                    /\d{4}年\d{1,2}月\d{1,2}日/,                // 2023年8月15日
+                ];
+                
+                for (const pattern of datePatterns) {
+                    const match = parentText.match(pattern);
+                    if (match) {
+                        let dateStr = match[0].replace(/年|月/g, '-').replace(/日/g, '');
+                        dateStr = dateStr.replace(/[-/]/g, '-');
+                        const parsedDate = new Date(dateStr);
+                        if (!isNaN(parsedDate.getTime())) {
+                            date = parsedDate;
+                            break;
+                        }
+                    }
+                }
+                
+                // 大小模式
+                const sizePatterns = [
+                    /\d+(\.\d+)?\s*KB/i,
+                    /\d+(\.\d+)?\s*MB/i,
+                    /\d+\s*bytes?/i
+                ];
+                
+                for (const pattern of sizePatterns) {
+                    const match = parentText.match(pattern);
+                    if (match) {
+                        size = match[0];
+                        break;
+                    }
+                }
+                
+                return { date, size };
+            }
+
+            // 添加文件到結果
+            addFiles(files, parentPath) {
+                for (const file of files) {
+                    if (!file.isDirectory && 
+                        file.name.match(/\.html?$/i) && 
+                        file.name !== 'index.html') {
+                        
+                        this.allFiles.push({
+                            name: file.name,
+                            path: file.path,
+                            folder: parentPath,
+                            date: file.date || new Date(0),
+                            size: file.size
+                        });
+                        
+                        this.stats.totalFiles++;
+                    }
+                }
+            }
+
+            // 添加到文件夾結構
+            addToFolderStructure(path, name) {
+                const parts = path.split('/').filter(p => p);
+                let current = this.folderStructure;
+                
+                for (let i = 0; i < parts.length; i++) {
+                    const part = parts[i];
+                    if (!current[part]) {
+                        current[part] = { name: part, children: {} };
+                    }
+                    current = current[part].children;
+                }
+            }
+
+            // 排序並顯示
+            sortAndDisplay() {
+                this.stats.scanTime = ((Date.now() - this.stats.scanStartTime) / 1000).toFixed(2);
+                
+                // 按日期降序排序 (最新的在前)
+                this.allFiles.sort((a, b) => {
+                    // 如果有日期，按日期排序
+                    if (a.date && b.date && a.date.getTime() !== 0 && b.date.getTime() !== 0) {
+                        return b.date - a.date;
+                    }
+                    // 否則按路徑排序 (最新的文件夾在前)
+                    return b.path.localeCompare(a.path);
+                });
+                
+                // 顯示結果
+                this.displayResults();
+                this.displayFolderTree();
+                
+                // 更新統計
+                this.updateStats(`
+                    ✅ 掃描完成! <br>
+                    文件數量: <strong>${this.stats.totalFiles}</strong> | 
+                    文件夾數量: <strong>${this.stats.totalFolders}</strong> | 
+                    耗時: <strong>${this.stats.scanTime}</strong> 秒
+                `);
+            }
+
+            // 顯示結果
+            displayResults() {
+                const contentDiv = document.getElementById('content');
+                
+                if (this.allFiles.length === 0) {
+                    contentDiv.innerHTML = `
+                        <div class="error">
+                            <h3>❌ 沒有找到任何 HTML 文件</h3>
+                            <p>可能的原因:</p>
+                            <ul style="text-align: left; margin: 15px 0;">
+                                <li>服務器禁用了目錄列表功能</li>
+                                <li>沒有 HTML 文件 (除了 index.html)</li>
+                                <li>文件夾結構非常不常見</li>
+                            </ul>
+                            <p>解決方法:</p>
+                            <ol style="text-align: left; margin: 15px 0;">
+                                <li><strong>啟用目錄列表</strong>: 配置您的 Web 服務器</li>
+                                <li><strong>手動添加文件</strong>: 編輯 index.html</li>
+                                <li><strong>檢查文件路徑</strong>: 確保文件存在</li>
+                            </ol>
+                        </div>`;
+                    return;
+                }
+                
+                const filesHTML = this.allFiles.map(file => {
+                    const dateStr = file.date && file.date.getTime() > 0 
+                        ? this.formatDate(file.date) 
+                        : '未知日期';
+                    
+                    const folderName = this.getFolderName(file.folder);
+                    const sizeStr = file.size ? `<span class="file-size">${file.size}</span>` : '';
+                    
+                    return `
+                    <div class="file-item">
+                        <a href="${file.path}" class="file-link" target="_blank">
+                            ${this.escapeHtml(this.getTitleFromFilename(file.name))}
+                        </a>
+                        <span class="file-folder">${this.escapeHtml(folderName)}</span>
+                        <span class="file-date">${dateStr}</span>
+                        ${sizeStr}
+                        <div class="file-path">${this.escapeHtml(file.path)}</div>
+                    </div>`;
+                }).join('');
+                
+                contentDiv.innerHTML = `
+                    <p>找到 <strong>${this.allFiles.length}</strong> 個 HTML 文件:</p>
+                    <div class="file-list">${filesHTML}</div>
+                `;
+            }
+
+            // 顯示文件夾樹
+            displayFolderTree() {
+                if (this.scannedFolders.size === 0) return;
+                
+                const treeDiv = document.getElementById('folderList');
+                const folders = Array.from(this.scannedFolders).sort();
+                
+                const treeHTML = folders.map(folder => {
+                    const depth = folder.split('/').filter(p => p).length - 1;
+                    const name = this.getFolderName(folder);
+                    return `<div class="folder-item depth-${Math.min(depth, 5)}">${'📁 '.repeat(depth)}${this.escapeHtml(name)}</div>`;
+                }).join('');
+                
+                document.getElementById('folderTree').style.display = 'block';
+                treeDiv.innerHTML = treeHTML;
+            }
+
+            // 工具函數
+            joinPath(base, path) {
+                if (base === './') return path;
+                if (base.endsWith('/') && path.startsWith('/')) {
+                    return base + path.slice(1);
+                }
+                if (!base.endsWith('/') && !path.startsWith('/')) {
+                    return base + '/' + path;
+                }
+                return base + path;
+            }
+
+            getParentFolder(path) {
+                const parts = path.split('/');
+                parts.pop(); // 移除文件名
+                return parts.join('/') || './';
+            }
+
+            getFolderName(path) {
+                const parts = path.split('/');
+                return parts[parts.length - 1] || '根目錄';
+            }
+
+            getFileName(path) {
+                const parts = path.split('/');
+                return parts[parts.length - 1];
+            }
+
+            getTitleFromFilename(filename) {
+                return filename
+                    .replace(/\.html?$/i, '')
+                    .replace(/[-_]/g, ' ')
+                    .replace(/\b\w/g, l => l.toUpperCase());
+            }
+
+            formatDate(date) {
+                return date.toLocaleDateString('zh-TW', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            updateStats(text) {
+                document.getElementById('stats').innerHTML = text;
+            }
+
+            showError(message) {
+                document.getElementById('content').innerHTML = `
+                    <div class="error">
+                        <h3>❌ 掃描錯誤</h3>
+                        <p>${this.escapeHtml(message)}</p>
+                    </div>`;
+            }
+        }
+
+        // 啟動掃描
+        document.addEventListener('DOMContentLoaded', () => {
+            const scanner = new HTMLFileScanner();
+            scanner.start();
+        });
+    </script>
+</body>
+</html>
