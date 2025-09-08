@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <style>
+        /* 聖經分析專用樣式 */
+        .biblical-quote {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%);
+            border-left: 4px solid #FFD700;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .biblical-quote::before {
+            content: '"';
+            font-size: 4em;
+            color: #FFD700;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+        
+        .biblical-citation {
+            text-align: right;
+            font-weight: bold;
+            color: #B8860B;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        /* 詩句樣式 */
+        .poetry-section {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(75, 0, 130, 0.1) 100%);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .poetry-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8A2BE2, #4B0082, #9370DB);
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        .poetry-text {
+            font-style: italic;
+            line-height: 1.8;
+            color: #4B0082;
+            font-size: 1.1em;
+        }
+        
+        /* 認知步驟樣式 */
+        .cognitive-steps {
+            background: rgba(0, 128, 0, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .cognitive-steps h4 {
+            color: #228B22;
+            margin-bottom: 15px;
+        }
+        
+        .cognitive-steps ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .cognitive-steps li {
+            counter-increment: step-counter;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .cognitive-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #228B22;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        /* 範例說明樣式 */
+        .example-section {
+            background: linear-gradient(135deg, rgba(255, 99, 71, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%);
+            border: 2px solid rgba(255, 99, 71, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .example-section h4 {
+            color: #FF6347;
+            margin-bottom: 15px;
+        }
+        
+        /* 澄清說明樣式 */
+        .clarification-section {
+            background: rgba(70, 130, 180, 0.1);
+            border: 1px solid rgba(70, 130, 180, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .clarification-section h4 {
+            color: #4682B4;
+            margin-bottom: 10px;
+        }
+        
+        /* 主題卡片增強 */
+        .theme-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        /* 呼吸燈效果 */
+        @keyframes breathe {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+        
+        .theme-card, .biblical-quote, .poetry-section {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        
+        /* 動態漸變背景 */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #FFD700, #8A2BE2);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+        
+        /* 標題增強 */
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5em;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #8A2BE2;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <title>《奔騰年代》- 尋求救贖的生命見證</title>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- 目錄 -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul>
+            <li><a href="#opening">🙏 開場祝福</a></li>
+            <li><a href="#core-concept">💎 核心理念</a></li>
+            <li><a href="#background">🌟 背景</a></li>
+            <li><a href="#outline">📈 綱要</a></li>
+            <li><a href="#themes">📝 主題與結論</a></li>
+            <li><a href="#detailed-analysis">📖 詳細聖經分析</a>
+                <ul>
+                    <li><a href="#perseverance">💪 堅持與決心</a></li>
+                    <li><a href="#belief">🌟 信念的力量</a></li>
+                    <li><a href="#redemption">✨ 尋求救贖</a></li>
+                    <li><a href="#friendship">🤝 友誼的價值</a></li>
+                    <li><a href="#overcoming-prejudice">🌈 克服偏見</a></li>
+                </ul>
+            </li>
+            <li><a href="#clarifications">📋 澄清與假設</a></li>
+            <li><a href="#prayer">🙏 禱告</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">《奔騰年代》</h1>
+            <p class="subtitle">尋求救贖的生命見證 - 從失敗者聯盟到希望燈塔</p>
+            <div id="layout-indicator" style="margin-top: 15px; padding: 8px 16px; background: rgba(255, 215, 0, 0.1); border-radius: 20px; display: inline-block; font-size: 0.9em; color: #B8860B;">
+                📱 Mobile Layout (預設)
+            </div>
+
+                    <div class="youtube-links">
+                        <div class="youtube-item" data-source-line="33">
+                            <div class="youtube-thumbnail">
+                                <a href="https://youtu.be/b6oX_326Y3s?list=TLGG59JUQerRNbswODA5MjAyNQ" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://img.youtube.com/vi/b6oX_326Y3s/maxresdefault.jpg" alt="YouTube 視頻縮略圖" style="width: 100%; max-width: 320px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    <div class="play-overlay">
+                                        <div class="play-button">▶️</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="youtube-info">
+                                <h4>相關視頻資源 1</h4>
+                                <p>點擊觀看完整視頻內容</p>
+                                <a href="https://youtu.be/b6oX_326Y3s?list=TLGG59JUQerRNbswODA5MjAyNQ" target="_blank" rel="noopener noreferrer" class="youtube-link">🔗 前往 YouTube 觀看</a>
+                            </div>
+                        </div>
+        </header>
+
+        <main class="content" id="main-content">
+            <!-- 開場祝福 -->
+            <section class="section" data-source-line="1" data-id="opening">
+                <div class="biblical-quote" id="opening">
+                    <p data-source-line="1">願主耶穌基督的恩典、神的慈愛、聖靈的感動，常與大家同在。阿們！</p>
+                    <p data-source-line="2">《奔騰年代》（Seabiscuit, 2003），大蕭條時期（Great Depression）人們心靈的真實寫照，彰顯了上帝賦予我們克服困境、尋求救贖的堅韌精神。</p>
+                </div>
+            </section>
+
+            <!-- 核心理念 -->
+            <section class="section" data-source-line="4" data-id="core-concept">
+                <div class="theme-card" id="core-concept">
+                    <h2>💎 尋求救贖</h2>
+                    <div class="key-point">
+                        <p data-source-line="6"><strong>核心理念：</strong>即使在最黑暗、看似無望的境況中，藉由不屈不撓的堅持、無動搖的信念、尋求救贖的勇氣、彼此扶持的友誼，以及超越偏見的智慧，我們這些「不被看好者」（underdogs）依然能爆發出驚人的潛力，不僅能成就看似不可能的勝利，更能成為照亮時代、激勵人心的希望燈塔。</p>
+                        <p data-source-line="6">一則關於失敗者如何透過信望愛，共同奔騰，重新發現自身價值，並帶給破碎世界力量的福音。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 背景 -->
+            <section class="section" data-source-line="8" data-id="background">
+                <div class="theme-card" id="background">
+                    <h2>🌟 背景</h2>
+
+                    <div class="argument-section">
+                        <h3>⏰ 時代背景：大蕭條時代的陰霾 (Great Depression)</h3>
+                        <p data-source-line="12">「海餅乾」的故事發生在1930年代，那是美國歷史上著名的「大蕭條」時期。經濟的崩潰導致大規模失業、貧困蔓延，無數家庭破碎，社會瀰漫著絕望與迷茫。人們失去了家園、工作，甚至對未來失去了盼望。在這動盪不安、傷痕累累的年代，社會需要一股精神力量，一個能讓他們重新相信奇蹟、相信奮鬥的希望象徵。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <h3>🔍 尋求希望與引導的靈魂</h3>
+                        <p data-source-line="16">故事的觀眾是那些在生活中遭遇挫折、感到被邊緣化、尋求出路與力量的人們。它特別能引起在大蕭條時期中掙扎的美國民眾的共鳴，也為今日面臨挑戰的我們提供指引。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <h3>💔 普遍的絕望與個人的傷痕</h3>
+                        <p data-source-line="20">時代的問題是普遍的絕望與無力感。而故事中的每個主要角色——賽馬海餅乾、馴馬師湯姆·史密斯（Tom Smith）、騎師瑞德·波拉德，以及馬主查爾斯·霍華德——都各自背負著深重的個人問題與傷痕：海餅乾曾是隻脾氣暴躁、懶惰、體型矮小、被賤賣的馬；瑞德因傷失明、被拋棄，生活困苦，充滿憤怒；湯姆是不被時代接納的「西部牛仔」，曾被社會邊緣化；查爾斯則因痛失愛子、婚姻破裂，心靈破碎。他們都是那個時代的縮影，是「失敗者聯盟」（league of losers）。</p>
+                    </div>
+
+                    <div class="clarification-section">
+                        <h4>⚠️ 限制：敘事與歷史的平衡</h4>
+                        <p data-source-line="24">傳記電影的製作，需要在歷史的準確性與戲劇的連貫性之間取得平衡。為了講述一個引人入勝的凝聚性故事，電影必然會對某些細節進行取捨、潤飾甚至改動。這些改動雖然可能偏離史實，但卻能更有效地傳達核心的生命教訓與情感張力。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 綱要 -->
+            <section class="section" data-source-line="26" data-id="outline">
+                <div class="theme-card" id="outline">
+                    <h2>📈 綱要</h2>
+                    <p data-source-line="28">「海餅乾」的傳奇，就像一幅生動的畫卷，展現了個人與團隊如何從谷底奮力攀升，最終奔向榮耀。其核心元素可歸結為：</p>
+                    <div class="svg-container" data-source-line="39">
+                    <svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;background:#404040;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="700" height="428" viewBox="0 0 1044 972"><style class="text-font-style fontImports" data-font-family="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;amp;display=block);</style><g id="items" style="isolation: isolate"><g id="blend" style="mix-blend-mode: normal"><g id="g-root-cp_7_g-7_qvaxg7l5emtf-fill" data-item-order="-872486" transform="translate(512, 199)"><g id="cp_7_g-7_qvaxg7l5emtf-fill-merged" stroke="none" fill="#ffe711"><g><path d="M15.369 45.96C11.977 44.662 10.193 42.982 10.015 41.282C10.005 41.188 10 41.094 10 41C10 39.205 11.79 37.409 15.369 36.04L78.039 12.055C85.197 9.315 96.803 9.315 103.961 12.055L166.631 36.04C170.206 37.408 171.996 39.2 172 40.993C172 40.998 172 41.002 172 41.007C171.996 42.8 170.206 44.592 166.631 45.96L103.961 69.945C96.803 72.685 85.197 72.685 78.039 69.945L66 65.338L23.251 48.977L15.369 45.96 M166.631 45.96L103.961 69.945C96.803 72.685 85.197 72.685 78.039 69.945L66 65.338 V85.838L78.039 90.445C85.197 93.185 96.803 93.185 103.961 90.445L166.631 66.46C170.206 65.092 171.996 63.3 172 61.507 V41.007C171.996 42.8 170.206 44.592 166.631 45.96 M10.013 41.282 V55.617L23.251 48.977L15.369 45.96C11.977 44.662 10.193 42.982 10.015 41.282"></path></g></g></g><g id="g-root-cp_6_g-6_hznx7bl5enm4-fill" data-item-order="-872482" transform="translate(350.4410095214844, 238)"><g id="cp_6_g-6_hznx7bl5enm4-fill-merged" stroke="none" fill="#fb6762"><g><path d="M213.138 41.013L170.306 24.752 V17.229L213.138 33.49L227.559 26.286 V46.809L171.987 103.763 V116.115L158.749 109.475L166.631 106.458C170.023 105.16 171.807 103.48 171.985 101.78C171.995 101.686 172 101.592 172 101.498C172 99.703 170.21 97.908 166.631 96.538L155.686 92.349L170.306 85.012L127.475 68.75 V61.227L170.306 77.488L184.579 70.345L141.76 54.084 V46.561L184.579 62.822L198.853 55.679L156.021 39.417 V31.895L198.865 48.156L202.645 46.254L213.138 41.013 M141.76 54.084L184.579 70.345L170.306 77.488L127.487 61.227L141.76 54.084 M156.021 39.417L198.853 55.679L184.579 62.822L141.76 46.561L156.021 39.417 M213.138 41.013L202.645 46.254L198.865 48.156L156.021 31.895L170.306 24.752L213.138 41.013 M227.559 26.286L213.138 33.49L170.306 17.229L184.764 10L227.559 26.286 M166.631 106.458C170.023 105.16 171.807 103.48 171.985 101.78C171.995 101.686 172 101.592 172 101.498C172 99.703 170.21 97.908 166.631 96.538L155.686 92.349L112.985 76.007L103.961 72.553C96.803 69.813 85.197 69.813 78.039 72.553L15.369 96.538C11.794 97.906 10.004 99.698 10 101.491C10 101.496 10 101.5 10 101.505C10.004 103.298 11.794 105.09 15.369 106.458L78.039 130.443C85.197 133.183 96.803 133.183 103.961 130.443L116 125.836L158.749 109.475L166.631 106.458 M127.475 68.75L170.306 85.012L155.686 92.349L112.985 76.007L127.475 68.75 M15.369 106.458L78.039 130.443C85.197 133.183 96.803 133.183 103.961 130.443L116 125.836 V146.336L103.961 150.943C96.803 153.683 85.197 153.683 78.039 150.943L15.369 126.958C11.794 125.59 10.004 123.798 10 122.005 V101.505C10.004 103.298 11.794 105.09 15.369 106.458"></path></g></g></g><g id="g-root-cp_5_g-5_djuf2vl5eoed-fill" data-item-order="-872478" transform="translate(456.4410095214844, 337.50201416015625)"><g id="cp_5_g-5_djuf2vl5eoed-fill-merged" stroke="none" fill="#f79438"><g><path d="M24.42 41.013L67.252 24.752 V17.229L24.42 33.49L10 26.286 V46.809L65.572 103.763 V116.115L78.809 109.475L70.927 106.458C67.536 105.16 65.751 103.48 65.573 101.78C65.563 101.686 65.559 101.592 65.559 101.498C65.559 99.703 67.348 97.908 70.927 96.538L81.872 92.349L67.252 85.012L110.084 68.75 V61.227L67.252 77.488L52.979 70.345L95.799 54.084 V46.561L52.979 62.822L38.706 55.679L81.538 39.417 V31.895L38.694 48.156L34.914 46.254L24.42 41.013 M95.799 54.084L52.979 70.345L67.252 77.488L110.072 61.227L95.799 54.084 M81.538 39.417L38.706 55.679L52.979 62.822L95.799 46.561L81.538 39.417 M24.42 41.013L34.914 46.254L38.694 48.156L81.538 31.895L67.252 24.752L24.42 41.013 M10 26.286L24.42 33.49L67.252 17.229L52.795 10L10 26.286 M70.927 106.458C67.536 105.16 65.751 103.48 65.573 101.78C65.563 101.686 65.559 101.592 65.559 101.498C65.559 99.703 67.348 97.908 70.927 96.538L81.872 92.349L124.573 76.007L133.598 72.553C140.756 69.813 152.361 69.813 159.52 72.553L222.19 96.538C225.765 97.906 227.554 99.698 227.559 101.491C227.559 101.496 227.559 101.5 227.559 101.505C227.554 103.298 225.765 105.09 222.19 106.458L159.52 130.443C152.361 133.183 140.756 133.183 133.598 130.443L121.559 125.836L78.809 109.475L70.927 106.458 M110.084 68.75L67.252 85.012L81.872 92.349L124.573 76.007L110.084 68.75 M222.19 106.458L159.52 130.443C152.361 133.183 140.756 133.183 133.598 130.443L121.559 125.836 V146.336L133.598 150.943C140.756 153.683 152.361 153.683 159.52 150.943L222.19 126.958C225.765 125.59 227.554 123.798 227.559 122.005 V101.505C227.554 103.298 225.765 105.09 222.19 106.458"></path></g></g></g><g id="g-root-cp_4_g-4_4otvx3l5em1a-fill" data-item-order="-872474" transform="translate(350.4410095214844, 437)"><g id="cp_4_g-4_4otvx3l5em1a-fill-merged" stroke="none" fill="#a6da37"><g><path d="M213.138 41.013L170.306 24.752 V17.229L213.138 33.49L227.559 26.286 V46.809L171.987 103.763 V116.115L158.749 109.475L166.631 106.458C170.023 105.16 171.807 103.48 171.985 101.78C171.995 101.686 172 101.592 172 101.498C172 99.703 170.21 97.908 166.631 96.538L155.686 92.349L170.306 85.012L127.475 68.75 V61.227L170.306 77.488L184.579 70.345L141.76 54.084 V46.561L184.579 62.822L198.853 55.679L156.021 39.417 V31.895L198.865 48.156L202.645 46.254L213.138 41.013 M141.76 54.084L184.579 70.345L170.306 77.488L127.487 61.227L141.76 54.084 M156.021 39.417L198.853 55.679L184.579 62.822L141.76 46.561L156.021 39.417 M213.138 41.013L202.645 46.254L198.865 48.156L156.021 31.895L170.306 24.752L213.138 41.013 M227.559 26.286L213.138 33.49L170.306 17.229L184.764 10L227.559 26.286 M166.631 106.458C170.023 105.16 171.807 103.48 171.985 101.78C171.995 101.686 172 101.592 172 101.498C172 99.703 170.21 97.908 166.631 96.538L155.686 92.349L112.985 76.007L103.961 72.553C96.803 69.813 85.197 69.813 78.039 72.553L15.369 96.538C11.794 97.906 10.004 99.698 10 101.491C10 101.496 10 101.5 10 101.505C10.004 103.298 11.794 105.09 15.369 106.458L78.039 130.443C85.197 133.183 96.803 133.183 103.961 130.443L116 125.836L158.749 109.475L166.631 106.458 M127.475 68.75L170.306 85.012L155.686 92.349L112.985 76.007L127.475 68.75 M15.369 106.458L78.039 130.443C85.197 133.183 96.803 133.183 103.961 130.443L116 125.836 V146.336L103.961 150.943C96.803 153.683 85.197 153.683 78.039 150.943L15.369 126.958C11.794 125.59 10.004 123.798 10 122.005 V101.505C10.004 103.298 11.794 105.09 15.369 106.458"></path></g></g></g><g id="g-root-cp_3_g-3_90dsnl5emtj-fill" data-item-order="-872470" transform="translate(456.4410095214844, 536.501953125)"><g id="cp_3_g-3_90dsnl5emtj-fill-merged" stroke="none" fill="#43dd93"><g><path d="M24.42 41.013L67.252 24.752 V17.229L24.42 33.49L10 26.286 V46.809L65.572 103.763 V116.115L78.809 109.475L70.927 106.458C67.536 105.16 65.751 103.48 65.573 101.78C65.563 101.686 65.559 101.592 65.559 101.498C65.559 99.703 67.348 97.908 70.927 96.538L81.872 92.349L67.252 85.012L110.084 68.75 V61.227L67.252 77.488L52.979 70.345L95.799 54.084 V46.561L52.979 62.822L38.706 55.679L81.538 39.417 V31.895L38.694 48.156L34.914 46.254L24.42 41.013 M95.799 54.084L52.979 70.345L67.252 77.488L110.072 61.227L95.799 54.084 M81.538 39.417L38.706 55.679L52.979 62.822L95.799 46.561L81.538 39.417 M24.42 41.013L34.914 46.254L38.694 48.156L81.538 31.895L67.252 24.752L24.42 41.013 M10 26.286L24.42 33.49L67.252 17.229L52.795 10L10 26.286 M70.927 106.458C67.536 105.16 65.751 103.48 65.573 101.78C65.563 101.686 65.559 101.592 65.559 101.498C65.559 99.703 67.348 97.908 70.927 96.538L81.872 92.349L124.573 76.007L133.598 72.553C140.756 69.813 152.361 69.813 159.52 72.553L222.19 96.538C225.765 97.906 227.554 99.698 227.559 101.491C227.559 101.496 227.559 101.5 227.559 101.505C227.554 103.298 225.765 105.09 222.19 106.458L159.52 130.443C152.361 133.183 140.756 133.183 133.598 130.443L121.559 125.836L78.809 109.475L70.927 106.458 M110.084 68.75L67.252 85.012L81.872 92.349L124.573 76.007L110.084 68.75 M222.19 106.458L159.52 130.443C152.361 133.183 140.756 133.183 133.598 130.443L121.559 125.836 V146.336L133.598 150.943C140.756 153.683 152.361 153.683 159.52 150.943L222.19 126.958C225.765 125.59 227.554 123.798 227.559 122.005 V101.505C227.554 103.298 225.765 105.09 222.19 106.458"></path></g></g></g><g id="g-root-cp_2_g-2_1lynxefl5eo7c-fill" data-item-order="-872466" transform="translate(350.4410095214844, 636)"><g id="cp_2_g-2_1lynxefl5eo7c-fill-merged" stroke="none" fill="#4f91fc"><g><path d="M213.138 41.013L170.306 24.752 V17.229L213.138 33.49L227.559 26.286 V46.809L171.987 103.763 V116.115L158.749 109.475L166.631 106.458C170.023 105.16 171.807 103.48 171.985 101.78C171.995 101.686 172 101.592 172 101.498C172 99.703 170.21 97.908 166.631 96.538L155.686 92.349L170.306 85.012L127.475 68.75 V61.227L170.306 77.488L184.579 70.345L141.76 54.084 V46.561L184.579 62.822L198.853 55.679L156.021 39.417 V31.895L198.865 48.156L202.645 46.254L213.138 41.013 M141.76 54.084L184.579 70.345L170.306 77.488L127.487 61.227L141.76 54.084 M156.021 39.417L198.853 55.679L184.579 62.822L141.76 46.561L156.021 39.417 M213.138 41.013L202.645 46.254L198.865 48.156L156.021 31.895L170.306 24.752L213.138 41.013 M227.559 26.286L213.138 33.49L170.306 17.229L184.764 10L227.559 26.286 M166.631 106.458C170.023 105.16 171.807 103.48 171.985 101.78C171.995 101.686 172 101.592 172 101.498C172 99.703 170.21 97.908 166.631 96.538L155.686 92.349L112.985 76.007L103.961 72.553C96.803 69.813 85.197 69.813 78.039 72.553L15.369 96.538C11.794 97.906 10.004 99.698 10 101.491C10 101.496 10 101.5 10 101.505C10.004 103.298 11.794 105.09 15.369 106.458L78.039 130.443C85.197 133.183 96.803 133.183 103.961 130.443L116 125.836L158.749 109.475L166.631 106.458 M127.475 68.75L170.306 85.012L155.686 92.349L112.985 76.007L127.475 68.75 M15.369 106.458L78.039 130.443C85.197 133.183 96.803 133.183 103.961 130.443L116 125.836 V146.336L103.961 150.943C96.803 153.683 85.197 153.683 78.039 150.943L15.369 126.958C11.794 125.59 10.004 123.798 10 122.005 V101.505C10.004 103.298 11.794 105.09 15.369 106.458"></path></g></g></g><g id="g-root-cp_1_g-1_1hiuf9zl5eozl-fill" data-item-order="-872462" transform="translate(456.22100830078125, 735.501953125)"><g id="cp_1_g-1_1hiuf9zl5eozl-fill-merged" stroke="none" fill="#b7b7b7"><g><path d="M24.42 41.013L67.252 24.752 V17.229L24.42 33.49L10 26.286 V46.809L65.572 103.763 V121.998C65.559 123.793 67.348 125.589 70.927 126.958L133.598 150.943C140.756 153.683 152.361 153.683 159.52 150.943L222.19 126.958C225.765 125.59 227.554 123.798 227.559 122.005 V101.505C227.554 103.298 225.765 105.09 222.19 106.458L159.52 130.443C152.361 133.183 140.756 133.183 133.598 130.443L70.927 106.458C67.536 105.16 65.751 103.48 65.573 101.78C65.563 101.686 65.559 101.592 65.559 101.498C65.559 99.703 67.348 97.908 70.927 96.538L81.872 92.349L67.252 85.012L110.084 68.75 V61.227L67.252 77.488L52.979 70.345L95.799 54.084 V46.561L52.979 62.822L38.706 55.679L81.538 39.417 V31.895L38.694 48.156L34.914 46.254L24.42 41.013 M222.19 96.538L159.52 72.553C152.361 69.813 140.756 69.813 133.598 72.553L124.573 76.007L81.872 92.349L70.927 96.538C67.348 97.908 65.559 99.703 65.559 101.498C65.559 101.592 65.563 101.686 65.573 101.78C65.751 103.48 67.536 105.16 70.927 106.458L133.598 130.443C140.756 133.183 152.361 133.183 159.52 130.443L222.19 106.458C225.765 105.09 227.554 103.298 227.559 101.505C227.554 99.698 225.765 97.906 222.19 96.538 M110.084 68.75L67.252 85.012L81.872 92.349L124.573 76.007L110.084 68.75 M95.799 54.084L52.979 70.345L67.252 77.488L110.072 61.227L95.799 54.084 M81.538 39.417L38.706 55.679L52.979 62.822L95.799 46.561L81.538 39.417 M24.42 41.013L34.914 46.254L38.694 48.156L81.538 31.895L67.252 24.752L24.42 41.013 M10 26.286L24.42 33.49L67.252 17.229L52.795 10L10 26.286 M227.559 101.491C227.559 101.496 227.559 101.5 227.559 101.505"></path></g></g></g><g id="g-root-cp_1_number_18ntw47l5emmi-fill" data-item-order="-872448" transform="translate(698, 806)"><g id="cp_1_number_18ntw47l5emmi-fill-merged" stroke="none" fill="#b7b7b7"><g><path d="M10 40C10 23.431 23.431 10 40 10C56.569 10 70 23.431 70 40C70 56.569 56.569 70 40 70C23.431 70 10 56.569 10 40"></path></g></g></g><g id="g-root-cp_2_number_1_1480dzrl5ener-fill" data-item-order="-872430" transform="translate(266, 710)"><g id="cp_2_number_1_1480dzrl5ener-fill-merged" stroke="none" fill="#4f91fc"><g><path d="M10 40C10 23.431 23.431 10 40 10C56.569 10 70 23.431 70 40C70 56.569 56.569 70 40 70C23.431 70 10 56.569 10 40"></path></g></g></g><g id="g-root-cp_3_number_2_qwjvmfl5eozo-fill" data-item-order="-872412" transform="translate(698, 608)"><g id="cp_3_number_2_qwjvmfl5eozo-fill-merged" stroke="none" fill="#43dd93"><g><path d="M10 40C10 23.431 23.431 10 40 10C56.569 10 70 23.431 70 40C70 56.569 56.569 70 40 70C23.431 70 10 56.569 10 40"></path></g></g></g><g id="g-root-cp_4_number_3_4g38pjl5g2rx-fill" data-item-order="-872394" transform="translate(266, 512)"><g id="cp_4_number_3_4g38pjl5g2rx-fill-merged" stroke="none" fill="#a6da37"><g><path d="M10 40C10 23.431 23.431 10 40 10C56.569 10 70 23.431 70 40C70 56.569 56.569 70 40 70C23.431 70 10 56.569 10 40"></path></g></g></g><g id="g-root-cp_5_number_4_1q6d9efl5g0zy-fill" data-item-order="-872376" transform="translate(698, 404)"><g id="cp_5_number_4_1q6d9efl5g0zy-fill-merged" stroke="none" fill="#f79438"><g><path d="M10 40C10 23.431 23.431 10 40 10C56.569 10 70 23.431 70 40C70 56.569 56.569 70 40 70C23.431 70 10 56.569 10 40"></path></g></g></g><g id="g-root-cp_6_number_5_1cuwr13l5g2kv-fill" data-item-order="-872358" transform="translate(266, 314)"><g id="cp_6_number_5_1cuwr13l5g2kv-fill-merged" stroke="none" fill="#fb6762"><g><path d="M10 40C10 23.431 23.431 10 40 10C56.569 10 70 23.431 70 40C70 56.569 56.569 70 40 70C23.431 70 10 56.569 10 40"></path></g></g></g><g id="g-root-cp_7_number_6_13zw7vbl5g0zk-fill" data-item-order="-872340" transform="translate(698, 200)"><g id="cp_7_number_6_13zw7vbl5g0zk-fill-merged" stroke="none" fill="#ffe711"><g><path d="M10 40C10 23.431 23.431 10 40 10C56.569 10 70 23.431 70 40C70 56.569 56.569 70 40 70C23.431 70 10 56.569 10 40"></path></g></g></g><g id="g-root-tx__147cy53lf4etq-fill" data-item-order="0" transform="translate(62, 350)"><g id="tx__147cy53lf4etq-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="17" y="28" dominant-baseline="ideographic">瑞德受傷,海餅乾也受重傷,</tspan><tspan x="68" y="46" dominant-baseline="ideographic">但他們從未放棄。</tspan></text></g></g></g><g id="g-root-ic_man_zqahuflf06x4-fill" data-item-order="0" transform="translate(566, 326)"></g><g id="g-root-tx_5_18lb107lf4fsx-fill" data-item-order="0" transform="translate(716, 416)"><g id="tx_5_18lb107lf4fsx-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">5</tspan></text></g></g></g><g id="g-root-tx__zof2l3lf07ws-fill" data-item-order="0" transform="translate(782, 404)"><g id="tx__zof2l3lf07ws-fill-merged" stroke="none" fill="#f79438"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="33" dominant-baseline="ideographic">挑戰強權</tspan></text></g></g></g><g id="g-root-tx_6_6hionlfbev7-fill" data-item-order="0" transform="translate(284, 326)"><g id="tx_6_6hionlfbev7-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">6</tspan></text></g></g></g><g id="g-root-ic_1_8onrlfla0x-fill" data-item-order="0" transform="translate(386, 428)"></g><g id="g-root-tx__hxrj6flf0745-fill" data-item-order="0" transform="translate(782, 440)"><g id="tx__hxrj6flf0745-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="27" dominant-baseline="ideographic">他們大膽挑戰東部王者</tspan><tspan x="12" y="45" dominant-baseline="ideographic">「戰將」。</tspan></text></g></g></g><g id="g-root-tx__zs5txzlfjtvy-fill" data-item-order="0" transform="translate(134, 512)"><g id="tx__zs5txzlfjtvy-fill-merged" stroke="none" fill="#a6da37"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="16" y="33" dominant-baseline="ideographic">逆襲與勝利</tspan></text></g></g></g><g id="g-root-tx__1qdtzo7lf4flx-fill" data-item-order="0" transform="translate(134, 314)"><g id="tx__1qdtzo7lf4flx-fill-merged" stroke="none" fill="#fb6762"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="16" y="34" dominant-baseline="ideographic">意外與堅持</tspan></text></g></g></g><g id="g-root-tx_4_18gxpeflf05xn-fill" data-item-order="0" transform="translate(284, 524)"><g id="tx_4_18gxpeflf05xn-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">4</tspan></text></g></g></g><g id="g-root-ic_hors_qoenknlfe9e4-fill" data-item-order="0" transform="translate(566, 524)"></g><g id="g-root-tx__dbp713lfl8g0-fill" data-item-order="0" transform="translate(62, 548)"><g id="tx__dbp713lfl8g0-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="23" y="27" dominant-baseline="ideographic">團隊攜手在賽場上屢創佳</tspan><tspan x="158" y="45" dominant-baseline="ideographic">績。</tspan></text></g></g></g><g id="g-root-tx__4njyzblfbg92-fill" data-item-order="0" transform="translate(782, 236)"><g id="tx__4njyzblfbg92-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="28" dominant-baseline="ideographic">帶傷復出的海餅乾與瑞德,</tspan><tspan x="12" y="46" dominant-baseline="ideographic">一同贏得聖安妮塔讓賽。</tspan></text></g></g></g><g id="g-root-ic_shou_mgpeqflf4e13-fill" data-item-order="0" transform="translate(386, 230)"></g><g id="g-root-tx__1q6c7h3lfe8le-fill" data-item-order="0" transform="translate(782, 608)"><g id="tx__1q6c7h3lfe8le-fill-merged" stroke="none" fill="#43dd93"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="33" dominant-baseline="ideographic">重新訓練與啟發</tspan></text></g></g></g><g id="g-root-tx__v9uimvlfbg91-fill" data-item-order="0" transform="translate(782, 200)"><g id="tx__v9uimvlfbg91-fill-merged" stroke="none" fill="#ffe711"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">最終的榮耀</tspan></text></g></g></g><g id="g-root-ic_hold_qv9vivlf78y1-fill" data-item-order="0" transform="translate(386, 626)"></g><g id="g-root-tx_3_18lxexjlfju2y-fill" data-item-order="0" transform="translate(716, 620)"><g id="tx_3_18lxexjlfju2y-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">3</tspan></text></g></g></g><g id="g-root-tx__1cuvp3rlfea6b-fill" data-item-order="0" transform="translate(782, 644)"><g id="tx__1cuvp3rlfea6b-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="27" dominant-baseline="ideographic">湯姆以非傳統的方式,啟發</tspan><tspan x="12" y="45" dominant-baseline="ideographic">海餅乾重拾本能與鬥志。</tspan></text></g></g></g><g id="g-root-tx__1hhkf6flf78xz-fill" data-item-order="0" transform="translate(134, 710)"><g id="tx__1hhkf6flf78xz-fill-merged" stroke="none" fill="#4f91fc"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="16" y="34" dominant-baseline="ideographic">相遇與連結</tspan></text></g></g></g><g id="g-root-tx__255ufl5g2kj-fill" data-item-order="0" transform="translate(782, 842)"><g id="tx__255ufl5g2kj-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="28" dominant-baseline="ideographic">四位主要角色皆身負創傷</tspan><tspan x="12" y="46" dominant-baseline="ideographic">與缺陷。</tspan></text></g></g></g><g id="g-root-tx_2_vccbtjlfcvsw-fill" data-item-order="0" transform="translate(284, 722)"><g id="tx_2_vccbtjlfcvsw-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">2</tspan></text></g></g></g><g id="g-root-ic_conf_1q7m7knl5g364-fill" data-item-order="0" transform="translate(566, 722)"></g><g id="g-root-tx__146qdw7lf77d4-fill" data-item-order="0" transform="translate(62, 746)"><g id="tx__146qdw7lf77d4-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="20" y="31" dominant-baseline="ideographic">在絕望中,他們奇蹟般地相</tspan><tspan x="35" y="49" dominant-baseline="ideographic">遇,形成了一個獨特的團</tspan><tspan x="158" y="67" dominant-baseline="ideographic">隊。</tspan></text></g></g></g><g id="g-root-ic_firs_1hi6zfblfbf9r-fill" data-item-order="0" transform="translate(566, 122)"></g><g id="g-root-tx__qofphzl5g2kh-fill" data-item-order="0" transform="translate(410, 38)"><g id="tx__qofphzl5g2kh-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="12" y="42" dominant-baseline="ideographic">海餅乾的勝利之旅</tspan></text></g></g></g><g id="g-root-tx_1_me7f87lf77k5-fill" data-item-order="0" transform="translate(716, 818)"><g id="tx_1_me7f87lf77k5-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">1</tspan></text></g></g></g><g id="g-root-tx__ddlo7rl5g0zm-fill" data-item-order="0" transform="translate(782, 806)"><g id="tx__ddlo7rl5g0zm-fill-merged" stroke="none" fill="#b7b7b7"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">破碎的起點</tspan></text></g></g></g><g id="g-root-tx_7_1hi72l3lf4g76-fill" data-item-order="0" transform="translate(716, 212)"><g id="tx_7_1hi72l3lf4g76-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">7</tspan></text></g></g></g><g id="g-root-cp_7_g-7_qvaxg7l5emtf-stroke" data-item-order="-872486" transform="translate(512, 199)"><g id="cp_7_g-7_qvaxg7l5emtf-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 15.3686 45.9603C 11.9771 44.6624 10.1925 42.9823 10.0148 41.2823C 10.0049 41.1882 10 41.0941 10 41C 10 39.2047 11.7895 37.4094 15.3686 36.0397L 78.0391 12.0546C 85.1972 9.3151 96.8028 9.3151 103.9609 12.0546L 166.6314 36.0397C 170.2061 37.4077 171.9956 39.2003 172 40.9933C 172 40.9978 172 41.0022 172 41.0067C 171.9956 42.7997 170.2061 44.5923 166.6314 45.9603L 103.9609 69.9454C 96.8028 72.6849 85.1972 72.6849 78.0391 69.9454L 66 65.3378L 23.2507 48.9769L 15.3686 45.9603ZM 166.6314 45.9603L 103.9609 69.9454C 96.8028 72.6849 85.1972 72.6849 78.0391 69.9454L 66 65.3378L 66 85.8378L 78.0391 90.4454C 85.1972 93.1849 96.8028 93.1849 103.9609 90.4454L 166.6314 66.4603C 170.2061 65.0923 171.9956 63.2997 172 61.5067L 172 41.0067C 171.9956 42.7997 170.2061 44.5923 166.6314 45.9603ZM 10.0148 41.2823L 10.0133 43.2651L 10.0043 55.6165L 23.2507 48.9769L 15.3686 45.9603C 11.9771 44.6624 10.1925 42.9823 10.0148 41.2823ZM 172 40.9933L 172 41.0067L 172 40.9933Z"></path></g></g></g><g id="g-root-cp_6_g-6_hznx7bl5enm4-stroke" data-item-order="-872482" transform="translate(350.4410095214844, 238)"><g id="cp_6_g-6_hznx7bl5enm4-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 170.3064 77.4884L 170.3064 85.0116L 127.4745 68.7503L 127.4868 61.2269L 170.3064 77.4884ZM 141.7599 54.0837L 184.5795 70.3453L 170.3064 77.4884L 127.4868 61.2269L 141.7599 54.0837ZM 184.5795 62.8221L 184.5795 70.3453L 141.7599 54.0837L 141.76 46.5607L 184.5795 62.8221ZM 156.0209 39.4174L 198.8527 55.6794L 184.5795 62.8221L 141.76 46.5607L 156.0209 39.4174ZM 198.865 48.1558L 198.8527 55.6794L 156.0209 39.4174L 156.0209 31.8946L 198.865 48.1558ZM 213.1382 41.0132L 202.645 46.2536L 198.865 48.1558L 156.0209 31.8946L 170.3064 24.7519L 213.1382 41.0132ZM 213.1382 33.49L 213.1382 41.0132L 170.3064 24.7519L 170.3063 17.2286L 213.1382 33.49ZM 227.5586 26.2859L 213.1382 33.49L 170.3063 17.2286L 184.7636 10L 227.5586 26.2859ZM 166.6314 106.4584C 170.0229 105.1604 171.8075 103.4804 171.9853 101.7803C 171.9951 101.6863 172 101.5922 172 101.498C 172 99.7028 170.2105 97.9075 166.6314 96.5377L 155.6863 92.3489L 112.9854 76.0065L 103.9609 72.5527C 96.8028 69.8132 85.1972 69.8132 78.0391 72.5527L 15.3686 96.5377C 11.794 97.9058 10.0044 99.6983 10 101.4914C 10 101.4958 10 101.5003 10 101.5047C 10.0044 103.2978 11.794 105.0903 15.3686 106.4584L 78.0391 130.4434C 85.1972 133.1829 96.8028 133.1829 103.9609 130.4434L 116 125.8358L 158.7494 109.475L 166.6314 106.4584ZM 213.1382 41.0132L 213.1382 33.49L 227.5586 26.2859L 227.5586 46.8091L 171.9867 103.7632L 171.9853 101.7803C 171.9951 101.6863 172 101.5922 172 101.498C 172 99.7028 170.2105 97.9075 166.6314 96.5377L 155.6863 92.3489L 170.3064 85.0116L 170.3064 77.4884L 184.5795 70.3453L 184.5795 62.8221L 198.8527 55.6794L 198.865 48.1558L 202.645 46.2536L 213.1382 41.0132ZM 127.4745 68.7503L 170.3064 85.0116L 155.6863 92.3489L 112.9854 76.0065L 127.4745 68.7503ZM 15.3686 106.4584L 78.0391 130.4434C 85.1972 133.1829 96.8028 133.1829 103.9609 130.4434L 116 125.8358L 116 146.3358L 103.9609 150.9434C 96.8028 153.6829 85.1972 153.6829 78.0391 150.9434L 15.3686 126.9584C 11.794 125.5903 10.0044 123.7978 10 122.0047L 10 101.5047C 10.0044 103.2978 11.794 105.0903 15.3686 106.4584ZM 171.9867 103.7632L 171.9853 101.7803C 171.8075 103.4804 170.0229 105.1604 166.6314 106.4584L 158.7494 109.475L 171.9957 116.1146L 171.9867 103.7632ZM 10 101.4914L 10 101.5047L 10 101.4914Z"></path></g></g></g><g id="g-root-cp_5_g-5_djuf2vl5eoed-stroke" data-item-order="-872478" transform="translate(456.4410095214844, 337.50201416015625)"><g id="cp_5_g-5_djuf2vl5eoed-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 67.2522 77.4884L 67.2522 85.0116L 110.0841 68.7503L 110.0718 61.2269L 67.2522 77.4884ZM 95.7987 54.0837L 52.9791 70.3453L 67.2522 77.4884L 110.0718 61.2269L 95.7987 54.0837ZM 52.9791 62.8221L 52.9791 70.3453L 95.7987 54.0837L 95.7986 46.5607L 52.9791 62.8221ZM 81.5377 39.4174L 38.7059 55.6794L 52.9791 62.8221L 95.7986 46.5607L 81.5377 39.4174ZM 38.6936 48.1558L 38.7059 55.6794L 81.5377 39.4174L 81.5377 31.8946L 38.6936 48.1558ZM 24.4205 41.0132L 34.9136 46.2536L 38.6936 48.1558L 81.5377 31.8946L 67.2523 24.7519L 24.4205 41.0132ZM 24.4205 33.49L 24.4205 41.0132L 67.2523 24.7519L 67.2523 17.2286L 24.4205 33.49ZM 10 26.2859L 24.4205 33.49L 67.2523 17.2286L 52.795 10L 10 26.2859ZM 70.9272 106.4584C 67.5357 105.1604 65.7511 103.4804 65.5733 101.7803C 65.5635 101.6863 65.5586 101.5922 65.5586 101.498C 65.5586 99.7028 67.3481 97.9075 70.9272 96.5377L 81.8723 92.3489L 124.5732 76.0065L 133.5977 72.5527C 140.7558 69.8132 152.3614 69.8132 159.5195 72.5527L 222.19 96.5377C 225.7646 97.9058 227.5542 99.6983 227.5586 101.4914C 227.5586 101.4958 227.5586 101.5003 227.5586 101.5047C 227.5542 103.2978 225.7646 105.0903 222.19 106.4584L 159.5195 130.4434C 152.3614 133.1829 140.7558 133.1829 133.5977 130.4434L 121.5586 125.8358L 78.8092 109.475L 70.9272 106.4584ZM 24.4205 41.0132L 24.4205 33.49L 10 26.2859L 10 46.8091L 65.5719 103.7632L 65.5733 101.7803C 65.5635 101.6863 65.5586 101.5922 65.5586 101.498C 65.5586 99.7028 67.3481 97.9075 70.9272 96.5377L 81.8723 92.3489L 67.2522 85.0116L 67.2522 77.4884L 52.9791 70.3453L 52.9791 62.8221L 38.7059 55.6794L 38.6936 48.1558L 34.9136 46.2536L 24.4205 41.0132ZM 110.0841 68.7503L 67.2522 85.0116L 81.8723 92.3489L 124.5732 76.0065L 110.0841 68.7503ZM 222.19 106.4584L 159.5195 130.4434C 152.3614 133.1829 140.7558 133.1829 133.5977 130.4434L 121.5586 125.8358L 121.5586 146.3358L 133.5977 150.9434C 140.7558 153.6829 152.3614 153.6829 159.5195 150.9434L 222.19 126.9584C 225.7646 125.5903 227.5542 123.7978 227.5586 122.0047L 227.5586 101.5047C 227.5542 103.2978 225.7646 105.0903 222.19 106.4584ZM 65.5733 101.7803L 65.5719 103.7632L 65.5629 116.1146L 78.8092 109.475L 70.9272 106.4584C 67.5357 105.1604 65.7511 103.4804 65.5733 101.7803ZM 227.5586 101.4914L 227.5586 101.5047L 227.5586 101.4914Z"></path></g></g></g><g id="g-root-cp_4_g-4_4otvx3l5em1a-stroke" data-item-order="-872474" transform="translate(350.4410095214844, 437)"><g id="cp_4_g-4_4otvx3l5em1a-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 170.3064 77.4884L 170.3064 85.0116L 127.4745 68.7503L 127.4868 61.2269L 170.3064 77.4884ZM 141.7599 54.0837L 184.5795 70.3453L 170.3064 77.4884L 127.4868 61.2269L 141.7599 54.0837ZM 184.5795 62.8221L 184.5795 70.3453L 141.7599 54.0837L 141.76 46.5607L 184.5795 62.8221ZM 156.0209 39.4174L 198.8527 55.6794L 184.5795 62.8221L 141.76 46.5607L 156.0209 39.4174ZM 198.865 48.1558L 198.8527 55.6794L 156.0209 39.4174L 156.0209 31.8946L 198.865 48.1558ZM 213.1382 41.0132L 202.645 46.2536L 198.865 48.1558L 156.0209 31.8946L 170.3064 24.7519L 213.1382 41.0132ZM 213.1382 33.49L 213.1382 41.0132L 170.3064 24.7519L 170.3063 17.2286L 213.1382 33.49ZM 227.5586 26.2859L 213.1382 33.49L 170.3063 17.2286L 184.7636 10L 227.5586 26.2859ZM 166.6314 106.4584C 170.0229 105.1604 171.8075 103.4804 171.9853 101.7803C 171.9951 101.6863 172 101.5922 172 101.498C 172 99.7028 170.2105 97.9075 166.6314 96.5377L 155.6863 92.3489L 112.9854 76.0065L 103.9609 72.5527C 96.8028 69.8132 85.1972 69.8132 78.0391 72.5527L 15.3686 96.5377C 11.794 97.9058 10.0044 99.6983 10 101.4914C 10 101.4958 10 101.5003 10 101.5047C 10.0044 103.2978 11.794 105.0903 15.3686 106.4584L 78.0391 130.4434C 85.1972 133.1829 96.8028 133.1829 103.9609 130.4434L 116 125.8358L 158.7494 109.475L 166.6314 106.4584ZM 213.1382 41.0132L 213.1382 33.49L 227.5586 26.2859L 227.5586 46.8091L 171.9867 103.7632L 171.9853 101.7803C 171.9951 101.6863 172 101.5922 172 101.498C 172 99.7028 170.2105 97.9075 166.6314 96.5377L 155.6863 92.3489L 170.3064 85.0116L 170.3064 77.4884L 184.5795 70.3453L 184.5795 62.8221L 198.8527 55.6794L 198.865 48.1558L 202.645 46.2536L 213.1382 41.0132ZM 127.4745 68.7503L 170.3064 85.0116L 155.6863 92.3489L 112.9854 76.0065L 127.4745 68.7503ZM 15.3686 106.4584L 78.0391 130.4434C 85.1972 133.1829 96.8028 133.1829 103.9609 130.4434L 116 125.8358L 116 146.3358L 103.9609 150.9434C 96.8028 153.6829 85.1972 153.6829 78.0391 150.9434L 15.3686 126.9584C 11.794 125.5903 10.0044 123.7978 10 122.0047L 10 101.5047C 10.0044 103.2978 11.794 105.0903 15.3686 106.4584ZM 171.9867 103.7632L 171.9853 101.7803C 171.8075 103.4804 170.0229 105.1604 166.6314 106.4584L 158.7494 109.475L 171.9957 116.1146L 171.9867 103.7632ZM 10 101.4914L 10 101.5047L 10 101.4914Z"></path></g></g></g><g id="g-root-cp_3_g-3_90dsnl5emtj-stroke" data-item-order="-872470" transform="translate(456.4410095214844, 536.501953125)"><g id="cp_3_g-3_90dsnl5emtj-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 67.2522 77.4884L 67.2522 85.0116L 110.0841 68.7503L 110.0718 61.2269L 67.2522 77.4884ZM 95.7987 54.0837L 52.9791 70.3453L 67.2522 77.4884L 110.0718 61.2269L 95.7987 54.0837ZM 52.9791 62.8221L 52.9791 70.3453L 95.7987 54.0837L 95.7986 46.5607L 52.9791 62.8221ZM 81.5377 39.4174L 38.7059 55.6794L 52.9791 62.8221L 95.7986 46.5607L 81.5377 39.4174ZM 38.6936 48.1558L 38.7059 55.6794L 81.5377 39.4174L 81.5377 31.8946L 38.6936 48.1558ZM 24.4205 41.0132L 34.9136 46.2536L 38.6936 48.1558L 81.5377 31.8946L 67.2523 24.7519L 24.4205 41.0132ZM 24.4205 33.49L 24.4205 41.0132L 67.2523 24.7519L 67.2523 17.2286L 24.4205 33.49ZM 10 26.2859L 24.4205 33.49L 67.2523 17.2286L 52.795 10L 10 26.2859ZM 70.9272 106.4584C 67.5357 105.1604 65.7511 103.4804 65.5733 101.7803C 65.5635 101.6863 65.5586 101.5922 65.5586 101.498C 65.5586 99.7028 67.3481 97.9075 70.9272 96.5377L 81.8723 92.3489L 124.5732 76.0065L 133.5977 72.5527C 140.7558 69.8132 152.3614 69.8132 159.5195 72.5527L 222.19 96.5377C 225.7646 97.9058 227.5542 99.6983 227.5586 101.4914C 227.5586 101.4958 227.5586 101.5003 227.5586 101.5047C 227.5542 103.2978 225.7646 105.0903 222.19 106.4584L 159.5195 130.4434C 152.3614 133.1829 140.7558 133.1829 133.5977 130.4434L 121.5586 125.8358L 78.8092 109.475L 70.9272 106.4584ZM 24.4205 41.0132L 24.4205 33.49L 10 26.2859L 10 46.8091L 65.5719 103.7632L 65.5733 101.7803C 65.5635 101.6863 65.5586 101.5922 65.5586 101.498C 65.5586 99.7028 67.3481 97.9075 70.9272 96.5377L 81.8723 92.3489L 67.2522 85.0116L 67.2522 77.4884L 52.9791 70.3453L 52.9791 62.8221L 38.7059 55.6794L 38.6936 48.1558L 34.9136 46.2536L 24.4205 41.0132ZM 110.0841 68.7503L 67.2522 85.0116L 81.8723 92.3489L 124.5732 76.0065L 110.0841 68.7503ZM 222.19 106.4584L 159.5195 130.4434C 152.3614 133.1829 140.7558 133.1829 133.5977 130.4434L 121.5586 125.8358L 121.5586 146.3358L 133.5977 150.9434C 140.7558 153.6829 152.3614 153.6829 159.5195 150.9434L 222.19 126.9584C 225.7646 125.5903 227.5542 123.7978 227.5586 122.0047L 227.5586 101.5047C 227.5542 103.2978 225.7646 105.0903 222.19 106.4584ZM 65.5733 101.7803L 65.5719 103.7632L 65.5629 116.1146L 78.8092 109.475L 70.9272 106.4584C 67.5357 105.1604 65.7511 103.4804 65.5733 101.7803ZM 227.5586 101.4914L 227.5586 101.5047L 227.5586 101.4914Z"></path></g></g></g><g id="g-root-cp_2_g-2_1lynxefl5eo7c-stroke" data-item-order="-872466" transform="translate(350.4410095214844, 636)"><g id="cp_2_g-2_1lynxefl5eo7c-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 170.3064 77.4884L 170.3064 85.0116L 127.4745 68.7503L 127.4868 61.2269L 170.3064 77.4884ZM 141.7599 54.0837L 184.5795 70.3453L 170.3064 77.4884L 127.4868 61.2269L 141.7599 54.0837ZM 184.5795 62.8221L 184.5795 70.3453L 141.7599 54.0837L 141.76 46.5607L 184.5795 62.8221ZM 156.0209 39.4174L 198.8527 55.6794L 184.5795 62.8221L 141.76 46.5607L 156.0209 39.4174ZM 198.865 48.1558L 198.8527 55.6794L 156.0209 39.4174L 156.0209 31.8946L 198.865 48.1558ZM 213.1382 41.0132L 202.645 46.2536L 198.865 48.1558L 156.0209 31.8946L 170.3064 24.7519L 213.1382 41.0132ZM 213.1382 33.49L 213.1382 41.0132L 170.3064 24.7519L 170.3063 17.2286L 213.1382 33.49ZM 227.5586 26.2859L 213.1382 33.49L 170.3063 17.2286L 184.7636 10L 227.5586 26.2859ZM 166.6314 106.4584C 170.0229 105.1604 171.8075 103.4804 171.9853 101.7803C 171.9951 101.6863 172 101.5922 172 101.498C 172 99.7028 170.2105 97.9075 166.6314 96.5377L 155.6863 92.3489L 112.9854 76.0065L 103.9609 72.5527C 96.8028 69.8132 85.1972 69.8132 78.0391 72.5527L 15.3686 96.5377C 11.794 97.9058 10.0044 99.6983 10 101.4914C 10 101.4958 10 101.5003 10 101.5047C 10.0044 103.2978 11.794 105.0903 15.3686 106.4584L 78.0391 130.4434C 85.1972 133.1829 96.8028 133.1829 103.9609 130.4434L 116 125.8358L 158.7494 109.475L 166.6314 106.4584ZM 213.1382 41.0132L 213.1382 33.49L 227.5586 26.2859L 227.5586 46.8091L 171.9867 103.7632L 171.9853 101.7803C 171.9951 101.6863 172 101.5922 172 101.498C 172 99.7028 170.2105 97.9075 166.6314 96.5377L 155.6863 92.3489L 170.3064 85.0116L 170.3064 77.4884L 184.5795 70.3453L 184.5795 62.8221L 198.8527 55.6794L 198.865 48.1558L 202.645 46.2536L 213.1382 41.0132ZM 127.4745 68.7503L 170.3064 85.0116L 155.6863 92.3489L 112.9854 76.0065L 127.4745 68.7503ZM 15.3686 106.4584L 78.0391 130.4434C 85.1972 133.1829 96.8028 133.1829 103.9609 130.4434L 116 125.8358L 116 146.3358L 103.9609 150.9434C 96.8028 153.6829 85.1972 153.6829 78.0391 150.9434L 15.3686 126.9584C 11.794 125.5903 10.0044 123.7978 10 122.0047L 10 101.5047C 10.0044 103.2978 11.794 105.0903 15.3686 106.4584ZM 171.9867 103.7632L 171.9853 101.7803C 171.8075 103.4804 170.0229 105.1604 166.6314 106.4584L 158.7494 109.475L 171.9957 116.1146L 171.9867 103.7632ZM 10 101.4914L 10 101.5047L 10 101.4914Z"></path></g></g></g><g id="g-root-cp_1_g-1_1hiuf9zl5eozl-stroke" data-item-order="-872462" transform="translate(456.22100830078125, 735.501953125)"><g id="cp_1_g-1_1hiuf9zl5eozl-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 222.19 106.4584L 159.5195 130.4434C 152.3614 133.1829 140.7558 133.1829 133.5977 130.4434L 70.9272 106.4584C 67.5357 105.1604 65.7511 103.4804 65.5733 101.7803L 65.5719 103.7632L 65.5586 121.998C 65.5586 123.7933 67.3481 125.5886 70.9272 126.9584L 133.5977 150.9434C 140.7558 153.6829 152.3614 153.6829 159.5195 150.9434L 222.19 126.9584C 225.7646 125.5903 227.5542 123.7978 227.5586 122.0047L 227.5586 101.5047C 227.5542 103.2978 225.7646 105.0903 222.19 106.4584ZM 222.19 96.5377L 159.5195 72.5527C 152.3614 69.8132 140.7558 69.8132 133.5977 72.5527L 124.5732 76.0065L 81.8723 92.3489L 70.9272 96.5377C 67.3481 97.9075 65.5586 99.7028 65.5586 101.498C 65.5586 101.5922 65.5635 101.6863 65.5733 101.7803C 65.7511 103.4804 67.5357 105.1604 70.9272 106.4584L 133.5977 130.4434C 140.7558 133.1829 152.3614 133.1829 159.5195 130.4434L 222.19 106.4584C 225.7646 105.0903 227.5542 103.2978 227.5586 101.5047L 227.5586 101.4914C 227.5542 99.6983 225.7646 97.9058 222.19 96.5377ZM 24.4205 41.0132L 24.4205 33.49L 10 26.2859L 10 46.8091L 65.5719 103.7632L 65.5733 101.7803C 65.5635 101.6863 65.5586 101.5922 65.5586 101.498C 65.5586 99.7028 67.3481 97.9075 70.9272 96.5377L 81.8723 92.3489L 67.2522 85.0116L 67.2522 77.4884L 52.9791 70.3453L 52.9791 62.8221L 38.7059 55.6794L 38.6936 48.1558L 34.9136 46.2536L 24.4205 41.0132ZM 110.0841 68.7503L 67.2522 85.0116L 81.8723 92.3489L 124.5732 76.0065L 110.0841 68.7503ZM 67.2522 77.4884L 67.2522 85.0116L 110.0841 68.7503L 110.0718 61.2269L 67.2522 77.4884ZM 95.7987 54.0837L 52.9791 70.3453L 67.2522 77.4884L 110.0718 61.2269L 95.7987 54.0837ZM 52.9791 62.8221L 52.9791 70.3453L 95.7987 54.0837L 95.7986 46.5607L 52.9791 62.8221ZM 81.5377 39.4174L 38.7059 55.6794L 52.9791 62.8221L 95.7986 46.5607L 81.5377 39.4174ZM 38.6936 48.1558L 38.7059 55.6794L 81.5377 39.4174L 81.5377 31.8946L 38.6936 48.1558ZM 24.4205 41.0132L 34.9136 46.2536L 38.6936 48.1558L 81.5377 31.8946L 67.2523 24.7519L 24.4205 41.0132ZM 24.4205 33.49L 24.4205 41.0132L 67.2523 24.7519L 67.2523 17.2286L 24.4205 33.49ZM 10 26.2859L 24.4205 33.49L 67.2523 17.2286L 52.795 10L 10 26.2859ZM 227.5586 101.4914C 227.5586 101.4958 227.5586 101.5003 227.5586 101.5047L 227.5586 101.4914Z"></path></g></g></g><g id="g-root-cp_1_number_18ntw47l5emmi-stroke" data-item-order="-872448" transform="translate(698, 806)"><g id="cp_1_number_18ntw47l5emmi-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 10 40C 10 23.4315 23.4315 10 40 10C 56.5685 10 70 23.4315 70 40C 70 56.5685 56.5685 70 40 70C 23.4315 70 10 56.5685 10 40Z"></path></g></g></g><g id="g-root-cp_2_number_1_1480dzrl5ener-stroke" data-item-order="-872430" transform="translate(266, 710)"><g id="cp_2_number_1_1480dzrl5ener-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 10 40C 10 23.4315 23.4315 10 40 10C 56.5685 10 70 23.4315 70 40C 70 56.5685 56.5685 70 40 70C 23.4315 70 10 56.5685 10 40Z"></path></g></g></g><g id="g-root-cp_3_number_2_qwjvmfl5eozo-stroke" data-item-order="-872412" transform="translate(698, 608)"><g id="cp_3_number_2_qwjvmfl5eozo-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 10 40C 10 23.4315 23.4315 10 40 10C 56.5685 10 70 23.4315 70 40C 70 56.5685 56.5685 70 40 70C 23.4315 70 10 56.5685 10 40Z"></path></g></g></g><g id="g-root-cp_4_number_3_4g38pjl5g2rx-stroke" data-item-order="-872394" transform="translate(266, 512)"><g id="cp_4_number_3_4g38pjl5g2rx-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 10 40C 10 23.4315 23.4315 10 40 10C 56.5685 10 70 23.4315 70 40C 70 56.5685 56.5685 70 40 70C 23.4315 70 10 56.5685 10 40Z"></path></g></g></g><g id="g-root-cp_5_number_4_1q6d9efl5g0zy-stroke" data-item-order="-872376" transform="translate(698, 404)"><g id="cp_5_number_4_1q6d9efl5g0zy-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 10 40C 10 23.4315 23.4315 10 40 10C 56.5685 10 70 23.4315 70 40C 70 56.5685 56.5685 70 40 70C 23.4315 70 10 56.5685 10 40Z"></path></g></g></g><g id="g-root-cp_6_number_5_1cuwr13l5g2kv-stroke" data-item-order="-872358" transform="translate(266, 314)"><g id="cp_6_number_5_1cuwr13l5g2kv-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 10 40C 10 23.4315 23.4315 10 40 10C 56.5685 10 70 23.4315 70 40C 70 56.5685 56.5685 70 40 70C 23.4315 70 10 56.5685 10 40Z"></path></g></g></g><g id="g-root-cp_7_number_6_13zw7vbl5g0zk-stroke" data-item-order="-872340" transform="translate(698, 200)"><g id="cp_7_number_6_13zw7vbl5g0zk-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 10 40C 10 23.4315 23.4315 10 40 10C 56.5685 10 70 23.4315 70 40C 70 56.5685 56.5685 70 40 70C 23.4315 70 10 56.5685 10 40Z"></path></g></g></g><g id="g-root-tx__147cy53lf4etq-stroke" data-item-order="0" transform="translate(62, 350)"></g><g id="g-root-ic_man_zqahuflf06x4-stroke" data-item-order="0" transform="translate(566, 326)"><g id="ic_man_zqahuflf06x4-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 53.654999 26.334999C 49.86813 29.533281 45.086411 31.31427 40.130001 31.372499C 35.172764 31.314642 30.390141 29.533642 26.602501 26.334999C 30.384989 23.124756 35.169228 21.335197 40.130001 21.275002C 45.089951 21.335567 49.87328 23.125116 53.654999 26.334999ZM 50.125 51.772499C 57.206528 54.893879 62.460693 61.096569 64.375 68.595001M 15.6275 68.75C 17.517952 61.158634 22.828842 54.876839 30 51.75M 26.602499 25.389999C 26.377991 20.412041 28.905851 15.713058 33.183357 13.157C 37.460861 10.600942 42.796638 10.600942 47.074142 13.157C 51.351646 15.713058 53.879509 20.412041 53.654999 25.389999L 53.654999 30.235001C 53.55439 37.633614 47.528046 43.578568 40.12875 43.578568C 32.729446 43.578568 26.703106 37.633614 26.602499 30.234997ZM 50.125 51.772499L 40.130001 57.93L 30.004999 51.747498M 35.619999 11.9825L 35.619999 21.605M 44.637497 11.9825L 44.637497 21.605M 40.130001 57.93L 32.400002 63.532501L 25.865 54.039997M 39.885002 57.93L 47.612499 63.532501L 54.192501 54.039997M 39.1325 66.970001C 39.132504 67.50296 39.564548 67.935005 40.0975 67.935005C 40.630459 67.935005 41.062504 67.50296 41.062504 66.970001C 41.062504 66.43705 40.630459 66.005005 40.0975 66.005005C 39.564548 66.005005 39.132504 66.43705 39.132504 66.970001M 43.880001 37.357498C 41.65778 39.024166 38.602222 39.024166 36.380001 37.357498"></path></g></g></g><g id="g-root-tx_5_18lb107lf4fsx-stroke" data-item-order="0" transform="translate(716, 416)"></g><g id="g-root-tx__zof2l3lf07ws-stroke" data-item-order="0" transform="translate(782, 404)"></g><g id="g-root-tx_6_6hionlfbev7-stroke" data-item-order="0" transform="translate(284, 326)"></g><g id="g-root-ic_1_8onrlfla0x-stroke" data-item-order="0" transform="translate(386, 428)"><g id="ic_1_8onrlfla0x-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 46.875 40.9375L 46.875 37.625L 56.125 30.375C 58.125 28.875 59.125 26.625 59.375 24.375L 60.375 17.375C 60.625 15.375 59.125 13.375 57.125 13.375C 55.125 13.125 53.125 14.625 53.125 16.625L 52.125 23.625C 52.125 23.875 51.875 24.375 51.625 24.375L 43.125 31.125L 35.625 31.125L 27.125 24.375C 26.875 24.125 26.625 23.875 26.625 23.625L 25.625 16.625C 25.375 14.625 23.625 13.125 21.625 13.375C 19.625 13.625 18.125 15.375 18.375 17.375L 19.375 24.375C 19.625 26.625 20.875 28.875 22.625 30.375L 31.875 37.625L 31.875 40.9375M 30.625 68.125L 30.625 60.625C 30.625 58.625 32.375 56.875 34.375 56.875C 36.375 56.875 38.125 58.625 38.125 60.625L 38.125 68.125M 46.875 56.875L 46.875 68.125M 59.375 47.375C 59.375 48.875 58.375 49.875 56.875 49.875L 23.125 49.875C 21.625 49.875 20.625 48.875 20.625 47.375L 20.625 43.43C 20.625 41.93 21.625 40.93 23.125 40.93L 56.875 40.93C 58.375 40.93 59.375 41.93 59.375 43.43L 59.375 47.375ZM 28.125 49.8825L 28.125 53.125C 28.125 54.625 27.125 55.625 25.625 55.625L 11.875 55.625L 15.625 51.875L 11.875 48.125L 20.664999 48.125M 51.875 49.8825L 51.875 53.125C 51.875 54.625 52.875 55.625 54.375 55.625L 68.125 55.625L 64.375 51.875L 68.125 48.125L 59.334999 48.125M 39.375 25.782501C 43.171959 25.782501 46.25 22.704458 46.25 18.907501C 46.25 15.110542 43.171959 12.0325 39.375 12.0325C 35.578045 12.0325 32.5 15.110542 32.5 18.907501C 32.5 22.704458 35.578045 25.782501 39.375 25.782501Z"></path></g></g></g><g id="g-root-tx__hxrj6flf0745-stroke" data-item-order="0" transform="translate(782, 440)"></g><g id="g-root-tx__zs5txzlfjtvy-stroke" data-item-order="0" transform="translate(134, 512)"></g><g id="g-root-tx__1qdtzo7lf4flx-stroke" data-item-order="0" transform="translate(134, 314)"></g><g id="g-root-tx_4_18gxpeflf05xn-stroke" data-item-order="0" transform="translate(284, 524)"></g><g id="g-root-ic_hors_qoenknlfe9e4-stroke" data-item-order="0" transform="translate(566, 524)"><g id="ic_hors_qoenknlfe9e4-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 20.9375 52.1525L 19.1875 53.279999L 19.1875 59.165001C 19.1875 60.890888 17.788389 62.290001 16.0625 62.290001C 14.33661 62.290001 12.9375 60.890888 12.9375 59.165001L 12.9375 51.577499C 12.937326 50.515106 13.476912 49.525394 14.37 48.950001L 17.75 46.77M 47.404999 57L 48.540001 62.775002C 48.856174 64.460968 47.754234 66.086632 46.071068 66.417366C 44.387897 66.7481 42.752766 65.660248 42.407501 63.980003L 40.945 56.532501M 55.895 34.822498L 56.894997 34.822498C 60.086979 34.822887 62.93716 36.821609 64.024994 39.822498L 67.275002 48.737499M 44.365002 42.704998C 44.501499 46.416454 46.719662 49.733543 50.0975 51.277496C 50.0975 51.2775 52.517502 60.002499 52.772499 60.4925L 55.8325 66.334999C 56.473251 67.558952 57.841145 68.217484 59.197502 67.955002C 59.494381 67.895668 59.781387 67.79467 60.049995 67.654999C 60.784954 67.270744 61.337021 66.6101 61.58461 65.818573C 61.832195 65.027054 61.75499 64.169571 61.370003 63.435001L 58.699997 58.34C 58.699997 58.34 59.102501 47.98 59.055 47.737499M 59.055 47.75L 59.055 44C 59.055 38.940002 56.5275 31.355 47.674999 33.884998C 38.822502 36.415001 36.294998 33.884998 36.294998 33.884998L 33.459999 21.1875C 33.059235 19.393251 31.985476 17.821089 30.459999 16.795L 30.459999 16.795L 28.485001 11.795C 28.367306 11.55264 28.125305 11.395171 27.856045 11.385742C 27.586784 11.376313 27.33436 11.516467 27.200001 11.75L 23.8125 17.3675L 14.2075 22.3675C 12.973776 22.927916 12.399775 24.360167 12.905 25.6175L 13.5625 27.26C 13.818411 27.897532 14.322341 28.403746 14.958711 28.662537C 15.595079 28.921326 16.309278 28.910486 16.9375 28.6325L 19.2675 27.532499C 20.788071 29.033924 23.165653 29.230827 24.9125 28L 21.9125 41.424999C 21.334938 45.093174 22.874805 48.773567 25.8925 50.9375L 24.477499 58.4375C 24.348946 58.975204 24.3636 59.53722 24.519999 60.067497L 26.4025 66.387497C 26.797585 67.714394 28.01804 68.623634 29.4025 68.622505C 29.705494 68.621887 30.006855 68.578117 30.297499 68.4925C 31.092232 68.256409 31.760447 67.713951 32.154846 66.984718C 32.549244 66.255478 32.63744 65.39933 32.400002 64.604996L 30.75 59.082497C 30.75 59.082497 31.6875 55.847504 32.362499 53.455002C 32.780777 51.965084 34.139984 50.93597 35.6875 50.9375L 48.892502 50.9375"></path></g></g></g><g id="g-root-tx__dbp713lfl8g0-stroke" data-item-order="0" transform="translate(62, 548)"></g><g id="g-root-tx__4njyzblfbg92-stroke" data-item-order="0" transform="translate(782, 236)"></g><g id="g-root-ic_shou_mgpeqflf4e13-stroke" data-item-order="0" transform="translate(386, 230)"><g id="ic_shou_mgpeqflf4e13-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 26.872499 17.5C 26.872499 20.95178 29.670719 23.75 33.122501 23.75C 36.57428 23.75 39.372501 20.95178 39.372501 17.5C 39.372501 14.048221 36.57428 11.25 33.122501 11.25C 29.670719 11.25 26.872499 14.048221 26.872499 17.5ZM 34.372498 65L 34.372498 52.5M 26.872499 46.25L 26.872499 65C 26.872499 67.071068 28.551434 68.75 30.622501 68.75C 32.693565 68.75 34.372501 67.071068 34.372501 65C 34.372501 67.071068 36.051434 68.75 38.122501 68.75C 40.193569 68.75 41.872501 67.071068 41.872501 65L 41.872498 38.607498L 43.5825 40.805C 46.235386 44.228477 50.621788 45.819374 54.852501 44.892498C 56.674671 44.586739 58.037792 43.052967 58.127499 41.2075C 58.145241 40.051643 57.628899 38.952198 56.728077 38.227734C 55.827259 37.503265 54.642658 37.234756 53.517498 37.5C 52.097469 37.920868 50.562954 37.461693 49.607502 36.329998L 45.9575 31.639999C 44.535503 29.815186 42.350945 28.748737 40.037502 28.75L 29.372499 28.75C 25.230366 28.75 21.872499 32.107864 21.872499 36.25L 21.872499 41.25C 21.872499 44.011425 24.111076 46.25 26.872499 46.25ZM 26.872499 46.25L 35.622498 46.25C 37.693569 46.25 39.372501 44.571068 39.372501 42.5C 39.372501 40.428932 37.693569 38.75 35.622501 38.75L 34.73 38.75M 21.872499 41.25L 36.872498 28.75L 33.122498 46.25"></path></g></g></g><g id="g-root-tx__1q6c7h3lfe8le-stroke" data-item-order="0" transform="translate(782, 608)"></g><g id="g-root-tx__v9uimvlfbg91-stroke" data-item-order="0" transform="translate(782, 200)"></g><g id="g-root-ic_hold_qv9vivlf78y1-stroke" data-item-order="0" transform="translate(386, 626)"><g id="ic_hold_qv9vivlf78y1-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 11.25 46.32L 21.25 46.32L 21.25 66.32L 11.25 66.32ZM 21.25 62.57C 47.57 71.347496 39.5 71.597504 68.057495 57.16C 68.442703 56.961357 68.700928 56.580959 68.743347 56.149632C 68.785774 55.718307 68.606621 55.294884 68.267502 55.025002C 66.608437 53.582455 64.310493 53.124199 62.224998 53.82L 49.224998 58.134998M 33.75 58.82L 47.5 58.82C 48.880714 58.82 50 57.70071 50 56.32C 50 54.939289 48.880714 53.82 47.5 53.82L 40 53.82C 37.037003 50.762199 33.005219 48.970299 28.75 48.82L 21.25 48.82M 21.25 18.82C 21.25 22.962135 24.607864 26.32 28.75 26.32C 32.892136 26.32 36.25 22.962135 36.25 18.82C 36.25 14.677865 32.892136 11.320001 28.75 11.320001C 24.607864 11.320001 21.25 14.677865 21.25 18.82ZM 22.2875 15.012501C 24.634016 17.44606 27.869417 18.820541 31.25 18.82C 32.945038 18.825298 34.623367 18.485041 36.182499 17.82M 65.355003 26.682499C 64.35614 25.042604 63.858231 23.146574 63.922497 21.227499L 63.922501 19C 63.922501 14.762595 60.487404 11.3275 56.25 11.3275C 52.012596 11.3275 48.577503 14.762595 48.577503 19L 48.577499 21.23C 48.641762 23.149075 48.14386 25.045105 47.145 26.684999M 48.577499 20.264999C 51.523598 20.260847 54.322899 18.978403 56.25 16.75C 58.176636 18.979334 60.976009 20.26272 63.922501 20.267502M 49.514999 20.219999C 49.861801 23.680178 52.773735 26.314846 56.251251 26.314846C 59.728767 26.314846 62.640694 23.680178 62.987499 20.219999M 31.25 29.0725C 27.571814 28.321693 23.750937 29.263741 20.843317 31.638298C 17.935698 34.012856 16.249233 37.568466 16.25 41.322502M 53.75 29.0725C 57.428188 28.321693 61.249065 29.263741 64.156685 31.638298C 67.064301 34.012856 68.750771 37.568466 68.75 41.322502M 36.875 31.945C 36.875 35.051601 39.393398 37.57 42.5 37.57C 45.606602 37.57 48.125 35.051601 48.125 31.945C 48.125 28.838398 45.606602 26.32 42.5 26.32C 39.393398 26.32 36.875 28.838398 36.875 31.945ZM 50 46.32C 49.428699 43.198097 46.985668 40.755177 43.863739 40.184017C 40.741814 39.612862 37.592106 41.032585 35.952499 43.75"></path></g></g></g><g id="g-root-tx_3_18lxexjlfju2y-stroke" data-item-order="0" transform="translate(716, 620)"></g><g id="g-root-tx__1cuvp3rlfea6b-stroke" data-item-order="0" transform="translate(782, 644)"></g><g id="g-root-tx__1hhkf6flf78xz-stroke" data-item-order="0" transform="translate(134, 710)"></g><g id="g-root-tx__255ufl5g2kj-stroke" data-item-order="0" transform="translate(782, 842)"></g><g id="g-root-tx_2_vccbtjlfcvsw-stroke" data-item-order="0" transform="translate(284, 722)"></g><g id="g-root-ic_conf_1q7m7knl5g364-stroke" data-item-order="0" transform="translate(566, 722)"><g id="ic_conf_1q7m7knl5g364-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 32.247501 13.195L 26.5 36.174999C 26.202953 37.362141 25.13624 38.194901 23.9125 38.195L 23.9125 38.195C 22.6875 38.195 21.619999 37.362499 21.3225 36.174999L 15.58 13.195M 64.419998 45.969997C 63.5625 43.545002 60.892502 41.805 58.169998 41.805C 54.847496 41.805 51.919998 44.497498 51.919998 47.817501C 51.919998 50.405003 53.68 52.659996 56.189999 53.287502L 59.7225 54.172501C 62.483536 54.861866 64.421227 57.341698 64.422501 60.187496L 64.422501 60.555C 64.422501 64.006783 61.624279 66.805 58.172501 66.805C 55.447502 66.805 52.7775 65.064995 51.922497 62.637501M 29.199999 64.175003L 44.235001 45.07C 44.601799 44.60128 44.709274 43.979923 44.52121 43.415237C 44.333149 42.850548 43.874588 42.417702 43.299999 42.262501L 36.537498 40.450001C 35.959503 40.29771 35.497406 39.863991 35.308846 39.296791C 35.120281 38.729588 35.230724 38.105534 35.602501 37.637497L 52.5 16.475"></path></g></g></g><g id="g-root-tx__146qdw7lf77d4-stroke" data-item-order="0" transform="translate(62, 746)"></g><g id="g-root-ic_firs_1hi6zfblfbf9r-stroke" data-item-order="0" transform="translate(566, 122)"><g id="ic_firs_1hi6zfblfbf9r-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 67.5 53.125L 48.75 53.125L 48.75 40.625C 48.75 39.934647 48.190353 39.375 47.5 39.375L 32.5 39.375C 31.809645 39.375 31.25 39.934647 31.25 40.625L 31.25 53.125L 12.5 53.125C 11.809644 53.125 11.25 53.684647 11.25 54.375L 11.25 66.875C 11.25 67.565353 11.809644 68.125 12.5 68.125L 67.5 68.125C 68.190353 68.125 68.75 67.565353 68.75 66.875L 68.75 54.375C 68.75 53.684647 68.190353 53.125 67.5 53.125ZM 28.75 33.125C 28.796631 31.749237 29.128649 30.398174 29.725 29.157501C 30.415001 27.7775 33.294998 26.8225 36.912502 25.4825C 37.889999 25.119999 37.732502 22.837502 37.297501 22.362501C 35.904121 20.849689 35.222061 18.814432 35.422501 16.7675C 35.302414 15.055972 36.14743 13.420488 37.612869 12.528164C 39.078308 11.635839 40.919193 11.635839 42.384632 12.528164C 43.850067 13.420488 44.695087 15.055972 44.575001 16.7675C 44.775436 18.814432 44.09338 20.849689 42.700001 22.362501C 42.267498 22.84 42.107502 25.112499 43.084999 25.4825C 46.702499 26.8225 49.584999 27.7775 50.272499 29.157501C 50.870129 30.397835 51.203022 31.748997 51.25 33.125M 24.279999 45.625C 23.205 45.185001 21.942499 44.735001 20.5825 44.23C 19.605 43.8675 19.762501 41.584999 20.1975 41.110001C 21.590879 39.597191 22.272938 37.561932 22.0725 35.514999C 22.192369 34.240486 21.76067 32.975655 20.886578 32.04039C 20.012486 31.105125 18.779701 30.588982 17.5 30.622499C 16.21944 30.587524 14.985291 31.103029 14.110076 32.038471C 13.23486 32.973915 12.802506 34.239594 12.9225 35.514999C 12.722063 37.561932 13.40412 39.597191 14.7975 41.110001C 15.23 41.587502 15.389999 43.860001 14.4125 44.23C 13.2675 44.6525 12.2 45.040001 11.25 45.412498M 55.712502 45.625C 56.787498 45.185001 58.049999 44.735001 59.41 44.23C 60.387501 43.8675 60.229996 41.584999 59.794998 41.110001C 58.401623 39.597191 57.719566 37.561932 57.920002 35.514999C 57.799915 33.803474 58.644936 32.167992 60.110367 31.275663C 61.575809 30.383339 63.416695 30.383339 64.882133 31.275663C 66.347572 32.167992 67.192589 33.803474 67.072502 35.514999C 67.272942 37.561932 66.590881 39.597191 65.197502 41.110001C 64.764999 41.587502 64.604996 43.860001 65.582497 44.23C 66.727501 44.6525 67.794998 45.040001 68.747498 45.412498"></path></g></g></g><g id="g-root-tx__qofphzl5g2kh-stroke" data-item-order="0" transform="translate(410, 38)"></g><g id="g-root-tx_1_me7f87lf77k5-stroke" data-item-order="0" transform="translate(716, 818)"></g><g id="g-root-tx__ddlo7rl5g0zm-stroke" data-item-order="0" transform="translate(782, 806)"></g><g id="g-root-tx_7_1hi72l3lf4g76-stroke" data-item-order="0" transform="translate(716, 212)"></g></g></g><path id="w13z8yc7lz6fws" d="M65.283 12.757a.35.35 0 0 0 .584.157l5.203-5.141-6.183 3.523.396 1.461zm-2.216-11.7a.35.35 0 0 0-.522.305v3.111l3.276-1.868-2.754-1.548zm3.728 2.105l-4.25 2.421v2.445l6.391-3.644-2.141-1.222zm4.708 3.303a.35.35 0 0 0 0-.609l-1.592-.9-7.365 4.199v1.782a.35.35 0 0 0 .523.305l8.435-4.777z M44.542 2.513c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm59.171 0c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm-85.951 7.636h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.819 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zm72.662 2.86h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.82 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zM99.096 10.149H97.85v-8.45h1.246v4.895l2.68-2.559h1.738l-2.633 2.535 2.715 3.578h-1.556l-2.077-2.707-.867.844v1.863zm6.053-6.114h-1.255v6.113h1.255V4.035zm-59.2 0h-1.255v6.113h1.255V4.035zm5.584 6.113V1.697h1.255v2.695c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27v-3.68c0-.408-.214-1.339-1.315-1.339-.968 0-1.342.756-1.342 1.339v3.681h-1.255zm-4.76-4.894V4.039h.621a.45.45 0 0 0 .45-.45v-.855h1.251v1.305h1.309v1.215h-1.309v3.109c0 .293.105.664.648.664.365 0 .531-.035.736-.07v1.137s-.361.113-.857.113c-1.398 0-1.777-1.051-1.777-1.788V5.254h-1.071zM36.528 4.039h-1.394l2.191 6.106h1.125l1.234-3.918 1.238 3.918h1.129l2.188-6.106h-1.383l-1.359 3.93-1.256-3.93h-1.124l-1.242 3.957-1.348-3.957zM26.212 7.141c-.02 1.566 1.187 3.129 3.223 3.129 1.566 0 2.383-.918 2.734-1.719L31.172 8c-.315.399-.801 1.094-1.738 1.094-1.145 0-1.825-.781-1.891-1.52h4.625c.074-.284.148-.995-.03-1.559-.336-1.064-1.221-2.102-2.839-2.102s-3.088 1.152-3.088 3.227zm1.363-.75h3.348c-.055-.43-.566-1.301-1.623-1.301a1.79 1.79 0 0 0-1.725 1.301zm-8.758.75c.038 1.758 1.277 3.133 3.145 3.133 1.074 0 1.723-.477 1.961-.672v.547h1.242V1.703h-1.258v2.888c-.414-.36-1.062-.68-1.93-.68-1.91 0-3.198 1.473-3.16 3.23zm1.309-.08c0 1.119.723 1.978 1.836 1.978a1.88 1.88 0 0 0 1.94-1.904c0-1.371-1.011-1.99-1.972-1.99s-1.805.798-1.805 1.916zm76.683-.028C96.771 5.275 95.532 3.9 93.664 3.9c-1.074 0-1.723.477-1.961.672v-.547h-1.242v8.22h1.258V9.583c.414.36 1.063.68 1.93.68 1.91 0 3.198-1.473 3.16-3.23zm-1.309.08c0-1.119-.723-1.978-1.836-1.978a1.88 1.88 0 0 0-1.94 1.904c0 1.371 1.011 1.99 1.972 1.99S95.5 8.231 95.5 7.113zM106.441 10.173V4.036h1.254v.382c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27V6.492c0-.408-.214-1.339-1.315-1.339-.969 0-1.342.756-1.342 1.339v3.681h-1.254zm-30.383-.021V1.824h1.084l4.215 5.777V1.824h1.32v8.328h-1.094l-4.207-5.796v5.796h-1.319zM5.24 10.149H4V2.377h1.014l2.664 3.597 2.654-3.592h1.03v7.766h-1.256V4.762L7.678 8.068 5.24 4.742v5.407z" transform="translate(908, 938)" fill="#ababab88" stroke="none"></path></svg>
+                    </div>
+                    <div class="cognitive-steps">
+                        <ol>
+                            <li data-source-line="30"><strong>破碎的起點 (Broken Beginnings)：</strong> 四位主要角色——馬主查爾斯、馴馬師湯姆、騎師瑞德、以及賽馬海餅乾——皆身負創傷與缺陷。</li>
+                            <li data-source-line="31"><strong>相遇與連結 (Meeting and Connection)：</strong> 在絕望中，他們奇蹟般地相遇，彼此看見並接納對方的殘缺，形成了一個獨特的團隊。</li>
+                            <li data-source-line="32"><strong>重新訓練與啟發 (Retraining and Inspiration)：</strong> 湯姆以非傳統的方式，啟發海餅乾重拾本能與鬥志；瑞德則學會放下憤怒，與海餅乾建立深厚連結。</li>
+                            <li data-source-line="33"><strong>逆襲與勝利 (Comeback and Victories)：</strong> 團隊攜手在賽場上屢創佳績，成為大蕭條時期人們的精神寄託。</li>
+                            <li data-source-line="34"><strong>挑戰強權 (Challenging the Champion)：</strong> 他們大膽挑戰東部王者「戰將」（War Admiral），一場「大衛與歌利亞」般的對決，激發了全國人民的熱情。</li>
+                            <li data-source-line="35"><strong>意外與堅持 (Setbacks and Perseverance)：</strong> 瑞德受傷，海餅乾也受重傷，但他們從未放棄，選擇共同復健。</li>
+                            <li data-source-line="36"><strong>最終的榮耀 (Ultimate Glory)：</strong> 帶傷復出的海餅乾與瑞德，一同贏得聖安妮塔讓賽，實現了不可能的夢想，留下不朽傳奇。</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 主題與結論 -->
+            <section class="section" data-source-line="38" data-id="themes">
+                <div class="theme-card" id="themes">
+                    <h2>📝 主題與結論 (Topic & Conclusions)</h2>
+
+                    <div class="key-point">
+                        <p data-source-line="40">這個故事的核心主題是 <strong>「在苦難中逆襲與堅持，重新發現生命價值」</strong>。它告訴我們，無論我們有多麼矮小、多麼被輕視，或曾跌倒多少次，我們的生命總有其獨特價值與潛能。只要我們不放棄，堅定信念，互相扶持，就能在「至暗時刻」中跑出自己的希望，甚至成為他人的光。</p>
+                    </div>
+                    <div class="svg-container" data-source-line="39">
+<svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;background:#404040;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="700" height="428" viewBox="0 0 1092 528"><style class="text-font-style fontImports" data-font-family="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;amp;display=block);</style><g id="items" style="isolation: isolate"><g id="blend" style="mix-blend-mode: normal"><g id="g-root-cp_start_g-start_hxs25jjha1hl-fill" data-item-order="-450998" transform="translate(62, 122)"><g id="cp_start_g-start_hxs25jjha1hl-fill-merged" stroke="none" fill="#fb6762"><g><path d="M10 311.714C10 317.625 12.529 323.293 17.029 327.473C21.53 331.652 27.635 334 34 334 H166C172.365 334 178.47 331.652 182.971 327.473C187.471 323.293 190 317.625 190 311.714 V34C190 27.635 187.471 21.53 182.971 17.029C178.47 12.529 172.365 10 166 10 H34C27.635 10 21.53 12.529 17.029 17.029C12.529 21.53 10 27.635 10 34 V311.714"></path></g></g></g><g id="g-root-cp_1_g-1_4mbjs7jha32i-fill" data-item-order="-450974" transform="translate(254, 122)"><g id="cp_1_g-1_4mbjs7jha32i-fill-merged" stroke="none" fill="#f79438"><g><path d="M10 311.714C10 317.625 12.529 323.293 17.029 327.473C21.53 331.652 27.635 334 34 334 H166C172.365 334 178.47 331.652 182.971 327.473C187.471 323.293 190 317.625 190 311.714 V34C190 27.635 187.471 21.53 182.971 17.029C178.47 12.529 172.365 10 166 10 H34C27.635 10 21.53 12.529 17.029 17.029C12.529 21.53 10 27.635 10 34 V311.714"></path></g></g></g><g id="g-root-cp_2_g-2_1d1523rjha2vf-fill" data-item-order="-450948" transform="translate(446, 122)"><g id="cp_2_g-2_1d1523rjha2vf-fill-merged" stroke="none" fill="#ffe711"><g><path d="M10 311.714C10 317.625 12.529 323.293 17.029 327.473C21.53 331.652 27.635 334 34 334 H166C172.365 334 178.47 331.652 182.971 327.473C187.471 323.293 190 317.625 190 311.714 V34C190 27.635 187.471 21.53 182.971 17.029C178.47 12.529 172.365 10 166 10 H34C27.635 10 21.53 12.529 17.029 17.029C12.529 21.53 10 27.635 10 34 V311.714"></path></g></g></g><g id="g-root-cp_3_g-3_zqb0tjjha1ak-fill" data-item-order="-450922" transform="translate(638, 122)"><g id="cp_3_g-3_zqb0tjjha1ak-fill-merged" stroke="none" fill="#43dd93"><g><path d="M10 311.714C10 317.625 12.529 323.293 17.029 327.473C21.53 331.652 27.635 334 34 334 H166C172.365 334 178.47 331.652 182.971 327.473C187.471 323.293 190 317.625 190 311.714 V34C190 27.635 187.471 21.53 182.971 17.029C178.47 12.529 172.365 10 166 10 H34C27.635 10 21.53 12.529 17.029 17.029C12.529 21.53 10 27.635 10 34 V311.714"></path></g></g></g><g id="g-root-cp_end_g-end_meuig7jha2vh-fill" data-item-order="-450896" transform="translate(830, 122)"><g id="cp_end_g-end_meuig7jha2vh-fill-merged" stroke="none" fill="#4f91fc"><g><path d="M10 311.714C10 317.625 12.529 323.293 17.029 327.473C21.53 331.652 27.635 334 34 334 H166C172.365 334 178.47 331.652 182.971 327.473C187.471 323.293 190 317.625 190 311.714 V34C190 27.635 187.471 21.53 182.971 17.029C178.47 12.529 172.365 10 166 10 H34C27.635 10 21.53 12.529 17.029 17.029C12.529 21.53 10 27.635 10 34 V311.714"></path></g></g></g><g id="g-root-cp_0_g-0_hz10brjha3nq-fill" data-item-order="-450871" transform="translate(26, 254)"></g><g id="g-root-cp_0_g-0_1_4o6z1jjha22v-fill" data-item-order="-450863" transform="translate(268.669921875, 335.029296875)"></g><g id="g-root-tx__8dgx3jha2v4-fill" data-item-order="0" transform="translate(458, 38)"><g id="tx__8dgx3jha2v4-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="13" y="42" dominant-baseline="ideographic">苦難中的逆襲</tspan></text></g></g></g><g id="g-root-tx__18n6z8njha2o1-fill" data-item-order="0" transform="translate(110, 170)"><g id="tx__18n6z8njha2o1-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">失去價值</tspan></text></g></g></g><g id="g-root-tx__1cuwb8njhbfgj-fill" data-item-order="0" transform="translate(320, 170)"><g id="tx__1cuwb8njhbfgj-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="14" y="34" dominant-baseline="ideographic">堅持</tspan></text></g></g></g><g id="g-root-tx__1lrs9nrjhbg25-fill" data-item-order="0" transform="translate(494, 170)"><g id="tx__1lrs9nrjhbg25-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">互相扶持</tspan></text></g></g></g><g id="g-root-tx__3do87jhbguf-fill" data-item-order="0" transform="translate(686, 170)"><g id="tx__3do87jhbguf-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">發現希望</tspan></text></g></g></g><g id="g-root-tx__593hjjhbfup-fill" data-item-order="0" transform="translate(854, 170)"><g id="tx__593hjjhbfup-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="16" y="34" dominant-baseline="ideographic">重新發現價值</tspan></text></g></g></g><g id="g-root-tx__959fc7jha3gq-fill" data-item-order="0" transform="translate(86, 206)"><g id="tx__959fc7jha3gq-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="16" y="31" dominant-baseline="ideographic">感到矮小且被輕視</tspan></text></g></g></g><g id="g-root-tx__dcyrc7jhbg98-fill" data-item-order="0" transform="translate(272, 206)"><g id="tx__dcyrc7jhbg98-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="14.5" y="31" dominant-baseline="ideographic">堅定信念，永不放棄</tspan></text></g></g></g><g id="g-root-tx__qpo7vrjhbgue-fill" data-item-order="0" transform="translate(464, 206)"><g id="tx__qpo7vrjhbgue-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="14.5" y="31" dominant-baseline="ideographic">互相支持，共同成長</tspan></text></g></g></g><g id="g-root-tx__v6qo6fjhbi88-fill" data-item-order="0" transform="translate(662, 206)"><g id="tx__v6qo6fjhbi88-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="16" y="31" dominant-baseline="ideographic">在黑暗中找到光明</tspan></text></g></g></g><g id="g-root-tx__18k2lt3jhbfnm-fill" data-item-order="0" transform="translate(842, 206)"><g id="tx__18k2lt3jhbfnm-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="13" y="31" dominant-baseline="ideographic">認識到獨特價值與潛能</tspan></text></g></g></g><g id="g-root-cp_start_g-start_hxs25jjha1hl-stroke" data-item-order="-450998" transform="translate(62, 122)"><g id="cp_start_g-start_hxs25jjha1hl-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 190 46L 190 34C 190 27.6348 187.4714 21.5303 182.9706 17.0294C 178.4697 12.5286 172.3652 10 166 10L 34 10C 27.6348 10 21.5303 12.5286 17.0294 17.0294C 12.5286 21.5303 10 27.6348 10 34L 10 46M 190 178L 190 46M 10 46L 10 178M 190 178L 190 311.7143C 190 317.6248 187.4714 323.2933 182.9706 327.4727C 178.4697 331.652 172.3652 334 166 334L 34 334C 27.6348 334 21.5303 331.652 17.0294 327.4727C 12.5286 323.2933 10 317.6248 10 311.7143L 10 178"></path></g></g></g><g id="g-root-cp_1_g-1_4mbjs7jha32i-stroke" data-item-order="-450974" transform="translate(254, 122)"><g id="cp_1_g-1_4mbjs7jha32i-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 190 178L 190 46M 10 46L 10 178M 190 178L 190 311.7143C 190 317.6248 187.4714 323.2933 182.9706 327.4727C 178.4697 331.652 172.3652 334 166 334L 34 334C 27.6348 334 21.5303 331.652 17.0294 327.4727C 12.5286 323.2933 10 317.6248 10 311.7143L 10 178M 190 46L 190 34C 190 27.6348 187.4714 21.5303 182.9706 17.0294C 178.4697 12.5286 172.3652 10 166 10L 34 10C 27.6348 10 21.5303 12.5286 17.0294 17.0294C 12.5286 21.5303 10 27.6348 10 34L 10 46"></path></g></g></g><g id="g-root-cp_2_g-2_1d1523rjha2vf-stroke" data-item-order="-450948" transform="translate(446, 122)"><g id="cp_2_g-2_1d1523rjha2vf-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 190 46L 190 34C 190 27.6348 187.4714 21.5303 182.9706 17.0294C 178.4697 12.5286 172.3652 10 166 10L 34 10C 27.6348 10 21.5303 12.5286 17.0294 17.0294C 12.5286 21.5303 10 27.6348 10 34L 10 46M 190 178L 190 46M 10 46L 10 178M 190 178L 190 311.7143C 190 317.6248 187.4714 323.2933 182.9706 327.4727C 178.4697 331.652 172.3652 334 166 334L 34 334C 27.6348 334 21.5303 331.652 17.0294 327.4727C 12.5286 323.2933 10 317.6248 10 311.7143L 10 178"></path></g></g></g><g id="g-root-cp_3_g-3_zqb0tjjha1ak-stroke" data-item-order="-450922" transform="translate(638, 122)"><g id="cp_3_g-3_zqb0tjjha1ak-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 190 46L 190 34C 190 27.6348 187.4714 21.5303 182.9706 17.0294C 178.4697 12.5286 172.3652 10 166 10L 34 10C 27.6348 10 21.5303 12.5286 17.0294 17.0294C 12.5286 21.5303 10 27.6348 10 34L 10 46M 190 178L 190 46M 10 46L 10 178M 190 178L 190 311.7143C 190 317.6248 187.4714 323.2933 182.9706 327.4727C 178.4697 331.652 172.3652 334 166 334L 34 334C 27.6348 334 21.5303 331.652 17.0294 327.4727C 12.5286 323.2933 10 317.6248 10 311.7143L 10 178"></path></g></g></g><g id="g-root-cp_end_g-end_meuig7jha2vh-stroke" data-item-order="-450896" transform="translate(830, 122)"><g id="cp_end_g-end_meuig7jha2vh-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#2c2c2c" stroke-width="2"><g><path d="M 190 46L 190 34C 190 27.6348 187.4714 21.5303 182.9706 17.0294C 178.4697 12.5286 172.3652 10 166 10L 34 10C 27.6348 10 21.5303 12.5286 17.0294 17.0294C 12.5286 21.5303 10 27.6348 10 34L 10 46M 190 178L 190 46M 10 46L 10 178M 190 178L 190 311.7143C 190 317.6248 187.4714 323.2933 182.9706 327.4727C 178.4697 331.652 172.3652 334 166 334L 34 334C 27.6348 334 21.5303 331.652 17.0294 327.4727C 12.5286 323.2933 10 317.6248 10 311.7143L 10 178"></path></g></g></g><g id="g-root-cp_0_g-0_hz10brjha3nq-stroke" data-item-order="-450871" transform="translate(26, 254)"><g id="cp_0_g-0_hz10brjha3nq-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 1011 138.999997L 1018 146.999997L 1025 138.999997M 1011 138.999997L 1018 146.999997L 1025 138.999997M 989 116.999997L 982 108.999997L 975 116.999997M 989 116.999997L 982 108.999997L 975 116.999997M 989 128.999997L 982 120.999997L 975 128.999997M 989 128.999997L 982 120.999997L 975 128.999997M 989 140.999997L 982 132.999997L 975 140.999997M 989 140.999997L 982 132.999997L 975 140.999997M 962 94.230597L 946 81.310597L 930 94.230597M 962 94.230597L 946 81.310597L 930 94.230597M 962 113.619397L 946 100.689497L 930 113.619397M 962 113.619397L 946 100.689497L 930 113.619397M 962 133.000097L 946 120.080097L 930 133.000097M 962 133.000097L 946 120.080097L 930 133.000097M 170 94.230597L 154 81.310597L 138 94.230597M 170 94.230597L 154 81.310597L 138 94.230597M 170 113.619397L 154 100.689497L 138 113.619397M 170 113.619397L 154 100.689497L 138 113.619397M 170 133.000097L 154 120.080097L 138 133.000097M 170 133.000097L 154 120.080097L 138 133.000097M 110 94.230597L 94 81.310597L 78 94.230597M 110 94.230597L 94 81.310597L 78 94.230597M 110 113.619397L 94 100.689497L 78 113.619397M 110 113.619397L 94 100.689497L 78 113.619397M 110 133.000097L 94 120.080097L 78 133.000097M 110 133.000097L 94 120.080097L 78 133.000097M 67 119.850997L 57.86 112.460897L 48.71 119.850997M 67 119.850997L 57.86 112.460897L 48.71 119.850997M 67 130.919097L 57.86 123.539097L 48.71 130.919097M 67 130.919097L 57.86 123.539097L 48.71 130.919097M 67 141.999097L 57.86 134.619097L 48.71 141.999097M 67 141.999097L 57.86 134.619097L 48.71 141.999097M 915 138.999997L 922 146.999997L 929 138.999997M 915 138.999997L 922 146.999997L 929 138.999997M 327 138.999997L 334 146.999997L 341 138.999997M 327 138.999997L 334 146.999997L 341 138.999997M 303 138.999997L 310 146.999997L 317 138.999997M 303 138.999997L 310 146.999997L 317 138.999997M 279 138.999997L 286 146.999997L 293 138.999997M 279 138.999997L 286 146.999997L 293 138.999997M 111 138.999997L 118 146.999997L 125 138.999997M 111 138.999997L 118 146.999997L 125 138.999997M 15 138.999997L 22 146.999997L 29 138.999997M 15 138.999997L 22 146.999997L 29 138.999997M 297.0002 134.999997L 276.7603 123.139997C 270.268 119.338997 264.4411 114.501797 259.5102 108.819997L 238.7602 84.889997C 237.5642 83.507397 235.9142 82.596697 234.1069 82.321697C 232.2995 82.046797 230.4533 82.425597 228.9002 83.389997L 220.4202 88.650097C 218.7571 89.680297 216.8931 90.343497 214.953 90.595297C 213.0128 90.847097 211.0413 90.681597 209.1702 90.109997C 207.1875 89.502797 205.0929 89.352897 203.0439 89.671597C 200.9949 89.990297 199.0449 90.769297 197.3402 91.949997L 186.0902 99.720097C 183.9942 101.168697 181.6232 102.171697 179.1239 102.667097C 176.6247 103.162497 174.0503 103.139697 171.5602 102.600097L 169.4902 102.139997M 231.8198 102.819797L 239.3398 98.439797C 240.2838 97.887997 241.338 97.551697 242.4272 97.454897C 243.5163 97.358097 244.6133 97.503197 245.6398 97.879797C 248.4919 98.880797 251.1859 100.284997 253.6398 102.049797M 244.4199 90.999997L 247.4199 91.469997M 781 90.489997L 784 89.999997M 244 81.999997L 244 90.919997L 244.4199 90.999997M 250.2298 144.240897L 239.2298 128.530997C 238.6986 127.775197 237.9026 127.246897 236.9998 127.050897C 234.5282 126.529797 232.1059 125.797097 229.7598 124.860897C 229.0318 124.555697 228.2247 124.493897 227.4587 124.684997C 226.6928 124.875997 226.0092 125.309497 225.5098 125.920897L 218.8198 134.160997M 223.4101 128.489197L 215.9001 124.369197C 214.9274 123.831297 213.812 123.607897 212.7072 123.729697C 211.6023 123.851397 210.5623 124.312397 209.7301 125.049197L 200.6401 133.049197M 808.94 154.000797L 798.94 135.330897C 797.1119 131.901397 794.2006 129.172997 790.66 127.570797L 783.85 124.480797C 780.45 122.948197 777.592 120.424697 775.65 117.240797L 769.65 107.450897C 769.3858 107.016597 769.0245 106.649497 768.5945 106.378297C 768.1645 106.107097 767.6775 105.939297 767.1718 105.887897C 766.666 105.836597 766.1553 105.903097 765.6796 106.082297C 765.2039 106.261497 764.7761 106.548497 764.43 106.920797L 758.65 113.140897C 755.5021 116.531197 752.5981 120.140197 749.96 123.940797C 747.0301 128.169897 744.4387 132.623797 742.21 137.260897L 740 142.000797M 785.4502 138.210897C 785.4502 138.210897 791.3302 132.450897 795.9502 131.210897M 836.3198 116.630297L 848.5998 106.280297C 850.024 105.077497 851.776 104.328797 853.6296 104.130997C 855.4833 103.933097 857.3538 104.295097 858.9998 105.170297L 866.5698 109.170297C 869.8852 110.940597 873.688 111.579597 877.3998 110.990297L 879.7698 110.620297C 884.9374 109.820897 889.9438 108.200397 894.5998 105.820297L 910.6898 97.560297C 911.409 97.189097 912.2275 97.055897 913.0273 97.179897C 913.8271 97.303897 914.5668 97.678697 915.1398 98.250297L 919.8098 102.920297M 770.48 108.699297L 784 90.219297L 797 72.399297C 798.1307 70.853997 799.6543 69.639297 801.4127 68.881497C 803.1711 68.123597 805.1002 67.850097 807 68.089297L 820 69.719297C 821.7403 69.936797 823.5072 69.770097 825.1761 69.231097C 826.8451 68.691997 828.3756 67.793697 829.66 66.599297L 835.66 61.029297C 839.4723 57.476897 843.7276 54.431697 848.32 51.969297L 848.92 51.649297C 850.5719 50.765997 852.4144 50.298897 854.2876 50.288497C 856.1608 50.277997 858.0083 50.724497 859.67 51.589297L 863.32 53.489297C 865.173 54.450897 867.2524 54.890997 869.3361 54.762397C 871.4197 54.633797 873.4294 53.941397 875.15 52.759297L 887.52 44.259297C 889.6295 42.807997 892.1295 42.030497 894.69 42.029297L 909.9 42.029297C 912.8149 42.032297 915.6398 43.038697 917.9 44.879297L 934 57.999297M 898.8599 67.450897L 901.7099 60.800797C 903.0094 57.752297 905.0515 55.077697 907.6499 53.020897L 917.9099 44.880897M 872.3801 94.310697L 864.0001 87.090697C 862.499 85.800797 860.6903 84.920497 858.7491 84.534997C 856.8079 84.149597 854.8 84.272097 852.92 84.890697L 844.6401 87.600697C 842.4701 88.311197 840.1377 88.359697 837.9401 87.739897C 835.7424 87.120197 833.7791 85.860297 832.3 84.120697L 820.0601 69.720697M 10 153.999997L 1030 153.999997M 1018 153.999997L 1018 135.999997M 982 101.999997L 982 153.999997M 946 69.999997L 946 153.999997M 154 69.999997L 154 153.999997M 94 69.999997L 94 153.999997M 57.8599 105.999997L 57.8599 153.999997M 922 153.999997L 922 135.999997M 334 153.999997L 334 135.999997M 310 153.999997L 310 135.999997M 286 153.999997L 286 135.999997M 118 153.999997L 118 135.999997M 22 153.999997L 22 135.999997M 784 81.999997L 784 90.229997M 868.05 27.97L 850 27.97L 850 16L 868.05 16L 865.05 21.99L 868.05 27.97ZM 850 10L 850 51.15M 294.999987 61C 297.209187 61 298.999987 59.2091 298.999987 57C 298.999987 54.7909 297.209187 53 294.999987 53C 292.790887 53 290.999987 54.7909 290.999987 57C 290.999987 59.2091 292.790887 61 294.999987 61ZM 292.939987 64.3594L 292.939987 71.2394C 292.937987 71.4036 292.983487 71.5649 293.071187 71.7038C 293.158887 71.8427 293.284887 71.9532 293.434087 72.0219C 293.583287 72.0907 293.749087 72.1148 293.911687 72.0912C 294.074187 72.0677 294.226487 71.9976 294.349987 71.8894L 299.259987 67.7094M 289.520087 75.2109L 289.520087 77.8209C 289.517387 78.1643 289.609287 78.5017 289.785687 78.7963C 289.962087 79.0908 290.216187 79.3312 290.520087 79.4909C 293.010087 80.7709 299.310087 85.1209 300.520087 96.7909M 288.909887 63.5593C 286.739587 67.0653 285.487687 71.0617 285.269887 75.1793C 285.259187 75.4653 285.181487 75.7449 285.043187 75.9954C 284.904887 76.246 284.709687 76.4606 284.473387 76.622C 284.237087 76.7834 283.966187 76.8872 283.682487 76.9249C 283.398787 76.9627 283.110187 76.9334 282.839887 76.8394C 281.834387 76.5017 280.898987 75.9831 280.079887 75.3093C 279.394687 74.7146 278.916787 73.9171 278.715387 73.0325C 278.513987 72.1478 278.599587 71.222 278.959887 70.3893C 280.119887 67.6693 282.359887 63.1993 285.469887 60.6193C 285.707887 60.4235 286.006587 60.3164 286.314887 60.3164C 286.623087 60.3164 286.921787 60.4235 287.159887 60.6193L 288.639887 61.8693C 288.880087 62.0718 289.039387 62.3539 289.088987 62.6641C 289.138587 62.9743 289.074987 63.2921 288.909887 63.5593ZM 289.520187 83.9297L 282.240187 94.7097"></path></g></g></g><g id="g-root-cp_0_g-0_1_4o6z1jjha22v-stroke" data-item-order="-450863" transform="translate(268.669921875, 335.029296875)"><g id="cp_0_g-0_1_4o6z1jjha22v-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2" stroke-dasharray="5.0, 7.0"><g><path d="M 10 11.4442C 68.7751 17.0252 295.1817 35.1712 535 10"></path></g></g></g><g id="g-root-tx__8dgx3jha2v4-stroke" data-item-order="0" transform="translate(458, 38)"></g><g id="g-root-tx__18n6z8njha2o1-stroke" data-item-order="0" transform="translate(110, 170)"></g><g id="g-root-tx__1cuwb8njhbfgj-stroke" data-item-order="0" transform="translate(320, 170)"></g><g id="g-root-tx__1lrs9nrjhbg25-stroke" data-item-order="0" transform="translate(494, 170)"></g><g id="g-root-tx__3do87jhbguf-stroke" data-item-order="0" transform="translate(686, 170)"></g><g id="g-root-tx__593hjjhbfup-stroke" data-item-order="0" transform="translate(854, 170)"></g><g id="g-root-tx__959fc7jha3gq-stroke" data-item-order="0" transform="translate(86, 206)"></g><g id="g-root-tx__dcyrc7jhbg98-stroke" data-item-order="0" transform="translate(272, 206)"></g><g id="g-root-tx__qpo7vrjhbgue-stroke" data-item-order="0" transform="translate(464, 206)"></g><g id="g-root-tx__v6qo6fjhbi88-stroke" data-item-order="0" transform="translate(662, 206)"></g><g id="g-root-tx__18k2lt3jhbfnm-stroke" data-item-order="0" transform="translate(842, 206)"></g></g></g><path id="w1hgydwnk1lxc6" d="M65.283 12.757a.35.35 0 0 0 .584.157l5.203-5.141-6.183 3.523.396 1.461zm-2.216-11.7a.35.35 0 0 0-.522.305v3.111l3.276-1.868-2.754-1.548zm3.728 2.105l-4.25 2.421v2.445l6.391-3.644-2.141-1.222zm4.708 3.303a.35.35 0 0 0 0-.609l-1.592-.9-7.365 4.199v1.782a.35.35 0 0 0 .523.305l8.435-4.777z M44.542 2.513c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm59.171 0c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm-85.951 7.636h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.819 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zm72.662 2.86h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.82 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zM99.096 10.149H97.85v-8.45h1.246v4.895l2.68-2.559h1.738l-2.633 2.535 2.715 3.578h-1.556l-2.077-2.707-.867.844v1.863zm6.053-6.114h-1.255v6.113h1.255V4.035zm-59.2 0h-1.255v6.113h1.255V4.035zm5.584 6.113V1.697h1.255v2.695c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27v-3.68c0-.408-.214-1.339-1.315-1.339-.968 0-1.342.756-1.342 1.339v3.681h-1.255zm-4.76-4.894V4.039h.621a.45.45 0 0 0 .45-.45v-.855h1.251v1.305h1.309v1.215h-1.309v3.109c0 .293.105.664.648.664.365 0 .531-.035.736-.07v1.137s-.361.113-.857.113c-1.398 0-1.777-1.051-1.777-1.788V5.254h-1.071zM36.528 4.039h-1.394l2.191 6.106h1.125l1.234-3.918 1.238 3.918h1.129l2.188-6.106h-1.383l-1.359 3.93-1.256-3.93h-1.124l-1.242 3.957-1.348-3.957zM26.212 7.141c-.02 1.566 1.187 3.129 3.223 3.129 1.566 0 2.383-.918 2.734-1.719L31.172 8c-.315.399-.801 1.094-1.738 1.094-1.145 0-1.825-.781-1.891-1.52h4.625c.074-.284.148-.995-.03-1.559-.336-1.064-1.221-2.102-2.839-2.102s-3.088 1.152-3.088 3.227zm1.363-.75h3.348c-.055-.43-.566-1.301-1.623-1.301a1.79 1.79 0 0 0-1.725 1.301zm-8.758.75c.038 1.758 1.277 3.133 3.145 3.133 1.074 0 1.723-.477 1.961-.672v.547h1.242V1.703h-1.258v2.888c-.414-.36-1.062-.68-1.93-.68-1.91 0-3.198 1.473-3.16 3.23zm1.309-.08c0 1.119.723 1.978 1.836 1.978a1.88 1.88 0 0 0 1.94-1.904c0-1.371-1.011-1.99-1.972-1.99s-1.805.798-1.805 1.916zm76.683-.028C96.771 5.275 95.532 3.9 93.664 3.9c-1.074 0-1.723.477-1.961.672v-.547h-1.242v8.22h1.258V9.583c.414.36 1.063.68 1.93.68 1.91 0 3.198-1.473 3.16-3.23zm-1.309.08c0-1.119-.723-1.978-1.836-1.978a1.88 1.88 0 0 0-1.94 1.904c0 1.371 1.011 1.99 1.972 1.99S95.5 8.231 95.5 7.113zM106.441 10.173V4.036h1.254v.382c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27V6.492c0-.408-.214-1.339-1.315-1.339-.969 0-1.342.756-1.342 1.339v3.681h-1.254zm-30.383-.021V1.824h1.084l4.215 5.777V1.824h1.32v8.328h-1.094l-4.207-5.796v5.796h-1.319zM5.24 10.149H4V2.377h1.014l2.664 3.597 2.654-3.592h1.03v7.766h-1.256V4.762L7.678 8.068 5.24 4.742v5.407z" transform="translate(956, 494)" fill="#ababab88" stroke="none"></path></svg>
+        </div>
+                    <div class="biblical-quote">
+                        <p data-source-line="42">「海餅乾」的故事超越了賽馬本身，它成為了大蕭條時期的一面鏡子，反射出人類在逆境中掙扎、奮鬥與最終勝利的堅韌意志。它提醒我們，生命中的高山低谷都是必經之路，關鍵在於我們如何選擇面對。正如經上所說：「我們曉得萬事都互相效力，叫愛神的人得益處，就是按他旨意被召的人。」</p>
+                        <div class="biblical-citation">羅馬書 8:28</div>
+                    </div>
+
+                    <div class="argument-section">
+                        <h3>🌍 影響範圍</h3>
+                        <p data-source-line="44">這個故事的影響力，深入到社會文化層面，激勵了當時與後世無數的人們。它揭示了在經濟絕望的背景下，一個「弱者」如何成為國家精神的象徵，證明了勇氣、堅持與團隊合作的力量能夠超越物質的匱乏。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 詳細聖經分析 -->
+            <section class="section" data-source-line="46" data-id="detailed-analysis">
+                <div class="theme-card">
+                    <h2>📖 由聖經出發詳述各論點 (Detailed Per-Argument)</h2>
+                </div>
+            </section>
+
+            <!-- 第一主題：堅持與決心 -->
+            <section class="section" data-source-line="47" data-id="perseverance">
+                <div class="theme-card" id="perseverance">
+                    <h3>💪 1. 堅持與決心 (Perseverance and Determination)</h3>
+
+                    <!-- 詩句 -->
+                    <div class="poetry-section" data-source-line="48">
+                        <h4>詩句</h4>
+                        <div class="poetry-text" data-source-line="49">
+                            在靈魂的曠野之徑上，<br>
+                            風雨洗禮著疲憊的足跡，<br>
+                            每一陣疾風，都是孤寂的鞭笞。<br>
+                            眼前，隔閡之牆冰冷而高聳，<br>
+                            將心靈低語深埋在陰影裡，<br>
+                            只剩下乾渴，與無盡的迷惘。
+                        </div>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="56"><strong>面對無數的阻礙和挫折</strong> 仍然堅定不移地朝著目標前進，在試煉中忍耐到底，等候主的應許。</p>
+                    </div>
+
+                    <div class="cognitive-steps">
+                        <h4>認知步驟</h4>
+                        <ol>
+                            <li data-source-line="58"><strong>承認挫折：</strong> 認識到成功路上必然有障礙和失敗。</li>
+                            <li data-source-line="59"><strong>不懈努力：</strong> 儘管屢次跌倒，仍要不斷嘗試和學習。</li>
+                            <li data-source-line="60"><strong>迎難而上：</strong> 勇敢接受挑戰，視困難為成長的機會。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section">
+                        <h4>範例</h4>
+                        <ul>
+                            <li data-source-line="62"><strong>海餅乾的賽場表現：</strong> 即使曾是陪練馬，被抽打而失去野心，但經過湯姆的訓練，重拾鬥志，一次次在比賽中證明自己。它兩次以微弱差距錯失聖安妮塔讓賽冠軍，卻在第三次機會中成功。</li>
+                            <li data-source-line="63"><strong>瑞德·波拉德的騎師生涯：</strong> 儘管身高受限，需要催吐來維持體重；儘管視力受損，一隻眼睛失明，但他對成為成功騎師的夢想從未放棄，堅持不懈地與海餅乾建立默契，共同面對挑戰。</li>
+                        </ul>
+                    </div>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="65">親愛的弟兄姊妹，聖經教導我們「務要堅固，不可搖動，常常竭力多做主工」。「海餅乾」的故事正是這真理的活潑見證。這匹馬從小就因體型瘦小、脾氣暴躁、又懶又愛睡而被輕視。它被農場主視為劣等馬，以兩千元賤賣，價格甚至與肉馬無異。它的早期訓練充滿暴力，騎師被要求「狠狠抽打他，直到打不動為止」，這使它失去了野心，淪為其他有潛力賽馬的陪練工具。它曾兩次在美國最富盛名的聖安妮塔讓賽中，以「一鼻之差」的微弱劣勢飲恨，但這些挫敗從未讓它停止奔跑。</p>
+                        <div class="biblical-citation">哥林多前書 15:58</div>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="67">而騎師瑞德·波拉德同樣是「堅持」的化身。他年輕時家境富裕，卻因大蕭條而破產，被父母「拋棄」在馬場。為了維持騎師的體重，他每天被迫催吐。更為嚴峻的是，他在一場拳擊賽（電影敘事）中受傷，導致一隻眼睛失明。這對一名騎師而言是致命的缺陷，但他堅定不移地追求夢想。瑞德與海餅乾的結合，是兩個「傷痕累累」的生命，透過共同的堅持，將每次跌倒都化為更強大的起跳點。</p>
+                    </div>
+
+                    <div class="clarification-section">
+                        <p data-source-line="69">電影為了戲劇效果，可能將瑞德承認失明的時機提前，在重要的比賽後，瑞德在湯姆的逼問下，戲劇性地承認自己是半盲。這雖然與歷史事實有所出入（歷史上他在騎師生涯結束後才承認）, 但卻突顯了他在巨大壓力下依然堅持的決心，以及最終選擇誠實面對脆弱的勇氣。他與海餅乾的關係，正是「你不能因為它受了傷，就丟棄一整條生命」。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第二主題：信念的力量 -->
+            <section class="section" data-source-line="71" data-id="belief">
+                <div class="theme-card" id="belief">
+                    <h3>🌟 2. 信念的力量 (The Power of Belief)</h3>
+
+                    <!-- 詩句 -->
+                    <div class="poetry-section" data-source-line="72">
+                        <h4>詩句</h4>
+                        <div class="poetry-text" data-source-line="73">
+                            然而，在最深的谷底，一絲顫動，<br>
+                            是活泉湧盼，滲透堅硬的岩層。<br>
+                            它輕柔的聲響，像遙遠的呼喚，<br>
+                            滋潤著枯萎的夢，即便微弱，<br>
+                            卻點燃了一線，模糊的生機。
+                        </div>
+                    </div>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="79"><strong>在懷疑和不確定的情況下</strong> 對自己、對他人、對上帝以及對最終成功的潛力抱持堅定不移的信心。在聖經中，信心是我們所望之事的實底，是未見之事的確據。</p>
+                        <div class="biblical-citation">希伯來書 11:1</div>
+                    </div>
+
+                    <div class="cognitive-steps">
+                        <h4>認知步驟</h4>
+                        <ol>
+                            <li data-source-line="81"><strong>超越懷疑：</strong> 不被他人的輕視和自身的缺陷所動搖。</li>
+                            <li data-source-line="82"><strong>看見潛力：</strong> 相信看似不可能的人或事物，擁有超越表面所見的價值。</li>
+                            <li data-source-line="83"><strong>堅定支持：</strong> 以行動和話語支持被低估的對象，點燃他們的鬥志。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section">
+                        <h4>範例</h4>
+                        <ul>
+                            <li data-source-line="85"><strong>馴馬師湯姆·史密斯：</strong> 當所有人都將海餅乾視為廢物時，湯姆憑藉其獨特的洞察力，看見了這匹馬內在的「憤怒」與潛能，堅信它能重獲新生。</li>
+                            <li data-source-line="86"><strong>馬主查爾斯·霍華德：</strong> 查爾斯不僅相信海餅乾和湯姆，更在瑞德因失明被質疑時，公開宣稱瑞德永遠是海餅乾的騎師，展現了對團隊無條件的信任與支持。</li>
+                            <li data-source-line="87"><strong>騎師瑞德·波拉德：</strong> 他對海餅乾有著超乎尋常的信念，將其視為一同奮鬥的夥伴，即使自己受傷也堅決反對取消比賽，並將海餅乾的「秘密」傾囊相授給替代騎師喬治·伍爾夫（George Woolf）。</li>
+                        </ul>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="89">在「海餅乾」的故事中，我們清楚看見信念如何扭轉命運。當所有人都不看好這匹矮小、暴躁的賽馬時，馴馬師湯姆·史密斯卻看見了牠內在的「憤怒」與鬥志。湯姆本身是個「不合時宜」的西部牛仔，在汽車工業興起時，他的馴馬技藝似乎失去了價值。但他沒有放棄自己的專業，堅持用馬的語言與馬溝通。他相信馬不是工具，而是有靈魂的戰士。他獨特的馴馬方式——讓海餅乾自由奔跑，並透過一隻小綿羊或母馬來安撫牠暴躁的性情——證明了他對馬匹本性的深刻理解與信念。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="91">馬主查爾斯·霍華德在失去兒子後，人生一度陷入低谷。但他選擇相信湯姆，相信海餅乾，將自己的財富與希望投入其中。這種信念不僅體現在投資上，更體現在他對團隊成員無條件的支持。當瑞德的半盲狀況被媒體揭露，社會輿論排山倒海地指責他「不配當騎師」時，查爾斯卻召開記者會，高調宣佈：「瑞德永遠是海餅乾的騎師」。這份堅定的信念，在眾人面前維護了瑞德的尊嚴，也強化了整個團隊的凝聚力。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="93">瑞德對海餅乾的信念更是非凡。他不僅能安撫這匹暴躁的馬，甚至在它面前放下戒備，用半塊蘋果與它建立連結。他相信海餅乾是他的「戰友」，他們一同奔騰時，是「人馬合一」的狀態。這種信念在關鍵時刻發揮了巨大作用。當瑞德因傷無法騎乘，將海餅乾的騎乘秘訣——在終點前利用眼神刺激馬匹的勝負欲——傳授給喬治·伍爾夫時，他堅信即使自己不在場，海餅乾也能獲勝。這種信念，遠超越了眼前的身體限制，成就了傳奇。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第三主題：尋求救贖 -->
+            <section class="section" data-source-line="95" data-id="redemption">
+                <div class="theme-card" id="redemption">
+                    <h3>✨ 3. 尋求救贖 (Finding Redemption)</h3>
+
+                    <!-- 詩句 -->
+                    <div class="poetry-section" data-source-line="96">
+                        <h4>詩句</h4>
+                        <div class="poetry-text" data-source-line="97">
+                            於是，我們開始伸出手，<br>
+                            用理解的臂彎，搭建信任之橋，<br>
+                            跨越曾經的深淵，不再退縮。<br>
+                            愛之活水潺潺流過斷裂的縫隙，<br>
+                            沖刷掉歲月的銹跡，柔軟了堅硬的心，<br>
+                            在牆垣傾頹處，立出新的結盟。
+                        </div>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="104"><strong>認識到過去的錯誤</strong> 失敗或創傷，並努力從中學習，為未來創造一個更好的版本，即使感到「無可救贖」。在聖經中，救贖是從罪惡和死亡中被拯救出來，獲得新生。</p>
+                    </div>
+
+                    <div class="cognitive-steps">
+                        <h4>認知步驟</h4>
+                        <ol>
+                            <li data-source-line="106"><strong>面對過去：</strong> 勇敢地承認和檢視自己的傷痕與過錯。</li>
+                            <li data-source-line="107"><strong>從中學習：</strong> 將痛苦轉化為成長的動力，不再重蹈覆轍。</li>
+                            <li data-source-line="108"><strong>追求新生：</strong> 即使遲暮，也要相信總有機會彌補過往，追求更美好的未來。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section">
+                        <h4>範例</h4>
+                        <ul>
+                            <li data-source-line="110"><strong>查爾斯·霍華德：</strong> 痛失愛子與婚姻破裂的悲劇，讓他一度消沉，生命失去意義。但透過投入賽馬，他找到了新的希望，並與海餅乾的團隊一同走出陰霾，實現了精神上的救贖。</li>
+                            <li data-source-line="111"><strong>騎師瑞德·波拉德：</strong> 他童年被父母拋棄的陰影，導致他性格暴躁、易怒。透過查爾斯的關懷和湯姆的引導，瑞德學會面對自己的傷痛，將憤怒轉化為奮鬥的力量，最終找回了自我價值。</li>
+                            <li data-source-line="112"><strong>海餅乾：</strong> 作為一匹被賤賣、被施虐的馬，它曾失去鬥志。但在湯姆與瑞德的愛心訓練下，它從「廢物馬」蛻變為冠軍，不僅為自己贏得尊嚴，也為眾人帶來了救贖的象徵。</li>
+                        </ul>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="114">救贖，不僅是從罪中得釋放，更是從生命創傷中得醫治與重生。「海餅乾」的故事中，每個主要角色都在尋求各自的救贖。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="116"><strong>查爾斯·霍華德</strong>因獨子法蘭克在一場車禍中喪生，悲痛欲絕，人生一度失去色彩。他甚至將存放汽車的車庫塵封，象徵他對科技、對生命熱情的否定。然而，是他的新婚妻子瑪麗（Mary）引導他重回生活，並接觸賽馬。他對海餅乾團隊的投入，不僅是為了贏得比賽，更是為了重新找到人生的意義與希望，從失去愛子的陰霾中獲得心靈的救贖。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="118"><strong>瑞德·波拉德</strong> 的憤怒，深植於童年被父母拋棄的陰影。他感到世界容不下他，因此以牙還牙，性格暴躁易怒。這種內在的傷痛，讓他騎馬時也帶有報復性，曾在比賽中為了擠壓對手而忘記策略，導致失敗。但在查爾斯夫婦的溫暖關懷下，瑞德逐漸卸下心防，開始面對自己的傷痛。查爾斯給予他金錢上的幫助，更重要的是，給予他家的溫暖和信任。這份被接納的溫暖，讓瑞德的憤怒轉化為力量，使他得以從過去的創傷中獲得救贖。他最終明白了生命的價值不會因缺陷而失去，這也讓他能以更溫柔、理解的心對待海餅乾。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="120"><strong>海餅乾</strong>作為一匹曾被虐待、被放棄的馬，它的救贖在於重新找回尊嚴與存在的意義。湯姆馴馬的方式，不僅治癒了牠身體的傷，更撫慰了牠受創的心靈。讓牠在小樹林中自由奔跑，直到牠自己想停下來，這是對牠本能的尊重與信任。最終，海餅乾不僅贏得了比賽，更贏得了全國人民的愛戴與敬重，牠證明了即便是最「破碎」的生命，也能透過愛與機會，實現最壯麗的救贖。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第四主題：友誼的價值 -->
+            <section class="section" data-source-line="122" data-id="friendship">
+                <div class="theme-card" id="friendship">
+                    <h3>🤝 4. 友誼的價值 (The Value of Friendship)</h3>
+
+                    <!-- 詩句 -->
+                    <div class="poetry-section" data-source-line="123">
+                        <h4>詩句</h4>
+                        <div class="poetry-text" data-source-line="124">
+                            那不再是掙扎，是破繭蛻變的陣痛，<br>
+                            舊日的陰影，如殘葉般剝落。<br>
+                            於是光明新生，如旭日東昇，<br>
+                            照亮了生命的每一寸脈絡。<br>
+                            心田中，春日萌動，新芽競相探頭，<br>
+                            世界的色彩，突然鮮活。
+                        </div>
+                    </div>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="131"><strong>真誠的友誼是生命中的磐石</strong> 提供堅定的支持、鼓勵和合作，尤其在逆境中更是不可或缺。正如聖經箴言所說：「朋友乃時常親愛，弟兄為患難而生。」</p>
+                        <div class="biblical-citation">箴言 17:17</div>
+                    </div>
+
+                    <div class="cognitive-steps">
+                        <h4>認知步驟</h4>
+                        <ol>
+                            <li data-source-line="133"><strong>彼此信任：</strong> 建立深厚的信任基礎，相信夥伴的能力和品格。</li>
+                            <li data-source-line="134"><strong>互相支持：</strong> 在挑戰面前，為彼此提供無私的幫助和精神鼓勵。</li>
+                            <li data-source-line="135"><strong>團隊合作：</strong> 承認每個人的獨特貢獻，協同努力，實現共同目標。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section">
+                        <h4>範例</h4>
+                        <ul>
+                            <li data-source-line="137"><strong>海餅乾團隊的建立：</strong> 查爾斯、湯姆和瑞德，這三個看似格格不入的「失敗者」，因著共同的信念和對海餅乾的愛而緊密連結。他們彼此看見對方的價值，形成了一個無堅不摧的團隊。</li>
+                            <li data-source-line="138"><strong>瑞德與海餅乾的默契：</strong> 瑞德能「讀懂」海餅乾的內心，而海餅乾也只認瑞德。他們在賽場上人馬合一，展現出無可比擬的默契與信任。</li>
+                            <li data-source-line="139"><strong>喬治·伍爾夫的犧牲：</strong> 在瑞德受傷後，喬治·伍爾夫作為替代騎師，不僅完美執行了瑞德傳授的策略，在海餅乾最後一次聖安妮塔讓賽中，甚至有來源指出，為激勵落後的海餅乾，喬治刻意放慢速度，以「眼神」激發其鬥志，展現了深厚的友誼和團隊精神（雖然電影情節略有不同，但精神一致）。</li>
+                        </ul>
+                    </div>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="141">「兩個人總比一個人好，因為二人勞碌同得美好的果效。」「海餅乾」的傳奇，是友誼與團隊合作的完美詮釋。這個故事的核心，正是由查爾斯、湯姆、瑞德，以及海餅乾，這四個「失敗者」組成的「失敗者聯盟」。</p>
+                        <div class="biblical-citation">傳道書 4:9</div>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="143">查爾斯提供資源與機會，他的慷慨與信任是團隊得以運作的基石。湯姆以其深厚的馴馬知識與對馬匹的獨特理解，成為團隊的智慧核心。他不僅馴服了海餅乾，更成為了瑞德和查爾斯的心靈導師。瑞德則以其過人的騎術與對海餅乾的敏銳感知，將馬匹的潛力發揮到極致。他們之間的連結超越了雇傭關係，更像是家人與摯友。當瑞德受傷時，查爾斯的第一反應是取消比賽，因為他已將瑞德視如己出，不願他再受傷害。這份情誼的深度，遠超過了一場比賽的輸贏。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="145">瑞德與海餅乾之間的友誼，更是故事中最動人的篇章。瑞德能理解海餅乾的暴躁與憤怒，就像理解自己的傷痛。他用溫柔的語氣安撫牠，用半塊蘋果建立信任。當海餅乾受傷面臨安樂死時，瑞德堅持為牠換藥，帶牠散步，甚至在自己斷腿的情況下，鼓勵海餅乾一同復健。這種「同病相憐」又「互相扶持」的關係，讓他們不僅是人與馬，更是彼此的靈魂伴侶。他們共同完成的復出，不僅是身體的康復，更是精神的勝利。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="147">在關鍵的比賽中，這種友誼體現得淋漓盡致。當瑞德受傷無法上場，他將海餅乾的騎乘「最高機密」——在彎道減速，讓對手追上，再激發海餅乾的勝負欲——毫無保留地傳授給替代騎師喬治·伍爾夫。喬治在比賽中完美執行了這個策略，甚至不惜犧牲自己的奪冠機會，來激勵海餅乾。這正是友誼最偉大的力量，在團隊中，個人的榮耀讓位給集體的勝利，彼此成就，共同奔騰。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第五主題：克服偏見與刻板印象 -->
+            <section class="section" data-source-line="149" data-id="overcoming-prejudice">
+                <div class="theme-card" id="overcoming-prejudice">
+                    <h3>🌈 5. 克服偏見與刻板印象 (Overcoming Prejudice and Stereotypes)</h3>
+
+                    <!-- 詩句 -->
+                    <div class="poetry-section" data-source-line="150">
+                        <h4>詩句</h4>
+                        <div class="poetry-text" data-source-line="151">
+                            浩瀚的恩典潮湧，溫暖而深沉，<br>
+                            覆蓋了所有的空虛與傷痕。<br>
+                            不再是孤獨的行者，<br>
+                            我們手牽手，在陽光下共築家園，<br>
+                            每一塊磚，都刻著愛與希望，<br>
+                            吟唱著永恆，新生不息的詩篇。
+                        </div>
+                    </div>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="158"><strong>挑戰社會對個人或群體的預設立場和不公評判</strong> 證明潛力不應受限於外在的標籤或第一印象。在聖經中，上帝看的是內心，而非外貌，教導我們不要以貌取人。</p>
+                        <div class="biblical-citation">撒母耳記上 16:7</div>
+                    </div>
+
+                    <div class="cognitive-steps">
+                        <h4>認知步驟</h4>
+                        <ol>
+                            <li data-source-line="160"><strong>審視內在：</strong> 拋開外表和過往的評判，看見真實的潛力與內在的本質。</li>
+                            <li data-source-line="161"><strong>打破界限：</strong> 透過實際行動，超越社會既定的「劣勢」與「不可能」。</li>
+                            <li data-source-line="162"><strong>擁抱多元：</strong> 創造一個包容的環境，讓每個人都有機會發光發熱。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section">
+                        <h4>範例</h4>
+                        <ul>
+                            <li data-source-line="164"><strong>海餅乾的外型與過往：</strong> 海餅乾因其矮小、愛吃、脾氣差、曾被鞭打而淪為陪練馬的經歷，被視為一匹「廢物馬」。但它最終以驚人的速度和鬥志，打破了所有人的刻板印象，成為「生命的奇蹟」。</li>
+                            <li data-source-line="165"><strong>湯姆·史密斯的非傳統：</strong> 湯姆是一位堅持自己信念的「西部牛仔」，在汽車時代被邊緣化。他的馴馬方式也異於常人，不崇尚鞭打，而是讓馬自由奔跑，並以綿羊或母馬安撫。這些非傳統做法，最終證明了其獨到之處，成功發掘了海餅乾的潛力。</li>
+                            <li data-source-line="166"><strong>瑞德·波拉德的身體缺陷：</strong> 騎師通常要求身高較矮，但瑞德卻因身高被迫維持極端體重。更重要的是，他因失明而備受質疑。然而，他與海餅乾一同證明，身體的缺陷並不能阻礙他們追逐夢想，甚至成為他們獨特力量的來源。</li>
+                        </ul>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="168">上帝造人奇妙可畏，每個人都有其獨特價值，不應被刻板印象所束縛。「海餅乾」的故事強力地挑戰了社會的偏見與刻板印象。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="170">海餅乾本身就是一個反抗偏見的象徵。傳統觀念認為冠軍馬應該是「身材高大、毛色光滑、血統純正」。而海餅乾卻是矮小、暴躁、出身平凡，甚至一度被馴馬師認定「無藥可救」。然而，馴馬師湯姆·史密斯卻不為這些表象所動。他看重馬匹內在的鬥志與勇氣，而非外在的完美。他的信念，證明了真正的潛力往往隱藏在最不被看好的地方。海餅乾的逆襲，徹底顛覆了人們對賽馬的刻板印象，證明了「千里馬」不在於外型，而在於其內在不屈的靈魂。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="172">瑞德·波拉德的身體缺陷，尤其是他的單眼失明，在傳統賽馬界是無法被接受的「缺陷」。他的身高也比一般騎師高，讓他屢屢被拒。但湯姆和查爾斯看到了瑞德的騎術天賦和與海餅乾連結的能力。他們選擇超越身體的限制，相信瑞德的價值。這不僅是對瑞德個人的接納，更是對社會普遍偏見的挑戰——即一個人不應因身體缺陷而被定義、被剝奪追逐夢想的權利。瑞德最終證明，即使有缺陷，也能成為頂尖的騎師。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="174">在大蕭條時期，海餅乾的成功更具有深遠的社會意義。它不僅是一匹馬的勝利，更是千千萬萬在貧困與絕望中掙扎的「底層人民」（bottom class）的勝利。海餅乾與東部王者「戰將」的對決，不僅是兩匹馬的比賽，更是「東部」與「西部」、「上流階級」與「底層人民」之間的一場象徵性戰爭。東部媒體以刻板印象嘲諷海餅乾是「越級碰瓷的矮馬」。但海餅乾最終的勝利，打破了這種階級與地域的偏見，給予了所有被社會低估、被時代拋棄的人們巨大的精神鼓舞，讓他們重新找回自我價值，相信自己也能逆襲。</p>
+                    </div>
+
+                    <!-- 結語詩句 -->
+                    <div class="poetry-section" data-source-line="176">
+                        <h4>詩句</h4>
+                        <div class="poetry-text" data-source-line="177">
+                            看那信任之橋，搭建在愛之活水畔，<br>
+                            隔閡之牆崩塌，融化了冰冷的界限。<br>
+                            破繭蛻變，迎來了光明新生，<br>
+                            春日萌動，恩典潮湧在心間。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 啟發希望，證明價值 -->
+            <section class="section" data-source-line="183" data-id="inspiration">
+                <div class="key-point">
+                    <h3>✨ 啟發希望，證明價值</h3>
+                    <p data-source-line="185">藉由這些「失敗者聯盟」看似不可能的逆襲，向世界宣告：生命中的價值不會因一時的缺陷或挫折而被抹殺。它旨在啟發人們在困境中堅持不懈、重燃信念，最終實現自我救贖與夢想，並成為激勵他人的希望泉源。</p>
+            <div class="title-image-container" style="text-align: center; margin: 20px 0;">
+                <img src="https://i.ytimg.com/vi/ldsfl7AxVw4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCF4RTfqCeW0dEurdX7S9VgrcJxSg" alt="Seabiscuit Movie Scene" style="max-width: 100%; height: auto; border-radius: 8px;">
+            </div>
+                </div>
+            </section>
+
+            <!-- 澄清與假設 -->
+            <section class="section" data-source-line="186" data-id="clarifications">
+                <div class="theme-card" id="clarifications">
+                    <h2>📋 澄清與假設</h2>
+                    <p data-source-line="186">我們所參考的資訊來源，部分情節在電影與歷史事實間，以及各資料敘述間存在細微差異。為傳達故事的核心精神與生命教訓，將根據以下幾點進行綜合與闡述：</p>
+
+                    <div class="clarification-section">
+                        <h4>👁️ 瑞德·波拉德的眼傷原因</h4>
+                        <p data-source-line="188">關於騎師瑞德·波拉德（Red Pollard）失明的原因，雖有來源指出是賽馬事故，但電影敘事及部分來源則將其歸因於拳擊（black boxing）受傷。為強化其「失敗者聯盟」和「克服傷殘」的勵志主題，本報告主要依循電影中「拳擊導致眼傷」的敘事，以彰顯瑞德從挫敗中站起的精神。</p>
+                    </div>
+
+                    <div class="clarification-section">
+                        <h4>⏰ 瑞德·波拉德承認失明的時機</h4>
+                        <p data-source-line="189">電影將瑞德承認失明的時機，安排在一次重要的讓賽之後，此與歷史上他職業生涯結束後才公開事實有所不同。本報告將採納電影的戲劇化呈現，以突顯其「接納脆弱」與「團隊信任」的生命教訓。</p>
+                    </div>
+
+                    <div class="clarification-section">
+                        <h4>👨‍👩‍👧‍👦 查爾斯·霍華德的家庭構成</h4>
+                        <p data-source-line="190">來源提到查爾斯·霍華德（Charles Howard）實際育有四名子女，但電影敘事主要聚焦於他痛失幼子法蘭克（Frank）的情節。本報告為維持敘事集中性並突顯「從悲劇中尋求救贖」的核心主題，將著墨於法蘭克的逝世對查爾斯人生的重大影響。</p>
+                    </div>
+
+                    <div class="clarification-section">
+                        <h4>🏆 聖安妮塔讓賽的創立</h4>
+                        <p data-source-line="191">來源指出聖安妮塔讓賽（Santa Anita Handicap）在查爾斯參與前已舉辦多年，他並非創辦人。然電影為彰顯其企業家精神和挑戰權威的願景，將他塑造成發起者。本報告將著重於查爾斯·霍華德在賽事中的參與動機與其激勵人心的挑戰精神，而非其歷史上的創立角色。</p>
+                    </div>
+
+                    <div class="clarification-section">
+                        <h4>🐎 戰將的體型描繪</h4>
+                        <p data-source-line="192">來源指出電影為營造「大衛與歌利亞」（David and Goliath）的戲劇效果，誇大了戰將（War Admiral）的體型。事實上，戰將與海餅乾（Seabiscuit）體型相仿，甚至海餅乾在某些方面更為壯碩。本報告將同時呈現電影的戲劇化對比，並強調海餅乾的勝利更多源於其不屈鬥志與團隊配合，而非僅是體型上的絕對劣勢逆轉。</p>
+                    </div>
+
+                    <div class="clarification-section">
+                        <h4>🏅 海餅乾的年度最佳馬匹榮譽</h4>
+                        <p data-source-line="193">關於海餅乾是否獲得「年度最佳馬匹」（Horse of the Year）的榮譽，來源文件存在矛盾。為避免具體事實的爭議，本報告將重點放在海餅乾廣泛的社會影響力與冠軍成就，而非明確斷言其獲此特定獎項。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 禱告 -->
+            <section class="section" data-source-line="197" data-id="prayer">
+                <div class="theme-card" id="prayer">
+            <audio controls>
+                <source src="./output.m4a" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+                    <h2>🙏 禱告</h2>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="199">我們帶著一顆謙卑而敞開的心，一同來到祢施恩的寶座前。祢是我們的避難所，是我們在各樣境遇中的幫助。祢的話語是我們腳前的燈，路上的光，引導我們穿越生命中的每一個季節。我們深知祢永恆的愛與同在，是我們最堅實的依靠。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="201">主啊，我們為那些此刻正走在生命曠野中的人們獻上禱告。或許他們正經歷身體的脆弱，心靈的疲憊，環境的壓力，或是靈裡的低谷，感覺如同被重擔壓得喘不過氣，或像在風暴中航行，看不清方向，內心充滿了掙扎與迷惘。何西阿書2章14節說：「後來我必勸導她，領她到曠野，對她說安慰的話。」懇求祢聖靈親自觸摸每一個破碎的心靈，成為他們低語中的盼望，在靜默中傳遞深邃的平安。願他們在試煉的深處，經歷祢奇妙的同在，得著那超越一切理解的安慰與力量，看見祢為他們所開的出路，尋見從祢而來堅定的盼望，如同在乾旱之地湧出的活泉，滋潤他們的生命，引領他們走向光明與突破。</p>
+                        <div class="biblical-citation">何西阿書 2:14</div>
+                    </div>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="201">我們也為祢所建立的群體獻上禱告，無論是在家庭的溫暖巢穴裡，教會的屬靈肢體中，職場的日常互動間，乃至於整個社會的脈絡裡。主啊，願祢的真理成為我們彼此關係的堅實根基。教導我們按著撒迦利亞書8章16至17節所說的：「各人與鄰舍說實話，在城門口按真實公平判斷，使人和睦。誰都不可心裡謀害鄰舍，也不可喜愛起假誓。」願我們除去一切心裡謀害鄰舍的意念，不喜愛虛假。懇求祢的愛在我們中間流淌，如同活水一般，滋養出真誠、彼此信任、無私奉獻的關係。願這些群體在愛中互相建造、共同成長，成為彼此在患難中的堅固後盾，如同山谷中的避風港，提供實質的扶持與溫暖，在生命的潮起潮落中互相扶持，一同經歷祢所賜的合一與力量。</p>
+                    </div>
+
+                    <div class="argument-section">
+                        <p data-source-line="203">慈愛的天父，我們知道人心的有限，常因著種族、文化、社會地位、財富、信仰或其他差異而生出偏見與刻板印象，築起無形的圍牆，讓彼此的心靈隔閡。主啊，我們懇求祢除去我們內心的分別心與惡意判斷，那一切因外在因素所造成的隔閡，願它們在祢的愛面前消融。正如申命記10章17至19節所教導的：「因為耶和華你們的神，他是萬神之神，萬主之主，至大的神，大有能力，大而可畏，不以貌取人，也不受賄賂。他為孤兒寡婦伸冤，又愛惜寄居的，賜給他衣食。所以你們要愛惜寄居的，因為你們在埃及地也作過寄居的。」求祢打開我們的眼睛，讓我們能以基督的愛和祢的眼光，去認識、去接納、去理解、去尊重每一位祢所創造的生命。願我們學習拆毀隔斷的牆，搭建起理解的橋樑，看見每一個靈魂都是祢手中寶貴的藝術品，一同生活在祢設計的、充滿不同色彩的美麗花園中，領受和諧與自由。</p>
+                    </div>
+
+                    <div class="biblical-quote">
+                        <p data-source-line="207">最後，主啊，我們為我們每一個人都能深刻經歷祢完全的救贖恩典而禱告。我們承認，我們都曾是那無知、悖逆、受迷惑的舊人，活在私慾與宴樂之中，常存惡毒嫉妒的心。但感謝祢，正如提多書3章3至5節所啟示的：「我們從前也是無知、悖逆、受迷惑、服事各樣私慾和宴樂，常存惡毒嫉妒的心，是可恨的，又是彼此相恨。但到了神我們救主的恩慈和他向人所施的慈愛顯明的時候，他便救了我們；並不是因我們自己所行的義，乃是照他的憐憫，藉著重生的洗和聖靈的更新。」懇求祢的能力，幫助我們願意脫去舊人，卸下過去的重負，如同換上潔白的新衣，讓我們的生命得以破繭而出，在祢裡面得到全然的更新。願我們的心意天天被聖靈轉化，活出與蒙召的恩相稱的樣式，充滿真理的公義與聖潔，如同春日萌芽般，展現出豐盛的生命氣息。願我們前行的每一步，都彰顯祢榮耀的旨意，直到我們與祢面對面。</p>
+                        <p>奉主耶穌基督的名，我們如此懇切禱告。阿們。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- YouTube 相關資源 -->
+            <section class="section" data-source-line="33" data-id="youtube-resources">
+                <div class="card">
+                    <h3 id="youtube-resources">📺 相關資源</h3>
+                    <p>以下是與本報告相關的 YouTube 視頻資源：</p>
+                        <div class="youtube-item" data-source-line="34">
+                            <div class="youtube-thumbnail">
+                                <a href="https://youtu.be/ZtciRFEVmhs?list=TLGGq8h0SG-X6AUwODA5MjAyNQ" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://img.youtube.com/vi/ZtciRFEVmhs/maxresdefault.jpg" alt="YouTube 視頻縮略圖" style="width: 100%; max-width: 320px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    <div class="play-overlay">
+                                        <div class="play-button">▶️</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="youtube-info">
+                                <h4>相關視頻資源 2</h4>
+                                <p>點擊觀看完整視頻內容</p>
+                                <a href="https://youtu.be/ZtciRFEVmhs?list=TLGGq8h0SG-X6AUwODA5MjAyNQ" target="_blank" rel="noopener noreferrer" class="youtube-link">🔗 前往 YouTube 觀看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../assets/js/layout.js"></script>
+    <script>
+        // 佈局控制功能
+        let currentLayout = 'mobile';
+        let currentZoom = 1;
+        let effectsEnabled = true;
+        let tocVisible = false;
+
+        function toggleLayout() {
+            const container = document.querySelector('.container');
+            const indicator = document.getElementById('layout-indicator');
+            const layoutBtn = document.getElementById('layout-btn');
+            
+            if (currentLayout === 'mobile') {
+                currentLayout = 'pc';
+                container.style.maxWidth = '1200px';
+                container.style.columnCount = '2';
+                container.style.columnGap = '30px';
+                indicator.textContent = '💻 PC Layout';
+                layoutBtn.textContent = '💻';
+            } else {
+                currentLayout = 'mobile';
+                container.style.maxWidth = '800px';
+                container.style.columnCount = '1';
+                container.style.columnGap = 'normal';
+                indicator.textContent = '📱 Mobile Layout';
+                layoutBtn.textContent = '📱';
+            }
+        }
+
+        function toggleZoom() {
+            const content = document.getElementById('main-content');
+            currentZoom = currentZoom === 1 ? 1.2 : currentZoom === 1.2 ? 0.8 : 1;
+            content.style.fontSize = `${currentZoom}em`;
+        }
+
+        function toggleEffects() {
+            const animatedElements = document.querySelectorAll('.theme-card, .biblical-quote, .poetry-section');
+            const gradientBg = document.querySelector('.gradient-bg');
+            
+            if (effectsEnabled) {
+                animatedElements.forEach(el => el.style.animation = 'none');
+                gradientBg.style.animation = 'none';
+                effectsEnabled = false;
+            } else {
+                animatedElements.forEach(el => el.style.animation = 'breathe 4s ease-in-out infinite');
+                gradientBg.style.animation = 'gradientShift 20s ease infinite';
+                effectsEnabled = true;
+            }
+        }
+
+        function toggleTOC() {
+            const toc = document.getElementById('toc');
+            tocVisible = !tocVisible;
+            toc.style.display = tocVisible ? 'block' : 'none';
+        }
+
+        // 平滑滾動到錨點
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
