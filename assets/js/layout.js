@@ -343,6 +343,62 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000); // Start after 2 seconds
 });
 
+// Simple Audio Player - iframe handles everything
+class AudioPlayer {
+    constructor(audioElementId, controlsContainerId) {
+        this.audio = document.getElementById(audioElementId);
+        this.iframe = document.querySelector('iframe[src*=".mp3"]');
+        this.container = document.getElementById(controlsContainerId) || document.querySelector('.custom-audio-controls');
+        this.isPlaying = false;
+
+        this.init();
+    }
+
+    init() {
+        if (!this.container) return;
+
+        // Get control elements
+        this.playPauseBtn = this.container.querySelector('#play-pause-btn');
+
+        // For simple iframe, just handle play/pause button
+        if (this.playPauseBtn) {
+            this.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+        }
+
+        // Hide complex controls since iframe handles everything
+        const progressBar = this.container.querySelector('#progress-bar');
+        const volumeBtn = this.container.querySelector('#volume-btn');
+        const volumeSlider = this.container.querySelector('#volume-slider');
+        const currentTimeEl = this.container.querySelector('#current-time');
+        const totalTimeEl = this.container.querySelector('#total-time');
+
+        if (progressBar) progressBar.style.display = 'none';
+        if (volumeBtn) volumeBtn.style.display = 'none';
+        if (volumeSlider) volumeSlider.style.display = 'none';
+        if (currentTimeEl) currentTimeEl.style.display = 'none';
+        if (totalTimeEl) totalTimeEl.style.display = 'none';
+    }
+
+    togglePlayPause() {
+        // Since iframe handles its own controls, just toggle visual state
+        this.isPlaying = !this.isPlaying;
+        if (this.playPauseBtn) {
+            this.playPauseBtn.textContent = this.isPlaying ? '⏸️' : '▶️';
+        }
+    }
+}
+
+// Initialize enhanced audio player
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the enhanced audio player
+    const audioPlayer = new AudioPlayer('prayer-audio', 'custom-audio-controls');
+
+    // Apply fade in effect to prayer closing text
+    setTimeout(() => {
+        fadeInTextByChar('prayer-closing-text', 150);
+    }, 2000); // Start after 2 seconds
+});
+
 // Export functions for global access
 window.toggleLayout = toggleLayout;
 window.toggleZoom = toggleZoom;
@@ -350,6 +406,7 @@ window.toggleEffects = toggleEffects;
 window.toggleTOC = toggleTOC;
 window.togglePdfView = togglePdfView;
 window.fadeInTextByChar = fadeInTextByChar;
+window.AudioPlayer = AudioPlayer;
 
 // Index page JavaScript
 // Add any interactive functionality here
