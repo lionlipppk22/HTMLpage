@@ -3,6 +3,20 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Chiron+GoRound+TC&display=swap');
 
+/* 詩詞文專用字型類別 */
+.poetry-text {
+    font-family: "LXGW WenKai Mono TC", monospace;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.8;
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 3px solid #667eea;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -187,6 +201,7 @@ body {
 
 /* Highlighting */
 .highlight {
+    color: #808080;
     background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
     padding: 2px 6px;
     border-radius: 4px;
@@ -428,6 +443,77 @@ body {
     }
 }
 
+/* Breathing Light Effect */
+@keyframes breathingLight {
+    0%, 100% {
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+        transform: scale(1.02);
+    }
+}
+
+.effects-enabled .card,
+.effects-enabled .argument-card,
+.effects-enabled .detailed-section,
+.effects-enabled .thinking-section,
+.effects-enabled .prayer-section {
+    animation: breathingLight 3s ease-in-out infinite;
+}
+
+/* Dynamic Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    25% {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    75% {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+    100% {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+}
+
+.effects-enabled .gradient-bg {
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+/* Hover Effects for Interactive Elements */
+.effects-enabled .control-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.effects-enabled .toc a:hover {
+    transform: translateX(10px);
+    color: #667eea;
+}
+
+/* Pulse Effect for Key Points */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.effects-enabled .key-point {
+    animation: pulse 2s ease-in-out infinite;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 8px;
@@ -504,3 +590,232 @@ body.index-page {
     font-size: 0.9em;
     margin-bottom: 5px;
 }
+
+/* Argument Cards */
+.argument-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.argument-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.argument-card h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.argument-content {
+    display: grid;
+    gap: 15px;
+}
+
+.argument-section {
+    background: rgba(248, 249, 250, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 3px solid #3498db;
+}
+
+.argument-section h4 {
+    color: #2980b9;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.argument-section h5 {
+    color: #34495e;
+    margin-bottom: 8px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+/* Growth Timeline */
+.growth-timeline {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.timeline-item {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #28a745;
+    position: relative;
+}
+
+.timeline-item h5 {
+    color: #155724;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.timeline-item p {
+    color: #495057;
+    font-size: 0.95em;
+}
+
+/* Detailed Discussion Sections */
+.detailed-section {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #8e44ad;
+}
+
+.detailed-section h3 {
+    color: #6c3483;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    border-bottom: 2px solid #f4f6f7;
+    padding-bottom: 12px;
+}
+
+.detailed-section p {
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Thinking Process Sections */
+.thinking-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #f39c12;
+}
+
+.thinking-section h3 {
+    color: #d68910;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.thinking-section h4 {
+    color: #b7950b;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Prayer Sections */
+.prayer-intro {
+    background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 5px solid #f1c40f;
+}
+
+.prayer-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #27ae60;
+}
+
+.prayer-section h3 {
+    color: #1e8449;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+
+.prayer-closing {
+    background: linear-gradient(135deg, #e8f5e8 0%, #d5f4e6 100%);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid #27ae60;
+}
+
+/* Color Emphasis Classes */
+.blue-emphasis {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.green-emphasis {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.purple-emphasis {
+    color: #8e44ad;
+    font-weight: 600;
+}
+
+.orange-emphasis {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+.pink-emphasis {
+    color: #e91e63;
+    font-weight: 600;
+}
+
+.red-emphasis {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* Responsive adjustments for new content */
+@media (max-width: 768px) {
+    .argument-card {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .detailed-section {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .thinking-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .prayer-section {
+        padding: 15px;
+        margin: 12px 0;
+    }
+
+    .growth-timeline {
+        gap: 12px;
+    }
+
+    .timeline-item {
+        padding: 12px;
+    }
+
+    .argument-card h3 {
+        font-size: 1.2em;
+    }
+
+    .detailed-section h3 {
+        font-size: 1.3em;
+    }
+
+    .thinking-section h3 {
+        font-size: 1.2em;
+    }
+}
+

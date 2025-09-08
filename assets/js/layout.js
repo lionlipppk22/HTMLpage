@@ -313,12 +313,43 @@ function showLoadingAnimation() {
 // Initialize loading animation
 showLoadingAnimation();
 
+// Text fade in effect by character
+function fadeInTextByChar(elementId, delay = 100) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    const text = element.textContent;
+    element.innerHTML = '';
+
+    for (let i = 0; i < text.length; i++) {
+        const span = document.createElement('span');
+        span.textContent = text[i];
+        span.style.opacity = '0';
+        span.style.transition = 'opacity 0.5s ease-in';
+        span.style.display = 'inline-block';
+        element.appendChild(span);
+
+        setTimeout(() => {
+            span.style.opacity = '1';
+        }, i * delay);
+    }
+}
+
+// Initialize text fade effect
+document.addEventListener('DOMContentLoaded', function() {
+    // Apply fade in effect to prayer closing text
+    setTimeout(() => {
+        fadeInTextByChar('prayer-closing-text', 150);
+    }, 2000); // Start after 2 seconds
+});
+
 // Export functions for global access
 window.toggleLayout = toggleLayout;
 window.toggleZoom = toggleZoom;
 window.toggleEffects = toggleEffects;
 window.toggleTOC = toggleTOC;
 window.togglePdfView = togglePdfView;
+window.fadeInTextByChar = fadeInTextByChar;
 
 // Index page JavaScript
 // Add any interactive functionality here

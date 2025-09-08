@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <title>我們想要的王：當神的旨意遇上我們的選擇 - 深度分析報告</title>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- 目錄 -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul>
+            <li><a href="#executive-summary">📊 執行摘要</a></li>
+            <li><a href="#background">🌟 背景</a></li>
+            <li><a href="#outline-charts">📈 提綱/圖表/流程圖</a></li>
+            <li><a href="#themes-conclusions">📝 主題與結論</a></li>
+            <li><a href="#core-arguments">💎 核心論點卡</a></li>
+            <li><a href="#detailed-discussion">📖 詳細論述</a></li>
+            <li><a href="#prayer-items">🙏 禱告事項</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>我們想要的王：當神的旨意遇上我們的選擇</h1>
+            <div class="title-image-container" style="text-align: center; margin: 20px 0;">
+                <img src="./image.png" alt="我們想要的王分析報告圖片" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+            </div>
+            <p class="subtitle">深度分析報告 - 探索人類選擇與神旨意的永恆張力</p>
+            <div id="layout-indicator" style="margin-top: 15px; padding: 8px 16px; background: rgba(102, 126, 234, 0.1); border-radius: 20px; display: inline-block; font-size: 0.9em; color: #667eea;">
+                📱 Mobile Layout (預設)
+            </div>
+        </header>
+
+        <main class="content" id="main-content">
+            <!-- 開場白 -->
+            <section class="section" data-source-line="1" data-id="opening">
+                <p data-source-line="1">親愛的弟兄姊妹們：</p>
+                <p data-source-line="3">願主耶穌基督的恩惠平安常與你們同在。深感今日信徒在信仰旅程中，常面臨內心渴望與神旨意之間的微妙張力。我們生活在一個充滿比較與追求世俗標準的時代，這使得「當神的旨意遇上我們的選擇」成為一個深刻且頻繁的屬靈課題。這份報告的核心主旨，正是要深入探討這一點：當我們個人的「更好」想法和世俗化的渴望，遇上上帝為我們預備的獨特計畫時，我們會做出何種選擇，以及這些選擇帶來的深遠影響。</p>
+                <p data-source-line="5">透過舊約聖經《撒母耳記上》第八章以色列人要求立王的經典案例，我們將看見人類傾向於追隨「像列國一樣」的標準，而非「與神同行」的獨特性。然而，即使在我們偏離神心意、做出錯誤選擇時，慈愛的天父仍以其深刻的理解、尊重的態度及真誠的警告來引導我們，並奇妙地在我們的失敗中動工，將一切編織進祂宏大的救贖計畫。最終，這份報告也將提供一套成為「合神心意之人」的標準操作程序，鼓勵每位信徒在持續的靈命操練中，效法大衛，尋求與神建立親密關係，凡事順服，活出神所喜悅的生命。願這份分享能成為我們靈命成長的激勵與指引。</p>
+            </section>
+
+            <!-- 執行摘要 -->
+            <section class="section" data-source-line="7" data-id="executive-summary">
+                <h2 id="executive-summary">📊 執行摘要</h2>
+                
+                <div class="key-point" data-source-line="7">
+                    <p>這份報告深入探討了人類與生俱來的一種根本傾向：<span class="highlight">當神的旨意與我們心目中「更好」的計畫發生衝突時，我們往往會選擇後者</span>。透過《撒母耳記上》第八章以色列人要求立王的歷史事件，我們看見了人類「像列國一樣」的世俗渴望，以及神對人類選擇的理解、尊重與警告。</p>
+                </div>
+
+                <div class="pdf-embed-container" data-source-line="33">
+                    <div class="pdf-header">
+                        <div class="pdf-title">📄 相關研究文件</div>
+                        <div class="pdf-controls">
+                            <button onclick="togglePdfView('pdf-main')" class="pdf-toggle-btn">📖 顯示/隱藏PDF</button>
+                            <a href="./20250907我們想要的王.pdf" target="_blank" class="pdf-link-btn">🔗 在新視窗開啟</a>
+                        </div>
+                    </div>
+                    <div class="pdf-url">./20250907我們想要的王.pdf</div>
+                    <div id="pdf-main" class="pdf-iframe-container" style="display: none;">
+                        <iframe src="./20250907我們想要的王.pdf"
+                                width="100%"
+                                height="600px"
+                                frameborder="0"
+                                title="我們想要的王相關研究文件">
+                            <p>您的瀏覽器不支援iframe。請 <a href="./20250907我們想要的王.pdf" target="_blank">點擊這裡</a> 查看PDF文件。</p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <p data-source-line="7">本報告旨在幫助信徒理解神的恩典如何在我們的錯誤選擇中工作，並提供成為「合神心意之人」的實踐路徑。即使我們做出了偏離神心意的決定，神仍能將我們的失敗編織進祂偉大的救贖計畫中，為我們帶來盼望與重建的機會。</p>
+            </section>
+
+            <!-- 背景 -->
+            <section class="section" data-source-line="7" data-id="background">
+                <h2 id="background">🌟 背景</h2>
+
+                <p data-source-line="8">今天我與大家分享的內容，源自兩份重要的資料：一份是題為《我們想要的王：當神的旨意遇上我們的選擇》的講章摘錄，另一份則是關於如何成為「合神心意之人」的靈命指導。這些材料不僅追溯了古以色列的歷史，更直接指向了我們現代人屬靈生命的挑戰與成長。</p>
+
+                                <div class="mermaid">
+graph TD
+    A[開端: 撒母耳年邁，兒子腐敗] --> B{"以色列長老請願: 立一個王治理我們，像列國一樣"}
+    B --> C{撒母耳不喜悅，轉向神禱告}
+    C --> D["神回應: 他們不是厭棄你，乃是厭棄我。"]
+    D --> E["神給予警告: 王將如何管轄他們 (霸王條款)"]
+    E --> F{"百姓堅決不肯聽: 不然！我們定要一個王"}
+    F --> G[撒母耳再次陳明於神前]
+    G --> H["神許可: 你只管依從他們的話，為他們立王。"]
+    H --> I[結果: 以色列有了王，神在錯誤中動工，編織救贖計畫]
+
+    subgraph 反思與應用
+        R1(「像列國一樣」的渴望：追求世俗標準，而非獨特神旨)
+        R2(撒母耳式禱告：將不悅與委屈帶到神面前)
+        R3(神的風險提示：誠實告知選擇的代價)
+        R4(「我不管」的最終選擇：自我中心與屬靈躺平)
+        R5(神在錯誤中工作：恩典與重建的機會)
+    end
+
+    B -- 渴望 --> R1
+    C -- 榜樣 --> R2
+    E -- 啟示 --> R3
+    F -- 警惕 --> R4
+    I -- 盼望 --> R5
+</div>
+                <div class="column-layout" data-source-line="10">
+                    <div class="column">
+                        <h3>⏰ 時間範圍 (Timeframe)</h3>
+                        <p data-source-line="10">這份報告主要以舊約聖經《撒母耳記上》第八章的事件為核心，描述了約公元前11世紀末至10世紀初，以色列士師時代末期的一段關鍵歷史時期。然而，講章的日期「20250907」清晰表明，其目的在於將這古老的聖經真理，應用於2025年及當代信徒的生活與反思，使其跨越時空，具有現實意義。</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>🎯 領域 (Domain)</h3>
+                        <p data-source-line="13">此報告的領域涵蓋了聖經神學（Biblical Theology，對聖經文本的深入解讀）、靈命塑造（Spiritual Formation，個人信仰生活的錘煉）與實踐應用（Practical Application，將真理應用於日常生活的各個方面）。</p>
+                    </div>
+                </div>
+
+                <div class="card" data-source-line="16">
+                    <h3>👥 受眾 (Audience)</h3>
+                    <p>本報告的目標受眾主要是教會內的信徒，特別是那些正在思考人生重大決策、面對信仰挑戰、或渴望更深層次與神同行的人。講章中也特別提及鼓勵年輕世代投入宣教事工，並在團隊合作中成長。</p>
+                </div>
+
+                <div class="example-section" data-source-line="19">
+                    <h4>⚠️ 核心問題 (Problem)</h4>
+                    <p>人類自古以來便傾向於相信自己的判斷和選擇是「更好」的，而非完全信賴神的智慧和安排。以色列人面對撒母耳的兒子們的腐敗（貪圖財利、收受賄賂、屈枉正直），選擇了要求立一個看得見的王來治理他們，原因竟是「像列國一樣」，而非單純地尋求神的解決之道。</p>
+                </div>
+            </section>
+
+            <!-- 提綱/圖表/流程圖 -->
+            <section class="section" data-source-line="33" data-id="outline-charts">
+                <h2 id="outline-charts">📈 提綱/圖表/流程圖</h2>
+
+                <p data-source-line="34">以下是本次分享的核心流程與概念圖，幫助大家更清晰地理解我們今天所探討的主題：</p>
+
+                <div class="card" data-source-line="36">
+                    <h3>📊 圖一：以色列人立王事件的決策流程與屬靈反思</h3>
+                    <p>作為牧者，我會想像這個圖表在講道時投放在螢幕上，用箭頭指示事件的發展方向。透過流程圖，能將複雜的聖經敘事線索化，降低聽眾的認知負荷（Cognitive Load），使其更容易掌握故事主線與其中的屬靈意涵，並增強訊息的保留和理解（Retention and Comprehension）。</p>
+
+                    <div class="svg-container" data-source-line="39">
+                        <svg viewBox="0 0 800 600" style="max-width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+
+                            <!-- 流程圖背景 -->
+                            <rect width="800" height="600" fill="url(#flowGrad)" opacity="0.1"/>
+
+                            <!-- 標題 -->
+                            <text x="400" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#2c3e50">以色列立王決策流程圖</text>
+
+                            <!-- 流程步驟 -->
+                            <g transform="translate(50, 80)">
+                                <!-- 步驟1 -->
+                                <rect x="0" y="0" width="200" height="60" rx="10" fill="#3498db" opacity="0.8"/>
+                                <text x="100" y="35" text-anchor="middle" font-size="14" fill="white">撒母耳年邁，兒子腐敗</text>
+
+                                <!-- 箭頭1 -->
+                                <path d="M 200 30 L 250 30" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                                <!-- 步驟2 -->
+                                <rect x="250" y="0" width="200" height="60" rx="10" fill="#e74c3c" opacity="0.8"/>
+                                <text x="350" y="25" text-anchor="middle" font-size="12" fill="white">長老請願：</text>
+                                <text x="350" y="45" text-anchor="middle" font-size="12" fill="white">「像列國一樣立王」</text>
+
+                                <!-- 箭頭2 -->
+                                <path d="M 350 60 L 350 110" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                                <!-- 步驟3 -->
+                                <rect x="250" y="110" width="200" height="60" rx="10" fill="#f39c12" opacity="0.8"/>
+                                <text x="350" y="135" text-anchor="middle" font-size="12" fill="white">撒母耳不悅，</text>
+                                <text x="350" y="155" text-anchor="middle" font-size="12" fill="white">向神禱告</text>
+
+                                <!-- 箭頭3 -->
+                                <path d="M 350 170 L 350 220" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                                <!-- 步驟4 -->
+                                <rect x="250" y="220" width="200" height="60" rx="10" fill="#8e44ad" opacity="0.8"/>
+                                <text x="350" y="240" text-anchor="middle" font-size="12" fill="white">神回應：</text>
+                                <text x="350" y="260" text-anchor="middle" font-size="12" fill="white">「他們厭棄我」</text>
+
+                                <!-- 箭頭4 -->
+                                <path d="M 350 280 L 350 330" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                                <!-- 步驟5 -->
+                                <rect x="250" y="330" width="200" height="60" rx="10" fill="#e67e22" opacity="0.8"/>
+                                <text x="350" y="350" text-anchor="middle" font-size="12" fill="white">神警告：</text>
+                                <text x="350" y="370" text-anchor="middle" font-size="12" fill="white">「霸王條款」</text>
+
+                                <!-- 箭頭5 -->
+                                <path d="M 450 360 L 500 360" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                                <!-- 步驟6 -->
+                                <rect x="500" y="330" width="200" height="60" rx="10" fill="#c0392b" opacity="0.8"/>
+                                <text x="600" y="350" text-anchor="middle" font-size="12" fill="white">百姓堅持：</text>
+                                <text x="600" y="370" text-anchor="middle" font-size="12" fill="white">「不然！我們定要王」</text>
+
+                                <!-- 箭頭6 -->
+                                <path d="M 600 390 L 600 440" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                                <!-- 步驟7 -->
+                                <rect x="500" y="440" width="200" height="60" rx="10" fill="#27ae60" opacity="0.8"/>
+                                <text x="600" y="460" text-anchor="middle" font-size="12" fill="white">神許可：</text>
+                                <text x="600" y="480" text-anchor="middle" font-size="12" fill="white">「在錯誤中工作」</text>
+                            </g>
+
+                            <!-- 箭頭標記定義 -->
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="example-section" data-source-line="60">
+                    <h4>🔄 反思與應用</h4>
+                    <ul>
+                        <li data-source-line="62"><span class="blue-emphasis">「像列國一樣」的渴望</span>：追求世俗標準，而非獨特神旨</li>
+                        <li data-source-line="64"><span class="green-emphasis">撒母耳式禱告</span>：將不悅與委屈帶到神面前</li>
+                        <li data-source-line="66"><span class="purple-emphasis">神的風險提示</span>：誠實告知選擇的代價</li>
+                        <li data-source-line="68"><span class="orange-emphasis">「我不管」的最終選擇</span>：自我中心與屬靈躺平</li>
+                        <li data-source-line="70"><span class="highlight">神在錯誤中工作</span>：恩典與重建的機會</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 主題與結論 -->
+            <section class="section" data-source-line="85" data-id="themes-conclusions">
+                <h2 id="themes-conclusions">📝 主題與結論</h2>
+                <div class="thinking-section" data-source-line="38">
+                    <h3 id="thinking-1">🔍 全局掃描與核心定位</h3>
+                    <p data-source-line="38">我會先快速瀏覽兩份資料，找出它們各自的核心訊息。第一份講章顯然圍繞著《撒母耳記上》第八章以色列人要求立王的故事展開，強調「我們想要的王」與「神的旨意」的衝突。「合神心意的人」，這提供了第一份資料所暗示的「正確選擇」或「理想狀態」。</p>
+
+                    <div class="svg-container" data-source-line="38">
+                        <svg viewBox="0 0 600 400" style="max-width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="mindMapGrad" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.3" />
+                                </radialGradient>
+                            </defs>
+
+                            <!-- 背景 -->
+                            <rect width="600" height="400" fill="url(#mindMapGrad)"/>
+
+                            <!-- 中央核心概念 -->
+                            <circle cx="300" cy="200" r="80" fill="#2c3e50" opacity="0.9"/>
+                            <text x="300" y="195" text-anchor="middle" font-size="14" font-weight="bold" fill="white">神旨意</text>
+                            <text x="300" y="215" text-anchor="middle" font-size="14" font-weight="bold" fill="white">vs</text>
+                            <text x="300" y="235" text-anchor="middle" font-size="14" font-weight="bold" fill="white">人類選擇</text>
+
+                            <!-- 分支1：負面示範 -->
+                            <line x1="220" y1="150" x2="120" y2="80" stroke="#e74c3c" stroke-width="3"/>
+                            <circle cx="120" cy="80" r="50" fill="#e74c3c" opacity="0.8"/>
+                            <text x="120" y="75" text-anchor="middle" font-size="12" fill="white">以色列立王</text>
+                            <text x="120" y="90" text-anchor="middle" font-size="12" fill="white">(負面示範)</text>
+
+                            <!-- 分支2：正面路徑 -->
+                            <line x1="380" y1="150" x2="480" y2="80" stroke="#27ae60" stroke-width="3"/>
+                            <circle cx="480" cy="80" r="50" fill="#27ae60" opacity="0.8"/>
+                            <text x="480" y="75" text-anchor="middle" font-size="12" fill="white">合神心意</text>
+                            <text x="480" y="90" text-anchor="middle" font-size="12" fill="white">(正面路徑)</text>
+
+                            <!-- 分支3：神的回應 -->
+                            <line x1="220" y1="250" x2="120" y2="320" stroke="#f39c12" stroke-width="3"/>
+                            <circle cx="120" cy="320" r="50" fill="#f39c12" opacity="0.8"/>
+                            <text x="120" y="315" text-anchor="middle" font-size="12" fill="white">理解尊重</text>
+                            <text x="120" y="330" text-anchor="middle" font-size="12" fill="white">警告</text>
+
+                            <!-- 分支4：恩典工作 -->
+                            <line x1="380" y1="250" x2="480" y2="320" stroke="#8e44ad" stroke-width="3"/>
+                            <circle cx="480" cy="320" r="50" fill="#8e44ad" opacity="0.8"/>
+                            <text x="480" y="315" text-anchor="middle" font-size="12" fill="white">恩典</text>
+                            <text x="480" y="330" text-anchor="middle" font-size="12" fill="white">重建</text>
+                        </svg>
+                    </div>
+
+                <div class="key-point" data-source-line="86">
+                    <h3>🎯 核心主題：我們想要的王：當神的旨意遇上我們的選擇</h3>
+                    <p>親愛的弟兄姊妹，正如講章標題所揭示的，是「我們想要的王：當神的旨意遇上我們的選擇」。這不僅僅是以色列人的歷史，更是我們每個人的故事。它深刻地探討了人類與生俱來、根深蒂固的一種傾向：當神的旨意與我們心目中「更好」的計畫或「像列國一樣」的世俗標準發生衝突時，我們往往會選擇後者，為自己立一個看得見的「王」來治理自己，而非全然信靠那看不見的神。</p>
+                </div>
+
+                <div class="column-layout" data-source-line="90">
+                    <div class="column">
+                        <h3>⚠️ 人類渴望世俗標準的危險</h3>
+                        <p data-source-line="94">我們常常將世界的標準視為成功的藍圖，渴望「像列國一樣」的表面光鮮與安全感，卻忽略了神對我們獨特身份和計畫的呼召。這種渴望實質上是對神主權的厭棄。</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>🤲 神對自由意志的尊重與真誠的警告</h3>
+                        <p data-source-line="95">我們的神是一位賦予人選擇權的神。祂深知人性的軟弱，不會強行阻止我們做出看似「更好」卻可能有害的選擇。然而，祂出於憐憫，會透過聖經、聖靈和屬靈長輩，誠實地警告我們選擇的後果與代價。</p>
+                    </div>
+                </div>
+
+                <div class="card" data-source-line="96">
+                    <h3>💰 世俗追求的沉重代價</h3>
+                    <p>任何取代神成為我們生命「王」的事物，無論是理想職業、金錢、愛情或社群媒體認同，都將要求我們付出極大的代價，包括健康、家庭、獨立人格、安寧和真實性。我們往往只看到表面的榮耀，卻看不到背後被徵收的自由和沉重勞役。</p>
+                </div>
+
+                <div class="example-section" data-source-line="97">
+                    <h4>✨ 神在錯誤中的不變恩典</h4>
+                    <p>即使我們任性地不聽勸告，執意選擇了與神心意相悖的道路，神也沒有拋棄我們。祂允許我們經歷選擇的後果，是為了教育、磨練我們，最終引導我們回歸祂的懷抱。更奇妙的是，神能將我們的錯誤編織進祂偉大且永恆的救贖計畫中，為我們帶來盼望與重建的機會。</p>
+                </div>
+
+                <div class="key-point" data-source-line="99">
+                    <h3>🌟 成為「合神心意之人」的呼召與路徑</h3>
+                    <p>面對人性的軟弱和世俗的誘惑，神也為我們指明了成為「合神心意之人」的道路。這條路徑要求我們凡事以神為中心，與神建立親密關係（透過讀經、禱告、靈修筆記），對神絕對順服（即使在不理解或困難中），並在生活中實踐愛與服事。這是一個持續循環、不斷成長的生命旅程，而非一蹴可幾的結果。</p>
+                </div>
+            </section>
+
+            <!-- 核心論點卡 -->
+            <section class="section" data-source-line="104" data-id="core-arguments">
+                <h2 id="core-arguments">💎 核心論點卡</h2>
+
+                <!-- 核心論點一 -->
+                <div class="argument-card" data-source-line="105">
+                    <h3 id="argument-1">💭 核心論點一：人類固有「更好」的想法與改造慾望</h3>
+                    <div class="argument-content">
+                        <div class="argument-section">
+                            <h4>🤔 思考</h4>
+                            <p data-source-line="106">人們常常認為自己有更優越的主意、更先進的理念，甚至渴望按照自己的方式生活，並改造身邊那些「過時」的人事物。這種傾向在靈性層面，可能表現為對神旨意的質疑或選擇性服從。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>💡 想法</h4>
+                            <p data-source-line="107">這種想法常見於我們向父母提出「人生建議」的場景，或對他人既定的做法（如炒菜順序、開車技術）發表評論，相信自己的方法會「比較好吃」或「比較快」。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>🏠 生活</h4>
+                            <p data-source-line="108">孩童對媽媽炒菜的指點：「媽，我覺得你炒菜應該先放肉，後放菜，這樣比較好吃。」；子女對爸爸開車的評論：「爸，我覺得你在那個轉彎處，開得太慢，應該……」。這些例子生動地描繪了人類普遍存在的「我覺得我能做得更好」的心態（Mindset）。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心論點二 -->
+                <div class="argument-card" data-source-line="110">
+                    <h3 id="argument-2">🌍 核心論點二：「像列國一樣」的渴望與對神計畫的厭棄</h3>
+                    <div class="argument-content">
+                        <div class="argument-section">
+                            <h4>🤔 思考</h4>
+                            <p data-source-line="111">以色列人請求立王，是渴望擁有像其他國家一樣的世俗領袖和管理制度，而非繼續讓看不見的神作王管理他們。這深層次反映了人將世界的標準當作自己的藍圖，追求「與別人一樣」的安全感（Sense of Security），而非神所呼召的「與神同行」的獨特性。實質上，這是對神作王的一種厭棄。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>💡 想法</h4>
+                            <p data-source-line="112">以色列的長老們組織了一場正式的請願活動，來到老先知撒母耳面前，明確提出訴求：「你年紀老邁了，你兒子不行你的道。現在求你為我們立一個王治理我們，像列國一樣。」他們以撒母耳年邁和其子腐敗為由，提出一個看似合理的解決方案，但其核心動機卻是追隨世界潮流。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>🏠 生活</h4>
+                            <p data-source-line="113">我們生活中常見的比較心態：羨慕「別人家的公司福利好」、「別人家的男朋友又帥又貼心」、「別人家的孩子考上名校年薪百萬」。對以色列人而言，則是看到「別人國家有國王，看上去好威風，好有秩序」，因此自己也想要一個。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心論點三 -->
+                <div class="argument-card" data-source-line="115">
+                    <h3 id="argument-3">🤲 核心論點三：神對人選擇的「理解、接納、尊重與警告」</h3>
+                    <div class="argument-content">
+                        <div class="argument-section">
+                            <h4>🤔 思考</h4>
+                            <p data-source-line="116">神是一位賦予人選擇權（Right to Choose）的神。祂對我們人性的軟弱和悖逆有著最深的理解，不會因我們的偏離而震驚失措。即使明知我們的選擇不是最好的，甚至是走向有害的，祂也尊重我們的自由意志（Free Will），不會強行阻止。然而，出於祂的憐憫與愛，祂會明確告知選擇的後果，發出真誠的警告。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>💡 想法</h4>
+                            <p data-source-line="117">當撒母耳因百姓的要求感到不悅並向神禱告時，神的回答清晰地揭示了這一點：「百姓向你說的一切話，你只管依從；因為他們不是厭棄你，乃是厭棄我，不要我作他們的王。」隨後，神指示撒母耳要「警戒他們，告訴他們將來那王怎樣管轄他們。」</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>🏠 生活</h4>
+                            <p data-source-line="118">就像一位愛孩子的父親，明知孩子要去碰一個燙的東西，他會先嚴厲警告：「這會燙傷你！會很痛！」但如果孩子執意要碰，父親會在旁邊準備好藥膏，等他回來包紮。神就是這樣，祂不是同意錯誤的選擇，但祂尊重我們的決定，並告知其後果。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 核心論點四 -->
+                <div class="argument-card" data-source-line="120">
+                    <h3 id="argument-4">⚖️ 核心論點四：「霸王條款」：世俗追求的代價與後果</h3>
+                    <div class="argument-content">
+                        <div class="argument-section">
+                            <h4>🤔 思考</h4>
+                            <p data-source-line="121">任何取代神在我們生命中居首位的「王」（如理想職業、金錢、愛情、社群媒體認同），都會附帶一系列「霸王條款」，要求我們付出極大的代價，剝奪我們的健康、家庭時間、安寧、人際關係、獨立人格、真實性、專注力，甚至使我們成為其奴隸（Slave）。我們往往只看到這些「王」表面的榮耀和虛榮，卻忽視了其背後沉重的賦稅（Taxation）、勞役（Forced Labor）和自由的喪失（Loss of Freedom）。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>💡 想法</h4>
+                            <p data-source-line="122">撒母耳奉神之命，向百姓詳細解說了立王後的具體條款。這可以被視為一份「使用者協議」（User Agreement）的風險說明書。</p>
+                        </div>
+                        <div class="argument-section霸王條款詳細內容">
+                            <h4>📋 霸王條款詳細內容</h4>
+                            <ul data-source-line="123">
+                                <li><span class="blue-emphasis">兒子被徵用</span>：王必派你們的兒子為他趕車、跟馬，奔走在車前，成為國家財產，隨時待命。甚至成為中層管理「社畜」，耕種田地、收割莊稼、打造軍器。</li>
+                                <li><span class="pink-emphasis">女兒被徵用</span>：王必取你們的女兒為他製造香膏，做飯烤餅，成為宮廷的免費勞動力。</li>
+                                <li><span class="green-emphasis">土地被徵收</span>：王必取你們最好的田地、葡萄園、橄欖園賜給他的臣僕，你的產權隨時可能被剝奪。</li>
+                                <li><span class="orange-emphasis">沉重稅收</span>：王必取你們的糧食和葡萄園所出的十分之一，以及羊群的十分之一，用於太監和臣僕，而非國家基礎建設。</li>
+                                <li><span class="purple-emphasis">僕婢與牲畜被徵用</span>：王必取你們的僕人婢女、健壯的少年人和你們的驢，供他的差役，所有優秀的勞動力和「豪車」都將被徵用，為王服務。</li>
+                                <li><span class="red-emphasis">身份降級</span>：最終，你們必從自由民變成「王的僕人」或奴工。那時你們必因所選的王哀求耶和華，耶和華卻不應允。</li>
+                            </ul>
+                        </div>
+                        <div class="argument-section">
+                            <h4>🏠 現代類比</h4>
+                            <p data-source-line="129">追求「理想職業」作王，可能取走健康、家庭時間、幸福感；追求「金錢」作王，可能取走安寧、人際關係；追求「愛情或婚姻」作王，可能取走獨立人格；追求「社交媒體認同」作王，可能取走真實、專注。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心論點五 -->
+                <div class="argument-card" data-source-line="131">
+                    <h3 id="argument-5">✨ 核心論點五：神在錯誤中工作，恩典能翻轉失敗</h3>
+                    <div class="argument-content">
+                        <div class="argument-section">
+                            <h4>🤔 思考</h4>
+                            <p data-source-line="132">即使人類固執己見，不肯聽從神的警告，執意選擇了錯誤的道路，神也不會就此拋棄。祂雖然許可人經歷選擇的後果，但這是一種教育和磨練的過程，最終，神能以祂的智慧和恩典（Grace），將我們的錯誤和失敗編織進祂偉大而奇妙的救贖計畫（Redemption Plan）中，為我們帶來回頭路與重建的機會。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>💡 想法</h4>
+                            <p data-source-line="133">以色列百姓在聽完撒母耳傳達的神的警告後，仍然堅持說：「不然！我們定要一個王治理我們，使我們像列國一樣，有王治理我們，統領我們，為我們爭戰。」撒母耳再次將這些話陳明在耶和華面前，耶和華再次回應：「你只管依從他們的話，為他們立王。」這顯示了神雖心碎卻充滿恩典的許可。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>🏠 生活</h4>
+                            <p data-source-line="134">後來以色列確實有了王，從掃羅到大衛，神甚至將救主耶穌基督安排在大衛的譜系中。這證明神能將人的錯誤，編織進祂偉大的救贖計畫中。這也像路加福音中浪子的故事，父親雖無奈，但仍會等待浪子回頭，並張開雙臂擁抱。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心論點六 -->
+                <div class="argument-card" data-source-line="136">
+                    <h3 id="argument-6">🌟 核心論點六：合神心意之人成長</h3>
+                    <div class="argument-content">
+                        <div class="argument-section">
+                            <h4>🤔 思考</h4>
+                            <p data-source-line="137">「合神心意之人」意指凡事以神為中心，尋求並遵行神的旨意，與神保持親密關係（Intimate Relationship），持守對神的絕對順服（Absolute Obedience），並透過實際的靈修行動落實這種關係的生命狀態。這是一個持續、循環且各步驟相互關聯的成長過程，而非一蹴而就的線性步驟。</p>
+                        </div>
+                        <div class="argument-section">
+                            <h4>📅 成長時程表</h4>
+                            <div class="growth-timeline" data-source-line="139">
+                                <div class="timeline-item">
+                                    <h5>0-3個月（建立基礎親密關係）</h5>
+                                    <p>每日固定時間讀經禱告；參加教會主日崇拜和小組查經；學習基督教信仰基礎；尋找屬靈導師指導。</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5>3-6個月（加深靈命操練與實操服事）</h5>
+                                    <p>開始寫每日靈修筆記；參與教會侍奉小組；加入或成立禱告小組；深入查考聖經。</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5>6-12個月（內外生命同步成長）</h5>
+                                    <p>透過生命見證分享；定期反省調整靈命生活；學習絕對順服神，放下自我；在日常生活中活出信仰，成為見證人。</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5>1年以上（持續成熟與屬靈塑造）</h5>
+                                    <p>在靈命、服事、學習上持續長進；努力成為神所喜悅的僕人；帶領和幫助其他信徒成長；積極參與傳福音和社會服事。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="argument-section">
+                            <h4>🏠 生活</h4>
+                            <p data-source-line="143">聖經中的大衛被稱為「合神心意的人」，即使他有過犯罪和失敗，但因他常與神親密、絕對順服神、真誠悔改認罪，體現出敬畏神（Fear of God）和與神同行的心。聖靈的九個果子（愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制）的顯現，也是衡量靈命成長的重要標誌。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 詳細論述 -->
+            <section class="section" data-source-line="145" data-id="detailed-discussion">
+                <h2 id="detailed-discussion">📖 詳細論述</h2>
+<div>
+    <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;background:#404040;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="894" height="1092" viewBox="0 0 894 1092"><style class="text-font-style fontImports" data-font-family="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;amp;display=block);</style><g id="items" style="isolation: isolate"><g id="blend" style="mix-blend-mode: normal"><g id="g-root-cp_0_g-0_18fpa42jr2mmh-fill" data-item-order="-788821" transform="translate(-9, 344.6640625)"></g><g id="g-root-cp_6_g-6_13zvrzmjr2neq-fill" data-item-order="-788818" transform="translate(188, 713.06640625)"><g id="cp_6_g-6_13zvrzmjr2neq-fill-merged" stroke="none" fill="#fb6762"><g><path d="M10.334 36.599C46.419 36.599 80.242 26.913 109.344 10L178.461 129.714C128.936 158.467 71.391 174.931 10 174.931L10.334 36.599 M250 246.934C250 240.306 244.627 234.934 238 234.934C231.373 234.934 226 240.306 226 246.934C226 253.561 231.373 258.934 238 258.934C244.627 258.934 250 253.561 250 246.934"></path></g></g></g><g id="g-root-cp_5_g-5_v48rqqjr2o7f-fill" data-item-order="-788814" transform="translate(287.34423828125, 640.4765625)"><g id="cp_5_g-5_v48rqqjr2o7f-fill-merged" stroke="none" fill="#f79438"><g><path d="M79.117 202.304L10 82.59C39.979 65.168 64.95 40.075 82.225 10L201.939 79.117C172.511 130.152 130.056 172.729 79.117 202.304 M306.656 151.523C306.656 144.896 301.283 139.523 294.656 139.523C288.028 139.523 282.656 144.896 282.656 151.523C282.656 158.151 288.028 163.523 294.656 163.523C301.283 163.523 306.656 158.151 306.656 151.523"></path></g></g></g><g id="g-root-cp_4_g-4_qp1qpejr2ltw-fill" data-item-order="-788810" transform="translate(359.5690002441406, 542)"><g id="cp_4_g-4_qp1qpejr2ltw-fill-merged" stroke="none" fill="#ffe711"><g><path d="M10 108.478C26.604 79.571 36.099 46.061 36.099 10.334L174.431 10C174.431 71.033 158.158 128.266 129.714 177.595L10 108.478 M282.431 94C282.431 100.627 277.059 106 270.431 106C263.804 106 258.431 100.627 258.431 94C258.431 87.373 263.804 82 270.431 82C277.059 82 282.431 87.373 282.431 94"></path></g></g></g><g id="g-root-cp_3_g-3_hteqgijr2mml-fill" data-item-order="-788806" transform="translate(358.7770080566406, 373.53900146484375)"><g id="cp_3_g-3_hteqgijr2mml-fill-merged" stroke="none" fill="#a6da37"><g><path d="M36.89 178.794C36.89 142.503 27.093 108.5 10 79.285L130.005 10C158.758 59.525 175.223 117.07 175.223 178.461L36.89 178.794 M283.223 94.461C283.223 101.088 277.85 106.461 271.223 106.461C264.595 106.461 259.223 101.088 259.223 94.461C259.223 87.834 264.595 82.461 271.223 82.461C277.85 82.461 283.223 87.834 283.223 94.461"></path></g></g></g><g id="g-root-cp_2_g-2_ddl8c2jr2neu-fill" data-item-order="-788802" transform="translate(286.1885986328125, 250.71875)"><g id="cp_2_g-2_ddl8c2jr2neu-fill-merged" stroke="none" fill="#43dd93"><g><path d="M202.594 132.822L82.589 202.107C65.122 172.254 40.036 147.401 10 130.216L79.407 10C130.442 39.428 173.019 81.883 202.594 132.822 M307.811 61.281C307.811 67.909 302.439 73.281 295.811 73.281C289.184 73.281 283.811 67.909 283.811 61.281C283.811 54.654 289.184 49.281 295.811 49.281C302.439 49.281 307.811 54.654 307.811 61.281"></path></g></g></g><g id="g-root-cp_1_g-1_2r71ujr2ltz-fill" data-item-order="-788798" transform="translate(188, 122)"><g id="cp_1_g-1_2r71ujr2ltz-fill-merged" stroke="none" fill="#1ac3fb"><g><path d="M177.595 138.717C128.266 110.273 71.033 94 10 94L10.334 233C45.942 233 79.348 242.431 108.189 258.933L177.595 138.717 M250 22C250 28.627 244.627 34 238 34C231.373 34 226 28.627 226 22C226 15.373 231.373 10 238 10C244.627 10 250 15.373 250 22"></path></g></g></g><g id="g-root-tx__40582jr2o04-fill" data-item-order="0" transform="translate(596, 314)"><g id="tx__40582jr2o04-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="28" dominant-baseline="ideographic">人類渴望模仿列國，背離神計</tspan><tspan x="12" y="46" dominant-baseline="ideographic">畫。</tspan></text></g></g></g><g id="g-root-tx_2_1hhl182jr2nf2-fill" data-item-order="0" transform="translate(362, 332)"><g id="tx_2_1hhl182jr2nf2-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">2</tspan></text></g></g></g><g id="g-root-tx__dfgnlejr2mf7-fill" data-item-order="0" transform="translate(596, 278)"><g id="tx__dfgnlejr2mf7-fill-merged" stroke="none" fill="#43dd93"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">渴望像列國</tspan></text></g></g></g><g id="g-root-tx_1_4my0s2jr2oed-fill" data-item-order="0" transform="translate(242, 266)"><g id="tx_1_4my0s2jr2oed-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">1</tspan></text></g></g></g><g id="g-root-tx__1cyn5o2jr2n0t-fill" data-item-order="0" transform="translate(644, 434)"><g id="tx__1cyn5o2jr2n0t-fill-merged" stroke="none" fill="#a6da37"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">神的理解與警告</tspan></text></g></g></g><g id="g-root-tx_3_1d1rj3mjr2o7b-fill" data-item-order="0" transform="translate(428, 452)"><g id="tx_3_1d1rj3mjr2o7b-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">3</tspan></text></g></g></g><g id="g-root-tx__znt4dujr2lfy-fill" data-item-order="0" transform="translate(644, 470)"><g id="tx__znt4dujr2lfy-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="28" dominant-baseline="ideographic">神理解人類選擇，並給予警</tspan><tspan x="12" y="46" dominant-baseline="ideographic">告。</tspan></text></g></g></g><g id="g-root-tx__4otg1ejr2ner-fill" data-item-order="0" transform="translate(146, 506)"><g id="tx__4otg1ejr2ner-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">人類選擇</tspan></text></g></g></g><g id="g-root-tx__1uuahrmjr2o0c-fill" data-item-order="0" transform="translate(92, 542)"><g id="tx__1uuahrmjr2o0c-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="16" y="28" dominant-baseline="ideographic">人類選擇塑造個人與社會的</tspan><tspan x="83.5" y="46" dominant-baseline="ideographic">命運。</tspan></text></g></g></g><g id="g-root-tx__v64702jr2n7u-fill" data-item-order="0" transform="translate(440, 146)"><g id="tx__v64702jr2n7u-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="28" dominant-baseline="ideographic">人類渴望不斷進步與自我改</tspan><tspan x="12" y="46" dominant-baseline="ideographic">造。</tspan></text></g></g></g><g id="g-root-tx_4_zqxhtejr2mmg-fill" data-item-order="0" transform="translate(428, 596)"><g id="tx_4_zqxhtejr2mmg-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">4</tspan></text></g></g></g><g id="g-root-tx__hyej5ejr2mtg-fill" data-item-order="0" transform="translate(440, 962)"><g id="tx__hyej5ejr2mtg-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="28" dominant-baseline="ideographic">合神心意之人不斷成長與進</tspan><tspan x="12" y="46" dominant-baseline="ideographic">步。</tspan></text></g></g></g><g id="g-root-tx__18hkpdejr2lmx-fill" data-item-order="0" transform="translate(440, 110)"><g id="tx__18hkpdejr2lmx-fill-merged" stroke="none" fill="#1ac3fb"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">固有改造慾望</tspan></text></g></g></g><g id="g-root-tx__dhc2uqjr2lfk-fill" data-item-order="0" transform="translate(644, 638)"><g id="tx__dhc2uqjr2lfk-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="31" dominant-baseline="ideographic">世俗追求帶來代價與後果。</tspan></text></g></g></g><g id="g-root-tx__1lseqnmjr2n7s-fill" data-item-order="0" transform="translate(332, 38)"><g id="tx__1lseqnmjr2n7s-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="17" y="42" dominant-baseline="ideographic">探索人類選擇的複雜性</tspan></text></g></g></g><g id="g-root-tx_5_vb3zoyjr2nep-fill" data-item-order="0" transform="translate(362, 716)"><g id="tx_5_vb3zoyjr2nep-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">5</tspan></text></g></g></g><g id="g-root-tx__1qbcm7mjr2nm1-fill" data-item-order="0" transform="translate(596, 758)"><g id="tx__1qbcm7mjr2nm1-fill-merged" stroke="none" fill="#f79438"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">神的恩典翻轉失敗</tspan></text></g></g></g><g id="g-root-tx_6_i09yeqjr2ltu-fill" data-item-order="0" transform="translate(242, 783)"><g id="tx_6_i09yeqjr2ltu-fill-merged" stroke="none" fill="#2c2c2c"><g><text style="font: bold 25px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="25px" font-family="Roboto, sans-serif"><tspan x="15" y="42" dominant-baseline="ideographic">6</tspan></text></g></g></g><g id="g-root-tx__1d0ikxejr2m16-fill" data-item-order="0" transform="translate(596, 794)"><g id="tx__1d0ikxejr2m16-fill-merged" stroke="none" fill="#f4f4f4"><g><text style="font: 15px Roboto, sans-serif; white-space: pre;" font-size="15px" font-family="Roboto, sans-serif"><tspan x="12" y="31" dominant-baseline="ideographic">神的恩典能翻轉人類的失敗。</tspan></text></g></g></g><g id="g-root-tx__zp22k2jr2nm3-fill" data-item-order="0" transform="translate(440, 926)"><g id="tx__zp22k2jr2nm3-fill-merged" stroke="none" fill="#fb6762"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">合神心意之人成長</tspan></text></g></g></g><g id="g-root-tx__mccm0ijr2n0v-fill" data-item-order="0" transform="translate(644, 602)"><g id="tx__mccm0ijr2n0v-fill-merged" stroke="none" fill="#ffe711"><g><text style="font: bold 20px Roboto, sans-serif; white-space: pre;" font-weight="bold" font-size="20px" font-family="Roboto, sans-serif"><tspan x="12" y="34" dominant-baseline="ideographic">世俗追求的代價</tspan></text></g></g></g><g id="g-root-cp_0_g-0_18fpa42jr2mmh-stroke" data-item-order="-788821" transform="translate(-9, 344.6640625)"><g id="cp_0_g-0_18fpa42jr2mmh-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 404.6675 207.333801C 404.6675 316.318201 316.3182 404.667501 207.3338 404.667501C 98.3493 404.667501 10 316.318201 10 207.333801C 10 98.349301 98.3493 10 207.3338 10C 316.3182 10 404.6675 98.349301 404.6675 207.333801Z"></path></g></g></g><g id="g-root-cp_6_g-6_13zvrzmjr2neq-stroke" data-item-order="-788818" transform="translate(188, 713.06640625)"><g id="cp_6_g-6_13zvrzmjr2neq-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 10.3338 36.5989C 46.4188 36.5989 80.2415 26.9133 109.3442 10L 178.4609 129.7135C 128.9357 158.4673 71.3906 174.9314 10 174.9314L 10.3338 36.5989ZM 250 246.9336C 250 240.3062 244.6274 234.9336 238 234.9336C 231.3726 234.9336 226 240.3062 226 246.9336C 226 253.561 231.3726 258.9336 238 258.9336C 244.6274 258.9336 250 253.561 250 246.9336ZM 226 246.9336L 125 246.9336C 112.8497 246.9336 103 237.0839 103 224.9336L 103 161.9336"></path></g></g></g><g id="g-root-cp_5_g-5_v48rqqjr2o7f-stroke" data-item-order="-788814" transform="translate(287.34423828125, 640.4765625)"><g id="cp_5_g-5_v48rqqjr2o7f-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 79.1166 202.303901L 10 82.590401C 39.9792 65.1676 64.9496 40.075301 82.2247 10.000001L 201.9387 79.117001C 172.5111 130.152401 130.0562 172.728901 79.1166 202.303901ZM 306.6558 151.523401C 306.6558 144.896001 301.2832 139.523401 294.6558 139.523401C 288.0283 139.523401 282.6558 144.896001 282.6558 151.523401C 282.6558 158.150901 288.0283 163.523401 294.6558 163.523401C 301.2832 163.523401 306.6558 158.150901 306.6558 151.523401ZM 282.6558 151.523401L 145.8052 151.523401"></path></g></g></g><g id="g-root-cp_4_g-4_qp1qpejr2ltw-stroke" data-item-order="-788810" transform="translate(359.5690002441406, 542)"><g id="cp_4_g-4_qp1qpejr2ltw-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 10 108.4782C 26.6039 79.5714 36.0986 46.0614 36.0986 10.3338L 174.4311 10C 174.4311 71.0332 158.158 128.2657 129.7141 177.5952L 10 108.4782ZM 282.4311 94C 282.4311 100.6274 277.0585 106 270.4311 106C 263.8037 106 258.4311 100.6274 258.4311 94C 258.4311 87.3726 263.8037 82 270.4311 82C 277.0585 82 282.4311 87.3726 282.4311 94ZM 258.4311 94L 163.9311 94"></path></g></g></g><g id="g-root-cp_3_g-3_hteqgijr2mml-stroke" data-item-order="-788806" transform="translate(358.7770080566406, 373.53900146484375)"><g id="cp_3_g-3_hteqgijr2mml-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 36.8901 178.7944C 36.8901 142.5029 27.0933 108.4996 10 79.2847L 130.0048 10C 158.7584 59.5251 175.2225 117.0702 175.2225 178.4607L 36.8901 178.7944ZM 283.2225 94.4609C 283.2225 101.0884 277.85 106.4609 271.2225 106.4609C 264.5951 106.4609 259.2225 101.0884 259.2225 94.4609C 259.2225 87.8335 264.5951 82.4609 271.2225 82.4609C 277.85 82.4609 283.2225 87.8335 283.2225 94.4609ZM 259.2225 94.4609L 164.7225 94.4609"></path></g></g></g><g id="g-root-cp_2_g-2_ddl8c2jr2neu-stroke" data-item-order="-788802" transform="translate(286.1885986328125, 250.71875)"><g id="cp_2_g-2_ddl8c2jr2neu-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 202.5936 132.8223L 82.5888 202.1071C 65.1221 172.2539 40.0365 147.4008 10 130.2156L 79.4065 10C 130.4421 39.4277 173.0186 81.8827 202.5936 132.8223ZM 307.8114 61.2813C 307.8114 67.9087 302.4388 73.2813 295.8114 73.2813C 289.184 73.2813 283.8114 67.9087 283.8114 61.2813C 283.8114 54.6538 289.184 49.2813 295.8114 49.2813C 302.4388 49.2813 307.8114 54.6538 307.8114 61.2813ZM 283.8114 61.2813L 146.9608 61.2813"></path></g></g></g><g id="g-root-cp_1_g-1_2r71ujr2ltz-stroke" data-item-order="-788798" transform="translate(188, 122)"><g id="cp_1_g-1_2r71ujr2ltz-stroke" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke="#f4f4f4" stroke-width="2"><g><path d="M 177.5952 138.717C 128.2656 110.2731 71.0332 94 10 94L 10.3338 233C 45.9422 233 79.3477 242.4315 108.1886 258.9326L 177.5952 138.717ZM 250 22C 250 28.6274 244.6274 34 238 34C 231.3726 34 226 28.6274 226 22C 226 15.3726 231.3726 10 238 10C 244.6274 10 250 15.3726 250 22ZM 226 22L 125 22C 112.8497 22 103 31.8497 103 44L 103 107"></path></g></g></g><g id="g-root-tx__40582jr2o04-stroke" data-item-order="0" transform="translate(596, 314)"></g><g id="g-root-tx_2_1hhl182jr2nf2-stroke" data-item-order="0" transform="translate(362, 332)"></g><g id="g-root-tx__dfgnlejr2mf7-stroke" data-item-order="0" transform="translate(596, 278)"></g><g id="g-root-tx_1_4my0s2jr2oed-stroke" data-item-order="0" transform="translate(242, 266)"></g><g id="g-root-tx__1cyn5o2jr2n0t-stroke" data-item-order="0" transform="translate(644, 434)"></g><g id="g-root-tx_3_1d1rj3mjr2o7b-stroke" data-item-order="0" transform="translate(428, 452)"></g><g id="g-root-tx__znt4dujr2lfy-stroke" data-item-order="0" transform="translate(644, 470)"></g><g id="g-root-tx__4otg1ejr2ner-stroke" data-item-order="0" transform="translate(146, 506)"></g><g id="g-root-tx__1uuahrmjr2o0c-stroke" data-item-order="0" transform="translate(92, 542)"></g><g id="g-root-tx__v64702jr2n7u-stroke" data-item-order="0" transform="translate(440, 146)"></g><g id="g-root-tx_4_zqxhtejr2mmg-stroke" data-item-order="0" transform="translate(428, 596)"></g><g id="g-root-tx__hyej5ejr2mtg-stroke" data-item-order="0" transform="translate(440, 962)"></g><g id="g-root-tx__18hkpdejr2lmx-stroke" data-item-order="0" transform="translate(440, 110)"></g><g id="g-root-tx__dhc2uqjr2lfk-stroke" data-item-order="0" transform="translate(644, 638)"></g><g id="g-root-tx__1lseqnmjr2n7s-stroke" data-item-order="0" transform="translate(332, 38)"></g><g id="g-root-tx_5_vb3zoyjr2nep-stroke" data-item-order="0" transform="translate(362, 716)"></g><g id="g-root-tx__1qbcm7mjr2nm1-stroke" data-item-order="0" transform="translate(596, 758)"></g><g id="g-root-tx_6_i09yeqjr2ltu-stroke" data-item-order="0" transform="translate(242, 783)"></g><g id="g-root-tx__1d0ikxejr2m16-stroke" data-item-order="0" transform="translate(596, 794)"></g><g id="g-root-tx__zp22k2jr2nm3-stroke" data-item-order="0" transform="translate(440, 926)"></g><g id="g-root-tx__mccm0ijr2n0v-stroke" data-item-order="0" transform="translate(644, 602)"></g></g></g><path id="w140hwfmkbmxal" d="M65.283 12.757a.35.35 0 0 0 .584.157l5.203-5.141-6.183 3.523.396 1.461zm-2.216-11.7a.35.35 0 0 0-.522.305v3.111l3.276-1.868-2.754-1.548zm3.728 2.105l-4.25 2.421v2.445l6.391-3.644-2.141-1.222zm4.708 3.303a.35.35 0 0 0 0-.609l-1.592-.9-7.365 4.199v1.782a.35.35 0 0 0 .523.305l8.435-4.777z M44.542 2.513c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm59.171 0c0-.433.355-.783.792-.783s.792.35.792.783-.355.783-.792.783-.792-.35-.792-.783zm-85.951 7.636h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.819 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zm72.662 2.86h-1.27v-.487c-.276.201-.864.609-1.881.609-1.202 0-2.274-.794-2.137-2.078.118-1.106 1.153-1.584 1.848-1.727l2.17-.345c0-.539-.29-.956-1.064-1.006s-1.21.305-1.571 1.017l-1.124-.605c1.218-2.631 5.029-1.764 5.029.414v4.207zm-1.27-2.86c.006.396-.062 1.112-.82 1.59-.587.37-1.841.299-1.903-.395-.049-.555.461-.791.906-.898l1.816-.297zM99.096 10.149H97.85v-8.45h1.246v4.895l2.68-2.559h1.738l-2.633 2.535 2.715 3.578h-1.556l-2.077-2.707-.867.844v1.863zm6.053-6.114h-1.255v6.113h1.255V4.035zm-59.2 0h-1.255v6.113h1.255V4.035zm5.584 6.113V1.697h1.255v2.695c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27v-3.68c0-.408-.214-1.339-1.315-1.339-.968 0-1.342.756-1.342 1.339v3.681h-1.255zm-4.76-4.894V4.039h.621a.45.45 0 0 0 .45-.45v-.855h1.251v1.305h1.309v1.215h-1.309v3.109c0 .293.105.664.648.664.365 0 .531-.035.736-.07v1.137s-.361.113-.857.113c-1.398 0-1.777-1.051-1.777-1.788V5.254h-1.071zM36.528 4.039h-1.394l2.191 6.106h1.125l1.234-3.918 1.238 3.918h1.129l2.188-6.106h-1.383l-1.359 3.93-1.256-3.93h-1.124l-1.242 3.957-1.348-3.957zM26.212 7.141c-.02 1.566 1.187 3.129 3.223 3.129 1.566 0 2.383-.918 2.734-1.719L31.172 8c-.315.399-.801 1.094-1.738 1.094-1.145 0-1.825-.781-1.891-1.52h4.625c.074-.284.148-.995-.03-1.559-.336-1.064-1.221-2.102-2.839-2.102s-3.088 1.152-3.088 3.227zm1.363-.75h3.348c-.055-.43-.566-1.301-1.623-1.301a1.79 1.79 0 0 0-1.725 1.301zm-8.758.75c.038 1.758 1.277 3.133 3.145 3.133 1.074 0 1.723-.477 1.961-.672v.547h1.242V1.703h-1.258v2.888c-.414-.36-1.062-.68-1.93-.68-1.91 0-3.198 1.473-3.16 3.23zm1.309-.08c0 1.119.723 1.978 1.836 1.978a1.88 1.88 0 0 0 1.94-1.904c0-1.371-1.011-1.99-1.972-1.99s-1.805.798-1.805 1.916zm76.683-.028C96.771 5.275 95.532 3.9 93.664 3.9c-1.074 0-1.723.477-1.961.672v-.547h-1.242v8.22h1.258V9.583c.414.36 1.063.68 1.93.68 1.91 0 3.198-1.473 3.16-3.23zm-1.309.08c0-1.119-.723-1.978-1.836-1.978a1.88 1.88 0 0 0-1.94 1.904c0 1.371 1.011 1.99 1.972 1.99S95.5 8.231 95.5 7.113zM106.441 10.173V4.036h1.254v.382c.361-.346 1-.485 1.47-.485 1.452 0 2.477 1.082 2.457 2.448v3.792h-1.27V6.492c0-.408-.214-1.339-1.315-1.339-.969 0-1.342.756-1.342 1.339v3.681h-1.254zm-30.383-.021V1.824h1.084l4.215 5.777V1.824h1.32v8.328h-1.094l-4.207-5.796v5.796h-1.319zM5.24 10.149H4V2.377h1.014l2.664 3.597 2.654-3.592h1.03v7.766h-1.256V4.762L7.678 8.068 5.24 4.742v5.407z" transform="translate(758, 1058)" fill="#ababab88" stroke="none"></path></svg>
+</div>
+                <p data-source-line="147">親愛的弟兄姊妹，作為一名蒙召的牧者，我將對上述核心論點進行更深入的闡述，希望能幫助大家更深刻地理解神的話語，並應用於我們的日常生活中。</p>
+
+                <div class="detailed-section" data-source-line="149">
+                    <h3 id="detailed-1">一、人類固有「更好」的想法與改造慾望的屬靈意涵</h3>
+                    <p data-source-line="150">從創世以來，人類就擁有一種根深蒂固的傾向，那就是相信自己有「更好」的主意，更先進的理念，甚至渴望按照自己的方式去生活，並改造身邊那些「過時」的人和事。這種想法可以從家庭的互動中看見：當孩子對父母提出「人生建議」時，無論是建議媽媽如何炒菜才能「比較好吃」，或是評論爸爸開車「太慢」應該怎麼開，這些都反映了一種內在的判斷與改造欲。</p>
+
+                    <p data-source-line="152">在屬靈層面，這種「更好」的想法，其實是人類對神主權的一種潛在質疑。我們常常覺得神給予我們的現狀不夠好，神的計畫不夠完善，我們自己有能力設計出一個更符合時代潮流、更有效率的藍圖。這種心態，便是《撒母耳記上》第八章中以色列人要求立王的深層心理基礎，他們認為士師制度已經過時，而一個看得見的王，將是更好的選擇。</p>
+                </div>
+
+                <div class="detailed-section" data-source-line="154">
+                    <h3 id="detailed-2">二、「像列國一樣」的渴望與對神計畫的厭棄：世俗化的誘惑</h3>
+                    <p data-source-line="155">以色列人向撒母耳請願立王的訴求，表面上看來合情合理，甚至有其客觀原因。首先，老先知撒母耳年紀老邁，無法像年輕時那樣治理以色列。其次，他的兩個兒子約珥和亞比亞，被立為士師後，卻不行他的道，而是貪圖財利、收受賄賂、屈枉正直，行徑如同職場腐敗劇的開場。這些弊端確實引發了民怨。</p>
+
+                    <p data-source-line="157">然而，長老們提出的「解決方案」——「現在求你為我們立一個王治理我們，像列國一樣」，卻揭示了問題的核心與其深層次的屬靈危機。他們並非單純地尋求除去腐敗，而是渴望一種全新的、看得見的、像周圍列國一樣的政治體制——君主制。</p>
+
+                    <p data-source-line="159">這種「像列國一樣」的渴望，反映了人的一種普遍比較心理（Comparative Psychology）：我們常常看著「別人」的生活，總覺得那才是「標準答案」。別人家的公司福利好，加班少；別人家的伴侶又帥又貼心；別人家的孩子考上名校，年薪百萬。我們對此羨慕不已，認為自己也必須擁有。以色列人則認為「別人國家有國王，看上去好威風，好有秩序」，因此自己也必須要一個。</p>
+                </div>
+
+                <div class="detailed-section" data-source-line="165">
+                    <h3 id="detailed-3">三、神對人選擇的「理解、接納、尊重與警告」：天父的心腸</h3>
+                    <p data-source-line="166">面對百姓要求立王的心意，撒母耳首先的反應是「不喜悅」。他感到委屈與憤怒，因為他一生忠心服事，到老了卻被群眾當面說「你老了，不中用了」，事業和家庭同時被否定，這無疑是一場晚年危機。然而，撒母耳做了最關鍵、最正確的事：他沒有去與群眾辯論，而是將自己的「不喜悅」和百姓的訴求帶到神的面前禱告。</p>
+
+                    <p data-source-line="168">神的回答，立刻將事件的層面從「人事糾紛」提升到了「屬天高度」：「撒母耳，別往心裡去。他們不是厭棄你，乃是厭棄我。」這句話不僅安慰了撒母耳，也揭示了百姓問題的本質。</p>
+
+                    <div class="example-section" data-source-line="170">
+                        <h4>🤲 神對百姓的態度展現了祂無比的智慧和憐憫：</h4>
+                        <ul>
+                            <li><span class="blue-emphasis">理解與接納</span>：神說：「自從我領他們出埃及到如今，他們常常離棄我，事奉別神。現在他們向你所行的，是照他們素來所行的。」神深知人性的軟弱和悖逆，這對祂來說並非新鮮事。</li>
+                            <li><span class="green-emphasis">尊重與許可</span>：神並沒有強行阻止百姓的選擇，祂對撒母耳說：「你只管依從他們的話。」我們的神是一位給予人選擇權的神。</li>
+                            <li><span class="purple-emphasis">憐憫與警告</span>：儘管如此，神仍出於憐憫，吩咐撒母耳「只是當警戒他們，告訴他們將來那王怎樣管轄他們。」</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="detailed-section" data-source-line="177">
+                    <h3 id="detailed-4">四、 「霸王條款」：世俗追求的代價與後果的警示</h3>
+                    <p data-source-line="178">接下來，撒母耳就像一個負責任的「客服」，開始向以色列百姓詳細解說「想要一個王」這項服務的具體條款。這可以說是整本聖經裡最「直白」的風險說明書了，但我更稱之為「霸王條款」。這些條款清楚地闡明了立王後，百姓將為此付出的沉重代價：</p>
+
+                    <div class="example-section" data-source-line="179">
+                        <h4>📋 霸王條款詳細內容</h4>
+                        <ul>
+                            <li data-source-line="180"><span class="blue-emphasis">兒子被徵用為王的差役</span>：王會派他們的兒子為他趕車、跟馬，奔走在車前，成為王的司機、保安、跑腿小弟，隨傳隨到。甚至會派他們作千夫長、五十夫長，聽起來像高官，實則是中層管理，壓力最大，要幹的活最多，不僅要打仗，還得下地幹農活，搞軍工製造，成為「社畜」。</li>
+                            <li data-source-line="181"><span class="pink-emphasis">女兒被徵用為王的僕婢</span>：王會取他們的女兒為他製造香膏、做飯烤餅，成為宮廷的免費勞動力，無暇享受個人自由。</li>
+                            <li data-source-line="182"><span class="green-emphasis">土地與財產被徵收</span>：王會取他們最好的田地、葡萄園、橄欖園賜給他的臣僕。百姓的土地將被重劃、徵收，產權說沒就沒了，王和他的朋友們將搞房地產。</li>
+                            <li data-source-line="183"><span class="orange-emphasis">沉重稅收</span>：王會取他們糧食和葡萄園所出的十分之一，給他的太監和臣僕，而非用於國家基礎建設。</li>
+                            <li data-source-line="184"><span class="purple-emphasis">僕婢牲畜被徵用</span>：王會取他們的僕人婢女、健壯的少年人和驢，供他的差役，所有優秀的勞動力和「豪車」都將被徵用，為王服務。</li>
+                            <li data-source-line="185"><span class="red-emphasis">身份降級為王的僕人</span>：最終極的後果是，百姓今天喊著要作「王的子民」，將來卻會變成「王的僕人」，從自由民變成奴工，身份徹底降級。</li>
+                        </ul>
+                        <p data-source-line="186">撒母耳以一句最致命的警告總結：「那時你們必因所選的王哀求耶和華，耶和華卻不應允你們。」意思是，等到那一天，你們被王欺負得活不下去時，再來向神哭訴，就為時已晚了。</p>
+                    </div>
+
+                    <p data-source-line="188">這份「霸王條款」多麼像我們在點擊「我已閱讀並同意使用者協議」之前，從來不看的那一長串密密麻麻的條款？以色列人只想要「立王」，以為這樣做會帶來便利和虛榮，卻沒想到簽下的是極大代價的條款。他們只看到了國王表面的榮耀——帥氣的軍裝、豪華的宮殿、號令天下的威風，卻看不到背後沉重的賦稅、勞役、徵用和自由的喪失。</p>
+
+                    <div class="example-section" data-source-line="190">
+                        <h4>🔄 反思今日，我們的「王」又變成了什麼？</h4>
+                        <ul>
+                            <li data-source-line="192">我們追求一個「理想的職業」作王，它就可能取走你的健康、你的家庭時間、你的幸福感。</li>
+                            <li data-source-line="193">我們追求「金錢」作王，它就可能取走你的安寧、你的人際關係，讓你變成它的奴隸。</li>
+                            <li data-source-line="194">我們追求「愛情」或「婚姻」作王，它就可能取走你的獨立人格，讓你活在討好和恐懼中。</li>
+                            <li data-source-line="195">我們追求「社交媒體上的認同」作王，它就可能取走你的真實、你的專注，讓你為流量、按讚數而活。</li>
+                        </ul>
+                        <p data-source-line="196">神從來不是要剝奪我們的夢想，祂是在我們追逐那些夢想之前，就像撒母耳一樣，誠實地告訴我們代價：「孩子，你想要那個嗎？可以的。但它會拿走你這些、這些、還有這些……你真的想清楚了嗎？」神希望我們在做出選擇之前，就先睜開眼睛，而不是在撞得頭破血流之後才後悔莫及。</p>
+                    </div>
+                </div>
+
+                <div class="detailed-section" data-source-line="198">
+                    <h3 id="detailed-5">五、 神在錯誤中工作，恩典能翻轉失敗的盼望</h3>
+                    <p data-source-line="199">令人心碎的是，以色列百姓在聽完撒母耳詳細的警告後，依然不肯聽從。他們的回應是人類歷史上最經典的「不聽勸」案例之一：「不然！我們定要一個王治理我們，使我們像列國一樣，有王治理我們，統領我們，為我們爭戰。」他們堅持自己的理由：像列國一樣（比較心理）、有王治理（尋求安全感）、為我們爭戰（期待中央集權解決問題）。這是一種屬靈上的「躺平」，自以為是、自我中心，不願再信靠神。</p>
+
+                    <p data-source-line="201">撒母耳再次將百姓這一切的話陳明在耶和華面前。而神再次回應：「你只管依從他們的話，為他們立王。」這是一個令人心碎卻又充滿恩典的時刻。心碎在於，人類再次選擇了背離神；恩典在於，神即使在那樣的背離中，依然沒有拋棄他們。祂許可了他們的要求，並繼續在他們的錯誤選擇中工作。</p>
+
+                    <div class="example-section" data-source-line="203">
+                        <h4>✨ 神的恩典與盼望</h4>
+                        <p data-source-line="203">這段經文給予我們巨大的安慰：我們的神是一位能夠在我們的錯誤中工作的神。即使我們像以色列人一樣任性，做過一些「不聽神警告」的決定，例如衝動的投資、錯誤的關係、自私的選擇，現在正品嘗著苦澀的後果，神也沒有說：「那你們好自為之吧！我不管了！」祂依然在那裡。祂許可我們經歷後果，是為了教育我們，磨練我們，最終把我們帶回到祂的懷抱中。我們的失敗，不是故事的終點。在神那裡，總有回頭路，總有恩典和重建的機會。後來，以色列確實有了王，從掃羅到大衛，神甚至將救主耶穌基督安排在大衛的譜系中。這印證了「神能將我們的錯誤，編織進祂偉大的救贖計畫中。」這份恩典和盼望，是我們在任何困境中都能緊緊抓住的真理。</p>
+                    </div>
+                </div>
+
+                <div class="detailed-section" data-source-line="205">
+                    <h3 id="detailed-6">六、 合神心意之人成長：通往永恆榮耀的路徑</h3>
+                    <p data-source-line="206">鑒於人類傾向於偏離神心意的本性，神也為我們預備了一條回歸與成長的路徑，那就是成為「合神心意之人」。這,主要從大衛被稱為「合神心意的人」的聖經描述中歸納出來，它不是一個瞬間完成的結果，而是一個持續且互相關聯的生命旅程。</p>
+
+                    <div class="example-section" data-source-line="208">
+                        <h4>📊 圖二：合神心意之人成長（標準操作程序）</h4>
+                        <p data-source-line="209">這個流程圖清晰地描繪了靈命成長的時間進程（Timeline）與核心原則（Core Principles）。我會強調這是一個循環且互相關聯的過程，如同植物的生長，需要持續的養分和照護。視覺化的循環箭頭特別能表現出這並非一次性的任務清單，而是生命不斷更新的旅程，有助於聽眾理解其持續性。</p>
+                                <div class="mermaid">
+graph TD
+    Start[開始：剛受洗 / 信仰初期] --> A(0-3個月：建立基礎親密關係)
+    A --> B(3-6個月：加深靈命操練與實操服事)
+    B --> C(6-12個月：內外生命同步成長)
+    C --> D(1年以上：持續成熟與屬靈塑造)
+    D --> E(目標達成：成為合神心意的人)
+    E -- 持續 --> Start
+
+    subgraph 核心原則 貫穿始終
+        P1(凡事尋求遵行神旨意，以神為中心)
+        P2(保持與神的親密關係，敏感祂的心意)
+        P3(持續絕對順服神，真誠悔改，生命不斷更新)
+        P1 --- P2 --- P3
+    end
+
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#f9f,stroke:#333,stroke-width:2px
+</div>
+                    </div>
+
+                    <div class="example-section" data-source-line="247">
+                        <h4>🌟 核心原則（貫穿始終）</h4>
+                        <ul>
+                            <li data-source-line="249"><span class="blue-emphasis">凡事遵行神的旨意</span>：以神為生命中心，在生活的每一個方面都尋求並按神的指示去行，立志做到「主說什麼就做什麼」，清除心中的「內在垃圾」以抵擋黑暗勢力。</li>
+                            <li data-source-line="250"><span class="green-emphasis">與神保持親密關係</span>：將神擺在眼前，以神為牧者，切切尋求祂，在困苦中禱告，徹底認罪悔改，並常懷感恩的心。這種零距離的心靈相通（Spiritual Communion），是能敏感神心意並順服祂的根基。</li>
+                            <li data-source-line="251"><span class="purple-emphasis">絕對順服神</span>：基於與神的親密關係，持守對神的絕對順服，即使在不理解或困難的環境中，也信靠神的安排，不堅持己見，完全放下自我，讓神的旨意成就。</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-section" data-source-line="271">
+                        <h4>🙏 面對挑戰與成長的理解</h4>
+                        <p data-source-line="272">與人不合或時間阻礙：在這期間，我們可能會遇到人際衝突或無法抗拒的時間攔阻（Time Obstacles）。這些都屬於屬靈成長中的挑戰和考驗。這些情況不會自動阻止我們成為合神心意之人，關鍵在於我們如何以屬靈的態度面對和處理。人際衝突是磨煉耐心、寬容和愛心的機會，學習以基督的愛和智慧處理；時間限制和生活壓力則是考驗我們對神的委身心態。</p>
+
+                        <p data-source-line="274">聖靈的果子：一年後若能顯出聖靈的九個果子（Nine Fruits of the Spirit）中的大部分（愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制），已是屬靈生命的顯著成長。若某些果子如和平、喜樂等尚未完全顯現，仍可視為在成為合神心意人的路上，這說明生命中仍有成長空間，應繼續禱告求聖靈充滿和引導。神看重的是願意悔改、尋求改變、順服聖靈的心，果子會隨時間逐漸成熟。大衛的生命雖非完美，仍被神稱為合神心意，因為他心向神，願悔改順服。</p>
+
+                        <p data-source-line="275">總之，成為合神心意的人是一個生命長跑（Long-distance Race），需要終身委身與神同行，不斷地「相信、降卑、讚美」與順服的過程。神在尋找合祂心意的人，祂先動手塑造人，而人的順服和成長則是回應。只要持續保守與神的親密關係，盡力順服，真心悔改，神會在過程中塑造我們。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 禱告事項 -->
+            <section class="section" data-source-line="277" data-id="prayer-items">
+                <h2 id="prayer-items">🙏 禱告事項</h2>
+
+                <div class="prayer-intro" data-source-line="278">
+                    <p><strong>親愛的天父，</strong></p>
+                    <p data-source-line="280">當我深入思想這份關於「我們想要的王」以及如何成為「合神心意之人」的教導時，我的心充滿了感恩與負擔。在此，我願將以下禱告事項呈到祢的施恩寶座前：</p>
+                </div>
+
+                <div class="prayer-section" data-source-line="282">
+                    <p data-source-line="282">求主開啟我們的心眼，幫助我們分辨內心那些「像列國一樣」的渴望，那些將世俗標準當作人生藍圖的意念。願我們都能勇敢放下自己的「更好」主意，真心尋求祢為我們量身定做的獨特計畫。願我們禱告時，不再是求祢批准我們的計畫，而是真實地說：「願祢的旨意成就。」</p>
+                </div>
+
+                <div class="prayer-section" data-source-line="283">
+                    <p data-source-line="283">主啊，求祢憐憫那些因著不聽勸、執意行己路而正在品嚐苦澀後果的弟兄姊妹。願祢的恩典覆蓋他們，讓他們在痛苦中仍能感受到祢的不離不棄。求祢將他們的錯誤編織進祢偉大的救贖計畫中，讓失敗成為他們生命重建的起點，引導他們回歸祢溫暖的懷抱。</p>
+                </div>
+
+                <div class="prayer-section" data-source-line="284">
+                    <p data-source-line="284">我特別為教會中的年輕人禱告，願他們能將參與服事視為生命成長的寶貴機會。求主在他們籌備、規劃、與人配搭的過程中，訓練他們成為有組織、有領導力的人，並在團隊中建立深厚的屬靈連結，使他們的靈命得著造就，成為合祢心意的僕人。</p>
+                </div>
+
+                <div class="prayer-section" data-source-line="285">
+                    <p data-source-line="285">主啊，願我們的教會，作為祢的身體，能夠集體地追求成為合祢心意的群體。願我們都能學習撒母耳的榜樣，在任何不悅或委屈時，不與人爭辯，而是先來到祢面前禱告，讓祢調整我們的視角，從人事的糾紛中看見祢的更高心意。</p>
+                </div>
+
+                <div class="prayer-section" data-source-line="286">
+                    <p data-source-line="286">求聖靈幫助我們，在每日的讀經禱告、靈修筆記、教會服事、分享見證、反思調整及順服委身中，紮實地建立與祢親密的關係。願我們不論遇到人際衝突或時間阻礙，都能依靠祢，持守信心與順服，讓聖靈的九個果子在我們生命中日漸成熟，活出祢榮耀的見證。</p>
+                </div>
+
+                <div class="prayer-closing" data-source-line="287">
+                    <p id="prayer-closing-text"><strong>奉主耶穌基督的名禱告，阿們！</strong></p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Audio Player for Prayer -->
+    <div class="audio-player-container" style="position: fixed; bottom: 20px; right: 20px; background: rgba(102, 126, 234, 0.95); padding: 15px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); z-index: 1000;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="font-size: 1.2em; color: white;">🙏</div>
+            <div style="color: white; font-size: 0.9em; margin-right: 10px;">禱告語音</div>
+            <audio id="prayer-audio" controls style="height: 35px;">
+                <source src="./20250908prayer.mp3" type="audio/mpeg">
+                <source src="./20250908prayer.mp3" type="audio/mp3">
+                您的瀏覽器不支援音頻播放。
+            </audio>
+        </div>
+    </div>
+
+    <script src="../assets/js/layout.js"></script>
+</body>
+</html>
