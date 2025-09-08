@@ -639,8 +639,26 @@ graph TD
                 <div class="prayer-closing" data-source-line="287">
                     <p id="prayer-closing-text"><strong>奉主耶穌基督的名禱告，阿們！</strong></p>
                 </div>
-        <!-- Simple iframe audio player -->
-        <iframe src="./20250908prayer.mp3" width="300" height="50" frameborder="0"></iframe>
+        <!-- Android-compatible audio player -->
+        <div class="android-audio-container" style="margin: 20px 0; text-align: center;">
+            <audio id="android-prayer-audio" controls preload="metadata" style="width: 100%; max-width: 300px; height: 40px;">
+                <source src="./20250908prayer.mp3" type="audio/mpeg">
+                <source src="./20250908prayer.mp3" type="audio/mp3">
+                <source src="./20250908prayer.mp3" type="audio/wav">
+                <source src="./20250908prayer.mp3" type="audio/ogg">
+                您的瀏覽器不支援音頻播放。
+                <a href="./20250908prayer.mp3" download>下載音頻文件</a>
+            </audio>
+            <p style="margin: 10px 0; font-size: 14px; color: #666;">🙏 禱告語音播放器</p>
+        </div>
+
+        <!-- Fallback for very old Android browsers -->
+        <noscript>
+            <div style="text-align: center; margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 8px;">
+                <p>📱 音頻播放器需要JavaScript支援</p>
+                <a href="./20250908prayer.mp3" download style="color: #007bff; text-decoration: none;">📥 點擊下載音頻文件</a>
+            </div>
+        </noscript>
             </section>
 
         </main>
