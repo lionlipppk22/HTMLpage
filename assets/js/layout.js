@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeLayout();
     setupEventListeners();
     updateLayoutIndicator();
+    setupScrollAnimations();
+    addScrollToTopButton();
+    setupYouTubePreview();
 });
 
 // Initialize layout
@@ -41,6 +44,75 @@ function setupEventListeners() {
                 });
             }
         });
+    });
+}
+
+// Setup scroll animations
+function setupScrollAnimations() {
+    const sections = document.querySelectorAll('.section');
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Setup YouTube preview functionality
+function setupYouTubePreview() {
+    const youtubeLinks = document.querySelectorAll('.youtube-link');
+
+    youtubeLinks.forEach(link => {
+        // Add click tracking
+        link.addEventListener('click', function(e) {
+            // Allow the link to open normally
+            console.log('YouTube link clicked:', this.href);
+
+            // Add a visual feedback
+            const playButton = this.querySelector('.play-button');
+            if (playButton) {
+                playButton.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    playButton.style.transform = 'scale(1)';
+                }, 150);
+            }
+        });
+
+        // Add hover effects
+        link.addEventListener('mouseenter', function() {
+            const thumbnail = this.querySelector('.youtube-thumbnail img');
+            if (thumbnail) {
+                thumbnail.style.filter = 'brightness(1.1)';
+            }
+        });
+
+        link.addEventListener('mouseleave', function() {
+            const thumbnail = this.querySelector('.youtube-thumbnail img');
+            if (thumbnail) {
+                thumbnail.style.filter = 'brightness(1)';
+            }
+        });
+
+        // Handle image load errors
+        const img = link.querySelector('.youtube-thumbnail img');
+        if (img) {
+            img.addEventListener('error', function() {
+                // Fallback if YouTube thumbnail fails to load
+                this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgwIiBoZWlnaHQ9IjM2MCIgdmlld0JveD0iMCAwIDQ4MCAzNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0ODAiIGhlaWdodD0iMzYwIiBmaWxsPSIjRkY0NDQ0Ii8+Cjx0ZXh0IHg9IjI0MCIgeT0iMTgwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+WW91VHViZSBWaWRlbzwvdGV4dD4KPC9zdmc+';
+                this.alt = 'YouTube 影片預覽';
+            });
+        }
     });
 }
 
