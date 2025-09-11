@@ -1,10 +1,11 @@
-// Layout JavaScript for 顯化與吸引力法則深度分析報告
+// Layout JavaScript for Google Nano Banana AI 圖像創作技巧指南
 
 // Global state
 let currentLayout = 'mobile';
-let isZoomed = false;
+let zoomLevel = 1.0;
 let effectsEnabled = false;
 let tocVisible = false;
+let gradientAnimationEnabled = false;
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -14,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setupScrollAnimations();
     addScrollToTopButton();
     setupYouTubePreview();
+    addFloatingAnimation();
+    setupTechniqueCardAnimations();
+    setupKeywordHighlighting();
 });
 
 // Initialize layout
@@ -150,44 +154,120 @@ function updateLayoutIndicator() {
     }
 }
 
-// Toggle zoom
+// Enhanced zoom functionality with multiple levels
 function toggleZoom() {
-    const content = document.getElementById('main-content');
-    
-    if (!isZoomed) {
-        content.classList.add('zoomed');
-        isZoomed = true;
+    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, li, .card, .technique-card');
+
+    // Remove previous zoom classes
+    textElements.forEach(el => {
+        el.classList.remove('zoomed-1-1', 'zoomed-1-2', 'zoomed-1-3', 'zoomed-1-4', 'zoomed-1-5');
+    });
+
+    // Cycle through zoom levels
+    if (zoomLevel >= 1.5) {
+        zoomLevel = 1.0; // Reset to normal
     } else {
-        content.classList.remove('zoomed');
-        isZoomed = false;
+        zoomLevel += 0.1;
+    }
+
+    // Apply zoom class based on level
+    if (zoomLevel > 1.0) {
+        const zoomClass = `zoomed-${zoomLevel.toFixed(1).replace('.', '-')}`;
+        textElements.forEach(el => {
+            el.classList.add(zoomClass);
+        });
+    }
+
+    // Update zoom button indicator
+    const zoomBtn = document.querySelector('[onclick="toggleZoom()"]');
+    if (zoomBtn) {
+        if (zoomLevel > 1.0) {
+            zoomBtn.title = `縮放 (${Math.round(zoomLevel * 100)}%)`;
+        } else {
+            zoomBtn.title = '縮放';
+        }
     }
 }
 
-// Toggle effects
+// Enhanced effects with dynamic gradients and breathing animations
 function toggleEffects() {
-    const body = document.body;
-    
+    const gradientBg = document.querySelector('.gradient-bg');
+    const cards = document.querySelectorAll('.card, .technique-card');
+
     if (!effectsEnabled) {
-        body.classList.add('effects-enabled');
         effectsEnabled = true;
-        
-        // Trigger animations for visible sections
-        const sections = document.querySelectorAll('.section');
-        sections.forEach((section, index) => {
+
+        // Enable dynamic gradient animation
+        if (gradientBg) {
+            gradientBg.classList.add('animated');
+            gradientAnimationEnabled = true;
+        }
+
+        // Enhanced breathing effect for cards
+        cards.forEach((card, index) => {
             setTimeout(() => {
-                section.style.animation = 'fadeInUp 0.6s ease-out';
+                card.style.animation = 'breathe 3s ease-in-out infinite';
+                card.style.animationDelay = `${index * 0.2}s`;
             }, index * 100);
         });
-    } else {
-        body.classList.remove('effects-enabled');
-        effectsEnabled = false;
-        
-        // Remove animations
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.style.animation = '';
+
+        // Add floating animation to technique numbers
+        const techniqueNumbers = document.querySelectorAll('.technique-number');
+        techniqueNumbers.forEach((num, index) => {
+            setTimeout(() => {
+                num.style.animation = 'float 2s ease-in-out infinite';
+                num.style.animationDelay = `${index * 0.1}s`;
+            }, index * 50);
         });
+
+        // Update effects button
+        const effectsBtn = document.querySelector('[onclick="toggleEffects()"]');
+        if (effectsBtn) {
+            effectsBtn.title = '特效 (已啟用)';
+            effectsBtn.style.background = 'rgba(102, 126, 234, 0.8)';
+            effectsBtn.style.color = 'white';
+        }
+
+    } else {
+        effectsEnabled = false;
+
+        // Disable gradient animation
+        if (gradientBg) {
+            gradientBg.classList.remove('animated');
+            gradientAnimationEnabled = false;
+        }
+
+        // Remove breathing effects
+        cards.forEach(card => {
+            card.style.animation = '';
+        });
+
+        // Remove floating animation
+        const techniqueNumbers = document.querySelectorAll('.technique-number');
+        techniqueNumbers.forEach(num => {
+            num.style.animation = '';
+        });
+
+        // Reset effects button
+        const effectsBtn = document.querySelector('[onclick="toggleEffects()"]');
+        if (effectsBtn) {
+            effectsBtn.title = '特效';
+            effectsBtn.style.background = '';
+            effectsBtn.style.color = '';
+        }
     }
+}
+
+// Add floating animation keyframes dynamically
+function addFloatingAnimation() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // Toggle Table of Contents
@@ -480,5 +560,136 @@ window.togglePdfView = togglePdfView;
 window.fadeInTextByChar = fadeInTextByChar;
 window.AudioPlayer = AudioPlayer;
 
-// Index page JavaScript
-// Add any interactive functionality here
+// Setup technique card animations
+function setupTechniqueCardAnimations() {
+    const techniqueCards = document.querySelectorAll('.technique-card');
+
+    techniqueCards.forEach((card, index) => {
+        // Add hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+            this.style.transition = 'all 0.3s ease';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+
+        // Add click animation
+        card.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            }, 150);
+        });
+    });
+}
+
+// Setup keyword highlighting functionality
+function setupKeywordHighlighting() {
+    const keywords = ['Nano Banana', 'AI', '圖像生成', '提示詞', '迭代', '一致性', 'OpenArt', 'Gemini'];
+    const textElements = document.querySelectorAll('p, li');
+
+    textElements.forEach(element => {
+        let html = element.innerHTML;
+
+        keywords.forEach(keyword => {
+            const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+            html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
+        });
+
+        element.innerHTML = html;
+    });
+}
+
+// Enhanced scroll to section with smooth animation
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        // Add highlight effect
+        section.style.background = 'rgba(102, 126, 234, 0.1)';
+        section.style.transition = 'background 0.5s ease';
+
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        // Remove highlight after animation
+        setTimeout(() => {
+            section.style.background = '';
+        }, 2000);
+    }
+}
+
+// Dynamic gradient color cycling
+function startGradientCycling() {
+    if (!gradientAnimationEnabled) return;
+
+    const gradientBg = document.querySelector('.gradient-bg');
+    if (!gradientBg) return;
+
+    const colors = [
+        'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+        'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+    ];
+
+    let currentIndex = 0;
+
+    setInterval(() => {
+        if (gradientAnimationEnabled) {
+            currentIndex = (currentIndex + 1) % colors.length;
+            gradientBg.style.background = colors[currentIndex];
+        }
+    }, 3000);
+}
+
+// Initialize gradient cycling
+setTimeout(startGradientCycling, 1000);
+
+// Add technique card interaction tracking
+function trackTechniqueInteraction(techniqueNumber) {
+    console.log(`Technique ${techniqueNumber} viewed`);
+
+    // Add visual feedback
+    const techniqueCard = document.querySelector(`[data-id="technique-${techniqueNumber}"]`);
+    if (techniqueCard) {
+        techniqueCard.style.borderColor = '#667eea';
+        techniqueCard.style.borderWidth = '2px';
+
+        setTimeout(() => {
+            techniqueCard.style.borderColor = '';
+            techniqueCard.style.borderWidth = '';
+        }, 3000);
+    }
+}
+
+// Enhanced mobile responsiveness
+function handleMobileInteractions() {
+    if (window.innerWidth <= 768) {
+        // Adjust touch interactions for mobile
+        const cards = document.querySelectorAll('.technique-card, .card');
+
+        cards.forEach(card => {
+            card.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+
+            card.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    }
+}
+
+// Initialize mobile interactions
+window.addEventListener('resize', handleMobileInteractions);
+handleMobileInteractions();
+
+// Export functions for global access
+window.scrollToSection = scrollToSection;
+window.trackTechniqueInteraction = trackTechniqueInteraction;

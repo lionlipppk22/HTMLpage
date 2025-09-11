@@ -257,6 +257,180 @@ body {
     margin: 20px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-left: 5px solid #667eea;
+    animation: breathe 3s ease-in-out infinite;
+}
+
+/* Breathing Border Glow Effect */
+@keyframes breathe {
+    0%, 100% {
+        outline: 2px solid rgba(102, 126, 234, 0.5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    50% {
+        outline: 4px solid rgba(102, 126, 234, 1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 30px rgba(102, 126, 234, 0.6);
+    }
+}
+
+/* Technique Cards */
+.technique-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: all 0.3s ease;
+    animation: breathe 4s ease-in-out infinite;
+}
+
+.technique-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.technique-card h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Technique Card Sections */
+.definition-section,
+.method-section,
+.example-section,
+.technical-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid;
+}
+
+.definition-section {
+    background: rgba(52, 152, 219, 0.1);
+    border-left-color: #3498db;
+}
+
+.method-section {
+    background: rgba(46, 204, 113, 0.1);
+    border-left-color: #2ecc71;
+}
+
+.example-section {
+    background: rgba(241, 196, 15, 0.1);
+    border-left-color: #f1c40f;
+}
+
+.technical-section {
+    background: rgba(155, 89, 182, 0.1);
+    border-left-color: #9b59b6;
+}
+
+.definition-section h4,
+.method-section h4,
+.example-section h4,
+.technical-section h4 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Technique Overview Grid */
+.technique-overview {
+    margin: 25px 0;
+}
+
+.technique-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.technique-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.technique-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.technique-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    flex-shrink: 0;
+}
+
+/* Thinking Process Styles */
+.thinking-step {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 5px solid #e74c3c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.thinking-step h3 {
+    color: #e74c3c;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.sub-thinking {
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 3px solid #3498db;
+}
+
+.sub-thinking h4 {
+    color: #3498db;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Keyword Highlighting */
+.keyword {
+    background: linear-gradient(120deg, #f1c40f 0%, #f39c12 100%);
+    color: #2c3e50;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.keyword:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(241, 196, 15, 0.4);
 }
 
 /* SOP Overview (新增，對應附件格式) - 調整後：配色與字體更接近附件 */
@@ -419,6 +593,10 @@ body {
 
 .card ul {
     padding-left: 20px;
+}
+
+.card ul li {
+    color: #333;
 }
 
 .card li {
@@ -827,7 +1005,7 @@ body.index-page {
 
 /* Detailed Discussion Sections */
 .detailed-section {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(230, 230, 230, 0.92);
     border-radius: 12px;
     padding: 25px;
     margin: 25px 0;
@@ -847,6 +1025,7 @@ body.index-page {
     margin-bottom: 15px;
     text-align: justify;
     line-height: 1.8;
+    color: #333;
 }
 
 /* Thinking Process Sections */
@@ -1080,6 +1259,229 @@ body.index-page {
     background: rgba(255, 0, 0, 1);
 }
 
+/* Footer Styles */
+.footer {
+    background: rgba(44, 62, 80, 0.95);
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-radius: 20px 20px 0 0;
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    margin-bottom: 15px;
+    font-size: 1em;
+    opacity: 0.9;
+}
+
+.footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-links a,
+.footer-links .keyword {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.footer-links a:hover,
+.footer-links .keyword:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 2.2em;
+    }
+
+    .technique-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 12px;
+    }
+
+    .controls {
+        top: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .content {
+        padding: 25px;
+    }
+
+    .section {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .section h2 {
+        font-size: 1.6em;
+    }
+
+    .technique-card {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .technique-card h3 {
+        font-size: 1.5em;
+    }
+
+    .technique-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .technique-item {
+        padding: 12px;
+    }
+
+    .toc {
+        width: 90%;
+        right: -95%;
+        top: 80px;
+    }
+
+    .toc.show {
+        right: 5%;
+    }
+
+    .thinking-step {
+        padding: 20px;
+    }
+
+    .definition-section,
+    .method-section,
+    .example-section,
+    .technical-section {
+        padding: 15px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .technique-card {
+        padding: 15px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+        gap: 5px;
+    }
+
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    .technique-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+    }
+}
+
+/* Dynamic Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    25% {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    75% {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    100% {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+}
+
+.gradient-bg.animated {
+    animation: gradientShift 10s ease-in-out infinite;
+}
+
+/* Zoom functionality styles */
+.zoomed-1-1 { font-size: 1.1em; }
+.zoomed-1-2 { font-size: 1.2em; }
+.zoomed-1-3 { font-size: 1.3em; }
+.zoomed-1-4 { font-size: 1.4em; }
+.zoomed-1-5 { font-size: 1.5em; }
+
 .youtube-info {
     padding: 20px;
     text-align: left;
@@ -1182,14 +1584,15 @@ body.index-page {
 
 /* Enhanced section animations */
 .section {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.6s ease-out;
 }
 
 .section.visible {
     opacity: 1;
     transform: translateY(0);
+    animation: fadeInUp 0.6s ease-out;
 }
 
 /* Responsive adjustments for new content */

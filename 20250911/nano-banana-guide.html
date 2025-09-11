@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="利用 Google Nano Banana 掌握 AI 圖像創作技巧 - 14個專業技巧完整指南">
+    <meta name="keywords" content="Google Nano Banana, AI圖像生成, 圖像創作, 人工智慧, 創作技巧">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <title>利用 Google Nano Banana 掌握 AI 圖像創作技巧 - 14個專業技巧指南</title>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- 目錄 -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul>
+            <li><a href="#main-title">🎯 AI 圖像創作技巧總覽</a></li>
+            <li><a href="#executive-summary">📊 執行摘要</a></li>
+            <li><a href="#background">🔍 背景</a></li>
+            <li><a href="#report-outline">📝 報告大綱</a></li>
+            <li><a href="#core-techniques">🌟 核心論點卡片</a></li>
+            <li><a href="#technique-1">🌍 技巧一：從單一圖像建立整個世界</a></li>
+            <li><a href="#technique-2">🚫 技巧二：移除浮水印</a></li>
+            <li><a href="#technique-3">🖼️ 技巧三：正確更換背景</a></li>
+            <li><a href="#technique-4">🧩 技巧四：理解區塊化遮罩</a></li>
+            <li><a href="#technique-5">👥 技巧五：組合多個圖像/角色/物件</a></li>
+            <li><a href="#technique-6">🎨 技巧六：拼貼法</a></li>
+            <li><a href="#technique-7">📐 技巧七：管理長寬比</a></li>
+            <li><a href="#technique-8">🔄 技巧八：擴展圖像（外繪）</a></li>
+            <li><a href="#technique-9">📝 技巧九：使用註釋引導圖像編輯</a></li>
+            <li><a href="#technique-10">🖼️ 技巧十：以圖像進行註釋</a></li>
+            <li><a href="#technique-11">💡 技巧十一：改變場景光線</a></li>
+            <li><a href="#technique-12">🏷️ 技巧十二：添加標誌與文字</a></li>
+            <li><a href="#technique-13">📷 技巧十三：攝影機角度</a></li>
+            <li><a href="#technique-14">🎬 技巧十四：將一致場景整合為 AI 影片</a></li>
+            <li><a href="#thinking-process">🧠 繪製我的思考流程</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 id="main-title" data-source-line="1" data-id="main-title">利用 Google Nano Banana 掌握 AI 圖像創作技巧</h1>
+            <p class="subtitle" data-source-line="1">「14 Tips to Create Mindblowing AI Images with Nano Banana (Become a Pro)」</p>
+            <div id="layout-indicator" style="margin-top: 15px; padding: 8px 16px; background: rgba(102, 126, 234, 0.1); border-radius: 20px; display: inline-block; font-size: 0.9em; color: #667eea;">
+                📱 Mobile Layout (預設)
+            </div>
+        </header>
+
+        <main class="content" id="main-content">
+            <!-- 執行摘要 -->
+            <section class="section" data-source-line="3" data-id="executive-summary">
+                <h2 id="executive-summary">📊 執行摘要</h2>
+                <div class="card" data-source-line="5">
+                    <p data-source-line="5">本報告旨在深入剖析並傳達 Google Nano Banana 人工智慧圖像生成工具的核心技巧與應用。根據所提供的資料，我發現此工具具備強大的世界建構能力，能從單一圖像出發，創造出連貫且高品質的視覺內容，甚至能將這些內容無縫整合為 AI 影片。報告闡述了十四項關鍵技巧，涵蓋了從基礎的圖像編輯、背景更換，到複雜的多物件組合、光影調整、文字嵌入，乃至於攝影機角度控制和最終的 AI 影片生成。核心論點在於，透過精準且具上下文和意圖的提示詞輸入，以及善用迭代調整與參考圖像管理，使用者能夠極大地提升 AI 圖像的創作品質和掌控度。本報告詳細解釋了每一項技巧的技術細節和應用方法，旨在為讀者提供一份全面且易於理解的指南，使其無需參閱原始資料也能掌握 Nano Banana 的專業應用。</p>
+                </div>
+            </section>
+
+            <!-- 背景 -->
+            <section class="section" data-source-line="7" data-id="background">
+                <h2 id="background">🔍 背景</h2>
+                
+                <div class="subsection" data-source-line="9">
+                    <h3 id="problem">❓ 問題</h3>
+                    <div class="card" data-source-line="11">
+                        <p data-source-line="11">在 AI 圖像生成領域中，常見的問題包括：</p>
+                        <ol data-source-line="12">
+                            <li data-source-line="12">生成的圖像缺乏一致性，特別是在同一角色不同場景或動作下。</li>
+                            <li data-source-line="13">圖像編輯（如更換背景）可能顯得自然或低品質。</li>
+                            <li data-source-line="14">組合多個角色或物件到同一場景時，結果往往不盡人意，例如姿勢或光影不匹配。</li>
+                            <li data-source-line="15">控制圖像的長寬比、攝影機角度或精確放置物件存在挑戰。</li>
+                            <li data-source-line="16">在生成的圖像中融入文字或標誌，並使其自然融入環境，是另一個難點。</li>
+                            <li data-source-line="17">將靜態圖像轉換為流暢的 AI 影片時，場景之間的過渡往往不夠無縫。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="subsection" data-source-line="19">
+                    <h3 id="goals">🎯 目標</h3>
+                    <div class="card" data-source-line="21">
+                        <p data-source-line="21">本報告的目標是提供一套全面的技巧與指南，幫助使用者：</p>
+                        <ol data-source-line="22">
+                            <li data-source-line="22">掌握使用 Google Nano Banana 創造高品質、一致性 AI 圖像的方法。</li>
+                            <li data-source-line="23">有效解決 AI 圖像生成中常見的品質、一致性和控制問題。</li>
+                            <li data-source-line="24">學習如何從單一圖像建構複雜的場景和故事。</li>
+                            <li data-source-line="25">了解如何將靜態 AI 圖像無縫轉換為動態 AI 影片。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="subsection" data-source-line="27">
+                    <h3 id="limitations">⚠️ 限制</h3>
+                    <div class="card" data-source-line="29">
+                        <ol data-source-line="29">
+                            <li data-source-line="29">報告內容僅限於所提供的 YouTube 影片節錄文本，不包含影片中的實際視覺內容，因此讀者需透過文字理解視覺技巧。</li>
+                            <li data-source-line="30">Nano Banana 的特定功能和介面操作細節，雖然提及使用 Gemini 或 Google AI Studio，但未提供詳細的操作步驟。</li>
+                            <li data-source-line="31">部分技術描述可能需要使用者具備一定的 AI 圖像生成基礎知識。</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 報告大綱 -->
+            <section class="section" data-source-line="33" data-id="report-outline">
+                <h2 id="report-outline">📝 報告大綱</h2>
+                <div class="card" data-source-line="35">
+                    <ul data-source-line="35">
+                        <li data-source-line="35"><strong>核心論點卡片</strong>：以卡片形式呈現每項技巧的簡要定義、方法與範例。</li>
+                    </ul>
+                    <div class="technique-overview" data-source-line="36">
+                        <div class="technique-grid">
+                            <div class="technique-item" data-source-line="36">
+                                <span class="technique-number">1</span>
+                                <span>技巧一：從單一圖像建立整個世界</span>
+                            </div>
+                            <div class="technique-item" data-source-line="37">
+                                <span class="technique-number">2</span>
+                                <span>技巧二：移除浮水印</span>
+                            </div>
+                            <div class="technique-item" data-source-line="38">
+                                <span class="technique-number">3</span>
+                                <span>技巧三：正確更換背景</span>
+                            </div>
+                            <div class="technique-item" data-source-line="39">
+                                <span class="technique-number">4</span>
+                                <span>技巧四：理解區塊化遮罩</span>
+                            </div>
+                            <div class="technique-item" data-source-line="40">
+                                <span class="technique-number">5</span>
+                                <span>技巧五：組合多個圖像/角色/物件</span>
+                            </div>
+                            <div class="technique-item" data-source-line="41">
+                                <span class="technique-number">6</span>
+                                <span>技巧六：拼貼法</span>
+                            </div>
+                            <div class="technique-item" data-source-line="42">
+                                <span class="technique-number">7</span>
+                                <span>技巧七：管理長寬比</span>
+                            </div>
+                            <div class="technique-item" data-source-line="43">
+                                <span class="technique-number">8</span>
+                                <span>技巧八：擴展圖像（外繪）</span>
+                            </div>
+                            <div class="technique-item" data-source-line="44">
+                                <span class="technique-number">9</span>
+                                <span>技巧九：使用註釋引導圖像編輯</span>
+                            </div>
+                            <div class="technique-item" data-source-line="45">
+                                <span class="technique-number">10</span>
+                                <span>技巧十：以圖像進行註釋</span>
+                            </div>
+                            <div class="technique-item" data-source-line="46">
+                                <span class="technique-number">11</span>
+                                <span>技巧十一：改變場景光線</span>
+                            </div>
+                            <div class="technique-item" data-source-line="47">
+                                <span class="technique-number">12</span>
+                                <span>技巧十二：添加標誌與文字</span>
+                            </div>
+                            <div class="technique-item" data-source-line="48">
+                                <span class="technique-number">13</span>
+                                <span>技巧十三：攝影機角度</span>
+                            </div>
+                            <div class="technique-item" data-source-line="49">
+                                <span class="technique-number">14</span>
+                                <span>技巧十四：將一致場景整合為 AI 影片</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心論點卡片 -->
+             
+            <section class="section" data-source-line="51" data-id="core-techniques">
+                <h2 id="core-techniques">🌟 核心論點卡片</h2>
+                
+                <!-- 技巧一 -->
+                <article class="technique-card" data-source-line="53" data-id="technique-1">
+                    <h3 id="technique-1">🌍 技巧一：從單一圖像建立整個世界</h3>
+                    
+                    <div class="definition-section" data-source-line="55">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="55">這項技巧是指利用一個單一的參考圖像作為起點，逐步指導 AI 生成同一角色在不同動作、情境或情緒下的多個相關圖像，從而構建出一個連貫且具有敘事感的完整虛擬世界或故事線。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="56">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="57">
+                            <li data-source-line="57">選擇並上傳一個高品質的起始參考圖像到 Nano Banana (Google Gemini app 或 Google AI Studio，需選擇 2.5 flash 模型)。</li>
+                            <li data-source-line="58">輸入具體且詳細的提示詞來描述你希望在場景中發生的新動作或情境，確保提示詞與角色和原始圖像內容保持一致性。</li>
+                            <li data-source-line="59">檢視生成結果，如果結果不符合預期，這是一個迭代過程。</li>
+                            <li data-source-line="60">調整提示詞，例如加入更精確的描述（如特寫照片、擦拭飛機的側面）來修正透視或比例問題，直到獲得滿意的結果。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="61">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="62">
+                            <li data-source-line="62">從一張飛行員望向太空船的照片，生成她爬進駕駛艙的圖像。</li>
+                            <li data-source-line="63">創建一張飛行員坐下並靠在木箱上，顯得疲憊不堪的圖像。</li>
+                            <li data-source-line="64">生成一張飛行員側面特寫，用抹布擦拭身後飛機側面的圖像。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="65">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="65">此技巧的核心在於 Nano Banana 的上下文保持與風格一致性能力。當使用者上傳一個參考圖像時，AI 模型會將該圖像視為生成過程中的強大條件輸入。通過在提示詞中描述新的情境或動作，AI 能夠利用其深度學習模型中對物件、人物、環境關係的理解，在新的場景中重新構圖原始圖像的內容。例如，當提示飛行員爬進駕駛艙時，AI 不僅生成一個駕駛艙，更會保持飛行員的身份、服裝以及原始圖像的視覺風格。迭代過程是此技巧成功的關鍵，這意味著 AI 圖像生成是一個不斷修正和優化的循環。當初始結果的透視或比例不正確時，使用者需要加入更精確的空間關係和構圖指令，以引導 AI 產生更真實可信的畫面。在 Google Gemini 或 Google AI Studio 中使用 Nano Banana 時，選擇 2.5 flash 模型確保最佳性能，但這些平台生成的圖像會帶有浮水印，這引導出下一項技巧。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧二 -->
+                <article class="technique-card" data-source-line="67" data-id="technique-2">
+                    <h3 id="technique-2">🚫 技巧二：移除浮水印</h3>
+
+                    <div class="definition-section" data-source-line="69">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="69">此技巧旨在避免由特定 AI 圖像生成平台（如 Google Gemini 或 Google AI Studio）在生成圖像底部自動添加的浮水印。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="70">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="71">
+                            <li data-source-line="71">不要使用會添加浮水印的平台，例如 Google Gemini 或 Google AI Studio。</li>
+                            <li data-source-line="72">轉而使用其他整合了多種 AI 工具的第三方平台，例如 OpenArt。</li>
+                            <li data-source-line="73">在 OpenArt 這類平台的 chat-to-image 功能中，選擇 Nano Banana 作為圖像生成模型。</li>
+                            <li data-source-line="74">上傳參考照片並輸入提示詞來生成圖像。這樣生成的圖像將不帶有浮水印。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="75">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="76">
+                            <li data-source-line="76">在 OpenArt 上傳一張飛行員的照片，然後提示 create a closeup shot on her face looking towards the camera，生成的圖像將不會有 Google 應用程式特有的菱形浮水印。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="77">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="77">此技巧涉及對不同 AI 圖像平台運作模式的理解。某些平台會在生成的圖像中嵌入數位浮水印，這通常是為了品牌識別或追溯來源。為了繞過這個限制，使用者需要轉向不添加浮水印的第三方整合平台，例如 OpenArt。OpenArt 透過其 chat-to-image 功能提供多種 AI 模型選擇，其中包括 Nano Banana。在這些平台上，使用者可以上傳圖像並輸入提示詞，系統將利用 Nano Banana 的生成能力，但不會疊加 Google 的品牌浮水印。這提供了一種獲得乾淨圖像的方法，尤其適用於商業用途或避免品牌干擾的場景。本質上，這是選擇不同 API 或服務提供商以利用相同 AI 模型但規避輸出限制的策略。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧三 -->
+                <article class="technique-card" data-source-line="79" data-id="technique-3">
+                    <h3 id="technique-3">🖼️ 技巧三：正確更換背景</h3>
+
+                    <div class="definition-section" data-source-line="81">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="81">這項技巧是關於在更換圖像背景時，不僅要替換掉原背景，還要確保新背景與前景角色之間的光影、氛圍和整體畫面感自然融合，避免產生廉價的 Photoshop 拼貼效果。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="82">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="83">
+                            <li data-source-line="83">錯誤示範：避免僅僅提示 change the background to a jungle 這類簡單的背景替換指令，這會導致背景與人物之間脫節。</li>
+                            <li data-source-line="84">正確方法：在提示詞中加入豐富的上下文和意圖。描述角色身處新環境的情境、風格，以及最重要的——指示 AI 調整光線和陰影以匹配新的室外環境。</li>
+                            <li data-source-line="85">可以先從扁平光線的原始照片開始，AI 會調整人物臉上的光線和陰影以使其看起來像是在戶外拍攝的。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="86">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="87">
+                            <li data-source-line="87">提示：create a scene of this character inside a cinematic sci-fi film by changing the background to temple ruins in a lush jungle. Keep his pose and location exactly the same. Add subtle shadows cast onto the body and head from the jungle around him.（創造一個角色身處電影科幻片中的場景，將背景改為鬱鬱蔥蔥叢林中的寺廟遺跡。保持他的姿勢和位置不變。從周圍叢林投射到身體和頭部上微妙的陰影。）</li>
+                            <li data-source-line="88">即使添加綠幕效果不顯著，關鍵仍在於指令 AI 調整光影。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="89">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="89">傳統的背景替換往往導致人物與新背景的光影、景深和細節不匹配，形成廉價的 Photoshop 效果。Nano Banana 的背景替換技巧則超越簡單疊圖，其原理是 AI 深度理解圖像的語義內容，能夠區分前景角色和背景元素。當提示詞包含豐富的上下文和意圖時，例如指定電影級科幻或鬱鬱蔥蔥的叢林中的寺廟遺跡，AI 不僅繪製新背景，更會模擬環境光照、陰影投射和氛圍。關鍵在於指示 AI 調整光線和陰影，這意味著 AI 會對前景人物的像素進行光影重繪，使其融入新環境。例如，在叢林中添加微妙的陰影。這種方法利用 AI 對物理世界光線傳播的模擬能力，提升圖像的真實感。雖然綠幕作為初始背景效果不顯著，光影調整的提示詞才是核心。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧四 -->
+                <article class="technique-card" data-source-line="91" data-id="technique-4">
+                    <h3 id="technique-4">🧩 技巧四：理解區塊化遮罩</h3>
+
+                    <div class="definition-section" data-source-line="93">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="93">此技巧涉及理解 AI 如何在內部處理圖像，將場景中的不同物件自動分割成獨立的、可編輯的區塊（類似於人體對骨骼的理解），這使得使用者可以精確地修改圖像中的特定部分，而不影響其他區域。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="94">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="95">
+                            <li data-source-line="95">認知 AI 能夠將圖像中的前景人物、背景、特定物體（如沙發、眉毛、眼睛、頭髮）區分為不同的邏輯單元。</li>
+                            <li data-source-line="96">在提示詞中，明確指出要修改的特定物件及其所需更改的屬性。</li>
+                            <li data-source-line="97">強調保持其他一切不變以確保只有目標物件被編輯。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="98">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="99">
+                            <li data-source-line="99">如果想要改變一張照片中的沙發顏色，提示：change the white sofa to a soft blue color with a velvet texture. Keep everything else exactly the same.（將白色沙發改為柔軟的藍色，帶有天鵝絨質地。保持其他一切不變。）</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="100">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="100">區塊化遮罩是 AI 視覺處理的基本概念，其原理是 AI 模型基於卷積神經網路對圖像進行像素級分類，將每個像素分配給特定物件類別。這就像在圖像上繪製彩色遮罩，每個顏色代表一個獨立的區塊。有了這種語義理解，使用者可以在提示詞中精確針對區塊進行修改。例如，改變沙發顏色時，AI 僅修改沙發像素，而不影響其他物件。這種精細控制適用於大小物件，從沙發到頭髮，都可在像素層級隔離修改，避免整體修改的副作用，確保編輯的局部性和精準性。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧五 -->
+                <article class="technique-card" data-source-line="102" data-id="technique-5">
+                    <h3 id="technique-5">👥 技巧五：組合多個圖像/角色/物件</h3>
+
+                    <div class="definition-section" data-source-line="104">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="104">這項技巧是將多個獨立的角色或物件圖像整合到同一個新生成的場景中，並使其彼此互動，但這也常常是生成品質下降的原因。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="105">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="106">
+                            <li data-source-line="106">初步嘗試：在 OpenArt 中選擇 Nano Banana 模型，上傳多個角色照片（例如一個藍皮膚男人和一個綠皮膚女人）。</li>
+                            <li data-source-line="107">問題點：簡單的提示詞可能導致角色姿勢、光影與參考圖像完全相同，或生成低品質的圖像。組合越多物件，結果品質越差。</li>
+                            <li data-source-line="108">改善方法：在提示詞中加入更多的上下文和意圖，例如描述攝影機角度（如廣角拍攝、全身照）和角色之間的相對動作。</li>
+                            <li data-source-line="109">使用動作風格關鍵詞來描述角色如何相互移動。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="110">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="111">
+                            <li data-source-line="111">錯誤嘗試：the man with blue skin and the woman with green skin stand across from each other black ancient temple ruins in the background inside a medieval fantasy film.（藍皮膚男人和綠皮膚女人在黑色古廟遺跡背景下的中世紀奇幻電影中相對而立。）</li>
+                            <li data-source-line="112">改善後：side profile photo of the green-skinned woman sitting on a rock. Then the blue skinned man reaches out and gestures for the woman to stand out. Inside a medieval film shot on 35mm camera.（綠皮膚女人坐在岩石上的側面照片。然後藍皮膚男人伸出手，示意女人站起來。在中世紀電影中以 35mm 相機拍攝。）</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="113">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="113">將多個參考圖像整合到單一場景是複雜任務，初步嘗試常遇一致性問題，如姿態、光影僵硬，尤其組合越多越差。解決需豐富的提示詞工程，提供情境上下文和動態意圖，包括指定攝影機角度和相對動作。例如，使用動作風格關鍵詞促使 AI 生成新姿態和光影，而不是複製參考。這要求 AI 理解物件動態關係和敘事邏輯，在像素層級合成語義連貫的場景，從原子級輸入建構複雜宏觀場景。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧六 -->
+                <article class="technique-card" data-source-line="115" data-id="technique-6">
+                    <h3 id="technique-6">🎨 技巧六：拼貼法</h3>
+
+                    <div class="definition-section" data-source-line="117">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="117">由於直接組合多個圖像會導致品質下降，此技巧透過預先將所有參考元素（角色、道具、背景等）整理並放置到一張單一的拼貼參考圖像中，然後以這張拼貼圖作為唯一輸入，來解決這個問題，從而獲得更優質、更連貫的圖像。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="118">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="119">
+                            <li data-source-line="119">在圖像編輯軟體中創建一張空白畫布。</li>
+                            <li data-source-line="120">將所有你希望在最終圖像中出現的角色、道具、背景等參考圖像，精心安排並放置到這張空白畫布上，形成一張拼貼圖。</li>
+                            <li data-source-line="121">將這張完整的拼貼參考圖像上傳到 Nano Banana。</li>
+                            <li data-source-line="122">輸入提示詞，指示 AI 將這張拼貼圖轉化為一張連貫的最終圖像。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="123">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="124">
+                            <li data-source-line="124">將藍皮膚男人、綠皮膚女人、黃金遺跡道具和特定背景圖像全部放到一張拼貼圖中，然後用這張圖作為參考，生成的圖像能更好地保持光影和姿勢。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="125">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="125">拼貼法是一種參考圖像預處理策略，規避直接輸入多圖像的品質問題。其原理是將視覺元素手動整合到單一拼貼參考圖像中，作為 Nano Banana 的統一輸入。這簡化 AI 任務，避免從不協調參考推斷關係、光影、透視。AI 僅需風格化或轉換拼貼圖，使用者在生成前定義構圖、空間佈局和比例。雖然精細細節如手指仍有問題，但拼貼法顯著提升一致性，將生成複雜度轉移到預處理階段。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧七 -->
+                <article class="technique-card" data-source-line="127" data-id="technique-7">
+                    <h3 id="technique-7">📐 技巧七：管理長寬比</h3>
+
+                    <div class="definition-section" data-source-line="129">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="129">這項技巧是關於確保 Nano Banana 生成的圖像具有與使用者期望相符的長寬比，因為 AI 會自動遵循所提供的參考圖像的長寬比。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="130">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="131">
+                            <li data-source-line="131">理解 Nano Banana 生成的圖像會與其使用的參考圖像保持相同的長寬比。</li>
+                            <li data-source-line="132">如果你的原始角色圖像或元素是垂直的，但你想要生成一個橫向寬螢幕的圖像，則不能直接使用這些垂直參考圖像。</li>
+                            <li data-source-line="133">解決方案：將所有垂直的參考圖像放入一張空白的寬螢幕橫向圖像中。然後將這張處理過的寬螢幕圖像作為 Nano Banana 的參考圖。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="134">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="135">
+                            <li data-source-line="135">如果你有兩張垂直的角色圖像，但想生成一張橫向圖像，你需要先將這兩張垂直圖像嵌入到一張大的橫向空白圖像中，再將這張橫向圖像作為 Nano Banana 的參考。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="136">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="136">長寬比是圖像寬高比例，對視覺呈現至關重要。Nano Banana 生成時繼承參考圖像的長寬比。如果輸入垂直圖像，輸出也垂直。解決方案是預先準備目標長寬比的參考圖像：創建空白畫布，將垂直角色嵌入，再作為輸入。透過調整條件輸入控制輸出格式，確保符合媒體平台需求。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧八 -->
+                <article class="technique-card" data-source-line="138" data-id="technique-8">
+                    <h3 id="technique-8">🔄 技巧八：擴展圖像（外繪）</h3>
+
+                    <div class="definition-section" data-source-line="140">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="140">此技巧允許使用者在不影響或裁剪原始圖像核心內容的情況下，擴展圖像的尺寸，並利用 AI 智慧地填補新增的空白區域，創造出更廣闊的場景。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="141">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="142">
+                            <li data-source-line="142">將原始（例如方形的）角色照片放置到一張更大的、具有所需長寬比的空白畫布上（例如一張寬螢幕橫向圖像）。</li>
+                            <li data-source-line="143">指示 Nano Banana 填補空白區域或擴展角色照片來完成圖像。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="144">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="145">
+                            <li data-source-line="145">將一張方形的角色照片放到一張寬螢幕的空白白紙上，然後指示 Nano Banana 填滿白色區域，AI 就會擴展角色照片來完成圖像。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="146">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="146">外繪是利用 AI 在原始邊界外生成新內容，增加尺寸和視野。其與放大或裁剪不同，是在空白區域合成與原始風格相符的像素。Nano Banana 透過構圖與填補實現：將原始圖像置於大畫布，指示填滿空白，AI 分析內容、風格、紋理，預測生成新元素。底層基於生成式對抗網路或擴散模型，學習圖像分佈生成逼真數據。外繪保留原始完整性，改變構圖或長寬比，為故事提供更廣背景。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧九 -->
+                <article class="technique-card" data-source-line="148" data-id="technique-9">
+                    <h3 id="technique-9">📝 技巧九：使用註釋引導圖像編輯</h3>
+
+                    <div class="definition-section" data-source-line="150">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="150">這項技巧是透過在參考圖像上直接添加文字和箭頭註釋，為 Nano Banana 提供精確的視覺和文字指令，以指導 AI 如何編輯圖像、填補空白區域以及放置特定物件，從而實現對生成內容的精準控制。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="151">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="152">
+                            <li data-source-line="152">將你的核心角色照片放置到一個寬廣的畫布上。</li>
+                            <li data-source-line="153">利用文字和箭頭在畫布的空白區域添加註釋，詳細說明你希望填補的內容、物件類型以及它們的具體位置（例如頂部、遠處背景、前景區域）。</li>
+                            <li data-source-line="154">在提示詞中，指示 Nano Banana 擴展角色照片以填滿空白區域，並使用圖像中的方向，同時要求保持角色在相同位置。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="155">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="156">
+                            <li data-source-line="156">在畫布頂部用文字註釋古老寺廟，在背景遠處註釋飛翔的龍，在前景區域註釋神秘的石井，然後讓 Nano Banana 根據這些指示生成圖像。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="157">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="157">這項技巧是人機協作的體現，透過視覺註釋作為 AI 的條件輸入。使用者在參考圖像上添加文字描述和指向性箭頭，這些成為結構化指令。Nano Banana 處理時不僅解析像素，還解析註釋：文字提供語義信息，箭頭提供空間信息。這使得使用者在像素和物件級別精確控制，AI 根據描述生成內容並保持相對位置，提升可控性和精準性，將抽象提示轉化為視覺佈局。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧十 -->
+                <article class="technique-card" data-source-line="159" data-id="technique-10">
+                    <h3 id="technique-10">🖼️ 技巧十：以圖像進行註釋</h3>
+
+                    <div class="definition-section" data-source-line="161">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="161">這是比單純文字註釋更為進階的技巧，使用者除了文字和箭頭註釋外，還直接在註釋圖中嵌入具體的參考圖像來指導 AI，極大地提升了對最終生成結果的控制力和細節精準度。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="162">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="163">
+                            <li data-source-line="163">基於帶有箭頭和文字註釋的圖像（如技巧九所述）。</li>
+                            <li data-source-line="164">將你希望 AI 放置在特定位置的實際圖像參考（例如一張特定的寺廟照片、一張龍的圖片）直接添加到這張註釋圖中。</li>
+                            <li data-source-line="165">將這張包含所有視覺和文字參考的綜合註釋圖像作為 Nano Banana 的輸入。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="166">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="167">
+                            <li data-source-line="167">除了指示古老寺廟和遠處的龍外，還直接在註釋圖中嵌入一張特定的寺廟照片和一張龍的照片作為參考，讓 AI 根據這些視覺參考生成圖像。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="168">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="168">在技巧九基礎上，將視覺引導提升到直接層次。除了文字和箭頭，使用者嵌入圖像參考作為像素級條件輸入。當希望放置特定物件時，直接置入參考圖片到目標位置。AI 處理混合註釋圖時，理解語義並參考像素生成物件。這減少 AI 在風格、紋理、細節的自由發揮，提供絕對控制，將設計藍圖以圖像形式給 AI，確保精準複現。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧十一 -->
+                <article class="technique-card" data-source-line="170" data-id="technique-11">
+                    <h3 id="technique-11">💡 技巧十一：改變場景光線</h3>
+
+                    <div class="definition-section" data-source-line="172">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="172">此技巧允許使用者利用 Nano Banana 調整圖像的光線和顏色調色板，從而改變場景的情緒和氛圍，同時保持場景中的核心結構和角色不變。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="173">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="174">
+                            <li data-source-line="174">上傳一張現有圖像。</li>
+                            <li data-source-line="175">在提示詞中明確描述你希望改變的光線效果和顏色風格。這應該包含詳細的形容詞，例如金色光芒、柔和漫射光、陽光投射陰影、明亮藍天、鮮豔飽和色彩。</li>
+                            <li data-source-line="176">在提示詞中特別強調保持角色和環境完全相同，以確保 AI 僅修改光影和色彩，而不改變場景的物理組成。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="177">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="178">
+                            <li data-source-line="178">從一張危險角色與太空船的圖像開始，指示 Nano Banana 將光線改為金色光芒，帶有柔和漫射光，並有陽光投射陰影到角色身上，結果將產生一個更柔和明亮的圖像。</li>
+                            <li data-source-line="179">要求明亮藍天，鮮豔飽和色彩也能創造出不同的視覺效果。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="180">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="180">改變場景光線要求 AI 模擬光線與物體互動的物理特性，基於對三維結構、材質和環境光照的理解。指定新光線類型和效果時，AI 執行光線方向模擬、漫射高光調整、陰影生成、色彩轉換。關鍵是保持結構不變，僅修改光照模型和顏色映射。這允許在不重新生成場景下改變情緒和風格，提供創作靈活性。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧十二 -->
+                <article class="technique-card" data-source-line="182" data-id="technique-12">
+                    <h3 id="technique-12">🏷️ 技巧十二：添加標誌與文字</h3>
+
+                    <div class="definition-section" data-source-line="184">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="184">這項技巧利用 Nano Banana 生成和理解文字的強大能力，將自定義的標誌和文字嵌入到圖像中的實體物件上，並確保其光影與周圍環境完美協調。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="185">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="186">
+                            <li data-source-line="186">提供你希望嵌入的標誌或文字的圖像參考（例如一個帶有 towel 文字的標誌）。</li>
+                            <li data-source-line="187">在提示詞中明確指定標誌或文字的放置位置和樣式（例如噴漆標誌），以及它們所附著的物件。</li>
+                            <li data-source-line="188">關鍵：在提示詞中加入指令 with the lighting adjusted to match the environment，以確保標誌或文字看起來像是物件的自然一部分。</li>
+                            <li data-source-line="189">Nano Banana 甚至可以在保持風格不變的情況下更改標誌的文字內容，甚至擴展文字。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="190">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="191">
+                            <li data-source-line="191">在一輛未來感十足的探測車側面添加一個噴漆標誌，標誌上寫著 towel，並確保光線與車身環境相符。</li>
+                            <li data-source-line="192">在保持原有標誌風格下，將文字從 towel 改為 Robert 或在後面加上 prompts。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="193">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="193">自然嵌入標誌和文字是挑戰，Nano Banana 基於圖像語義、幾何形狀和文字渲染的理解。文字生成與識別整合 OCR 和文字生成，允許修改內容而不破壞風格。物件表面映射將標誌變形投影到表面。環境光影整合根據光源添加光照、陰影、高光，使嵌入自然。AI 智慧調整如縮小文字避免遮擋，展現內容優先級理解。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧十三 -->
+                <article class="technique-card" data-source-line="195" data-id="technique-13">
+                    <h3 id="technique-13">📷 技巧十三：攝影機角度</h3>
+
+                    <div class="definition-section" data-source-line="197">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="197">此技巧是利用 Nano Banana 調整圖像的攝影機視角，以創建不同視角的場景，並有助於在角色周圍構建一致的場景和環境。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="198">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="199">
+                            <li data-source-line="199">上傳參考圖像。</li>
+                            <li data-source-line="200">使用具體的關鍵詞在提示詞中明確指定所需的攝影機角度，例如特寫鏡頭、低角度鏡頭、高角度鏡頭、從角色身後拍攝。</li>
+                            <li data-source-line="201">若要確保角色填滿整個圖像，可以使用全身照關鍵詞，並可指定鞋類來強制 AI 生成從頭到腳的完整身體。</li>
+                            <li data-source-line="202">解決挑戰：當嘗試旋轉角色時，背景元素可能會被複製。此時，可以提示 Nano Banana 編輯圖像並添加不同建築風格來改變背景。</li>
+                            <li data-source-line="203">潛在限制：俯視鏡頭有時效果不佳，容易使物件擠在一起。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="204">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="205">
+                            <li data-source-line="205">從一張角色參考照片，生成特寫鏡頭、從下方往上拍的低角度鏡頭、從上方往下拍的高角度鏡頭，或者一張從她身後拍攝的圖像。</li>
+                            <li data-source-line="206">要求角色穿靴子以確保生成全身照。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="207">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="207">改變攝影機角度涉及三維空間關係的重新解釋，透過虛擬攝影機模型操控。提示詞指定視角轉換，模擬位置、焦距和角度參數。內容補足生成完整形狀。背景一致性挑戰如旋轉時複製元素，可提示重新生成背景打破重複。俯視鏡頭局限性暗示 AI 在極端透視的處理仍有挑戰。</p>
+                    </div>
+                </article>
+
+                <!-- 技巧十四 -->
+                <article class="technique-card" data-source-line="209" data-id="technique-14">
+                    <h3 id="technique-14">🎬 技巧十四：將一致場景整合為 AI 影片</h3>
+
+                    <div class="definition-section" data-source-line="211">
+                        <h4>📖 定義</h4>
+                        <p data-source-line="211">這項技巧是將透過 Nano Banana 生成的多個、相互一致的靜態場景圖像，利用 AI 影片生成器工具，無縫地轉化為動態且流暢的 AI 影片，從而將世界建構能力提升到一個新的層次。</p>
+                    </div>
+
+                    <div class="method-section" data-source-line="212">
+                        <h4>🔧 方法/步驟</h4>
+                        <ol data-source-line="213">
+                            <li data-source-line="213">準備多張透過 Nano Banana 生成的、同一角色在不同角度或動作下的一致性場景照片。</li>
+                            <li data-source-line="214">使用 AI 影片生成器，例如 OpenArt 中的 Kling AI video generator (確保選擇正確的模型，如 Kling 2.1)。</li>
+                            <li data-source-line="215">利用影片生成器的起始與結束幀功能：上傳第一張作為起始幀的圖像（例如角色正面），以及最後一張作為結束幀的圖像（例如角色背面或身後）。</li>
+                            <li data-source-line="216">在提示詞中描述攝影機的運動或場景轉換，例如 the camera rotates behind the woman。</li>
+                            <li data-source-line="217">選擇影片長度（例如 10 秒），然後生成影片。</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-section" data-source-line="218">
+                        <h4>💡 範例</h4>
+                        <ul data-source-line="219">
+                            <li data-source-line="219">將一張角色正面照片作為起始幀，一張角色從後面看向水井的照片作為結束幀，提示攝影機旋轉到女人身後，生成一段無縫的旋轉影片。</li>
+                            <li data-source-line="220">從飛行員的正面照到她爬進太空船駕駛艙的鏡頭，生成一段她跑向飛機並爬上梯子的完整動作鏡頭。</li>
+                        </ul>
+                    </div>
+
+                    <div class="technical-section" data-source-line="221">
+                        <h4>⚙️ 技術描述</h4>
+                        <p data-source-line="221">將靜態圖像轉換為動態影片超越圖像生成，進入影片生成範疇。核心是起始與結束幀功能：提供兩幀和提示，AI 分析內容生成中間幀，創建平滑過渡，如補間動畫。語義引導動畫根據指令生成新像素，補足背景並保持一致性。結合 Nano Banana 的一致場景，創建敘事連貫的動畫序列。基礎是影片擴散模型或時空神經網路，在時間和空間上連貫生成內容。</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 繪製我的思考流程 -->
+            <section class="section" data-source-line="223" data-id="thinking-process">
+                <h2 id="thinking-process">🧠 繪製我的思考流程</h2>
+
+                <div class="card" data-source-line="225">
+                    <p data-source-line="225">當我接到這項任務時，我的思考流程如同一個層層遞進的分析漏斗。</p>
+
+                    <div class="thinking-step" data-source-line="227">
+                        <h3>1. 🎯 初始感知與目標拆解</h3>
+                        <ul data-source-line="228">
+                            <li data-source-line="228">我首先快速瀏覽了整個查詢，識別出關鍵的指示詞，例如專業分析師、第一人稱、Markdown 報告、零參考、繁體中文、核心論點/主旨、背景、大綱/卡片/詳述以及繪製思考流程等。這讓我對最終報告的格式、語言、結構和角色有了清晰的認知。</li>
+                            <li data-source-line="229">我將任務分解成小塊：理解來源 -> 提取核心論點 -> 重構背景 -> 整理技巧（核心論點）-> 詳細解釋 -> 最後反思分析過程。</li>
+                        </ul>
+                    </div>
+
+                    <div class="thinking-step" data-source-line="231">
+                        <h3>2. 📚 來源資料的精讀與標註</h3>
+                        <ul data-source-line="232">
+                            <li data-source-line="232">我逐字逐句地閱讀 YouTube 影片的節錄。我的大腦會自動進行模式識別，尋找重複的關鍵詞、數字序列（例如 14 tips、Tip number one）以及動詞短語（例如 create an image、change the background、add subtle shadows）。</li>
+                            <li data-source-line="233">我將每個 Tip 視為一個獨立的知識塊。我的潛意識會為每個技巧建立一個心智卡片，記錄其主題、目的、方法、以及具體的例子。這個過程類似於在紙上做筆記，將每個技巧的資訊分塊整理。</li>
+                        </ul>
+
+                        <div class="sub-thinking" data-source-line="234">
+                            <h4>🖼️ 圖像化思考</h4>
+                            <ul data-source-line="235">
+                                <li data-source-line="235">當資料描述從一張圖像建構整個世界時，我的腦海中會浮現一個中心圖像（例如飛行員），然後從這個中心向外發散，想像她爬入駕駛艙、坐下休息、擦拭飛機等一系列連貫的畫面。這幫助我理解一致性的概念。</li>
+                                <li data-source-line="236">當提到區塊化遮罩時，我會想像一張圖像被分割成不同顏色的樂高積木，每個積木代表一個可獨立操作的物件。這比純文字描述更能直觀地理解 AI 如何看到和編輯圖像的特定部分。</li>
+                                <li data-source-line="237">對於迭代過程，我會想像一個迴路圖：輸入提示 -> 觀察結果 -> 不滿意？-> 調整提示 -> 再次輸入。這是一個視覺化的流程圖，幫助我理解 AI 圖像生成不是線性的一次性過程。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="thinking-step" data-source-line="239">
+                        <h3>3. 🎯 核心論點與背景的凝練</h3>
+                        <ul data-source-line="240">
+                            <li data-source-line="240">在整理完所有技巧後，我退後一步，從宏觀角度審視這些知識塊。我問自己：這些技巧共同指向了什麼核心思想？我發現它們都圍繞著 Nano Banana 的強大功能、提高生成品質的策略，以及最終實現控制和一致性的目標。這讓我能夠提煉出核心論點。</li>
+                            <li data-source-line="241">同時，我從來源中提取了關於工具（Nano Banana, Gemini, OpenArt）、使用者（故事、AI 影片創作者）、問題（一致性、品質）和解決方案（14 條技巧）的零散信息，將它們組織成背景部分的各個子項目。</li>
+                        </ul>
+                    </div>
+
+                    <div class="thinking-step" data-source-line="243">
+                        <h3>4. 📝 結構化輸出與內容填充</h3>
+                        <ul data-source-line="244">
+                            <li data-source-line="244">我按照要求的 Markdown 報告結構，開始填充內容。我將之前為每個技巧構建的心智卡片具體化為核心論點卡片和詳述各論點的內容。</li>
+                            <li data-source-line="245">替換文字為視覺結構：儘管是純文字報告，我意識到透過清晰的 H2-H4 標題、有序和無序列表、以及定義、方法/步驟、範例等固定格式，可以大幅減少讀者的認知負荷。這就像將複雜的敘述轉化為易於掃描和吸收的迷你視覺塊。例如，在核心論點卡片中，我用簡潔的點列來呈現信息，而在詳述各論點中則進行更深入的段落解釋，這種分層結構本身就是一種視覺化的組織。</li>
+                            <li data-source-line="246">一致性術語：在首次提及特定術語時，我會提供中文詞彙 - 定義的格式，然後在後續使用中保持一致。這確保了專業性和清晰度。</li>
+                        </ul>
+                    </div>
+
+                    <div class="thinking-step" data-source-line="248">
+                        <h3>5. 🔄 反思與自繪流程</h3>
+                        <ul data-source-line="249">
+                            <li data-source-line="249">最後，當報告的主體內容完成後，我會回顧整個分析過程。我會思考哪些分析技巧對我幫助最大？我如何從零散的資訊中構建出連貫的知識體系？</li>
+                            <li data-source-line="250">我會將上述的思考過程，例如層層遞進的分析漏斗、對心智卡片的應用、模式識別、分塊處理、圖像化思考以及用結構取代視覺等策略，以繪製我的思考流程的形式呈現出來。這部分本身就是對我分析過程的元認知的視覺化表達。例如，將迭代過程想像成一個循環，將區塊化遮罩想像成樂高積木，這都是我為了更好地理解和解釋複雜概念而採用的內部視覺化手段。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2024 Google Nano Banana AI 圖像創作技巧指南</p>
+                <p>本指南基於 YouTube 影片「14 Tips to Create Mindblowing AI Images with Nano Banana」製作</p>
+                <div class="footer-links">
+                    <a href="#main-title" class="keyword">回到頂部 ↑</a>
+                    <span class="keyword">AI 圖像生成</span>
+                    <span class="keyword">Nano Banana</span>
+                    <span class="keyword">創作技巧</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../assets/js/layout.js"></script>
+</body>
+</html>
