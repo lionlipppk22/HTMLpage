@@ -50,37 +50,42 @@
         </header>
 
         <!-- 執行摘要 -->
-        <section class="content-card breathing-card" id="executive-summary" data-source-line="1">
+        <section class="section" id="executive-summary" data-source-line="1">
             <h2 data-source-line="1">📊 執行摘要</h2>
-            <div class="summary-content" data-source-line="3">
+            
+            <div class="key-point" data-source-line="3">
                 <p data-source-line="3">作為一名專業分析師，我認為本次對所提供 YouTube 資源的分析，其核心論點圍繞著 GitHub 最新發佈的開源工具 <strong>「規格套件」(Spec Kit)</strong>。此工具旨在透過推動<strong>「規格驅動開發」(spec-driven development, SDD)</strong>，來解決當前「隨性編碼」(vibe coding) 中存在的常見問題。</p>
-                
-                <div class="highlight-box" data-source-line="4">
-                    <p data-source-line="4">隨性編碼通常指開發者在缺乏明確規劃下，直接向 AI 代理提供模糊的提示並期望獲得滿意成果的模式。然而，這種模式經常導致產出的程式碼無法達到預期結果、品質不穩定，甚至出現「幻覺」現象。</p>
-                </div>
+            </div>
+            
+            <div class="card" data-source-line="4">
+                <p data-source-line="4">隨性編碼通常指開發者在缺乏明確規劃下，直接向 AI 代理提供模糊的提示並期望獲得滿意成果的模式。然而，這種模式經常導致產出的程式碼無法達到預期結果、品質不穩定，甚至出現「幻覺」現象。</p>
+            </div>
 
+            <div class="key-point" data-source-line="5">
                 <p data-source-line="5">我的分析顯示，GitHub 規格套件的核心價值在於提供一個<strong>結構化、四階段的工作流程</strong>：定義規格 (Specify)、規劃 (Plan)、任務分解 (Task) 與實作 (Implement)。這套流程將程式碼規格轉變為「活生生且可執行的文件」，使得 AI 代理能更精確地理解需求，從而提升程式碼的可靠性、一致性與整體品質。</p>
             </div>
         </section>
 
         <!-- 背景 -->
-        <section class="content-card" id="background" data-source-line="7">
+        <section class="section" id="background" data-source-line="7">
             <h2 data-source-line="7">🌟 背景</h2>
             
             <h3 id="context-audience" data-source-line="9">🎯 時空背景、領域與目標受眾</h3>
-            <div class="background-content" data-source-line="11">
-                <p data-source-line="11">本次討論的內容發生在近年來 AI 輔助編碼工具蓬勃發展的背景下，特別是隨著 GitHub Copilot、Claude Code 和 Gemini CLI 等 AI 助理的普及，軟體開發領域正經歷一場變革。</p>
+            <div class="column-layout" data-source-line="11">
+                <div class="column">
+                    <p data-source-line="11">本次討論的內容發生在近年來 AI 輔助編碼工具蓬勃發展的背景下，特別是隨著 GitHub Copilot、Claude Code 和 Gemini CLI 等 AI 助理的普及，軟體開發領域正經歷一場變革。</p>
+                </div>
                 
-                <div class="audience-grid" data-source-line="13">
-                    <div class="audience-card">
+                <div class="column">
+                    <div class="card" data-source-line="13">
                         <h4>👨‍💻 軟體開發者</h4>
                         <p>希望利用 AI 提升開發效率與程式碼品質，但又苦於當前 AI 工具不穩定產出的開發者。</p>
                     </div>
-                    <div class="audience-card">
+                    <div class="card">
                         <h4>👨‍💼 專案經理與架構師</h4>
                         <p>尋求更有效率、更可預測的方法來管理 AI 驅動的開發專案，確保成果符合既定規範。</p>
                     </div>
-                    <div class="audience-card">
+                    <div class="card">
                         <h4>🔬 AI 代理開發者與研究者</h4>
                         <p>對最佳化 AI 程式碼生成工作流程感興趣的人員。</p>
                     </div>
@@ -88,48 +93,24 @@
             </div>
 
             <h3 id="vibe-coding-challenges" data-source-line="18">⚠️ 欲解決的問題：隨性編碼的挑戰</h3>
-            <div class="problem-section" data-source-line="20">
+            <div class="card" data-source-line="20">
                 <p data-source-line="20">在 AI 輔助編碼的早期階段，一種被稱為<strong>「隨性編碼」(vibe coding)</strong> 的模式日益普遍。這種模式的特點是：</p>
                 
-                <div class="problem-list" data-source-line="21">
-                    <div class="problem-item" data-source-line="21">
-                        <span class="problem-icon">❌</span>
-                        <div>
-                            <strong>缺乏明確規範</strong>
-                            <p>開發者往往只給予 AI 代理模糊或高層次的需求描述，例如「我需要一個網站」。</p>
-                        </div>
-                    </div>
-                    <div class="problem-item" data-source-line="22">
-                        <span class="problem-icon">🎲</span>
-                        <div>
-                            <strong>結果不可預測</strong>
-                            <p>由於輸入不夠精確，AI 代理產出的程式碼經常與開發者的預期不符，導致需要大量的修改和重寫。</p>
-                        </div>
-                    </div>
-                    <div class="problem-item" data-source-line="23">
-                        <span class="problem-icon">⚡</span>
-                        <div>
-                            <strong>品質不穩定</strong>
-                            <p>生成的程式碼可能存在邏輯錯誤、安全漏洞或未能遵循最佳實踐。</p>
-                        </div>
-                    </div>
-                    <div class="problem-item" data-source-line="24">
-                        <span class="problem-icon">👻</span>
-                        <div>
-                            <strong>「幻覺」問題</strong>
-                            <p>AI 可能會生成看似合理但實際上不存在或不符合需求的程式碼段落。</p>
-                        </div>
-                    </div>
-                </div>
+                <ul class="card" data-source-line="21">
+                    <li data-source-line="21"><span class="highlight">❌ 缺乏明確規範</span> - 開發者往往只給予 AI 代理模糊或高層次的需求描述，例如「我需要一個網站」。</li>
+                    <li data-source-line="22"><span class="highlight">🎲 結果不可預測</span> - 由於輸入不夠精確，AI 代理產出的程式碼經常與開發者的預期不符，導致需要大量的修改和重寫。</li>
+                    <li data-source-line="23"><span class="highlight">⚡ 品質不穩定</span> - 生成的程式碼可能存在邏輯錯誤、安全漏洞或未能遵循最佳實踐。</li>
+                    <li data-source-line="24"><span class="highlight">👻 「幻覺」問題</span> - AI 可能會生成看似合理但實際上不存在或不符合需求的程式碼段落。</li>
+                </ul>
 
-                <div class="quote-box" data-source-line="27">
+                <div class="key-point" data-source-line="27">
                     <p data-source-line="27">簡而言之，隨性編碼將 AI 變成了「扔提示詞然後祈禱程式碼能用」的工具，而非一個可靠的開發夥伴。</p>
                 </div>
             </div>
         </section>
 
         <!-- 工作流程概述 -->
-        <section class="content-card" id="workflow-overview" data-source-line="48">
+        <section class="section" id="workflow-overview" data-source-line="48">
             <h2 data-source-line="48">⚙️ 工作流程概述</h2>
             <p data-source-line="50">GitHub 規格套件透過一個標準化的<strong>四階段工作流程</strong>來實施規格驅動開發。這個流程確保從高層次需求到具體程式碼實作的每一步都經過深思熟慮和細緻規劃。</p>
             
@@ -209,48 +190,52 @@
         </section>
 
         <!-- YouTube 連結區域 -->
-        <section class="content-card" id="youtube-links" data-source-line="32">
-            <h2>🎥 相關 YouTube 資源</h2>
-            <div class="youtube-grid">
-                <div class="youtube-card">
-                    <div class="youtube-thumbnail">
-                        <img src="https://img.youtube.com/vi/_PeYeRWeQWw/maxresdefault.jpg" alt="YouTube Video Thumbnail">
-                        <div class="play-button">▶️</div>
-                    </div>
-                    <div class="youtube-info">
-                        <h4>GitHub Spec Kit 介紹</h4>
-                        <a href="https://youtu.be/_PeYeRWeQWw?list=TLGGUVSHlPmy4d8wOTA5MjAyNQ" target="_blank">觀看影片</a>
-                    </div>
-                </div>
-                
-                <div class="youtube-card">
-                    <div class="youtube-thumbnail">
-                        <img src="https://img.youtube.com/vi/iKugrMP67fw/maxresdefault.jpg" alt="YouTube Video Thumbnail">
-                        <div class="play-button">▶️</div>
-                    </div>
-                    <div class="youtube-info">
-                        <h4>規格驅動開發實戰</h4>
-                        <a href="https://youtu.be/iKugrMP67fw?list=TLGG3W8pi-rEh60wOTA5MjAyNQ" target="_blank">觀看影片</a>
+        <section class="section" id="youtube-links" data-source-line="32">
+            <div class="card">
+                <h3>🎥 相關 YouTube 資源</h3>
+                <div class="youtube-container">
+                    <div class="youtube-preview">
+                        <a href="https://youtu.be/_PeYeRWeQWw?list=TLGGUVSHlPmy4d8wOTA5MjAyNQ" target="_blank" class="youtube-link">
+                            <div class="youtube-thumbnail">
+                                <img src="https://img.youtube.com/vi/_PeYeRWeQWw/maxresdefault.jpg" alt="YouTube Video Thumbnail">
+                                <div class="play-button">▶️</div>
+                            </div>
+                            <div class="youtube-info">
+                                <h4>GitHub Spec Kit 介紹</h4>
+                                <p>觀看影片</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://youtu.be/iKugrMP67fw?list=TLGG3W8pi-rEh60wOTA5MjAyNQ" target="_blank" class="youtube-link" style="margin-top: 20px; display: block;">
+                            <div class="youtube-thumbnail">
+                                <img src="https://img.youtube.com/vi/iKugrMP67fw/maxresdefault.jpg" alt="YouTube Video Thumbnail">
+                                <div class="play-button">▶️</div>
+                            </div>
+                            <div class="youtube-info">
+                                <h4>規格驅動開發實戰</h4>
+                                <p>觀看影片</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 規格套件優缺點分析 -->
-        <section class="content-card" id="spec-kit-analysis" data-source-line="39">
+        <section class="section" id="spec-kit-analysis" data-source-line="39">
             <h2 data-source-line="39">🔍 規格套件的優缺點分析</h2>
             
             <div class="analysis-grid">
                 <div class="pros-section" data-source-line="41">
                     <h3>✅ 主要優勢</h3>
-                    <div class="advantage-item" data-source-line="42">
+                    <div class="card" data-source-line="42">
                         <p data-source-line="42">規格套件的引入顯著提升了 AI 輔助編碼的品質與可靠性。它強制執行結構化開發流程，確保了 AI 程式碼與設計意圖的高度一致性。通過詳細的規格和規劃，AI 生成的程式碼更具結構、更少錯誤，並且能更好地組織成獨立的組件和檔案。</p>
                     </div>
                 </div>
 
                 <div class="cons-section" data-source-line="44">
                     <h3>⚠️ 挑戰與限制</h3>
-                    <div class="challenge-item" data-source-line="45">
+                    <div class="card" data-source-line="45">
                         <p data-source-line="45">儘管規格套件具有多重優勢，但它並非沒有限制和挑戰。部分評論者指出，它在整合到現有專案方面存在困難，初始化過程似乎更傾向於從零開始建立新專案。在實作階段，許多任務仍需手動觸發，無法實現完全的自動化。</p>
                     </div>
                 </div>
@@ -258,53 +243,42 @@
         </section>
 
         <!-- 主題與結論 -->
-        <section class="content-card" id="themes-conclusions" data-source-line="85">
+        <section class="section" id="themes-conclusions" data-source-line="85">
             <h2 data-source-line="85">📝 主題與結論</h2>
-            <div class="conclusion-content" data-source-line="87">
+            
+            <div class="key-point" data-source-line="87">
                 <p data-source-line="87">本次分析的核心主題是 GitHub 規格套件 (Spec Kit) 如何透過規格驅動開發 (SDD) 的方法，改進 AI 輔助軟體開發的流程與產出品質。</p>
+            </div>
 
-                <div class="conclusion-points" data-source-line="89">
-                    <h3>🎯 主要結論</h3>
-                    <div class="conclusion-grid">
-                        <div class="conclusion-item" data-source-line="91">
-                            <span class="conclusion-icon">🎯</span>
-                            <div>
-                                <h4>解決隨性編碼弊端</h4>
-                                <p>規格套件的核心價值在於提供一個結構化的替代方案，來取代不可靠的「隨性編碼」模式。</p>
-                            </div>
-                        </div>
-                        <div class="conclusion-item" data-source-line="92">
-                            <span class="conclusion-icon">📋</span>
-                            <div>
-                                <h4>標準化開發流程</h4>
-                                <p>規格套件引入了定義規格、規劃、任務分解和實作的四階段流程，使得 AI 輔助開發更加系統化和可控。</p>
-                            </div>
-                        </div>
-                        <div class="conclusion-item" data-source-line="93">
-                            <span class="conclusion-icon">📄</span>
-                            <div>
-                                <h4>規格成為核心資產</h4>
-                                <p>在此模型中，規格不再僅僅是專案初期的「腳手架」，而是成為「活生生的、可執行的文件」。</p>
-                            </div>
-                        </div>
-                        <div class="conclusion-item" data-source-line="94">
-                            <span class="conclusion-icon">🤖</span>
-                            <div>
-                                <h4>提升 AI 代理效能</h4>
-                                <p>透過提供豐富的上下文和詳細的指引，規格套件使得 AI 代理能更好地理解需求，減少「幻覺」。</p>
-                            </div>
-                        </div>
+            <div class="card" data-source-line="89">
+                <h3>🎯 主要結論</h3>
+                <div class="column-layout">
+                    <div class="column" data-source-line="91">
+                        <span class="highlight">🎯 解決隨性編碼弊端</span>
+                        <p>規格套件的核心價值在於提供一個結構化的替代方案，來取代不可靠的「隨性編碼」模式。</p>
+                    </div>
+                    <div class="column" data-source-line="92">
+                        <span class="highlight">📋 標準化開發流程</span>
+                        <p>規格套件引入了定義規格、規劃、任務分解和實作的四階段流程，使得 AI 輔助開發更加系統化和可控。</p>
+                    </div>
+                    <div class="column" data-source-line="93">
+                        <span class="highlight">📄 規格成為核心資產</span>
+                        <p>在此模型中，規格不再僅僅是專案初期的「腳手架」，而是成為「活生生的、可執行的文件」。</p>
+                    </div>
+                    <div class="column" data-source-line="94">
+                        <span class="highlight">🤖 提升 AI 代理效能</span>
+                        <p>透過提供豐富的上下文和詳細的指引，規格套件使得 AI 代理能更好地理解需求，減少「幻覺」。</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 核心論點卡片 -->
-        <section class="content-card" id="core-arguments" data-source-line="100">
+        <section class="section" id="core-arguments" data-source-line="100">
             <h2 data-source-line="100">💎 核心論點卡片</h2>
 
             <!-- 規格驅動開發卡片 -->
-            <div class="argument-card breathing-card" data-source-line="102">
+            <div class="argument-card" data-source-line="102">
                 <div class="card-header">
                     <span class="card-number">1</span>
                     <h3 data-source-line="102">🏗️ 規格驅動開發 (Spec-driven Development, SDD)</h3>
@@ -338,18 +312,20 @@
                     </div>
                     <div class="problem-section" data-source-line="118">
                         <h4>⚠️ 問題點 (Problem Points)</h4>
-                        <div class="problem-grid" data-source-line="119">
-                            <div class="problem-point">❌ 結果不符預期：生成程式碼與實際需求之間存在巨大落差</div>
-                            <div class="problem-point">⚡ 品質不穩定：程式碼可能包含錯誤、缺乏結構或未能遵循最佳實踐</div>
-                            <div class="problem-point">💸 高昂的迭代成本：開發者需花費大量時間修正和調整 AI 生成的程式碼</div>
-                            <div class="problem-point">👻 AI「幻覺」：AI 可能生成看似合理但實際無用或錯誤的內容</div>
+                        <div class="card" data-source-line="119">
+                            <ul>
+                                <li><span class="highlight">❌ 結果不符預期</span>：生成程式碼與實際需求之間存在巨大落差</li>
+                                <li><span class="highlight">⚡ 品質不穩定</span>：程式碼可能包含錯誤、缺乏結構或未能遵循最佳實踐</li>
+                                <li><span class="highlight">💸 高昂的迭代成本</span>：開發者需花費大量時間修正和調整 AI 生成的程式碼</li>
+                                <li><span class="highlight">👻 AI「幻覺」</span>：AI 可能生成看似合理但實際無用或錯誤的內容</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- GitHub 規格套件卡片 -->
-            <div class="argument-card breathing-card" data-source-line="128">
+            <div class="argument-card" data-source-line="128">
                 <div class="card-header">
                     <span class="card-number">3</span>
                     <h3 data-source-line="128">🛠️ GitHub 規格套件 (Spec Kit)</h3>
@@ -368,34 +344,25 @@
         </section>
 
         <!-- 思考流程 -->
-        <section class="content-card" id="thought-process" data-source-line="47">
+        <section class="section" id="thought-process" data-source-line="47">
             <h2 data-source-line="47">🧠 繪製我的思考流程 (Sketch of My Thought Process)</h2>
-            <div class="thought-content" data-source-line="49">
+            <div class="detailed-section" data-source-line="49">
                 <p data-source-line="49">當我開始分析這份來自 YouTube 資源的查詢時，我腦海中首先浮現的是一個<strong>問題-解決方案</strong>的框架。</p>
 
-                <div class="thought-steps" data-source-line="51">
-                    <div class="thought-step" data-source-line="51">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>🔍 問題識別 (Problem Identification)</h4>
-                            <p data-source-line="52">我首先從所有來源中搜尋共同提及的「痛點」或「負面描述」。很快地，「隨性編碼」(vibe coding) 這個詞及其相關的負面描述 (結果不可預期、品質不佳、幻覺、浪費時間) 出現在多個來源中。我將其識別為這些影片試圖解決的「核心問題」。</p>
-                        </div>
+                <div class="growth-timeline" data-source-line="51">
+                    <div class="timeline-item" data-source-line="51">
+                        <h5>🔍 問題識別 (Problem Identification)</h5>
+                        <p data-source-line="52">我首先從所有來源中搜尋共同提及的「痛點」或「負面描述」。很快地，「隨性編碼」(vibe coding) 這個詞及其相關的負面描述 (結果不可預期、品質不佳、幻覺、浪費時間) 出現在多個來源中。我將其識別為這些影片試圖解決的「核心問題」。</p>
                     </div>
 
-                    <div class="thought-step" data-source-line="54">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>💡 解決方案識別 (Solution Identification)</h4>
-                            <p data-source-line="55">緊接著，我尋找與「解決問題」、「新工具」、「改進」等相關的關鍵詞。GitHub 的「規格套件」(Spec Kit) 或「Specify」以及「規格驅動開發」(spec-driven development, SDD) 立即成為解決方案的核心。</p>
-                        </div>
+                    <div class="timeline-item" data-source-line="54">
+                        <h5>💡 解決方案識別 (Solution Identification)</h5>
+                        <p data-source-line="55">緊接著，我尋找與「解決問題」、「新工具」、「改進」等相關的關鍵詞。GitHub 的「規格套件」(Spec Kit) 或「Specify」以及「規格驅動開發」(spec-driven development, SDD) 立即成為解決方案的核心。</p>
                     </div>
 
-                    <div class="thought-step" data-source-line="57">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>🎯 核心論點構築 (Core Argument Construction)</h4>
-                            <p data-source-line="58">將問題和解決方案結合，我的核心論點隨之形成：<strong>規格套件透過規格驅動開發，解決了隨性編碼帶來的挑戰，提升了 AI 輔助編碼的品質和可靠性。</strong></p>
-                        </div>
+                    <div class="timeline-item" data-source-line="57">
+                        <h5>🎯 核心論點構築 (Core Argument Construction)</h5>
+                        <p data-source-line="58">將問題和解決方案結合，我的核心論點隨之形成：<strong>規格套件透過規格驅動開發，解決了隨性編碼帶來的挑戰，提升了 AI 輔助編碼的品質和可靠性。</strong></p>
                     </div>
                 </div>
             </div>
