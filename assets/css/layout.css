@@ -694,8 +694,8 @@ body {
 
 /* 數字圓圈（徽章） - 調整為淺底 + 環狀陰影，色調更接近附件 */
 .sop-number {
-    width: 52px;
-    height: 52px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 30%, #ffffff 0%, #eef2ff 40%, #eef2ff 60%);
     color: #5b6ff5;
