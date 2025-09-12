@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addFloatingAnimation();
     setupTechniqueCardAnimations();
     setupKeywordHighlighting();
+    setupCollapsibleElements();
 });
 
 // Initialize layout
@@ -48,6 +49,53 @@ function setupEventListeners() {
                 });
             }
         });
+    });
+}
+
+// Setup collapsible elements
+function setupCollapsibleElements() {
+    // For collapsible lists in the outline
+    const listToggles = document.querySelectorAll('.collapsible-list .toggle-indicator');
+    listToggles.forEach(toggle => {
+        const parentLi = toggle.parentElement;
+        const sublist = parentLi.querySelector('ul');
+        if (sublist) {
+            // Initially collapse the sublist
+            sublist.style.display = 'none';
+            toggle.textContent = '(+)';
+
+            parentLi.addEventListener('click', (e) => {
+                // Stop propagation to prevent parent handlers from firing
+                e.stopPropagation(); 
+                
+                const isHidden = sublist.style.display === 'none';
+                sublist.style.display = isHidden ? 'block' : 'none';
+                toggle.textContent = isHidden ? '(-)' : '(+)';
+            });
+             // Make the parent list item clickable
+            parentLi.style.cursor = 'pointer';
+        }
+    });
+
+    // For collapsible argument cards
+    const cardToggles = document.querySelectorAll('.collapsible-card > h3');
+    cardToggles.forEach(header => {
+        const content = header.nextElementSibling;
+        const indicator = header.querySelector('.toggle-indicator');
+        
+        if (content && indicator) {
+            // Initially collapse the content
+            content.style.display = 'none';
+            indicator.textContent = '(+)';
+
+            header.addEventListener('click', () => {
+                const isHidden = content.style.display === 'none';
+                content.style.display = isHidden ? 'block' : 'none';
+                indicator.textContent = isHidden ? '(-)' : '(+)';
+            });
+            // Make the header clickable
+            header.style.cursor = 'pointer';
+        }
     });
 }
 
