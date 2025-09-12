@@ -587,15 +587,63 @@ function setupTechniqueCardAnimations() {
 
 // Setup keyword highlighting functionality
 function setupKeywordHighlighting() {
-    const keywords = ['Nano Banana', 'AI', '圖像生成', '提示詞', '迭代', '一致性', 'OpenArt', 'Gemini'];
+    // 從 HTML 中的 script tag 讀取關鍵字配置
+    let keywords = ['Nano Banana', 'AI', '圖像生成', '提示詞', '迭代', '一致性', 'OpenArt', 'Gemini']; // 預設關鍵字
+
+    const keywordsConfig = document.getElementById('keywords-config');
+    if (keywordsConfig) {
+        try {
+            const config = JSON.parse(keywordsConfig.textContent);
+            if (Array.isArray(config.keywords)) {
+                keywords = config.keywords;
+            }
+        } catch (e) {
+            console.warn('關鍵字配置解析失敗，使用預設關鍵字:', e);
+        }
+    }
+
+    // 定義不同顏色給每個關鍵字
+    const colors = [
+        '#ff6b6b', // 紅色
+        '#4ecdc4', // 青色
+        '#45b7d1', // 藍色
+        '#96ceb4', // 綠色
+        '#feca57', // 黃色
+        '#ff9ff3', // 粉紅
+        '#54a0ff', // 淺藍
+        '#5f27cd', // 紫色
+        '#00d2d3', // 亮青
+        '#ff9f43', // 橙色
+        '#01a3a4', // 深青
+        '#f8b500', // 金黃
+        '#c44569', // 深粉
+        '#786fa6', // 深紫
+        '#2ed573'  // 亮綠
+    ];
+
+    // 動態生成 CSS 樣式給每個關鍵字
+    let cssRules = '';
+    keywords.forEach((keyword, index) => {
+        const color = colors[index % colors.length];
+        const className = `keyword-${index}`;
+        cssRules += `.${className} { background-color: ${color}; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold; } `;
+    });
+
+    // 添加 CSS 規則
+    const style = document.createElement('style');
+    style.textContent = cssRules;
+    document.head.appendChild(style);
+
     const textElements = document.querySelectorAll('p, li');
 
     textElements.forEach(element => {
         let html = element.innerHTML;
 
-        keywords.forEach(keyword => {
-            const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
-            html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
+        keywords.forEach((keyword, index) => {
+            const className = `keyword-${index}`;
+            // 使用更寬鬆的 regex 來匹配中文關鍵字，忽略詞邊界
+            const regex = new RegExp(keyword, 'gi');
+            html = html.replace(regex, `<span class="${className}">${keyword}</span>`);
         });
 
         element.innerHTML = html;
