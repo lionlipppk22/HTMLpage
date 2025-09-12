@@ -911,30 +911,11 @@ body {
 /* Mobile Layout */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
-        max-width: 100%;
-    }
-    
-    .header {
-        padding: 20px 15px;
-        margin-bottom: 20px;
+        padding: 10px;
     }
     
     .header h1 {
         font-size: 1.8em;
-    }
-    
-    .subtitle {
-        font-size: 1em;
-    }
-    
-    .content-card {
-        padding: 25px 20px;
-        margin: 20px 0;
-    }
-    
-    .content-card h2 {
-        font-size: 1.6em;
     }
     
     .column-layout {
@@ -942,79 +923,25 @@ body {
         gap: 20px;
     }
     
-    /* Grids to single column */
-    .youtube-grid,
-    .audience-grid,
-    .analysis-grid,
-    .spiritual-fruits-grid,
-    .technique-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .workflow-stages {
-        gap: 15px;
-    }
-    
-    .stage-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-        padding: 20px;
-    }
-    
     .controls {
-        position: fixed;
-        bottom: 20px;
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        right: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 25px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        top: 10px;
+        right: 10px;
+        gap: 5px;
     }
     
     .control-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1em;
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
     }
     
     .toc {
-        position: fixed;
-        top: auto;
-        bottom: 80px; /* Above controls */
-        left: 0;
-        right: 0;
-        width: auto;
-        height: auto;
-        max-height: 50vh;
-        border-radius: 15px 15px 0 0;
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
+        width: 250px;
+        right: -270px;
     }
     
     .toc.show {
-        transform: translateY(0);
-    }
-    
-    .toc ul {
-        padding-left: 20px;
-    }
-    
-    .mermaid-container {
-        padding: 15px;
-        overflow-x: auto;
-    }
-    
-    .mermaid {
-        min-width: 100%;
-        font-size: 0.8em;
+        right: 10px;
     }
     
     .content {
@@ -1023,16 +950,6 @@ body {
     
     .section {
         padding: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .footer {
-        padding: 20px 0;
-        margin-top: 30px;
-    }
-    
-    .footer-content {
-        padding: 0 15px;
     }
 }
 
