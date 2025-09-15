@@ -254,8 +254,8 @@ function toggleEffects() {
         // Enhanced breathing effect for cards
         cards.forEach((card, index) => {
             setTimeout(() => {
-                card.style.animation = 'breathe 3s ease-in-out infinite';
-                card.style.animationDelay = `${index * 0.2}s`;
+                card.style.animation = 'breathe 18s ease-in-out infinite';
+                card.style.animationDelay = `${index * 0.8}s`;
             }, index * 100);
         });
 

@@ -277,7 +277,7 @@ body {
     margin: 20px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-left: 5px solid #667eea;
-    animation: breathe 3s ease-in-out infinite;
+    animation: breathe 18s ease-in-out infinite;
 }
 
 /* Breathing Border Glow Effect */
@@ -301,7 +301,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(102, 126, 234, 0.2);
     transition: all 0.3s ease;
-    animation: breathe 4s ease-in-out infinite;
+    animation: breathe 18s ease-in-out infinite;
 }
 
 .technique-card:hover {
@@ -1005,7 +1005,7 @@ body {
 .effects-enabled .detailed-section,
 .effects-enabled .thinking-section,
 .effects-enabled .prayer-section {
-    animation: breathingLight 3s ease-in-out infinite;
+    animation: breathingLight 18s ease-in-out infinite;
 }
 
 /* Dynamic Gradient Animation */
