@@ -84,9 +84,9 @@ function setupCollapsibleElements() {
         const indicator = header.querySelector('.toggle-indicator');
         
         if (content && indicator) {
-            // Initially collapse the content
-            content.style.display = 'none';
-            indicator.textContent = '(+)';
+            // The line that set display to 'block' has been removed to respect the initial state from HTML.
+            // In babylon.html, the cards are set to 'display: none', so they will be collapsed.
+            // content.style.display = 'block';
 
             header.addEventListener('click', () => {
                 const isHidden = content.style.display === 'none';
