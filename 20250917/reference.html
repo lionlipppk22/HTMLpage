@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub spec kit：規範驅動開發的三階段流程報告 - 基於 YouTube 影片</title>
+  <meta name="description" content="將 reference.md 轉為獨立 HTML：1:1 內容、可折疊章節、TOC、響應式與互動效果。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+</head>
+<body class="mobile-layout">
+  <div class="gradient-bg"></div>
+
+  <div class="controls">
+    <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+    <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+    <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+    <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+  </div>
+
+  <div class="toc" id="toc">
+    <h3>📋 目錄</h3>
+    <ul>
+      <li><a href="#executive-summary">執行摘要</a></li>
+      <li><a href="#background">背景</a></li>
+      <li><a href="#outline">大綱</a></li>
+      <li><a href="#themes-conclusions">主題與結論</a></li>
+      <li><a href="#detailed-arguments">詳細論點說明</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <h1 id="main-title">GitHub spec kit：規範驅動開發的成功之道</h1>
+      <p class="subtitle">以「定義 → 規劃 → 任務執行」三階段流程，將模糊想法轉化為可重複、高品質、可擴展的生產級程式碼。</p>
+      <div class="youtube-link" style="margin-top: 1rem; text-align: center;">
+        <a href="https://youtu.be/KRWQTF0iAdM?list=TLGGa9OPKtSFHKMxNzA5MjAyNQ" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/KRWQTF0iAdM/maxresdefault.jpg" alt="YouTube 影片縮圖：GitHub spec kit" style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <p style="margin-top: 0.5rem; font-size: 0.9em; color: #666;">▶️ 點擊觀看原始 YouTube 影片</p>
+        </a>
+      </div>
+    </header>
+
+    <main class="content" id="main-content">
+      
+      <section class="section" id="themes-conclusions">
+        <h2>🎯 主題與結論</h2>
+        <div class="card">
+          <article class="collapsible-card argument-card">
+            <h3>核心主題 <span class="toggle-indicator">(+)</span></h3>
+            <div class="argument-content" style="display: none;"><p data-source-line="76-78">本內容的核心主題是 <strong>GitHub spec kit：利用規範驅動開發實現 AI 輔助編碼的成功與高效</strong>。它強調透過一套結構化的方法論，將 AI 輔助編碼從混沌的「意識流」轉變為有紀律、可預測且能產出高品質成果的工程實踐。</p></div>
+          </article>
+          <article class="collapsible-card argument-card">
+            <h3>結論 <span class="toggle-indicator">(+)</span></h3>
+            <div class="argument-content" style="display: none;"><p data-source-line="79-81">我認為，該系統透過其強制性的三階段結構（定義、規劃、任務執行）成功克服了 AI 編碼中的常見挑戰。它在設計上確保了上下文的持續性、需求的明確性以及開發流程的標準化，從而最終實現了高效、可重複且可擴展的軟體開發。</p><p data-source-line="82-83">「規範驅動開發」並不是為了放慢速度，而是為了「永不回頭」，意味著一次正確的投入可以避免無數次的回頭重做。這代表著一種典範轉移，將 AI 輔助編碼從一個單純的代碼生成器提升為一個能夠維持專案完整性、促進架構健全的智慧型開發夥伴。</p></div>
+          </article>
+          <article class="collapsible-card argument-card">
+            <h3>範圍 <span class="toggle-indicator">(+)</span></h3>
+            <div class="argument-content" style="display: none;"><p data-source-line="84-86">本報告的內容主要聚焦於 GitHub spec kit 作為一個全面的開發系統，如何透過其三階段流程，提升個人開發者或小型團隊在使用 AI 輔助編碼工具時的生產力、品質和效率。它特別強調了在需求定義、架構規劃和任務執行中上下文的重要性，以及如何避免常見的 AI 編碼陷阱。該系統適用於任何希望透過結構化方法，快速、準確地將想法轉化為可建構的軟體功能，並確保每次都能產出生產級程式碼的專案。</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="executive-summary">
+        <h2>📝 執行摘要</h2>
+        <div class="card">
+          <p>我的核心觀點是，<strong>結構化上下文</strong> 是 AI 輔助編碼成功的關鍵要素，而 GitHub 的一款免費工具，即 <strong>GitHub spec kit</strong>，透過其獨特的三階段流程——「定義」、「規劃」和「任務執行」——提供了一個可重複、無歧義且能生產高品質程式碼的開發系統。該系統旨在解決當前 AI 編碼中因上下文丟失、需求模糊導致的效率低下和項目失敗問題。藉由在開發初期投入時間進行詳細定義和規劃，開發者可以大幅節省後續的重構時間，並將模糊的點子轉化為具體、可建構的生產級軟體。這不僅提升了開發效率，更確保了最終產品的品質和可擴展性。</p>
+        </div>
+      </section>
+
+      <section class="section" id="background">
+        <h2>📖 背景</h2>
+        <div class="sop-overview">
+          <div class="sop-items">
+            <div class="sop-item">
+              <article class="collapsible-card argument-card">
+                <h3>1. 時間 <span class="toggle-indicator">(+)</span></h3>
+                <div class="argument-content" style="display: none;"><p>這份內容發布於 Amazon Kira IDE 推出之後，並提及 GitHub 的工具作為其免費替代方案。雖然具體日期未在文字稿中給出，但可以推斷其背景是近期 AI 輔助編碼工具興起並逐漸普及的時期。</p></div>
+              </article>
+            </div>
+            <div class="sop-item">
+              <article class="collapsible-card argument-card">
+                <h3>2. 領域 <span class="toggle-indicator">(+)</span></h3>
+                <div class="argument-content" style="display: none;"><p>本報告所屬的領域為 <strong>AI 輔助軟體開發</strong>，特別是關於如何優化 AI 在程式碼生成和專案管理中的應用。</p></div>
+              </article>
+            </div>
+            <div class="sop-item">
+              <article class="collapsible-card argument-card">
+                <h3>3. 受眾 <span class="toggle-indicator">(+)</span></h3>
+                <div class="argument-content" style="display: none;"><p>本報告主要面向那些已經在使用 Cursor、Gemini CLI 或 Cloud Code 等 AI 編碼工具，但卻頻繁遭遇上下文丟失、生成不適用程式碼、反覆重工等困境的開發者和工程師。同時，它也適用於尋求提高開發效率、確保程式碼品質，並希望將模糊想法轉化為實際產品的個人或團隊。</p></div>
+              </article>
+            </div>
+            <div class="sop-item">
+              <article class="collapsible-card argument-card">
+                <h3>4. 問題 <span class="toggle-indicator">(+)</span></h3>
+                <div class="argument-content" style="display: none;"><p>當前的 AI 輔助編碼面臨多項挑戰：</p><ul><li><strong>缺乏結構化上下文</strong>：高達 90% 的 AI 編碼專案因缺乏明確且有組織的上下文資訊而失敗。開發者常以「意識流」的方式接近專案，導致上下文丟失和「弗蘭肯斯坦式組合」——程式碼東拼西湊，缺乏整體性。</li><li><strong>模糊需求導致的低效與返工</strong>：若未事先詳細定義需求，AI 模型會根據其「解釋」填充空白，導致生成與預期不符的程式碼。這會讓開發者反覆重寫相同功能三到五次，浪費大量時間。</li><li><strong>上下文丟失造成程式碼碎片化</strong>：當開發者清理上下文或開啟新的 AI 聊天時，AI 可能會提出與之前工作衝突的模式或程式碼，導致整體程式碼零碎不連貫。</li><li><strong>現有解決方案可及性不足</strong>：雖然像 Amazon Kira IDE 這樣的工具備受期待，但其早期存取權限有限，讓許多開發者無法受益。</li></ul></div>
+              </article>
+            </div>
+            <div class="sop-item">
+              <article class="collapsible-card argument-card">
+                <h3>5. 目標 <span class="toggle-indicator">(+)</span></h3>
+                <div class="argument-content" style="display: none;"><p>GitHub spec kit 的主要目標是：</p><ul><li><strong>提供免費且高效的規範驅動開發系統</strong>：透過引入 GitHub spec kit，為開發者提供一個免費且能有效提升 AI 編碼質量的工具。</li><li><strong>將現有 AI 工具轉化為生產級系統</strong>：在約 15 分鐘內，幫助開發者將現有的 AI 編碼工具 (如 Cursor、Gemini CLI 或 Cloud Code) 轉化為能產出高品質程式碼的開發系統。</li><li><strong>減少返工並提高品質與可擴展性</strong>：透過強制性的早期規劃和詳細定義，預防架構災難和不斷返工的循環，確保最終程式碼的品質和可擴展性。</li></ul></div>
+              </article>
+            </div>
+            <div class="sop-item">
+              <article class="collapsible-card argument-card">
+                <h3>6. 限制 <span class="toggle-indicator">(+)</span></h3>
+                <div class="argument-content" style="display: none;"><ul><li><strong>預安裝 UV 工具</strong>：使用此系統需要預先安裝 UV 工具。</li><li><strong>依賴特定 AI 助手</strong>：該系統的執行依賴於連接到特定的 AI 助手，例如 Cloud Code，並透過其命令來驅動整個流程。</li></ul></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="outline">
+        <h2>📋 圖表</h2>
+        <div class="card">
+          <p>三階段開發流程（文字化流程圖）：使用者想法</p>
+          <img src="image.png" alt="GitHub spec kit 三階段流程圖" style="max-width: 100%; height: auto; display: block; margin: 1rem auto; border-radius: 8px;">
+        </div>
+      </section>
+      <section class="section" id="outline-details">
+        <div class="card">
+          <p>以下是 GitHub spec kit 三階段開發流程的文字化流程圖，說明了從想法到生產級程式碼的演進路徑：</p>
+         <div class="sop-overview">
+           <div class="sop-items">
+             <div class="sop-item">
+               <article class="collapsible-card argument-card">
+                 <h3>使用者想法 <span class="toggle-indicator">(+)</span></h3>
+                 <div class="argument-content" style="display: none;">
+                   <p>開發流程從模糊的使用者想法開始。</p>
+                 </div>
+               </article>
+             </div>
+             <div class="sop-item">
+               <article class="collapsible-card argument-card">
+                 <h3>第一階段：定義 <span class="toggle-indicator">(+)</span></h3>
+                 <div class="argument-content" style="display: none;">
+                   <ul>
+                     <li>命令：/specify + 意圖建構的內容 (例如：新增版本歷史功能)</li>
+                     <li>輸入：模糊的功能需求</li>
+                     <li>處理：系統生成一份初步的規格文件 (spec.markdown)</li>
+                     <li>輸出：
+                       <ul>
+                         <li>spec.markdown 文件，包含需要澄清的具體問題</li>
+                         <li>使用者澄清和填補模糊之處</li>
+                       </ul>
+                     </li>
+                     <li>結果：明確且詳細的功能需求清單 (作為專案的產品經理角色)</li>
+                   </ul>
+                 </div>
+               </article>
+             </div>
+             <div class="sop-item">
+               <article class="collapsible-card argument-card">
+                 <h3>第二階段：規劃 <span class="toggle-indicator">(+)</span></h3>
+                 <div class="argument-content" style="display: none;">
+                   <ul>
+                     <li>命令：plan (可指定技術棧，例如：Supabase, Next.js)</li>
+                     <li>輸入：經澄清的功能需求清單</li>
+                     <li>處理：系統根據需求和技術棧生成詳細的實作計畫</li>
+                     <li>輸出：
+                       <ul>
+                         <li>詳細的規劃文件 (planning file)</li>
+                         <li>研究文件 (research document) - 說明架構權衡和決策背景</li>
+                         <li>資料模型 (data model)</li>
+                         <li>API 合約 (API contract) - 詳細列出 API 端點、參數、回應</li>
+                         <li>快速入門指南 (quick start guide)</li>
+                       </ul>
+                     </li>
+                     <li>結果：一份完整的、經深思熟慮的技術實作藍圖</li>
+                   </ul>
+                 </div>
+               </article>
+             </div>
+             <div class="sop-item">
+               <article class="collapsible-card argument-card">
+                 <h3>第三階段：任務執行 <span class="toggle-indicator">(+)</span></h3>
+                 <div class="argument-content" style="display: none;">
+                   <ul>
+                     <li>命令：生成任務命令 (例如在 Cloud Code 中執行)</li>
+                     <li>輸入：規劃文件、研究文件、資料模型、API 合約等所有前一階段的產出</li>
+                     <li>處理：系統整合所有上下文資訊，利用模板生成具體任務</li>
+                     <li>輸出：一份清晰、分階段、包含詳細指示和上下文引用的任務清單 (task list)</li>
+                     <li>結果：可直接執行的程式碼任務，每個任務都與專案上下文高度相關，避免矛盾</li>
+                   </ul>
+                 </div>
+               </article>
+             </div>
+             <div class="sop-item">
+               <article class="collapsible-card argument-card">
+                 <h3>生產級程式碼 <span class="toggle-indicator">(+)</span></h3>
+                 <div class="argument-content" style="display: none;">
+                   <ul>
+                     <li>結果：高品質、可重複、可擴展且符合預期的軟體功能實現</li>
+                   </ul>
+                 </div>
+               </article>
+             </div>
+           </div>
+         </div>
+        </div>
+
+      </section>
+
+      <section class="section" id="detailed-arguments">
+        <h2>📄 詳細論點說明</h2>
+
+        <article class="collapsible-card argument-card">
+          <h3>1. 結構化上下文是成功關鍵 <span class="toggle-indicator">(+)</span></h3>
+          <div class="argument-content" style="display: none;" data-source-line="89-106">
+            <h4>定義</h4>
+            <p><strong>結構化上下文</strong> 指的是在與 AI 模型互動時，明確且有組織地提供所有相關資訊，以避免模糊性並確保模型理解開發者的意圖。</p>
+            <h4>方法/步驟</h4>
+            <ol>
+              <li><strong>避免「意識流」開發：</strong>放棄隨意輸入提示詞的習慣，因為這會導致「上下文丟失」和「弗蘭肯斯坦式組合」——程式碼拼湊而成，缺乏整體性。</li>
+              <li><strong>擁抱規範驅動開發：</strong>採用一種方法，在實際建構之前，詳細定義和規劃所有細節，並將這些規範作為系統遵循的實際指南。</li>
+            </ol>
+            <h4>範例</h4>
+            <ul>
+              <li>影片中指出，<strong>90% 的 AI 編碼失敗是因為缺乏結構化上下文</strong>。</li>
+              <li>開發者在使用 Gemini、Claude 或 Cursor 等工具時，一旦清除上下文或開啟新聊天，AI 就會開始建議或建構與之前工作衝突的模式或程式碼，這就是上下文丟失的典型表現。</li>
+            </ul>
+            <p>我的分析指出，AI 輔助編碼雖然潛力巨大，但其效率往往受限於一個核心問題：<strong>結構化上下文</strong> 的缺失。影片明確指出，高達 <strong>90% 的 AI 編碼專案失敗都源於這個簡單卻關鍵的要素</strong>。開發者普遍存在一種「意識流」的專案處理方式。這意味著他們可能沒有經過深思熟慮的規劃，就直接向 AI 提出一連串的指令。這種做法的弊端在於，當需要建立高品質或規模較大的軟體時，它會導致一系列嚴重的問題。最常見的結果是「上下文丟失」，這就好比 AI 每次對話都是從零開始，無法有效延續之前的討論。當你清除 Gemini、Claude 或 Cursor 的上下文或開始新的聊天時，它們往往會建議或建構出與你剛完成的工作相衝突的程式碼。這種情況最終會導致「弗蘭肯斯坦式組合」——程式碼各部分拼湊在一起，缺乏統一的邏輯和結構，難以維護和擴展。</p>
+          </div>
+        </article>
+
+        <article class="collapsible-card argument-card">
+          <h3>2. 三階段流程解決痛點 <span class="toggle-indicator">(+)</span></h3>
+          <div class="argument-content" style="display: none;" data-source-line="107-162">
+            <p><strong>定義：</strong><strong>GitHub spec kit</strong> 是一個免費的開發系統，透過一個核心的 <strong>三階段流程</strong>——「定義」、「規劃」和「任務執行」——來提供結構化上下文，從而將 AI 輔助編碼轉化為可重複、高效且能產出高品質程式碼的過程。</p>
+            <h4>方法/步驟</h4>
+            <ol>
+              <li><strong>第一階段：定義</strong>：高層次地描述要建立什麼 (what) 和為什麼要建立 (why)，然後通過系統提問進一步澄清和完善，以消除所有模糊性。</li>
+              <li><strong>第二階段：規劃</strong>：將定義階段的明確需求轉化為具體的實作計畫，包括技術棧、架構設計、資料模型和 API 合約等詳細技術文件。</li>
+              <li><strong>第三階段：任務執行</strong>：根據規劃階段產生的一切詳細計畫，生成具體且相互關聯的程式碼任務清單，確保每個任務在整個專案上下文中的一致性。</li>
+            </ol>
+            <h4>範例</h4>
+            <ul>
+              <li>示範如何利用 <code>/specify</code> 命令為現有應用程式新增「<strong>版本歷史</strong>」功能。</li>
+              <li>在規劃階段產出詳細的<strong>資料模型</strong> 和 <strong>API 合約</strong>，為前後端開發提供單一的「真實來源」。</li>
+              <li>任務執行階段生成的任務清單，直接引用前面階段的內容，確保任務之間不會互相矛盾。</li>
+            </ul>
+ 
+            <h4>2.1 第一階段：定義</h4>
+            <ul>
+              <li><strong>目標</strong>：高層次描述「要建構什麼」與「為什麼要建構」，並徹底澄清所有潛在模糊性。</li>
+              <li><strong>方法/步驟</strong>：
+                <ol>
+                  <li><strong>初始化</strong>：確保已安裝 UV 工具，初始化套件並選擇 AI 助手與腳本語言。</li>
+                  <li><strong>描述功能</strong>：使用 <code>/specify</code> 輸入意圖建構的功能，例如新增「<strong>版本歷史</strong>」功能等。</li>
+                  <li><strong>澄清需求</strong>：系統生成 <code>spec.markdown</code>，提出具體問題（如版本是否可回溯、刪除策略、同編、保留上限、保留年限）。</li>
+                </ol>
+              </li>
+              <li><strong>優勢</strong>：
+                <ul>
+                  <li><strong>消除模糊性</strong>：避免將模糊需求轉化為數百行無用程式碼。</li>
+                  <li><strong>節省返工時間</strong>：在規劃前處理歧義，避免後續大量重構。</li>
+                  <li><strong>扮演產品經理角色</strong>：強迫提早思考，讓專案一開始即有清晰完整定義。</li>
+                </ul>
+              </li>
+            </ul>
+ 
+            <h4>2.2 第二階段：規劃</h4>
+            <ul>
+              <li><strong>目標</strong>：將明確需求轉化為可執行的實作計畫，回答「如何建構」。</li>
+              <li><strong>方法/步驟</strong>：在需求澄清後執行 <code>plan</code>（可指定技術棧，如 Supabase、Next.js）。</li>
+              <li><strong>輸出</strong>：
+                <ul>
+                  <li><strong>詳細規劃文件</strong>（如何實作、技術棧選擇、組件整合）</li>
+                  <li><strong>研究文件</strong>（架構權衡、決策理由、替代方案）</li>
+                  <li><strong>資料模型</strong></li>
+                  <li><strong>API 合約</strong>（端點、參數、回應；作為前端單一真實來源）</li>
+                  <li><strong>快速入門指南</strong></li>
+                </ul>
+              </li>
+              <li><strong>優勢</strong>：
+                <ul>
+                  <li><strong>防止架構災難</strong>：避免日後徹底重寫。</li>
+                  <li><strong>提供清晰藍圖</strong>：全隊對系統建構方式有共同理解。</li>
+                  <li><strong>專業級諮詢</strong>：幾分鐘內提供價值可比專業顧問的架構洞見。</li>
+                </ul>
+              </li>
+            </ul>
+ 
+            <h4>2.3 第三階段：任務執行</h4>
+            <ul>
+              <li><strong>目標</strong>：根據前兩階段產出，生成具體、可執行、相互關聯的程式碼任務。</li>
+              <li><strong>方法/步驟</strong>：讀取規劃/研究/資料模型/API 合約等，套用模板建立任務。</li>
+              <li><strong>輸出</strong>：<strong>詳細任務清單</strong>（描述如何找現有資料、文件放置位置、互動方式）。</li>
+              <li><strong>優勢</strong>：
+                <ul>
+                  <li><strong>保持上下文一致性</strong>：任務直接引用前期內容，避免互相矛盾。</li>
+                  <li><strong>防止程式碼碎片化</strong>：任務系統「知道你已做了什麼」。</li>
+                  <li><strong>提升速度與品質</strong>：建立可重複系統，穩定產出生產級程式碼。</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="collapsible-card argument-card">
+          <h3>3. 早期投入節省時間並提升品質 <span class="toggle-indicator">(+)</span></h3>
+          <div class="argument-content" style="display: none;" data-source-line="163-182">
+            <h4>定義</h4>
+            <p>強調在開發生命週期早期（「定義」與「規劃」）投入時間與精力，可預防後期重大問題、返工與架構災難。</p>
+            <h4>方法/步驟</h4>
+            <ol>
+              <li><strong>強制性預先思考需求</strong>：在開始建構前，以「產品經理」角度澄清所有需求。</li>
+              <li><strong>實作前先研究與規劃</strong>：先確立正確的實作方法與架構選擇，再動手編碼。</li>
+            </ol>
+            <h4>範例</h4>
+            <ul>
+              <li><strong>五分鐘的投入節省五小時重構</strong>。</li>
+              <li><strong>避免無休止的「這不是我要的」循環</strong>：每個模糊需求若不釐清，都會變成數百行曖昧程式碼，最終反覆重寫 3–5 次。</li>
+              <li><strong>預防架構災難，確保可擴展性</strong>：早期研究文件、資料模型、API 合約幫助做出明智決策，避免「完全重寫」。</li>
+            </ul>
+            <p>此方法本質上是一種「先慢後快」的策略：
+              <ul>
+                <li><strong>五分鐘換五小時</strong>：前期少量投入換來後期巨幅節省。</li>
+                <li><strong>避免「這不是我要的」</strong>：透過徹底需求澄清幾乎消除此循環。</li>
+                <li><strong>確保可擴展性</strong>：建立真正可擴展的解決方案，而非僅僅「大概能用」。</li>
+                <li><strong>通往「AI 輔助開發的聖杯」</strong>：將模糊想法轉化為可建構、可重複的系統，讓 AI 成為維持專案一致性的智慧夥伴。</li>
+              </ul>
+            </p>
+          </div>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>GitHub spec kit 報告 • 規範驅動開發 • 定義 / 規劃 / 任務執行</p>
+        <div class="footer-links">
+          <a href="#executive-summary">執行摘要</a>
+          <a href="#background">背景</a>
+          <a href="#outline">大綱/流程圖</a>
+          <a href="#themes-conclusions">主題與結論</a>
+          <a href="#detailed-arguments">詳細論點</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../assets/js/layout.js"></script>
+  <script id="keywords-config" type="application/json">{
+    "keywords": ["GitHub spec kit", "規範驅動開發", "上下文", "UV 工具", "Gemini、Claude 或 Cursor", "包括技術棧、架構設計、資料模型和 API 合約", "任務執行", "規劃", "定義"]
+  }</script>
+</body>
+</html>
+
