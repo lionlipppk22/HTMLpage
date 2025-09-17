@@ -518,26 +518,57 @@ function fadeInTextByChar(elementId, delay = 100) {
     const element = document.getElementById(elementId);
     if (!element) return;
 
-    const text = element.textContent;
-    element.innerHTML = '';
+    // Recursive function to process text nodes while preserving structure
+    function processNode(node, globalDelay = 0) {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+            const text = node.textContent;
+            const parent = node.parentNode;
+            let currentDelay = globalDelay;
 
-    for (let i = 0; i < text.length; i++) {
-        const span = document.createElement('span');
-        span.textContent = text[i];
-        span.style.opacity = '0';
-        span.style.transition = 'opacity 0.5s ease-in';
-        span.style.display = 'inline-block';
-        element.appendChild(span);
+            // Split text into spans
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.textContent = text[i];
+                span.style.opacity = '0';
+                span.style.transition = 'opacity 0.5s ease-in';
+                span.style.display = 'inline-block';
+                fragment.appendChild(span);
+                currentDelay += delay;
 
-        setTimeout(() => {
-            span.style.opacity = '1';
-        }, i * delay);
+                setTimeout(() => {
+                    span.style.opacity = '1';
+                }, currentDelay);
+            }
+
+            // Replace text node with fragment
+            parent.replaceChild(fragment, node);
+            return currentDelay;
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            let totalDelay = globalDelay;
+            // Process child nodes, skipping <br> tags
+            for (let child of Array.from(node.childNodes)) {
+                if (child.tagName !== 'BR') {
+                    totalDelay = processNode(child, totalDelay);
+                }
+            }
+            return totalDelay;
+        }
+        return globalDelay;
     }
+
+    // Start processing
+    processNode(element);
 }
 
 // Initialize text fade effect
 document.addEventListener('DOMContentLoaded', function() {
-    // Apply fade in effect to prayer closing text
+    // Apply fade in effect to prayer text
+    setTimeout(() => {
+        fadeInTextByChar('prayer-text', 17);
+    }, 1000); // Start after 1 second, accelerated 3x (17ms delay)
+
+    // Apply fade in effect to prayer closing text if exists
     setTimeout(() => {
         fadeInTextByChar('prayer-closing-text', 150);
     }, 2000); // Start after 2 seconds
@@ -787,5 +818,16 @@ window.addEventListener('resize', handleMobileInteractions);
 handleMobileInteractions();
 
 // Export functions for global access
+// Prayer fade-in animation trigger
+document.addEventListener('DOMContentLoaded', function() {
+    const prayerContent = document.getElementById('prayer-content');
+    if (prayerContent) {
+        setTimeout(() => {
+            prayerContent.style.opacity = '1';
+            prayerContent.classList.add('prayer-fade');
+        }, 500); // Delay for smooth entrance
+    }
+});
+
 window.scrollToSection = scrollToSection;
 window.trackTechniqueInteraction = trackTechniqueInteraction;
