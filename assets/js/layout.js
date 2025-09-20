@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLayoutIndicator();
     setupScrollAnimations();
     addScrollToTopButton();
-    setupYouTubePreview();
-    addFloatingAnimation();
     setupTechniqueCardAnimations();
     setupKeywordHighlighting();
     setupCollapsibleElements();
@@ -118,53 +116,6 @@ function setupScrollAnimations() {
 
     sections.forEach(section => {
         observer.observe(section);
-    });
-}
-
-// Setup YouTube preview functionality
-function setupYouTubePreview() {
-    const youtubeLinks = document.querySelectorAll('.youtube-link');
-
-    youtubeLinks.forEach(link => {
-        // Add click tracking
-        link.addEventListener('click', function(e) {
-            // Allow the link to open normally
-            console.log('YouTube link clicked:', this.href);
-
-            // Add a visual feedback
-            const playButton = this.querySelector('.play-button');
-            if (playButton) {
-                playButton.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    playButton.style.transform = 'scale(1)';
-                }, 150);
-            }
-        });
-
-        // Add hover effects
-        link.addEventListener('mouseenter', function() {
-            const thumbnail = this.querySelector('.youtube-thumbnail img');
-            if (thumbnail) {
-                thumbnail.style.filter = 'brightness(1.1)';
-            }
-        });
-
-        link.addEventListener('mouseleave', function() {
-            const thumbnail = this.querySelector('.youtube-thumbnail img');
-            if (thumbnail) {
-                thumbnail.style.filter = 'brightness(1)';
-            }
-        });
-
-        // Handle image load errors
-        const img = link.querySelector('.youtube-thumbnail img');
-        if (img) {
-            img.addEventListener('error', function() {
-                // Fallback if YouTube thumbnail fails to load
-                this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgwIiBoZWlnaHQ9IjM2MCIgdmlld0JveD0iMCAwIDQ4MCAzNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0ODAiIGhlaWdodD0iMzYwIiBmaWxsPSIjRkY0NDQ0Ii8+Cjx0ZXh0IHg9IjI0MCIgeT0iMTgwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+WW91VHViZSBWaWRlbzwvdGV4dD4KPC9zdmc+';
-                this.alt = 'YouTube 影片預覽';
-            });
-        }
     });
 }
 
@@ -304,18 +255,6 @@ function toggleEffects() {
             effectsBtn.style.color = '';
         }
     }
-}
-
-// Add floating animation keyframes dynamically
-function addFloatingAnimation() {
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-    `;
-    document.head.appendChild(style);
 }
 
 // Toggle Table of Contents
@@ -681,31 +620,31 @@ function setupKeywordHighlighting() {
         }
     }
 
-    // 定義不同顏色給每個關鍵字
-    const colors = [
-        '#ff6b6b', // 紅色
-        '#4ecdc4', // 青色
-        '#45b7d1', // 藍色
-        '#96ceb4', // 綠色
-        '#feca57', // 黃色
-        '#ff9ff3', // 粉紅
-        '#54a0ff', // 淺藍
-        '#5f27cd', // 紫色
-        '#00d2d3', // 亮青
-        '#ff9f43', // 橙色
-        '#01a3a4', // 深青
-        '#f8b500', // 金黃
-        '#c44569', // 深粉
-        '#786fa6', // 深紫
-        '#2ed573'  // 亮綠
+    // 定義漸層背景給每個關鍵字
+    const gradients = [
+        'linear-gradient(135deg, #ff6b6b, #000000)', // 紅色到白，加大對比
+        'linear-gradient(135deg, #4ecdc4, #000000)', // 青色到黑
+        'linear-gradient(135deg, #45b7d1, #ffff00)', // 藍色到黃
+        'linear-gradient(135deg, #96ceb4, #ff0000)', // 綠色到紅
+        'linear-gradient(135deg, #feca57, #800080)', // 黃色到紫
+        'linear-gradient(135deg, #ff9ff3, #00ff00)', // 粉紅到綠
+        'linear-gradient(135deg, #54a0ff, #ff00ff)', // 淺藍到品紅
+        'linear-gradient(135deg, #5f27cd, #ffd700)', // 紫色到金
+        'linear-gradient(135deg, #00d2d3, #ff4500)', // 亮青到橙紅
+        'linear-gradient(135deg, #ff9f43, #4b0082)', // 橙色到靛
+        'linear-gradient(135deg, #01a3a4, #ffc0cb)', // 深青到粉
+        'linear-gradient(135deg, #f8b500, #00ffff)', // 金黃到青
+        'linear-gradient(135deg, #c44569, #00ff7f)', // 深粉到春綠
+        'linear-gradient(135deg, #786fa6, #ff1493)', // 深紫到深粉
+        'linear-gradient(135deg, #2ed573, #8b0000)'  // 亮綠到暗紅
     ];
 
     // 動態生成 CSS 樣式給每個關鍵字
     let cssRules = '';
     keywords.forEach((keyword, index) => {
-        const color = colors[index % colors.length];
+        const gradient = gradients[index % gradients.length];
         const className = `keyword-${index}`;
-        cssRules += `.${className} { background-color: ${color}; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold; } `;
+        cssRules += `.${className} { background: ${gradient}; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold; } `;
     });
 
     // 添加 CSS 規則
@@ -817,7 +756,6 @@ function handleMobileInteractions() {
 window.addEventListener('resize', handleMobileInteractions);
 handleMobileInteractions();
 
-// Export functions for global access
 // Prayer fade-in animation trigger
 document.addEventListener('DOMContentLoaded', function() {
     const prayerContent = document.getElementById('prayer-content');
