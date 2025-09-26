@@ -7,6 +7,9 @@
     <div class="container">
         <h1>文件整理索引工具</h1>
         <p>避免洗版, 按日期所有文件：</p>
+        <div style="background: rgba(52, 152, 219, 0.2); padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; font-size: 0.9em; text-align: center; color: var(--secondary-color);">
+            📱 針對 768x1280 尺寸優化設計 - 縮圖欄位最大化顯示
+        </div>
         <table class="file-table">
             <thead>
                 <tr>
@@ -286,6 +289,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             animation: gradientShift 10s ease-in-out infinite alternate;
+            overflow-x: hidden;
         }
 
         @keyframes gradientShift {
@@ -446,7 +450,94 @@
             background: var(--accent-color);
             transform: scale(1.1);
         }
-        /* Responsive Design */
+        /* 768x1280 平板優化設計 */
+        @media (max-width: 768px) and (min-height: 1024px) {
+            .container {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            .main-card {
+                padding: 25px;
+                margin: 15px 0;
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 25px;
+            }
+
+            h2 { font-size: 1.7em; }
+            h3 { font-size: 1.4em; }
+
+            .youtube-link {
+                flex-direction: column;
+                text-align: center;
+                padding: 18px;
+            }
+
+            .youtube-thumbnail {
+                margin-right: 0;
+                margin-bottom: 12px;
+                width: 140px;
+                height: 105px;
+            }
+
+            /* 768px 專用表格優化 */
+            .file-table {
+                font-size: 0.9em;
+                border-radius: 12px;
+                box-shadow: 0 8px 20px var(--shadow-color);
+            }
+
+            .file-table th {
+                padding: 14px 12px;
+                font-size: 0.9em;
+                font-weight: 700;
+            }
+
+            .file-table td {
+                padding: 16px 12px;
+            }
+
+            .file-date {
+                font-size: 0.9em;
+                min-width: 90px;
+                font-weight: 700;
+            }
+
+            .file-links {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .file-links a {
+                padding: 8px 10px;
+                font-size: 0.85em;
+                margin: 4px 0;
+                border-radius: 6px;
+                border-left: 3px solid var(--accent-color);
+            }
+
+            /* 768px 欄位寬度優化 - 縮圖最大化 */
+            .file-table th:nth-child(1),
+            .file-table td:nth-child(1) {
+                width: 18%; /* 日期欄位 */
+            }
+
+            .file-table th:nth-child(2),
+            .file-table td:nth-child(2) {
+                width: 37%; /* 檔案欄位 */
+            }
+
+            .file-table th:nth-child(3),
+            .file-table td:nth-child(3) {
+                width: 45%; /* 縮圖欄位 - 768px 最大化 */
+            }
+        }
+
+        /* 一般行動裝置設計 */
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -645,7 +736,69 @@
             transform: translateX(5px);
         }
 
-        /* 縮圖優化 */
+        /* 768x1280 專用縮圖優化 */
+        @media (max-width: 768px) and (min-height: 1024px) {
+            .file-table td:nth-child(3) img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+                max-height: 120px;
+                object-fit: cover;
+            }
+
+            .file-table td:nth-child(3) {
+                text-align: center;
+                background: rgba(255, 255, 255, 0.08);
+                padding: 18px 12px;
+            }
+
+            /* 768px 縮圖容器特殊優化 */
+            .file-table tbody tr:nth-child(odd) td:nth-child(3) {
+                background: rgba(52, 152, 219, 0.1);
+            }
+
+            .file-table tbody tr:nth-child(even) td:nth-child(3) {
+                background: rgba(231, 76, 60, 0.1);
+            }
+
+            /* 768px 表格行高優化 */
+            .file-table tbody tr {
+                min-height: 80px;
+            }
+
+            .file-table td {
+                line-height: 1.4;
+            }
+
+            /* 768px 視窗高度利用優化 */
+            .container {
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            /* 768px 捲動條樣式優化 */
+            .container::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .container::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 3px;
+            }
+
+            .container::-webkit-scrollbar-thumb {
+                background: var(--secondary-color);
+                border-radius: 3px;
+            }
+
+            .container::-webkit-scrollbar-thumb:hover {
+                background: var(--accent-color);
+            }
+        }
+
+        /* 一般縮圖優化 */
         .file-table td:nth-child(3) img {
             max-width: 100%;
             height: auto;
