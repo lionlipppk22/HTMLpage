@@ -470,6 +470,92 @@
                 margin-right: 0;
                 margin-bottom: 10px;
             }
+
+            /* 行動版表格優化 */
+            .file-table {
+                font-size: 0.85em;
+            }
+
+            .file-table th {
+                padding: 8px 10px;
+                font-size: 0.8em;
+            }
+
+            .file-table td {
+                padding: 10px 8px;
+            }
+
+            .file-date {
+                font-size: 0.8em;
+                min-width: 80px;
+            }
+
+            .file-links {
+                font-size: 0.8em;
+            }
+
+            .file-links a {
+                padding: 4px 6px;
+                font-size: 0.75em;
+                margin: 2px 0;
+            }
+
+            /* 行動版欄位寬度調整 - 縮圖仍然最大 */
+            .file-table th:nth-child(1),
+            .file-table td:nth-child(1) {
+                width: 20%; /* 日期欄位 */
+            }
+
+            .file-table th:nth-child(2),
+            .file-table td:nth-child(2) {
+                width: 35%; /* 檔案欄位 */
+            }
+
+            .file-table th:nth-child(3),
+            .file-table td:nth-child(3) {
+                width: 45%; /* 縮圖欄位 - 行動版仍然最大 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* 超小螢幕優化 */
+            .file-table {
+                font-size: 0.75em;
+            }
+
+            .file-table th {
+                padding: 6px 8px;
+            }
+
+            .file-table td {
+                padding: 8px 6px;
+            }
+
+            .file-date {
+                font-size: 0.75em;
+                min-width: 70px;
+            }
+
+            .file-links a {
+                font-size: 0.7em;
+                padding: 3px 5px;
+            }
+
+            /* 超小螢幕欄位寬度 */
+            .file-table th:nth-child(1),
+            .file-table td:nth-child(1) {
+                width: 25%; /* 日期欄位 */
+            }
+
+            .file-table th:nth-child(2),
+            .file-table td:nth-child(2) {
+                width: 30%; /* 檔案欄位 */
+            }
+
+            .file-table th:nth-child(3),
+            .file-table td:nth-child(3) {
+                width: 45%; /* 縮圖欄位 - 超小螢幕仍然最大 */
+            }
         }
 
         @media (min-width: 1024px) {
@@ -488,6 +574,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px var(--shadow-color);
+            table-layout: fixed;
         }
 
         .file-table thead {
@@ -501,6 +588,22 @@
             font-weight: 600;
         }
 
+        /* 設定欄位寬度比例 - 縮圖欄位最大 */
+        .file-table th:nth-child(1),
+        .file-table td:nth-child(1) {
+            width: 15%; /* 日期欄位 */
+        }
+
+        .file-table th:nth-child(2),
+        .file-table td:nth-child(2) {
+            width: 45%; /* 檔案欄位 */
+        }
+
+        .file-table th:nth-child(3),
+        .file-table td:nth-child(3) {
+            width: 40%; /* 縮圖欄位 - 最大 */
+        }
+
         .file-table tbody tr {
             transition: background-color 0.3s ease;
         }
@@ -512,31 +615,64 @@
         .file-table td {
             padding: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: top;
         }
 
         .file-date {
             font-weight: bold;
             color: var(--secondary-color);
-            min-width: 100px;
+            font-size: 0.9em;
         }
 
         .file-links {
-            vertical-align: top;
+            font-size: 0.9em;
+            line-height: 1.4;
         }
 
         .file-links a {
             display: inline-block;
-            margin: 5px 0;
-            padding: 8px;
+            margin: 3px 0;
+            padding: 6px 8px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
             transition: all 0.3s ease;
             border-left: 2px solid var(--accent-color);
+            font-size: 0.85em;
+            word-break: break-word;
         }
 
         .file-links a:hover {
             background: rgba(255, 255, 255, 0.4);
             transform: translateX(5px);
+        }
+
+        /* 縮圖優化 */
+        .file-table td:nth-child(3) img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 縮圖容器優化 */
+        .file-table td:nth-child(3) {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* 當沒有縮圖時的樣式 */
+        .file-table td:nth-child(3):empty::after {
+            content: '無縮圖';
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        /* 縮圖 hover 效果 */
+        .file-table td:nth-child(3) img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         .sunday-highlight {
