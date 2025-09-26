@@ -8,7 +8,7 @@
         <h1>文件整理索引工具</h1>
         <p>避免洗版, 按日期所有文件：</p>
         <div style="background: rgba(52, 152, 219, 0.2); padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; font-size: 0.9em; text-align: center; color: var(--secondary-color);">
-            📱 針對 768x1280 尺寸優化設計 - 縮圖欄位最大化顯示
+            📱 響應式設計 - 支援手機直向/橫向模式，縮圖欄位最大化
         </div>
         <table class="file-table">
             <thead>
@@ -255,7 +255,7 @@
 </body>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>繪製你的思考流程 - 思維視覺化報告</title>
 
     <!-- External CSS and JS references as specified -->
@@ -290,6 +290,12 @@
             min-height: 100vh;
             animation: gradientShift 10s ease-in-out infinite alternate;
             overflow-x: hidden;
+        }
+
+        /* 確保容器可以正常滾動 */
+        .container {
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
         }
 
         @keyframes gradientShift {
@@ -450,77 +456,78 @@
             background: var(--accent-color);
             transform: scale(1.1);
         }
-        /* 768x1280 平板優化設計 */
-        @media (max-width: 768px) and (min-height: 1024px) {
+        /* 行動裝置優化 - 簡化設計 */
+        @media (max-width: 768px) {
             .container {
-                padding: 15px;
+                padding: 12px;
                 max-width: 100%;
+                overflow-x: auto;
             }
 
             .main-card {
-                padding: 25px;
-                margin: 15px 0;
-                border-radius: 12px;
+                padding: 20px;
+                margin: 10px 0;
+                border-radius: 10px;
             }
 
             h1 {
-                font-size: 2.2em;
-                margin-bottom: 25px;
+                font-size: 1.8em;
+                margin-bottom: 20px;
             }
 
-            h2 { font-size: 1.7em; }
-            h3 { font-size: 1.4em; }
+            h2 { font-size: 1.4em; }
+            h3 { font-size: 1.2em; }
 
             .youtube-link {
                 flex-direction: column;
                 text-align: center;
-                padding: 18px;
+                padding: 15px;
             }
 
             .youtube-thumbnail {
                 margin-right: 0;
-                margin-bottom: 12px;
-                width: 140px;
-                height: 105px;
+                margin-bottom: 10px;
+                width: 120px;
+                height: 90px;
             }
 
-            /* 768px 專用表格優化 */
+            /* 行動版表格優化 - 簡化 */
             .file-table {
                 font-size: 0.9em;
-                border-radius: 12px;
-                box-shadow: 0 8px 20px var(--shadow-color);
+                border-radius: 8px;
+                min-width: 600px; /* 確保表格不會被壓縮過小 */
             }
 
             .file-table th {
-                padding: 14px 12px;
-                font-size: 0.9em;
-                font-weight: 700;
+                padding: 12px 10px;
+                font-size: 0.85em;
+                font-weight: 600;
             }
 
             .file-table td {
-                padding: 16px 12px;
+                padding: 12px 10px;
             }
 
             .file-date {
-                font-size: 0.9em;
-                min-width: 90px;
-                font-weight: 700;
+                font-size: 0.85em;
+                min-width: 85px;
+                font-weight: 600;
             }
 
             .file-links {
-                font-size: 0.9em;
-                line-height: 1.5;
+                font-size: 0.85em;
+                line-height: 1.4;
             }
 
             .file-links a {
-                padding: 8px 10px;
-                font-size: 0.85em;
-                margin: 4px 0;
-                border-radius: 6px;
-                border-left: 3px solid var(--accent-color);
+                padding: 6px 8px;
+                font-size: 0.8em;
+                margin: 3px 0;
+                border-radius: 4px;
+                border-left: 2px solid var(--accent-color);
             }
 
-            /* 768px 欄位寬度優化 - 縮圖最大化 */
+            /* 行動版欄位寬度 - 統一設定 */
             .file-table th:nth-child(1),
             .file-table td:nth-child(1) {
                 width: 18%; /* 日期欄位 */
@@ -528,93 +535,24 @@
 
             .file-table th:nth-child(2),
             .file-table td:nth-child(2) {
-                width: 37%; /* 檔案欄位 */
+                width: 42%; /* 檔案欄位 */
             }
 
             .file-table th:nth-child(3),
             .file-table td:nth-child(3) {
-                width: 45%; /* 縮圖欄位 - 768px 最大化 */
+                width: 40%; /* 縮圖欄位 - 行動版最大 */
             }
         }
 
-        /* 一般行動裝置設計 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-
-            .main-card {
-                padding: 20px;
-                margin: 10px 0;
-            }
-
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.5em; }
-
-            .youtube-link {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .youtube-thumbnail {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            /* 行動版表格優化 */
-            .file-table {
-                font-size: 0.85em;
-            }
-
-            .file-table th {
-                padding: 8px 10px;
-                font-size: 0.8em;
-            }
-
-            .file-table td {
-                padding: 10px 8px;
-            }
-
-            .file-date {
-                font-size: 0.8em;
-                min-width: 80px;
-            }
-
-            .file-links {
-                font-size: 0.8em;
-            }
-
-            .file-links a {
-                padding: 4px 6px;
-                font-size: 0.75em;
-                margin: 2px 0;
-            }
-
-            /* 行動版欄位寬度調整 - 縮圖仍然最大 */
-            .file-table th:nth-child(1),
-            .file-table td:nth-child(1) {
-                width: 20%; /* 日期欄位 */
-            }
-
-            .file-table th:nth-child(2),
-            .file-table td:nth-child(2) {
-                width: 35%; /* 檔案欄位 */
-            }
-
-            .file-table th:nth-child(3),
-            .file-table td:nth-child(3) {
-                width: 45%; /* 縮圖欄位 - 行動版仍然最大 */
-            }
-        }
-
+        /* 超小螢幕額外優化 */
         @media (max-width: 480px) {
-            /* 超小螢幕優化 */
             .file-table {
-                font-size: 0.75em;
+                font-size: 0.8em;
+                min-width: 500px;
             }
 
             .file-table th {
-                padding: 6px 8px;
+                padding: 8px 6px;
             }
 
             .file-table td {
@@ -623,28 +561,12 @@
 
             .file-date {
                 font-size: 0.75em;
-                min-width: 70px;
+                min-width: 75px;
             }
 
             .file-links a {
                 font-size: 0.7em;
-                padding: 3px 5px;
-            }
-
-            /* 超小螢幕欄位寬度 */
-            .file-table th:nth-child(1),
-            .file-table td:nth-child(1) {
-                width: 25%; /* 日期欄位 */
-            }
-
-            .file-table th:nth-child(2),
-            .file-table td:nth-child(2) {
-                width: 30%; /* 檔案欄位 */
-            }
-
-            .file-table th:nth-child(3),
-            .file-table td:nth-child(3) {
-                width: 45%; /* 縮圖欄位 - 超小螢幕仍然最大 */
+                padding: 4px 6px;
             }
         }
 
@@ -667,18 +589,7 @@
             table-layout: fixed;
         }
 
-        .file-table thead {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .file-table th {
-            padding: 12px 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        /* 設定欄位寬度比例 - 縮圖欄位最大 */
+        /* 桌面版欄位寬度 */
         .file-table th:nth-child(1),
         .file-table td:nth-child(1) {
             width: 15%; /* 日期欄位 */
@@ -691,8 +602,20 @@
 
         .file-table th:nth-child(3),
         .file-table td:nth-child(3) {
-            width: 40%; /* 縮圖欄位 - 最大 */
+            width: 40%; /* 縮圖欄位 - 桌面版最大 */
         }
+
+        .file-table thead {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .file-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
 
         .file-table tbody tr {
             transition: background-color 0.3s ease;
@@ -736,67 +659,6 @@
             transform: translateX(5px);
         }
 
-        /* 768x1280 專用縮圖優化 */
-        @media (max-width: 768px) and (min-height: 1024px) {
-            .file-table td:nth-child(3) img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 10px;
-                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-                max-height: 120px;
-                object-fit: cover;
-            }
-
-            .file-table td:nth-child(3) {
-                text-align: center;
-                background: rgba(255, 255, 255, 0.08);
-                padding: 18px 12px;
-            }
-
-            /* 768px 縮圖容器特殊優化 */
-            .file-table tbody tr:nth-child(odd) td:nth-child(3) {
-                background: rgba(52, 152, 219, 0.1);
-            }
-
-            .file-table tbody tr:nth-child(even) td:nth-child(3) {
-                background: rgba(231, 76, 60, 0.1);
-            }
-
-            /* 768px 表格行高優化 */
-            .file-table tbody tr {
-                min-height: 80px;
-            }
-
-            .file-table td {
-                line-height: 1.4;
-            }
-
-            /* 768px 視窗高度利用優化 */
-            .container {
-                max-height: calc(100vh - 40px);
-                overflow-y: auto;
-                overflow-x: hidden;
-            }
-
-            /* 768px 捲動條樣式優化 */
-            .container::-webkit-scrollbar {
-                width: 6px;
-            }
-
-            .container::-webkit-scrollbar-track {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 3px;
-            }
-
-            .container::-webkit-scrollbar-thumb {
-                background: var(--secondary-color);
-                border-radius: 3px;
-            }
-
-            .container::-webkit-scrollbar-thumb:hover {
-                background: var(--accent-color);
-            }
-        }
 
         /* 一般縮圖優化 */
         .file-table td:nth-child(3) img {
