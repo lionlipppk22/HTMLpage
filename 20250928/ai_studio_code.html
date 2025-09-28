@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古詩詞賞析</title>
+    <style>
+        body {
+            font-family: '宋體', 'SimSun', serif;
+            line-height: 1.8;
+            color: #333;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .poem-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .poem-title {
+            font-family: '楷體', 'KaiTi', serif;
+            font-size: 1.8em;
+            color: #2a6496;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .poem-meta {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .poem-content {
+            font-size: 1.3em;
+            text-align: center;
+            line-height: 2.2;
+        }
+        .dynasty-author {
+            font-weight: bold;
+            color: #444;
+        }
+        .separator {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px dashed #ccc;
+        }
+        .poem-explanation {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-top: 20px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #495057;
+        }
+        .explanation-title {
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+ 
+    <!-- 嵌入音頻播放器 -->
+    <div style="text-align: center; margin: 20px auto;">
+        <audio id="audioPlayer" controls style="max-width: 100%;">
+            <source src="out.mp3" type="audio/mpeg">
+            <source src="out.mp3" type="audio/mp3">
+            您的瀏覽器不支持音頻播放。
+        </audio>
+        <br>
+        <div style="margin-top: 10px;">
+            <button id="playBtn" onclick="playAudio()" style="padding: 8px 16px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">
+                ▶️ 開始播放
+            </button>
+            <button id="repeatBtn" onclick="toggleRepeat()" style="padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                🔁 啟用重複播放
+            </button>
+        </div>
+        <div id="repeatStatus" style="margin-top: 10px; color: #666; font-size: 14px;">
+            狀態：準備就緒 | 重複播放：已啟用
+        </div>
+        <div id="errorMsg" style="margin-top: 10px; color: #dc3545; font-size: 14px;"></div>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playBtn = document.getElementById('playBtn');
+        const repeatBtn = document.getElementById('repeatBtn');
+        const repeatStatus = document.getElementById('repeatStatus');
+        const errorMsg = document.getElementById('errorMsg');
+        let isRepeating = true;
+
+        // 設定初始重複播放狀態
+        audioPlayer.loop = true;
+
+        function showError(message) {
+            errorMsg.textContent = '錯誤：' + message;
+            console.error('Audio Error:', message);
+        }
+
+        function clearError() {
+            errorMsg.textContent = '';
+        }
+
+        function updateStatus(message) {
+            const repeatText = isRepeating ? '已啟用' : '已停用';
+            repeatStatus.textContent = `狀態：${message} | 重複播放：${repeatText}`;
+        }
+
+        function playAudio() {
+            clearError();
+            const playPromise = audioPlayer.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        playBtn.innerHTML = '⏸️ 暫停';
+                        playBtn.style.backgroundColor = '#6c757d';
+                        updateStatus('正在播放');
+                    })
+                    .catch(error => {
+                        showError('無法自動播放，請點擊播放按鈕開始');
+                        console.log('Autoplay prevented:', error);
+                    });
+            }
+        }
+
+        function toggleRepeat() {
+            isRepeating = !isRepeating;
+            audioPlayer.loop = isRepeating;
+
+            if (isRepeating) {
+                repeatBtn.innerHTML = '🔁 啟用重複播放';
+                repeatBtn.style.backgroundColor = '#007bff';
+            } else {
+                repeatBtn.innerHTML = '➡️ 停用重複播放';
+                repeatBtn.style.backgroundColor = '#6c757d';
+            }
+
+            updateStatus(audioPlayer.paused ? '已暫停' : '正在播放');
+        }
+
+        // 監聽音頻播放結束事件
+        audioPlayer.addEventListener('ended', function() {
+            console.log('Audio ended, loop should restart it');
+            if (isRepeating) {
+                updateStatus('重複播放中...');
+            } else {
+                updateStatus('播放結束');
+                playBtn.innerHTML = '▶️ 重新播放';
+                playBtn.style.backgroundColor = '#28a745';
+            }
+        });
+
+        // 監聽播放開始事件
+        audioPlayer.addEventListener('play', function() {
+            playBtn.innerHTML = '⏸️ 暫停';
+            playBtn.style.backgroundColor = '#6c757d';
+            updateStatus('正在播放');
+        });
+
+        // 監聽暫停事件
+        audioPlayer.addEventListener('pause', function() {
+            playBtn.innerHTML = '▶️ 繼續播放';
+            playBtn.style.backgroundColor = '#28a745';
+            updateStatus('已暫停');
+        });
+
+        // 監聽播放按鈕點擊
+        playBtn.addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                playAudio();
+            } else {
+                audioPlayer.pause();
+            }
+        });
+
+        // 監聽音頻載入錯誤
+        audioPlayer.addEventListener('error', function(e) {
+            showError('無法載入音頻檔案，請確認 out.mp3 檔案存在');
+            console.error('Audio load error:', e);
+        });
+
+        // 監聽音頻載入成功
+        audioPlayer.addEventListener('loadeddata', function() {
+            clearError();
+            console.log('Audio loaded successfully');
+        });
+
+        // 頁面載入完成後初始化
+        window.addEventListener('load', function() {
+            console.log('Page loaded, audio ready');
+            updateStatus('準備就緒');
+        });
+
+        // 強制設定loop屬性（防瀏覽器限制）
+        audioPlayer.addEventListener('loadedmetadata', function() {
+            this.loop = isRepeating;
+            console.log('Loop set to:', this.loop);
+        });
+    </script>
+
+    <h1 style="text-align: center; color: #0056b3; font-family: '楷體', 'KaiTi', serif;">經典古詩詞賞析</h1>
+    <hr style="width: 50%; border: 1px solid #0056b3; margin-bottom: 40px;">
+
+    <div class="poem-container">
+        <h2 class="poem-title">烏衣巷</h2>
+        <p class="poem-meta"><span class="dynasty-author">唐朝</span> &ndash; 劉禹錫</p>
+        <div class="poem-content">
+            <p>朱雀橋邊野草花，</p>
+            <p>烏衣巷口夕陽斜。</p>
+            <p>舊時王謝堂前燕，</p>
+            <p>飛入尋常百姓家。</p>
+        </div>
+        <div class="poem-explanation">
+            <div class="explanation-title">詩意賞析</div>
+            <p>這首詩描寫了烏衣巷的今昔變化。烏衣巷是東晉時期王導、謝安等世家大族聚居之地，當年繁華一時。如今卻是野草叢生，夕陽西下，顯得荒涼冷清。</p>
+            <p>詩人透過「舊時王謝堂前燕，飛入尋常百姓家」這兩句，表達了歲月變遷、滄海桑田的感慨。那昔日曾經在王謝豪門堂前築巢的燕子，如今卻飛進了普通百姓的家中，象徵著門第的衰落和時代的變遷。</p>
+            <p>全詩短短二十字，卻道盡了歷史的無常和人生的滄桑，表達了詩人對繁華易逝的深沉感慨。</p>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="poem-container">
+        <h2 class="poem-title">從軍行 (其四)</h2>
+        <p class="poem-meta"><span class="dynasty-author">唐朝</span> &ndash; 王昌齡</p>
+        <div class="poem-content">
+            <p>青海長雲暗雪山，</p>
+            <p>孤城遙望玉門關。</p>
+            <p>黃沙百戰穿金甲，</p>
+            <p>不破樓蘭終不還。</p>
+        </div>
+        <div class="poem-explanation">
+            <div class="explanation-title">詩意賞析</div>
+            <p>這首詩描寫了戍邊將士的艱苦生活和堅強意志。青海湖上空長雲密佈，雪山隱沒在雲霧之中，孤城遠遠望著玉門關，展現出邊塞的荒涼與遼闊。</p>
+            <p>「黃沙百戰穿金甲」形象地描寫了將士們長期征戰，金屬盔甲都被黃沙磨穿的景象，突顯了戰爭的殘酷和漫長。「不破樓蘭終不還」表現了將士們堅定的戰鬥意志和必勝的決心。</p>
+            <p>全詩氣勢雄渾，充滿了陽剛之美，表達了盛唐時期邊塞將士保家衛國的豪情壯志，是邊塞詩中的經典之作。</p>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="poem-container">
+        <h2 class="poem-title">觀書有感 (其一)</h2>
+        <p class="poem-meta"><span class="dynasty-author">宋朝</span> &ndash; 朱熹</p>
+        <div class="poem-content">
+            <p>半畝方塘一鑑開，</p>
+            <p>天光雲影共徘徊。</p>
+            <p>問渠那得清如許？</p>
+            <p>為有源頭活水來。</p>
+        </div>
+        <div class="poem-explanation">
+            <div class="explanation-title">詩意賞析</div>
+            <p>這首詩表面寫的是觀賞書本時產生的感想，實際上卻蘊含著深刻的理學思想。朱熹是宋代著名的理學家，這首詩是他讀書時的體悟。</p>
+            <p>「半畝方塘」比喻人的心靈，「天光雲影」比喻知識和思想，「源頭活水」則比喻不斷學習新知識。詩人通過觀察方塘中的水之所以清澈，是因為有源頭活水不斷注入的道理，來闡明學習的真諦。</p>
+            <p>全詩構思巧妙，以淺顯的自然現象來說明深奧的學習道理，告訴人們只有不斷吸收新知識，心靈才能保持清明和活力。這是朱熹理學思想的生動體現。</p>
+        </div>
+    </div>
+
+</body>
+</html>
