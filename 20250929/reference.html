@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>為張永和牧師的禱告</title>
+    <meta name="description" content="為張永和牧師海外行程的禱告文">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <!-- Mermaid for potential diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul>
+            <li><a href="#prayer-content">禱告內容</a></li>
+            <li><a href="#audio-section">音頻播放</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 id="main-title">為牧師代禱</h1>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content" id="main-content">
+
+    <!-- 頁面專用樣式 -->
+    <style>
+        /* 禱告文容器 */
+        .prayer-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* 禱告文標題 */
+        .prayer-title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-family: 'Chiron GoRound TC', 'LXGW WenKai Mono TC', sans-serif;
+            font-weight: 300;
+        }
+
+        /* 圖片樣式 */
+        .prayer-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .prayer-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .prayer-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* 音頻播放器樣式 */
+        .audio-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .audio-section audio {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 禱告文字樣式 */
+        .prayer-content {
+            font-family: 'Chiron GoRound TC', 'LXGW WenKai Mono TC', serif;
+            font-size: 1.2em;
+            line-height: 2;
+            color: #2c3e50;
+            text-align: center;
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border-left: 5px solid #27ae60;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .prayer-content p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* 特定禱告段落增強調中 */
+        #prayer-content .card p {
+            text-align: center !important;
+            display: block;
+            width: 100%;
+        }
+
+        /* 手機直式佈局優化 */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px !important;
+                background: #1a1a2e !important;
+            }
+
+            .prayer-wrapper {
+                padding: 20px 15px !important;
+                margin: 5px 0 !important;
+                border-radius: 10px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .prayer-title {
+                font-size: 1.5em !important;
+                line-height: 1.2 !important;
+                margin-bottom: 20px !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            .prayer-image {
+                margin: 15px 0 !important;
+                width: 100% !important;
+                order: 1 !important;
+            }
+
+            .prayer-image img {
+                border-radius: 8px !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .audio-section {
+                padding: 15px !important;
+                margin: 15px 0 !important;
+                width: 100% !important;
+                order: 2 !important;
+            }
+
+            .audio-section h3 {
+                text-align: center !important;
+                margin-bottom: 15px !important;
+                font-size: 1.1em !important;
+            }
+
+            .audio-section audio {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .prayer-content {
+                font-size: 1em !important;
+                line-height: 1.7 !important;
+                padding: 15px !important;
+                margin: 15px 0 !important;
+                width: 100% !important;
+                order: 3 !important;
+                text-align: center !important;
+            }
+
+            .controls {
+                top: 5px !important;
+                right: 5px !important;
+                gap: 3px !important;
+                flex-wrap: wrap !important;
+                justify-content: flex-end !important;
+            }
+
+            .control-btn {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 0.8em !important;
+            }
+        }
+
+        /* 小螢幕手機優化 */
+        @media (max-width: 480px) {
+            body {
+                padding: 3px !important;
+                background: #1a1a2e !important;
+            }
+
+            .prayer-wrapper {
+                padding: 15px 12px !important;
+                margin: 3px 0 !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .prayer-title {
+                font-size: 1.3em !important;
+                margin-bottom: 15px !important;
+                line-height: 1.2 !important;
+            }
+
+            .prayer-image {
+                margin: 12px 0 !important;
+            }
+
+            .audio-section {
+                padding: 12px !important;
+                margin: 12px 0 !important;
+            }
+
+            .audio-section h3 {
+                font-size: 1em !important;
+                margin-bottom: 12px !important;
+            }
+
+            .prayer-content {
+                font-size: 0.95em !important;
+                line-height: 1.6 !important;
+                padding: 12px !important;
+                margin: 12px 0 !important;
+            }
+
+            .controls {
+                top: 3px !important;
+                right: 3px !important;
+                gap: 2px !important;
+            }
+
+            .control-btn {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 0.75em !important;
+            }
+        }
+
+        /* 超小螢幕優化 */
+        @media (max-width: 360px) {
+            body {
+                padding: 2px !important;
+            }
+
+            .prayer-wrapper {
+                padding: 12px 10px !important;
+                margin: 2px 0 !important;
+            }
+
+            .prayer-title {
+                font-size: 1.2em !important;
+                margin-bottom: 12px !important;
+            }
+
+            .prayer-image {
+                margin: 10px 0 !important;
+            }
+
+            .audio-section {
+                padding: 10px !important;
+                margin: 10px 0 !important;
+            }
+
+            .audio-section h3 {
+                font-size: 0.95em !important;
+                margin-bottom: 10px !important;
+            }
+
+            .prayer-content {
+                font-size: 0.9em !important;
+                line-height: 1.5 !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+            }
+
+            .controls {
+                top: 2px !important;
+                right: 2px !important;
+                gap: 1px !important;
+            }
+
+            .control-btn {
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 0.7em !important;
+            }
+        }
+    </style>
+
+            <section class="section" id="prayer-content">
+                <h2>🙏 禱告內容</h2>
+                <div class="card">
+                    <p>天父，</p>
+                    <p>慈愛的主，在這一刻，我們懷著滿腔的感恩與謙卑，一同來到您的施恩寶座前。我們的心，因著祢豐盛的愛而滿溢，特別為我們摯愛的張永和牧師，他即將展開為期四週的海外行程，獻上我們至誠的懇言。</p>
+
+                    <p>我們的主，我們深知祢是那位奇妙的引導者，是真光。祢引導瞎子走他們所不認識的道，領他們行他們所不知道的路，在他們面前使黑暗變為光明，使彎曲變為平直。在這一刻，我特別感受到，無論永和牧師的腳步將踏向何方，飛機的每一次起降，旅途中的每一個微小轉折，祢都全然知曉，祢都細緻地看顧照料。是的，他坐下，他起來，他行路，他躺臥，祢都深知他一切動向。因此，我們懇切地求祢，正如祢在以賽亞書中所應許，成為他前行的真光，使他道路上的黑暗變為明亮，彎曲變為平直。賜予他全程的平安、順遂與從容的方向，求祢保守他的腳步，免遭一切意外與險阻。</p>
+
+                    <p>主啊，我們也特別為他行前所有看似繁瑣卻至關重要的預備工作向祢懇求。求祢賜予他清晰的智慧，如同黎明的光照亮前路，賜他有充足的精力和一顆平靜安穩的心頭。願每一項事務，無論大小，都能在祢的引導下妥善安排，井然有序，讓他踏上旅程能夠帶著一份輕省與自由，心中沒有絲毫的掛慮與擔憂，全然專注於仰望祢奇妙的恩佑。</p>
+
+                    <p>當永和牧師在異地，安靜尋求，預備要將祢的話語分享時，我們更要為他獻上特別的祈求。主耶和華啊，求祢再次以祢的慈愛恩待他，願祢賜予他受教者的舌頭，滿有從祢而來的智慧，使他知道如何用合宜、帶著生命力的言語，去扶助那些在困倦中，或靈魂疲乏的人。求祢，我主，每天早晨如同往常一樣，溫柔地提醒他的耳朵，使他能敏銳地聆聽祢微小的聲音，如同受教者一樣，從祢的活潑話語中，汲取那份從天上而來豐盛恩佑。因此，讓我們一同祈禱，願他所傳講的，是由祢而出的生命與大能，不單單是知識的言語，深深觸動深處的人心，帶來真實屬靈的甦醒，激發著向前行的生命。</p>
+
+                    <p>在整個旅途中，我深切地懇求祢，主啊，看顧永和牧師寶貴的身心靈健康。我們知道，異地的環境、時差的調整、舟車的勞頓，都可能帶來身體的疲憊，甚至內心的挑戰與迷惘。然而，在這一刻，我感受到祢的應許如磐石般堅固：我們不致消滅，是出於耶和華祢的慈愛；祢的憐憫永不終止。每早晨，這都是新的；祢的誠實極其廣大！願張牧師在每天清晨都能親身經歷祢那嶄新的恩典與豐盛供應，得著從祢而來更新的力量。求祢如同高牆般四面環繞保護他，使他遠離一切疾病的侵襲、意外的危險與各樣的捆綁。更求祢賜給他一顆平安喜樂的心，讓他能享受與祢同行的每一刻，以從容的姿態應對生命中的變化與挑戰，最終在祢那超越一切的愛中，經歷真實的突破與屬靈的爭戰。</p>
+
+                    <p>出於耶和華祢永不止息的慈愛；祢的憐憫永不終止。每早晨，這都是新的！祢的誠實極其廣大！因此，願張牧師在旅途中的每天清晨，都能親身經歷祢那嶄新的恩典與豐盛供應，得著從祢寶座湧流而來、日日更新的力量。求祢如同堅固的高牆般四面環繞保護他，使他遠離一切疾病的侵襲、意外的危險與各樣惡者的捆綁。更求祢將屬天的平安與滿溢的喜樂充滿他心，讓他能享受與祢同行的每一刻，以從容不迫的姿態，在祢裡面應對生命中的挑戰與應變，並在這段旅程中，得著身心靈的完全休息與徹底來充電，最終在祢那超越一切理性的愛中，與經歷生命更加強健，突破來自屬靈真實的豐盛歷練。</p>
+
+                    <p>親愛的主，此刻，我們將永和牧師未來四週的每一天，他的服事、他的安全、他的身心靈，都全然交託在祢那大能又慈愛的聖手之中。我們滿懷盼望地祈求，願他此行不僅榮耀祢的聖名，更使他自己個人的生命，在祢的同在中深深蒙福，歸來時，能夠滿載祢的恩典、豐盛的見證與新的歌頌。</p>
+
+                    <p>我們將這一切的禱告，都謙卑地呈獻在祢面前，</p>
+
+                    <p>奉靠我們主耶穌基督那寶貴的聖名，榮頌。阿們。</p>
+                </div>
+            </section>
+
+            <section class="section" id="audio-section">
+                <h2>🎵 語音代禱</h2>
+                <div class="card">
+                    <audio controls src="out.mp3" style="width: 100%; max-width: 100%;"></audio>
+                </div>
+            </section>
+
+            <section class="section" id="image-section">
+                <h2>🖼️ 相關圖片</h2>
+                <div class="card">
+                    <img src="https://images3.alphacoders.com/836/thumb-1920-836946.jpg" alt="相關圖片" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>為張永和牧師的禱告文</p>
+                <div class="footer-links">
+                    <a href="#prayer-content">禱告內容</a>
+                    <a href="#audio-section">音頻播放</a>
+                    <a href="#image-section">相關圖片</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="../assets/js/layout.js"></script>
+</body>
+</html>
