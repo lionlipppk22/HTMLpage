@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="外院與聖所卡片">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#FFF7E6"/>
+      <stop offset="1" stop-color="#FFEACE"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#F0F8FF"/>
+      <stop offset="1" stop-color="#E8F3FF"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 600 20px/1.1 "Segoe UI", Roboto, "Noto Sans", system-ui, sans-serif; fill:#2b2b2b; }
+      .subtitle { font: 500 13px/1 "Segoe UI", Roboto, "Noto Sans", system-ui, sans-serif; fill:#555; }
+      .body { font: 400 12px/1.2 "Segoe UI", Roboto, "Noto Sans", system-ui, sans-serif; fill:#333; }
+      .tag { font: 600 11px/1 "Segoe UI", Roboto, "Noto Sans", system-ui, sans-serif; fill:#fff; }
+      .bullet { fill: #444; }
+    </style>
+  </defs>
+
+  <!-- Card 1: 外院 -->
+  <g transform="translate(40,40)" filter="url(#cardShadow)">
+    <rect x="0" y="0" rx="16" ry="16" width="460" height="520" fill="url(#g1)"/>
+    <!-- header -->
+    <rect x="0" y="0" rx="16" ry="16" width="460" height="72" fill="#FFB57A"/>
+    <text x="24" y="42" class="title">外院 • Outer Court</text>
+    <text x="24" y="60" class="subtitle">敬拜的開端與預備</text>
+
+    <!-- icon (simple altar) -->
+    <g transform="translate(360,12)">
+      <rect x="0" y="28" width="72" height="36" rx="6" fill="#7A4B2A"/>
+      <rect x="12" y="8" width="48" height="24" rx="4" fill="#C47A4A"/>
+      <rect x="28" y="0" width="16" height="8" rx="2" fill="#FFD9C2"/>
+    </g>
+
+    <!-- content -->
+    <g transform="translate(24,96)">
+      <text class="body" x="0" y="0">◎ 進入途徑：</text>
+      <text class="body" x="18" y="22">- 藉由「門」（耶穌）進入；以稱謝、以讚美進院。</text>
+      <text class="body" x="18" y="42">- 敬拜的第一步是「在基督裡信心的一步」。</text>
+
+      <text class="body" x="0" y="78">◎ 環境與氛圍：</text>
+      <text class="body" x="18" y="100">- 戶外、公開且吵雜；氣味：動物、血、燒肉與人。</text>
+      <text class="body" x="18" y="120">- 服事焦點：<tspan font-weight="600">神服事人</tspan>（拯救、賜感恩、潔淨）。</text>
+
+      <text class="body" x="0" y="156">◎ 主要設備與意義：</text>
+
+      <!-- item 1 -->
+      <g transform="translate(8,172)">
+        <circle cx="6" cy="6" r="5" class="bullet"/>
+        <text class="body" x="18" y="10">銅祭壇 (Bronze Altar) — 銅 / 審判</text>
+        <text class="body" x="18" y="30">• 敬拜始於獻祭；代表十字架的犧牲與審判；學習降服、獻上自己。</text>
+      </g>
+
+      <!-- item 2 -->
+      <g transform="translate(8,232)">
+        <circle cx="6" cy="6" r="5" class="bullet"/>
+        <text class="body" x="18" y="10">洗濯盆 (Laver) — 洗淨 / 話語</text>
+        <text class="body" x="18" y="30">• 介於祭壇與會幕之間；象徵神話語的服事、潔淨祭司手腳。</text>
+      </g>
+
+      <text class="body" x="0" y="312">◎ 敬拜成果：</text>
+      <text class="body" x="18" y="334">- 除去心中不滿與抱怨，允許成聖的過程（持續潔淨）。</text>
+      <text class="body" x="18" y="354">- 學習成為僕人與犧牲者。</text>
+    </g>
+  </g>
+
+  <!-- Card 2: 聖所 -->
+  <g transform="translate(520,40)" filter="url(#cardShadow)">
+    <rect x="0" y="0" rx="16" ry="16" width="460" height="520" fill="url(#g2)"/>
+    <!-- header -->
+    <rect x="0" y="0" rx="16" ry="16" width="460" height="72" fill="#9AD0FF"/>
+    <text x="24" y="42" class="title">聖所 • Holy Place</text>
+    <text x="24" y="60" class="subtitle">親密、能力與代禱</text>
+
+    <!-- icon (simple lamp) -->
+    <g transform="translate(360,6)" >
+      <rect x="28" y="24" width="8" height="48" rx="2" fill="#FFD66B"/>
+      <circle cx="32" cy="18" r="10" fill="#FFE9A8"/>
+      <rect x="8" y="56" width="48" height="8" rx="4" fill="#D1E9FF"/>
+    </g>
+
+    <!-- content -->
+    <g transform="translate(24,96)">
+      <text class="body" x="0" y="0">◎ 進入途徑：</text>
+      <text class="body" x="18" y="22">- 內院，只有被潔淨的祭司才能進入；須先經外院的潔淨與降服。</text>
+
+      <text class="body" x="0" y="58">◎ 環境與氛圍：</text>
+      <text class="body" x="18" y="80">- 幽暗、隱密且安靜；氣味：剛出爐的餅、酒、油與香。</text>
+      <text class="body" x="18" y="100">- 光源：金燈台的七個火苗；服事焦點：<tspan font-weight="600">人服事神</tspan>（親密）。</text>
+
+      <text class="body" x="0" y="136">◎ 主要設備與意義：</text>
+
+      <!-- item 1: Table of Showbread -->
+      <g transform="translate(8,152)">
+        <circle cx="6" cy="6" r="5" class="bullet"/>
+        <text class="body" x="18" y="10">陳設餅桌 (Showbread) — 金 / 生命的糧</text>
+        <text class="body" x="18" y="30">• 象徵耶穌是生命的糧；與親密相交、面對面服事有關。</text>
+      </g>
+
+      <!-- item 2: Golden Lampstand -->
+      <g transform="translate(8,212)">
+        <circle cx="6" cy="6" r="5" class="bullet"/>
+        <text class="body" x="18" y="10">金燈台 (Lampstand) — 精金 / 聖靈</text>
+        <text class="body" x="18" y="30">• 象徵聖靈的服事；親密帶來啟示與能力。</text>
+      </g>
+
+      <!-- item 3: Altar of Incense -->
+      <g transform="translate(8,272)">
+        <circle cx="6" cy="6" r="5" class="bullet"/>
+        <text class="body" x="18" y="10">金香壇 (Altar of Incense) — 金 / 禱告</text>
+        <text class="body" x="18" y="30">• 代表火熱的禱告與代求；煙雲升起，連通天地。</text>
+      </g>
+
+      <text class="body" x="0" y="352">◎ 敬拜成果：</text>
+      <text class="body" x="18" y="374">- 帶來聖靈的果子與恩賜，裝備人執行基督的工。</text>
+      <text class="body" x="18" y="394">- 代禱成為連通天地的橋樑，為神預備道路。</text>
+    </g>
+  </g>
+
+  <!-- footer note -->
+  <text x="24" y="584" class="subtitle">提示：把整段 SVG 存為 .svg 檔或直接貼入 HTML 即可顯示。</text>
+</svg>
