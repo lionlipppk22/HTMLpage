@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" style="background:#f9fafc;font-family:Arial, sans-serif;">
+  <defs>
+    <style>
+      .card {
+        rx: 16; ry: 16;
+        filter: drop-shadow(1px 3px 4px rgba(0,0,0,0.25));
+      }
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        fill: #fff;
+      }
+      .content {
+        font-size: 14px;
+        fill: #333;
+      }
+    </style>
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffecd2"/>
+      <stop offset="100%" stop-color="#fcb69f"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a1c4fd"/>
+      <stop offset="100%" stop-color="#c2e9fb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 卡片一 -->
+  <rect x="40" y="40" width="520" height="320" fill="url(#grad1)" class="card"/>
+  <text x="60" y="70" class="title">卡片一：尊重是普世權利，還是贏得的榮譽？</text>
+  <text x="60" y="105" class="content">【定義】尊重的來源與條件：人權 vs. 榮譽。</text>
+  <text x="60" y="135" class="content">- 學生方：尊重是與生俱來、無條件的人權。</text>
+  <text x="80" y="160" class="content">• 訴諸基本人性與世代進步，尊重視為文明表現。</text>
+  <text x="60" y="195" class="content">- 柯克方：尊重是選擇性、條件性的。</text>
+  <text x="80" y="220" class="content">• 用極端反例（炸彈客、墮胎者）論證，需靠行為贏得。</text>
+
+  <!-- 卡片二 -->
+  <rect x="640" y="40" width="520" height="300" fill="url(#grad2)" class="card"/>
+  <text x="660" y="70" class="title">卡片二：主觀感受與客觀事實，何者優先？</text>
+  <text x="660" y="105" class="content">【定義】主觀身份認同 vs. 客觀歷史事實的衝突。</text>
+  <text x="660" y="135" class="content">- 學生方：主觀感受優先。</text>
+  <text x="680" y="160" class="content">• 強調情感真實性，避免毀滅性傷害 ("shattering")。</text>
+  <text x="660" y="195" class="content">- 柯克方：客觀事實優先。</text>
+  <text x="680" y="220" class="content">• 引用穆罕默德·阿里舊名與《1984》警告。</text>
+  <text x="680" y="245" class="content">• 主張理性與自由社會須以真實為基石。</text>
+</svg>
