@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="900" viewBox="0 0 500 900">
+  <style>
+    .card {
+      rx: 15;
+      ry: 15;
+      stroke: #333;
+      stroke-width: 1.2;
+      filter: url(#shadow);
+    }
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      fill: #fff;
+    }
+    .text {
+      font-size: 16px;
+      fill: #222;
+    }
+    .bullet {
+      font-weight: bold;
+      fill: #444;
+    }
+  </style>
+
+  <!-- 陰影效果 -->
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="200%" height="200%">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="rgba(80,80,80,0.25)" />
+    </filter>
+
+    <!-- 漸層定義 -->
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff9a9e"/>
+      <stop offset="100%" stop-color="#fad0c4"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a1c4fd"/>
+      <stop offset="100%" stop-color="#c2e9fb"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbc2eb"/>
+      <stop offset="100%" stop-color="#a6c1ee"/>
+    </linearGradient>
+    <linearGradient id="grad4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fddb92"/>
+      <stop offset="100%" stop-color="#d1fdff"/>
+    </linearGradient>
+    <linearGradient id="grad5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#84fab0"/>
+      <stop offset="100%" stop-color="#8fd3f4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 卡片一 -->
+  <rect x="50" y="30" width="450" height="150" class="card" fill="url(#grad1)" />
+  <text x="70" y="65" class="title">🛢️ 原則一：油 (聖靈)</text>
+  <text x="80" y="100" class="bullet">定義：</text>
+  <text x="150" y="100" class="text">象徵聖靈，是服事能力與智慧來源。</text>
+  <text x="80" y="135" class="bullet">準則：</text>
+  <text x="150" y="135" class="text">不是靠勢力才能，乃是靠神的靈方能成事。</text>
+
+  <!-- 卡片二 -->
+  <rect x="50" y="200" width="450" height="150" class="card" fill="url(#grad2)" />
+  <text x="70" y="235" class="title">🧂 原則二：鹽 (關係)</text>
+  <text x="80" y="270" class="bullet">定義：</text>
+  <text x="150" y="270" class="text">象徵調和與立約之鹽，維護關係。</text>
+  <text x="80" y="305" class="bullet">準則：</text>
+  <text x="150" y="305" class="text">對人良善，對神守約。</text>
+
+  <!-- 卡片三 -->
+  <rect x="50" y="370" width="450" height="150" class="card" fill="url(#grad3)" />
+  <text x="70" y="405" class="title">🍞 原則三：酵 (罪)</text>
+  <text x="80" y="440" class="bullet">定義：</text>
+  <text x="150" y="440" class="text">象徵罪，尤其是習慣與之共存的罪。</text>
+  <text x="80" y="475" class="bullet">準則：</text>
+  <text x="150" y="475" class="text">不可帶著罪服事，警惕逐漸麻木。</text>
+
+  <!-- 卡片四 -->
+  <rect x="50" y="540" width="450" height="150" class="card" fill="url(#grad4)" />
+  <text x="70" y="575" class="title">🍯 原則四：蜜 (世俗慰藉)</text>
+  <text x="80" y="610" class="bullet">定義：</text>
+  <text x="150" y="610" class="text">象徵取代神的慰藉，雖非罪卻令人遠離。</text>
+  <text x="80" y="645" class="bullet">準則：</text>
+  <text x="150" y="645" class="text">檢視是否「以別的代替耶和華」。</text>
+
+  <!-- 卡片五 -->
+  <rect x="50" y="710" width="450" height="150" class="card" fill="url(#grad5)" />
+  <text x="70" y="745" class="title">🌸 原則五：乳香 (榮耀)</text>
+  <text x="80" y="780" class="bullet">定義：</text>
+  <text x="150" y="780" class="text">象徵服事產生的香氣，即人的讚美與榮耀。</text>
+  <text x="80" y="815" class="bullet">準則：</text>
+  <text x="150" y="815" class="text">國度權柄榮耀全歸神，不偷竊祂榮耀。</text>
+</svg>
