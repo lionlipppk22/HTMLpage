@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" width="1200" height="1100" role="img" aria-label="三張豐富色彩的豎向卡片">
+  <defs>
+    <!-- 漸層 -->
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#FFB27B" />
+      <stop offset="100%" stop-color="#FF6B6B" />
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#8EC5FF" />
+      <stop offset="100%" stop-color="#6A82FB" />
+    </linearGradient>
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#C3FBD8" />
+      <stop offset="100%" stop-color="#66D6A1" />
+    </linearGradient>
+
+    <!-- 投影 -->
+    <filter id="cardShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="25" stdDeviation="40" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+
+    <!-- 外框陰影 -->
+    <filter id="outerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="30" stdDeviation="45" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+
+    <style><![CDATA[
+      .card-title{ font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif; font-weight:700; font-size:32px; line-height:1.1; color: #08101A }
+      .card-body{ font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif; font-weight:400; font-size:18px; line-height:1.4; color: #08101A }
+      .note{ font-size:14px; color:#DDEBF7 }
+      /* 確保 foreignObject 中的文字可見 */
+      .fo { padding:14px; box-sizing:border-box; }
+    ]]></style>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1200" height="1050" fill="#aaaaaa" />
+
+  <!-- 外框陰影容器 -->
+  <rect x="20" y="20" width="1160" height="760" fill="none" filter="url(#outerShadow)" />
+
+  <!-- 卡片共用參數 -->
+  <!-- 每張卡片寬度 1120 (左右各40 margin)，高度 520，間距 40 -->
+
+  <!-- 卡片 1 -->
+  <g transform="translate(40,40)">
+    <rect x="0" y="0" rx="22" ry="22" width="1120" height="220" fill="url(#g1)" filter="url(#cardShadow)" />
+    <!-- 圖角 左上 -->
+    <g transform="translate(-6,-6) scale(1.3)" fill="#ffffff" stroke="#ffffff" opacity="0.95">
+      <use href="#corner-deco" />
+    </g>
+    <!-- 圖角 右下 -->
+    <g transform="translate(1114,514) rotate(180) scale(1.1)" fill="#ffffff" stroke="#ffffff" opacity="0.85">
+      <use href="#corner-deco" />
+    </g>
+
+    <!-- 使用 foreignObject 包裹 HTML，使字串自動換行不被截斷 -->
+    <foreignObject x="28" y="28" width="1064" height="320">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="fo">
+        <div class="card-title" style="color:#08101A;">💰 核心論點一：重新定義金錢的角色</div>
+        <hr style="border:none;border-top:1px solid rgba(8,16,26,0.12); margin:8px 0 14px 0;" />
+        <div class="card-body" style="color:#08101A;">
+          <p style="margin:0 0 8px 0;">• <strong>定義</strong>：金錢本身並非邪惡，而是一種工具或技術 (Technology)。邪惡的根源在於對金錢的「貪愛」(The love of money)。</p>
+          <p style="margin:0 0 8px 0;">• <strong>聖經依據</strong>：提摩太前書 6:10 — 「貪財是萬惡之根」。</p>
+          <p style="margin:0;">• <strong>應用</strong>：基督徒應學習管理和使用金錢來行善，而非出於貪婪去愛慕它。</p>
+        </div>
+      </div>
+    </foreignObject>
+  </g>
+
+  <!-- 卡片 2 -->
+  <g transform="translate(40,300)">
+    <rect x="0" y="0" rx="22" ry="22" width="1120" height="320" fill="url(#g2)" filter="url(#cardShadow)" />
+    <g transform="translate(-6,-6) scale(1.3)" fill="#ffffff" stroke="#ffffff" opacity="0.95">
+      <use href="#corner-deco" />
+    </g>
+    <g transform="translate(1114,514) rotate(180) scale(1.1)" fill="#ffffff" stroke="#ffffff" opacity="0.85">
+      <use href="#corner-deco" />
+    </g>
+
+    <foreignObject x="28" y="28" width="1064" height="460">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="fo">
+        <div class="card-title" style="color:#021431;">📈 核心論點二：倍增的誡命——才幹的比喻</div>
+        <hr style="border:none;border-top:1px solid rgba(2,20,49,0.12); margin:8px 0 14px 0;" />
+        <div class="card-body" style="color:#021431;">
+          <p style="margin:0 0 8px 0;">• <strong>定義</strong>：才幹的比喻 (Parable of the Talents)：耶穌講述的一個故事，說明神期待祂的子民利用所託付的資源（無論是金錢或技能）去創造更多價值。</p>
+          <p style="margin:0 0 8px 0;">• <strong>聖經依據</strong>：馬太福音 25:14–30 (故事背景)。</p>
+          <p style="margin:0;">• <strong>應用</strong>：神嚴厲譴責那些將恩賜（才幹）閒置和隱藏的人。每個信徒都有責任去識別、發展並倍增神所給予的技能與資源，這也包括財務上的增長。</p>
+        </div>
+      </div>
+    </foreignObject>
+  </g>
+
+  <!-- 卡片 3 -->
+  <g transform="translate(40,660)">
+    <rect x="0" y="0" rx="22" ry="22" width="1120" height="320" fill="url(#g3)" filter="url(#cardShadow)" />
+    <g transform="translate(-6,-6) scale(1.3)" fill="#05402A" stroke="#05402A" opacity="0.95">
+      <use href="#corner-deco" />
+    </g>
+    <g transform="translate(1114,514) rotate(180) scale(1.1)" fill="#05402A" stroke="#05402A" opacity="0.85">
+      <use href="#corner-deco" />
+    </g>
+
+    <foreignObject x="28" y="28" width="1064" height="460">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="fo">
+        <div class="card-title" style="color:#04271E;">🚀 核心論點三：離開舒適圈的呼召</div>
+        <hr style="border:none;border-top:1px solid rgba(4,39,30,0.12); margin:8px 0 14px 0;" />
+        <div class="card-body" style="color:#04271E;">
+          <p style="margin:0 0 8px 0;">• <strong>定義</strong>：真正的信心生活是一場冒險，而非停滯不前的安逸。神呼召祂的子民離開熟悉安穩的環境，走向充滿挑戰但合乎祂心意的未來。</p>
+          <p style="margin:0 0 8px 0;">• <strong>聖經依據</strong>：創世記第十二章（亞伯蘭的呼召）、出埃及記（摩西的呼召）。</p>
+          <p style="margin:0;">• <strong>應用</strong>：信徒不應尋求安逸，而應效法亞伯蘭和摩西，勇敢回應神的呼召，即使這意味著要面對逆境與未知。</p>
+        </div>
+      </div>
+    </foreignObject>
+  </g>
+
+</svg>
