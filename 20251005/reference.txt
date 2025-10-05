@@ -2,6 +2,8 @@
 >來源:
 https://www.youtube.com/live/P4S98GaUhJc?si=u0-joXp_3HqkGPZ9
 
+<audio controls src="out.mp3" title="Title"></audio>
+
 與神相遇：從雅各摔跤的敘事分析生命主權與真實祝福
 ===
 
