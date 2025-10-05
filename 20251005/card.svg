@@ -1,0 +1,73 @@
+    <!-- SVG: 三張垂直卡片，含箭頭與標題 -->
+    <svg viewBox="0 0 900 1400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="雅各的生命轉化三張卡片">
+      <defs>
+        <linearGradient id="gCard" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#ffffff" stop-opacity="1" />
+          <stop offset="1" stop-color="#f3f6ff" stop-opacity="1" />
+        </linearGradient>
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.12" />
+        </filter>
+      </defs>
+
+      <!-- 標題區 -->
+      <rect x="40" y="18" width="820" height="72" rx="14" fill="#0f172a" />
+      <text x="80" y="65" font-size="28" fill="#fff" font-weight="700">雅各的生命轉化歷程 (Jacob's Transformation)</text>
+
+      <!-- Card 1: 之前的狀態 -->
+      <g transform="translate(40,120)">
+        <rect width="820" height="320" rx="18" fill="url(#gCard)" stroke="#e6eaf8" stroke-width="1" filter="url(#softShadow)" />
+        <text x="28" y="52" font-size="20" font-weight="700" fill="#0b1220">之前的狀態：雅各 (יַעֲקֹב) - 「抓取者」</text>
+
+        <g transform="translate(28,84)" font-size="16" fill="#162032">
+          <text x="0" y="0">• 特質: 倚靠自己的聰明與力量、欺騙、抓取名分與祝福。</text>
+          <text x="0" y="34">• 動機: 為自己積累財富與利益。</text>
+          <text x="0" y="68">• 狀態: 內心充滿對以掃的恐懼，試圖用自己的方法解決問題。</text>
+        </g>
+
+        <!-- 下箭頭 -->
+        <g transform="translate(410,300)" fill="#0b1220">
+          <path d="M0 8 L16 8 L8 26 z" transform="translate(-8,6) rotate(180)" opacity="0.9"/>
+        </g>
+      </g>
+
+      <!-- 轉捩點卡 -->
+      <g transform="translate(40,470)">
+        <rect width="820" height="260" rx="18" fill="#fff8ea" stroke="#f1e6d2" stroke-width="1" filter="url(#softShadow)" />
+        <text x="28" y="52" font-size="20" font-weight="700" fill="#5b3a06">轉捩點：亞博渡口的摔跤 (The Turning Point: Wrestling at Jabbok)</text>
+
+        <g transform="translate(28,84)" font-size="16" fill="#3e2b14">
+          <text x="0" y="0">• 事件: 在恐懼的極致中獨處，與神（或祂的使者）整夜摔跤。</text>
+          <text x="0" y="34">• 關鍵行動: 緊抓不放，直到得著神的祝福。</text>
+          <text x="0" y="68">• 代價: 大腿窩被摸了一把，瘸了腿，象徵肉體力量的破碎。</text>
+        </g>
+
+        <!-- 下箭頭 -->
+        <g transform="translate(410,260)" fill="#5b3a06">
+          <path d="M0 8 L16 8 L8 26 z" transform="translate(-8,6)" opacity="0.95"/>
+        </g>
+      </g>
+
+      <!-- Card 3: 之後的狀態 -->
+      <g transform="translate(40,760)">
+        <rect width="820" height="420" rx="18" fill="#eefcf3" stroke="#dff5e1" stroke-width="1" filter="url(#softShadow)" />
+        <text x="28" y="52" font-size="20" font-weight="700" fill="#064023">之後的狀態：以色列 (יִשְׂרָאֵל) - 「與神較力者」</text>
+
+        <g transform="translate(28,84)" font-size="16" fill="#083827">
+          <text x="0" y="0">• 新身份: 被神重新命名，成為神所揀選的子民之代表。</text>
+          <text x="0" y="34">• 祝福: 領受了來自神的直接祝福，而非靠自己抓取。</text>
+          <text x="0" y="68">• 狀態: 親身經歷神的面，內心獲得面對未來的勇氣與把握。</text>
+          <text x="0" y="102">• 記號: 瘸腿成為他一生蒙神恩典的永久記號。</text>
+        </g>
+
+        <!-- 裝飾：小十字與光輝 -->
+        <g transform="translate(680,320)">
+          <circle cx="0" cy="0" r="36" fill="#ffffff" opacity="0.9" />
+          <text x="-18" y="6" font-size="24" font-weight="700" fill="#064023">✦</text>
+        </g>
+      </g>
+
+      <!-- 下方註解框 -->
+      <text x="60" y="1360" font-size="13" fill="#6b7280">設計說明：三張卡片由上而下呈現「之前 → 轉捩點 → 之後」，每張卡突顯標題與要點，適合列印或放在簡報中使用。</text>
+
+    </svg>
