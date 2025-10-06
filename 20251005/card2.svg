@@ -1,0 +1,78 @@
+    <svg viewBox="0 0 920 1100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="講道核心論點卡片">
+      <defs>
+        <linearGradient id="cardGrad" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#ffffff"/>
+          <stop offset="1" stop-color="#f0f7ff"/>
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000" flood-opacity="0.12" />
+        </filter>
+      </defs>
+
+      <!-- Header -->
+      <rect x="40" y="18" width="840" height="72" rx="12" fill="#0b3b61" />
+      <text x="70" y="62" font-size="24" fill="#fff" font-weight="700">核心論點：真實的信仰始於主權的交託</text>
+
+      <!-- Card background container -->
+      <g transform="translate(40,110)">
+        <rect width="840" height="960" rx="14" fill="url(#cardGrad)" stroke="#e6eef9" stroke-width="1" filter="url(#shadow)" />
+
+        <!-- 左側標籤欄 -->
+        <rect x="18" y="24" width="200" height="900" rx="10" fill="#fff" stroke="#e9f1fb" />
+        <text x="28" y="62" font-size="18" font-weight="700" fill="#0b3b61">概覽</text>
+        <line x1="28" y1="72" x2="198" y2="72" stroke="#e6eef9" stroke-width="1" />
+
+        <text x="28" y="110" font-size="14" fill="#253a57">• 定義 (Definition)</text>
+        <text x="28" y="140" font-size="12" fill="#324a6b">真正的基督信仰，不僅是參加宗教活動或尋求庇佑，</text>
+        <text x="28" y="156" font-size="12" fill="#324a6b">而是與神建立真實的個人關係，並在此關係中，</text>
+        <text x="28" y="172" font-size="12" fill="#324a6b">將生命的最終主導權完全交給神。</text>
+
+        <text x="28" y="210" font-size="14" fill="#253a57">• 論證方法/步驟</text>
+        <text x="28" y="238" font-size="12" fill="#324a6b">1. 危機是與神相遇的契機</text>
+        <text x="28" y="254" font-size="12" fill="#324a6b">2. 摔跤比喻：降服前的掙扎</text>
+        <text x="28" y="270" font-size="12" fill="#324a6b">3. 生命改變是祝福的證據</text>
+        <text x="28" y="286" font-size="12" fill="#324a6b">4. 將信仰應用於日常生活</text>
+
+        <text x="28" y="330" font-size="14" fill="#253a57">• 關鍵例證 (Key Examples)</text>
+        <text x="28" y="360" font-size="12" fill="#324a6b">- 聖經: 雅各與神摔跤，得名以色列</text>
+        <text x="28" y="380" font-size="12" fill="#324a6b">- 個人見證(講者)與生活應用</text>
+
+        <!-- 右側詳細區 -->
+        <g transform="translate(240,24)">
+          <!-- Definition box -->
+          <rect width="570" height="160" rx="10" fill="#ffffff" stroke="#dbeaf8" />
+          <text x="20" y="36" font-size="16" font-weight="700" fill="#0b445f">[ 定義 (Definition) ]</text>
+          <text x="20" y="68" font-size="14" fill="#173a57">真正的基督信仰，不僅是參加宗教活動或尋求庇佑，</text>
+          <text x="20" y="86" font-size="14" fill="#173a57">而是與神建立真實的個人關係，並在此關係中，</text>
+          <text x="20" y="104" font-size="14" fill="#173a57">將生命的最終主導權完全交給神。</text>
+
+          <!-- Method/Steps box -->
+          <rect y="184" width="570" height="240" rx="10" fill="#fffdf6" stroke="#fbf0d9" />
+          <text x="20" y="214" font-size="16" font-weight="700" fill="#6b4b00">[ 論證方法/步驟 (Method/Steps) ]</text>
+          <text x="20" y="246" font-size="14" fill="#5a3f09">1. 闡明危機是與神相遇的契機 (Crisis as Opportunity for Encounter)。</text>
+          <text x="20" y="270" font-size="14" fill="#5a3f09">2. 透過摔跤的比喻，強調降服前的掙扎過程 (Struggle before Surrender)。</text>
+          <text x="20" y="294" font-size="14" fill="#5a3f09">3. 指出生命被改變是得著真祝福的明證 (Transformation as True Blessing)。</text>
+          <text x="20" y="318" font-size="14" fill="#5a3f09">4. 挑戰聽眾將信仰原則應用於實際生活 (Call to Practical Application)。</text>
+
+          <!-- Key Examples box -->
+          <rect y="444" width="570" height="320" rx="10" fill="#f7fffa" stroke="#e6f9ee" />
+          <text x="20" y="478" font-size="16" font-weight="700" fill="#114532">[ 關鍵例證 (Key Examples) ]</text>
+
+          <text x="20" y="510" font-size="14" fill="#0f3a2e">- 聖經例證: 雅各因恐懼而獨處，最終與神摔跤並得名「以色列」。</text>
+
+          <text x="20" y="538" font-size="14" fill="#0f3a2e">- 個人見證 (講者):</text>
+          <text x="40" y="564" font-size="13" fill="#0f3a2e">• 在金門當兵時，經歷與又真又活的神親近並蒙召全職事奉。</text>
+          <text x="40" y="584" font-size="13" fill="#0f3a2e">• 面對家族期待與個人規劃時，在與神的「拔河」中掙扎後順服呼召。</text>
+          <text x="40" y="604" font-size="13" fill="#0f3a2e">• 接任總幹事並承擔兩億九千萬建堂募款壓力時，學習信靠神。</text>
+
+          <text x="20" y="636" font-size="14" fill="#0f3a2e">- 生活應用:</text>
+          <text x="40" y="662" font-size="13" fill="#0f3a2e">• 禱告的焦點應從個人所需轉向「先求神的國和神的義」。</text>
+          <text x="40" y="682" font-size="13" fill="#0f3a2e">• 基督徒應活出與新名字相稱的生命，對周遭社區展現上帝的愛。</text>
+
+        </g>
+
+      </g>
+
+      <!-- Footer note -->
+      <text x="60" y="1088" font-size="12" fill="#6b7280">說明：卡片分為「定義、方法、例證」三個區塊，方便講道時快速提示要點。</text>
+    </svg>
