@@ -1,0 +1,36 @@
+<svg width="800" height="1300" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <style>
+    .card-title { font-size: 20px; font-weight: bold; fill: #fff; }
+    .card-sub { font-size: 14px; fill: #fff; }
+  </style>
+
+  <!-- 卡片一 -->
+  <rect x="50" y="20" width="700" height="220" rx="15" fill="#4A90E2"/>
+  <text x="70" y="50" class="card-title">論點一：蒙召的牧童君王 (The Called Shepherd-King)</text>
+  <text x="70" y="90" class="card-sub">定義：神不看外貌，只看內心。祂的揀選超越人的邏輯與社會地位。</text>
+  <text x="70" y="130" class="card-sub">核心：從牧羊到治理國家，展現了神能使用最卑微的人成就祂的旨意。</text>
+
+  <!-- 卡片二 -->
+  <rect x="50" y="260" width="700" height="220" rx="15" fill="#50E3C2"/>
+  <text x="70" y="290" class="card-title">論點二：逃亡中的信心偉人 (The Man of Faith in Exile)</text>
+  <text x="70" y="330" class="card-sub">定義：在被追殺的歲月中，大衛的品格與對神的信靠受到了最嚴峻的考驗與塑造。</text>
+  <text x="70" y="370" class="card-sub">核心：逆境是塑造領袖的熔爐，而非毀滅的盡頭。</text>
+
+  <!-- 卡片三 -->
+  <rect x="50" y="500" width="700" height="220" rx="15" fill="#F5A623"/>
+  <text x="70" y="530" class="card-title">論點三：身兼二職的君尊祭司 (The Royal Priest-King)</text>
+  <text x="70" y="570" class="card-sub">定義：大衛在特定時刻承擔了祭司的職能，預示了一位將集君王與祭司身份於一身的未來掌權者。</text>
+  <text x="70" y="610" class="card-sub">核心：此角色打破了當時的常規，指向了麥基洗德的等次，並最終應驗在耶穌基督身上。</text>
+
+  <!-- 卡片四 -->
+  <rect x="50" y="740" width="700" height="220" rx="15" fill="#D0021B"/>
+  <text x="70" y="770" class="card-title">論點四：勝利中的墮落罪人 (The Fallen Sinner in Victory)</text>
+  <text x="70" y="810" class="card-sub">定義：即使是合神心意的人，在權力與安逸的頂峰也可能陷入罪的網羅。</text>
+  <text x="70" y="850" class="card-sub">核心：揭示了人性的普遍軟弱，以及罪惡深遠的破壞性後果。</text>
+
+  <!-- 卡片五 -->
+  <rect x="50" y="980" width="700" height="220" rx="15" fill="#9013FE"/>
+  <text x="70" y="1010" class="card-title">論點五：指向永恆的彌賽亞預表 (The Messianic Foreshadow)</text>
+  <text x="70" y="1050" class="card-sub">定義：大衛的一生，無論是榮耀還是失敗，最終都成為一個記號，指向那位真正完美、永不失敗的君王。</text>
+  <text x="70" y="1090" class="card-sub">核心：他的故事不是終點，而是救贖歷史中一個關鍵的篇章，為耶穌基督的到來鋪平了道路。</text>
+</svg>

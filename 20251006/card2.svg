@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1500" viewBox="0 0 960 1500">
+  <defs>
+    <style>
+      .node rect, .node polygon, .node ellipse {
+        stroke-width: 2px;
+        stroke: #333;
+      }
+      .node-text {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 16px;
+        fill: #000;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      .edge path {
+        fill: none;
+        stroke: #333;
+        stroke-width: 2px;
+      }
+      .edge marker {
+        fill: #333;
+      }
+      /* Node Styles */
+      .stage-early { fill: #e0f7fa; stroke: #00796b; }
+      .stage-fugitive { fill: #fff3e0; stroke: #f57c00; }
+      .stage-king-rise { fill: #e8f5e9; stroke: #388e3c; }
+      .stage-king-fall { fill: #ffebee; stroke: #d32f2f; }
+      .stage-end { fill: #f3e5f5; stroke: #7b1fa2; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" />
+    </marker>
+  </defs>
+  <g transform="translate(50, 50)">
+    <g id="node-A">
+      <rect x="300" y="0" width="280" height="90" rx="10" ry="10" class="stage-early" />
+      <text x="440" y="25" class="node-text">牧童時期</text>
+      <text x="440" y="50" class="node-text">在伯利恆被撒母耳膏立</text>
+      <text x="440" y="75" class="node-text">約15歲，歷時1年</text>
+    </g>
+    <g id="node-B">
+      <rect x="300" y="120" width="280" height="70" rx="10" ry="10" class="stage-early" />
+      <text x="440" y="145" class="node-text">擊敗巨人歌利亞</text>
+      <text x="440" y="170" class="node-text">一戰成名<br/>約16歲，持續1年</text>
+    </g>
+    <g id="node-C">
+      <polygon points="440,220 580,265 440,310 300,265" class="stage-fugitive" />
+      <text x="440" y="255" class="node-text">曠野逃亡時期</text>
+      <text x="440" y="280" class="node-text">約17-29歲，歷時13年</text>
+    </g>
+    <g id="node-D">
+      <rect x="50" y="340" width="280" height="70" rx="10" ry="10" class="stage-fugitive" />
+      <text x="190" y="365" class="node-text">因掃羅王嫉妒</text>
+      <text x="190" y="390" class="node-text">被迫流亡<br/>約17-29歲</text>
+    </g>
+    <g id="node-E">
+      <rect x="550" y="340" width="280" height="70" rx="10" ry="10" class="stage-fugitive" />
+      <text x="690" y="365" class="node-text">兩次放過掃羅</text>
+      <text x="690" y="390" class="node-text">彰顯敬畏之心<br/>約20多歲</text>
+    </g>
+    <g id="node-F">
+      <rect x="300" y="440" width="280" height="70" rx="10" ry="10" class="stage-king-rise" />
+      <text x="440" y="465" class="node-text">成為猶大王</text>
+      <text x="440" y="490" class="node-text">在希伯崙登基<br/>30歲，統治7年半</text>
+    </g>
+    <g id="node-G">
+      <rect x="300" y="540" width="280" height="70" rx="10" ry="10" class="stage-king-rise" />
+      <text x="440" y="565" class="node-text">統一以色列</text>
+      <text x="440" y="590" class="node-text">定都耶路撒冷<br/>37歲，作王33年</text>
+    </g>
+    <g id="node-H">
+      <rect x="300" y="640" width="280" height="70" rx="10" ry="10" class="stage-king-rise" />
+      <text x="440" y="665" class="node-text">迎回約櫃</text>
+      <text x="440" y="690" class="node-text">顯露君尊祭司身份<br/>40歲左右</text>
+    </g>
+    <g id="node-I">
+      <polygon points="440,740 580,785 440,830 300,785" class="stage-king-fall" />
+      <text x="440" y="775" class="node-text">王權巔峰與墮落</text>
+      <text x="440" y="800" class="node-text">40-50多歲</text>
+    </g>
+    <g id="node-J">
+      <rect x="50" y="860" width="280" height="70" rx="10" ry="10" class="stage-king-fall" />
+      <text x="190" y="885" class="node-text">犯下姦淫與謀殺之罪</text>
+      <text x="190" y="910" class="node-text">與拔示巴<br/>約50歲</text>
+    </g>
+    <g id="node-K">
+      <rect x="550" y="860" width="280" height="70" rx="10" ry="10" class="stage-king-fall" />
+      <text x="690" y="885" class="node-text">家庭悲劇</text>
+      <text x="690" y="910" class="node-text">押沙龍叛變<br/>大約55-61歲</text>
+    </g>
+    <g id="node-L">
+      <rect x="300" y="960" width="280" height="70" rx="10" ry="10" class="stage-king-fall" />
+      <text x="440" y="985" class="node-text">晚年之罪</text>
+      <text x="440" y="1010" class="node-text">數點百姓，不信靠神<br/>約69歲</text>
+    </g>
+    <g id="node-M">
+      <rect x="300" y="1060" width="280" height="90" rx="10" ry="10" class="stage-end" />
+      <text x="440" y="1085" class="node-text">最終形象</text>
+      <text x="440" y="1110" class="node-text">承認己罪，指向那位完美的君王</text>
+      <text x="440" y="1135" class="node-text">70歲逝世</text>
+    </g>
+    <path class="edge" d="M 440 90 L 440 120" marker-end="url(#arrow)" />
+    <path class="edge" d="M 440 190 L 440 220" marker-end="url(#arrow)" />
+    <path class="edge" d="M 370 310 L 260 340" marker-end="url(#arrow)" />
+    <path class="edge" d="M 510 310 L 620 340" marker-end="url(#arrow)" />
+    <path class="edge" d="M 690 410 L 690 425 L 440 425 L 440 440" marker-end="url(#arrow)" />
+    <path class="edge" d="M 440 510 L 440 540" marker-end="url(#arrow)" />
+    <path class="edge" d="M 440 610 L 440 640" marker-end="url(#arrow)" />
+    <path class="edge" d="M 440 710 L 440 740" marker-end="url(#arrow)" />
+    <path class="edge" d="M 370 830 L 260 860" marker-end="url(#arrow)" />
+    <path class="edge" d="M 510 830 L 620 860" marker-end="url(#arrow)" />
+    <path class="edge" d="M 690 930 L 690 945 L 440 945 L 440 960" marker-end="url(#arrow)" />
+    <path class="edge" d="M 440 1030 L 440 1060" marker-end="url(#arrow)" />
+  </g>
+</svg>
