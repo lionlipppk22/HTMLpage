@@ -1,0 +1,43 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="400" fill="#f8f9fa" stroke="#e9ecef" stroke-width="3" rx="20"/>
+
+  <!-- 標題區域 -->
+  <rect width="800" height="70" fill="#007bff" rx="20"/>
+  <text x="400" y="42" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    論點綱要卡片：兒童發展觀察
+  </text>
+
+  <!-- 定義區域 -->
+  <rect x="40" y="90" width="720" height="100" fill="white" stroke="#dee2e6" stroke-width="2" rx="10"/>
+  <text x="60" y="120" fill="#495057" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    定義：
+  </text>
+  <text x="60" y="150" fill="#212529" font-family="Arial, sans-serif" font-size="16">
+    「生長」指器官體積的變化（如身高、體重），「發展」指能力上的進步與成熟（如認知、語言）。
+  </text>
+
+  <!-- 方法步驟區域 -->
+  <rect x="40" y="210" width="720" height="110" fill="white" stroke="#dee2e6" stroke-width="2" rx="10"/>
+  <text x="60" y="240" fill="#495057" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    方法/步驟：
+  </text>
+  <text x="60" y="265" fill="#212529" font-family="Arial, sans-serif" font-size="16">
+    1. 定期記錄身高、體重、頭圍。
+  </text>
+  <text x="60" y="290" fill="#212529" font-family="Arial, sans-serif" font-size="16">
+    2. 觀察寶貝的生活狀況、行為反應及行為技巧。
+  </text>
+  <text x="60" y="315" fill="#212529" font-family="Arial, sans-serif" font-size="16">
+    3. 搭配0至6歲兒童的發展歷程項目，掌握發展情形。
+  </text>
+
+  <!-- 提醒區域 -->
+  <rect x="40" y="340" width="720" height="50" fill="#fff3cd" stroke="#ffeaa7" stroke-width="2" rx="10"/>
+  <text x="60" y="365" fill="#856404" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    提醒：
+  </text>
+  <text x="60" y="382" fill="#856404" font-family="Arial, sans-serif" font-size="14">
+    若發現疑似發展遲緩的跡象，應盡快尋求專業評估，把握及早介入的黃金時間，用最適合的方式陪伴孩子進步。
+  </text>
+</svg>

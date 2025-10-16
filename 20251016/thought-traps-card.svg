@@ -1,0 +1,99 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定義漸層 -->
+  <defs>
+    <!-- 背景漸層 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 標題漸層 -->
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 定義區域漸層 -->
+    <linearGradient id="definitionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e3f2fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bbdefb;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 方法區域漸層 -->
+    <linearGradient id="methodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fff3e0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcc80;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 範例區域漸層 -->
+    <linearGradient id="exampleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e8f5e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 陰影濾鏡 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#00000030"/>
+    </filter>
+  </defs>
+
+  <!-- 主背景 -->
+  <rect width="800" height="450" fill="url(#bgGradient)" rx="25"/>
+
+  <!-- 裝飾性圓圈 -->
+  <circle cx="100" cy="80" r="60" fill="#ffffff20" opacity="0.3"/>
+  <circle cx="700" cy="100" r="80" fill="#ffffff15" opacity="0.2"/>
+  <circle cx="150" cy="350" r="50" fill="#ffffff25" opacity="0.3"/>
+  <circle cx="650" cy="380" r="70" fill="#ffffff20" opacity="0.2"/>
+
+  <!-- 主卡片背景 -->
+  <rect x="40" y="30" width="720" height="390" fill="#ffffff" stroke="#e0e0e0" stroke-width="2" rx="20" filter="url(#shadow)"/>
+
+  <!-- 標題區域 -->
+  <rect x="50" y="45" width="700" height="70" fill="url(#titleGradient)" rx="15"/>
+  <text x="400" y="75" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    論點綱要卡片：拆解思想陷阱
+  </text>
+  <text x="400" y="95" text-anchor="middle" fill="#6c757d" font-family="Arial, sans-serif" font-size="14">
+    辨識並化解負面思考模式
+  </text>
+
+  <!-- 定義區域 -->
+  <rect x="60" y="130" width="680" height="90" fill="url(#definitionGradient)" stroke="#2196f3" stroke-width="2" rx="12"/>
+  <text x="80" y="155" fill="#1565c0" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    定義：
+  </text>
+  <text x="80" y="180" fill="#2c3e50" font-family="Arial, sans-serif" font-size="15">
+    思想陷阱是在壓力下面對個人價值觀時，即時引發的偏差、自動化的想法。
+  </text>
+
+  <!-- 方法步驟區域 -->
+  <rect x="60" y="235" width="680" height="130" fill="url(#methodGradient)" stroke="#ff9800" stroke-width="2" rx="12"/>
+  <text x="80" y="260" fill="#e65100" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    方法/步驟：
+  </text>
+  <text x="80" y="285" fill="#2c3e50" font-family="Arial, sans-serif" font-size="15">
+    學習「五常法」中的核心步驟「常反問自己」。可運用三種自我對話技巧：
+  </text>
+  <text x="80" y="310" fill="#d84315" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    1. 邏輯與實證：問自己「這個想法有證據嗎？」
+  </text>
+  <text x="80" y="330" fill="#d84315" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    2. 其他可能性：「事情還有沒有別的解釋？」
+  </text>
+  <text x="80" y="350" fill="#d84315" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    3. 想想後果：「持續這樣想對我有什麼影響？」
+  </text>
+
+  <!-- 範例區域 -->
+  <rect x="60" y="380" width="680" height="50" fill="url(#exampleGradient)" stroke="#4caf50" stroke-width="2" rx="12"/>
+  <text x="80" y="395" fill="#1b5e20" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    範例：
+  </text>
+  <text x="80" y="410" fill="#2e7d32" font-family="Arial, sans-serif" font-size="13">
+    針對「非黑即白」的思想陷阱，可以自我反問：「是否一定是這樣？有沒有灰色地帶？」
+  </text>
+
+</svg>
