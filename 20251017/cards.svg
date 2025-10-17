@@ -1,0 +1,123 @@
+<svg width="600" height="1200" viewBox="0 0 600 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8E53;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#44A08D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#45B7D1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#96C93D;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="#00000030"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="600" height="1200" fill="#f8f9fa"/>
+
+  <!-- 標題 -->
+  <text x="300" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">
+    聖經省思：三大核心論點綱要卡片
+  </text>
+
+  <!-- 卡片1：索多瑪事件 -->
+  <g transform="translate(30, 80)">
+    <!-- 卡片背景 -->
+    <rect x="0" y="0" width="540" height="280" rx="15" fill="url(#cardGradient1)" filter="url(#shadow)"/>
+
+    <!-- 卡片標題 -->
+    <text x="270" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+      綱要卡片一：索多瑪事件
+    </text>
+
+    <!-- 定義 -->
+    <text x="25" y="60" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">定義：</text>
+    <text x="25" y="85" font-family="Arial, sans-serif" font-size="12" fill="white">聖經中上帝對罪惡滿盈的平原城市進行毀滅性審判的標誌性事件。</text>
+
+    <!-- 科學探究路徑 -->
+    <text x="25" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">科學探究路徑：</text>
+    <circle cx="35" cy="145" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="150" font-family="Arial, sans-serif" font-size="11" fill="white">1. 文本分析 (從創世記 13 章確定地理方位)</text>
+    <circle cx="35" cy="175" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="180" font-family="Arial, sans-serif" font-size="11" fill="white">2. 考古發掘 (在 Tall el-Hammam 等地尋找青銅時代中期的大型城市遺址)</text>
+    <circle cx="35" cy="205" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="210" font-family="Arial, sans-serif" font-size="11" fill="white">3. 災難成因分析 (檢驗高溫證據，提出隕石空爆或地質爆燃等物理模型)</text>
+
+    <!-- 牧者省思 -->
+    <text x="25" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">牧者省思：</text>
+    <text x="25" y="265" font-family="Arial, sans-serif" font-size="11" fill="white">此事件的核心教訓是上帝的公義與對罪的憎惡。重要的是我們生命中遠離罪惡。</text>
+  </g>
+
+  <!-- 卡片2：出埃及事件 -->
+  <g transform="translate(30, 390)">
+    <!-- 卡片背景 -->
+    <rect x="0" y="0" width="540" height="300" rx="15" fill="url(#cardGradient2)" filter="url(#shadow)"/>
+
+    <!-- 卡片標題 -->
+    <text x="270" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+      綱要卡片二：出埃及事件
+    </text>
+
+    <!-- 定義 -->
+    <text x="25" y="60" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">定義：</text>
+    <text x="25" y="85" font-family="Arial, sans-serif" font-size="12" fill="white">上帝以大能將祂的子民以色列人從埃及的奴役中拯救出來的foundational story。</text>
+
+    <!-- 科學探究路徑 -->
+    <text x="25" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">科學探究路徑：</text>
+    <circle cx="35" cy="145" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="150" font-family="Arial, sans-serif" font-size="11" fill="white">1. 語言學重譯 (探討 Yam Suf 為「蘆葦海」的可能性)</text>
+    <circle cx="35" cy="175" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="180" font-family="Arial, sans-serif" font-size="11" fill="white">2. 自然現象類比 (研究「風降」使淺水區乾涸的現象)</text>
+    <circle cx="35" cy="205" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="210" font-family="Arial, sans-serif" font-size="11" fill="white">3. 歷史事件關聯 (將軍隊覆滅與聖托里尼火山海嘯等古代大災難聯繫)</text>
+
+    <!-- 牧者省思 -->
+    <text x="25" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">牧者省思：</text>
+    <text x="25" y="265" font-family="Arial, sans-serif" font-size="11" fill="white">神蹟的不必然違背自然律，是上帝在「對的時間」、「對的地點」，精準地調動與掌管這一切自然力量。</text>
+  </g>
+
+  <!-- 卡片3：信仰與證據 -->
+  <g transform="translate(30, 720)">
+    <!-- 卡片背景 -->
+    <rect x="0" y="0" width="540" height="280" rx="15" fill="url(#cardGradient3)" filter="url(#shadow)"/>
+
+    <!-- 卡片標題 -->
+    <text x="270" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+      綱要卡片三：信仰與證據
+    </text>
+
+    <!-- 定義 -->
+    <text x="25" y="60" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">定義：</text>
+    <text x="25" y="85" font-family="Arial, sans-serif" font-size="12" fill="white">基督徒在面對聖經歷史性的科學探究時，所應持有的平衡態度。</text>
+
+    <!-- 實踐步驟 -->
+    <text x="25" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">實踐步驟：</text>
+    <circle cx="35" cy="145" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="150" font-family="Arial, sans-serif" font-size="11" fill="white">1. 堅信聖經 (以聖經的核心神學真理為根基)</text>
+    <circle cx="35" cy="175" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="180" font-family="Arial, sans-serif" font-size="11" fill="white">2. 開放學習 (以謙卑的心態了解考古學和歷史學的發現)</text>
+    <circle cx="35" cy="205" r="10" fill="white" opacity="0.8"/>
+    <text x="55" y="210" font-family="Arial, sans-serif" font-size="11" fill="white">3. 審慎分辨 (區分嚴謹的學術研究與不可靠的偽科學或sensationalist claims)</text>
+
+    <!-- 應用範例 -->
+    <text x="25" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">應用範例：</text>
+    <text x="25" y="265" font-family="Arial, sans-serif" font-size="11" fill="white">我們的反應不是立刻盲目接受，而是去查證，從而建立一個經得起考驗、更加成熟的信心。</text>
+  </g>
+
+  <!-- 裝飾元素 -->
+  <g opacity="0.1">
+    <!-- 連接線條 -->
+    <path d="M300 370 L300 390" stroke="#FF6B6B" stroke-width="4" stroke-dasharray="5,5"/>
+    <path d="M300 700 L300 720" stroke="#4ECDC4" stroke-width="4" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- 底部文字 -->
+  <text x="300" y="1180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    基於參考資料建立的視覺化卡片總結
+  </text>
+</svg>
