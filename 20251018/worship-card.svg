@@ -1,0 +1,65 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 漸層背景 -->
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e9ecef;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dee2e6;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 邊框陰影 -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000020"/>
+    </filter>
+
+    <!-- 標題文字陰影 -->
+    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#00000030"/>
+    </filter>
+  </defs>
+
+  <!-- 卡片背景 -->
+  <rect width="400" height="600" rx="15" ry="15" fill="url(#cardGradient)" filter="url(#dropShadow)"/>
+
+  <!-- 裝飾邊框 -->
+  <rect x="10" y="10" width="380" height="580" rx="12" ry="12" fill="none" stroke="#6c757d" stroke-width="2" opacity="0.3"/>
+
+  <!-- 標題區域背景 -->
+  <rect x="20" y="20" width="360" height="80" rx="8" ry="8" fill="#495057" opacity="0.9"/>
+
+  <!-- 主標題 -->
+  <text x="200" y="45" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle" filter="url(#textShadow)">論點綱要：卓越的敬拜獻祭</text>
+
+  <!-- 定義區域 -->
+  <rect x="30" y="110" width="340" height="90" rx="5" ry="5" fill="#fff3cd" stroke="#ffc107" stroke-width="1" opacity="0.8"/>
+  <text x="40" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#856404">定義 (Definition):</text>
+  <text x="40" y="150" font-family="Arial, sans-serif" font-size="12" fill="#856404">將每一次敬拜事奉視為對至高神的獻祭，因此在心態、</text>
+  <text x="40" y="170" font-family="Arial, sans-serif" font-size="12" fill="#856404">策略與所有細節上，都追求配得過神的榮耀的卓越。</text>
+
+  <!-- 核心原則區域 -->
+  <rect x="30" y="210" width="340" height="80" rx="5" ry="5" fill="#d4edda" stroke="#28a745" stroke-width="1" opacity="0.8"/>
+  <text x="40" y="230" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#155724">核心原則 (Core Principle):</text>
+  <text x="40" y="250" font-family="Arial, sans-serif" font-size="12" fill="#155724">「神配得我們最好的。」 (God is worthy of our best.)</text>
+  <text x="40" y="270" font-family="Arial, sans-serif" font-size="12" fill="#155724">神的榮耀永遠優先於人的感動。</text>
+
+  <!-- 實踐方法區域 -->
+  <rect x="30" y="300" width="340" height="100" rx="5" ry="5" fill="#d1ecf1" stroke="#17a2b8" stroke-width="1" opacity="0.8"/>
+  <text x="40" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0c5460">實踐方法 (Practical Methods):</text>
+  <text x="40" y="340" font-family="Arial, sans-serif" font-size="12" fill="#0c5460">1. 策略選歌：採用「套餐」原則，而非「自助餐」。</text>
+  <text x="40" y="360" font-family="Arial, sans-serif" font-size="12" fill="#0c5460">2. 團隊紀律：注意站位、肢體語言等舞台呈現細節。</text>
+  <text x="40" y="380" font-family="Arial, sans-serif" font-size="12" fill="#0c5460">3. 持續成長：建立提前審核歌單的督導與回饋機制。</text>
+
+  <!-- 需避免的誤區區域 -->
+  <rect x="30" y="410" width="340" height="70" rx="5" ry="5" fill="#f8d7da" stroke="#dc3545" stroke-width="1" opacity="0.8"/>
+  <text x="40" y="430" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#721c24">需避免的誤區 (Misconception to Avoid):</text>
+  <text x="40" y="450" font-family="Arial, sans-serif" font-size="12" fill="#721c24">認為對細節的講究是「龜毛」或律法主義。事實上，</text>
+  <text x="40" y="470" font-family="Arial, sans-serif" font-size="12" fill="#721c24">這是源於對服事對象的極度尊崇。</text>
+
+  <!-- 裝飾元素 -->
+  <circle cx="350" cy="550" r="20" fill="#6f42c1" opacity="0.3"/>
+  <circle cx="50" cy="550" r="15" fill="#e83e8c" opacity="0.3"/>
+
+  <!-- 底部裝飾線條 -->
+  <line x1="30" y1="520" x2="370" y2="520" stroke="#6c757d" stroke-width="2" opacity="0.5"/>
+  <text x="200" y="540" font-family="Arial, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle">✨ 願一切榮耀歸於神 ✨</text>
+</svg>
