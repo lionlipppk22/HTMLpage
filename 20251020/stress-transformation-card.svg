@@ -1,0 +1,136 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 多彩漸層定義 -->
+    <linearGradient id="rainbowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#f5576c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4facfe;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 柔和陰影濾鏡 -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#00000020"/>
+    </filter>
+
+    <!-- 內部陰影濾鏡 -->
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="2"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 主卡片背景 -->
+  <rect width="800" height="1000" fill="url(#rainbowGradient)" rx="20"/>
+
+  <!-- 裝飾性圓形元素 -->
+  <circle cx="100" cy="100" r="80" fill="#ffffff20" opacity="0.3"/>
+  <circle cx="700" cy="150" r="60" fill="#ffffff15" opacity="0.4"/>
+  <circle cx="150" cy="900" r="90" fill="#ffffff25" opacity="0.2"/>
+  <circle cx="650" cy="850" r="70" fill="#ffffff20" opacity="0.3"/>
+
+  <!-- 卡片主體容器 -->
+  <rect x="80" y="80" width="640" height="840" fill="#ffffff" stroke="#e0e0e0" stroke-width="2" rx="15" filter="url(#softShadow)"/>
+
+  <!-- 標題區域 -->
+  <rect x="100" y="100" width="600" height="80" fill="#f8f9ff" stroke="#e8ebff" stroke-width="1" rx="10"/>
+  <text x="400" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2d3748">
+    壓力轉化實踐卡
+  </text>
+  <text x="400" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#718096">
+    Stress Transformation Practice Card
+  </text>
+
+  <!-- 核心理念區域 -->
+  <rect x="120" y="200" width="560" height="100" fill="#fff5f5" stroke="#fed7d7" stroke-width="1" rx="8"/>
+  <text x="140" y="225" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#c53030">
+    核心理念：
+  </text>
+  <text x="400" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#2d3748">
+    壓力是中性的能量，你的心態決定它的方向。
+  </text>
+  <text x="400" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#718096" font-style="italic">
+    The core idea: Stress is neutral energy; your mindset determines its direction.
+  </text>
+
+  <!-- 目標區域 -->
+  <rect x="120" y="320" width="560" height="60" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1" rx="8"/>
+  <text x="140" y="340" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#22543d">
+    目標 (Goal):
+  </text>
+  <text x="400" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#2d3748">
+    從「威脅模式」切換至「挑戰模式」
+  </text>
+  <text x="400" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#718096" font-style="italic">
+    Switch from "Threat Mode" to "Challenge Mode"
+  </text>
+
+  <!-- 方法步驟標題 -->
+  <text x="140" y="420" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2d3748">
+    方法/步驟 (Method/Steps):
+  </text>
+
+  <!-- 步驟 1 -->
+  <rect x="120" y="440" width="560" height="80" fill="#e6fffa" stroke="#81e6d9" stroke-width="1" rx="8"/>
+  <circle cx="150" cy="470" r="8" fill="#319795"/>
+  <text x="170" y="460" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#234e52">
+    1. 覺察 (Acknowledge):
+  </text>
+  <text x="140" y="485" font-family="Arial, sans-serif" font-size="14" fill="#2d3748">
+    當感到心跳加速、呼吸急促時，告訴自己：「我的身體正在準備進入最佳狀態。」
+  </text>
+  <text x="140" y="505" font-family="Arial, sans-serif" font-size="12" fill="#718096" font-style="italic">
+    When you feel your heart racing, tell yourself: "My body is preparing for peak performance."
+  </text>
+
+  <!-- 步驟 2 -->
+  <rect x="120" y="540" width="560" height="80" fill="#ebf8ff" stroke="#bee3f8" stroke-width="1" rx="8"/>
+  <circle cx="150" cy="570" r="8" fill="#3182ce"/>
+  <text x="170" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2a4365">
+    2. 深呼吸 (Breathe):
+  </text>
+  <text x="140" y="585" font-family="Arial, sans-serif" font-size="14" fill="#2d3748">
+    閉上眼，將呼吸放慢至每分鐘4-6次。這能增加心率變異性，讓身心暫時脫離緊張。
+  </text>
+  <text x="140" y="605" font-family="Arial, sans-serif" font-size="12" fill="#718096" font-style="italic">
+    Close your eyes and slow your breathing to 4-6 breaths per minute. This increases HRV and provides a brief escape from tension.
+  </text>
+
+  <!-- 步驟 3 -->
+  <rect x="120" y="640" width="560" height="80" fill="#fffaf0" stroke="#fbd38d" stroke-width="1" rx="8"/>
+  <circle cx="150" cy="670" r="8" fill="#d69e2e"/>
+  <text x="170" y="660" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#744210">
+    3. 重新詮釋 (Reframe):
+  </text>
+  <text x="140" y="685" font-family="Arial, sans-serif" font-size="14" fill="#2d3748">
+    將腦中的負面想法（我會失敗）轉化為正向的自我對話（這是一個成長的機會）。
+  </text>
+  <text x="140" y="705" font-family="Arial, sans-serif" font-size="12" fill="#718096" font-style="italic">
+    Reframe negative thoughts like "I will fail" into positive self-talk like "This is an opportunity to grow."
+  </text>
+
+  <!-- 步驟 4 -->
+  <rect x="120" y="740" width="560" height="80" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1" rx="8"/>
+  <circle cx="150" cy="770" r="8" fill="#4a5568"/>
+  <text x="170" y="760" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2d3748">
+    4. 專注當下 (Focus):
+  </text>
+  <text x="140" y="785" font-family="Arial, sans-serif" font-size="14" fill="#2d3748">
+    將注意力集中在眼前最重要的事上。昨日已過，明日未到，專心處理此刻的任務。
+  </text>
+  <text x="140" y="805" font-family="Arial, sans-serif" font-size="12" fill="#718096" font-style="italic">
+    Concentrate on the most important task at hand. Yesterday is gone, tomorrow is not yet here. Focus on the now.
+  </text>
+
+  <!-- 裝飾性曲線 -->
+  <path d="M 100 900 Q 400 850 700 900" stroke="#ffffff40" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 150 950 Q 400 920 650 950" stroke="#ffffff30" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>
