@@ -1,0 +1,53 @@
+<svg width="500" height="800" viewBox="0 0 500 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 多彩漸層定義 -->
+    <linearGradient id="tombstoneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a4a4a;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#6e6e6e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8e8e8e;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#aeaeae;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cecece;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 陰影濾鏡 -->
+    <filter id="tombShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="5" dy="8" stdDeviation="10" flood-color="#00000050"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="500" height="800" fill="#2a2a2a"/>
+
+  <!-- 墓碑基座 -->
+  <rect x="150" y="650" width="200" height="120" fill="url(#tombstoneGradient)" stroke="#404040" stroke-width="2" filter="url(#tombShadow)"/>
+
+  <!-- 墓碑主體 -->
+  <path d="M100 600 L400 600 L380 100 L120 100 Z" fill="url(#tombstoneGradient)" stroke="#404040" stroke-width="2" filter="url(#tombShadow)"/>
+
+  <!-- 墓碑頂部裝飾 -->
+  <path d="M120 100 Q250 30 380 100" fill="url(#tombstoneGradient)" stroke="#404040" stroke-width="2"/>
+
+  <!-- 陰影效果 -->
+  <ellipse cx="250" cy="770" rx="120" ry="25" fill="#00000030"/>
+
+  <!-- 內容文字 - 1:1原文呈現（表格格式） -->
+  <text x="250" y="140" text-anchor="middle" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#362626ff">「養癌」生活習慣排行榜</text>
+
+  <!-- 表格標題 -->
+  <line x1="140" y1="210" x2="360" y2="210" stroke="#666666" stroke-width="1"/>
+
+  <!-- 十大習慣列表 -->
+  <text x="160" y="235" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">1. 高糖與高鹽的飲食</text>
+  <text x="160" y="255" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">2. 久坐不動的生活型態</text>
+  <text x="160" y="275" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">3. 過量的加工紅肉</text>
+  <text x="160" y="295" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">4. 長期的甲醛暴露</text>
+  <text x="160" y="315" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">5. 不足的口腔清潔</text>
+  <text x="160" y="335" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">6. 頻繁的電腦斷層檢查</text>
+  <text x="160" y="355" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">7. 睡眠時不關燈</text>
+  <text x="160" y="375" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">8. 鍾愛焦香的美味</text>
+  <text x="160" y="395" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">9. 高溫下的塑料容器</text>
+  <text x="160" y="415" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="16" fill="#3a3a3a">0. 滾燙的飲食習慣</text>
+
+  <!-- 頁腳 -->
+  <text x="250" y="720" text-anchor="middle" font-family="Chiron GoRound TC, Arial, sans-serif" font-size="18" fill="#180d0dff">復活的生命</text>
+</svg>
