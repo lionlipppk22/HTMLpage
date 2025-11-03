@@ -1,0 +1,124 @@
+<svg width="500" height="889" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 中心圓漸層 -->
+    <linearGradient id="mindmapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 要素1漸層 (由上而下的領導) -->
+    <linearGradient id="leadershipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c2d12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#431407;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 要素2漸層 (民族主義) -->
+    <linearGradient id="nationalismGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 要素3漸層 (敵我之分) -->
+    <linearGradient id="enemyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#134e4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#115e59;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 要素4漸層 (軍國主義與法律秩序政治) -->
+    <linearGradient id="militarismGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#581c87;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#701a75;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 陰影效果 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect x="10" y="10" width="480" height="869" rx="15" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+  
+  <!-- 標題背景 -->
+  <rect x="10" y="10" width="480" height="60" rx="15" fill="#991b1b"/>
+  
+  <!-- 標題文字 -->
+  <text x="250" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    數位威權主義的溝通模式
+  </text>
+  <text x="250" y="55" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    (以川普為例)
+  </text>
+  
+  <!-- 中心圓 -->
+  <circle cx="250" cy="150" r="60" fill="url(#mindmapGradient)" stroke="#e5e7eb" stroke-width="3" filter="url(#shadow)"/>
+  <text x="250" y="145" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    數位威權主義
+  </text>
+  <text x="250" y="160" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    溝通模式
+  </text>
+  
+  <!-- 連接線 -->
+  <line x1="250" y1="210" x2="250" y2="280" stroke="#dc2626" stroke-width="3"/>
+  <line x1="250" y1="380" x2="250" y2="450" stroke="#dc2626" stroke-width="3"/>
+  <line x1="250" y1="550" x2="250" y2="620" stroke="#dc2626" stroke-width="3"/>
+  <line x1="250" y1="720" x2="250" y2="790" stroke="#dc2626" stroke-width="3"/>
+  
+  <!-- 要素1：由上而下的領導 -->
+  <rect x="50" y="280" width="400" height="100" rx="10" fill="url(#leadershipGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)"/>
+  <text x="250" y="305" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    1. 由上而下的領導
+  </text>
+  <text x="250" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#fde68a">
+    不斷強調「我」的決斷與個人魅力
+  </text>
+  <text x="250" y="350" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#fde68a">
+    塑造強人形象，強化領導者中心地位
+  </text>
+  <text x="250" y="370" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#fbbf24">
+    建立絕對權威，形成個人崇拜文化
+  </text>
+  
+  <!-- 要素2：民族主義 -->
+  <rect x="50" y="450" width="400" height="100" rx="10" fill="url(#nationalismGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)"/>
+  <text x="250" y="475" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    2. 民族主義
+  </text>
+  <text x="250" y="500" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#bfdbfe">
+    建構「我們 vs. 他們」的對立
+  </text>
+  <text x="250" y="520" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#bfdbfe">
+    強調國家利益至上，將全球問題簡化為國與國衝突
+  </text>
+  <text x="250" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#93c5fd">
+    利用愛國主義情緒，煽動排外與仇外心理
+  </text>
+  
+  <!-- 要素3：敵我之分 -->
+  <rect x="50" y="620" width="400" height="100" rx="10" fill="url(#enemyGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)"/>
+  <text x="250" y="645" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    3. 敵我之分
+  </text>
+  <text x="250" y="670" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#a7f3d0">
+    將政治對手標籤化為「敵人」
+  </text>
+  <text x="250" y="690" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#a7f3d0">
+    攻擊移民、媒體等群體，煽動對立與仇恨
+  </text>
+  <text x="250" y="710" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6ee7b7">
+    建立二元對立框架，製造恐懼與不安全感
+  </text>
+  
+  <!-- 要素4：軍國主義與法律秩序政治 -->
+  <rect x="50" y="790" width="400" height="80" rx="10" fill="url(#militarismGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)"/>
+  <text x="250" y="815" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    4. 軍國主義與法律秩序政治
+  </text>
+  <text x="250" y="835" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#f0abfc">
+    崇尚軍事力量，強調嚴刑峻法應對社會問題
+  </text>
+  <text x="250" y="855" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e879f9">
+    鞏固權威與控制，建立威懾與鎮壓機制
+  </text>
+  </svg>

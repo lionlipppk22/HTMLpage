@@ -1,0 +1,57 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 卡片背景 -->
+  <rect x="10" y="10" width="580" height="280" rx="10" fill="url(#cardGradient)" filter="url(#shadow)"/>
+  
+  <!-- 卡片邊框 -->
+  <rect x="10" y="10" width="580" height="280" rx="10" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- 標題背景 -->
+  <rect x="10" y="10" width="580" height="40" rx="10" fill="#3182ce"/>
+  <rect x="10" y="40" width="580" height="10" fill="#3182ce"/>
+  
+  <!-- 標題文字 -->
+  <text x="300" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+    論點卡片 1：數位資本主義 (Digital Capitalism)
+  </text>
+  
+  <!-- 內容文字 -->
+  <text x="25" y="70" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    定義：
+  </text>
+  <text x="25" y="100" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    資本主義社會的一個維度，其中資本、權力與聲望的積累過程，
+  </text>
+  <text x="25" y="120" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    由數位科技進行中介與組織。它不是一個新社會，而是資本主義的延伸。
+  </text>
+  
+  <text x="25" y="150" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    關鍵特徵：
+  </text>
+  <text x="25" y="170" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    - 經濟：數位商品（數據、軟體）的生產與資本積累。
+  </text>
+  <text x="25" y="195" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    - 政治：對數位知識與網路的控制權積累。
+  </text>
+  <text x="25" y="220" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    - 文化：透過網路傳播意識形態，積累聲望與注意力。
+  </text>
+  
+  <text x="25" y="245" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    範例：
+  </text>
+  <text x="25" y="270" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    Google 和 Facebook 透過分析用戶數據來銷售精準廣告，積累巨額資本。
+  </text>
+  </svg>
