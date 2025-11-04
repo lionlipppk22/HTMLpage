@@ -1,0 +1,247 @@
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 卡片一漸變背景 -->
+    <linearGradient id="card1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 卡片二漸變背景 -->
+    <linearGradient id="card2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 電路裝飾漸變 -->
+    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#00b3ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- 呼吸效果濾鏡 -->
+    <filter id="breatheGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 電路線條濾鏡 -->
+    <filter id="circuitGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 呼吸動畫 -->
+    <style>
+      @keyframes breathe {
+        0%, 100% {
+          stroke-width: 3;
+          stroke: url(#circuitGradient);
+          filter: drop-shadow(0 0 8px rgba(0, 187, 255, 0.6));
+          transform: scale(1);
+        }
+        25% {
+          stroke-width: 4;
+          stroke: #00ffff;
+          filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
+          transform: scale(1.005);
+        }
+        50% {
+          stroke-width: 5;
+          stroke: #0066ff;
+          filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.9));
+          transform: scale(1.01);
+        }
+        75% {
+          stroke-width: 4;
+          stroke: #00b3ff;
+          filter: drop-shadow(0 0 15px rgba(0, 179, 255, 0.8));
+          transform: scale(1.005);
+        }
+      }
+      
+      @keyframes circuitPulse {
+        0%, 100% {
+          stroke-dashoffset: 0;
+          stroke-opacity: 0.6;
+        }
+        50% {
+          stroke-dashoffset: -10;
+          stroke-opacity: 1;
+        }
+      }
+      
+      .breathe-border {
+        animation: breathe 3s ease-in-out infinite;
+      }
+      
+      .circuit-line {
+        stroke-dasharray: 5 3;
+        animation: circuitPulse 2s linear infinite;
+      }
+    </style>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 卡片一：診斷「精神不當對待」 -->
+  <g transform="translate(0, 0)">
+    <!-- 卡片背景 -->
+    <rect x="40" y="40" width="1000" height="920" rx="20" fill="url(#card1Gradient)" filter="url(#shadow)"/>
+    
+    <!-- 呼吸光電路邊框 -->
+    <rect x="40" y="40" width="1000" height="920" rx="20" fill="none" stroke="url(#circuitGradient)" stroke-width="3" class="breathe-border"/>
+    
+    <!-- 電路線條裝飾 -->
+    <rect x="45" y="45" width="990" height="910" rx="18" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <rect x="50" y="50" width="980" height="900" rx="16" fill="none" stroke="rgba(0, 187, 255, 0.3)" stroke-width="1" filter="url(#circuitGlow)" class="circuit-line"/>
+    
+    <!-- 角落電路裝飾 -->
+    <path d="M40,40 L80,40 L80,80 L40,80 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <path d="M1000,40 L1040,40 L1040,80 L1000,80 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <path d="M40,920 L80,920 L80,960 L40,960 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <path d="M1000,920 L1040,920 L1040,960 L1000,960 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    
+    <!-- 標題背景 -->
+    <rect x="40" y="40" width="1000" height="80" rx="20" fill="#3182ce"/>
+    <rect x="40" y="120" width="1000" height="15" fill="#3182ce"/>
+    
+    <!-- 標題文字 -->
+    <text x="540" y="90" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white">
+      論點卡片 01：診斷「精神不當對待」
+    </text>
+    
+    <!-- 內容文字 -->
+    <text x="80" y="170" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      定義：
+    </text>
+    <text x="80" y="220" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      一種看不到傷口卻持續內傷的教養方式。透過貶低、控制、忽略
+    </text>
+    <text x="80" y="260" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      或非言語行為，長期損害孩子的自尊、自信與心理發展。
+    </text>
+    
+    <text x="80" y="320" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      核心問題與影響：
+    </text>
+    <text x="80" y="370" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      孩子會認為「我不夠好」，無法接納自己，與內在感受失聯，導致
+    </text>
+    <text x="80" y="410" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      自我價值感低落、焦慮、憂鬱，甚至成年後的情緒與關係障礙。
+    </text>
+    
+    <text x="80" y="470" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      自我檢核步驟：
+    </text>
+    <text x="80" y="520" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      1. 我是否常用命令、威脅或說教的語氣？如：「我數到三！」
+    </text>
+    <text x="80" y="560" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      2. 我是否會否定或輕視孩子的情緒？如：這有什麼好哭的？
+    </text>
+    <text x="80" y="600" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      3. 我是否在孩子表達時分心或敷衍？如：邊滑手機邊回應
+    </text>
+    <text x="80" y="640" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      4. 我是否會立即給建議，而非先傾聽？如：你就是粗心才會錯！
+    </text>
+    
+    <text x="80" y="700" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      典型負面範例（場景：孩子抱怨考試考差了）：
+    </text>
+    <text x="80" y="750" font-family="Arial, sans-serif" font-size="32" fill="#aec915ff">
+      「我就跟你說要早點讀書，這次沒考好，下次要更努力啊！」
+    </text>
+    <text x="80" y="800" font-family="Arial, sans-serif" font-size="28" fill="#aec915ff">
+      分析：立即給建議，傳達了「你做得不夠好」的隱藏訊息，造成二度傷害
+    </text>
+  </g>
+  
+  <!-- 卡片二：實踐「連結式溝通」 -->
+  <g transform="translate(0, 980)">
+    <!-- 卡片背景 -->
+    <rect x="40" y="40" width="1000" height="920" rx="20" fill="url(#card2Gradient)" filter="url(#shadow)"/>
+    
+    <!-- 呼吸光電路邊框 -->
+    <rect x="40" y="40" width="1000" height="920" rx="20" fill="none" stroke="url(#circuitGradient)" stroke-width="3" class="breathe-border"/>
+    
+    <!-- 電路線條裝飾 -->
+    <rect x="45" y="45" width="990" height="910" rx="18" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <rect x="50" y="50" width="980" height="900" rx="16" fill="none" stroke="rgba(0, 187, 255, 0.3)" stroke-width="1" filter="url(#circuitGlow)" class="circuit-line"/>
+    
+    <!-- 角落電路裝飾 -->
+    <path d="M40,40 L80,40 L80,80 L40,80 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <path d="M1000,40 L1040,40 L1040,80 L1000,80 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <path d="M40,920 L80,920 L80,960 L40,960 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    <path d="M1000,920 L1040,920 L1040,960 L1000,960 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)" class="circuit-line"/>
+    
+    <!-- 標題背景 -->
+    <rect x="40" y="40" width="1000" height="80" rx="20" fill="#38a169"/>
+    <rect x="40" y="120" width="1000" height="15" fill="#38a169"/>
+    
+    <!-- 標題文字 -->
+    <text x="540" y="90" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white">
+      論點卡片 02：實踐「連結式溝通」黃金法則
+    </text>
+    
+    <!-- 內容文字 -->
+    <text x="80" y="170" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      定義：
+    </text>
+    <text x="80" y="220" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      一種以「先理解，再引導」為核心的雙向溝通模式。建立情感連結
+    </text>
+    <text x="80" y="260" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      而非單純傳遞指令或解決問題。
+    </text>
+    
+    <text x="80" y="320" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      核心目標：
+    </text>
+    <text x="80" y="370" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      讓孩子感受到被尊重、被理解，從而願意敞開心扉，
+    </text>
+    <text x="80" y="410" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      在父母的引導下學習認識自我、培養責任感與解決問題的能力。
+    </text>
+    
+    <text x="80" y="470" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      實踐方法／步驟：
+    </text>
+    <text x="80" y="520" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      1. 積極聆聽：放下自己的判斷，專注傾聽孩子的情緒和需求。
+    </text>
+    <text x="80" y="560" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      2. 肯定情緒：用語言確認你理解他的感受 如：「聽起來你很挫折」
+    </text>
+    <text x="80" y="600" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      3. 轉為合作討論：將「你要...」改為 我們怎麼做比較好？
+    </text>
+    <text x="80" y="640" font-family="Arial, sans-serif" font-size="32" fill="#cbd5e0">
+      4. 提供選擇：在可控範圍內給予孩子選擇權，而非單一命令
+    </text>
+    
+    <text x="80" y="700" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e2e8f0">
+      典型正面範例 場景：孩子抱怨考試考差了：
+    </text>
+    <text x="80" y="750" font-family="Arial, sans-serif" font-size="32" fill="#e8f3aaff">
+      「嗯，聽起來你很在意這次的考試。那一定讓你很挫折吧？
+    </text>
+    <text x="80" y="790" font-family="Arial, sans-serif" font-size="32" fill="#e8f3aaff">
+      你覺得是哪裡沒掌握到呢？」
+    </text>
+    <text x="80" y="840" font-family="Arial, sans-serif" font-size="28" fill="#e8f3aaff">
+      分析：先接住情緒，表達同理，再邀請孩子一同探討原因
+    </text>
+  </g>
+</svg>
