@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="700" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 卡片1漸層 - 橙紅 -->
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9a56;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 卡片2漸層 - 藍綠 -->
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 卡片3漸層 - 綠色 -->
+    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 卡片4漸層 - 紫粉 -->
+    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 呼吸光電路效果 -->
+    <style>
+      @keyframes breathe {
+        0%, 100% {
+          stroke-width: 2;
+          filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+        }
+        50% {
+          stroke-width: 3;
+          filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+        }
+      }
+      
+      @keyframes circuitPulse {
+        0%, 100% {
+          stroke-dashoffset: 0;
+          stroke-opacity: 0.6;
+        }
+        50% {
+          stroke-dashoffset: -5;
+          stroke-opacity: 1;
+        }
+      }
+      
+      .card-border {
+        animation: breathe 3s ease-in-out infinite;
+      }
+      
+      .circuit-line {
+        stroke-dasharray: 3 2;
+        animation: circuitPulse 2s linear infinite;
+      }
+    </style>
+    
+    <!-- 陰影濾鏡 -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect x="0" y="0" width="700" height="1600" fill="#1a202c"/>
+  
+  <!-- 主標題 -->
+  <text x="350" y="50" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    論點綱要四大卡片
+  </text>
+  
+  <!-- ==================== 卡片01 ==================== -->
+  <g>
+    <!-- 卡片背景 -->
+    <rect x="50" y="80" width="600" height="280" rx="12" fill="#2d3748" filter="url(#cardShadow)"/>
+    
+    <!-- 漸層邊框 -->
+    <rect x="50" y="80" width="600" height="280" rx="12" fill="none" stroke="url(#gradient1)" stroke-width="2" class="card-border"/>
+    
+    <!-- 電路線條裝飾 -->
+    <rect x="55" y="85" width="590" height="270" rx="10" fill="none" stroke="url(#gradient1)" stroke-width="1" opacity="0.5" class="circuit-line"/>
+    
+    <!-- 標題背景 -->
+    <rect x="50" y="80" width="600" height="50" rx="12" fill="url(#gradient1)"/>
+    
+    <!-- 標題 -->
+    <text x="350" y="115" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="white">
+      卡片01：身份導向思維
+    </text>
+    
+    <!-- 副標題 -->
+    <text x="350" y="142" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#cbd5e0">
+      Identity-Oriented Mindset
+    </text>
+    
+    <!-- 定義 -->
+    <text x="70" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0">
+      定義：
+    </text>
+    <text x="70" y="203" font-family="Arial, sans-serif" font-size="14" fill="#cbd5e0">
+      將學習焦點從「你想達成什麼」轉向「你想成為怎樣的人」
+    </text>
+    
+    <!-- 核心要訣 -->
+    <text x="70" y="235" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0">
+      核心要訣：
+    </text>
+    <text x="70" y="260" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      • 分解內心渴望，認清里程碑    • 接受考試就只是場考試
+    </text>
+    <text x="70" y="282" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      • 將挫折視為成長機會    • 成為「會考試、認真生活的人」
+    </text>
+    
+    <!-- 範例 -->
+    <text x="70" y="312" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0" font-style="italic">
+      範例：成為會考試、認真生活的人，而非追求完美分數
+    </text>
+  </g>
+  
+  <!-- ==================== 卡片02 ==================== -->
+  <g>
+    <!-- 卡片背景 -->
+    <rect x="50" y="400" width="600" height="280" rx="12" fill="#2d3748" filter="url(#cardShadow)"/>
+    
+    <!-- 漸層邊框 -->
+    <rect x="50" y="400" width="600" height="280" rx="12" fill="none" stroke="url(#gradient2)" stroke-width="2" class="card-border"/>
+    
+    <!-- 電路線條裝飾 -->
+    <rect x="55" y="405" width="590" height="270" rx="10" fill="none" stroke="url(#gradient2)" stroke-width="1" opacity="0.5" class="circuit-line"/>
+    
+    <!-- 標題背景 -->
+    <rect x="50" y="400" width="600" height="50" rx="12" fill="url(#gradient2)"/>
+    
+    <!-- 標題 -->
+    <text x="350" y="438" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="white">
+      卡片02：彈性讀書系統
+    </text>
+    
+    <!-- 副標題 -->
+    <text x="350" y="465" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#cbd5e0">
+      Flexible Study System
+    </text>
+    
+    <!-- 定義 -->
+    <text x="70" y="498" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0">
+      定義：
+    </text>
+    <text x="70" y="526" font-family="Arial, sans-serif" font-size="14" fill="#cbd5e0">
+      一套比傳統讀書計畫更具韌性的自動化動力系統
+    </text>
+    
+    <!-- 核心組成 -->
+    <text x="70" y="558" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0">
+      核心組成：
+    </text>
+    <text x="70" y="583" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      • 目標分解：系統規劃效率    • 檢視自己：反思根源調整
+    </text>
+    <text x="70" y="605" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      • 自我制約：定下智慧規則    • 效益：自動為你帶來動力
+    </text>
+    
+    <!-- 說明 -->
+    <text x="70" y="635" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0" font-style="italic">
+      如同為學習的齒輪上油，讓系統自動運轉產生動力
+    </text>
+  </g>
+  
+  <!-- ==================== 卡片03 ==================== -->
+  <g>
+    <!-- 卡片背景 -->
+    <rect x="50" y="720" width="600" height="310" rx="12" fill="#2d3748" filter="url(#cardShadow)"/>
+    
+    <!-- 漸層邊框 -->
+    <rect x="50" y="720" width="600" height="310" rx="12" fill="none" stroke="url(#gradient3)" stroke-width="2" class="card-border"/>
+    
+    <!-- 電路線條裝飾 -->
+    <rect x="55" y="725" width="590" height="300" rx="10" fill="none" stroke="url(#gradient3)" stroke-width="1" opacity="0.5" class="circuit-line"/>
+    
+    <!-- 標題背景 -->
+    <rect x="50" y="720" width="600" height="50" rx="12" fill="url(#gradient3)"/>
+    
+    <!-- 標題 -->
+    <text x="350" y="760" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="white">
+      卡片03：自我制約三大規則
+    </text>
+    
+    <!-- 副標題 -->
+    <text x="350" y="787" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#cbd5e0">
+      Three Rules of Self-Constraint
+    </text>
+    
+    <!-- 規則一 -->
+    <text x="70" y="820" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e2e8f0">
+      規則一：在校專注「解惑」與「蓄能」
+    </text>
+    <text x="70" y="843" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      目的：最大化利用學校資源（師長同學），並為自己補充能量
+    </text>
+    
+    <!-- 規則二 -->
+    <text x="70" y="873" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e2e8f0">
+      規則二：想睡就睡，視休息為珍惜時間
+    </text>
+    <text x="70" y="896" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      邏輯：自身狀態是效率的根本，最佳狀態下學習才能一次性高效完成
+    </text>
+    
+    <!-- 規則三 -->
+    <text x="70" y="926" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e2e8f0">
+      規則三：對自己的時間自私一點
+    </text>
+    <text x="70" y="949" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      方法：用「理想中的我會這麼做嗎？」來過濾干擾，專注於真正重要的事
+    </text>
+  </g>
+  
+  <!-- ==================== 卡片04 ==================== -->
+  <g>
+    <!-- 卡片背景 -->
+    <rect x="50" y="1070" width="600" height="310" rx="12" fill="#2d3748" filter="url(#cardShadow)"/>
+    
+    <!-- 漸層邊框 -->
+    <rect x="50" y="1070" width="600" height="310" rx="12" fill="none" stroke="url(#gradient4)" stroke-width="2" class="card-border"/>
+    
+    <!-- 電路線條裝飾 -->
+    <rect x="55" y="1075" width="590" height="300" rx="10" fill="none" stroke="url(#gradient4)" stroke-width="1" opacity="0.5" class="circuit-line"/>
+    
+    <!-- 標題背景 -->
+    <rect x="50" y="1070" width="600" height="50" rx="12" fill="url(#gradient4)"/>
+    
+    <!-- 標題 -->
+    <text x="350" y="1110" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="white">
+      卡片04：數位排毒與專注力保護
+    </text>
+    
+    <!-- 副標題 -->
+    <text x="350" y="1137" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#cbd5e0">
+      Digital Detox &amp; Focus Protection
+    </text>
+    
+    <!-- 定義 -->
+    <text x="70" y="1170" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0">
+      定義：
+    </text>
+    <text x="70" y="1193" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      主動管理環境，將專注力視為需要保護的核心資產
+    </text>
+    
+    <!-- 核心策略 -->
+    <text x="70" y="1225" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0">
+      核心策略：
+    </text>
+    <text x="70" y="1250" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      • 物理隔離：讀書時將手機放遠，設定無科技時段
+    </text>
+    <text x="70" y="1272" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      • 避免多工：專注單一任務，多工只是快速切換會耗損腦力
+    </text>
+    <text x="70" y="1294" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e0">
+      • 設立界線：與家人溝通，設立不受打擾的「深度工作時段」
+    </text>
+    
+    <!-- 信念 -->
+    <text x="70" y="1324" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0" font-style="italic">
+      信念：保護專注力，就是對時間最極致的尊重
+    </text>
+  </g>
+  
+  <!-- 底部裝飾線 -->
+  <line x1="50" y1="1450" x2="650" y2="1450" stroke="#4a5568" stroke-width="2"/>
+  
+  <!-- 底部提示文字 -->
+  <text x="350" y="1485" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#a0aec0">
+    將學習的焦點從外部成果轉向內在身份，方能獲得持續動力
+  </text>
+</svg>

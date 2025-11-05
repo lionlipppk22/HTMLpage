@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504" height="630" viewBox="0 0 504 630">
+<style class="text-font-style fontImports" data-font-family="Noto Sans TC">@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;display=block);</style>
+
+<!-- 定義多彩漸層 -->
+<defs>
+<linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+<stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="strategy1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ff9a56;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="strategy2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="strategy3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="detail1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ffecd2;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#fcb69f;stop-opacity:0.95" />
+</linearGradient>
+
+<linearGradient id="detail2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#a8edea;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#fed6e3;stop-opacity:0.95" />
+</linearGradient>
+
+<linearGradient id="detail3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#d299c2;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#fef9d7;stop-opacity:0.95" />
+</linearGradient>
+
+<!-- 背景漸層 -->
+<linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+</linearGradient>
+
+<!-- 文字陰影效果 -->
+<filter id="textShadow">
+<feDropShadow dx="2" dy="2" stdDeviation="1" flood-opacity="0.3"/>
+</filter>
+</defs>
+
+<g id="items" style="isolation: isolate">
+<g id="blend" style="mix-blend-mode: normal">
+
+<!-- 背景 -->
+<rect x="0" y="0" width="504" height="630" fill="url(#backgroundGradient)"/>
+
+<!-- 標題區域 -->
+<g id="title-frame" transform="translate(50, 30)">
+<g id="title-bg" stroke="none" fill="url(#titleGradient)" fill-opacity="1">
+<path d="M404 52C404 62.941 305.019 70 202 70C98.981 70 0 62.941 0 52V0C0 10.941 98.981 18 202 18C305.019 18 404 10.941 404 0V52"></path>
+</g>
+<g id="title-text" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 26px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(202, 35)" font-weight="bold" font-size="26px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-60" y="15" dominant-baseline="ideographic">閱讀三大策略</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第一個策略：問題解決策略 -->
+<g id="strategy-1" transform="translate(50, 120)">
+<g id="bubble-1-main" stroke="none" fill="url(#strategy1Gradient)" fill-opacity="0.9">
+<path d="M10 118C10 127.941 52.981 136 106 136C159.019 136 202 127.941 202 118V10C202 19.941 159.019 28 106 28C52.981 28 10 19.941 10 10V118"></path>
+</g>
+<g id="bubble-1-detail" stroke="none" fill="url(#detail1Gradient)" fill-opacity="0.9">
+<path d="M202 118 H10 V58C10 31.49 10 10 10 10 H202 V118"></path>
+</g>
+<g id="text-1-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 45)" font-weight="bold" font-size="20px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-55" y="13" dominant-baseline="ideographic">問題解決策略</tspan>
+</text>
+</g>
+<g id="text-1-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 15px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 85)" font-size="15px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-67.5" y="10" dominant-baseline="ideographic">困難時來回重讀、根據上下</tspan>
+<tspan x="-67.5" y="26" dominant-baseline="ideographic">文猜測、放慢速度仔細閱讀</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第二個策略：輔助閱讀策略 -->
+<g id="strategy-2" transform="translate(50, 280)">
+<g id="bubble-2-main" stroke="none" fill="url(#strategy2Gradient)" fill-opacity="0.9">
+<path d="M10 118C10 127.941 52.981 136 106 136C159.019 136 202 127.941 202 118V10C202 19.941 159.019 28 106 28C52.981 28 10 19.941 10 10V118"></path>
+</g>
+<g id="bubble-2-detail" stroke="none" fill="url(#detail2Gradient)" fill-opacity="0.9">
+<path d="M202 118 H10 V58C10 31.49 10 10 10 10 H202 V118"></path>
+</g>
+<g id="text-2-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 45)" font-weight="bold" font-size="20px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-55" y="13" dominant-baseline="ideographic">輔助閱讀策略</tspan>
+</text>
+</g>
+<g id="text-2-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 15px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 85)" font-size="15px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-67.5" y="10" dominant-baseline="ideographic">善用字典、表格圖片，透過劃</tspan>
+<tspan x="-67.5" y="26" dominant-baseline="ideographic">底線、圈起來輔助記憶</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第三個策略：全局策略 -->
+<g id="strategy-3" transform="translate(50, 440)">
+<g id="bubble-3-main" stroke="none" fill="url(#strategy3Gradient)" fill-opacity="0.9">
+<path d="M10 118C10 127.941 52.981 136 106 136C159.019 136 202 127.941 202 118V10C202 19.941 159.019 28 106 28C52.981 28 10 19.941 10 10V118"></path>
+</g>
+<g id="bubble-3-detail" stroke="none" fill="url(#detail3Gradient)" fill-opacity="0.9">
+<path d="M202 118 H10 V58C10 31.49 10 10 10 10 H202 V118"></path>
+</g>
+<g id="text-3-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 45)" font-weight="bold" font-size="20px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-40" y="13" dominant-baseline="ideographic">全局策略</tspan>
+</text>
+</g>
+<g id="text-3-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 15px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 85)" font-size="15px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-67.5" y="10" dominant-baseline="ideographic">建立宏觀視野、連結已知事</tspan>
+<tspan x="-67.5" y="26" dominant-baseline="ideographic">物、進行批判性分析</tspan>
+</text>
+</g>
+</g>
+
+<!-- 詳細說明框 -->
+<g id="detail-boxes">
+<!-- 第一個詳細說明 -->
+<g id="detail-1" transform="translate(262, 120)">
+<g id="detail-1-bg" stroke="none" fill="url(#detail1Gradient)" fill-opacity="0.95">
+<path d="M202 118 H10 V58C10 31.49 10 10 10 10 H202 V118"></path>
+</g>
+<g id="detail-1-text" stroke="none" fill="#2c2c2c" fill-opacity="1">
+<text style="font: 13px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 25)" font-size="13px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-70" y="8" dominant-baseline="ideographic">對抗困難文本的實踐方法</tspan>
+<tspan x="-75" y="24" dominant-baseline="ideographic">多次閱讀幫助深度理解</tspan>
+<tspan x="-65" y="40" dominant-baseline="ideographic">逐句仔細推敲意義</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第二個詳細說明 -->
+<g id="detail-2" transform="translate(262, 280)">
+<g id="detail-2-bg" stroke="none" fill="url(#detail2Gradient)" fill-opacity="0.95">
+<path d="M202 118 H10 V58C10 31.49 10 10 10 10 H202 V118"></path>
+</g>
+<g id="detail-2-text" stroke="none" fill="#2c2c2c" fill-opacity="1">
+<text style="font: 13px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 25)" font-size="13px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-70" y="8" dominant-baseline="ideographic">充分利用學習資源與工具</tspan>
+<tspan x="-75" y="24" dominant-baseline="ideographic">視覺輔助增強記憶效果</tspan>
+<tspan x="-65" y="40" dominant-baseline="ideographic">主動標記重點內容</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第三個詳細說明 -->
+<g id="detail-3" transform="translate(262, 440)">
+<g id="detail-3-bg" stroke="none" fill="url(#detail3Gradient)" fill-opacity="0.95">
+<path d="M202 118 H10 V58C10 31.49 10 10 10 10 H202 V118"></path>
+</g>
+<g id="detail-3-text" stroke="none" fill="#2c2c2c" fill-opacity="1">
+<text style="font: 13px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(106, 25)" font-size="13px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-70" y="8" dominant-baseline="ideographic">獲取宏觀知識框架與視角</tspan>
+<tspan x="-75" y="24" dominant-baseline="ideographic">連結舊知與新知的關係</tspan>
+<tspan x="-60" y="40" dominant-baseline="ideographic">批判性思考知識內涵</tspan>
+</text>
+</g>
+</g>
+</g>
+
+<!-- 底部總結 -->
+<g id="conclusion-box" transform="translate(50, 580)">
+<g id="conclusion-bg" stroke="none" fill="url(#titleGradient)" fill-opacity="0.85">
+<path d="M404 40C404 48.837 305.019 56 202 56C98.981 56 0 48.837 0 40V8C0 16.837 98.981 24 202 24C305.019 24 404 16.837 404 8V40"></path>
+</g>
+<g id="conclusion-text" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 15px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(202, 28)" font-weight="bold" font-size="15px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-85" y="10" dominant-baseline="ideographic">靈活運用多種策略應對不同學習挑戰</tspan>
+</text>
+</g>
+</g>
+
+<!-- 裝飾性元素 -->
+<g id="decorative-elements">
+<path id="separator-line-1" d="M50 210 L454 210" stroke="url(#strategy1Gradient)" stroke-width="3" stroke-opacity="0.6"></path>
+<path id="separator-line-2" d="M50 370 L454 370" stroke="url(#strategy2Gradient)" stroke-width="3" stroke-opacity="0.6"></path>
+<path id="separator-line-3" d="M50 530 L454 530" stroke="url(#strategy3Gradient)" stroke-width="3" stroke-opacity="0.6"></path>
+</g>
+
+<!-- 裝飾性圖形 -->
+<g id="decorative-shapes">
+<circle cx="80" cy="160" r="8" fill="url(#strategy1Gradient)" opacity="0.6"/>
+<circle cx="420" cy="160" r="6" fill="url(#strategy1Gradient)" opacity="0.4"/>
+<circle cx="80" cy="320" r="8" fill="url(#strategy2Gradient)" opacity="0.6"/>
+<circle cx="420" cy="320" r="6" fill="url(#strategy2Gradient)" opacity="0.4"/>
+<circle cx="80" cy="480" r="8" fill="url(#strategy3Gradient)" opacity="0.6"/>
+<circle cx="420" cy="480" r="6" fill="url(#strategy3Gradient)" opacity="0.4"/>
+</g>
+
+</g>
+</g>
+</svg>
