@@ -1,0 +1,222 @@
+<svg width="800" height="1400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for each card -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d68910;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a085;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#138d75;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="cardGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- CARD 1: Envy & Greed (Red) -->
+  <g>
+    <!-- Background -->
+    <rect x="20" y="20" width="760" height="300" rx="15" fill="url(#grad1)" filter="url(#shadow)"/>
+    
+    <!-- Border -->
+    <rect x="20" y="20" width="760" height="300" rx="15" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Header Bar -->
+    <rect x="20" y="20" width="760" height="50" rx="15" fill="rgba(0,0,0,0.2)"/>
+    
+    <!-- Title -->
+    <text x="50" y="55" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+      智慧卡片：對抗嫉妒與貪婪
+    </text>
+    
+    <!-- Content -->
+    <text x="50" y="90" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      定義：
+    </text>
+    <text x="70" y="110" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      嫉妒是因他人成功而敗壞判斷力的情緒；貪婪是相信「這次不一樣」而非理性的慾望。
+    </text>
+    
+    <text x="50" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      失敗者的行為：
+    </text>
+    <text x="70" y="165" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      模仿傻瓜的行為追逐熱門股；為了你沒有且不需要的東西，而冒險失去你擁有且需要的東西。
+    </text>
+    
+    <text x="50" y="200" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      智慧的步驟：
+    </text>
+    <text x="70" y="220" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      專注於自己的進程，擁抱「足夠」，釐清預期，而非盲目擴大投資組合的規模。
+    </text>
+    
+    <text x="50" y="255" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      關鍵引言：
+    </text>
+    <text x="70" y="275" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-style="italic">
+      「聰明人會在貪婪進入房間的那一刻變成白痴。」
+    </text>
+  </g>
+  
+  <!-- CARD 2: Impatience (Orange) -->
+  <g>
+    <!-- Background -->
+    <rect x="20" y="340" width="760" height="300" rx="15" fill="url(#grad2)" filter="url(#shadow)"/>
+    
+    <!-- Border -->
+    <rect x="20" y="340" width="760" height="300" rx="15" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Header Bar -->
+    <rect x="20" y="340" width="760" height="50" rx="15" fill="rgba(0,0,0,0.2)"/>
+    
+    <!-- Title -->
+    <text x="50" y="375" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+      智慧卡片：克服不耐煩
+    </text>
+    
+    <!-- Content -->
+    <text x="50" y="410" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      定義：
+    </text>
+    <text x="70" y="430" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      一種無法忍受穩定但緩慢的複利過程，轉而追逐刺激而非結果的衝動。
+    </text>
+    
+    <text x="50" y="465" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      失敗者的行為：
+    </text>
+    <text x="70" y="485" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      不斷干預投資組合，因資產增長不夠快而拋售優質資產，親手扼殺複利。
+    </text>
+    
+    <text x="50" y="520" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      智慧的步驟：
+    </text>
+    <text x="70" y="540" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      將投資組合視為一棵需要耐心照料的樹，理解致富之道在於「等待」而非「交易」。
+    </text>
+    
+    <text x="50" y="575" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      關鍵引言：
+    </text>
+    <text x="70" y="595" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-style="italic">
+      「市場是一部將金錢從急躁者轉移給耐心者的機器。」
+    </text>
+  </g>
+  
+  <!-- CARD 3: Denial (Purple) -->
+  <g>
+    <!-- Background -->
+    <rect x="20" y="660" width="760" height="300" rx="15" fill="url(#grad3)" filter="url(#shadow)"/>
+    
+    <!-- Border -->
+    <rect x="20" y="660" width="760" height="300" rx="15" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Header Bar -->
+    <rect x="20" y="660" width="760" height="50" rx="15" fill="rgba(0,0,0,0.2)"/>
+    
+    <!-- Title -->
+    <text x="50" y="695" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+      智慧卡片：戰勝否認
+    </text>
+    
+    <!-- Content -->
+    <text x="50" y="730" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      定義：
+    </text>
+    <text x="70" y="750" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      對自己撒謊的藝術，拒絕面對真實的財務數字與消費習慣，活在虛假的樂觀之中。
+    </text>
+    
+    <text x="50" y="785" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      失敗者的行為：
+    </text>
+    <text x="70" y="805" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      逃避檢視帳單與開支，妄想投資組合能奇蹟般地彌補所有壞習慣。
+    </text>
+    
+    <text x="50" y="840" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      智慧的步驟：
+    </text>
+    <text x="70" y="860" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      將「面對你的數字」視為成年人的勇氣，理解「算術不容協商」，誠實地面對現實。
+    </text>
+    
+    <text x="50" y="895" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      關鍵引言：
+    </text>
+    <text x="70" y="915" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-style="italic">
+      「和平不是來自數字，而是來自妄想的消除。」
+    </text>
+  </g>
+  
+  <!-- CARD 4: Asset Durability (Teal) -->
+  <g>
+    <!-- Background -->
+    <rect x="20" y="980" width="760" height="350" rx="15" fill="url(#grad4)" filter="url(#shadow)"/>
+    
+    <!-- Border -->
+    <rect x="20" y="980" width="760" height="350" rx="15" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Header Bar -->
+    <rect x="20" y="980" width="760" height="50" rx="15" fill="rgba(0,0,0,0.2)"/>
+    
+    <!-- Title -->
+    <text x="50" y="1015" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">
+      智慧卡片：建立資產的耐用性
+    </text>
+    
+    <!-- Content -->
+    <text x="50" y="1050" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      定義：
+    </text>
+    <text x="70" y="1070" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      建立一個能經受住通膨、衰退和自身愚蠢行為衝擊的投資組合，追求長期生存而非短期回報。
+    </text>
+    
+    <text x="50" y="1105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      失敗者的行為：
+    </text>
+    <text x="70" y="1125" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      追求虛假的「安全」（如現金），將波動性與風險混淆，最終被通膨無聲地吞噬。
+    </text>
+    
+    <text x="50" y="1160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      智慧的步驟：
+    </text>
+    <text x="70" y="1180" font-family="Arial, sans-serif" font-size="16" fill="#f0f0f0">
+      投資於可理解的、持續盈利的生產性資產（如賣牙膏的公司），並保持足夠的流動性以應對危機。
+    </text>
+    
+    <text x="50" y="1215" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">
+      關鍵引言：
+    </text>
+    <text x="70" y="1235" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-style="italic">
+      「理性的投資者不追逐安全或刺激，他追逐的是耐用性。」
+    </text>
+  </g>
+</svg>

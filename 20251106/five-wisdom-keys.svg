@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="450" height="800" viewBox="0 0 450 800">
+<style class="text-font-style fontImports" data-font-family="Noto Sans TC">@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;display=block);</style>
+
+<defs>
+<!-- 5 distinct card gradients -->
+<linearGradient id="card1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#EE5A6F;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="card2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#44A08D;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="card3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FFE66D;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#FFC93C;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="card4Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#95E1D3;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#38ADA9;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="card5Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#C8B6DB;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#9B7EBD;stop-opacity:1" />
+</linearGradient>
+
+<!-- Background gradient -->
+<linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+</linearGradient>
+
+<!-- Text shadow -->
+<filter id="textShadow">
+<feDropShadow dx="1" dy="1" stdDeviation="1" flood-opacity="0.3"/>
+</filter>
+
+<!-- Card shadow -->
+<filter id="cardShadow">
+<feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.4"/>
+</filter>
+</defs>
+
+<!-- Background -->
+<rect x="0" y="0" width="450" height="800" fill="url(#backgroundGradient)"/>
+
+<!-- Card 1: 要訣一 -->
+<g id="card-1" transform="translate(25, 20)">
+<rect x="0" y="0" width="400" height="130" rx="12" fill="url(#card1Gradient)" filter="url(#cardShadow)"/>
+<g id="card-1-content">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif;" x="20" y="35" font-weight="bold" font-size="20" fill="#ffffff" filter="url(#textShadow)">
+<tspan>要訣一</tspan>
+</text>
+<text style="font: bold 18px 'Noto Sans TC', sans-serif;" x="20" y="60" font-weight="bold" font-size="18" fill="#ffffff" filter="url(#textShadow)">
+<tspan>擁抱「足夠」，捨棄「更多」</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="90" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>真正的平和來自對預期的清晰度，</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="112" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>而非投資組合的規模。</tspan>
+</text>
+</g>
+</g>
+
+<!-- Card 2: 要訣二 -->
+<g id="card-2" transform="translate(25, 170)">
+<rect x="0" y="0" width="400" height="130" rx="12" fill="url(#card2Gradient)" filter="url(#cardShadow)"/>
+<g id="card-2-content">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif;" x="20" y="35" font-weight="bold" font-size="20" fill="#ffffff" filter="url(#textShadow)">
+<tspan>要訣二</tspan>
+</text>
+<text style="font: bold 18px 'Noto Sans TC', sans-serif;" x="20" y="60" font-weight="bold" font-size="18" fill="#ffffff" filter="url(#textShadow)">
+<tspan>氣質是最大資產，冷靜會產生複利</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="90" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>在別人恐慌時保持靜止的能力，</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="112" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>遠比任何選股技巧都更有價值。</tspan>
+</text>
+</g>
+</g>
+
+<!-- Card 3: 要訣三 -->
+<g id="card-3" transform="translate(25, 320)">
+<rect x="0" y="0" width="400" height="130" rx="12" fill="url(#card3Gradient)" filter="url(#cardShadow)"/>
+<g id="card-3-content">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif;" x="20" y="35" font-weight="bold" font-size="20" fill="#1a1a2e" filter="url(#textShadow)">
+<tspan>要訣三</tspan>
+</text>
+<text style="font: bold 18px 'Noto Sans TC', sans-serif;" x="20" y="60" font-weight="bold" font-size="18" fill="#1a1a2e" filter="url(#textShadow)">
+<tspan>節儉即是生存，是獨立的宣言</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="90" font-size="16" fill="rgba(26,26,46,0.9)" filter="url(#textShadow)">
+<tspan>每一次對消費說「不」，都是在為自己</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="112" font-size="16" fill="rgba(26,26,46,0.9)" filter="url(#textShadow)">
+<tspan>買回一份不受奴役的獨立。</tspan>
+</text>
+</g>
+</g>
+
+<!-- Card 4: 要訣四 -->
+<g id="card-4" transform="translate(25, 470)">
+<rect x="0" y="0" width="400" height="130" rx="12" fill="url(#card4Gradient)" filter="url(#cardShadow)"/>
+<g id="card-4-content">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif;" x="20" y="35" font-weight="bold" font-size="20" fill="#ffffff" filter="url(#textShadow)">
+<tspan>要訣四</tspan>
+</text>
+<text style="font: bold 18px 'Noto Sans TC', sans-serif;" x="20" y="60" font-weight="bold" font-size="18" fill="#ffffff" filter="url(#textShadow)">
+<tspan>追求資產的「耐用性」，而非「安全性」</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="90" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>能經受住風暴與自身愚蠢的「耐用」</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="112" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>組合，是真正的安全。</tspan>
+</text>
+</g>
+</g>
+
+<!-- Card 5: 要訣五 -->
+<g id="card-5" transform="translate(25, 620)">
+<rect x="0" y="0" width="400" height="130" rx="12" fill="url(#card5Gradient)" filter="url(#cardShadow)"/>
+<g id="card-5-content">
+<text style="font: bold 20px 'Noto Sans TC', sans-serif;" x="20" y="35" font-weight="bold" font-size="20" fill="#ffffff" filter="url(#textShadow)">
+<tspan>要訣五</tspan>
+</text>
+<text style="font: bold 18px 'Noto Sans TC', sans-serif;" x="20" y="60" font-weight="bold" font-size="18" fill="#ffffff" filter="url(#textShadow)">
+<tspan>停止做那些顯而易見的蠢事</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="90" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>晚年投資的成功，只需要持續地</tspan>
+</text>
+<text style="font: 16px 'Noto Sans TC', sans-serif;" x="20" y="112" font-size="16" fill="rgba(255,255,255,0.9)" filter="url(#textShadow)">
+<tspan>避免那些顯而易見的錯誤。</tspan>
+</text>
+</g>
+</g>
+
+</svg>
