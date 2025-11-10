@@ -1,0 +1,345 @@
+<svg width="600" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 多彩漸層定義 -->
+    <linearGradient id="cardGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 邊框光電路動畫效果 -->
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#45b7d1;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- 電路線條濾鏡 -->
+    <filter id="circuitGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 阴影濾鏡 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- 呼吸動畫 -->
+    <style>
+      @keyframes breathe {
+        0%, 100% {
+          stroke-width: 2;
+          stroke: url(#borderGradient);
+          filter: drop-shadow(0 0 5px rgba(78, 205, 196, 0.6));
+          transform: scale(1);
+        }
+        50% {
+          stroke-width: 3;
+          stroke: #4ecdc4;
+          filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.8));
+          transform: scale(1.002);
+        }
+      }
+      
+      @keyframes circuitPulse {
+        0%, 100% {
+          stroke-dashoffset: 0;
+          stroke-opacity: 0.6;
+        }
+        50% {
+          stroke-dashoffset: -10;
+          stroke-opacity: 1;
+        }
+      }
+      
+      .breathe-border {
+        animation: breathe 3s ease-in-out infinite;
+      }
+      
+      .circuit-line {
+        stroke-dasharray: 5 3;
+        animation: circuitPulse 2s linear infinite;
+      }
+      
+      .card-title {
+        font-family: "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        text-anchor: middle;
+        fill: white;
+      }
+      
+      .content-title {
+        font-family: "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        fill: #cbd5e0;
+      }
+      
+      .content-text {
+        font-family: "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+        font-size: 14px;
+        fill: #09090aff;
+      }
+    </style>
+  </defs>
+
+  <!-- 第一張卡片：向度一：溫度 (愛度) -->
+  <g transform="translate(0, 0)">
+    <!-- 卡片背景 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="url(#cardGradient1)" filter="url(#shadow)"/>
+    
+    <!-- 呼吸光電路邊框 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="none" stroke="url(#borderGradient)" stroke-width="2" class="breathe-border"/>
+    
+    <!-- 標題背景 -->
+    <rect x="10" y="10" width="580" height="40" rx="10" fill="#2c5282"/>
+    
+    <!-- 標題文字 -->
+    <text x="300" y="35" class="card-title">
+      向度一：溫度 (愛度)
+    </text>
+    
+    <!-- 內容文字 -->
+    <text x="25" y="70" class="content-title">
+      定義：
+    </text>
+    <text x="25" y="95" class="content-text">
+      一個以彼此相愛為核心的屬靈家園。
+    </text>
+    
+    <text x="25" y="125" class="content-title">
+      核心經文：
+    </text>
+    <text x="25" y="150" class="content-text">
+      使徒行傳 2:46 「他們...存著歡喜、
+    </text>
+    <text x="25" y="175" class="content-text">
+      誠實的心用飯。」
+    </text>
+    
+    <text x="25" y="205" class="content-title">
+      實踐方法：
+    </text>
+    <text x="25" y="230" class="content-text">
+      1. 主動關懷新人 2. 發展小組內的生命關係
+    </text>
+    
+    <text x="25" y="260" class="content-title">
+      見證範例：
+    </text>
+    <text x="25" y="285" class="content-text">
+      師母在半夜醫院裡無私的服事。
+    </text>
+  </g>
+
+  <!-- 第二張卡片：向度二：深度 (靈命) -->
+  <g transform="translate(0, 320)">
+    <!-- 卡片背景 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="url(#cardGradient2)" filter="url(#shadow)"/>
+    
+    <!-- 呼吸光電路邊框 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="none" stroke="url(#borderGradient)" stroke-width="2" class="breathe-border"/>
+    
+    <!-- 標題背景 -->
+    <rect x="10" y="10" width="580" height="40" rx="10" fill="#744210"/>
+    
+    <!-- 標題文字 -->
+    <text x="300" y="35" class="card-title">
+      向度二：深度 (靈命)
+    </text>
+    
+    <!-- 內容文字 -->
+    <text x="25" y="70" class="content-title">
+      定義：
+    </text>
+    <text x="25" y="95" class="content-text">
+      一個全體會眾靈命成熟，像耶穌的群體。
+    </text>
+    
+    <text x="25" y="125" class="content-title">
+      核心經文：
+    </text>
+    <text x="25" y="150" class="content-text">
+      使徒行傳 2:42 「都恆心遵守使徒的教訓。」
+    </text>
+    
+    <text x="25" y="180" class="content-title">
+      實踐方法：
+    </text>
+    <text x="25" y="205" class="content-text">
+      1. 個人化QT(品質時間) 2. 接受裝備與牧養
+    </text>
+    
+    <text x="25" y="235" class="content-title">
+      見證範例：
+    </text>
+    <text x="25" y="260" class="content-text">
+      牧師開車時被聖靈光照，學習自省。
+    </text>
+  </g>
+
+  <!-- 第三張卡片：向度三：力度 (能力) -->
+  <g transform="translate(0, 640)">
+    <!-- 卡片背景 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="url(#cardGradient3)" filter="url(#shadow)"/>
+    
+    <!-- 呼吸光電路邊框 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="none" stroke="url(#borderGradient)" stroke-width="2" class="breathe-border"/>
+    
+    <!-- 標題背景 -->
+    <rect x="10" y="10" width="580" height="40" rx="10" fill="#2d3748"/>
+    
+    <!-- 標題文字 -->
+    <text x="300" y="35" class="card-title">
+      向度三：力度 (能力)
+    </text>
+    
+    <!-- 內容文字 -->
+    <text x="25" y="70" class="content-title">
+      定義：
+    </text>
+    <text x="25" y="95" class="content-text">
+      一個倚靠聖靈大能服事，滿有能力的教會。
+    </text>
+    
+    <text x="25" y="125" class="content-title">
+      核心經文：
+    </text>
+    <text x="25" y="150" class="content-text">
+      路加福音 24:49 「...等候從上頭來的能力」
+    </text>
+    
+    <text x="25" y="180" class="content-title">
+      實踐方法：
+    </text>
+    <text x="25" y="205" class="content-text">
+      1. 禱告祈求能力 2. 在服事中勇敢使用
+    </text>
+    
+    <text x="25" y="235" class="content-title">
+      見證範例：
+    </text>
+    <text x="25" y="260" class="content-text">
+      法官經歷超自然的醫治禱告，大受衝擊。
+    </text>
+  </g>
+
+  <!-- 第四張卡片：向度四：廣度 (格局) -->
+  <g transform="translate(0, 960)">
+    <!-- 卡片背景 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="url(#cardGradient4)" filter="url(#shadow)"/>
+    
+    <!-- 呼吸光電路邊框 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="none" stroke="url(#borderGradient)" stroke-width="2" class="breathe-border"/>
+    
+    <!-- 標題背景 -->
+    <rect x="10" y="10" width="580" height="40" rx="10" fill="#22543d"/>
+    
+    <!-- 標題文字 -->
+    <text x="300" y="35" class="card-title">
+      向度四：廣度 (格局)
+    </text>
+    
+    <!-- 內容文字 -->
+    <text x="25" y="70" class="content-title">
+      定義：
+    </text>
+    <text x="25" y="95" class="content-text">
+      從滿足內部需求，轉向裝備信徒影響世界。
+    </text>
+    
+    <text x="25" y="125" class="content-title">
+      核心經文：
+    </text>
+    <text x="25" y="150" class="content-text">
+      彼得前書 2:9 (隱含人人皆祭司的觀念)
+    </text>
+    
+    <text x="25" y="180" class="content-title">
+      實踐方法：
+    </text>
+    <text x="25" y="205" class="content-text">
+      1. 裝備每個信徒作傳道人 2. 差派進入職場
+    </text>
+    
+    <text x="25" y="235" class="content-title">
+      見證範例：
+    </text>
+    <text x="25" y="260" class="content-text">
+      家庭主婦被裝備成有信心開拓教會的領袖。
+    </text>
+  </g>
+
+  <!-- 第五張卡片：向度五：人數 (增長) -->
+  <g transform="translate(0, 1280)">
+    <!-- 卡片背景 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="url(#cardGradient5)" filter="url(#shadow)"/>
+    
+    <!-- 呼吸光電路邊框 -->
+    <rect x="10" y="10" width="580" height="280" rx="10" fill="none" stroke="url(#borderGradient)" stroke-width="2" class="breathe-border"/>
+    
+    <!-- 標題背景 -->
+    <rect x="10" y="10" width="580" height="40" rx="10" fill="#744210"/>
+    
+    <!-- 標題文字 -->
+    <text x="300" y="35" class="card-title">
+      向度五：人數 (增長)
+    </text>
+    
+    <!-- 內容文字 -->
+    <text x="25" y="70" class="content-title">
+      定義：
+    </text>
+    <text x="25" y="95" class="content-text">
+      一個忠於大使命，得救人數天天加增的教會。
+    </text>
+    
+    <text x="25" y="125" class="content-title">
+      核心經文：
+    </text>
+    <text x="25" y="150" class="content-text">
+      使徒行傳 2:47 「主將得救的人天天加給
+    </text>
+    <text x="25" y="175" class="content-text">
+      他們。」
+    </text>
+    
+    <text x="25" y="205" class="content-title">
+      實踐方法：
+    </text>
+    <text x="25" y="230" class="content-text">
+      1. 推動小組化 2. 定期舉辦佈道活動
+    </text>
+    
+    <text x="25" y="260" class="content-title">
+      見證範例：
+    </text>
+    <text x="25" y="285" class="content-text">
+      教會透過小組倍增，從客廳發展到如今規模。
+    </text>
+  </g>
+</svg>
