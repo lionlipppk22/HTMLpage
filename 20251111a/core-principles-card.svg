@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg style="fill:none;stroke:none;fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="500" viewBox="0 0 600 500">
+<style class="text-font-style fontImports" data-font-family="Noto Sans TC">@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;display=block);</style>
+
+<!-- 定義多彩漸層 -->
+<defs>
+<linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+<stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="factor1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ff9a56;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="factor2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="factor3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="factor4Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#f6d365;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#fda085;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="factor5Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#a1c4fd;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#c2e9fb;stop-opacity:1" />
+</linearGradient>
+
+<linearGradient id="detail1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ffecd2;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#fcb69f;stop-opacity:0.95" />
+</linearGradient>
+
+<linearGradient id="detail2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#a8edea;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#fed6e3;stop-opacity:0.95" />
+</linearGradient>
+
+<linearGradient id="detail3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#d299c2;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#fef9d7;stop-opacity:0.95" />
+</linearGradient>
+
+<linearGradient id="detail4Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#fbc2eb;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#a6c1ee;stop-opacity:0.95" />
+</linearGradient>
+
+<linearGradient id="detail5Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#89f7fe;stop-opacity:0.95" />
+<stop offset="100%" style="stop-color:#66a6ff;stop-opacity:0.95" />
+</linearGradient>
+
+<!-- 背景漸層 -->
+<linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+</linearGradient>
+
+<!-- 文字陰影效果 -->
+<filter id="textShadow">
+<feDropShadow dx="2" dy="2" stdDeviation="1" flood-opacity="0.3"/>
+</filter>
+</defs>
+
+<g id="items" style="isolation: isolate">
+<g id="blend" style="mix-blend-mode: normal">
+
+<!-- 背景 -->
+<rect x="0" y="0" width="600" height="500" fill="url(#backgroundGradient)"/>
+
+<!-- 標題區域 -->
+<g id="title-frame" transform="translate(50, 30)">
+<g id="title-bg" stroke="none" fill="url(#titleGradient)" fill-opacity="1">
+<path d="M500 52C500 62.941 305.019 70 250 70C194.981 70 0 62.941 0 52V0C0 10.941 194.981 18 250 18C305.019 18 500 10.941 500 0V52"></path>
+</g>
+</g>
+
+<!-- 五個核心要訣 -->
+<!-- 第一個要訣：品格優先原則 -->
+<g id="factor-1" transform="translate(50, 100)">
+<g id="bubble-1-main" stroke="none" fill="url(#factor1Gradient)" fill-opacity="0.9">
+<path d="M10 60C10 70 120 75 250 75C380 75 490 70 490 60V10C490 20 380 25 250 25C120 25 10 20 10 10V60"></path>
+</g>
+<g id="bubble-1-detail" stroke="none" fill="url(#detail1Gradient)" fill-opacity="0.9">
+<path d="M490 60 H10 V35C10 20 10 10 10 10 H490 V60"></path>
+</g>
+</g>
+
+<!-- 第二個要訣：理性迴避原則 -->
+<g id="factor-2" transform="translate(50, 170)">
+<g id="bubble-2-main" stroke="none" fill="url(#factor2Gradient)" fill-opacity="0.9">
+<path d="M10 60C10 70 120 75 250 75C380 75 490 70 490 60V10C490 20 380 25 250 25C120 25 10 20 10 10V60"></path>
+</g>
+<g id="bubble-2-detail" stroke="none" fill="url(#detail2Gradient)" fill-opacity="0.9">
+<path d="M490 60 H10 V35C10 20 10 10 10 10 H490 V60"></path>
+</g>
+</g>
+
+<!-- 第三個要訣：信任複利原則 -->
+<g id="factor-3" transform="translate(50, 240)">
+<g id="bubble-3-main" stroke="none" fill="url(#factor3Gradient)" fill-opacity="0.9">
+<path d="M10 60C10 70 120 75 250 75C380 75 490 70 490 60V10C490 20 380 25 250 25C120 25 10 20 10 10V60"></path>
+</g>
+<g id="bubble-3-detail" stroke="none" fill="url(#detail3Gradient)" fill-opacity="0.9">
+<path d="M490 60 H10 V35C10 20 10 10 10 10 H490 V60"></path>
+</g>
+</g>
+
+<!-- 第四個要訣：簡潔清晰原則 -->
+<g id="factor-4" transform="translate(50, 310)">
+<g id="bubble-4-main" stroke="none" fill="url(#factor4Gradient)" fill-opacity="0.9">
+<path d="M10 60C10 70 120 75 250 75C380 75 490 70 490 60V10C490 20 380 25 250 25C120 25 10 20 10 10V60"></path>
+</g>
+<g id="bubble-4-detail" stroke="none" fill="url(#detail4Gradient)" fill-opacity="0.9">
+<path d="M490 60 H10 V35C10 20 10 10 10 10 H490 V60"></path>
+</g>
+</g>
+
+<!-- 第五個要訣：機會成本原則 -->
+<g id="factor-5" transform="translate(50, 380)">
+<g id="bubble-5-main" stroke="none" fill="url(#factor5Gradient)" fill-opacity="0.9">
+<path d="M10 60C10 70 120 75 250 75C380 75 490 70 490 60V10C490 20 380 25 250 25C120 25 10 20 10 10V60"></path>
+</g>
+<g id="bubble-5-detail" stroke="none" fill="url(#detail5Gradient)" fill-opacity="0.9">
+<path d="M490 60 H10 V35C10 20 10 10 10 10 H490 V60"></path>
+</g>
+</g>
+
+<!-- 標題文字 -->
+<g id="title-text" transform="translate(50, 20)">
+<g id="title-text-fill" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 25px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 35)" font-weight="bold" font-size="25px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-75" y="17" dominant-baseline="ideographic">核心要訣速覽</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第一個要訣：品格優先原則 -->
+<g id="text-1" transform="translate(50, 90)">
+<g id="text-1-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 18px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 35)" font-weight="bold" font-size="18px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-60" y="12" dominant-baseline="ideographic">品格優先原則</tspan>
+</text>
+</g>
+<g id="text-1-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 14px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 55)" font-size="14px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-120" y="10" dominant-baseline="ideographic">品格，而非策略或智力，是決定所有事情結局的最終因素</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第二個要訣：理性迴避原則 -->
+<g id="text-2" transform="translate(50, 160)">
+<g id="text-2-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 18px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 35)" font-weight="bold" font-size="18px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-60" y="12" dominant-baseline="ideographic">理性迴避原則</tspan>
+</text>
+</g>
+<g id="text-2-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 14px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 55)" font-size="14px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-120" y="10" dominant-baseline="ideographic">成功更多來自於避開愚蠢的錯誤，而非抓住絕佳的機會</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第三個要訣：信任複利原則 -->
+<g id="text-3" transform="translate(50, 230)">
+<g id="text-3-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 18px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 35)" font-weight="bold" font-size="18px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-60" y="12" dominant-baseline="ideographic">信任複利原則</tspan>
+</text>
+</g>
+<g id="text-3-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 14px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 55)" font-size="14px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-135" y="10" dominant-baseline="ideographic">正直與信任如同資本，會隨著時間產生巨大的複利效應</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第四個要訣：簡潔清晰原則 -->
+<g id="text-4" transform="translate(50, 300)">
+<g id="text-4-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 18px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 35)" font-weight="bold" font-size="18px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-60" y="12" dominant-baseline="ideographic">簡潔清晰原則</tspan>
+</text>
+</g>
+<g id="text-4-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 14px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 55)" font-size="14px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-150" y="10" dominant-baseline="ideographic">複雜性往往是無能或欺騙的偽裝；真正的智慧體現於簡潔</tspan>
+</text>
+</g>
+</g>
+
+<!-- 第五個要訣：機會成本原則 -->
+<g id="text-5" transform="translate(50, 370)">
+<g id="text-5-title" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: bold 18px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 35)" font-weight="bold" font-size="18px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-60" y="12" dominant-baseline="ideographic">機會成本原則</tspan>
+</text>
+</g>
+<g id="text-5-desc" stroke="none" fill="#ffffff" fill-opacity="1" filter="url(#textShadow)">
+<text style="font: 14px 'Noto Sans TC', sans-serif; white-space: pre;" transform="translate(250, 55)" font-size="14px" font-family="'Noto Sans TC', sans-serif">
+<tspan x="-165" y="10" dominant-baseline="ideographic">與錯誤的人事物糾纏，代價是浪費時間與機會</tspan>
+</text>
+</g>
+</g>
+
+<!-- 裝飾性元素 -->
+<g id="decorative-elements">
+<path id="separator-line-1" d="M50 155 L550 155" stroke="url(#factor1Gradient)" stroke-width="2" stroke-opacity="0.7"></path>
+<path id="separator-line-2" d="M50 225 L550 225" stroke="url(#factor2Gradient)" stroke-width="2" stroke-opacity="0.7"></path>
+<path id="separator-line-3" d="M50 295 L550 295" stroke="url(#factor3Gradient)" stroke-width="2" stroke-opacity="0.7"></path>
+<path id="separator-line-4" d="M50 365 L550 365" stroke="url(#factor4Gradient)" stroke-width="2" stroke-opacity="0.7"></path>
+</g>
+
+<!-- 裝飾性圖形 -->
+<g id="decorative-shapes">
+<circle cx="100" cy="130" r="8" fill="url(#factor1Gradient)" opacity="0.6"/>
+<circle cx="500" cy="130" r="6" fill="url(#factor1Gradient)" opacity="0.4"/>
+<circle cx="100" cy="200" r="8" fill="url(#factor2Gradient)" opacity="0.6"/>
+<circle cx="500" cy="200" r="6" fill="url(#factor2Gradient)" opacity="0.4"/>
+<circle cx="100" cy="270" r="8" fill="url(#factor3Gradient)" opacity="0.6"/>
+<circle cx="500" cy="270" r="6" fill="url(#factor3Gradient)" opacity="0.4"/>
+<circle cx="100" cy="340" r="8" fill="url(#factor4Gradient)" opacity="0.6"/>
+<circle cx="500" cy="340" r="6" fill="url(#factor4Gradient)" opacity="0.4"/>
+<circle cx="100" cy="410" r="8" fill="url(#factor5Gradient)" opacity="0.6"/>
+<circle cx="500" cy="410" r="6" fill="url(#factor5Gradient)" opacity="0.4"/>
+</g>
+
+</g>
+</g>
+</svg>
