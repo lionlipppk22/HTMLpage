@@ -1,0 +1,204 @@
+
+<svg width="600" height="1067" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGradientTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e53e3e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fc8181;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e53e3e;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradientBottom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 呼吸光電路動畫效果 -->
+    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- 呼吸效果濾鏡 -->
+    <filter id="breatheGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 電路線條濾鏡 -->
+    <filter id="circuitGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 呼吸動畫 -->
+    <style>
+      @keyframes breathe {
+        0%, 100% {
+          stroke-width: 2;
+          stroke: url(#circuitGradient);
+          filter: drop-shadow(0 0 5px rgba(0, 187, 255, 0.6));
+          transform: scale(1);
+        }
+        25% {
+          stroke-width: 3;
+          stroke: #00ffff;
+          filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
+          transform: scale(1.005);
+        }
+        50% {
+          stroke-width: 4;
+          stroke: #0066ff;
+          filter: drop-shadow(0 0 15px rgba(0, 102, 255, 0.9));
+          transform: scale(1.01);
+        }
+        75% {
+          stroke-width: 3;
+          stroke: #00b3ff;
+          filter: drop-shadow(0 0 10px rgba(0, 179, 255, 0.8));
+          transform: scale(1.005);
+        }
+      }
+      
+      @keyframes circuitPulse {
+        0%, 100% {
+          stroke-dashoffset: 0;
+          stroke-opacity: 0.6;
+        }
+        50% {
+          stroke-dashoffset: -10;
+          stroke-opacity: 1;
+        }
+      }
+      
+      .breathe-border {
+        animation: breathe 3s ease-in-out infinite;
+      }
+      
+      .circuit-line {
+        stroke-dasharray: 5 3;
+        animation: circuitPulse 2s linear infinite;
+      }
+    </style>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 上卡片背景 -->
+  <rect x="10" y="10" width="580" height="510" rx="10" fill="url(#cardGradientTop)" filter="url(#shadow)"/>
+  
+  <!-- 上卡片呼吸光電路邊框 -->
+  <rect x="10" y="10" width="580" height="510" rx="10" fill="none" stroke="url(#circuitGradient)" stroke-width="2" class="breathe-border"/>
+  
+  <!-- 上卡片電路線條裝飾 -->
+  <rect x="15" y="15" width="570" height="500" rx="8" fill="none" stroke="url(#circuitGradient)" stroke-width="1" filter="url(#circuitGlow)" class="circuit-line"/>
+  <rect x="20" y="20" width="560" height="490" rx="6" fill="none" stroke="rgba(0, 187, 255, 0.3)" stroke-width="0.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  
+  <!-- 上卡片標題 -->
+  <rect x="10" y="10" width="580" height="40" rx="10" fill="#3182ce"/>
+  <text x="300" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+    論點綱要：停止對結果的期待
+  </text>
+  
+  <!-- 上卡片內容 -->
+  <text x="25" y="70" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    定義：
+  </text>
+  <text x="25" y="100" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    一種心理上的主動選擇，將注意力從無法控制的未來結果上移開，
+  </text>
+  <text x="25" y="120" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    以避免其帶來的負面情緒干擾。
+  </text>
+  
+  <text x="25" y="150" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    心理陷阱：
+  </text>
+  <text x="25" y="180" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    對結果的執著會引發「期待-失望-自責」的惡性循環，導致表現失常。
+  </text>
+  
+  <text x="25" y="210" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    典型範例：
+  </text>
+  <text x="25" y="240" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    - 考試：越想考滿分，錯一題就越緊張。
+  </text>
+  <text x="25" y="265" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    - 約會：越想「非成功不可」，表現就越僵硬不自然。
+  </text>
+  
+  <text x="25" y="295" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    實踐步驟：
+  </text>
+  <text x="25" y="325" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    在腦中警覺並提醒自己：「只要開始期待結果，就要立即停止。」
+  </text>
+  
+  <!-- 下卡片背景 -->
+  <rect x="10" y="540" width="580" height="510" rx="10" fill="url(#cardGradientBottom)" filter="url(#shadow)"/>
+  
+  <!-- 下卡片呼吸光電路邊框 -->
+  <rect x="10" y="540" width="580" height="510" rx="10" fill="none" stroke="url(#circuitGradient)" stroke-width="2" class="breathe-border"/>
+  
+  <!-- 下卡片電路線條裝飾 -->
+  <rect x="15" y="545" width="570" height="500" rx="8" fill="none" stroke="url(#circuitGradient)" stroke-width="1" filter="url(#circuitGlow)" class="circuit-line"/>
+  <rect x="20" y="550" width="560" height="490" rx="6" fill="none" stroke="rgba(0, 187, 255, 0.3)" stroke-width="0.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  
+  <!-- 下卡片標題 -->
+  <rect x="10" y="540" width="580" height="40" rx="10" fill="#3182ce"/>
+  <text x="300" y="565" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+    論點綱要：專注於掌控當下能控制的事物
+  </text>
+  
+  <!-- 下卡片內容 -->
+  <text x="25" y="600" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    定義：
+  </text>
+  <text x="25" y="630" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    將個人所有的心力與資源，投入到當下可以自主決策和執行的行動上。
+  </text>
+  
+  <text x="25" y="660" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    方法 / 兩大支柱：
+  </text>
+  <text x="25" y="690" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    1. 事前準備：投入可量化的時間與精力，選擇務實的策略（例如：只做基本題）。
+  </text>
+  <text x="25" y="720" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    2. 當下心態：臨在當下，專注於「現在能做什麼」，而非憂慮突發狀況（例如：
+  </text>
+  <text x="25" y="745" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    車子拋錨時，不想著旅程泡湯，而是想著現在能玩什麼）。
+  </text>
+  
+  <text x="25" y="775" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e2e8f0">
+    核心心法：
+  </text>
+  <text x="25" y="805" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    你所能做到的，永遠都只是「控制好那些你能控制的事情」，這才是心靈安定
+  </text>
+  <text x="25" y="830" font-family="Arial, sans-serif" font-size="16" fill="#cbd5e0">
+    踏實的根基。
+  </text>
+  
+  <!-- 角落電路裝飾 -->
+  <path d="M10,10 L30,10 L30,30 L10,30 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  <path d="M570,10 L590,10 L590,30 L570,30 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  <path d="M10,510 L30,510 L30,530 L10,530 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  <path d="M570,510 L590,510 L590,530 L570,530 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  
+  <path d="M10,540 L30,540 L30,560 L10,560 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  <path d="M570,540 L590,540 L590,560 L570,560 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  <path d="M10,1030 L30,1030 L30,1050 L10,1050 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+  <path d="M570,1030 L590,1030 L590,1050 L570,1050 Z" fill="none" stroke="url(#circuitGradient)" stroke-width="1.5" filter="url(#circuitGlow)" class="circuit-line"/>
+</svg>
