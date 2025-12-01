@@ -1,0 +1,114 @@
+<svg width="580" height="780" viewBox="0 0 580 780" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="rgba(0,0,0,0.1)"/>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: 'Noto Sans TC', sans-serif; }
+    .title { font-size: 24px; font-weight: bold; fill: white; }
+    .step-title { font-size: 16px; font-weight: bold; fill: #2d3748; }
+    .step-desc { font-size: 14px; fill: #4a5568; }
+    .sub-point { font-size: 13px; fill: #718096; font-style: italic; }
+    .marker-text { font-size: 14px; font-weight: bold; fill: #764ba2; text-anchor: middle; dominant-baseline: central; }
+    .tag-bg { fill: #e9d8fd; }
+    .tag-text { font-size: 12px; font-weight: bold; fill: #553c9a; }
+  </style>
+
+  <!-- Background Card -->
+  <rect x="40" y="40" width="500" height="700" rx="16" fill="white" filter="url(#shadow)" stroke="#e1e4e8" />
+
+  <!-- Header -->
+  <path d="M 40 56 Q 40 40 56 40 L 524 40 Q 540 40 540 56 L 540 110 L 40 110 Z" fill="url(#headerGrad)" />
+  <text x="290" y="85" text-anchor="middle" class="title">核心論點：從經歷到真理的旅程</text>
+
+  <!-- Timeline Line -->
+  <line x1="88" y1="150" x2="88" y2="660" stroke="#e1e4e8" stroke-width="2" />
+
+  <!-- Step 1 -->
+  <g transform="translate(40, 150)">
+    <!-- Marker -->
+    <circle cx="48" cy="16" r="16" fill="white" stroke="#764ba2" stroke-width="2" />
+    <text x="48" y="16" class="marker-text">1</text>
+    <!-- Content Box -->
+    <g transform="translate(80, 0)">
+      <rect x="0" y="0" width="380" height="80" rx="8" fill="#f8f9fa" />
+      <path d="M 2 2 L 2 78" stroke="#764ba2" stroke-width="4" stroke-linecap="round" />
+      <!-- Tag -->
+      <rect x="16" y="14" width="36" height="20" rx="4" class="tag-bg" />
+      <text x="34" y="28" text-anchor="middle" class="tag-text">起點</text>
+      <!-- Title -->
+      <text x="60" y="29" class="step-title">自我認知</text>
+      <!-- Desc -->
+      <text x="16" y="52" class="step-desc">深陷軟弱與無力感</text>
+      <!-- Sub -->
+      <text x="16" y="70" class="sub-point">"我真是超爛的"、"又惡又懶的僕人"</text>
+    </g>
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(40, 250)">
+    <circle cx="48" cy="16" r="16" fill="white" stroke="#764ba2" stroke-width="2" />
+    <text x="48" y="16" class="marker-text">2</text>
+    <g transform="translate(80, 0)">
+      <rect x="0" y="0" width="380" height="80" rx="8" fill="#f8f9fa" />
+      <path d="M 2 2 L 2 78" stroke="#764ba2" stroke-width="4" stroke-linecap="round" />
+      <rect x="16" y="14" width="36" height="20" rx="4" class="tag-bg" />
+      <text x="34" y="28" text-anchor="middle" class="tag-text">過程</text>
+      <text x="60" y="29" class="step-title">行動邀請</text>
+      <text x="16" y="52" class="step-desc">參與在神的計畫中 (為學弟禱告)</text>
+      <text x="16" y="70" class="sub-point">體驗神的主動："不是主在我心裡了嗎？"</text>
+    </g>
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(40, 350)">
+    <circle cx="48" cy="16" r="16" fill="white" stroke="#764ba2" stroke-width="2" />
+    <text x="48" y="16" class="marker-text">3</text>
+    <g transform="translate(80, 0)">
+      <rect x="0" y="0" width="380" height="80" rx="8" fill="#f8f9fa" />
+      <path d="M 2 2 L 2 78" stroke="#764ba2" stroke-width="4" stroke-linecap="round" />
+      <rect x="16" y="14" width="36" height="20" rx="4" class="tag-bg" />
+      <text x="34" y="28" text-anchor="middle" class="tag-text">轉折</text>
+      <text x="60" y="29" class="step-title">經歷神愛</text>
+      <text x="16" y="52" class="step-desc">親眼見證神的作為</text>
+      <text x="16" y="70" class="sub-point">領悟：神的工作是為了彰顯祂的愛給我們看</text>
+    </g>
+  </g>
+
+  <!-- Step 4 -->
+  <g transform="translate(40, 450)">
+    <circle cx="48" cy="16" r="16" fill="white" stroke="#764ba2" stroke-width="2" />
+    <text x="48" y="16" class="marker-text">4</text>
+    <g transform="translate(80, 0)">
+      <rect x="0" y="0" width="380" height="100" rx="8" fill="#f8f9fa" />
+      <path d="M 2 2 L 2 98" stroke="#764ba2" stroke-width="4" stroke-linecap="round" />
+      <rect x="16" y="14" width="36" height="20" rx="4" class="tag-bg" />
+      <text x="34" y="28" text-anchor="middle" class="tag-text">深化</text>
+      <text x="60" y="29" class="step-title">神學印證</text>
+      <text x="16" y="52" class="step-desc">真理的闡釋 (彼此相愛)</text>
+      <text x="16" y="74" class="sub-point">• 根基：神先愛了我們 (在我們還軟弱時)</text>
+      <text x="16" y="90" class="sub-point">• 實踐：成為愛中富足、常以為虧欠的人</text>
+    </g>
+  </g>
+
+  <!-- Step 5 -->
+  <g transform="translate(40, 570)">
+    <circle cx="48" cy="16" r="16" fill="white" stroke="#764ba2" stroke-width="2" />
+    <text x="48" y="16" class="marker-text">5</text>
+    <g transform="translate(80, 0)">
+      <rect x="0" y="0" width="380" height="80" rx="8" fill="#f8f9fa" />
+      <path d="M 2 2 L 2 78" stroke="#764ba2" stroke-width="4" stroke-linecap="round" />
+      <rect x="16" y="14" width="36" height="20" rx="4" class="tag-bg" />
+      <text x="34" y="28" text-anchor="middle" class="tag-text">終點</text>
+      <text x="60" y="29" class="step-title">生命樣式</text>
+      <text x="16" y="52" class="step-desc">活出看得見的愛</text>
+      <text x="16" y="70" class="sub-point">教會群體見證</text>
+    </g>
+  </g>
+
+</svg>
