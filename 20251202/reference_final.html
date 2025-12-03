@@ -2,1204 +2,1357 @@
 <html>
 
 <head>
-    <title>reference</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-
-
-    <style>
-        code[class*=language-],
-        pre[class*=language-] {
-            color: #333;
-            background: 0 0;
-            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            text-align: left;
-            white-space: pre;
-            word-spacing: normal;
-            word-break: normal;
-            word-wrap: normal;
-            line-height: 1.4;
-            -moz-tab-size: 8;
-            -o-tab-size: 8;
-            tab-size: 8;
-            -webkit-hyphens: none;
-            -moz-hyphens: none;
-            -ms-hyphens: none;
-            hyphens: none
-        }
-
-        pre[class*=language-] {
-            padding: .8em;
-            overflow: auto;
-            border-radius: 3px;
-            background: #f5f5f5
-        }
-
-        :not(pre)>code[class*=language-] {
-            padding: .1em;
-            border-radius: .3em;
-            white-space: normal;
-            background: #f5f5f5
-        }
-
-        .token.blockquote,
-        .token.comment {
-            color: #969896
-        }
-
-        .token.cdata {
-            color: #183691
-        }
-
-        .token.doctype,
-        .token.macro.property,
-        .token.punctuation,
-        .token.variable {
-            color: #333
-        }
-
-        .token.builtin,
-        .token.important,
-        .token.keyword,
-        .token.operator,
-        .token.rule {
-            color: #a71d5d
-        }
-
-        .token.attr-value,
-        .token.regex,
-        .token.string,
-        .token.url {
-            color: #183691
-        }
-
-        .token.atrule,
-        .token.boolean,
-        .token.code,
-        .token.command,
-        .token.constant,
-        .token.entity,
-        .token.number,
-        .token.property,
-        .token.symbol {
-            color: #0086b3
-        }
-
-        .token.prolog,
-        .token.selector,
-        .token.tag {
-            color: #63a35c
-        }
-
-        .token.attr-name,
-        .token.class,
-        .token.class-name,
-        .token.function,
-        .token.id,
-        .token.namespace,
-        .token.pseudo-class,
-        .token.pseudo-element,
-        .token.url-reference .token.variable {
-            color: #795da3
-        }
-
-        .token.entity {
-            cursor: help
-        }
-
-        .token.title,
-        .token.title .token.punctuation {
-            font-weight: 700;
-            color: #1d3e81
-        }
-
-        .token.list {
-            color: #ed6a43
-        }
-
-        .token.inserted {
-            background-color: #eaffea;
-            color: #55a532
-        }
-
-        .token.deleted {
-            background-color: #ffecec;
-            color: #bd2c00
-        }
-
-        .token.bold {
-            font-weight: 700
-        }
-
-        .token.italic {
-            font-style: italic
-        }
-
-        .language-json .token.property {
-            color: #183691
-        }
-
-        .language-markup .token.tag .token.punctuation {
-            color: #333
-        }
-
-        .language-css .token.function,
-        code.language-css {
-            color: #0086b3
-        }
-
-        .language-yaml .token.atrule {
-            color: #63a35c
-        }
-
-        code.language-yaml {
-            color: #183691
-        }
-
-        .language-ruby .token.function {
-            color: #333
-        }
-
-        .language-markdown .token.url {
-            color: #795da3
-        }
-
-        .language-makefile .token.symbol {
-            color: #795da3
-        }
-
-        .language-makefile .token.variable {
-            color: #183691
-        }
-
-        .language-makefile .token.builtin {
-            color: #0086b3
-        }
-
-        .language-bash .token.keyword {
-            color: #0086b3
-        }
-
-        pre[data-line] {
-            position: relative;
-            padding: 1em 0 1em 3em
-        }
-
-        pre[data-line] .line-highlight-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: transparent;
-            display: block;
-            width: 100%
-        }
-
-        pre[data-line] .line-highlight {
-            position: absolute;
-            left: 0;
-            right: 0;
-            padding: inherit 0;
-            margin-top: 1em;
-            background: hsla(24, 20%, 50%, .08);
-            background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
-            pointer-events: none;
-            line-height: inherit;
-            white-space: pre
-        }
-
-        pre[data-line] .line-highlight:before,
-        pre[data-line] .line-highlight[data-end]:after {
-            content: attr(data-start);
-            position: absolute;
-            top: .4em;
-            left: .6em;
-            min-width: 1em;
-            padding: 0 .5em;
-            background-color: hsla(24, 20%, 50%, .4);
-            color: #f4f1ef;
-            font: bold 65%/1.5 sans-serif;
-            text-align: center;
-            vertical-align: .3em;
-            border-radius: 999px;
-            text-shadow: none;
-            box-shadow: 0 1px #fff
-        }
-
-        pre[data-line] .line-highlight[data-end]:after {
-            content: attr(data-end);
-            top: auto;
-            bottom: .4em
-        }
-
-        html body {
-            font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-            overflow: initial;
-            box-sizing: border-box;
-            word-wrap: break-word
-        }
-
-        html body>:first-child {
-            margin-top: 0
-        }
-
-        html body h1,
-        html body h2,
-        html body h3,
-        html body h4,
-        html body h5,
-        html body h6 {
-            line-height: 1.2;
-            margin-top: 1em;
-            margin-bottom: 16px;
-            color: #000
-        }
-
-        html body h1 {
-            font-size: 2.25em;
-            font-weight: 300;
-            padding-bottom: .3em
-        }
-
-        html body h2 {
-            font-size: 1.75em;
-            font-weight: 400;
-            padding-bottom: .3em
-        }
-
-        html body h3 {
-            font-size: 1.5em;
-            font-weight: 500
-        }
-
-        html body h4 {
-            font-size: 1.25em;
-            font-weight: 600
-        }
-
-        html body h5 {
-            font-size: 1.1em;
-            font-weight: 600
-        }
-
-        html body h6 {
-            font-size: 1em;
-            font-weight: 600
-        }
-
-        html body h1,
-        html body h2,
-        html body h3,
-        html body h4,
-        html body h5 {
-            font-weight: 600
-        }
-
-        html body h5 {
-            font-size: 1em
-        }
-
-        html body h6 {
-            color: #5c5c5c
-        }
-
-        html body strong {
-            color: #000
-        }
-
-        html body del {
-            color: #5c5c5c
-        }
-
-        html body a:not([href]) {
-            color: inherit;
-            text-decoration: none
-        }
-
-        html body a {
-            color: #08c;
-            text-decoration: none
-        }
-
-        html body a:hover {
-            color: #00a3f5;
-            text-decoration: none
-        }
-
-        html body img {
-            max-width: 100%
-        }
-
-        html body>p {
-            margin-top: 0;
-            margin-bottom: 16px;
-            word-wrap: break-word
-        }
-
-        html body>ol,
-        html body>ul {
-            margin-bottom: 16px
-        }
-
-        html body ol,
-        html body ul {
-            padding-left: 2em
-        }
-
-        html body ol.no-list,
-        html body ul.no-list {
-            padding: 0;
-            list-style-type: none
-        }
-
-        html body ol ol,
-        html body ol ul,
-        html body ul ol,
-        html body ul ul {
-            margin-top: 0;
-            margin-bottom: 0
-        }
-
-        html body li {
-            margin-bottom: 0
-        }
-
-        html body li.task-list-item {
-            list-style: none
-        }
-
-        html body li>p {
-            margin-top: 0;
-            margin-bottom: 0
-        }
-
-        html body .task-list-item-checkbox {
-            margin: 0 .2em .25em -1.8em;
-            vertical-align: middle
-        }
-
-        html body .task-list-item-checkbox:hover {
-            cursor: pointer
-        }
-
-        html body blockquote {
-            margin: 16px 0;
-            font-size: inherit;
-            padding: 0 15px;
-            color: #5c5c5c;
-            background-color: #f0f0f0;
-            border-left: 4px solid #d6d6d6
-        }
-
-        html body blockquote>:first-child {
-            margin-top: 0
-        }
-
-        html body blockquote>:last-child {
-            margin-bottom: 0
-        }
-
-        html body hr {
-            height: 4px;
-            margin: 32px 0;
-            background-color: #d6d6d6;
-            border: 0 none
-        }
-
-        html body table {
-            margin: 10px 0 15px 0;
-            border-collapse: collapse;
-            border-spacing: 0;
-            display: block;
-            width: 100%;
-            overflow: auto;
-            word-break: normal;
-            word-break: keep-all
-        }
-
-        html body table th {
-            font-weight: 700;
-            color: #000
-        }
-
-        html body table td,
-        html body table th {
-            border: 1px solid #d6d6d6;
-            padding: 6px 13px
-        }
-
-        html body dl {
-            padding: 0
-        }
-
-        html body dl dt {
-            padding: 0;
-            margin-top: 16px;
-            font-size: 1em;
-            font-style: italic;
-            font-weight: 700
-        }
-
-        html body dl dd {
-            padding: 0 16px;
-            margin-bottom: 16px
-        }
-
-        html body code {
-            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-            font-size: .85em;
-            color: #000;
-            background-color: #f0f0f0;
-            border-radius: 3px;
-            padding: .2em 0
-        }
-
-        html body code::after,
-        html body code::before {
-            letter-spacing: -.2em;
-            content: '\00a0'
-        }
-
-        html body pre>code {
-            padding: 0;
-            margin: 0;
-            word-break: normal;
-            white-space: pre;
-            background: 0 0;
-            border: 0
-        }
-
-        html body .highlight {
-            margin-bottom: 16px
-        }
-
-        html body .highlight pre,
-        html body pre {
-            padding: 1em;
-            overflow: auto;
-            line-height: 1.45;
-            border: #d6d6d6;
-            border-radius: 3px
-        }
-
-        html body .highlight pre {
-            margin-bottom: 0;
-            word-break: normal
-        }
-
-        html body pre code,
-        html body pre tt {
-            display: inline;
-            max-width: initial;
-            padding: 0;
-            margin: 0;
-            overflow: initial;
-            line-height: inherit;
-            word-wrap: normal;
-            background-color: transparent;
-            border: 0
-        }
-
-        html body pre code:after,
-        html body pre code:before,
-        html body pre tt:after,
-        html body pre tt:before {
-            content: normal
-        }
-
-        html body blockquote,
-        html body dl,
-        html body ol,
-        html body p,
-        html body pre,
-        html body ul {
-            margin-top: 0;
-            margin-bottom: 16px
-        }
-
-        html body kbd {
-            color: #000;
-            border: 1px solid #d6d6d6;
-            border-bottom: 2px solid #c7c7c7;
-            padding: 2px 4px;
-            background-color: #f0f0f0;
-            border-radius: 3px
-        }
-
-        @media print {
-            html body {
-                background-color: #fff
-            }
-
-            html body h1,
-            html body h2,
-            html body h3,
-            html body h4,
-            html body h5,
-            html body h6 {
-                color: #000;
-                page-break-after: avoid
-            }
-
-            html body blockquote {
-                color: #5c5c5c
-            }
-
-            html body pre {
-                page-break-inside: avoid
-            }
-
-            html body table {
-                display: table
-            }
-
-            html body img {
-                display: block;
-                max-width: 100%;
-                max-height: 100%
-            }
-
-            html body code,
-            html body pre {
-                word-wrap: break-word;
-                white-space: pre
-            }
-        }
-
-        .markdown-preview {
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box
-        }
-
-        .markdown-preview ul {
-            list-style: disc
-        }
-
-        .markdown-preview ul ul {
-            list-style: circle
-        }
-
-        .markdown-preview ul ul ul {
-            list-style: square
-        }
-
-        .markdown-preview ol {
-            list-style: decimal
-        }
-
-        .markdown-preview ol ol,
-        .markdown-preview ul ol {
-            list-style-type: lower-roman
-        }
-
-        .markdown-preview ol ol ol,
-        .markdown-preview ol ul ol,
-        .markdown-preview ul ol ol,
-        .markdown-preview ul ul ol {
-            list-style-type: lower-alpha
-        }
-
-        .markdown-preview .newpage,
-        .markdown-preview .pagebreak {
-            page-break-before: always
-        }
-
-        .markdown-preview pre.line-numbers {
-            position: relative;
-            padding-left: 3.8em;
-            counter-reset: linenumber
-        }
-
-        .markdown-preview pre.line-numbers>code {
-            position: relative
-        }
-
-        .markdown-preview pre.line-numbers .line-numbers-rows {
-            position: absolute;
-            pointer-events: none;
-            top: 1em;
-            font-size: 100%;
-            left: 0;
-            width: 3em;
-            letter-spacing: -1px;
-            border-right: 1px solid #999;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none
-        }
-
-        .markdown-preview pre.line-numbers .line-numbers-rows>span {
-            pointer-events: none;
-            display: block;
-            counter-increment: linenumber
-        }
-
-        .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
-            content: counter(linenumber);
-            color: #999;
-            display: block;
-            padding-right: .8em;
-            text-align: right
-        }
-
-        .markdown-preview .mathjax-exps .MathJax_Display {
-            text-align: center !important
-        }
-
-        .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
-            display: none
-        }
-
-        .markdown-preview:not([data-for=preview]) .code-chunk .status {
-            display: none
-        }
-
-        .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
-            margin-bottom: 16px
-        }
-
-        .markdown-preview .md-toc {
-            padding: 0
-        }
-
-        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
-            display: inline;
-            padding: .25rem 0
-        }
-
-        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
-        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
-            display: inline
-        }
-
-        .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
-            font-weight: 800
-        }
-
-        .scrollbar-style::-webkit-scrollbar {
-            width: 8px
-        }
-
-        .scrollbar-style::-webkit-scrollbar-track {
-            border-radius: 10px;
-            background-color: transparent
-        }
-
-        .scrollbar-style::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-            background-color: rgba(150, 150, 150, .66);
-            border: 4px solid rgba(150, 150, 150, .66);
-            background-clip: content-box
-        }
-
-        html body[for=html-export]:not([data-presentation-mode]) {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            margin: 0;
-            padding: 0;
-            overflow: auto
-        }
-
-        html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
-            position: relative;
-            top: 0;
-            min-height: 100vh
-        }
-
-        @media screen and (min-width:914px) {
-            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
-                padding: 2em calc(50% - 457px + 2em)
-            }
-        }
-
-        @media screen and (max-width:914px) {
-            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
-                padding: 2em
-            }
-        }
-
-        @media screen and (max-width:450px) {
-            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
-                font-size: 14px !important;
-                padding: 1em
-            }
-        }
-
-        @media print {
-            html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
-                display: none
-            }
-        }
-
-        html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
-            position: fixed;
-            bottom: 8px;
-            left: 8px;
-            font-size: 28px;
-            cursor: pointer;
-            color: inherit;
-            z-index: 99;
-            width: 32px;
-            text-align: center;
-            opacity: .4
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
-            opacity: 1
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 100%;
-            padding: 32px 0 48px 0;
-            font-size: 14px;
-            box-shadow: 0 0 4px rgba(150, 150, 150, .33);
-            box-sizing: border-box;
-            overflow: auto;
-            background-color: inherit
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
-            width: 8px
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
-            border-radius: 10px;
-            background-color: transparent
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-            background-color: rgba(150, 150, 150, .66);
-            border: 4px solid rgba(150, 150, 150, .66);
-            background-clip: content-box
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
-            text-decoration: none
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
-            padding: 0 16px
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
-            display: inline;
-            padding: .25rem 0
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
-            display: inline
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
-            font-weight: 800
-        }
-
-        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
-            left: 300px;
-            width: calc(100% - 300px);
-            padding: 2em calc(50% - 457px - 300px / 2);
-            margin: 0;
-            box-sizing: border-box
-        }
-
-        @media screen and (max-width:1274px) {
-            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
-                padding: 2em
-            }
-        }
-
-        @media screen and (max-width:450px) {
-            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
-                width: 100%
-            }
-        }
-
-        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
-            left: 50%;
-            transform: translateX(-50%)
-        }
-
-        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
-            display: none
-        }
-
-        /* Please visit the URL below for more information: */
-        /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
-    </style>
-    <!-- The content below will be included at the end of the <head> element. -->
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            // your code here
-        });
-    </script>
-    <style>
-        /* Collapsible Section Styles */
-        .collapsible-section {
-            margin-bottom: 1rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            background-color: #fff;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        }
-
-        .collapsible-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background-color: #f9fafb;
-            cursor: pointer;
-            user-select: none;
-            transition: background-color 0.2s;
-        }
-
-        .collapsible-header:hover {
-            background-color: #f3f4f6;
-        }
-
-        .collapsible-header h2,
-        .collapsible-header h3 {
-            margin: 0;
-            font-size: 1.25rem;
-            color: #111827;
-            flex-grow: 1;
-        }
-
-        .collapsible-icon {
-            transition: transform 0.3s ease;
-            width: 1.5rem;
-            height: 1.5rem;
-            color: #6b7280;
-            flex-shrink: 0;
-        }
-
-        .collapsible-section.collapsed .collapsible-icon {
-            transform: rotate(-90deg);
-        }
-
-        .collapsible-content {
-            padding: 1rem;
-            border-top: 1px solid #e5e7eb;
-            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-            opacity: 1;
-            max-height: 5000px;
-            /* Arbitrary large height */
-        }
-
-        .collapsible-section.collapsed .collapsible-content {
-            max-height: 0;
-            opacity: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            border-top: none;
-            overflow: hidden;
-        }
-
-        /* Keyword Highlight Styles */
-        .keyword-highlight {
-            background-color: rgba(255, 255, 0, 0.3);
-            border-radius: 0.25rem;
-            padding: 0.1rem 0.2rem;
-            font-weight: 500;
-            color: #d97706;
-            display: inline-block;
-            animation: highlight-pulse 3s infinite;
-        }
-
-        @keyframes highlight-pulse {
-            0% {
-                background-color: rgba(255, 255, 0, 0.2);
-            }
-
-            50% {
-                background-color: rgba(255, 255, 0, 0.5);
-            }
-
-            100% {
-                background-color: rgba(255, 255, 0, 0.2);
-            }
-        }
-    </style>
+  <title>reference</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+  <style>
+    code[class*=language-],
+    pre[class*=language-] {
+      color: #333;
+      background: 0 0;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none
+    }
+
+    pre[class*=language-] {
+      padding: .8em;
+      overflow: auto;
+      border-radius: 3px;
+      background: #f5f5f5
+    }
+
+    :not(pre)>code[class*=language-] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5
+    }
+
+    .token.blockquote,
+    .token.comment {
+      color: #969896
+    }
+
+    .token.cdata {
+      color: #183691
+    }
+
+    .token.doctype,
+    .token.macro.property,
+    .token.punctuation,
+    .token.variable {
+      color: #333
+    }
+
+    .token.builtin,
+    .token.important,
+    .token.keyword,
+    .token.operator,
+    .token.rule {
+      color: #a71d5d
+    }
+
+    .token.attr-value,
+    .token.regex,
+    .token.string,
+    .token.url {
+      color: #183691
+    }
+
+    .token.atrule,
+    .token.boolean,
+    .token.code,
+    .token.command,
+    .token.constant,
+    .token.entity,
+    .token.number,
+    .token.property,
+    .token.symbol {
+      color: #0086b3
+    }
+
+    .token.prolog,
+    .token.selector,
+    .token.tag {
+      color: #63a35c
+    }
+
+    .token.attr-name,
+    .token.class,
+    .token.class-name,
+    .token.function,
+    .token.id,
+    .token.namespace,
+    .token.pseudo-class,
+    .token.pseudo-element,
+    .token.url-reference .token.variable {
+      color: #795da3
+    }
+
+    .token.entity {
+      cursor: help
+    }
+
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: 700;
+      color: #1d3e81
+    }
+
+    .token.list {
+      color: #ed6a43
+    }
+
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532
+    }
+
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00
+    }
+
+    .token.bold {
+      font-weight: 700
+    }
+
+    .token.italic {
+      font-style: italic
+    }
+
+    .language-json .token.property {
+      color: #183691
+    }
+
+    .language-markup .token.tag .token.punctuation {
+      color: #333
+    }
+
+    .language-css .token.function,
+    code.language-css {
+      color: #0086b3
+    }
+
+    .language-yaml .token.atrule {
+      color: #63a35c
+    }
+
+    code.language-yaml {
+      color: #183691
+    }
+
+    .language-ruby .token.function {
+      color: #333
+    }
+
+    .language-markdown .token.url {
+      color: #795da3
+    }
+
+    .language-makefile .token.symbol {
+      color: #795da3
+    }
+
+    .language-makefile .token.variable {
+      color: #183691
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3
+    }
+
+    .language-bash .token.keyword {
+      color: #0086b3
+    }
+
+    pre[data-line] {
+      position: relative;
+      padding: 1em 0 1em 3em
+    }
+
+    pre[data-line] .line-highlight-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      display: block;
+      width: 100%
+    }
+
+    pre[data-line] .line-highlight {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: inherit 0;
+      margin-top: 1em;
+      background: hsla(24, 20%, 50%, .08);
+      background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+      pointer-events: none;
+      line-height: inherit;
+      white-space: pre
+    }
+
+    pre[data-line] .line-highlight:before,
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-start);
+      position: absolute;
+      top: .4em;
+      left: .6em;
+      min-width: 1em;
+      padding: 0 .5em;
+      background-color: hsla(24, 20%, 50%, .4);
+      color: #f4f1ef;
+      font: bold 65%/1.5 sans-serif;
+      text-align: center;
+      vertical-align: .3em;
+      border-radius: 999px;
+      text-shadow: none;
+      box-shadow: 0 1px #fff
+    }
+
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-end);
+      top: auto;
+      bottom: .4em
+    }
+
+    html body {
+      font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ol,
+    html body>ul {
+      margin-bottom: 16px
+    }
+
+    html body ol,
+    html body ul {
+      padding-left: 2em
+    }
+
+    html body ol.no-list,
+    html body ul.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ol ol,
+    html body ol ul,
+    html body ul ol,
+    html body ul ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      background-color: #f0f0f0;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: 700;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 700
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::after,
+    html body code::before {
+      letter-spacing: -.2em;
+      content: '\00a0'
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      word-break: normal;
+      white-space: pre;
+      background: 0 0;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:after,
+    html body pre code:before,
+    html body pre tt:after,
+    html body pre tt:before {
+      content: normal
+    }
+
+    html body blockquote,
+    html body dl,
+    html body ol,
+    html body p,
+    html body pre,
+    html body ul {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+
+      html body blockquote {
+        color: #5c5c5c
+      }
+
+      html body pre {
+        page-break-inside: avoid
+      }
+
+      html body table {
+        display: table
+      }
+
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      html body code,
+      html body pre {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview ul {
+      list-style: disc
+    }
+
+    .markdown-preview ul ul {
+      list-style: circle
+    }
+
+    .markdown-preview ul ul ul {
+      list-style: square
+    }
+
+    .markdown-preview ol {
+      list-style: decimal
+    }
+
+    .markdown-preview ol ol,
+    .markdown-preview ul ol {
+      list-style-type: lower-roman
+    }
+
+    .markdown-preview ol ol ol,
+    .markdown-preview ol ul ol,
+    .markdown-preview ul ol ol,
+    .markdown-preview ul ul ol {
+      list-style-type: lower-alpha
+    }
+
+    .markdown-preview .newpage,
+    .markdown-preview .pagebreak {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .markdown-preview .md-toc {
+      padding: 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0;
+      min-height: 100vh
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px + 2em)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+      padding: 0 16px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 300px / 2);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+
+    /* Please visit the URL below for more information: */
+    /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+  </style>
+  <!-- The content below will be included at the end of the <head> element. -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      // your code here
+    });
+  </script>
+  <style>
+    /* Collapsible Section Styles */
+    .collapsible-section {
+      margin-bottom: 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .collapsible-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #f9fafb;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s;
+    }
+
+    .collapsible-header:hover {
+      background-color: #f3f4f6;
+    }
+
+    .collapsible-header h2,
+    .collapsible-header h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #111827;
+      flex-grow: 1;
+    }
+
+    .collapsible-icon {
+      transition: transform 0.3s ease;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #6b7280;
+      flex-shrink: 0;
+    }
+
+    .collapsible-section.collapsed .collapsible-icon {
+      transform: rotate(-90deg);
+    }
+
+    .collapsible-content {
+      padding: 1rem;
+      border-top: 1px solid #e5e7eb;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      opacity: 1;
+      max-height: 5000px;
+      /* Arbitrary large height */
+    }
+
+    .collapsible-section.collapsed .collapsible-content {
+      max-height: 0;
+      opacity: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-top: none;
+      overflow: hidden;
+    }
+
+    /* Keyword Highlight Styles */
+    .keyword-highlight {
+      background-color: rgba(255, 255, 0, 0.3);
+      border-radius: 0.25rem;
+      padding: 0.1rem 0.2rem;
+      font-weight: 500;
+      color: #d97706;
+      display: inline-block;
+      animation: highlight-pulse 3s infinite;
+    }
+
+    @keyframes highlight-pulse {
+      0% {
+        background-color: rgba(255, 255, 0, 0.2);
+      }
+
+      50% {
+        background-color: rgba(255, 255, 0, 0.5);
+      }
+
+      100% {
+        background-color: rgba(255, 255, 0, 0.2);
+      }
+    }
+
+    /* Controls */
+    .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .control-btn {
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      opacity: 0.2;
+    }
+
+    .control-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 1);
+      opacity: 1;
+    }
+
+    /* Table of Contents */
+    .toc {
+      position: fixed;
+      top: 100px;
+      right: -300px;
+      width: 280px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      transition: right 0.3s ease;
+      z-index: 999;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .toc.show {
+      right: 20px;
+    }
+
+    .toc h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      color: #667eea;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s ease;
+    }
+
+    .toc a:hover {
+      color: #764ba2;
+    }
+
+    /* Zoom functionality styles */
+    .zoomed-1-1 {
+      font-size: 1.1em;
+    }
+
+    .zoomed-1-2 {
+      font-size: 1.2em;
+    }
+
+    .zoomed-1-3 {
+      font-size: 1.3em;
+    }
+
+    .zoomed-1-4 {
+      font-size: 1.4em;
+    }
+
+    .zoomed-1-5 {
+      font-size: 1.5em;
+    }
+  </style>
 </head>
 
 <body for="html-export">
+  <div class="controls">
+    <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+    <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+  </div>
+  <div id="toc" class="toc">
+    <h3>目錄</h3>
+    <ul id="toc-list"></ul>
+  </div>
 
 
-    <div class="crossnote markdown-preview  ">
+  <div class="crossnote markdown-preview  ">
 
-        <img src="image-1.png" alt="alt text">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;family=LXGW+WenKai+Mono+TC&amp;family=Zhi+Mang+Xing&amp;family=Chiron+GoRound+TC&amp;display=swap"
-            rel="stylesheet">
-        <style>
-            p {
-                margin: 0;
-                padding: 0.5em;
-            }
+    <img src="image-1.png" alt="alt text">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;family=LXGW+WenKai+Mono+TC&amp;family=Zhi+Mang+Xing&amp;family=Chiron+GoRound+TC&amp;display=swap"
+      rel="stylesheet">
+    <style>
+      p {
+        margin: 0;
+        padding: 0.5em;
+      }
 
-            p:nth-child(odd) {
-                background: #f0f0f0;
-            }
+      p:nth-child(odd) {
+        background: #f0f0f0;
+      }
 
-            p:nth-child(even) {
-                background: #ffffff;
-            }
-        </style>
-        <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: Zhi Mang Xing;">
-            <h1>代祷事项</h1>
-        </div>
-        <div style="font-size: 24px; line-height: 1.6; text-align: left; font-family: Chiron GoRound TC;">
-            <h2>為教會全備守望的牧者禱告</h2>
-            <h6
-                id="慈愛的天父滿有恩典的主耶穌賜下啟示與能力的聖靈我們來到祢的施恩寶座前以敬畏束腰以感恩為祭我們深知禱告是祢賜下的權柄讓我們能坦然無懼地進入至聖所與祢親密相交我們宣告接下來的這段時光是分別為聖歸給祢的我們要奉主耶穌基督得勝的名為祢用寶血所重價買贖-所深愛的教會獻上守望願祢的榮光充滿我們願祢的旨意在我們的禱告中被尋見願我們的呼求如馨香之祭達到祢的面前蒙祢垂聽與悅納">
-                慈愛的天父，滿有恩典的主耶穌，賜下啟示與能力的聖靈，我們來到祢的施恩寶座前，以敬畏束腰，以感恩為祭。我們深知，禱告是祢賜下的權柄，讓我們能坦然無懼地進入至聖所，與祢親密相交。我們宣告，接下來的這段時光是分別為聖歸給祢的，我們要奉主耶穌基督得勝的名，為祢用寶血所重價買贖、所深愛的教會獻上守望。願祢的榮光充滿我們，願祢的旨意在我們的禱告中被尋見，願我們的呼求如馨香之祭，達到祢的面前，蒙祢垂聽與悅納。
-            </h6>
-            <hr>
-            <h2 id="1-為教會年度異象尋找失喪靈魂的使命">1. 為教會年度異象：尋找失喪靈魂的使命 </h2>
-            <p>主啊，我們感謝祢賜下「門訓聖徒，同心建造」的年度主題，這不僅是我們的方向，更是我們存在的根基。祢提醒我們，教會若要成為一個強壯的身體，就必須先被祢的話語裝備，在愛中彼此連結。然而，我們深知，這一切內在建造的最終目的，是為了承接祢最核心的使命，效法祢的榜樣——祢曾宣告：「人子來，為要尋找、拯救失喪的人。」（路加福音
-                19:10）。主啊，求祢將這份使命如火印般烙在我們每一個人的心中，點燃我們愛靈魂的火焰，成為祢在地上尋找迷羊的忠心同工。</p>
-            <ol>
-                <li>主耶穌，我們來到祢面前省察自己。求祢幫助我們每一個人，能時刻記念我們也曾是失喪的，是被祢主動尋見、蒙恩拯救的。讓我們放下一切試圖倚靠自己行為的掙扎與驕傲，單單浸泡在祢寶血救恩的洪恩裡。主啊，求祢開我們屬靈的眼睛，賜下祢那份看見靈魂就動了慈心的憐憫與熱情，讓我們能真實看見身邊那些正走向沉淪道路的親人、朋友與同事，並願意與祢同工，勇敢地走出去，將他們尋回。
-                </li>
-                <li>天父，我們特別為教會所有的教牧同工與小組長禱告。我們深知服事的道路有時充滿疲憊，甚至會因看不見果效而灰心。主啊，當他們軟弱時，求祢如磐石般成為他們的力量；當他們乾渴時，求祢的同在如活水江河，澆灌他們的心田；當他們迷惘時，祢的話語成為他們腳前的燈、路上的光。求祢將那份愛靈魂的迫切與使命感，如同起初的愛火般再次挑旺在他們心中，使他們在真理與恩典中站立得穩，成為祢手中合用的器皿。
-                </li>
-                <li>聖靈，求祢感動教會的每一位弟兄姊妹，讓我們不單單在教會中領受恩典，更能成為福音流通的管道。求祢賜下從上頭來的勇氣與智慧，讓我們能溫柔而堅定地分享自己的生命見證，將福音的大能真實地傳達出去。我們也將心中掛念的每一位福音朋友交在祢手中，求祢親自預備他們的心田，鬆開一切剛硬的土壤，讓他們感受到祢真實的愛與同在，使我們的邀請成為他們走向永生門戶的一大步。
-                </li>
-                <li>主啊，我們為教會每個月的福音主日獻上守望。求祢預備全體會眾的心，點燃我們邀請的熱情，能積極地將親友、同事、鄰舍帶到祢的家中。求聖靈在每一次的福音主日中大大運行，恩膏講員所傳講的信息，讓話語帶著聖靈的能力，如同利劍刺入人最柔軟的內心深處。求祢親自開啟他們屬靈的眼睛，使他們能看見祢的愛與救恩。我們同心宣告，每一次的福音主日都要成為拯救靈魂的日子，要讓許多失喪的羊歸回羊圈，使祢的國度因此被大大擴張！
-                </li>
-            </ol>
-            <blockquote>
-                <p>主，我們將教會尋找失喪靈魂的使命完全交託在祢大能的手中，願祢親自差派工人，收割祢自己的莊稼，成就這榮耀的工作。</p>
-            </blockquote>
-            <hr>
-            <h2 id="2-為教會整體事工成為榮耀主的聖潔器皿">2. 為教會整體事工：成為榮耀主的聖潔器皿 </h2>
-            <p>親愛的主，我們感謝祢，教會是祢的身體，是祢在地上的居所，是我們屬靈的家。我們深知，這個身體若要成為承載祢榮耀同在的器皿，每一個肢體、每一項事工都必須在聖潔中對齊於祢這位元首。因此，我們謙卑地來到祢面前，求祢的寶血潔淨我們，求祢的聖靈親自掌管教會的一切，使我們從裡到外，都成為聖潔、合祢心意的榮耀器皿。
-            </p>
-            <ol>
-                <li>天父，我們將教會的實體空間，包括會堂、每一間課室，以及所有的設備——音響、燈光、影音系統、冷氣等，都分別為聖歸給祢。求祢的寶血潔淨這一切，使其專為祢的榮耀與國度所用。求祢保守教會的環境堅固安全，也保守所有設備運作順利，並豐盛地供應設備更新所需的一切經費。願每一次在教會中的聚會，都因著祢榮耀的同在而滿有祝福，使人的生命被建造，使祢的名被高舉。
-                </li>
-                <li>主啊，我們為教會的招待團隊獻上感恩，感謝祢賜下這群忠心的僕人，他們如同教會溫暖的門面，讓每個走進來的人都能感受到祢的愛。我們祈求祢加添新的人力，特別是興起年輕的一代，讓他們樂意投入這榮耀的服事。求祢將從祢而來的喜樂與熱情充滿每一位服事者的心，使他們的關懷與接待，成為祢祝福流通的管道，建立教會成為充滿恩典與盼望的家。
-                </li>
-                <li>主耶穌，我們奉祢的名，為教會所在的這片社區地土禱告。求祢的寶血潔淨這地，斷開一切盤踞其上的黑暗權勢，包括咒詛、暴力、貪婪、淫亂與驕傲自義的靈。我們宣告，神的國要降臨在此地，神的旨意要行在這社區，如同行在天上。求聖靈如江河般湧流，帶來公義、和平與喜樂，使福音在此地被廣傳，居民的心都要轉向祢！主啊，我們更求祢釋放潔淨的火、永續多產之福，以及得人如得魚的恩膏在我們當中，讓教會的帳幕之地被大大擴張！
-                </li>
-                <li>聖靈，我們為教會的啟示性團隊和醫治團隊禱告。求祢繼續將智慧與啟示的靈澆灌下來，使啟示性團隊的弟兄姊妹靈裡更加敏銳，能準確洞察祢的心意，釋放出造就、安慰、勸勉的話語來堅固肢體。我們也求祢興起更多充滿憐憫與信心的器皿，加入醫治團隊，讓他們的禱告滿有權柄與能力，手按病人就得醫治，話語能釋放盼望，彰顯祢復活的大能。
-                </li>
-                <li>掌管未來的主，我們為教會的前路仰望祢。求祢親自呼召並興起有創意、有恩賜的弟兄姊妹，建立一支媒體行銷團隊，能善用新媒體的平台為主發光作見證，在網路世界中高舉祢的名，吸引更多人歸向祢。我們也為教牧同工團隊禱告，當他們尋求2026年教會主題與福音策略時，求祢賜下從天而來的清晰啟示與合一的心志，讓他們能對齊祢的藍圖，不憑血氣，單單倚靠聖靈的帶領，結出豐盛的果子。
-                </li>
-            </ol>
-            <blockquote>
-                <p>主啊，我們祈願教會由內到外、從硬體到軟體、從看得見的服事到看不見的禱告，都成為一個能讓祢旨意暢行無阻的管道，全然榮耀祢的聖名。</p>
-            </blockquote>
-            <hr>
-            <h2 id="3-為教會社區事工成為地上的光與鹽">3. 為教會社區事工：成為地上的光與鹽 </h2>
-            <p>主耶穌，祢教導我們，教會不應是與世隔絕的群體，乃是要成為世上的光和地上的鹽，如同建在山上的城，無法隱藏。求祢幫助我們勇敢地走入人群，服事我們所在的社區，特別是那些最小的弟兄，讓我們透過具體的行動，將祢那份無條件的愛彰顯出來，吸引萬人來歸向祢。
-            </p>
-            <ol>
-                <li>為下一代的守望：《IDO兒少據點陪讀班》
-                    慈愛的天父，我們將陪讀班裡每一個孩子都帶到祢的面前。求祢親自在他們的課業、品格、情緒管理與人際關係上建立他們，賜他們一顆專注、穩定且受教的心。主啊，願據點成為他們感到安全、被愛與被接納的避風港。更求祢柔軟他們的心，讓他們從小就願意向祢敞開，認識並經歷祢的良善，在祢的光明與盼望中健康成長。
-                </li>
-                <li>為長輩的祝福：《IDO老人關懷據點》
-                    滿有憐憫的主，我們為關懷據點的每一位長輩禱告。許多長輩的心仍被傳統信仰的枷鎖與謊言綑綁，求祢施恩釋放他們，斷開一切黑暗的權勢。求真理的聖靈光照他們，開啟他們的心眼，使他們能領受福音的真光，經歷祢那測不透的愛與救恩，得享從祢而來的真自由與永恆的平安。
-                </li>
-                <li>為禱告的火牆：《IDO 518禱告城牆》
-                    信實的主，我們感謝祢呼召一群守望者，築起禱告的城牆。求祢堅固每一位守望者的心，讓他們能忠心、按時地站立在破口中，禱告永不鬆懈。求聖靈大大地充滿每一次的線上禱告，使我們的禱告滿有能力、合祢心意，成為教會在屬靈爭戰中得勝的關鍵力量。
-                </li>
-                <li>為神話語的扎根：《IDO讀經組》
-                    永生之道的主，我們為所有參與讀經的弟兄姊妹禱告。求祢賜給每個人對祢話語極深的渴慕，讓他們願意委身、喜愛祢的律法，天天從中領受生命的亮光與能力。願祢的話語真實地成為他們腳前的燈、路上的光，引導他們一生的道路。
-                </li>
-            </ol>
-            <blockquote>
-                <p>主啊，我們將教會在社區中的所有服事都仰望在祢手中，求祢親自澆灌、使其成長、多結果子，好讓更多人因著我們的服事，認識祢這位又真又活的神。</p>
-            </blockquote>
-            <hr>
-            <h2 id="4-為教會各樣聚會成為生命相遇的所在">4. 為教會各樣聚會：成為生命相遇的所在 </h2>
-            <p>聖靈，我們祈求祢來掌管教會所有大大小小的聚會與活動。我們宣告，這些聚會不應只是例行的公事，而是祢大能運行的神聖場域——在這裡，疲憊的生命被祢觸摸，破碎的關係被祢建立，迷失的靈魂與永生的神相遇。</p>
-            <ol>
-                <li>主耶穌，我們將聖誕季節的福音工作全然仰望，特別為「12/21聖誕洗禮崇拜」，以及發現、美地、港湖、雲彩、恩典、幸福小組聯合舉辦的「12/25聖誕森友會：大板根恐龍歡樂遊」禱告。主啊，求祢掌管天氣，讓和煦的陽光如同祢溫暖的擁抱，迎接每一位前來的朋友，也求祢保守所有交通行程出入平安。更求祢大大恩膏所有話語，讓受洗者的見證與牧者的信息如同一粒粒生命的種子，深植在新朋友的心田，柔軟他們，使他們願意回應祢愛的呼召。求祢堅固每一位受洗歸入祢名下的肢體，讓他們真實經歷生命的更新。我們宣告，這兩場聚會要充滿救恩的喜樂與祢溫暖的愛，讓所有參與者都經歷從天而來的盼望。
-                </li>
-                <li>愛孩子的天父，我們為教會的兒童、青少年及大專生事工禱告。求祢大大地祝福這些事工，親自吸引社區中的年輕學子來到教會，讓他們在這裡真實經歷祢的愛，生命得著更新、力量與永恆的盼望。我們特別為博真傳道禱告，求祢在每一次國中團契聚會中彰顯祢榮耀的同在，賜她智慧與能力，帶領羽蓁、淳楨與尹慈深深渴慕祢的話語，生命被主建造。我們也將璟豪交在祢手中，求祢保守他順利銜接高中團契，在信仰的道路上持續成長。
-                </li>
-                <li>主啊，我們先為《小社青》感恩節活動的後續跟進禱告，求祢親自保守福音的種子在每位參與者心中，不被奪去，反而能發芽、成長、結出果實。我們也為《社青小組》的弟兄姊妹禱告，求祢賜他們一顆渴慕祢話語的心，讓小家事工能倍增擴展，家庭和睦健康。最後，我們為他們籌辦的聖誕福音餐會禱告，求祢釋放傳福音的恩膏，讓他們能把人完完全全地引到祢的面前。
-                </li>
-            </ol>
-            <blockquote>
-                <p>主，願祢祝福教會所有的聚會，無論大小，都成為我們與祢相遇、生命被改變的恩典時刻。</p>
-            </blockquote>
-            <hr>
-            <h2 id="5-為教會親愛肢體同走天路的彼此代求">5. 為教會親愛肢體：同走天路的彼此代求 </h2>
-            <p>滿有慈悲的天父，我們深知在教會這個大家庭中，有許多親愛的肢體正默默地承擔著生命的重擔，走在挑戰的曠野中。此刻，我們的禱告如同馨香之祭，是要將他們每一位的需要，都帶到祢的施恩寶座前。求祢垂聽我們的呼求，親自看顧、扶持、醫治並供應他們。
-            </p>
-            <ol>
-                <li>主啊，我們將那些身體正承受著病痛考驗的弟兄姊妹交在祢手中。無論是突如其來的挑戰，還是慢性耗弱的重擔，我們都相信祢是耶和華拉法，是醫治我們的神。求祢大能的手施行醫治，賜下超越人所能理解的平安來托住他們，並堅固他們與家人的信心，讓他們在軟弱中單單仰望祢。我們也為那些正等待康復，或在治療過程中身心疲憊的肢體禱告。求祢成為他們的力量，挪去一切不適，讓他們的身體一天新似一天，心靈也因仰望祢而重新得力。
-                </li>
-                <li>天父，我們為那些在工作崗位上面對挑戰與壓力的弟兄姊妹禱告。求祢賜下從上頭來的智慧與策略，使他們手所做的工都蒙祢賜福，在職場中發光作鹽，成為榮耀祢名的見證。我們也為正在尋求未來方向的年輕一代禱告，求祢親自引領他們的腳步，為他們開道路，走在祢為他們預備的豐盛命定中。我們更記念那些在學業上面對關卡的學子，求祢賜他們專注的心與清晰的頭腦，使他們在壓力中不致動搖，反而能經歷祢是又真又活、供應一切的神。
-                </li>
-                <li>主耶穌，我們將每一個家庭都帶到祢面前。求祢的愛成為家人之間連結的橋樑，化解一切隱而未現的緊張與衝突，帶來從祢而來的和睦與饒恕。我們特別為那些家人尚未認識祢的弟兄姊妹禱告，求祢大能的手介入，軟化家人的心，挪去一切攔阻，吸引他們歸向祢，使我們的家能早日成為敬拜祢的祭壇。我們也特別為那些正在照顧家中長輩或年幼兒女的肢體禱告，求祢賜他們加倍的恩典、體力與耐心，讓他們在付出的辛勞中，能經歷祢源源不絕的供應與安慰。
-                </li>
-                <li>聖靈，我們祈求祢在每一位弟兄姊妹的內心深處動工。幫助我們在繁忙的生活中，仍能保守一顆清潔、渴慕、親近祢的心。求祢的話語深深地建造我們的生命，使我們在信靠的道路上永不動搖，無論環境如何，都能堅定地跟隨祢。
-                </li>
-            </ol>
-            <p>主，我們將所有肢體的大小事都交託給祢，因祢是我們的避難所，是我們的力量，是我們在患難中隨時的幫助。</p>
-            <hr>
-            <h2 id="6-為教會國度拓展分堂與宣教的守望">6. 為教會國度拓展：分堂與宣教的守望 </h2>
-            <p>主耶穌，祢升天前頒布大使命，要我們去，使萬民作祢的門徒。我們禱告，求祢擴張我們國度的胸襟與視野，讓教會的使命不僅是內部的建造，更是要勇敢地向外拓展，擴張帳幕之地。無論是本地分堂的建立，還是遠方宣教的支持，都願祢的福音被傳到地極。
-            </p>
-            <ol>
-                <li>天父，我們特別為龍潭分堂的需要禱告。主啊，我們將分堂尚有四十五萬元的財務缺口帶到祢面前，求祢這位使無變有、叫萬事互相效力的神，敞開天上的府庫，傾福與他們，使他們一切所需用的都充足。感謝祢使人數增長，求祢賜下加倍的牧養智慧與策略給同工團隊，能好好地餵養祢的羊群。我們也為兒主與青少團契的主責同工彩衣、家昀、若潔禱告，求祢大大恩膏他們的服事，讓他們能有智慧地教導，興起下一代的門徒。最後，我們為「聖誕三重奏」的每一場活動（音樂劇、報佳音、感恩餐會）守望，求祢賜下恩典、平安與福音的果效，吸引更多新朋友走進教會。
-                </li>
-                <li>主，我們記念在巴基斯坦服事的宣教士高揚與陳末。我們先為祢過去一年的保守與擴張獻上感恩。我們繼續為福音中心的事工，以及同工莎娜的生命成長禱告，求祢使用他們成為當地的祝福。最後，我們為他們2026年的服事與異象禱告，求祢繼續為他們開道路，使祢的國度在伊斯蘭世界被榮耀地彰顯。
-                </li>
-            </ol>
-            <blockquote>
-                <p>我們同心宣告，無論在本地或遠方，願祢的國度降臨，願祢的旨意成全！</p>
-            </blockquote>
-            <hr>
-            <h2 id="7-為我們所愛的家人全家歸主的切切呼求">7. 為我們所愛的家人：全家歸主的切切呼求 </h2>
-            <p>天父，我們心中有一個最深切的渴望，就是看見我們所愛的家人，能夠與我們一同在祢的國度裡有份。我們知道，「一人信主，全家得救」是祢寶貴的應許，我們如今就憑著信心，為我們所有尚未信主的家人，向祢發出切切的呼求。
-            </p>
-            <p>主啊，我們將我們所愛的家人交在祢的手中。求祢以祢的慈愛吸引他們，讓他們在日常生活的每一個細節中，都能經歷從祢而來的平安與保護。當他們面對壓力、困難，或感到內心空虛時，求祢親自向他們說話，讓他們感受到那位創造他們、深愛他們的神，其實就在身旁。
-            </p>
-            <p>主耶穌，求祢開啟他們的心眼，挪去一切帕子，使他們能看見祢的恩典；求祢柔軟他們的心，使他們願意謙卑下來，認識祢這位獨一的真神。也求祢裝備我們，讓我們在家中能活出基督的愛、溫柔與耐心，成為家人認識祢的美好見證。
-            </p>
-            <blockquote>
-                <p>願聖靈親自在我們的家庭中動工，帶來醫治、和好與永恆的盼望，直到那日，我們全家都能同心合意地在祢面前敬拜、事奉祢。</p>
-            </blockquote>
-            <hr>
-            <h1 id="結尾祝禱">結尾祝禱 </h1>
-            <p>信實又垂聽禱告的阿爸天父，我們感謝祢，讚美祢！感謝祢賜給我們這段同心守望的時光。我們已將教會、肢體、社區與國度中一切的需要陳明在祢面前，我們深信，祢已垂聽。我們憑著信心領受祢的應允，並將所有頌讚、榮耀、權柄都歸給坐寶座的羔羊，直到永永遠遠。
-            </p>
-            <p>奉主耶穌基督得勝的名祈求，阿們！</p>
-            <hr>
-            <img src="image.png" alt="alt text"></p>
-            <h3 id="為港湖小組肢體代求">為《港湖小組》肢體代求 </h3>
-            <h2 id="8-親愛的天父我們滿懷敬畏與感恩再次來到祢施恩座前">8. 親愛的天父，我們滿懷敬畏與感恩，再次來到祢施恩座前， </h2>
-            <p>深知祢是何等慈愛與信實的神。此刻，我為著祢寶貴的兒女們——我們每一位弟兄姊妹心中所存的掛慮，以及那份對祢美善旨意的深切期待——向祢獻上真摯而懇切的代求。主啊，祢是我們永恆的避難所，是我們在軟弱時的力量，更是我們在各樣患難中，那隨時不變、最真切的幫助。正如祢在話語中向我們啟示的：『耶和華本為善，在患難的日子為人的保障，並且認得那些投靠他的人。』（那鴻書
-                1章7節）是的，我主我神，祢深知我們每一個人的心，祢洞察我們最隱微的需要，甚至在我們開口祈求之前，祢的慈愛就已觸及，祢的恩典就已預備。</p>
-            <p>在這一刻，我的心特別為乃程弟兄與他的家庭深深牽掛。主啊，我們帶著滿心的信心和盼望，將乃程弟兄的生命全然交託在祢醫治的聖手之中。我們感恩，因祢已帶領他安然度過艱難的第一階段，這份恩典彰顯了祢何等信實的愛。如今，當他即將邁入下一個療程，我們懇求祢那超越萬有、醫治的大能，此刻就豐沛地傾倒在他的生命深處。願他的身體能對藥物產生最蒙福、最美好的回應，杜絕一切不合祢心意的副作用，使他重新得力，早日全然經歷祢奇妙的醫治與恩典，恢復生命原有的光采與活力。
-            </p>
-            <p>我們也特別為乃程媽媽代求，深知照護之路何其不易。懇求天父賜予她那超乎常人的智慧、剛強的體力與無比的耐心，使她在這段愛的旅程中，身心靈都能全然蒙祢保守與安息，驅散一切孤單與疲憊，讓她在祢裡面重新得力。</p>
-            <p>主啊，乃程弟兄為工作上的重要事務而掛慮，我們將他公司此刻所面臨的一切挑戰與進程，全然交託在祢全能的引導之下。願祢親自為他開拓道路，使每個環節都蒙祢祝福，迎刃而解，一切過程都順利亨通。</p>
-            <p>我也為乃程的姪女禱告，懇求祢賜予她過人的智慧與清晰的思路，在來年學業的關鍵時刻，能完全發揮出潛力，考入祢早已為她預備的理想大學與科系，榮耀祢的名。</p>
-            <p>最後，我們帶著深切的盼望，懇求祢慈愛的聖手，溫柔地觸摸祖昀弟兄的心。主啊，吸引他歸回祢溫暖的家，使他真實經歷祢那無條件的愛與豐盛的同在。更求祢為他預備一位合祢心意的虔誠伴侶，一同在祢的真理中，建造一個蒙福、以基督為中心的家庭。
-            </p>
-            <h2 id="9">9. </h2>
-            <p>此刻，我的心也深切地為佩鑫姊妹以及港湖小組的每一位弟兄姊妹向祢發出呼求。親愛的主，在這個日益充滿挑戰的世代，我們深知唯有祢能堅固我們的屬靈信心。懇求祢保守我們每一個人，使我們在面對生活中各樣的試煉與困境時，都能緊緊抓住祢，堅定不移地依靠祢不動搖。願我們對祢話語的渴慕，如同乾渴的鹿切慕溪水一般，那樣的真切與迫切，使我們的靈命得以不斷更新、成長，深深扎根於祢永恆的真理之中。
-            </p>
-            <p>我們也特別為佩鑫姊妹的身體獻上禱告。主啊，懇求祢賜予她健康的身體，使她能享有良好的睡眠品質，並賜下從祢而來的智慧，讓她能有效管理時間，使身心靈都得著美好的平衡。特別是她身上那份反覆的痠痛與不適，我們懇求祢醫治的聖手親自觸摸她，使疼痛完全消失，早日康復，行動自如，恢復全然的自由。
-            </p>
-            <p>主啊，佩鑫姊妹心中對未信主家人的那份深切愛與負擔，我們感同身受。因此，我們懇求祢聖靈的大能親自觸摸他們的心，開啟他們屬靈的眼睛，使他們能夠真實地認識祢，靠近祢，並甘心樂意地接受祢做他們生命唯一的主。願他們在各樣壓力和挑戰中，能夠真實地經歷從祢而來那超越一切的盼望與平安，不再憂慮。
-            </p>
-            <p>親愛的天父，我們也為至真姊妹獻上懇切的禱告。我們深知她心中最大的渴望，便是先生能被祢的愛吸引，走進祢溫暖的家。因此，主啊，我們謙卑懇求祢聖靈的大能，親自感動她的先生，軟化他的心田，開啟他的心門，使他樂意踏入教會，親身遇見並認識祢，領受那永恆而寶貴的救恩。
-            </p>
-            <p>我們也為至真姊妹的兒子在學習上代求，求祢賜予他高度的專注力與持續的動力，讓他在新的學習平台中能有顯著的進步。更重要的是，願他學會為自己的選擇負責，培養出合祢心意、負責任的品格。</p>
-            <p>主啊，我們也看到至真女兒正經歷選手培訓與專題製作的雙重壓力，這確實是一段不容易、需要力量與智慧的路程。懇求祢此刻就賜下祢豐盛的恩典與同在，使她的信心在挑戰中堅定不動搖，心靈得蒙釋放，讓她的學業與訓練都能全然榮耀祢的聖名。
-            </p>
-            <p>在這歲末繁忙的時節，至真姊妹面臨諸多事務的挑戰，懇求祢幫助她能有條不紊地按部就班，心中常保從祢而來的平安與沉著，達到『手忙而不心亂』的美好境界，時刻經歷祢那真實、可靠的同在。</p>
-            <h2 id="10">10. </h2>
-            <p>我的父啊，我們為欣怡姊妹全家獻上禱告。深願祢親自引導他們在靈修生活上更趨穩定與深入，讓全家都能親近祢，一同領受祢話語的豐盛餵養。也懇求祢幫助他們養成規律且健康的運動習慣，使身心靈都能因祢而健壯。</p>
-            <p>在欣怡母親的身體狀況上，特別是那份退化帶來的挑戰，我們懇求祢賜下從祢而來的超然智慧與平安，引導全家能作出對於接下來療程最正確、最合宜的決定，並為她預備最佳的治療方案，使她得著安穩與恢復。</p>
-            <p>主啊，欣怡姊妹在品牌發展的道路上，我們懇求祢以大能的手祝福她的每一步，使所有的計畫與執行皆凡事順利亨通。願祢使她的努力產生超乎所求的顯著功效與影響力，使一切成果都單單歸榮耀於祢的聖名。</p>
-            <p>懇求祢保守元嘯弟兄全家，身心靈都得著完全的健康， 使他們在祢那測不透的愛中，得享真正的安息與從祢而來的平靜。 願祢更豐盛地賜福元嘯弟兄的公司事業與品牌， 使其在國內與國外市場都能蓬勃發展、大步拓展，
-                使一切成果都單單榮耀祢的聖名。</p>
-            <p>主啊，我們為依琦姊妹獻上禱告，懇求祢親自引導她家中安頓的各項事務，使一切都有明確的進度，妥善安排，蒙祢祝福。</p>
-            <p>更在這一刻，我們帶著深切的盼望，懇求祢慈愛地軟化依琦先生的心。 主啊，幫助他願意放下自身的堅持，樂意分享分擔家務， 不再讓家務成為攔阻依琦穩定參與教會聚會及蔡牧師課程的緣因。
-                主啊，我們深知依琦姊妹心中這份掙扎與渴望，求祢親自回應， 成就祢那最美好的佳音。</p>
-            <p>我們也為依琦姊妹即將到來的海外差旅禱告，保守她事前準備工作一切順利，並在差旅期間凡事亨通，出入有祢超然的平安保守。求祢幫助依琦姊妹在各樣忙碌與混亂中，能時時經歷祢的同在與安穩的平安，並為她預備充足與神相處的寧靜時間與空間，使她自12月13日開始的蔡牧師課程，能全心投入，不受任何打擾，領受祢豐盛而寶貴的教導。
-            </p>
-            <p>親愛的天父，我們為顯凱弟兄和他的孩子們獻上禱告。懇求祢特別保守劭寧弟兄在加拿大遊學期間，身心靈都得享祢的平安，學業順利，一切蒙祢慈愛的看顧，遠離各樣的試探和危險。</p>
-            <p>求祢親自帶領少芃弟兄在實習的過程中，充滿從祢而來的智慧與恩典，使他學習成長豐盛，為他未來的道路打下堅實穩固的基礎。</p>
-            <p>懇求祢也看顧顯凱弟兄個人，使他出入都有祢超然的平安，時刻活在祢的保守之下。願祢豐盛地賜福顯凱全家，使他們能常常喜樂相聚，在祢那測不透的愛中彼此堅固連結、互相扶持。</p>
-            <p>主啊，我們深知明松弟兄此刻正肩負處理母親遺產的重擔，這份事務往往極易挑戰人心深處的和諧。懇求祢聖靈親自引導整個過程，賜下從祢而來的超然智慧與和睦，使他與弟弟妹妹們的情誼，非但不受損害，反而因此更加堅固。</p>
-            <p>求祢更祝福明松弟兄的工作事業凡事順利亨通，並保守他身心靈的完全健康，使他在祢那信實的愛中，得享真正的安穩與平靜。</p>
-            <h2 id="11">11. </h2>
-            <p>我的主，我們為恩賜姊妹獻上代求。懇求祢保守她的兒子志軒在大學中的課業學習順利亨通，智慧不斷增長；並在他打工期間，出入蒙祢超自然的保守，平安無虞，免受各樣的傷害。</p>
-            <p>我們也懇求祢賜予彩瑄女兒在明年學測考試有充分的準備時間與能力，引導她完全發揮實力，進入主為她預備的最適合的學校與科系，使她的成就全然榮耀祢的聖名。</p>
-            <p>懇求祢看顧恩賜姊妹的父母，賜予他們身體健康，靈魂興盛，心中常有從祢而來的平安與喜樂，在晚年能更多地認識祢，經歷祢的愛。</p>
-            <p>主啊，我們更為恩賜姊妹右腳踝的韌帶損傷發出呼求，懇求祢醫治的大能此刻就臨到她，使其能完全、迅速地康復，恢復正常功能，不再感到疼痛與不適。並求祢眷顧恩賜姊妹的姐姐，讓那份微小的疑慮，胃部的小息肉，不造成任何不良影響，蒙祢完全的醫治，使她身體健康，心中不再有任何掛慮。
-            </p>
-            <p>主啊，我們為智琳姊妹禱告。懇求祢賜予她從祢而來的管理智慧與穩重成熟的性情，使她在處理各樣事務時，能擁有清楚明晰的心思與溫柔謙和的態度，成為祢美好、榮耀的見證。</p>
-            <p>懇求祢施展奇妙的恩典，使智琳姊妹所服務的老人日照中心，在募款購置所需的洗加烘洗衣機時一切順利，超乎所求。更求祢調動萬有，為日照中心的長輩們預備最豐盛、最合適的供應與資源，使他們得到最妥善、最有尊嚴的照護。
-            </p>
-            <p>也求祢保守智琳姊妹的孩子、大偉弟兄以及所有家人們，出入都有祢的平安，時刻活在祢慈愛的看顧與保守之中。</p>
-            <p>親愛的天父，我們為大偉弟兄獻上禱告。他身在高風險的工作環境中服事，我懇求祢以大能的手保守他身體健康，得蒙主超自然的保護，使其出入皆有祢的平安。奉主耶穌基督得勝的名，我們斥責一切邪靈的攪擾與攻擊，求主親自用祢寶貴的寶血遮蓋並看顧大偉弟兄，使他在工作中充滿屬天的平安與超然的力量，成為祢美好的器皿。
-            </p>
-            <p>懇求祢醫治大偉弟兄父親那受傷的雙手，使其功能早日完全康復，重獲力量與自由。求主也親自引導大偉的弟弟，在台北展開新工作之後，能穩定參與教會生活，深深扎根於神的家，使他的生命被祢的話語所建造。</p>
-            <p>主啊，我們為亞魁姊妹獻上禱告。我們迫切懇求祢，醫治她父親的雙手，使其完全恢復健康與力量，這是我們從心深處向祢發出的呼求。主啊，我們何等感恩，因祢已奇妙地醫治了亞魁姊妹左腳的疼痛，這真是祢信實的記號！求祢繼續保守其完全康復，不再反覆，使她得享自由。
-            </p>
-            <p>求主親自看顧亞魁姊妹的工作，使她在職場上凡事順利亨通，時刻經歷祢的恩典與同在，成為職場中發光作鹽的見證人。</p>
-            <p>我們也懇求祢醫治林展亨孩子反覆發燒的狀況，使其體溫恢復正常；並醫治林展裕孩子的感冒，使這兩位寶貝孩子都能得著完全的康復與健康，充滿活力，蒙祢看顧。</p>
-            <p>我的主，我將我們《姊妹牧區》的每一位姐妹，以及她們心中所關切、所代禱的寶貴靈魂，都全然交託在祢慈愛的全能手中。</p>
-            <h2 id="12-為幸福小組代禱">12. 為幸福小組代禱： </h2>
-            <p>主啊，我們懇求祢聖靈親自吸引譽蓉姊妹的妹妹思辰的心，使她能穩定參與幸福小組的聚會，在其中真實地認識祢、親身經歷祢那超然的愛，並甘心樂意地走向信靠祢的永生道路。求祢堅固岱倫和雲英姊妹的信心腳步，使他們能夠穩定參加聚會，在團契中靈命被祢的話語所建立、被弟兄姊妹所扶持，並與眾人一同熱切追求認識祢。求祢感動意筑姊妹的心，使她全然願意受洗歸入基督，進入祢的家，得著從祢而來豐盛的新生命與穩固的屬靈歸屬。
-            </p>
-            <p>求祢為秀敏姊妹的妹妹秀鈺，預備一位最合適、最卓越的專業人士，使她在海外有限的時間內，能得到妥善的治療與完全的醫治。願祢親自看顧她的身心靈平安，使其飽足經歷祢慈愛豐盛的恩典。我們也懇求祢醫治伊茹姊妹的身體狀況，在這觀察期中，使那份潛藏的擔憂能超自然地縮小、消失，讓她完全恢復健康。願祢的平安充滿伊茹姊妹的心，使她在信靠中經歷祢清晰的帶領與醫治大能。
-            </p>
-            <h2 id="13-為恩典小組代禱">13. 為恩典小組代禱： </h2>
-            <p>感謝主，祢何等美善！祢讓倫君與倫馨姊妹開始陪伴麗惠姊妹進行新生命課程，我們為此獻上感恩。求祢賜下豐盛的智慧與愛心，使他們在陪讀麗惠姊妹的過程中，靈命同得造就；也使麗惠姊妹的心田柔軟敞開，得以更深層地認識祢、經歷祢。
-            </p>
-            <p>我們為Coco、韓明一家向祢呼求，願祢以強烈的大能吸引他們的心，使他們越發渴慕祢、親近祢，在家庭中建立堅固的信仰根基，全家一同經歷祢真實的同在與豐盛的祝福。為何姐禱告，主啊，我們深知她在照顧孫子與家中親人時的極其忙碌與辛勞。懇求祢親自保守她身心靈強壯堅固，使她在各樣壓力中經歷祢溫暖的安慰與超然的力量，學會完全倚靠祢而不感到疲乏。
-            </p>
-            <h2 id="14-為雲彩小組代禱">14. 為雲彩小組代禱： </h2>
-            <p>我們為雯卿姊妹父親的居家照護獻上禱告，願其父親的身心靈都蒙神完全的照管與平安，享受晚年的美好與尊嚴。求主賜予雯卿姊妹夠用的恩典、充沛的體力與從祢而來的智慧，來協助照護父親，使她身心靈都能在主裡得享安息與堅固。我們也為倫君、淑惠、茉莉姊妹獻上感恩，因她們已順利完成新生命三代式的學習，這彰顯了祢何等豐盛的恩典。求祢加增她們對祢話語的渴慕，使靈命繼續向上成長。更懇求祢預備茉莉姊妹的心，使她完全願意受洗歸入基督，回應祢慈愛的呼召，進入祢愛的家庭，得著屬靈的豐盛。
-            </p>
-            <h2 id="15-為週二弟兄讀書會小組代禱">15. 為週二弟兄讀書會小組代禱： </h2>
-            <p>為沛生弟兄一家：
-                主啊，我們為沛生弟兄的身體狀況獻上禱告，懇求祢保守他手術後能迅速而完全康復，視力清晰，全然恢復正常。求主醫治倫馨姊妹身體的不適，使其徹底好轉，不再受困擾，並提升她的睡眠品質，讓她夜夜安穩，得享真正的安息。求主醫治小乖的身體狀況，使其早日完全康復，行動活動自如，充滿祢所賜的活力。求主加添心力給女婿東哲弟兄，在他回到家族事業，需要夜間出門工作時，能迅速熟悉相關業務，工作順利平安，並保護他出入都有祢的同在。懇求祢為沛生弟兄的診所預備一位合適、忠心的新醫師；也為沛生家中的新大四學子禱告，求主保守其生活與課業一切順利，有美好且豐盛的學習體驗。
-            </p>
-            <p>為毛 P 弟兄一家： 求主保守毛 P 弟兄的右眼健康無虞，視力清晰，免受任何影響。我們更懇求祢聖靈的大能，溫柔地感動毛 P
-                弟兄的太太士琪姊妹，開啟她的心門，使她願意認識主耶穌，接受祢寶貴的福音，真實經歷祢那無條件的愛。並為士琪姊妹預備她在跑步賽事中獲得良好表現的訓練規劃，賜予她力量與耐力，使她享受運動的樂趣，身心都得益處。祝福毛
-                P 弟兄的大女兒敏瑄的演出機會與接案工作皆順利亨通，收入穩定豐盛，使她的才華蒙祢使用，榮耀祢名。求主保守毛 P
-                弟兄在海外的二女兒琬儀，使其新工作簽證取得一切順利，並保守她身體健康，遠離異地的孤單，經歷祢的同在。懇求主看顧毛 P 弟兄的三女兒郁德在日本工作期間平安順利，蒙主保守，有美好的人生體驗。主啊，為毛 P
-                弟兄的二女兒琬儀與三女兒郁德預備合適的婚姻伴侶，引導他們都能進入教會，建立以基督為中心的家庭，在祢裡面生根建造。求主幫助毛 P
-                弟兄的小兒子彥翔在學業上更加專注，賜予他智慧與自律，並遠離各樣的誘惑，學習有成，品格被祢所建造、所煉淨。</p>
-            <h2 id="16為教會弟兄姊妹家中長輩代禱">16.為教會弟兄姊妹家中長輩代禱： </h2>
-            <p>主啊，我們特別為倫君倫馨姊妹的父親張校長禱告。求祢看顧他，使他能適應在異地的養老生活，延緩身心的退化，夜晚擁有良好且安穩的睡眠，身體得享安寧。更懇求主醫治他身體上的挑戰，使其完全消失，蒙祢奇妙的醫治與大能。我們也為張媽媽禱告，願她在安養生活中，心中不憂慮、不孤單，擁有平靜安穩的靈，時刻經歷祢的同在與剛強，在祢裡面找到真正的依靠。
-            </p>
-            <p>我們為沛生弟兄的母親陳媽媽獻上懇切的禱告。懇求祢親自施行醫治，使陳媽媽的身體指數持續下降，並除去所有治療帶來的副作用，賜予她良好的胃口與充足的睡眠，得以安歇。願她在此過程中，深刻經歷祢奇妙的恩典與憐憫，最終能信靠基督，得著那份超越一切的寶貴救恩。
-            </p>
-            <p>我們為維峰弟兄的父母禱告。主啊，懇求祢醫治許媽媽的身體狀況，使那份擔憂完全消失無蹤。同時，賜下得救的智慧與勇氣，引導許媽媽歸向祢，接受永恆的救恩。為許爸爸的失智退化禱告，願他在安養中心得到最佳、最妥善的照護，身心靈蒙主保守健康，享受平靜。求主祢的愛環繞維峰弟兄的父母，驅散一切恐懼與混亂，賜予他們屬天的平安與堅定信靠的心。我們也懇求祢釋放維峰弟兄工作上的巨大壓力，堅固他與郁萱姊妹的屬靈信心，使他們在神的愛中同心同行，時刻經歷祢信實的帶領與豐盛的供應。
-            </p>
-            <p>我們為曉珮姊妹的父親蔣爸爸禱告。感謝主保守他的檢查結果一切正常，這真是祢極大的恩典與看顧。求主繼續看顧蔣爸爸的身體，使其得著完全的健康，並開啟他的心眼，使他能早日認識祢、領受永恆的救恩，生命得著真正的平安與滿足。
-            </p>
-            <p>為郁茹姊妹禱告。感謝主保守她先前的手術非常成功，並已順利出院，術後的回報顯示癌細胞未侵襲，這真是祢極大的恩典與保守！接下來她將接受後續的療程，求主保守、引領她一切順利平安，使她完全恢復健康，不再受疾病困擾，生命得著更新與昇華。我們也為邱媽媽禱告，求主釋放她脫離各樣的綑綁與轄制，使她心轉向祢、單單信靠祢，領受從祢而來的真理與真正的自由。願祢的愛強烈吸引棣瓏姊妹的媽媽，使她完全願意接受耶穌為她的救主，生命得著全面的更新與永恆的盼望。
-            </p>
-            <p>我們也為文浩弟兄的爸爸媽媽禱告，求祢保守他們擁有健康的身體，更賜予他們渴慕祢話語的心，使他們願意認識祢、歸向祢，領受那份寶貴的救恩。求主看顧儀錦姊妹的媽媽在家中能有良好的安養照護，使她的身體功能恢復健康，各項指數穩定恢復正常水平，享受安寧。我們為郎天佑弟兄禱告，求主賜予他平靜安穩的心與良好的情緒管理，並在祢的看顧與引導下，能真實認識主耶穌，親身經歷祢那無條件的愛。求祢開啟賴爸的心門，使他渴慕祢的話語，如飢如渴地追求真理，並在他閱讀屬靈書籍時，能親身與神相遇，深刻經歷祢的同在與大能。為伊茹姊妹的媽媽代求，求祢使她的心完全轉向祢，不再倚靠世界或傳統信仰的虛無，而是單單信靠主耶穌，從而得著真正的平安與永恆的拯救。
-            </p>
-            <h2 id="17">17. </h2>
-            <p>最後，我的父啊，我們帶著極大的信心與盼望，為劉濬宇一家獻上禱告。願祢大能的聖手，此刻就釋放他們脫離各樣的權勢與綑綁，使全家都能單單敬拜那獨一的真神，全然進入祢榮耀的國度。我們更懇求祢行醫治的神蹟，使因身體狀況受限的劉濬宇弟兄，能重新站立起來行走，恢復完全的健康，成為祢奇妙大能的活潑見證！
-            </p>
-            <p>主啊，祢是我們生命中最真實、最信實的教師！正如以賽亞書 30章20至21節
-                所應許的：『主雖以艱難給你當餅，以困苦給你當水，你的教師卻不再隱藏；你眼必看見你的教師。你或向左，或向右，你必聽見後邊有聲音說：「這是正路，要行在其間。」』主啊，我們深信，在我們生命的每一個低谷，每一個迷茫的十字路口，祢都已為我們預備了清晰、滿有恩典的指引。願我們每個人都能堅定地定睛於祢，敞開心靈，清晰地聽見祢慈愛的聲音，時刻行在祢為我們所預備的，那條永恆的正路上。
-            </p>
-            <p>願一切的榮耀、尊貴、頌讚、和所有的感謝，都單單歸於天上坐著為王的父神！奉我主耶穌基督的名，我們同心合意地禱告，阿們！</p>
-            <p>（此時，在心靈深處，我們如同感受到溫暖的微風輕輕吹拂，帶來神的祝福與安寧）</p>
-            <p>恩光輕灑，驅散世間塵埃，溫暖每個角落。 浪子回眸，心靈尋得歸宿，安息主懷深處。 信心如磐石，風雨不動搖，根基永堅。 渴慕祢話語，如活泉湧流，滋潤乾涸心靈。 祢手輕觸，傷痛漸漸癒合，生命重綻光華。
-                喧囂之外，心湖澄澈如鏡，平安靜謐無爭。 迷霧深處，智慧之光引領，步履穩健向前。 旅途險阻，主愛之翼蔭庇，永享安穩護衛。 掙脫綑綁，生命破繭而出，展翅飛向自由。 夕陽餘暉，歲月溫柔流轉，長者得享康泰。</p>
-            <p>曲終人散意未盡，願主光芒永照明。 心靈平安無掛礙，恩典歲月常相迎。</p>
-            <p>（禱告至此，我們心靈的耳邊，似乎聽見從寶座而來的宣告，充滿權柄與能力）</p>
-            <h2 id="18-天父宣告">18. 天父宣告： </h2>
-            <p>舊有限制即將打破，神聖的新季節正為我們開啟！我看見醫治的榮耀降臨，釋放豐盛恩膏與超然能力。我們的命定將被啟動，領受策略性指引，進入前所未有的突破與轉化。神的手堅固遮蓋，仇敵無處可站立！哈利路亞！</p>
-        </div>
+      p:nth-child(even) {
+        background: #ffffff;
+      }
+    </style>
+    <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: Zhi Mang Xing;">
+      <h1>代祷事项</h1>
     </div>
+    <div style="font-size: 24px; line-height: 1.6; text-align: left; font-family: Chiron GoRound TC;">
+      <h2>為教會全備守望的牧者禱告</h2>
+      <h6
+        id="慈愛的天父滿有恩典的主耶穌賜下啟示與能力的聖靈我們來到祢的施恩寶座前以敬畏束腰以感恩為祭我們深知禱告是祢賜下的權柄讓我們能坦然無懼地進入至聖所與祢親密相交我們宣告接下來的這段時光是分別為聖歸給祢的我們要奉主耶穌基督得勝的名為祢用寶血所重價買贖-所深愛的教會獻上守望願祢的榮光充滿我們願祢的旨意在我們的禱告中被尋見願我們的呼求如馨香之祭達到祢的面前蒙祢垂聽與悅納">
+        慈愛的天父，滿有恩典的主耶穌，賜下啟示與能力的聖靈，我們來到祢的施恩寶座前，以敬畏束腰，以感恩為祭。我們深知，禱告是祢賜下的權柄，讓我們能坦然無懼地進入至聖所，與祢親密相交。我們宣告，接下來的這段時光是分別為聖歸給祢的，我們要奉主耶穌基督得勝的名，為祢用寶血所重價買贖、所深愛的教會獻上守望。願祢的榮光充滿我們，願祢的旨意在我們的禱告中被尋見，願我們的呼求如馨香之祭，達到祢的面前，蒙祢垂聽與悅納。
+      </h6>
+      <hr>
+      <h2 id="1-為教會年度異象尋找失喪靈魂的使命">1. 為教會年度異象：尋找失喪靈魂的使命 </h2>
+      <p>
+        主啊，我們感謝祢賜下「門訓聖徒，同心建造」的年度主題，這不僅是我們的方向，更是我們存在的根基。祢提醒我們，教會若要成為一個強壯的身體，就必須先被祢的話語裝備，在愛中彼此連結。然而，我們深知，這一切內在建造的最終目的，是為了承接祢最核心的使命，效法祢的榜樣——祢曾宣告：「人子來，為要尋找、拯救失喪的人。」（路加福音
+        19:10）。主啊，求祢將這份使命如火印般烙在我們每一個人的心中，點燃我們愛靈魂的火焰，成為祢在地上尋找迷羊的忠心同工。</p>
+      <ol>
+        <li>
+          主耶穌，我們來到祢面前省察自己。求祢幫助我們每一個人，能時刻記念我們也曾是失喪的，是被祢主動尋見、蒙恩拯救的。讓我們放下一切試圖倚靠自己行為的掙扎與驕傲，單單浸泡在祢寶血救恩的洪恩裡。主啊，求祢開我們屬靈的眼睛，賜下祢那份看見靈魂就動了慈心的憐憫與熱情，讓我們能真實看見身邊那些正走向沉淪道路的親人、朋友與同事，並願意與祢同工，勇敢地走出去，將他們尋回。
+        </li>
+        <li>
+          天父，我們特別為教會所有的教牧同工與小組長禱告。我們深知服事的道路有時充滿疲憊，甚至會因看不見果效而灰心。主啊，當他們軟弱時，求祢如磐石般成為他們的力量；當他們乾渴時，求祢的同在如活水江河，澆灌他們的心田；當他們迷惘時，祢的話語成為他們腳前的燈、路上的光。求祢將那份愛靈魂的迫切與使命感，如同起初的愛火般再次挑旺在他們心中，使他們在真理與恩典中站立得穩，成為祢手中合用的器皿。
+        </li>
+        <li>
+          聖靈，求祢感動教會的每一位弟兄姊妹，讓我們不單單在教會中領受恩典，更能成為福音流通的管道。求祢賜下從上頭來的勇氣與智慧，讓我們能溫柔而堅定地分享自己的生命見證，將福音的大能真實地傳達出去。我們也將心中掛念的每一位福音朋友交在祢手中，求祢親自預備他們的心田，鬆開一切剛硬的土壤，讓他們感受到祢真實的愛與同在，使我們的邀請成為他們走向永生門戶的一大步。
+        </li>
+        <li>
+          主啊，我們為教會每個月的福音主日獻上守望。求祢預備全體會眾的心，點燃我們邀請的熱情，能積極地將親友、同事、鄰舍帶到祢的家中。求聖靈在每一次的福音主日中大大運行，恩膏講員所傳講的信息，讓話語帶著聖靈的能力，如同利劍刺入人最柔軟的內心深處。求祢親自開啟他們屬靈的眼睛，使他們能看見祢的愛與救恩。我們同心宣告，每一次的福音主日都要成為拯救靈魂的日子，要讓許多失喪的羊歸回羊圈，使祢的國度因此被大大擴張！
+        </li>
+      </ol>
+      <blockquote>
+        <p>主，我們將教會尋找失喪靈魂的使命完全交託在祢大能的手中，願祢親自差派工人，收割祢自己的莊稼，成就這榮耀的工作。</p>
+      </blockquote>
+      <hr>
+      <h2 id="2-為教會整體事工成為榮耀主的聖潔器皿">2. 為教會整體事工：成為榮耀主的聖潔器皿 </h2>
+      <p>
+        親愛的主，我們感謝祢，教會是祢的身體，是祢在地上的居所，是我們屬靈的家。我們深知，這個身體若要成為承載祢榮耀同在的器皿，每一個肢體、每一項事工都必須在聖潔中對齊於祢這位元首。因此，我們謙卑地來到祢面前，求祢的寶血潔淨我們，求祢的聖靈親自掌管教會的一切，使我們從裡到外，都成為聖潔、合祢心意的榮耀器皿。
+      </p>
+      <ol>
+        <li>
+          天父，我們將教會的實體空間，包括會堂、每一間課室，以及所有的設備——音響、燈光、影音系統、冷氣等，都分別為聖歸給祢。求祢的寶血潔淨這一切，使其專為祢的榮耀與國度所用。求祢保守教會的環境堅固安全，也保守所有設備運作順利，並豐盛地供應設備更新所需的一切經費。願每一次在教會中的聚會，都因著祢榮耀的同在而滿有祝福，使人的生命被建造，使祢的名被高舉。
+        </li>
+        <li>
+          主啊，我們為教會的招待團隊獻上感恩，感謝祢賜下這群忠心的僕人，他們如同教會溫暖的門面，讓每個走進來的人都能感受到祢的愛。我們祈求祢加添新的人力，特別是興起年輕的一代，讓他們樂意投入這榮耀的服事。求祢將從祢而來的喜樂與熱情充滿每一位服事者的心，使他們的關懷與接待，成為祢祝福流通的管道，建立教會成為充滿恩典與盼望的家。
+        </li>
+        <li>
+          主耶穌，我們奉祢的名，為教會所在的這片社區地土禱告。求祢的寶血潔淨這地，斷開一切盤踞其上的黑暗權勢，包括咒詛、暴力、貪婪、淫亂與驕傲自義的靈。我們宣告，神的國要降臨在此地，神的旨意要行在這社區，如同行在天上。求聖靈如江河般湧流，帶來公義、和平與喜樂，使福音在此地被廣傳，居民的心都要轉向祢！主啊，我們更求祢釋放潔淨的火、永續多產之福，以及得人如得魚的恩膏在我們當中，讓教會的帳幕之地被大大擴張！
+        </li>
+        <li>
+          聖靈，我們為教會的啟示性團隊和醫治團隊禱告。求祢繼續將智慧與啟示的靈澆灌下來，使啟示性團隊的弟兄姊妹靈裡更加敏銳，能準確洞察祢的心意，釋放出造就、安慰、勸勉的話語來堅固肢體。我們也求祢興起更多充滿憐憫與信心的器皿，加入醫治團隊，讓他們的禱告滿有權柄與能力，手按病人就得醫治，話語能釋放盼望，彰顯祢復活的大能。
+        </li>
+        <li>
+          掌管未來的主，我們為教會的前路仰望祢。求祢親自呼召並興起有創意、有恩賜的弟兄姊妹，建立一支媒體行銷團隊，能善用新媒體的平台為主發光作見證，在網路世界中高舉祢的名，吸引更多人歸向祢。我們也為教牧同工團隊禱告，當他們尋求2026年教會主題與福音策略時，求祢賜下從天而來的清晰啟示與合一的心志，讓他們能對齊祢的藍圖，不憑血氣，單單倚靠聖靈的帶領，結出豐盛的果子。
+        </li>
+      </ol>
+      <blockquote>
+        <p>主啊，我們祈願教會由內到外、從硬體到軟體、從看得見的服事到看不見的禱告，都成為一個能讓祢旨意暢行無阻的管道，全然榮耀祢的聖名。</p>
+      </blockquote>
+      <hr>
+      <h2 id="3-為教會社區事工成為地上的光與鹽">3. 為教會社區事工：成為地上的光與鹽 </h2>
+      <p>
+        主耶穌，祢教導我們，教會不應是與世隔絕的群體，乃是要成為世上的光和地上的鹽，如同建在山上的城，無法隱藏。求祢幫助我們勇敢地走入人群，服事我們所在的社區，特別是那些最小的弟兄，讓我們透過具體的行動，將祢那份無條件的愛彰顯出來，吸引萬人來歸向祢。
+      </p>
+      <ol>
+        <li>為下一代的守望：《IDO兒少據點陪讀班》
+          慈愛的天父，我們將陪讀班裡每一個孩子都帶到祢的面前。求祢親自在他們的課業、品格、情緒管理與人際關係上建立他們，賜他們一顆專注、穩定且受教的心。主啊，願據點成為他們感到安全、被愛與被接納的避風港。更求祢柔軟他們的心，讓他們從小就願意向祢敞開，認識並經歷祢的良善，在祢的光明與盼望中健康成長。
+        </li>
+        <li>為長輩的祝福：《IDO老人關懷據點》
+          滿有憐憫的主，我們為關懷據點的每一位長輩禱告。許多長輩的心仍被傳統信仰的枷鎖與謊言綑綁，求祢施恩釋放他們，斷開一切黑暗的權勢。求真理的聖靈光照他們，開啟他們的心眼，使他們能領受福音的真光，經歷祢那測不透的愛與救恩，得享從祢而來的真自由與永恆的平安。
+        </li>
+        <li>為禱告的火牆：《IDO 518禱告城牆》
+          信實的主，我們感謝祢呼召一群守望者，築起禱告的城牆。求祢堅固每一位守望者的心，讓他們能忠心、按時地站立在破口中，禱告永不鬆懈。求聖靈大大地充滿每一次的線上禱告，使我們的禱告滿有能力、合祢心意，成為教會在屬靈爭戰中得勝的關鍵力量。
+        </li>
+        <li>為神話語的扎根：《IDO讀經組》
+          永生之道的主，我們為所有參與讀經的弟兄姊妹禱告。求祢賜給每個人對祢話語極深的渴慕，讓他們願意委身、喜愛祢的律法，天天從中領受生命的亮光與能力。願祢的話語真實地成為他們腳前的燈、路上的光，引導他們一生的道路。
+        </li>
+      </ol>
+      <blockquote>
+        <p>主啊，我們將教會在社區中的所有服事都仰望在祢手中，求祢親自澆灌、使其成長、多結果子，好讓更多人因著我們的服事，認識祢這位又真又活的神。</p>
+      </blockquote>
+      <hr>
+      <h2 id="4-為教會各樣聚會成為生命相遇的所在">4. 為教會各樣聚會：成為生命相遇的所在 </h2>
+      <p>聖靈，我們祈求祢來掌管教會所有大大小小的聚會與活動。我們宣告，這些聚會不應只是例行的公事，而是祢大能運行的神聖場域——在這裡，疲憊的生命被祢觸摸，破碎的關係被祢建立，迷失的靈魂與永生的神相遇。</p>
+      <ol>
+        <li>
+          主耶穌，我們將聖誕季節的福音工作全然仰望，特別為「12/21聖誕洗禮崇拜」，以及發現、美地、港湖、雲彩、恩典、幸福小組聯合舉辦的「12/25聖誕森友會：大板根恐龍歡樂遊」禱告。主啊，求祢掌管天氣，讓和煦的陽光如同祢溫暖的擁抱，迎接每一位前來的朋友，也求祢保守所有交通行程出入平安。更求祢大大恩膏所有話語，讓受洗者的見證與牧者的信息如同一粒粒生命的種子，深植在新朋友的心田，柔軟他們，使他們願意回應祢愛的呼召。求祢堅固每一位受洗歸入祢名下的肢體，讓他們真實經歷生命的更新。我們宣告，這兩場聚會要充滿救恩的喜樂與祢溫暖的愛，讓所有參與者都經歷從天而來的盼望。
+        </li>
+        <li>
+          愛孩子的天父，我們為教會的兒童、青少年及大專生事工禱告。求祢大大地祝福這些事工，親自吸引社區中的年輕學子來到教會，讓他們在這裡真實經歷祢的愛，生命得著更新、力量與永恆的盼望。我們特別為博真傳道禱告，求祢在每一次國中團契聚會中彰顯祢榮耀的同在，賜她智慧與能力，帶領羽蓁、淳楨與尹慈深深渴慕祢的話語，生命被主建造。我們也將璟豪交在祢手中，求祢保守他順利銜接高中團契，在信仰的道路上持續成長。
+        </li>
+        <li>
+          主啊，我們先為《小社青》感恩節活動的後續跟進禱告，求祢親自保守福音的種子在每位參與者心中，不被奪去，反而能發芽、成長、結出果實。我們也為《社青小組》的弟兄姊妹禱告，求祢賜他們一顆渴慕祢話語的心，讓小家事工能倍增擴展，家庭和睦健康。最後，我們為他們籌辦的聖誕福音餐會禱告，求祢釋放傳福音的恩膏，讓他們能把人完完全全地引到祢的面前。
+        </li>
+      </ol>
+      <blockquote>
+        <p>主，願祢祝福教會所有的聚會，無論大小，都成為我們與祢相遇、生命被改變的恩典時刻。</p>
+      </blockquote>
+      <hr>
+      <h2 id="5-為教會親愛肢體同走天路的彼此代求">5. 為教會親愛肢體：同走天路的彼此代求 </h2>
+      <p>
+        滿有慈悲的天父，我們深知在教會這個大家庭中，有許多親愛的肢體正默默地承擔著生命的重擔，走在挑戰的曠野中。此刻，我們的禱告如同馨香之祭，是要將他們每一位的需要，都帶到祢的施恩寶座前。求祢垂聽我們的呼求，親自看顧、扶持、醫治並供應他們。
+      </p>
+      <ol>
+        <li>
+          主啊，我們將那些身體正承受著病痛考驗的弟兄姊妹交在祢手中。無論是突如其來的挑戰，還是慢性耗弱的重擔，我們都相信祢是耶和華拉法，是醫治我們的神。求祢大能的手施行醫治，賜下超越人所能理解的平安來托住他們，並堅固他們與家人的信心，讓他們在軟弱中單單仰望祢。我們也為那些正等待康復，或在治療過程中身心疲憊的肢體禱告。求祢成為他們的力量，挪去一切不適，讓他們的身體一天新似一天，心靈也因仰望祢而重新得力。
+        </li>
+        <li>
+          天父，我們為那些在工作崗位上面對挑戰與壓力的弟兄姊妹禱告。求祢賜下從上頭來的智慧與策略，使他們手所做的工都蒙祢賜福，在職場中發光作鹽，成為榮耀祢名的見證。我們也為正在尋求未來方向的年輕一代禱告，求祢親自引領他們的腳步，為他們開道路，走在祢為他們預備的豐盛命定中。我們更記念那些在學業上面對關卡的學子，求祢賜他們專注的心與清晰的頭腦，使他們在壓力中不致動搖，反而能經歷祢是又真又活、供應一切的神。
+        </li>
+        <li>
+          主耶穌，我們將每一個家庭都帶到祢面前。求祢的愛成為家人之間連結的橋樑，化解一切隱而未現的緊張與衝突，帶來從祢而來的和睦與饒恕。我們特別為那些家人尚未認識祢的弟兄姊妹禱告，求祢大能的手介入，軟化家人的心，挪去一切攔阻，吸引他們歸向祢，使我們的家能早日成為敬拜祢的祭壇。我們也特別為那些正在照顧家中長輩或年幼兒女的肢體禱告，求祢賜他們加倍的恩典、體力與耐心，讓他們在付出的辛勞中，能經歷祢源源不絕的供應與安慰。
+        </li>
+        <li>聖靈，我們祈求祢在每一位弟兄姊妹的內心深處動工。幫助我們在繁忙的生活中，仍能保守一顆清潔、渴慕、親近祢的心。求祢的話語深深地建造我們的生命，使我們在信靠的道路上永不動搖，無論環境如何，都能堅定地跟隨祢。
+        </li>
+      </ol>
+      <p>主，我們將所有肢體的大小事都交託給祢，因祢是我們的避難所，是我們的力量，是我們在患難中隨時的幫助。</p>
+      <hr>
+      <h2 id="6-為教會國度拓展分堂與宣教的守望">6. 為教會國度拓展：分堂與宣教的守望 </h2>
+      <p>
+        主耶穌，祢升天前頒布大使命，要我們去，使萬民作祢的門徒。我們禱告，求祢擴張我們國度的胸襟與視野，讓教會的使命不僅是內部的建造，更是要勇敢地向外拓展，擴張帳幕之地。無論是本地分堂的建立，還是遠方宣教的支持，都願祢的福音被傳到地極。
+      </p>
+      <ol>
+        <li>
+          天父，我們特別為龍潭分堂的需要禱告。主啊，我們將分堂尚有四十五萬元的財務缺口帶到祢面前，求祢這位使無變有、叫萬事互相效力的神，敞開天上的府庫，傾福與他們，使他們一切所需用的都充足。感謝祢使人數增長，求祢賜下加倍的牧養智慧與策略給同工團隊，能好好地餵養祢的羊群。我們也為兒主與青少團契的主責同工彩衣、家昀、若潔禱告，求祢大大恩膏他們的服事，讓他們能有智慧地教導，興起下一代的門徒。最後，我們為「聖誕三重奏」的每一場活動（音樂劇、報佳音、感恩餐會）守望，求祢賜下恩典、平安與福音的果效，吸引更多新朋友走進教會。
+        </li>
+        <li>
+          主，我們記念在巴基斯坦服事的宣教士高揚與陳末。我們先為祢過去一年的保守與擴張獻上感恩。我們繼續為福音中心的事工，以及同工莎娜的生命成長禱告，求祢使用他們成為當地的祝福。最後，我們為他們2026年的服事與異象禱告，求祢繼續為他們開道路，使祢的國度在伊斯蘭世界被榮耀地彰顯。
+        </li>
+      </ol>
+      <blockquote>
+        <p>我們同心宣告，無論在本地或遠方，願祢的國度降臨，願祢的旨意成全！</p>
+      </blockquote>
+      <hr>
+      <h2 id="7-為我們所愛的家人全家歸主的切切呼求">7. 為我們所愛的家人：全家歸主的切切呼求 </h2>
+      <p>天父，我們心中有一個最深切的渴望，就是看見我們所愛的家人，能夠與我們一同在祢的國度裡有份。我們知道，「一人信主，全家得救」是祢寶貴的應許，我們如今就憑著信心，為我們所有尚未信主的家人，向祢發出切切的呼求。
+      </p>
+      <p>
+        主啊，我們將我們所愛的家人交在祢的手中。求祢以祢的慈愛吸引他們，讓他們在日常生活的每一個細節中，都能經歷從祢而來的平安與保護。當他們面對壓力、困難，或感到內心空虛時，求祢親自向他們說話，讓他們感受到那位創造他們、深愛他們的神，其實就在身旁。
+      </p>
+      <p>主耶穌，求祢開啟他們的心眼，挪去一切帕子，使他們能看見祢的恩典；求祢柔軟他們的心，使他們願意謙卑下來，認識祢這位獨一的真神。也求祢裝備我們，讓我們在家中能活出基督的愛、溫柔與耐心，成為家人認識祢的美好見證。
+      </p>
+      <blockquote>
+        <p>願聖靈親自在我們的家庭中動工，帶來醫治、和好與永恆的盼望，直到那日，我們全家都能同心合意地在祢面前敬拜、事奉祢。</p>
+      </blockquote>
+      <hr>
+      <h1 id="結尾祝禱">結尾祝禱 </h1>
+      <p>
+        信實又垂聽禱告的阿爸天父，我們感謝祢，讚美祢！感謝祢賜給我們這段同心守望的時光。我們已將教會、肢體、社區與國度中一切的需要陳明在祢面前，我們深信，祢已垂聽。我們憑著信心領受祢的應允，並將所有頌讚、榮耀、權柄都歸給坐寶座的羔羊，直到永永遠遠。
+      </p>
+      <p>奉主耶穌基督得勝的名祈求，阿們！</p>
+      <hr>
+      <img src="image.png" alt="alt text"></p>
+      <h3 id="為港湖小組肢體代求">為《港湖小組》肢體代求 </h3>
+      <h2 id="8-親愛的天父我們滿懷敬畏與感恩再次來到祢施恩座前">8. 親愛的天父，我們滿懷敬畏與感恩，再次來到祢施恩座前， </h2>
+      <p>
+        深知祢是何等慈愛與信實的神。此刻，我為著祢寶貴的兒女們——我們每一位弟兄姊妹心中所存的掛慮，以及那份對祢美善旨意的深切期待——向祢獻上真摯而懇切的代求。主啊，祢是我們永恆的避難所，是我們在軟弱時的力量，更是我們在各樣患難中，那隨時不變、最真切的幫助。正如祢在話語中向我們啟示的：『耶和華本為善，在患難的日子為人的保障，並且認得那些投靠他的人。』（那鴻書
+        1章7節）是的，我主我神，祢深知我們每一個人的心，祢洞察我們最隱微的需要，甚至在我們開口祈求之前，祢的慈愛就已觸及，祢的恩典就已預備。</p>
+      <p>
+        在這一刻，我的心特別為乃程弟兄與他的家庭深深牽掛。主啊，我們帶著滿心的信心和盼望，將乃程弟兄的生命全然交託在祢醫治的聖手之中。我們感恩，因祢已帶領他安然度過艱難的第一階段，這份恩典彰顯了祢何等信實的愛。如今，當他即將邁入下一個療程，我們懇求祢那超越萬有、醫治的大能，此刻就豐沛地傾倒在他的生命深處。願他的身體能對藥物產生最蒙福、最美好的回應，杜絕一切不合祢心意的副作用，使他重新得力，早日全然經歷祢奇妙的醫治與恩典，恢復生命原有的光采與活力。
+      </p>
+      <p>我們也特別為乃程媽媽代求，深知照護之路何其不易。懇求天父賜予她那超乎常人的智慧、剛強的體力與無比的耐心，使她在這段愛的旅程中，身心靈都能全然蒙祢保守與安息，驅散一切孤單與疲憊，讓她在祢裡面重新得力。</p>
+      <p>主啊，乃程弟兄為工作上的重要事務而掛慮，我們將他公司此刻所面臨的一切挑戰與進程，全然交託在祢全能的引導之下。願祢親自為他開拓道路，使每個環節都蒙祢祝福，迎刃而解，一切過程都順利亨通。</p>
+      <p>我也為乃程的姪女禱告，懇求祢賜予她過人的智慧與清晰的思路，在來年學業的關鍵時刻，能完全發揮出潛力，考入祢早已為她預備的理想大學與科系，榮耀祢的名。</p>
+      <p>
+        最後，我們帶著深切的盼望，懇求祢慈愛的聖手，溫柔地觸摸祖昀弟兄的心。主啊，吸引他歸回祢溫暖的家，使他真實經歷祢那無條件的愛與豐盛的同在。更求祢為他預備一位合祢心意的虔誠伴侶，一同在祢的真理中，建造一個蒙福、以基督為中心的家庭。
+      </p>
+      <h2 id="9">9. </h2>
+      <p>
+        此刻，我的心也深切地為佩鑫姊妹以及港湖小組的每一位弟兄姊妹向祢發出呼求。親愛的主，在這個日益充滿挑戰的世代，我們深知唯有祢能堅固我們的屬靈信心。懇求祢保守我們每一個人，使我們在面對生活中各樣的試煉與困境時，都能緊緊抓住祢，堅定不移地依靠祢不動搖。願我們對祢話語的渴慕，如同乾渴的鹿切慕溪水一般，那樣的真切與迫切，使我們的靈命得以不斷更新、成長，深深扎根於祢永恆的真理之中。
+      </p>
+      <p>
+        我們也特別為佩鑫姊妹的身體獻上禱告。主啊，懇求祢賜予她健康的身體，使她能享有良好的睡眠品質，並賜下從祢而來的智慧，讓她能有效管理時間，使身心靈都得著美好的平衡。特別是她身上那份反覆的痠痛與不適，我們懇求祢醫治的聖手親自觸摸她，使疼痛完全消失，早日康復，行動自如，恢復全然的自由。
+      </p>
+      <p>
+        主啊，佩鑫姊妹心中對未信主家人的那份深切愛與負擔，我們感同身受。因此，我們懇求祢聖靈的大能親自觸摸他們的心，開啟他們屬靈的眼睛，使他們能夠真實地認識祢，靠近祢，並甘心樂意地接受祢做他們生命唯一的主。願他們在各樣壓力和挑戰中，能夠真實地經歷從祢而來那超越一切的盼望與平安，不再憂慮。
+      </p>
+      <p>
+        親愛的天父，我們也為至真姊妹獻上懇切的禱告。我們深知她心中最大的渴望，便是先生能被祢的愛吸引，走進祢溫暖的家。因此，主啊，我們謙卑懇求祢聖靈的大能，親自感動她的先生，軟化他的心田，開啟他的心門，使他樂意踏入教會，親身遇見並認識祢，領受那永恆而寶貴的救恩。
+      </p>
+      <p>我們也為至真姊妹的兒子在學習上代求，求祢賜予他高度的專注力與持續的動力，讓他在新的學習平台中能有顯著的進步。更重要的是，願他學會為自己的選擇負責，培養出合祢心意、負責任的品格。</p>
+      <p>主啊，我們也看到至真女兒正經歷選手培訓與專題製作的雙重壓力，這確實是一段不容易、需要力量與智慧的路程。懇求祢此刻就賜下祢豐盛的恩典與同在，使她的信心在挑戰中堅定不動搖，心靈得蒙釋放，讓她的學業與訓練都能全然榮耀祢的聖名。
+      </p>
+      <p>在這歲末繁忙的時節，至真姊妹面臨諸多事務的挑戰，懇求祢幫助她能有條不紊地按部就班，心中常保從祢而來的平安與沉著，達到『手忙而不心亂』的美好境界，時刻經歷祢那真實、可靠的同在。</p>
+      <h2 id="10">10. </h2>
+      <p>我的父啊，我們為欣怡姊妹全家獻上禱告。深願祢親自引導他們在靈修生活上更趨穩定與深入，讓全家都能親近祢，一同領受祢話語的豐盛餵養。也懇求祢幫助他們養成規律且健康的運動習慣，使身心靈都能因祢而健壯。</p>
+      <p>在欣怡母親的身體狀況上，特別是那份退化帶來的挑戰，我們懇求祢賜下從祢而來的超然智慧與平安，引導全家能作出對於接下來療程最正確、最合宜的決定，並為她預備最佳的治療方案，使她得著安穩與恢復。</p>
+      <p>主啊，欣怡姊妹在品牌發展的道路上，我們懇求祢以大能的手祝福她的每一步，使所有的計畫與執行皆凡事順利亨通。願祢使她的努力產生超乎所求的顯著功效與影響力，使一切成果都單單歸榮耀於祢的聖名。</p>
+      <p>懇求祢保守元嘯弟兄全家，身心靈都得著完全的健康， 使他們在祢那測不透的愛中，得享真正的安息與從祢而來的平靜。 願祢更豐盛地賜福元嘯弟兄的公司事業與品牌， 使其在國內與國外市場都能蓬勃發展、大步拓展，
+        使一切成果都單單榮耀祢的聖名。</p>
+      <p>主啊，我們為依琦姊妹獻上禱告，懇求祢親自引導她家中安頓的各項事務，使一切都有明確的進度，妥善安排，蒙祢祝福。</p>
+      <p>更在這一刻，我們帶著深切的盼望，懇求祢慈愛地軟化依琦先生的心。 主啊，幫助他願意放下自身的堅持，樂意分享分擔家務， 不再讓家務成為攔阻依琦穩定參與教會聚會及蔡牧師課程的緣因。
+        主啊，我們深知依琦姊妹心中這份掙扎與渴望，求祢親自回應， 成就祢那最美好的佳音。</p>
+      <p>
+        我們也為依琦姊妹即將到來的海外差旅禱告，保守她事前準備工作一切順利，並在差旅期間凡事亨通，出入有祢超然的平安保守。求祢幫助依琦姊妹在各樣忙碌與混亂中，能時時經歷祢的同在與安穩的平安，並為她預備充足與神相處的寧靜時間與空間，使她自12月13日開始的蔡牧師課程，能全心投入，不受任何打擾，領受祢豐盛而寶貴的教導。
+      </p>
+      <p>親愛的天父，我們為顯凱弟兄和他的孩子們獻上禱告。懇求祢特別保守劭寧弟兄在加拿大遊學期間，身心靈都得享祢的平安，學業順利，一切蒙祢慈愛的看顧，遠離各樣的試探和危險。</p>
+      <p>求祢親自帶領少芃弟兄在實習的過程中，充滿從祢而來的智慧與恩典，使他學習成長豐盛，為他未來的道路打下堅實穩固的基礎。</p>
+      <p>懇求祢也看顧顯凱弟兄個人，使他出入都有祢超然的平安，時刻活在祢的保守之下。願祢豐盛地賜福顯凱全家，使他們能常常喜樂相聚，在祢那測不透的愛中彼此堅固連結、互相扶持。</p>
+      <p>主啊，我們深知明松弟兄此刻正肩負處理母親遺產的重擔，這份事務往往極易挑戰人心深處的和諧。懇求祢聖靈親自引導整個過程，賜下從祢而來的超然智慧與和睦，使他與弟弟妹妹們的情誼，非但不受損害，反而因此更加堅固。</p>
+      <p>求祢更祝福明松弟兄的工作事業凡事順利亨通，並保守他身心靈的完全健康，使他在祢那信實的愛中，得享真正的安穩與平靜。</p>
+      <h2 id="11">11. </h2>
+      <p>我的主，我們為恩賜姊妹獻上代求。懇求祢保守她的兒子志軒在大學中的課業學習順利亨通，智慧不斷增長；並在他打工期間，出入蒙祢超自然的保守，平安無虞，免受各樣的傷害。</p>
+      <p>我們也懇求祢賜予彩瑄女兒在明年學測考試有充分的準備時間與能力，引導她完全發揮實力，進入主為她預備的最適合的學校與科系，使她的成就全然榮耀祢的聖名。</p>
+      <p>懇求祢看顧恩賜姊妹的父母，賜予他們身體健康，靈魂興盛，心中常有從祢而來的平安與喜樂，在晚年能更多地認識祢，經歷祢的愛。</p>
+      <p>
+        主啊，我們更為恩賜姊妹右腳踝的韌帶損傷發出呼求，懇求祢醫治的大能此刻就臨到她，使其能完全、迅速地康復，恢復正常功能，不再感到疼痛與不適。並求祢眷顧恩賜姊妹的姐姐，讓那份微小的疑慮，胃部的小息肉，不造成任何不良影響，蒙祢完全的醫治，使她身體健康，心中不再有任何掛慮。
+      </p>
+      <p>主啊，我們為智琳姊妹禱告。懇求祢賜予她從祢而來的管理智慧與穩重成熟的性情，使她在處理各樣事務時，能擁有清楚明晰的心思與溫柔謙和的態度，成為祢美好、榮耀的見證。</p>
+      <p>懇求祢施展奇妙的恩典，使智琳姊妹所服務的老人日照中心，在募款購置所需的洗加烘洗衣機時一切順利，超乎所求。更求祢調動萬有，為日照中心的長輩們預備最豐盛、最合適的供應與資源，使他們得到最妥善、最有尊嚴的照護。
+      </p>
+      <p>也求祢保守智琳姊妹的孩子、大偉弟兄以及所有家人們，出入都有祢的平安，時刻活在祢慈愛的看顧與保守之中。</p>
+      <p>
+        親愛的天父，我們為大偉弟兄獻上禱告。他身在高風險的工作環境中服事，我懇求祢以大能的手保守他身體健康，得蒙主超自然的保護，使其出入皆有祢的平安。奉主耶穌基督得勝的名，我們斥責一切邪靈的攪擾與攻擊，求主親自用祢寶貴的寶血遮蓋並看顧大偉弟兄，使他在工作中充滿屬天的平安與超然的力量，成為祢美好的器皿。
+      </p>
+      <p>懇求祢醫治大偉弟兄父親那受傷的雙手，使其功能早日完全康復，重獲力量與自由。求主也親自引導大偉的弟弟，在台北展開新工作之後，能穩定參與教會生活，深深扎根於神的家，使他的生命被祢的話語所建造。</p>
+      <p>
+        主啊，我們為亞魁姊妹獻上禱告。我們迫切懇求祢，醫治她父親的雙手，使其完全恢復健康與力量，這是我們從心深處向祢發出的呼求。主啊，我們何等感恩，因祢已奇妙地醫治了亞魁姊妹左腳的疼痛，這真是祢信實的記號！求祢繼續保守其完全康復，不再反覆，使她得享自由。
+      </p>
+      <p>求主親自看顧亞魁姊妹的工作，使她在職場上凡事順利亨通，時刻經歷祢的恩典與同在，成為職場中發光作鹽的見證人。</p>
+      <p>我們也懇求祢醫治林展亨孩子反覆發燒的狀況，使其體溫恢復正常；並醫治林展裕孩子的感冒，使這兩位寶貝孩子都能得著完全的康復與健康，充滿活力，蒙祢看顧。</p>
+      <p>我的主，我將我們《姊妹牧區》的每一位姐妹，以及她們心中所關切、所代禱的寶貴靈魂，都全然交託在祢慈愛的全能手中。</p>
+      <h2 id="12-為幸福小組代禱">12. 為幸福小組代禱： </h2>
+      <p>
+        主啊，我們懇求祢聖靈親自吸引譽蓉姊妹的妹妹思辰的心，使她能穩定參與幸福小組的聚會，在其中真實地認識祢、親身經歷祢那超然的愛，並甘心樂意地走向信靠祢的永生道路。求祢堅固岱倫和雲英姊妹的信心腳步，使他們能夠穩定參加聚會，在團契中靈命被祢的話語所建立、被弟兄姊妹所扶持，並與眾人一同熱切追求認識祢。求祢感動意筑姊妹的心，使她全然願意受洗歸入基督，進入祢的家，得著從祢而來豐盛的新生命與穩固的屬靈歸屬。
+      </p>
+      <p>
+        求祢為秀敏姊妹的妹妹秀鈺，預備一位最合適、最卓越的專業人士，使她在海外有限的時間內，能得到妥善的治療與完全的醫治。願祢親自看顧她的身心靈平安，使其飽足經歷祢慈愛豐盛的恩典。我們也懇求祢醫治伊茹姊妹的身體狀況，在這觀察期中，使那份潛藏的擔憂能超自然地縮小、消失，讓她完全恢復健康。願祢的平安充滿伊茹姊妹的心，使她在信靠中經歷祢清晰的帶領與醫治大能。
+      </p>
+      <h2 id="13-為恩典小組代禱">13. 為恩典小組代禱： </h2>
+      <p>感謝主，祢何等美善！祢讓倫君與倫馨姊妹開始陪伴麗惠姊妹進行新生命課程，我們為此獻上感恩。求祢賜下豐盛的智慧與愛心，使他們在陪讀麗惠姊妹的過程中，靈命同得造就；也使麗惠姊妹的心田柔軟敞開，得以更深層地認識祢、經歷祢。
+      </p>
+      <p>
+        我們為Coco、韓明一家向祢呼求，願祢以強烈的大能吸引他們的心，使他們越發渴慕祢、親近祢，在家庭中建立堅固的信仰根基，全家一同經歷祢真實的同在與豐盛的祝福。為何姐禱告，主啊，我們深知她在照顧孫子與家中親人時的極其忙碌與辛勞。懇求祢親自保守她身心靈強壯堅固，使她在各樣壓力中經歷祢溫暖的安慰與超然的力量，學會完全倚靠祢而不感到疲乏。
+      </p>
+      <h2 id="14-為雲彩小組代禱">14. 為雲彩小組代禱： </h2>
+      <p>
+        我們為雯卿姊妹父親的居家照護獻上禱告，願其父親的身心靈都蒙神完全的照管與平安，享受晚年的美好與尊嚴。求主賜予雯卿姊妹夠用的恩典、充沛的體力與從祢而來的智慧，來協助照護父親，使她身心靈都能在主裡得享安息與堅固。我們也為倫君、淑惠、茉莉姊妹獻上感恩，因她們已順利完成新生命三代式的學習，這彰顯了祢何等豐盛的恩典。求祢加增她們對祢話語的渴慕，使靈命繼續向上成長。更懇求祢預備茉莉姊妹的心，使她完全願意受洗歸入基督，回應祢慈愛的呼召，進入祢愛的家庭，得著屬靈的豐盛。
+      </p>
+      <h2 id="15-為週二弟兄讀書會小組代禱">15. 為週二弟兄讀書會小組代禱： </h2>
+      <p>為沛生弟兄一家：
+        主啊，我們為沛生弟兄的身體狀況獻上禱告，懇求祢保守他手術後能迅速而完全康復，視力清晰，全然恢復正常。求主醫治倫馨姊妹身體的不適，使其徹底好轉，不再受困擾，並提升她的睡眠品質，讓她夜夜安穩，得享真正的安息。求主醫治小乖的身體狀況，使其早日完全康復，行動活動自如，充滿祢所賜的活力。求主加添心力給女婿東哲弟兄，在他回到家族事業，需要夜間出門工作時，能迅速熟悉相關業務，工作順利平安，並保護他出入都有祢的同在。懇求祢為沛生弟兄的診所預備一位合適、忠心的新醫師；也為沛生家中的新大四學子禱告，求主保守其生活與課業一切順利，有美好且豐盛的學習體驗。
+      </p>
+      <p>為毛 P 弟兄一家： 求主保守毛 P 弟兄的右眼健康無虞，視力清晰，免受任何影響。我們更懇求祢聖靈的大能，溫柔地感動毛 P
+        弟兄的太太士琪姊妹，開啟她的心門，使她願意認識主耶穌，接受祢寶貴的福音，真實經歷祢那無條件的愛。並為士琪姊妹預備她在跑步賽事中獲得良好表現的訓練規劃，賜予她力量與耐力，使她享受運動的樂趣，身心都得益處。祝福毛
+        P 弟兄的大女兒敏瑄的演出機會與接案工作皆順利亨通，收入穩定豐盛，使她的才華蒙祢使用，榮耀祢名。求主保守毛 P
+        弟兄在海外的二女兒琬儀，使其新工作簽證取得一切順利，並保守她身體健康，遠離異地的孤單，經歷祢的同在。懇求主看顧毛 P 弟兄的三女兒郁德在日本工作期間平安順利，蒙主保守，有美好的人生體驗。主啊，為毛 P
+        弟兄的二女兒琬儀與三女兒郁德預備合適的婚姻伴侶，引導他們都能進入教會，建立以基督為中心的家庭，在祢裡面生根建造。求主幫助毛 P
+        弟兄的小兒子彥翔在學業上更加專注，賜予他智慧與自律，並遠離各樣的誘惑，學習有成，品格被祢所建造、所煉淨。</p>
+      <h2 id="16為教會弟兄姊妹家中長輩代禱">16.為教會弟兄姊妹家中長輩代禱： </h2>
+      <p>
+        主啊，我們特別為倫君倫馨姊妹的父親張校長禱告。求祢看顧他，使他能適應在異地的養老生活，延緩身心的退化，夜晚擁有良好且安穩的睡眠，身體得享安寧。更懇求主醫治他身體上的挑戰，使其完全消失，蒙祢奇妙的醫治與大能。我們也為張媽媽禱告，願她在安養生活中，心中不憂慮、不孤單，擁有平靜安穩的靈，時刻經歷祢的同在與剛強，在祢裡面找到真正的依靠。
+      </p>
+      <p>
+        我們為沛生弟兄的母親陳媽媽獻上懇切的禱告。懇求祢親自施行醫治，使陳媽媽的身體指數持續下降，並除去所有治療帶來的副作用，賜予她良好的胃口與充足的睡眠，得以安歇。願她在此過程中，深刻經歷祢奇妙的恩典與憐憫，最終能信靠基督，得著那份超越一切的寶貴救恩。
+      </p>
+      <p>
+        我們為維峰弟兄的父母禱告。主啊，懇求祢醫治許媽媽的身體狀況，使那份擔憂完全消失無蹤。同時，賜下得救的智慧與勇氣，引導許媽媽歸向祢，接受永恆的救恩。為許爸爸的失智退化禱告，願他在安養中心得到最佳、最妥善的照護，身心靈蒙主保守健康，享受平靜。求主祢的愛環繞維峰弟兄的父母，驅散一切恐懼與混亂，賜予他們屬天的平安與堅定信靠的心。我們也懇求祢釋放維峰弟兄工作上的巨大壓力，堅固他與郁萱姊妹的屬靈信心，使他們在神的愛中同心同行，時刻經歷祢信實的帶領與豐盛的供應。
+      </p>
+      <p>我們為曉珮姊妹的父親蔣爸爸禱告。感謝主保守他的檢查結果一切正常，這真是祢極大的恩典與看顧。求主繼續看顧蔣爸爸的身體，使其得著完全的健康，並開啟他的心眼，使他能早日認識祢、領受永恆的救恩，生命得著真正的平安與滿足。
+      </p>
+      <p>
+        為郁茹姊妹禱告。感謝主保守她先前的手術非常成功，並已順利出院，術後的回報顯示癌細胞未侵襲，這真是祢極大的恩典與保守！接下來她將接受後續的療程，求主保守、引領她一切順利平安，使她完全恢復健康，不再受疾病困擾，生命得著更新與昇華。我們也為邱媽媽禱告，求主釋放她脫離各樣的綑綁與轄制，使她心轉向祢、單單信靠祢，領受從祢而來的真理與真正的自由。願祢的愛強烈吸引棣瓏姊妹的媽媽，使她完全願意接受耶穌為她的救主，生命得著全面的更新與永恆的盼望。
+      </p>
+      <p>
+        我們也為文浩弟兄的爸爸媽媽禱告，求祢保守他們擁有健康的身體，更賜予他們渴慕祢話語的心，使他們願意認識祢、歸向祢，領受那份寶貴的救恩。求主看顧儀錦姊妹的媽媽在家中能有良好的安養照護，使她的身體功能恢復健康，各項指數穩定恢復正常水平，享受安寧。我們為郎天佑弟兄禱告，求主賜予他平靜安穩的心與良好的情緒管理，並在祢的看顧與引導下，能真實認識主耶穌，親身經歷祢那無條件的愛。求祢開啟賴爸的心門，使他渴慕祢的話語，如飢如渴地追求真理，並在他閱讀屬靈書籍時，能親身與神相遇，深刻經歷祢的同在與大能。為伊茹姊妹的媽媽代求，求祢使她的心完全轉向祢，不再倚靠世界或傳統信仰的虛無，而是單單信靠主耶穌，從而得著真正的平安與永恆的拯救。
+      </p>
+      <h2 id="17">17. </h2>
+      <p>
+        最後，我的父啊，我們帶著極大的信心與盼望，為劉濬宇一家獻上禱告。願祢大能的聖手，此刻就釋放他們脫離各樣的權勢與綑綁，使全家都能單單敬拜那獨一的真神，全然進入祢榮耀的國度。我們更懇求祢行醫治的神蹟，使因身體狀況受限的劉濬宇弟兄，能重新站立起來行走，恢復完全的健康，成為祢奇妙大能的活潑見證！
+      </p>
+      <p>主啊，祢是我們生命中最真實、最信實的教師！正如以賽亞書 30章20至21節
+        所應許的：『主雖以艱難給你當餅，以困苦給你當水，你的教師卻不再隱藏；你眼必看見你的教師。你或向左，或向右，你必聽見後邊有聲音說：「這是正路，要行在其間。」』主啊，我們深信，在我們生命的每一個低谷，每一個迷茫的十字路口，祢都已為我們預備了清晰、滿有恩典的指引。願我們每個人都能堅定地定睛於祢，敞開心靈，清晰地聽見祢慈愛的聲音，時刻行在祢為我們所預備的，那條永恆的正路上。
+      </p>
+      <p>願一切的榮耀、尊貴、頌讚、和所有的感謝，都單單歸於天上坐著為王的父神！奉我主耶穌基督的名，我們同心合意地禱告，阿們！</p>
+      <p>（此時，在心靈深處，我們如同感受到溫暖的微風輕輕吹拂，帶來神的祝福與安寧）</p>
+      <p>恩光輕灑，驅散世間塵埃，溫暖每個角落。 浪子回眸，心靈尋得歸宿，安息主懷深處。 信心如磐石，風雨不動搖，根基永堅。 渴慕祢話語，如活泉湧流，滋潤乾涸心靈。 祢手輕觸，傷痛漸漸癒合，生命重綻光華。
+        喧囂之外，心湖澄澈如鏡，平安靜謐無爭。 迷霧深處，智慧之光引領，步履穩健向前。 旅途險阻，主愛之翼蔭庇，永享安穩護衛。 掙脫綑綁，生命破繭而出，展翅飛向自由。 夕陽餘暉，歲月溫柔流轉，長者得享康泰。</p>
+      <p>曲終人散意未盡，願主光芒永照明。 心靈平安無掛礙，恩典歲月常相迎。</p>
+      <p>（禱告至此，我們心靈的耳邊，似乎聽見從寶座而來的宣告，充滿權柄與能力）</p>
+      <h2 id="18-天父宣告">18. 天父宣告： </h2>
+      <p>舊有限制即將打破，神聖的新季節正為我們開啟！我看見醫治的榮耀降臨，釋放豐盛恩膏與超然能力。我們的命定將被啟動，領受策略性指引，進入前所未有的突破與轉化。神的手堅固遮蓋，仇敵無處可站立！哈利路亞！</p>
+    </div>
+  </div>
 
 
 
@@ -1209,91 +1362,176 @@
 
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // 1. Keyword Highlight Logic
-            const keywords = ['禱告', '耶穌', '聖靈', '天父', '阿們', '教會', '平安', '醫治', '恩典', '盼望', '信心', '祝福', '守望', '榮耀', '十字架', '救恩', '真理', '憐憫', '智慧', '啟示'];
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Keyword Highlight Logic
+      const keywords = ['禱告', '耶穌', '聖靈', '天父', '阿們', '教會', '平安', '醫治', '恩典', '盼望', '信心', '祝福', '守望', '榮耀', '十字架', '救恩', '真理', '憐憫', '智慧', '啟示'];
 
-            function highlightKeywords(node) {
-                if (node.nodeType === 3) { // Text node
-                    const text = node.nodeValue;
-                    const regex = new RegExp(`(${keywords.join('|')})`, 'g');
-                    if (regex.test(text)) {
-                        const fragment = document.createDocumentFragment();
-                        let lastIndex = 0;
-                        text.replace(regex, (match, p1, offset) => {
-                            fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
-                            const span = document.createElement('span');
-                            span.className = 'keyword-highlight';
-                            span.textContent = match;
-                            fragment.appendChild(span);
-                            lastIndex = offset + match.length;
-                        });
-                        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
-                        node.parentNode.replaceChild(fragment, node);
-                    }
-                } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
-                    Array.from(node.childNodes).forEach(highlightKeywords);
-                }
-            }
-
-            // Apply highlighting to the main content area
-            const contentContainer = document.querySelector('.markdown-preview') || document.body;
-            highlightKeywords(contentContainer);
-
-            // 2. Collapsible Section Logic
-            // Target h2 as the main section headers
-            const headers = Array.from(contentContainer.querySelectorAll('h2'));
-
-            headers.forEach(header => {
-                // Create section container
-                const section = document.createElement('div');
-                section.className = 'collapsible-section';
-
-                // Create header container
-                const headerDiv = document.createElement('div');
-                headerDiv.className = 'collapsible-header';
-
-                // Icon
-                const icon = document.createElement('span');
-                icon.className = 'collapsible-icon';
-                icon.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
-
-                // Insert section before header
-                if (header.parentNode) {
-                    header.parentNode.insertBefore(section, header);
-
-                    // Move header into headerDiv
-                    headerDiv.appendChild(header);
-                    headerDiv.appendChild(icon);
-                    section.appendChild(headerDiv);
-
-                    // Create content container
-                    const contentDiv = document.createElement('div');
-                    contentDiv.className = 'collapsible-content';
-                    section.appendChild(contentDiv);
-
-                    // Move subsequent siblings into contentDiv
-                    // We need to be careful not to grab the section we just created if it's somehow next
-                    let nextNode = section.nextSibling;
-                    while (nextNode) {
-                        // Stop at next H2 or H1
-                        if (nextNode.nodeName === 'H2' || nextNode.nodeName === 'H1') {
-                            break;
-                        }
-                        const sibling = nextNode;
-                        nextNode = nextNode.nextSibling;
-                        contentDiv.appendChild(sibling);
-                    }
-
-                    // Add click event
-                    headerDiv.addEventListener('click', () => {
-                        section.classList.toggle('collapsed');
-                    });
-                }
+      function highlightKeywords(node) {
+        if (node.nodeType === 3) { // Text node
+          const text = node.nodeValue;
+          const regex = new RegExp(`(${keywords.join('|')})`, 'g');
+          if (regex.test(text)) {
+            const fragment = document.createDocumentFragment();
+            let lastIndex = 0;
+            text.replace(regex, (match, p1, offset) => {
+              fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
+              const span = document.createElement('span');
+              span.className = 'keyword-highlight';
+              span.textContent = match;
+              fragment.appendChild(span);
+              lastIndex = offset + match.length;
             });
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+            node.parentNode.replaceChild(fragment, node);
+          }
+        } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+          Array.from(node.childNodes).forEach(highlightKeywords);
+        }
+      }
+
+      // Apply highlighting to the main content area
+      const contentContainer = document.querySelector('.markdown-preview') || document.body;
+      highlightKeywords(contentContainer);
+
+      // 2. Collapsible Section Logic
+      // Target h2 as the main section headers
+      const headers = Array.from(contentContainer.querySelectorAll('h2'));
+
+      headers.forEach(header => {
+        // Create section container
+        const section = document.createElement('div');
+        section.className = 'collapsible-section';
+
+        // Create header container
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'collapsible-header';
+
+        // Icon
+        const icon = document.createElement('span');
+        icon.className = 'collapsible-icon';
+        icon.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+
+        // Insert section before header
+        if (header.parentNode) {
+          header.parentNode.insertBefore(section, header);
+
+          // Move header into headerDiv
+          headerDiv.appendChild(header);
+          headerDiv.appendChild(icon);
+          section.appendChild(headerDiv);
+
+          // Create content container
+          const contentDiv = document.createElement('div');
+          contentDiv.className = 'collapsible-content';
+          section.appendChild(contentDiv);
+
+          // Move subsequent siblings into contentDiv
+          // We need to be careful not to grab the section we just created if it's somehow next
+          let nextNode = section.nextSibling;
+          while (nextNode) {
+            // Stop at next H2 or H1
+            if (nextNode.nodeName === 'H2' || nextNode.nodeName === 'H1') {
+              break;
+            }
+            const sibling = nextNode;
+            nextNode = nextNode.nextSibling;
+            contentDiv.appendChild(sibling);
+          }
+
+          // Add click event
+          headerDiv.addEventListener('click', () => {
+            section.classList.toggle('collapsed');
+          });
+        }
+      });
+    });
+    // Zoom functionality
+    let zoomLevel = 1.0;
+
+    function toggleZoom() {
+      const textElements = document.querySelectorAll('p, h1, h2, h3, h4, li, .collapsible-header, .collapsible-content');
+
+      // Remove previous zoom classes
+      textElements.forEach(el => {
+        el.classList.remove('zoomed-1-1', 'zoomed-1-2', 'zoomed-1-3', 'zoomed-1-4', 'zoomed-1-5');
+      });
+
+      // Cycle through zoom levels
+      if (zoomLevel >= 1.5) {
+        zoomLevel = 1.0; // Reset to normal
+      } else {
+        zoomLevel += 0.1;
+      }
+
+      // Apply zoom class based on level
+      if (zoomLevel > 1.0) {
+        const zoomClass = `zoomed-${zoomLevel.toFixed(1).replace('.', '-')}`;
+        textElements.forEach(el => {
+          el.classList.add(zoomClass);
         });
-    </script>
+      }
+
+      // Update zoom button indicator
+      const zoomBtn = document.querySelector('[onclick="toggleZoom()"]');
+      if (zoomBtn) {
+        if (zoomLevel > 1.0) {
+          zoomBtn.title = `縮放 (${Math.round(zoomLevel * 100)}%)`;
+        } else {
+          zoomBtn.title = '縮放';
+        }
+      }
+    }
+
+    // TOC functionality
+    let tocVisible = false;
+
+    function toggleTOC() {
+      const toc = document.getElementById('toc');
+      if (!tocVisible) {
+        toc.classList.add('show');
+        tocVisible = true;
+      } else {
+        toc.classList.remove('show');
+        tocVisible = false;
+      }
+    }
+
+    function generateTOC() {
+      const tocList = document.getElementById('toc-list');
+      const headers = document.querySelectorAll('h2');
+
+      headers.forEach((header, index) => {
+        // Ensure header has an ID
+        if (!header.id) {
+          header.id = `section-${index}`;
+        }
+
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${header.id}`;
+        a.textContent = header.textContent;
+
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          header.scrollIntoView({
+            behavior: 'smooth'
+          });
+          // Optional: close TOC on click on mobile
+          if (window.innerWidth < 768) {
+            toggleTOC();
+          }
+        });
+
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+    }
+
+    // Initialize TOC
+    generateTOC();
+
+  </script>
 </body>
 
 </html>
