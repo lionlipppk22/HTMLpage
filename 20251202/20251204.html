@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>reference</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet"
+    href="file:///c:\Users\ttt\.antigravity\extensions\shd101wyy.markdown-preview-enhanced-0.8.20-universal\crossnote\dependencies\katex\katex.min.css">
+
+
+
+
+
+  <style>
+    code[class*=language-],
+    pre[class*=language-] {
+      color: #333;
+      background: 0 0;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none
+    }
+
+    pre[class*=language-] {
+      padding: .8em;
+      overflow: auto;
+      border-radius: 3px;
+      background: #f5f5f5
+    }
+
+    :not(pre)>code[class*=language-] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5
+    }
+
+    .token.blockquote,
+    .token.comment {
+      color: #969896
+    }
+
+    .token.cdata {
+      color: #183691
+    }
+
+    .token.doctype,
+    .token.macro.property,
+    .token.punctuation,
+    .token.variable {
+      color: #333
+    }
+
+    .token.builtin,
+    .token.important,
+    .token.keyword,
+    .token.operator,
+    .token.rule {
+      color: #a71d5d
+    }
+
+    .token.attr-value,
+    .token.regex,
+    .token.string,
+    .token.url {
+      color: #183691
+    }
+
+    .token.atrule,
+    .token.boolean,
+    .token.code,
+    .token.command,
+    .token.constant,
+    .token.entity,
+    .token.number,
+    .token.property,
+    .token.symbol {
+      color: #0086b3
+    }
+
+    .token.prolog,
+    .token.selector,
+    .token.tag {
+      color: #63a35c
+    }
+
+    .token.attr-name,
+    .token.class,
+    .token.class-name,
+    .token.function,
+    .token.id,
+    .token.namespace,
+    .token.pseudo-class,
+    .token.pseudo-element,
+    .token.url-reference .token.variable {
+      color: #795da3
+    }
+
+    .token.entity {
+      cursor: help
+    }
+
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: 700;
+      color: #1d3e81
+    }
+
+    .token.list {
+      color: #ed6a43
+    }
+
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532
+    }
+
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00
+    }
+
+    .token.bold {
+      font-weight: 700
+    }
+
+    .token.italic {
+      font-style: italic
+    }
+
+    .language-json .token.property {
+      color: #183691
+    }
+
+    .language-markup .token.tag .token.punctuation {
+      color: #333
+    }
+
+    .language-css .token.function,
+    code.language-css {
+      color: #0086b3
+    }
+
+    .language-yaml .token.atrule {
+      color: #63a35c
+    }
+
+    code.language-yaml {
+      color: #183691
+    }
+
+    .language-ruby .token.function {
+      color: #333
+    }
+
+    .language-markdown .token.url {
+      color: #795da3
+    }
+
+    .language-makefile .token.symbol {
+      color: #795da3
+    }
+
+    .language-makefile .token.variable {
+      color: #183691
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3
+    }
+
+    .language-bash .token.keyword {
+      color: #0086b3
+    }
+
+    pre[data-line] {
+      position: relative;
+      padding: 1em 0 1em 3em
+    }
+
+    pre[data-line] .line-highlight-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      display: block;
+      width: 100%
+    }
+
+    pre[data-line] .line-highlight {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: inherit 0;
+      margin-top: 1em;
+      background: hsla(24, 20%, 50%, .08);
+      background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+      pointer-events: none;
+      line-height: inherit;
+      white-space: pre
+    }
+
+    pre[data-line] .line-highlight:before,
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-start);
+      position: absolute;
+      top: .4em;
+      left: .6em;
+      min-width: 1em;
+      padding: 0 .5em;
+      background-color: hsla(24, 20%, 50%, .4);
+      color: #f4f1ef;
+      font: bold 65%/1.5 sans-serif;
+      text-align: center;
+      vertical-align: .3em;
+      border-radius: 999px;
+      text-shadow: none;
+      box-shadow: 0 1px #fff
+    }
+
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-end);
+      top: auto;
+      bottom: .4em
+    }
+
+    html body {
+      font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ol,
+    html body>ul {
+      margin-bottom: 16px
+    }
+
+    html body ol,
+    html body ul {
+      padding-left: 2em
+    }
+
+    html body ol.no-list,
+    html body ul.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ol ol,
+    html body ol ul,
+    html body ul ol,
+    html body ul ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      background-color: #f0f0f0;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: 700;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 700
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::after,
+    html body code::before {
+      letter-spacing: -.2em;
+      content: '\00a0'
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      word-break: normal;
+      white-space: pre;
+      background: 0 0;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:after,
+    html body pre code:before,
+    html body pre tt:after,
+    html body pre tt:before {
+      content: normal
+    }
+
+    html body blockquote,
+    html body dl,
+    html body ol,
+    html body p,
+    html body pre,
+    html body ul {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+
+      html body blockquote {
+        color: #5c5c5c
+      }
+
+      html body pre {
+        page-break-inside: avoid
+      }
+
+      html body table {
+        display: table
+      }
+
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      html body code,
+      html body pre {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview ul {
+      list-style: disc
+    }
+
+    .markdown-preview ul ul {
+      list-style: circle
+    }
+
+    .markdown-preview ul ul ul {
+      list-style: square
+    }
+
+    .markdown-preview ol {
+      list-style: decimal
+    }
+
+    .markdown-preview ol ol,
+    .markdown-preview ul ol {
+      list-style-type: lower-roman
+    }
+
+    .markdown-preview ol ol ol,
+    .markdown-preview ol ul ol,
+    .markdown-preview ul ol ol,
+    .markdown-preview ul ul ol {
+      list-style-type: lower-alpha
+    }
+
+    .markdown-preview .newpage,
+    .markdown-preview .pagebreak {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .markdown-preview .md-toc {
+      padding: 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0;
+      min-height: 100vh
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px + 2em)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+      padding: 0 16px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 300px / 2);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+
+    /* Please visit the URL below for more information: */
+    /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+  </style>
+  <!-- The content below will be included at the end of the <head> element. -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      // your code here
+    });
+  </script>
+</head>
+
+<body for="html-export">
+
+
+  <div class="crossnote markdown-preview  ">
+
+    <p>來源: <a
+        href="https://vocus.cc/article/6763cb96fd89780001023bd7">https://vocus.cc/article/6763cb96fd89780001023bd7</a><br>
+      <img src="image.png" alt="alt text">
+    </p>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;family=LXGW+WenKai+Mono+TC&amp;family=Zhi+Mang+Xing&amp;family=Chiron+GoRound+TC&amp;display=swap"
+      rel="stylesheet">
+    <style>
+      p {
+        margin: 0;
+        padding: 0.5em;
+      }
+
+      p:nth-child(odd) {
+        background: #f0f0f0;
+      }
+
+      p:nth-child(even) {
+        background: #ffffff;
+      }
+    </style>
+    <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: Zhi Mang Xing;">
+      <h1>主日敬拜</h1>
+    </div>
+    <div style="font-size: 26px; line-height: 1.6; text-align: left; font-family: Chiron GoRound TC;">
+      <p>1207 主日詩歌</p>
+      <hr>
+      <h2 id="永恆唯一的盼望">永恆唯一的盼望 </h2>
+      <p><a
+          href="https://youtu.be/u4_BDnIWAhs?si=-Aw3CtwtIDRKmIw-">https://youtu.be/u4_BDnIWAhs?si=-Aw3CtwtIDRKmIw-</a><br>
+        <img src="https://img.youtube.com/vi/u4_BDnIWAhs/maxresdefault.jpg" alt="alt text">
+      </p>
+      <p>
+        親愛的天父，我們何等感恩，在祢至高至聖、滿有憐憫的面前，我們得以敞開我們的心。此刻，我們不只將自己，更是將那在我們當中，此刻正深感迷失、疲憊不堪的靈魂，溫柔地帶到祢的施恩寶座前。主啊，我們多麼清楚這份感受。我們的心有時如同羊群離了牧人，在生命的曠野中茫然徘徊，尋不著方向，內裡承受著難以言喻的重擔。在這一刻，我們彷彿看見那顆心幾乎要將口伏在塵土中，經歷著前所未有的孤單與困惑。親愛的主，我們深知這世間的盼望終究會消逝，如雲煙般散去。然而，我們宣告，唯有在祢這裡，我們才能尋得那永恆不變、唯一不動搖的盼望，作我們生命中堅固、永不搖擺的錨。
+      </p>
+      <p>
+        因此，親愛的主，我們將這份由衷的敬拜，與那由心靈深處湧出的詩歌，謙卑地獻在祢的面前，懇求祢側耳垂聽。我們深知，破碎傷痛的心何等需要祢的醫治與觸摸；失落的信心，何等渴望祢的聖火重新點燃。主啊，在這些生命中的挑戰與內心的迷惘裡，我們承認，我們有時就像坐在黑暗裡，迫切地需要祢真理之光來引導，走出這深沉的絕望。我們祈求祢，為我們、為這顆心開闢一條清晰的道路，讓他們在每一步的躊躇中，都能清清楚楚地看見祢堅定的指引。
+      </p>
+      <p>
+        親愛的主，正如祢寶貴的話語在耶利米哀歌3章28至29節所應許：「他坐著獨居，因為耶和華已把這重擔放在他身上。他把口伏在塵土中，或者還有指望。」是的，主啊，我們承認這重擔有時壓得我們幾乎窒息，我們幾乎失去了所有的力氣。然而，即使在最深的謙卑和困頓中，我們仍要緊緊抓住那微小的、卻是永恆的「或許還有指望」。我們的靈魂向祢發出深切的呼求，正如彌迦書7章7至8節所言：「至於我，我必仰望耶和華，我必等候那救我的神；我的神必應允我。我的仇敵啊，不要向我誇耀。我雖跌倒，卻要再起來；我雖坐在黑暗裡，耶和華卻是我的光。」主啊，這不僅是此刻靈魂深處的決心與盼望，更是祢永恆不變的真理！我們深信，即使我們感到跌倒，祢那無比的大能必要使我們重新站立；即使我們身陷黑暗，祢的同在就是我們唯一、永不熄滅的亮光。
+      </p>
+      <p>
+        因此，我們懇求祢，以祢浩瀚的愛和全能的能力來托住我們。我們的心多麼渴望再次經歷祢那超乎所求所想的平安，願它能平息我們內心的風浪，安撫我們焦慮不安的靈魂。我們懇求祢賜予我們重新得力的恩典，如同鷹展翅上騰，帶著更新的視野和從祢而來的力量。我們深知，祢是耶和華，是施行拯救、大有能力的主，正如西番雅書3章17節所啟示：「耶和華你的上帝是施行拯救、大有能力的主。他在你中間必因你歡欣喜樂，他必默然愛你，且因你吹號唱歌。」哦，這份超越一切的愛，是我們破碎心靈最大的、也是唯一的慰藉。
+      </p>
+      <p>
+        主啊，我們何等需要祢永不改變的話語，作我們腳前的燈，路上的光。懇求祢賜下清晰無疑的指引，讓他們在每一個生命的關口，都能毫不模糊地看見祢美好的旨意。我們深知，我們務要認識耶和華，務要竭力追求認識祢，正如何西阿書6章3節所教導：「他出現確如晨光；他必臨到我們像甘霖，像滋潤大地的春雨。」哦，主，願我們能更深地認識祢，願祢的同在如同清晨的陽光，驅散我們一切的陰霾；又像滋潤大地的甘霖，滋養我們乾渴的心田，使我們重新得著生命的活力與盼望。
+      </p>
+      <p>願這份由衷的詩歌與禱告，能如同馨香之祭，蒙祢的悅納，並達到祢施恩的寶座前。願我們的心，能再次堅定不移、全心全意地仰望祢，直到永恆。我們相信，祢的信實永不改變。願一切榮耀、頌讚、尊貴都歸於祢，我們親愛的天父，永永遠遠。阿們。
+      </p>
+      <hr>
+      <h2 id="我要全心讚美">我要全心讚美 </h2>
+      <p><a
+          href="https://youtu.be/Bs-pQZ9b0OU?si=-zumejgdPeJSxM3Q">https://youtu.be/Bs-pQZ9b0OU?si=-zumejgdPeJSxM3Q</a><br>
+        <img src="https://img.youtube.com/vi/Bs-pQZ9b0OU/maxresdefault.jpg" alt="alt text">
+      </p>
+      <p>
+        親愛的天父，愛我們的主耶穌基督，此刻，當我們來到祢施恩的寶座前，我的心何等感恩，為著祢兒女們心中這份真摯而深切的渴慕獻上讚美。主啊，祢知道我們渴望將讚美融入生命的每個呼吸，讓它不只是一時的言語，更是一種從心底湧流、喜樂滿溢的生活方式。是的，我的主，這正是祢創造我們所喜悅的啊！祢將我們造為器皿，就是要我們來稱頌祢的榮耀。
+      </p>
+      <p>
+        然而，親愛的主，我知道要讓這份渴慕得以實現，要能真正全心全意地讚美祢，我們首先需要祢的恩典與潔淨。此刻，在祢聖潔的光中，我們回想起何西阿書14章2節的提醒：「當歸向耶和華，用言語禱告他說：『求你除淨罪孽，悅納我，這樣，我就把嘴唇的祭代替牛犢獻上。』」我的父啊，求祢鑒察我們每個人的心，光照那些可能攔阻我們自由向祢獻上讚美的罪惡與重擔。或許是隱而未現的驕傲，或許是心底深處的苦毒，又或許是那些使我們靈性疲憊、無法昂首向前的捆綁。在這一刻，我們深知唯有祢的恩典能釋放我們。因此，我們懇求祢，用祢愛子耶穌基督寶血的權能，徹底洗淨我們，使我們的心能聖潔，嘴唇能清潔，能以全然真誠的靈向祢獻上讚美，願這讚美如同馨香的祭物，達到祢的寶座前，蒙祢的悅納。
+      </p>
+      <p>
+        親愛的父神啊，當我們的心被潔淨後，求祢更是開啟我們的心眼，讓我們不僅看見那些宏大的拯救與奇蹟，更能敏銳地察覺祢在我們生命中無所不在的美善與恩典——是的，就是每日早晨的慈愛、中午的供應、夜晚的保守。幫助我們學習時刻數算祢的恩典，不只在順境中歡呼雀躍，更能在各種考驗、挑戰，乃至於漫長等候的季節裡，憑著堅定的信心，依然向祢獻上全心的感謝和讚美。主啊，願我們的讚美不只是一時情感的衝動，更是從靈魂深處湧流出來的感恩，是我們意志的忠實選擇，也是情感的真摯表達。願我們的靈、魂、體，都一同向祢歌唱，成為祢榮耀的迴響。
+      </p>
+      <p>
+        主啊，我們的心深深渴望活出那「在祢殿中一日勝過世上千日」的生命真諦。求祢將這份對祢同在、對祢聖所的深切愛慕，如同生命的種子般，深深栽種在我們的心裡。願我們的心單單愛慕祢，渴求進入祢的同在，不論是與弟兄姊妹一同聚集在教會中敬拜，還是獨自安靜在祢面前，都能真真切切地感受到祢榮耀的充滿、祢慈愛的擁抱。在祢同在的安歇中，願我們得著那無比的滿足與力量——這份滿足，遠遠超越世上一切的誘惑、短暫的成就和轉瞬即逝的歡樂。幫助我們明白，真正持久的喜樂源頭，唯獨是祢，是與祢永恆而親密的連結。
+      </p>
+      <p>
+        我的救主啊，當我們默想耶利米書31章13節這何等溫暖的應許時，心靈何等受激勵：「那時，處女必歡樂跳舞；少年人和老年人也必一同歡樂。因為我必使他們的悲哀變為歡喜，使他們得著安慰，從憂愁中得釋放。」主啊，這正是我們所渴求的！求祢釋放我們，使我們的心能自由、全然地向祢表達喜樂。願我們不再被內心的拘謹、羞澀，或這世界的眼光所限制，而是能勇敢地、盡情地用我們的身體、我們的聲音，用我們全人來頌揚祢的聖名。求祢除去我們心頭一切的重擔和捆綁，讓我們的靈在祢面前歡欣雀躍，甚至如同孩子般單純地為祢而舞，讓我們的悲哀在祢的同在中轉化為喜樂的舞蹈，活出那被救贖的自由。
+      </p>
+      <p>
+        親愛的主，我懇求祢將那「讚美不停歇，如義人棚裡的歡呼聲永不息」的生命，真實地實現在我們當中。這不只是一時的感動，更是一種持續的生命姿態，一種深深扎根於祢永恆的信實與無盡良善之中的生活方式。求祢賜下恩典，幫助我們，在日常的瑣碎中，在壓力之下，在人生的每個轉彎處，仍然能定睛在祢的信實與大能上，仍然選擇開口讚美。願這持續的讚美，成為我們的屬靈盾牌，抵擋一切仇敵的攻擊；成為我們內在的力量，幫助我們戰勝疲憊與軟弱；更成為我們屬靈的呼吸，讓我們的生命與祢的榮耀緊密相連，永不間斷。
+      </p>
+      <p>
+        哦，主啊，當我們再次默想西番雅書3章17節這段經文時，心靈何等受激勵、被觸動：「耶和華你的神是施行拯救、大有能力的主。祂在你中間必因你歡欣喜樂，默然愛你，且因你喜樂而歡呼。」我的主啊，這份愛是何等深沉，何等超乎我們想像！在我們向祢獻上讚美，努力活出蒙福喜樂生命的時候，願我們也同時深深明白，祢——這位大而可畏、施行拯救、全能的神——竟然因我們而歡喜，祢的愛何等深沉，祢的歡呼何等真實！這份來自祢的、不容置疑的愛與接納，將成為我們生命中最豐沛、最持久的燃料，不斷激勵我們，持續不斷地活在祢的愛和讚美中，永不枯竭，直到永遠。
+      </p>
+      <p>
+        因此，我們在此一同向祢獻上信心的禱告，奉主耶穌基督的聖名宣告：親愛的主，我們相信祢正在打破一切捆綁我們的舊有限制，釋放祢榮耀的恩膏在我們生命中運行！我們相信新的季節已然為我們開啟，祢神聖的策略必引導我們一步步進入祢為我們預備的命定。我們祈求，堅固的屬靈堡壘將因祢而設立，使我們能抵擋一切仇敵的攻擊。我們仰望，祢的豐盛與醫治正在我們生命中顯明，因此，我們必將活出這首喜樂滿溢的生命詩歌，榮耀祢的名！
+      </p>
+      <p>
+        親愛的主，我們再次懇求祢，將這份讚美的靈深深根植在我們每一個人的心裡，使我們的生命真正成為一首活的詩歌，充滿屬天的喜樂，散發祢榮耀的光芒，直到我們與祢面對面的那日。願我們所行的一切，所說的一切，所思的一切，都能全然歸榮耀給祢的聖名。奉主耶穌基督的聖名禱告，阿們。
+      </p>
+      <h2 id="我們的神">我們的神 </h2>
+      <p><a
+          href="https://youtu.be/nzsMY2_td4Y?si=EEhtiH7OVY3hqN3t">https://youtu.be/nzsMY2_td4Y?si=EEhtiH7OVY3hqN3t</a><br>
+        <img src="https://img.youtube.com/vi/nzsMY2_td4Y/maxresdefault.jpg" alt="alt text">
+      </p>
+      <p>
+        親愛的天父，此時此刻，我們的心何等蒙福，得以再次來到祢的施恩寶座前。當我們一同開口，讓這首滿有能力的詩歌迴盪在這空間裡，親愛主，我感受到祢的靈運行其中，深深觸動我們的靈魂，因為它如此真切地道盡了祢那宏大卻又細膩的創造，祢那超越一切的權能，以及祢對我們永不止息的慈愛。
+      </p>
+      <p>
+        主啊，當我們一同舉目仰望，的確，諸天無聲地述說著祢那無比的榮耀，那穹蒼以最雄偉的方式，傳揚著祢奇妙的作為。我們甚至不必開口，只要靜心觀察這浩瀚的宇宙，單單看見星辰精準的運行、季節不變的更迭、以及生命那深不可測的奧秘，我們就知道，有一位超乎萬有、獨一無二的造物主。祢用祢帶著權柄和能力的話語，命立就立，讓宇宙萬物依序而生，井然有序。祢的創造何等不可思議！祢的創造遠遠超越了我們有限的頭腦所能理解的範疇。這不僅僅是亙古的真理，更是每天早晨當我們醒來，睜開眼所能親眼見證的、親身感受到的真實。在這一刻，我們一同降服在祢奇妙的創造面前。
+      </p>
+      <p>
+        然而，親愛的天父，祢的愛遠不止於創造！我們更要由衷地感恩，祢竟張開那溫柔卻又豐盛的雙手，使祢所造的萬物，包括我們，都得以飽足。祢對我們生命的供應，是何等細緻入微啊！從我們每日所需的空氣、陽光、雨露，到我們心靈深處對平安、對愛的渴望，主啊，祢都一一地顧念。祢從不曾撇棄祢手所造的，反倒以那永恆不變的愛看顧著我們。因此，在這一刻，我們心底深處，與萬口一同承認，唯有祢是我們的神，是我們生命唯一的主宰，更是我們一切的倚靠。
+      </p>
+      <p>主，我們的神啊，我們心被恩感，深知祢是那坐在高天寶座上的至高君王！ 祢的寶座，是公義的根基，是祢權柄的榮光。 當我們默想聖殿中充滿的榮耀，那絕非人手所能建的殿堂，而是祢神聖同在所發出的、全然的光芒！
+        這光芒，它照亮了我們心靈的幽谷，驅散了我們曾有的迷惘不再徬徨。 因此，在此時此刻，我們與天上萬軍、地上萬民一同俯伏敬拜，因為主啊，唯有祢配得我們所有的尊崇，祢配得我們毫無保留的頌揚！</p>
+      <p>全能的神啊，我們滿心歡喜地將聖潔、榮耀、尊貴、能力，這一切最崇高的屬性，全然歸於祢！ 主啊，正因為祢是全能的神，在我們生命的每一個挑戰面前，我們才能夠抬頭仰望，深信人雖不能，但祢凡事皆可期！
+        求祢的聖潔，如同明燈一般，時時指引著我們，願我們的心能被真理潔淨，脫離一切不合祢心意的罪行。 求祢的榮耀，激勵我們在世上活出光彩，不為己私，乃為祢盡心盡力！ 求祢的尊貴，提醒我們對祢的敬畏，因為祢是至高無比的神！
+        更求祢的能力，扶持我們走過每一個看似不可能的季節，讓我們不至於跌倒，反而在祢裡面一次又一次地重新得力！</p>
+      <p>
+        親愛的天父，當我們思想祢的作為，我們更要驚嘆：祢不僅以話語創造，祢更以祢的氣息，賜予我們生命！那吹入我們鼻孔的氣，不單是我們肉體的存活，更是祢聖靈的氣息，在我們這些曾經枯乾、毫無生氣的生命中動工，使我們得以重新活過來！因此，主啊，當我們在世上行走，面對前路的迷惘，或是內心深處感到重擔時，我們懇求祢的話語再次向我們說話，如同起初創造時，命立就立！求祢的靈再次吹氣，使我們枯竭的靈魂重新得著澎湃的生命力，看見新的方向，領受新的恩典！
+      </p>
+      <p>
+        主啊，在這一刻，願我們的心，我們的靈，都能與宇宙萬物一同高唱「哈利路亞」，讚美那昔在、今在、永在的獨一真神！願我們一生，都口唱心和地頌讚祢「聖哉、聖哉、聖哉」！是的，因為唯有祢是那聖潔、公義、慈愛、全然良善，且永不改變的神！
+      </p>
+      <p>
+        親愛的天父，因此我們懇求祢幫助我們，在日常的生活中，時刻將這份對祢的敬畏與由衷的感恩，深藏在我們心間。讓我們在蒙福的時刻，不忘頌讚祢那測不透的恩典；更在考驗與艱難的時刻，依然堅信祢的同在與祢那超越一切的能力。願我們的生命，真真實實地活出對祢的見證，成為祢榮耀的器皿，將一切的榮耀與頌讚，都全然歸於那坐在寶座上、直到永永遠遠的羔羊耶穌基督！我們這樣禱告，是奉我們主耶穌基督的聖名。阿們。
+      </p>
+      <p>
+        是的，親愛的天父，在禱告的末了，我們憑著信心，向祢宣告：祢的榮耀必將顯明！祢要打破一切舊有的藩籬，釋放那豐盛的恩膏與能力，引導我們進入祢所開啟的新季節！主啊，願祢神聖的策略指引我們，願祢堅固的堡壘遮蓋我們，領祢的兒女，我們每一個人，都穩穩地走入祢為我們預備的榮耀命定！哈利路亞！阿們！
+      </p>
+      <p>4<br>
+        能不能<br>
+        <a
+          href="https://youtu.be/AW6aFoCCaIg?si=ofpmwIB5TbagqAfz">https://youtu.be/AW6aFoCCaIg?si=ofpmwIB5TbagqAfz</a><br>
+        <img src="https://img.youtube.com/vi/AW6aFoCCaIg/maxresdefault.jpg" alt="alt text">
+      </p>
+      <p>親愛的天父，我們摯愛的阿爸上帝啊，在祢那亙古不變、從不更改的信實寶座前，我們的靈深處向祢發出最真誠、最深切的呼喊。我們渴望，主啊，渴望能夠更深地進入祢的心意，更全然地將我們的生命歸屬於祢。</p>
+      <p>
+        是的，主啊，我們謙卑地承認，我們是祢親手所造的奇妙工作，我們的生命氣息，我們所擁有的一切，都無一不屬於祢。祢不僅是我們存在的根源，更是我們靈魂深處唯一的至寶，是我們生命中永恆不竭的福分，是我們一切滿足的豐沛源頭。當我們默想這份無法測度的恩典和父子關係，我們的內心便被無法言喻的感恩與深深的敬畏所充滿。在整個浩瀚的宇宙中，沒有任何事物能與祢那完全的愛和祢聖潔的同在相比擬。
+      </p>
+      <p>
+        我的主，在這一刻，我深深地感受到我的心和靈，日夜不住地渴慕著能長久安歇在祢榮耀的同在裡。多麼盼望，主啊，我們能在祢的聖殿中，就是祢那榮美的居所，獻上我們最真誠、最純粹、永不止息的敬拜。那份渴慕，如同古時的詩人所發出的心聲：「夜間，我心羨慕祢；我裡面的靈切切尋求祢。」（以賽亞書26章9節）這份對祢的熱切，絕非一時的情緒波動，而是從我們靈魂最深處湧流而出，如同活水般的真摯渴望。
+      </p>
+      <p>
+        親愛的天父，當我們的目光真正定睛在祢那無與倫比的榮美和無可測度的威嚴之上時，這世間的一切，無論過去曾多麼吸引我們、誘惑我們，那些所謂的成就、物質享受、短暫名利，都在祢聖潔的光輝面前變得如此黯然失色，毫無價值可言。它們不過是轉瞬即逝的虛空，在祢永恆的真光中都煙消雲散。那份來自祢的榮光是如此真實，如此充滿能力，讓我們豁然明白，除祢以外，我們在天上還有誰呢？在地上，除了祢，我們靈魂別無所盼，唯願在祢身畔。唯有祢，我們至高的神，是我們生命唯一的指南，指引永恆彼岸。就像先知哈巴谷在萬物看似匱乏之際，仍能憑信心宣告：「我要因耶和華歡欣，因救我的神喜樂。」（哈巴谷書3章18節）因為祢本身，就是我們生命最美的豐盛，最真的答案。
+      </p>
+      <p>
+        因此，我的天父，我們懷著一顆懇切的心向祢呼求，願祢的恩典永不止息地環繞我們，讓我們能永遠沐浴在祢愛的同在裡，永不離開祢的面。我們渴望能時時刻刻感受祢溫暖擁抱，祢清晰引導，使我們生命蒙福無限。主啊，讓我們醒來的時候，能得見祢的形像就心滿意足了（詩篇17章15節）。這份渴慕，不是我們奢求，而是祢親手栽種，在心靈深處最美的恩典。
+      </p>
+      <p>
+        主啊，我們深知自己的心何等軟弱，我們的肉體何等有限。然而，求祢用祢聖靈的大能賜予我們力量，讓我們能以我們全心、全意、全力的愛來回應祢。是的，我們渴望愛祢，愛祢勝過世上的一切，甚至勝過我們自己的生命、我們所擁有的一切。願我們的愛不再有保留，不再有計算，乃是毫無保留地獻上。願我們的氣息、我們的存在，都能只為在祢的殿中獻上那永不止息的愛與敬拜，直到永永遠遠。願我們的生命成為一份馨香的活祭，全然為祢而活，在祢的愛中得以更新，得以完全。
+      </p>
+      <p>我們感謝祢，我們的主，垂聽了我們心靈深處的禱告。願我們所獻上的，全然蒙祢悅納。 奉主耶穌基督的聖名，阿們。</p>
+      <p>（在禱告之後，牧師會用一種堅定而充滿信心的語氣宣告）</p>
+      <p>
+        親愛的弟兄姊妹們，此刻，讓我們一同憑著那在基督耶穌裡所得著的屬天權柄來宣告：我們的神，那信實且大有能力的上帝，祂將要打破一切舊有的轄制和綑綁，祂要釋放豐盛的同在與嶄新的恩膏在我們的生命中！這是一個新的敬拜季節，正為我們開啟！祢的榮耀將要從我們的生命中毫無保留地傾瀉而出！我們正踏入祢為我們預備的神聖命定，領受從天而來的策略性指引。祢堅固的遮蓋環繞著我們，無人能奪去祢親手賜給我們的福分與呼召！願一切榮耀都歸於我們至高的神！阿們！
+      </p>
+      <p><strong>講員回應詩歌</strong></p>
+      <h2 id="每一天我需要你">每一天我需要你 </h2>
+      <p><a
+          href="https://youtu.be/Fkhe-CZuYjs?si=kVYDo3vrhUr4xtet">https://youtu.be/Fkhe-CZuYjs?si=kVYDo3vrhUr4xtet</a><br>
+        <img src="https://img.youtube.com/vi/Fkhe-CZuYjs/maxresdefault.jpg" alt="alt text">
+      </p>
+      <p>親愛的天父，滿有恩典與慈愛的主，此刻，我們的心一同深深地仰望祢。是的，祢是我們的牧者，是我們生命中最真實的引導與安慰。在這一刻，我們一同來到祢施恩的寶座前。</p>
+      <p>
+        是的，我們憑著祢愛子耶穌基督所流的寶血，得以坦然無懼地來到祢的面前。主啊，我們的心沒有任何隱藏，深切渴望以純全、誠實無偽的靈魂來親近祢，來尋求祢的面。在這一刻，我特別感受到我們每一個人，在生命的旅程中，是多麼的軟弱和有限。然而，主啊，祢的愛卻是無限的，總是溫柔地吸引我們歸向祢。因此，我們懇求祢的慈愛如同活水般，豐沛地澆灌我們乾渴的心田；願祢的恩典如同清晨的甘露，滋潤我們每一個疲憊的靈魂；更願祢的憐憫如同旭日東昇，光照我們一切的幽暗與迷惘。主啊，在生命中的種種挑戰和內心深處的重擔裡，我們極需要祢溫柔的安慰，以及祢清晰、確鑿的指引，引導我們每一步都穩行在祢公義與平安的道路上。
+      </p>
+      <p>
+        是的，我的主，我的神，我們的靈魂何等地渴慕祢！渴慕祢那更深、更具體的同在，充滿我們生命的每個層面。我們深知，在這短暫的人生中，沒有任何事物能比祢的同在更為重要，更為不可或缺。因此，主啊，願祢更深地居住在我們裡面，充滿我們的全人，使我們能領受祢所賜那真實的平安，讓屬靈的力量得以堅固；願我們領受從祢而來的超然智慧，以明辨是非，在人生的岔路口擁有明確的方向不再迷失；更願我們深切經歷那從祢而來、永不止息的喜樂，這喜樂是世界不能奪去的。
+      </p>
+      <p>
+        親愛的主耶穌基督啊，這就是我們此刻內心深處的禱告，也是我們生命最真誠的呼求：願我們生命中的每一個氣息，思想的每一縷波動，言語的每一個字句，行動的每一步路，以至我們存在的本身，都單單歸榮耀給祢！願我們的生命能成為祢美善與真理的活見證，在這世上散發祢馨香之氣，榮耀祢的聖名，讓更多的人因我們生命的光照而看見祢的榮耀。
+      </p>
+      <p>
+        天父啊，我們懇求祢，每日都加深我們對祢的愛與忠誠。願這份愛日益增長，不斷深化，成為我們生命最核心的動力和主軸，指引我們所有的選擇和決定。求祢保守我們的心懷意念，使我們永不失去起初遇見祢時，那份火熱、純粹、毫不妥協的愛心和委身。主啊，我們知道這不容易，但懇求祢，願我們對祢的愛如同祢所點燃的烈火，永不熄滅，且越燒越旺，成為我們生命最美的見證。
+      </p>
+      <p>
+        主啊，我們的靈魂如同乾旱之地，每一天，我們何等地需要祢！極需祢話語的滋養。求祢的聖言如同甘霖沛然降下，滋潤我們乾涸的心靈，帶來真理的啟示，使我們的生命得以更新。是的，在這一刻，我感受到許多人正走在迷惘和掙扎中，願祢的話語成為我們腳前的燈，路上的光，賜我們屬靈的餵養，賜我們在面對前路迷惘和內心掙扎時，能夠擁有清晰的方向和從祢而來的超然智慧，幫助我們分辨是非，作出合祢心意的選擇。
+      </p>
+      <p>
+        親愛的聖靈，我的保惠師，每時每刻，我們何等地需要祢！我們祈求祢如同那沛然的雨水降臨，充滿我們，帶來深層的更新與屬天的能力。求祢的聖潔恩膏塗抹我們，以祢溫柔的安慰醫治我們內裡的創傷，撫平我們一切的憂慮與不安。願祢準確的引導時刻伴隨我們，使我們的生命得以屬靈的甦醒，煥發出全新的活力，結出豐盛的聖靈果實，成就祢在我們生命中的美好旨意，直到基督再來的那日。
+      </p>
+      <p>主啊，我們將這一切的渴慕與呼求，都恭敬地呈到祢的面前。願祢垂聽。奉我主耶穌基督的聖名禱告，阿們。</p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
