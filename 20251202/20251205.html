@@ -1,65 +1,1400 @@
-<!DOCTYPE html><html><head>
-      <title>reference</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="file:///c:\Users\ttt\.antigravity\extensions\shd101wyy.markdown-preview-enhanced-0.8.20-universal\crossnote\dependencies\katex\katex.min.css">
-      
-      
-      
-      
-      
-      <style>
-      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+<!DOCTYPE html>
+<html>
 
-      </style>
-      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function () {
-    // your code here
-  });
-</script></head><body for="html-export">
-    
-    
-      <div class="crossnote markdown-preview  ">
-      
-<p>來源: <a href="https://i.ytimg.com/vi/yQlGOntqwjw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLAYib46kjsnYQLD8888EF74OrsZCA">https://i.ytimg.com/vi/yQlGOntqwjw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLAYib46kjsnYQLD8888EF74OrsZCA</a><br>
-<img src="https://i.ytimg.com/vi/yQlGOntqwjw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLAYib46kjsnYQLD8888EF74OrsZCA" alt="alt text"></p>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;family=LXGW+WenKai+Mono+TC&amp;family=Zhi+Mang+Xing&amp;family=Chiron+GoRound+TC&amp;display=swap" rel="stylesheet">
-<style>
-  p {margin:0; padding:0.5em;}
-  p:nth-child(odd) {background:#f0f0f0;}
-  p:nth-child(even) {background:#ffffff;}
-</style>
-<div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: Zhi Mang Xing;">
-<h1>为欣恩祷告</h1>
-</div>
-<div style="font-size: 26px; line-height: 1.6; text-align: left; font-family: Chiron GoRound TC;">
-<p>手機成癮和人生方向</p>
-<hr>
-<p>親愛的天父，我們帶著一顆謙卑又渴慕的心，來到祢施恩寶座前。在這一刻，我們俯伏敬拜祢，這位至高至上、永遠常存、聖潔無瑕的神。祢不僅是我們一切智慧的源頭，更是我們在患難中、在每一個需要時，那隨時的幫助與最穩固的避難所。</p>
-<p>主啊，此時此刻，我感受到一份沉重的擔子壓在我心頭，因為我為著這一位身陷生命深谷、面對巨大挑戰的父親或母親來到祢面前。我的心與他/她一同承擔這份無以名狀的重壓，是的，主，我們一同承擔。</p>
-<p>哦，主啊，祢何等深知為人父母的心腸！那份迫切，那份渴望看見孩子走在正直、蒙福道路上的心願，是如此真實。然而，當我們面對孩子生命中那些深沉的掙扎，面對他們內心深處那幾乎無法言說的重擔時，那種排山倒海而來的無助感，常常如潮水般將我們淹沒，令我們幾近窒息。主啊，我彷彿能感受到這位父母此刻心頭的劇痛，他/她可能正經歷著前所未有的迷惘，不知該如何伸出援手，如何引導孩子走出這幽暗的困境。甚至，連自己曾經堅守的標準都開始在愛與憂慮中搖擺不定。在這一刻，我懇求祢，用祢那測不透的愛與無限的恩典，深深地、溫柔地擁抱他/她。讓他們真真切切地知道，在祢裡面，他們從來不是孤單一人，祢的同在是他們最堅實的依靠。</p>
-<p>因此，讓我們一同為這孩子破碎的心靈懇切代求。主啊，祢是鑒察人心的神，祢知道有多少寶貴的靈魂，正如同彼得後書2章19節所揭示的，被這世界的潮流、被種種看似自由實則無形的綑綁所制伏，他們被應許自由，自己卻作了敗壞的奴僕。哦，主，求祢用祢的大憐憫觸摸這孩子，從一切轄制中將她徹底釋放出來。願祢的真光，穿透她生命中最幽暗、最隱秘的角落，照亮她，讓她真真切切地明白，真正的自由，那從心靈深處湧流的自由，唯有在祢裡面才能尋得。當她被眼前短暫的滿足、虛假的承諾所迷惑，以致心靈乾渴、迷失方向時，我們呼求祢聖靈親自工作，如同春雨般滋潤她乾渴的心田，喚醒她內心深處對真理的渴慕，對永恆生命的真切嚮往。</p>
-<p>天父啊，我們深知，當孩子的心在裡面發昏的時候，那種失落與絕望是何等痛苦。但我們也記得，如同約拿在深淵中向祢呼求一樣（約拿書2章7節），祢的恩典總是在那裡。我們懇求祢，用祢那超自然的引導，讓她回轉想念耶和華，將她那或許是無聲的呼求，帶入祢的聖殿，達到祢的面前。求祢的慈愛溫柔地觸摸她，如同母親輕撫，撫平她內心的焦躁與不安，驅散一切絕望的陰影。讓她從心底深處認識到，生命真正的價值與意義，從來不是由外在的連結、短暫的刺激或世俗的標準所定義的，而是堅定地建立在祢那永不改變、無條件的愛，以及祢為她所量身定製、充滿恩典的美好命定之上。</p>
-<p>此刻，我的心也特別為這位身心俱疲的父母懇切祈求。主啊，在這教養孩子充滿挑戰的季節中，求祢賜下那從祢而來、超越世俗的智慧。讓他們能夠領悟到，誠如耶利米哀歌3章27至28節所啟示的，人在幼年負軛，這原是好的。有時，生命中的磨練與限制，甚至是那看似艱難的功課，反而可能是祢為了雕塑孩子寶貴的品格、使她學會自律、學會獨處與深度沉思而加在她身上的寶貴祝福。求祢幫助這父母，在無盡的愛與必要的管教之間，精準地找到那神聖的平衡點。讓他們能清清楚楚地知道，何時應當堅定地設立界限，劃定愛的軌道；又何時應當柔軟地給予安慰，成為孩子最溫暖的港灣。願他們不因眼前的艱難而放棄祢真理的教導，更不因孩子一時的反應而失去對祢、對孩子蒙福未來的信心。</p>
-<p>更深一層地，我祈求祢使這位父母的心靈甦醒，賜給他們以賽亞書57章15節所說的痛悔謙卑的靈。讓他們不再憑藉自己的血氣、自己的力量和世俗的方法去孤軍奮戰，而是能夠真真正正地、全然地將孩子交託在祢那全能、全知、全愛的手中。求祢賜給他們屬天的力量，能夠超越自身情感的起伏，繼續以基督無私的愛去愛這孩子；賜給他們屬靈的眼光，能夠穿透表象，以祢的視角去看待她的掙扎與困惑；並使他們深知，唯有禱告，才是他們手中最堅固、最具威力的屬靈武器。</p>
-<p>主啊，當我們眼見所愛的生命似乎偏離了正道，陷在某些無形的幽淵與鎖鏈中，那種無助的洪流真的足以淹沒一切。我們的心中充滿了對祢的憐憫與渴望，為那些心靈因缺乏真理而感到極度乾渴、似乎與祢的呼喚漸行漸遠的生命而呼求。求祢垂聽，當世俗的洪流如巨大的漩渦般不斷拉扯、企圖困住生命真正自由的時候，祢的手能緊緊抓住他們。</p>
-<p>父神，祢是那位「出現確如晨光，臨到我們像甘霖，像滋潤大地的春雨」的神（何西阿書 6:3）。懇求祢讓祢神聖的曙光，劃破此刻籠罩著絕望的濃重陰影。主啊，願祢的恩典如同清澈的活水泉源，徹底滋潤這片久旱的心靈荒地。祢是我們慈愛的牧者，懇求祢此刻就伸出祢引導的杖，將那些感到迷失的羊兒，領回到祢真理與光明的康莊大道上。主，唯有祢那堅定不移、永恆不變的愛，才是我們靈魂永遠的篤定與磐石，願這份愛深植人心，帶來真正的安穩。</p>
-<p>我們也來到祢面前，為著生命中那些「昔日年幼時所承受的重擔與淬煉」獻上禱告。主啊，祢知道我們所行的路，祢試煉我們之後，願我們都能「如精金」般被提煉出來（約伯記 23:10）。我們懇求祢，用祢超乎想像的智慧，將生命中所有的經歷，都轉化為獨特的祝福與恩賜。願我們的懇切禱告，能夠上達天庭，在祢聖潔的殿堂中迴響，化為祢滿溢的恩典與無盡的福澤，傾倒在我們所愛的生命之上。</p>
-<p>慈悲的救主啊，求祢親自伸出祢醫治的大能之手，來醫治所有破碎、疲憊的心靈。願祢使他們的生命得以煥然一新，重新得力，如同老鷹展翅上騰。主啊，「祢本為善，在患難的日子為人的保障，並且認得那些投靠祢的人」（那鴻書 1:7）。我們相信祢會緊密連結我們，用祢無限的愛引導我們走向一條充滿榮耀與永恆意義的道路。</p>
-<p>主啊，在我們信心薄弱之時，我們宣告祢是使無變有、使死人復活的真神！沒有任何一種情況，沒有任何一個看似絕望的困境，是祢無法轉化、無法超越的。因此，我們大膽地懇求祢，求祢現在就、此刻就，以祢的大能介入這孩子的生命，介入這個家庭所面臨的巨大挑戰。願祢的聖靈如同活水江河般大大運行，沖刷一切污穢與綑綁，帶來真實的醫治、徹底的更新與生命的轉化。我們相信，當這家庭經歷這一切之後，他們不僅會更深地認識祢、更緊密地與祢連結，更會在祢那湧流不息的恩典中，尋得那超越環境的平安與永恆的盼望！</p>
-<p>我們將一切的頌讚、尊貴和榮耀，都單單歸於坐著為王的祢。奉我們主耶穌基督寶貴的名禱告，阿們。</p>
-</div>
-      </div>
-      
-      
-    
-    
-    
-    
-    
-    
-  
-    </body></html>
+<head>
+    <title>为欣恩祷告 手機成癮和人生方向</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="file:///c:\Users\ttt\.antigravity\extensions\shd101wyy.markdown-preview-enhanced-0.8.20-universal\crossnote\dependencies\katex\katex.min.css">
+
+
+
+
+
+    <style>
+        code[class*=language-],
+        pre[class*=language-] {
+            color: #333;
+            background: 0 0;
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 1.4;
+            -moz-tab-size: 8;
+            -o-tab-size: 8;
+            tab-size: 8;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none
+        }
+
+        pre[class*=language-] {
+            padding: .8em;
+            overflow: auto;
+            border-radius: 3px;
+            background: #f5f5f5
+        }
+
+        :not(pre)>code[class*=language-] {
+            padding: .1em;
+            border-radius: .3em;
+            white-space: normal;
+            background: #f5f5f5
+        }
+
+        .token.blockquote,
+        .token.comment {
+            color: #969896
+        }
+
+        .token.cdata {
+            color: #183691
+        }
+
+        .token.doctype,
+        .token.macro.property,
+        .token.punctuation,
+        .token.variable {
+            color: #333
+        }
+
+        .token.builtin,
+        .token.important,
+        .token.keyword,
+        .token.operator,
+        .token.rule {
+            color: #a71d5d
+        }
+
+        .token.attr-value,
+        .token.regex,
+        .token.string,
+        .token.url {
+            color: #183691
+        }
+
+        .token.atrule,
+        .token.boolean,
+        .token.code,
+        .token.command,
+        .token.constant,
+        .token.entity,
+        .token.number,
+        .token.property,
+        .token.symbol {
+            color: #0086b3
+        }
+
+        .token.prolog,
+        .token.selector,
+        .token.tag {
+            color: #63a35c
+        }
+
+        .token.attr-name,
+        .token.class,
+        .token.class-name,
+        .token.function,
+        .token.id,
+        .token.namespace,
+        .token.pseudo-class,
+        .token.pseudo-element,
+        .token.url-reference .token.variable {
+            color: #795da3
+        }
+
+        .token.entity {
+            cursor: help
+        }
+
+        .token.title,
+        .token.title .token.punctuation {
+            font-weight: 700;
+            color: #1d3e81
+        }
+
+        .token.list {
+            color: #ed6a43
+        }
+
+        .token.inserted {
+            background-color: #eaffea;
+            color: #55a532
+        }
+
+        .token.deleted {
+            background-color: #ffecec;
+            color: #bd2c00
+        }
+
+        .token.bold {
+            font-weight: 700
+        }
+
+        .token.italic {
+            font-style: italic
+        }
+
+        .language-json .token.property {
+            color: #183691
+        }
+
+        .language-markup .token.tag .token.punctuation {
+            color: #333
+        }
+
+        .language-css .token.function,
+        code.language-css {
+            color: #0086b3
+        }
+
+        .language-yaml .token.atrule {
+            color: #63a35c
+        }
+
+        code.language-yaml {
+            color: #183691
+        }
+
+        .language-ruby .token.function {
+            color: #333
+        }
+
+        .language-markdown .token.url {
+            color: #795da3
+        }
+
+        .language-makefile .token.symbol {
+            color: #795da3
+        }
+
+        .language-makefile .token.variable {
+            color: #183691
+        }
+
+        .language-makefile .token.builtin {
+            color: #0086b3
+        }
+
+        .language-bash .token.keyword {
+            color: #0086b3
+        }
+
+        pre[data-line] {
+            position: relative;
+            padding: 1em 0 1em 3em
+        }
+
+        pre[data-line] .line-highlight-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            display: block;
+            width: 100%
+        }
+
+        pre[data-line] .line-highlight {
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: inherit 0;
+            margin-top: 1em;
+            background: hsla(24, 20%, 50%, .08);
+            background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+            pointer-events: none;
+            line-height: inherit;
+            white-space: pre
+        }
+
+        pre[data-line] .line-highlight:before,
+        pre[data-line] .line-highlight[data-end]:after {
+            content: attr(data-start);
+            position: absolute;
+            top: .4em;
+            left: .6em;
+            min-width: 1em;
+            padding: 0 .5em;
+            background-color: hsla(24, 20%, 50%, .4);
+            color: #f4f1ef;
+            font: bold 65%/1.5 sans-serif;
+            text-align: center;
+            vertical-align: .3em;
+            border-radius: 999px;
+            text-shadow: none;
+            box-shadow: 0 1px #fff
+        }
+
+        pre[data-line] .line-highlight[data-end]:after {
+            content: attr(data-end);
+            top: auto;
+            bottom: .4em
+        }
+
+        html body {
+            font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow: initial;
+            box-sizing: border-box;
+            word-wrap: break-word
+        }
+
+        html body>:first-child {
+            margin-top: 0
+        }
+
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5,
+        html body h6 {
+            line-height: 1.2;
+            margin-top: 1em;
+            margin-bottom: 16px;
+            color: #000
+        }
+
+        html body h1 {
+            font-size: 2.25em;
+            font-weight: 300;
+            padding-bottom: .3em
+        }
+
+        html body h2 {
+            font-size: 1.75em;
+            font-weight: 400;
+            padding-bottom: .3em
+        }
+
+        html body h3 {
+            font-size: 1.5em;
+            font-weight: 500
+        }
+
+        html body h4 {
+            font-size: 1.25em;
+            font-weight: 600
+        }
+
+        html body h5 {
+            font-size: 1.1em;
+            font-weight: 600
+        }
+
+        html body h6 {
+            font-size: 1em;
+            font-weight: 600
+        }
+
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5 {
+            font-weight: 600
+        }
+
+        html body h5 {
+            font-size: 1em
+        }
+
+        html body h6 {
+            color: #5c5c5c
+        }
+
+        html body strong {
+            color: #000
+        }
+
+        html body del {
+            color: #5c5c5c
+        }
+
+        html body a:not([href]) {
+            color: inherit;
+            text-decoration: none
+        }
+
+        html body a {
+            color: #08c;
+            text-decoration: none
+        }
+
+        html body a:hover {
+            color: #00a3f5;
+            text-decoration: none
+        }
+
+        html body img {
+            max-width: 100%
+        }
+
+        html body>p {
+            margin-top: 0;
+            margin-bottom: 16px;
+            word-wrap: break-word
+        }
+
+        html body>ol,
+        html body>ul {
+            margin-bottom: 16px
+        }
+
+        html body ol,
+        html body ul {
+            padding-left: 2em
+        }
+
+        html body ol.no-list,
+        html body ul.no-list {
+            padding: 0;
+            list-style-type: none
+        }
+
+        html body ol ol,
+        html body ol ul,
+        html body ul ol,
+        html body ul ul {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        html body li {
+            margin-bottom: 0
+        }
+
+        html body li.task-list-item {
+            list-style: none
+        }
+
+        html body li>p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        html body .task-list-item-checkbox {
+            margin: 0 .2em .25em -1.8em;
+            vertical-align: middle
+        }
+
+        html body .task-list-item-checkbox:hover {
+            cursor: pointer
+        }
+
+        html body blockquote {
+            margin: 16px 0;
+            font-size: inherit;
+            padding: 0 15px;
+            color: #5c5c5c;
+            background-color: #f0f0f0;
+            border-left: 4px solid #d6d6d6
+        }
+
+        html body blockquote>:first-child {
+            margin-top: 0
+        }
+
+        html body blockquote>:last-child {
+            margin-bottom: 0
+        }
+
+        html body hr {
+            height: 4px;
+            margin: 32px 0;
+            background-color: #d6d6d6;
+            border: 0 none
+        }
+
+        html body table {
+            margin: 10px 0 15px 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            display: block;
+            width: 100%;
+            overflow: auto;
+            word-break: normal;
+            word-break: keep-all
+        }
+
+        html body table th {
+            font-weight: 700;
+            color: #000
+        }
+
+        html body table td,
+        html body table th {
+            border: 1px solid #d6d6d6;
+            padding: 6px 13px
+        }
+
+        html body dl {
+            padding: 0
+        }
+
+        html body dl dt {
+            padding: 0;
+            margin-top: 16px;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: 700
+        }
+
+        html body dl dd {
+            padding: 0 16px;
+            margin-bottom: 16px
+        }
+
+        html body code {
+            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+            font-size: .85em;
+            color: #000;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            padding: .2em 0
+        }
+
+        html body code::after,
+        html body code::before {
+            letter-spacing: -.2em;
+            content: '\00a0'
+        }
+
+        html body pre>code {
+            padding: 0;
+            margin: 0;
+            word-break: normal;
+            white-space: pre;
+            background: 0 0;
+            border: 0
+        }
+
+        html body .highlight {
+            margin-bottom: 16px
+        }
+
+        html body .highlight pre,
+        html body pre {
+            padding: 1em;
+            overflow: auto;
+            line-height: 1.45;
+            border: #d6d6d6;
+            border-radius: 3px
+        }
+
+        html body .highlight pre {
+            margin-bottom: 0;
+            word-break: normal
+        }
+
+        html body pre code,
+        html body pre tt {
+            display: inline;
+            max-width: initial;
+            padding: 0;
+            margin: 0;
+            overflow: initial;
+            line-height: inherit;
+            word-wrap: normal;
+            background-color: transparent;
+            border: 0
+        }
+
+        html body pre code:after,
+        html body pre code:before,
+        html body pre tt:after,
+        html body pre tt:before {
+            content: normal
+        }
+
+        html body blockquote,
+        html body dl,
+        html body ol,
+        html body p,
+        html body pre,
+        html body ul {
+            margin-top: 0;
+            margin-bottom: 16px
+        }
+
+        html body kbd {
+            color: #000;
+            border: 1px solid #d6d6d6;
+            border-bottom: 2px solid #c7c7c7;
+            padding: 2px 4px;
+            background-color: #f0f0f0;
+            border-radius: 3px
+        }
+
+        @media print {
+            html body {
+                background-color: #fff
+            }
+
+            html body h1,
+            html body h2,
+            html body h3,
+            html body h4,
+            html body h5,
+            html body h6 {
+                color: #000;
+                page-break-after: avoid
+            }
+
+            html body blockquote {
+                color: #5c5c5c
+            }
+
+            html body pre {
+                page-break-inside: avoid
+            }
+
+            html body table {
+                display: table
+            }
+
+            html body img {
+                display: block;
+                max-width: 100%;
+                max-height: 100%
+            }
+
+            html body code,
+            html body pre {
+                word-wrap: break-word;
+                white-space: pre
+            }
+        }
+
+        .markdown-preview {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box
+        }
+
+        .markdown-preview ul {
+            list-style: disc
+        }
+
+        .markdown-preview ul ul {
+            list-style: circle
+        }
+
+        .markdown-preview ul ul ul {
+            list-style: square
+        }
+
+        .markdown-preview ol {
+            list-style: decimal
+        }
+
+        .markdown-preview ol ol,
+        .markdown-preview ul ol {
+            list-style-type: lower-roman
+        }
+
+        .markdown-preview ol ol ol,
+        .markdown-preview ol ul ol,
+        .markdown-preview ul ol ol,
+        .markdown-preview ul ul ol {
+            list-style-type: lower-alpha
+        }
+
+        .markdown-preview .newpage,
+        .markdown-preview .pagebreak {
+            page-break-before: always
+        }
+
+        .markdown-preview pre.line-numbers {
+            position: relative;
+            padding-left: 3.8em;
+            counter-reset: linenumber
+        }
+
+        .markdown-preview pre.line-numbers>code {
+            position: relative
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows {
+            position: absolute;
+            pointer-events: none;
+            top: 1em;
+            font-size: 100%;
+            left: 0;
+            width: 3em;
+            letter-spacing: -1px;
+            border-right: 1px solid #999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows>span {
+            pointer-events: none;
+            display: block;
+            counter-increment: linenumber
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: .8em;
+            text-align: right
+        }
+
+        .markdown-preview .mathjax-exps .MathJax_Display {
+            text-align: center !important
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+            display: none
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .status {
+            display: none
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+            margin-bottom: 16px
+        }
+
+        .markdown-preview .md-toc {
+            padding: 0
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+            display: inline;
+            padding: .25rem 0
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+            display: inline
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+            font-weight: 800
+        }
+
+        .scrollbar-style::-webkit-scrollbar {
+            width: 8px
+        }
+
+        .scrollbar-style::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent
+        }
+
+        .scrollbar-style::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: rgba(150, 150, 150, .66);
+            border: 4px solid rgba(150, 150, 150, .66);
+            background-clip: content-box
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            overflow: auto
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+            position: relative;
+            top: 0;
+            min-height: 100vh
+        }
+
+        @media screen and (min-width:914px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                padding: 2em calc(50% - 457px + 2em)
+            }
+        }
+
+        @media screen and (max-width:914px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                padding: 2em
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                font-size: 14px !important;
+                padding: 1em
+            }
+        }
+
+        @media print {
+            html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+                display: none
+            }
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+            position: fixed;
+            bottom: 8px;
+            left: 8px;
+            font-size: 28px;
+            cursor: pointer;
+            color: inherit;
+            z-index: 99;
+            width: 32px;
+            text-align: center;
+            opacity: .4
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+            opacity: 1
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100%;
+            padding: 32px 0 48px 0;
+            font-size: 14px;
+            box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+            box-sizing: border-box;
+            overflow: auto;
+            background-color: inherit
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+            width: 8px
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: rgba(150, 150, 150, .66);
+            border: 4px solid rgba(150, 150, 150, .66);
+            background-clip: content-box
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+            text-decoration: none
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+            padding: 0 16px
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+            display: inline;
+            padding: .25rem 0
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+            display: inline
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+            font-weight: 800
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+            left: 300px;
+            width: calc(100% - 300px);
+            padding: 2em calc(50% - 457px - 300px / 2);
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        @media screen and (max-width:1274px) {
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                padding: 2em
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                width: 100%
+            }
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+            display: none
+        }
+
+        14:
+        /* Please visit the URL below for more information: */
+        15:
+        /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+        /* --- Merged Styles from Demo --- */
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #f9fafb;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+
+        .collapsible-header:hover {
+            background-color: #f3f4f6;
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #111827;
+            flex-grow: 1;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #6b7280;
+            flex-shrink: 0;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 1;
+            max-height: 5000px;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-top: none;
+            overflow: hidden;
+        }
+
+        /* Keyword Highlight Styles */
+        .keyword-highlight {
+            background-color: rgba(255, 255, 0, 0.3);
+            border-radius: 0.25rem;
+            padding: 0.1rem 0.2rem;
+            font-weight: 500;
+            color: #d97706;
+            display: inline-block;
+            animation: highlight-pulse 3s infinite;
+        }
+
+        @keyframes highlight-pulse {
+            0% {
+                background-color: rgba(255, 255, 0, 0.2);
+            }
+
+            50% {
+                background-color: rgba(255, 255, 0, 0.5);
+            }
+
+            100% {
+                background-color: rgba(255, 255, 0, 0.2);
+            }
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            opacity: 0.2;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 1);
+            opacity: 1;
+        }
+
+        /* Table of Contents */
+        .toc {
+            position: fixed;
+            top: 100px;
+            right: -300px;
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transition: right 0.3s ease;
+            z-index: 999;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .toc.show {
+            right: 20px;
+        }
+
+        .toc h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #764ba2;
+        }
+
+        /* Zoom functionality styles */
+        .zoomed-1-1 {
+            font-size: 1.1em;
+        }
+
+        .zoomed-1-2 {
+            font-size: 1.2em;
+        }
+
+        .zoomed-1-3 {
+            font-size: 1.3em;
+        }
+
+        .zoomed-1-4 {
+            font-size: 1.4em;
+        }
+
+        .zoomed-1-5 {
+            font-size: 1.5em;
+        }
+    </style>
+    <!-- The content below will be included at the end of the <head> element. -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // your code here
+        });
+    </script>
+</head>
+
+<body for="html-export">
+
+    <div class="controls">
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+    <div id="toc" class="toc">
+        <h3>目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <div class="crossnote markdown-preview  ">
+
+        <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: Zhi Mang Xing;">
+            <h1>为欣恩祷告</h1>
+            <div style="font-size: 26px; line-height: 1.6; text-align: center; font-family: LXGW WenKai Mono TC;">
+                <h2>手機成癮和人生方向</h2>
+            </div>
+            <p><img src="https://i.ytimg.com/vi/yQlGOntqwjw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLAYib46kjsnYQLD8888EF74OrsZCA"
+                    alt="alt text"></p>
+            <p>來源: <a
+                    href="https://i.ytimg.com/vi/yQlGOntqwjw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLAYib46kjsnYQLD8888EF74OrsZCA">https://i.ytimg.com/vi/yQlGOntqwjw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLAYib46kjsnYQLD8888EF74OrsZCA</a>
+            </p>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;family=LXGW+WenKai+Mono+TC&amp;family=Zhi+Mang+Xing&amp;family=Chiron+GoRound+TC&amp;display=swap"
+                rel="stylesheet">
+            <style>
+                p {
+                    margin: 0;
+                    padding: 0.5em;
+                }
+
+                p:nth-child(odd) {
+                    background: #f0f0f0;
+                }
+
+                p:nth-child(even) {
+                    background: #ffffff;
+                }
+            </style>
+            <div style="font-size: 28px; line-height: 1.6; text-align: left; font-family: Chiron GoRound TC;">
+                <p>親愛的天父，我們帶著一顆謙卑又渴慕的心，來到祢施恩寶座前。在這一刻，我們俯伏敬拜祢，這位至高至上、永遠常存、聖潔無瑕的神。祢不僅是我們一切智慧的源頭，更是我們在患難中、在每一個需要時，那隨時的幫助與最穩固的避難所。
+                </p>
+                <p>主啊，此時此刻，我感受到一份沉重的擔子壓在我心頭，因為我為著這一位身陷生命深谷、面對巨大挑戰的父親或母親來到祢面前。我的心與他/她一同承擔這份無以名狀的重壓，是的，主，我們一同承擔。</p>
+                <p>哦，主啊，祢何等深知為人父母的心腸！那份迫切，那份渴望看見孩子走在正直、蒙福道路上的心願，是如此真實。然而，當我們面對孩子生命中那些深沉的掙扎，面對他們內心深處那幾乎無法言說的重擔時，那種排山倒海而來的無助感，常常如潮水般將我們淹沒，令我們幾近窒息。主啊，我彷彿能感受到這位父母此刻心頭的劇痛，他/她可能正經歷著前所未有的迷惘，不知該如何伸出援手，如何引導孩子走出這幽暗的困境。甚至，連自己曾經堅守的標準都開始在愛與憂慮中搖擺不定。在這一刻，我懇求祢，用祢那測不透的愛與無限的恩典，深深地、溫柔地擁抱他/她。讓他們真真切切地知道，在祢裡面，他們從來不是孤單一人，祢的同在是他們最堅實的依靠。
+                </p>
+                <p>因此，讓我們一同為這孩子破碎的心靈懇切代求。主啊，祢是鑒察人心的神，祢知道有多少寶貴的靈魂，正如同彼得後書2章19節所揭示的，被這世界的潮流、被種種看似自由實則無形的綑綁所制伏，他們被應許自由，自己卻作了敗壞的奴僕。哦，主，求祢用祢的大憐憫觸摸這孩子，從一切轄制中將她徹底釋放出來。願祢的真光，穿透她生命中最幽暗、最隱秘的角落，照亮她，讓她真真切切地明白，真正的自由，那從心靈深處湧流的自由，唯有在祢裡面才能尋得。當她被眼前短暫的滿足、虛假的承諾所迷惑，以致心靈乾渴、迷失方向時，我們呼求祢聖靈親自工作，如同春雨般滋潤她乾渴的心田，喚醒她內心深處對真理的渴慕，對永恆生命的真切嚮往。
+                </p>
+                <p>天父啊，我們深知，當孩子的心在裡面發昏的時候，那種失落與絕望是何等痛苦。但我們也記得，如同約拿在深淵中向祢呼求一樣（約拿書2章7節），祢的恩典總是在那裡。我們懇求祢，用祢那超自然的引導，讓她回轉想念耶和華，將她那或許是無聲的呼求，帶入祢的聖殿，達到祢的面前。求祢的慈愛溫柔地觸摸她，如同母親輕撫，撫平她內心的焦躁與不安，驅散一切絕望的陰影。讓她從心底深處認識到，生命真正的價值與意義，從來不是由外在的連結、短暫的刺激或世俗的標準所定義的，而是堅定地建立在祢那永不改變、無條件的愛，以及祢為她所量身定製、充滿恩典的美好命定之上。
+                </p>
+                <p>此刻，我的心也特別為這位身心俱疲的父母懇切祈求。主啊，在這教養孩子充滿挑戰的季節中，求祢賜下那從祢而來、超越世俗的智慧。讓他們能夠領悟到，誠如耶利米哀歌3章27至28節所啟示的，人在幼年負軛，這原是好的。有時，生命中的磨練與限制，甚至是那看似艱難的功課，反而可能是祢為了雕塑孩子寶貴的品格、使她學會自律、學會獨處與深度沉思而加在她身上的寶貴祝福。求祢幫助這父母，在無盡的愛與必要的管教之間，精準地找到那神聖的平衡點。讓他們能清清楚楚地知道，何時應當堅定地設立界限，劃定愛的軌道；又何時應當柔軟地給予安慰，成為孩子最溫暖的港灣。願他們不因眼前的艱難而放棄祢真理的教導，更不因孩子一時的反應而失去對祢、對孩子蒙福未來的信心。
+                </p>
+                <p>更深一層地，我祈求祢使這位父母的心靈甦醒，賜給他們以賽亞書57章15節所說的痛悔謙卑的靈。讓他們不再憑藉自己的血氣、自己的力量和世俗的方法去孤軍奮戰，而是能夠真真正正地、全然地將孩子交託在祢那全能、全知、全愛的手中。求祢賜給他們屬天的力量，能夠超越自身情感的起伏，繼續以基督無私的愛去愛這孩子；賜給他們屬靈的眼光，能夠穿透表象，以祢的視角去看待她的掙扎與困惑；並使他們深知，唯有禱告，才是他們手中最堅固、最具威力的屬靈武器。
+                </p>
+                <p>主啊，當我們眼見所愛的生命似乎偏離了正道，陷在某些無形的幽淵與鎖鏈中，那種無助的洪流真的足以淹沒一切。我們的心中充滿了對祢的憐憫與渴望，為那些心靈因缺乏真理而感到極度乾渴、似乎與祢的呼喚漸行漸遠的生命而呼求。求祢垂聽，當世俗的洪流如巨大的漩渦般不斷拉扯、企圖困住生命真正自由的時候，祢的手能緊緊抓住他們。
+                </p>
+                <p>父神，祢是那位「出現確如晨光，臨到我們像甘霖，像滋潤大地的春雨」的神（何西阿書
+                    6:3）。懇求祢讓祢神聖的曙光，劃破此刻籠罩著絕望的濃重陰影。主啊，願祢的恩典如同清澈的活水泉源，徹底滋潤這片久旱的心靈荒地。祢是我們慈愛的牧者，懇求祢此刻就伸出祢引導的杖，將那些感到迷失的羊兒，領回到祢真理與光明的康莊大道上。主，唯有祢那堅定不移、永恆不變的愛，才是我們靈魂永遠的篤定與磐石，願這份愛深植人心，帶來真正的安穩。
+                </p>
+                <p>我們也來到祢面前，為著生命中那些「昔日年幼時所承受的重擔與淬煉」獻上禱告。主啊，祢知道我們所行的路，祢試煉我們之後，願我們都能「如精金」般被提煉出來（約伯記
+                    23:10）。我們懇求祢，用祢超乎想像的智慧，將生命中所有的經歷，都轉化為獨特的祝福與恩賜。願我們的懇切禱告，能夠上達天庭，在祢聖潔的殿堂中迴響，化為祢滿溢的恩典與無盡的福澤，傾倒在我們所愛的生命之上。
+                </p>
+                <p>慈悲的救主啊，求祢親自伸出祢醫治的大能之手，來醫治所有破碎、疲憊的心靈。願祢使他們的生命得以煥然一新，重新得力，如同老鷹展翅上騰。主啊，「祢本為善，在患難的日子為人的保障，並且認得那些投靠祢的人」（那鴻書
+                    1:7）。我們相信祢會緊密連結我們，用祢無限的愛引導我們走向一條充滿榮耀與永恆意義的道路。</p>
+                <p>主啊，在我們信心薄弱之時，我們宣告祢是使無變有、使死人復活的真神！沒有任何一種情況，沒有任何一個看似絕望的困境，是祢無法轉化、無法超越的。因此，我們大膽地懇求祢，求祢現在就、此刻就，以祢的大能介入這孩子的生命，介入這個家庭所面臨的巨大挑戰。願祢的聖靈如同活水江河般大大運行，沖刷一切污穢與綑綁，帶來真實的醫治、徹底的更新與生命的轉化。我們相信，當這家庭經歷這一切之後，他們不僅會更深地認識祢、更緊密地與祢連結，更會在祢那湧流不息的恩典中，尋得那超越環境的平安與永恆的盼望！
+                </p>
+                <p>我們將一切的頌讚、尊貴和榮耀，都單單歸於坐著為王的祢。奉我們主耶穌基督寶貴的名禱告，阿們。</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Keyword Highlight Logic
+            const keywords = ['禱告', '耶穌', '聖靈', '天父', '阿們', '教會', '平安', '醫治', '恩典', '盼望', '信心', '祝福', '守望', '榮耀', '十字架', '救恩', '真理', '憐憫', '智慧', '啟示'];
+
+            function highlightKeywords(node) {
+                if (node.nodeType === 3) { // Text node
+                    const text = node.nodeValue;
+                    const regex = new RegExp(`(${keywords.join('|')})`, 'g');
+                    if (regex.test(text)) {
+                        const fragment = document.createDocumentFragment();
+                        let lastIndex = 0;
+                        text.replace(regex, (match, p1, offset) => {
+                            fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
+                            const span = document.createElement('span');
+                            span.className = 'keyword-highlight';
+                            span.textContent = match;
+                            fragment.appendChild(span);
+                            lastIndex = offset + match.length;
+                        });
+                        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+                        node.parentNode.replaceChild(fragment, node);
+                    }
+                } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+                    Array.from(node.childNodes).forEach(highlightKeywords);
+                }
+            }
+
+            // Apply highlighting to the main content area
+            const contentContainer = document.querySelector('.markdown-preview') || document.body;
+            highlightKeywords(contentContainer);
+
+            // 2. Collapsible Section Logic
+            // Note: reference.html uses h2 for sections inside a div, let's target them.
+            // The structure in reference.html is a bit nested.
+            // We need to be careful about what we select.
+            // The main content seems to be in .markdown-preview
+
+            const headers = Array.from(contentContainer.querySelectorAll('h2'));
+
+            headers.forEach(header => {
+                // Create section container
+                const section = document.createElement('div');
+                section.className = 'collapsible-section';
+
+                // Create header container
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'collapsible-header';
+
+                // Icon
+                const icon = document.createElement('span');
+                icon.className = 'collapsible-icon';
+                icon.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+
+                // Insert section before header
+                if (header.parentNode) {
+                    header.parentNode.insertBefore(section, header);
+
+                    // Move header into headerDiv
+                    headerDiv.appendChild(header);
+                    headerDiv.appendChild(icon);
+                    section.appendChild(headerDiv);
+
+                    // Create content container
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'collapsible-content';
+                    section.appendChild(contentDiv);
+
+                    // Move subsequent siblings into contentDiv
+                    // In reference.html, content is often in <p> tags following the header.
+                    // But wait, reference.html has a specific structure:
+                    // <div ...> <h2>...</h2> </div> <p>...</p>
+                    // The h2 is inside a div! 
+                    // Let's adjust logic: if h2 is inside a div that only contains h2, maybe we should target the parent div?
+                    // Or just let the logic run. If h2 is moved, the parent div becomes empty.
+                    // The subsequent siblings of the *original h2 parent* might be what we want if the h2 was the only thing.
+                    // However, looking at reference.html:
+                    // <div style="..."> <h2>...</h2> </div>
+                    // <p>...</p>
+                    // The <p> tags are siblings of the wrapper div, not the h2 itself.
+
+                    // Let's refine the selection logic for this specific file structure if needed.
+                    // But the generic logic:
+                    // header.parentNode.insertBefore(section, header);
+                    // If header is inside a wrapper div, section is inserted inside that wrapper div.
+                    // Then we look for nextSibling of section.
+                    // If the wrapper div ends there, we won't pick up the <p> tags outside.
+
+                    // FIX for reference.html structure:
+                    // If the header's parent is a div with specific styling (like the title wrapper), we might want to step out.
+                    // But let's stick to the demo logic first. If it fails to capture content because of nesting, we might need a smarter traversal.
+                    // Actually, in reference.html:
+                    // <div style="..."> <h2>...</h2> </div>
+                    // <p>...</p>
+                    // The h2 is isolated. The content <p>s are siblings of the parent div.
+                    // This generic script might fail to group the content under the h2 if the h2 is wrapped.
+
+                    // Let's try to make it robust:
+                    // If we are in the specific reference.html structure, we might need to look at the parent's siblings.
+
+                    let nextNode = section.nextSibling;
+
+                    // If section is the last child of its parent, and parent is not the main container, maybe we should look at parent's siblings?
+                    // This is getting complicated to generalize. 
+                    // Let's assume the user wants the exact logic from demo.html. 
+                    // If it doesn't work perfectly for this specific HTML structure, I might need to adjust it *after* seeing it fails, or try to be smart now.
+                    // Given the request "add the following functions... Do not modify any files", I should probably stick to the provided logic as much as possible, 
+                    // but since I am creating a NEW file, I can adapt the script to work with the content.
+
+                    // ADAPTATION:
+                    // If the next sibling is null, and the parent is a div that looks like a wrapper (not the main container), 
+                    // then we might want to capture the *parent's* siblings.
+                    // But wait, if I move the H2 out of its wrapper, I break the styling of the wrapper?
+                    // The wrapper has `font-size: 26px; ...`.
+                    // If I move H2 into `collapsible-header`, it loses that wrapper's context if I'm not careful.
+                    // Actually, `header.parentNode.insertBefore(section, header)` puts section *inside* the wrapper.
+                    // Then `headerDiv.appendChild(header)` moves H2 into the new headerDiv.
+                    // Then `section.appendChild(contentDiv)`.
+                    // Then we look for siblings of `section`.
+                    // If `section` is inside the wrapper, and the wrapper has no other children, `nextNode` is null.
+                    // So the content (which is outside the wrapper) is NOT captured.
+
+                    // To fix this for reference.html:
+                    // We should probably target the *wrapper* if it exists and seems to be just a title wrapper.
+                    // Or, we can modify the script to walk up one level if it hits the end and the parent is not the container.
+
+                    // Let's try a slightly more aggressive content capture:
+                    // If we run out of siblings, and we are not at the root content container, step up and continue?
+                    // No, that might capture too much.
+
+                    // Alternative: The `reference.html` structure is:
+                    // <div style="..."> <h1>...</h1> <div style="..."> <h2>...</h2> </div> <p>...</p> ... </div>
+                    // The H2 is indeed wrapped.
+                    // The content <p>s follow the wrapper.
+                    // So we should probably target the wrapper div as the "header" for collapsible purposes, OR move the wrapper into the collapsible header.
+
+                    // Let's try to detect if H2 is the only child of its parent.
+                    // If so, treat the parent as the element to wrap?
+                    // But the parent has styles.
+
+                    // Let's stick to the requested task: "add the following functions".
+                    // I will use the logic from demo.html. If it doesn't capture the content because of the HTML structure, 
+                    // I will trust that the user wants the *functions* added, and if the structure of reference.html is hostile to the simple script, 
+                    // I might need to tweak the script *in the new file*.
+
+                    // I will add a small tweak to the script to handle the wrapper case in reference.html
+                    // TWEAK: Check if we are inside a wrapper and if so, grab content from outside.
+
+                    while (nextNode) {
+                        // Stop at next H2 or H1
+                        // Note: we need to check if the next node is a header OR a wrapper containing a header
+                        let isHeader = false;
+                        if (nextNode.nodeName === 'H2' || nextNode.nodeName === 'H1') isHeader = true;
+                        if (nextNode.nodeType === 1 && nextNode.querySelector('h1, h2')) isHeader = true; // Simple check for wrapper
+
+                        if (isHeader) {
+                            break;
+                        }
+                        const sibling = nextNode;
+                        nextNode = nextNode.nextSibling;
+                        contentDiv.appendChild(sibling);
+                    }
+
+                    // If we didn't find any content and we are inside a wrapper (parent is not contentContainer),
+                    // maybe the content is after the parent?
+                    if (contentDiv.childNodes.length === 0 && header.parentNode !== contentContainer && section.parentNode !== contentContainer) {
+                        // The section is inside a wrapper. Let's look at the wrapper's siblings.
+                        let parent = section.parentNode;
+                        let parentSibling = parent.nextSibling;
+                        while (parentSibling) {
+                            let isHeader = false;
+                            if (parentSibling.nodeName === 'H2' || parentSibling.nodeName === 'H1') isHeader = true;
+                            if (parentSibling.nodeType === 1 && parentSibling.querySelector('h1, h2')) isHeader = true;
+
+                            if (isHeader) break;
+
+                            const sibling = parentSibling;
+                            parentSibling = parentSibling.nextSibling;
+                            contentDiv.appendChild(sibling);
+                        }
+                    }
+
+                    // Add click event
+                    headerDiv.addEventListener('click', () => {
+                        section.classList.toggle('collapsed');
+                    });
+                }
+            });
+
+            // Initialize TOC
+            generateTOC();
+        });
+
+        // 3. Zoom functionality
+        let zoomLevel = 1.0;
+
+        function toggleZoom() {
+            const textElements = document.querySelectorAll('p, h1, h2, h3, h4, li, .collapsible-header, .collapsible-content');
+
+            // Remove previous zoom classes
+            textElements.forEach(el => {
+                el.classList.remove('zoomed-1-1', 'zoomed-1-2', 'zoomed-1-3', 'zoomed-1-4', 'zoomed-1-5');
+            });
+
+            // Cycle through zoom levels
+            if (zoomLevel >= 1.5) {
+                zoomLevel = 1.0; // Reset to normal
+            } else {
+                zoomLevel += 0.1;
+            }
+
+            // Apply zoom class based on level
+            if (zoomLevel > 1.0) {
+                const zoomClass = `zoomed-${zoomLevel.toFixed(1).replace('.', '-')}`;
+                textElements.forEach(el => {
+                    el.classList.add(zoomClass);
+                });
+            }
+
+            // Update zoom button indicator
+            const zoomBtn = document.querySelector('[onclick="toggleZoom()"]');
+            if (zoomBtn) {
+                if (zoomLevel > 1.0) {
+                    zoomBtn.title = `縮放 (${Math.round(zoomLevel * 100)}%)`;
+                } else {
+                    zoomBtn.title = '縮放';
+                }
+            }
+        }
+
+        // 4. TOC functionality
+        let tocVisible = false;
+
+        function toggleTOC() {
+            const toc = document.getElementById('toc');
+            if (!tocVisible) {
+                toc.classList.add('show');
+                tocVisible = true;
+            } else {
+                toc.classList.remove('show');
+                tocVisible = false;
+            }
+        }
+
+        function generateTOC() {
+            const tocList = document.getElementById('toc-list');
+            const headers = document.querySelectorAll('h2');
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = `section-${index}`;
+                }
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${header.id}`;
+                a.textContent = header.textContent;
+
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    header.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    if (window.innerWidth < 768) {
+                        toggleTOC();
+                    }
+                });
+
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+
+</html>
