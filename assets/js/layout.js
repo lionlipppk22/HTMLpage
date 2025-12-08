@@ -652,7 +652,7 @@ function setupKeywordHighlighting() {
     style.textContent = cssRules;
     document.head.appendChild(style);
 
-    const textElements = document.querySelectorAll('p, li');
+    const textElements = document.querySelectorAll('p, li, td, th');
 
     textElements.forEach(element => {
         let html = element.innerHTML;
@@ -772,35 +772,8 @@ window.trackTechniqueInteraction = trackTechniqueInteraction;
 
 /* --- Demo Page Specific Scripts --- */
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. Keyword Highlight Logic (Demo specific)
-    const keywords = ['禱告', '耶穌', '聖靈', '天父', '阿們', '教會', '平安', '醫治', '恩典', '盼望', '信心', '祝福', '守望', '榮耀', '十字架', '救恩', '真理', '憐憫', '智慧', '啟示'];
-
-    function highlightKeywordsDemo(node) {
-        if (node.nodeType === 3) { // Text node
-            const text = node.nodeValue;
-            const regex = new RegExp(`(${keywords.join('|')})`, 'g');
-            if (regex.test(text)) {
-                const fragment = document.createDocumentFragment();
-                let lastIndex = 0;
-                text.replace(regex, (match, p1, offset) => {
-                    fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
-                    const span = document.createElement('span');
-                    span.className = 'keyword-highlight';
-                    span.textContent = match;
-                    fragment.appendChild(span);
-                    lastIndex = offset + match.length;
-                });
-                fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
-                node.parentNode.replaceChild(fragment, node);
-            }
-        } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE' && !node.classList.contains('keyword-highlight')) {
-            Array.from(node.childNodes).forEach(highlightKeywordsDemo);
-        }
-    }
-
     // Apply highlighting to the main content area if it exists
     const contentContainer = document.querySelector('.markdown-preview') || document.body;
-    highlightKeywordsDemo(contentContainer);
 
     // 2. Collapsible Section Logic (Demo specific)
     const headers = Array.from(contentContainer.querySelectorAll('h2'));
