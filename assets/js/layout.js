@@ -8,7 +8,7 @@ let tocVisible = false;
 let gradientAnimationEnabled = false;
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeLayout();
     setupEventListeners();
     updateLayoutIndicator();
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeLayout() {
     // Set initial layout
     document.body.classList.add('mobile-layout');
-    
+
     // Initialize PDF containers
     const pdfContainers = document.querySelectorAll('.pdf-iframe-container');
     pdfContainers.forEach(container => {
@@ -36,7 +36,7 @@ function setupEventListeners() {
     // Smooth scrolling for TOC links
     const tocLinks = document.querySelectorAll('.toc a');
     tocLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
@@ -64,13 +64,13 @@ function setupCollapsibleElements() {
 
             parentLi.addEventListener('click', (e) => {
                 // Stop propagation to prevent parent handlers from firing
-                e.stopPropagation(); 
-                
+                e.stopPropagation();
+
                 const isHidden = sublist.style.display === 'none';
                 sublist.style.display = isHidden ? 'block' : 'none';
                 toggle.textContent = isHidden ? '(-)' : '(+)';
             });
-             // Make the parent list item clickable
+            // Make the parent list item clickable
             parentLi.style.cursor = 'pointer';
         }
     });
@@ -80,7 +80,7 @@ function setupCollapsibleElements() {
     cardToggles.forEach(header => {
         const content = header.nextElementSibling;
         const indicator = header.querySelector('.toggle-indicator');
-        
+
         if (content && indicator) {
             // The line that set display to 'block' has been removed to respect the initial state from HTML.
             // In babylon.html, the cards are set to 'display: none', so they will be collapsed.
@@ -123,7 +123,7 @@ function setupScrollAnimations() {
 function toggleLayout() {
     const body = document.body;
     const layoutBtn = document.getElementById('layout-btn');
-    
+
     if (currentLayout === 'mobile') {
         body.classList.remove('mobile-layout');
         body.classList.add('pc-layout');
@@ -137,7 +137,7 @@ function toggleLayout() {
         layoutBtn.textContent = '📱';
         layoutBtn.title = '切換佈局 (Mobile/PC)';
     }
-    
+
     updateLayoutIndicator();
 }
 
@@ -260,7 +260,7 @@ function toggleEffects() {
 // Toggle Table of Contents
 function toggleTOC() {
     const toc = document.getElementById('toc');
-    
+
     if (!tocVisible) {
         toc.classList.add('show');
         tocVisible = true;
@@ -273,7 +273,7 @@ function toggleTOC() {
 // Toggle PDF view
 function togglePdfView(pdfId) {
     const pdfContainer = document.getElementById(pdfId);
-    
+
     if (pdfContainer) {
         if (pdfContainer.style.display === 'none' || pdfContainer.style.display === '') {
             pdfContainer.style.display = 'block';
@@ -298,7 +298,7 @@ function addScrollToTopButton() {
     scrollBtn.className = 'scroll-to-top';
     scrollBtn.title = '回到頂部';
     scrollBtn.onclick = scrollToTop;
-    
+
     // Style the button
     scrollBtn.style.cssText = `
         position: fixed;
@@ -319,11 +319,11 @@ function addScrollToTopButton() {
         opacity: 0;
         visibility: hidden;
     `;
-    
+
     document.body.appendChild(scrollBtn);
-    
+
     // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
             scrollBtn.style.opacity = '1';
             scrollBtn.style.visibility = 'visible';
@@ -332,50 +332,50 @@ function addScrollToTopButton() {
             scrollBtn.style.visibility = 'hidden';
         }
     });
-    
+
     // Hover effect
-    scrollBtn.addEventListener('mouseenter', function() {
+    scrollBtn.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-2px)';
         this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.3)';
     });
-    
-    scrollBtn.addEventListener('mouseleave', function() {
+
+    scrollBtn.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
         this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
     });
 }
 
 // Initialize scroll to top button
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     addScrollToTopButton();
 });
 
 // Add keyboard shortcuts
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     // Alt + L: Toggle layout
     if (e.altKey && e.key === 'l') {
         e.preventDefault();
         toggleLayout();
     }
-    
+
     // Alt + Z: Toggle zoom
     if (e.altKey && e.key === 'z') {
         e.preventDefault();
         toggleZoom();
     }
-    
+
     // Alt + E: Toggle effects
     if (e.altKey && e.key === 'e') {
         e.preventDefault();
         toggleEffects();
     }
-    
+
     // Alt + T: Toggle TOC
     if (e.altKey && e.key === 't') {
         e.preventDefault();
         toggleTOC();
     }
-    
+
     // Escape: Close TOC
     if (e.key === 'Escape' && tocVisible) {
         toggleTOC();
@@ -392,7 +392,7 @@ function showLoadingAnimation() {
             <p>載入中...</p>
         </div>
     `;
-    
+
     loader.style.cssText = `
         position: fixed;
         top: 0;
@@ -406,13 +406,13 @@ function showLoadingAnimation() {
         z-index: 9999;
         backdrop-filter: blur(10px);
     `;
-    
+
     const loaderContent = loader.querySelector('.loader-content');
     loaderContent.style.cssText = `
         text-align: center;
         color: white;
     `;
-    
+
     const spinner = loader.querySelector('.loader-spinner');
     spinner.style.cssText = `
         width: 50px;
@@ -423,7 +423,7 @@ function showLoadingAnimation() {
         animation: spin 1s linear infinite;
         margin: 0 auto 20px;
     `;
-    
+
     // Add spinner animation
     const style = document.createElement('style');
     style.textContent = `
@@ -433,11 +433,11 @@ function showLoadingAnimation() {
         }
     `;
     document.head.appendChild(style);
-    
+
     document.body.appendChild(loader);
-    
+
     // Remove loader after page loads
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         setTimeout(() => {
             loader.style.opacity = '0';
             setTimeout(() => {
@@ -501,7 +501,7 @@ function fadeInTextByChar(elementId, delay = 100) {
 }
 
 // Initialize text fade effect
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Apply fade in effect to prayer text
     setTimeout(() => {
         fadeInTextByChar('prayer-text', 17);
@@ -559,7 +559,7 @@ class AudioPlayer {
 }
 
 // Initialize enhanced audio player
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize the enhanced audio player
     const audioPlayer = new AudioPlayer('prayer-audio', 'custom-audio-controls');
 
@@ -584,17 +584,17 @@ function setupTechniqueCardAnimations() {
 
     techniqueCards.forEach((card, index) => {
         // Add hover effects
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-5px) scale(1.02)';
             this.style.transition = 'all 0.3s ease';
         });
 
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
 
         // Add click animation
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             this.style.transform = 'scale(0.98)';
             setTimeout(() => {
                 this.style.transform = 'translateY(-5px) scale(1.02)';
@@ -741,11 +741,11 @@ function handleMobileInteractions() {
         const cards = document.querySelectorAll('.technique-card, .card');
 
         cards.forEach(card => {
-            card.addEventListener('touchstart', function() {
+            card.addEventListener('touchstart', function () {
                 this.style.transform = 'scale(0.98)';
             });
 
-            card.addEventListener('touchend', function() {
+            card.addEventListener('touchend', function () {
                 this.style.transform = 'scale(1)';
             });
         });
@@ -757,7 +757,7 @@ window.addEventListener('resize', handleMobileInteractions);
 handleMobileInteractions();
 
 // Prayer fade-in animation trigger
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const prayerContent = document.getElementById('prayer-content');
     if (prayerContent) {
         setTimeout(() => {
@@ -769,3 +769,128 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.scrollToSection = scrollToSection;
 window.trackTechniqueInteraction = trackTechniqueInteraction;
+
+/* --- Demo Page Specific Scripts --- */
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Keyword Highlight Logic (Demo specific)
+    const keywords = ['禱告', '耶穌', '聖靈', '天父', '阿們', '教會', '平安', '醫治', '恩典', '盼望', '信心', '祝福', '守望', '榮耀', '十字架', '救恩', '真理', '憐憫', '智慧', '啟示'];
+
+    function highlightKeywordsDemo(node) {
+        if (node.nodeType === 3) { // Text node
+            const text = node.nodeValue;
+            const regex = new RegExp(`(${keywords.join('|')})`, 'g');
+            if (regex.test(text)) {
+                const fragment = document.createDocumentFragment();
+                let lastIndex = 0;
+                text.replace(regex, (match, p1, offset) => {
+                    fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
+                    const span = document.createElement('span');
+                    span.className = 'keyword-highlight';
+                    span.textContent = match;
+                    fragment.appendChild(span);
+                    lastIndex = offset + match.length;
+                });
+                fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+                node.parentNode.replaceChild(fragment, node);
+            }
+        } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE' && !node.classList.contains('keyword-highlight')) {
+            Array.from(node.childNodes).forEach(highlightKeywordsDemo);
+        }
+    }
+
+    // Apply highlighting to the main content area if it exists
+    const contentContainer = document.querySelector('.markdown-preview') || document.body;
+    highlightKeywordsDemo(contentContainer);
+
+    // 2. Collapsible Section Logic (Demo specific)
+    const headers = Array.from(contentContainer.querySelectorAll('h2'));
+
+    headers.forEach(header => {
+        // Avoid double processing if already processed
+        if (header.parentNode.classList.contains('collapsible-header')) return;
+
+        // Create section container
+        const section = document.createElement('div');
+        section.className = 'collapsible-section';
+
+        // Create header container
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'collapsible-header';
+
+        // Icon
+        const icon = document.createElement('span');
+        icon.className = 'collapsible-icon';
+        icon.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+
+        // Insert section before header
+        if (header.parentNode) {
+            header.parentNode.insertBefore(section, header);
+
+            // Move header into headerDiv
+            headerDiv.appendChild(header);
+            headerDiv.appendChild(icon);
+            section.appendChild(headerDiv);
+
+            // Create content container
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'collapsible-content';
+            section.appendChild(contentDiv);
+
+            // Move subsequent siblings into contentDiv
+            let nextNode = section.nextSibling;
+            while (nextNode) {
+                // Stop at next H2 or H1
+                if (nextNode.nodeName === 'H2' || nextNode.nodeName === 'H1') {
+                    break;
+                }
+                const sibling = nextNode;
+                nextNode = nextNode.nextSibling;
+                contentDiv.appendChild(sibling);
+            }
+
+            // Add click event
+            headerDiv.addEventListener('click', () => {
+                section.classList.toggle('collapsed');
+            });
+        }
+    });
+
+    // Initialize TOC
+    if (typeof generateTOC === 'function') {
+        generateTOC();
+    }
+});
+
+function generateTOC() {
+    const tocList = document.getElementById('toc-list');
+    if (!tocList) return;
+
+    // Clear existing to avoid duplicates
+    tocList.innerHTML = '';
+
+    const headers = document.querySelectorAll('h2');
+
+    headers.forEach((header, index) => {
+        if (!header.id) {
+            header.id = `section-${index}`;
+        }
+
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${header.id}`;
+        a.textContent = header.textContent;
+
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            header.scrollIntoView({
+                behavior: 'smooth'
+            });
+            if (window.innerWidth < 768 && typeof toggleTOC === 'function') {
+                toggleTOC();
+            }
+        });
+
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+}

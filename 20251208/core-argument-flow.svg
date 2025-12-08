@@ -1,0 +1,155 @@
+<svg width="500" height="1100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 引用自 faith-pillars-mindmap.svg 的漸層定義 -->
+    <linearGradient id="faithGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="presenceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="comfortGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="timingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="restorationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 動畫效果 -->
+    <style>
+      @keyframes breathe {
+        0%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+        }
+        50% {
+          transform: scale(1.01);
+          filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+        }
+      }
+      .breathe-element {
+        animation: breathe 3s ease-in-out infinite;
+      }
+    </style>
+    
+    <!-- 陰影效果 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect x="10" y="10" width="480" height="1080" rx="15" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+  
+  <!-- 標題背景 -->
+  <rect x="10" y="10" width="480" height="70" rx="15" fill="#f59e0b"/>
+  
+  <!-- 標題文字 -->
+  <text x="250" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+     核心論證流程
+  </text>
+  <text x="250" y="65" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+     面對過去，在基督裡成為新造的人
+  </text>
+  
+  <!-- 連接線 (先畫，位於卡片下方) -->
+  <line x1="250" y1="230" x2="250" y2="270" stroke="#9ca3af" stroke-width="3" stroke-dasharray="8 4"/>
+  <line x1="250" y1="410" x2="250" y2="450" stroke="#9ca3af" stroke-width="3" stroke-dasharray="8 4"/>
+  <line x1="250" y1="590" x2="250" y2="630" stroke="#9ca3af" stroke-width="3" stroke-dasharray="8 4"/>
+  <line x1="250" y1="770" x2="250" y2="810" stroke="#9ca3af" stroke-width="3" stroke-dasharray="8 4"/>
+
+  <!-- 箭頭 -->
+  <polygon points="245,265 255,265 250,275" fill="#9ca3af" />
+  <polygon points="245,445 255,445 250,455" fill="#9ca3af" />
+  <polygon points="245,625 255,625 250,635" fill="#9ca3af" />
+  <polygon points="245,805 255,805 250,815" fill="#9ca3af" />
+
+  <!-- Node 1: 問題提出 (Yellow) -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="110" width="400" height="120" rx="10" fill="url(#faithGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)" class="breathe-element"/>
+    <text x="250" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      ❓ [問題提出] 普遍誤解
+    </text>
+    <text x="250" y="170" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      「舊事已過」等於...
+    </text>
+    <text x="250" y="195" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      切割、遺忘過去的傷痛？
+    </text>
+  </g>
+
+  <!-- Node 2: 聖經反例 (Blue) -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="275" width="400" height="135" rx="10" fill="url(#presenceGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)" class="breathe-element"/>
+    <text x="250" y="305" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      📖 [聖經反例] 約瑟的故事
+    </text>
+    <text x="250" y="335" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#dbeafe">
+      神沒有讓他「忘記」，而是讓他「面對」整個家族
+    </text>
+    <text x="250" y="360" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#dbeafe">
+      從而帶來和解與更高層次的意義
+    </text>
+  </g>
+
+  <!-- Node 3: 神學基礎 (Purple) -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="455" width="400" height="140" rx="10" fill="url(#comfortGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)" class="breathe-element"/>
+    <text x="250" y="485" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      ✝️ [神學基礎] 釘痕與超時空
+    </text>
+    <text x="250" y="515" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#e9d5ff">
+      1. 復活的身體仍有釘痕：榮耀不代表抹去，是轉化
+    </text>
+    <text x="250" y="540" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#e9d5ff">
+      2. 上帝的超時空性：神能追回已過的事
+    </text>
+    <text x="250" y="565" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#e9d5ff">
+      沒有任何事能被隱藏
+    </text>
+  </g>
+
+  <!-- Node 4: 實踐路徑 (Green) -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="635" width="400" height="135" rx="10" fill="url(#timingGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)" class="breathe-element"/>
+    <text x="250" y="665" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      🚶 [實踐路徑] 主動整理
+    </text>
+    <text x="250" y="695" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#d1fae5">
+      在神的同在中，清理內在的殘累（認罪、哭泣）
+    </text>
+    <text x="250" y="720" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#d1fae5">
+      讓每段經歷都因基督而更新
+    </text>
+  </g>
+
+  <!-- Node 5: 最終目標 (Red) -->
+  <g transform="translate(0, 0)">
+    <rect x="50" y="815" width="400" height="135" rx="10" fill="url(#restorationGradient)" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)" class="breathe-element"/>
+    <text x="250" y="845" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      🎯 [最終目標] 內在健康
+    </text>
+    <text x="250" y="875" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#fee2e2">
+      成為一個內在健康的基督徒
+    </text>
+    <text x="250" y="900" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#fee2e2">
+      帶著被神轉化的經歷，奔走福音的道路
+    </text>
+  </g>
+  
+  <!-- 底部裝飾或頁尾 -->
+  <text x="250" y="1000" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6b7280">
+    Generated from reference.md
+  </text>
+</svg>
