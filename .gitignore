@@ -1,5 +1,4 @@
 # Ignore all Markdown files
-*.md
 
 # But keep specific markdown files if needed
 # !important.md
@@ -25,5 +24,4 @@ build/
 *.swp
 *.swo
 *~
-!Comic_Storyboard.md
 !Math_2-4_Fraction_MD.md

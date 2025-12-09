@@ -295,7 +295,7 @@ function scrollToTop() {
 function addScrollToTopButton() {
     const scrollBtn = document.createElement('button');
     scrollBtn.innerHTML = '⬆️';
-    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.className = 'control-btn scroll-to-top';
     scrollBtn.title = '回到頂部';
     scrollBtn.onclick = scrollToTop;
 
@@ -325,7 +325,7 @@ function addScrollToTopButton() {
     // Show/hide button based on scroll position
     window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
-            scrollBtn.style.opacity = '1';
+            scrollBtn.style.opacity = '0.3';
             scrollBtn.style.visibility = 'visible';
         } else {
             scrollBtn.style.opacity = '0';
@@ -337,11 +337,13 @@ function addScrollToTopButton() {
     scrollBtn.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-2px)';
         this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.3)';
+        this.style.opacity = '1';
     });
 
     scrollBtn.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
         this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+        this.style.opacity = '0.3';
     });
 }
 
