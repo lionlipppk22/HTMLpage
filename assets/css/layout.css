@@ -789,8 +789,8 @@ body {
 
 /* Header 標題字體（更圓潤） */
 .header h1 {
-    font-family: 'Chiron GoRound TC', 'LXGW WenKai Mono TC', sans-serif;
-    color: #f5f6f7;
+    font-family: 'Zhi Mang Xing';
+    color: #060607;
     font-weight: 900;
     letter-spacing: 0.4px;
 }
@@ -2207,4 +2207,25 @@ blockquote p {
     display: block;
     margin: 20px auto;
     max-width: 100%;
+}
+
+/* Zoom Levels - for toggleZoom() functionality */
+.zoomed-1-1 {
+    font-size: 110% !important;
+}
+
+.zoomed-1-2 {
+    font-size: 120% !important;
+}
+
+.zoomed-1-3 {
+    font-size: 130% !important;
+}
+
+.zoomed-1-4 {
+    font-size: 140% !important;
+}
+
+.zoomed-1-5 {
+    font-size: 150% !important;
 }
