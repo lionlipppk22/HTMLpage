@@ -649,6 +649,23 @@ function setupKeywordHighlighting() {
         cssRules += `.${className} { background: ${gradient}; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold; } `;
     });
 
+    // 定義8色漸層給全型標點符號（只改變文字顏色，不改變背景）
+    const punctuationGradients = [
+        'linear-gradient(135deg, #ff6b6b, #ff0000)', // 紅色系
+        'linear-gradient(135deg, #4ecdc4, #00ffff)', // 青色系
+        'linear-gradient(135deg, #45b7d1, #0000ff)', // 藍色系
+        'linear-gradient(135deg, #96ceb4, #00ff00)', // 綠色系
+        'linear-gradient(135deg, #feca57, #ffff00)', // 黃色系
+        'linear-gradient(135deg, #ff9ff3, #ff00ff)', // 粉紅系
+        'linear-gradient(135deg, #54a0ff, #8a2be2)', // 紫藍系
+        'linear-gradient(135deg, #ff9f43, #ff8c00)'  // 橙色系
+    ];
+
+    // 為每個標點符號顏色生成 CSS 類別
+    punctuationGradients.forEach((gradient, index) => {
+        cssRules += `.punctuation-${index} { background: ${gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; } `;
+    });
+
     // 添加 CSS 規則
     const style = document.createElement('style');
     style.textContent = cssRules;
@@ -659,11 +676,23 @@ function setupKeywordHighlighting() {
     textElements.forEach(element => {
         let html = element.innerHTML;
 
+        // 先處理關鍵字高亮
         keywords.forEach((keyword, index) => {
             const className = `keyword-${index}`;
             // 使用更寬鬆的 regex 來匹配中文關鍵字，忽略詞邊界
             const regex = new RegExp(keyword, 'gi');
             html = html.replace(regex, `<span class="${className}">${keyword}</span>`);
+        });
+
+        // 處理全型標點符號高亮（8色循環）
+        // 全型標點符號列表：。，、；：？！「」『』（）【】《》〈〉…—etc.
+        const fullWidthPunctuations = /([。，、；：？！「」『』（）【】《》〈〉…—～·＊＆％＄＃＠＋－＝＜＞｛｝［］｜＼／])/g;
+        let punctuationCounter = 0;
+
+        html = html.replace(fullWidthPunctuations, (match) => {
+            const colorIndex = punctuationCounter % punctuationGradients.length;
+            punctuationCounter++;
+            return `<span class="punctuation-${colorIndex}">${match}</span>`;
         });
 
         element.innerHTML = html;
