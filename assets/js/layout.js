@@ -815,7 +815,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create section container
         const section = document.createElement('div');
-        section.className = 'collapsible-section';
+        section.className = 'collapsible-section collapsed';
 
         // Create header container
         const headerDiv = document.createElement('div');
