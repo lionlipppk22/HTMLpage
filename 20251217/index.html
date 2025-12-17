@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解決孩子的智慧手機成癮問題</title>
+    <meta name="description" content="到「引導智慧」的牧養之路">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .markdown-preview li {
+            font-size: 20px;
+        }
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20251217 代求</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">解決孩子的智慧手機成癮問題
+                    <a href="https://youtu.be/Fi1dVDV4Dwc?si=RanIMtxbqi0NnFeg">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-1">
+                <h2 id="眼鏡蛇效應的警示從管教陷阱到引導智慧的牧養之路">眼鏡蛇效應的警示：從「管教陷阱」到「引導智慧」的牧養之路 </h2>
+                <p>引言：一個我們都熟悉的家庭戰場</p>
+                <p>親愛的弟兄姊妹們，平安。</p>
+                <p>在多年的牧養與家庭輔導工作中，我越來越常看見一個令人心疼的場景，或許這也是您家中客廳或飯桌上，日復一日上演的戰爭：孩子低著頭，眼神被那塊小小的發光螢幕牢牢吸住，而一旁的父母，臉上寫滿了焦慮、無奈，甚至是挫敗。我們用盡方法，從溫和勸說到嚴厲斥責，卻似乎總是被那數位世界的巨大引力打敗。
+                </p>
+                <p>最近，我聽到一位母親帶著深深的困惑問道：「明明是合理的管控，每天只讓他玩半小時，怎麼反倒讓孩子更沉迷、甚至為了多玩幾分鐘而學會撒謊了呢？」</p>
+                <p>這個問題，問得實在太好了。它刺穿了表面的教養技巧，直指一個更深刻的、關乎人性與智慧的屬靈挑戰。這不是一個簡單的「該不該給手機玩」的問題，而是一個關乎我們如何引導下一代建立正確價值觀的嚴肅課題。因此，今天我想藉由一個發人深省的故事，與大家一同探討，如何能從這種「越管越糟」的惡性循環中跳脫出來，找到一條充滿智慧、能引導孩子走向真正豐盛生命的牧養之路。
+                </p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-2">
+                <h2 id="1-核心主題與總結拆解善意背後的陷阱">1. 核心主題與總結：拆解「善意」背後的陷阱 </h2>
+                <h4 id="11-核心議題育兒中的眼鏡蛇效應">1.1. 核心議題：育兒中的「眼鏡蛇效應」 </h4>
+                <p>在尋求答案之前，我們必須先準確地定義問題。許多父母的管教，出發點是愛與善意，但結果卻事與願違。在社會學中，這種因錯誤的激勵機制而導致情況惡化的現象，被稱為「眼鏡蛇效應」。</p>
+                <p>那麼，什麼是育兒中的「眼鏡蛇效應」呢？根據一位在北京師範大學研究兒童心理學的教授精闢的分析，就是當我們試圖用「獎勵」（例如：完成功課後可以玩手機）來換取孩子的「順從」時，我們在無意中，向孩子傳遞了一個極其危險的價值觀：「手機是終極的、美好的獎賞，而學習，只不過是為了換取獎賞而必須忍受的痛苦代價。」
+                </p>
+                <p>弟兄姊妹們，請仔細思想這句話。當我們把手機設定為最高獎賞時，我們其實是親手為孩子遞上了「精神毒藥」。這毒藥之所以致命，是因為它悄悄地扭曲了孩子靈魂的渴求——將他們從追求「完成使命的喜樂」，引向了「無須努力的歡愉」，從而培養了一顆無法延遲滿足、輕浮躁動的心。這就解釋了為何我們的「合理管控」最終會失效，因為我們從一開始就走錯了方向，親手將孩子推向了更深的沉迷困局。
+                </p>
+                <h4 id="12-破局要訣取代而非剝奪的多巴胺階梯">1.2. 破局要訣：取代而非剝奪的「多巴胺階梯」 </h4>
+                <p>面對這樣的困局，破解的關鍵並非更嚴厲的禁止或更精密的管控，而是充滿智慧的「取代」。那位教授提出的核心觀念，正與我們信仰中的真理不謀而合：我們不是要從孩子手中奪走什麼，而是要給他們更美好的東西。具體來說，就是用來自真實世界的「成就感」，去取代手機提供的「廉價快樂」。
+                </p>
+                <p>為此，一個被稱為「多巴胺階梯」的方案應運而生。它不是一套冰冷的規則，而是一條引導孩子生命拾級而上、尋回內在驅動力的路徑。其核心要訣可總結為以下三點：</p>
+                <ul>
+                    <li>發掘內在恩賜： 找到神在每個孩子身上獨特的創造與計畫，因材施教，點燃他們內心深處的熱情火花。</li>
+                    <li>累積真實得勝： 陪伴孩子在真實世界中完成一件件具體的小事，讓他們親身體驗「我做到了」的真實喜悅，建立無法被輕易動搖的自信。</li>
+                    <li>重塑心智沃土： 以有深度、能滋養心靈的優質內容，取代那些零碎、淺薄的感官刺激，幫助孩子重建專注與深度思考的能力。</li>
+                </ul>
+                <p>為了真正明白這套方案的力量，我們必須先回到那個發人深省的寓言，看清楚「眼鏡蛇效應」的陷阱究竟有多麼隱蔽，然後我們才能充滿信心地踏上這條充滿智慧的牧養新路。</p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-3">
+                <h2 id="2-論點綱要卡片一目了然的智慧路徑">2. 論點綱要卡片：一目了然的智慧路徑 </h2>
+                <p>為了幫助大家更清晰地掌握整個思考路徑，我將其整理成一張綱要卡片，方便您隨時參考。</p>
+                <p><img src="image-1.jpg" alt="alt text"></p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-4">
+                <h2 id="3-深度講述從寓言到見證的生命功課">3. 深度講述：從寓言到見證的生命功課 </h2>
+                <h4 id="31-寓言的警醒印度眼鏡蛇的故事">3.1. 寓言的警醒：印度眼鏡蛇的故事 </h4>
+                <p>主耶穌在世時，常用比喻和故事向人們闡明深刻的天國真理。今天，一個來自19世紀印度的真實故事，同樣能給予我們在家庭教養上深刻的屬靈警醒。</p>
+                <p>故事發生在當時由英國統治的印度德里。那時，城市裡眼鏡蛇氾濫成災，嚴重威脅著居民的生命安全。為了解決這個棘手的問題，政府頒布了一項看似聰明的政策：只要市民將打死的眼鏡蛇上交，就能領取一筆賞金。</p>
+                <ol>
+                    <li>初衷與政策： 政策的初衷非常良善——激勵民眾，共同解決蛇患。</li>
+                    <li>初期效果： 政策一出，效果顯著。市民們紛紛放下手邊工作，投入到捕蛇的行列中，大量的死蛇被上交，問題似乎很快就能得到控制。</li>
+                    <li>意外轉折：
+                        然而，人性的詭詐很快就找到了政策的漏洞。一些市民發現，冒險去野外捕蛇，既辛苦又不穩定。遠不如在家裡搭建蛇棚，自己養殖眼鏡蛇來得安全、高效。他們專門飼養眼鏡蛇，然後殺掉去領取賞金，這變成了一門有利可圖的生意。
+                    </li>
+                    <li>政策失靈與惡果：
+                        當政府官員發現上交的死蛇大多是人工養殖的幼蛇時，驚覺政策已然失控，於是緊急取消了懸賞令。這下，那些養蛇戶手中的眼鏡蛇一夜之間變得一文不值。他們會怎麼處理這些毒蛇呢？答案是：就地放生。最終，德里城內的眼鏡蛇數量，不但沒有減少，反而比政策實施前暴增了數倍，造成了更可怕的災難。
+                    </li>
+                </ol>
+                <p>這個故事，正是我們家庭教育中手機問題的精準寫照。我們頒布的「用學習換手機」的獎勵政策，就如同政府的捕蛇懸賞。起初看似解決了孩子不肯學習的「燃眉之急」，但最終，它不但沒有讓孩子愛上學習，反而讓他們將所有的心力都用在如何「養蛇」（應付學習）來換取「賞金」（玩手機）上，從而加劇了孩子對手機的「成癮」問題。明白了問題的根源所在，我們才能開始尋找那條正確的出路。
+                </p>
+                <h4 id="32-破局的智慧建造屬靈的多巴胺階梯">3.2. 破局的智慧：建造屬靈的「多巴胺階梯」 </h4>
+                <p>聖經教導我們：「不可為惡所勝，反要以善勝惡。」（羅馬書
+                    12:21）。戒除一個壞習慣，最好的方式從來不是單純地壓制與禁止，而是建立起一個更美好、更有吸引力的新習慣。這套「多巴胺階梯方案」，正是一種屬靈的操練。它引導我們以神的智慧，主動用美善去戰勝敗壞，幫助孩子一步步攀登，在真實世界中尋回那份神所預備、真正能滿足靈魂的喜樂。
+                </p>
+                <p>第一階：發掘神所賜的獨特天賦</p>
+                <p>旅程的第一步，也是最關鍵的一步，是回到創造的起點，去發掘神放在您孩子生命中的獨特天賦。詩篇139篇告訴我們，每個孩子都是神獨特而奇妙的創造，祂在他們身上有著美好的計畫。有的孩子可能背不下古詩，卻有著一副好歌喉；有的孩子可能在書桌前坐不住，但一雙巧手卻能創造出令人驚嘆的作品。
+                </p>
+                <p>「因材施教」的真諦，正在於此。當我們幫助孩子找到那個能讓他眼睛發光、廢寢忘食的領域時，他就找到了內在動力的源頭。那份來自天賦被發揮時的熱情與滿足感，遠比手機螢幕上的任何刺激都來得更深刻、更持久。對此感到迷惘的父母，可以參考如「耶魯大學的天賦測試表」這樣的工具，作為初步探索的輔助，幫助您更有方向地去觀察與培養。
+                </p>
+                <p>第二階：在真實世界中累積得勝經驗</p>
+                <p>虛擬遊戲中的獎勵是虛假的，只需動動手指，廉價的成就感便唾手可得，但來得快，去得也快。而真實世界中的成就感，是需要付出努力、汗水與耐心才能換來的，但它所帶來的力量，卻是深刻而堅實的。</p>
+                <p>這就是第二階的智慧所在：「陪孩子做100件小事」。這不是一份任務清單，而是一份份充滿愛的邀請。邀請孩子與您一同離開螢幕，走進廚房、走進大自然、走進真實的生活。當您和孩子一起，終於搭好一個複雜的樂高模型；當他滿臉麵粉，卻成功烤出了人生第一個蛋糕時，那句發自內心的「我做到了！」，將會像烙印一樣，深刻地刻進他的生命記憶裡。這種真實的得勝經驗，是建立孩子自信與力量最紮實的根基，是任何虛擬世界的勳章都無法比擬的。
+                </p>
+                <p>第三階：用優質的養分重塑專注心志</p>
+                <p>如果說短影片是餵養大腦的「速食快餐」，那麼一部優質的紀錄片，就是一頓營養均衡的「心靈正餐」。短影片用快速切換的畫面和強烈的感官刺激，將我們孩子的專注力切割得支離破碎，讓他們越來越難以進行深度思考。
+                </p>
+                <p>第三階的目標，就是進行一場溫柔而有效的大腦「沖洗」。陪伴孩子觀看一部完整的、高質量的紀錄片，無論是探索自然的奧秘、回溯歷史的長河，還是解析科學的奇蹟，都是在重新訓練他們的大腦進行長時間專注的能力。這個過程，就像將那些被切碎的注意力一點一點地拼湊回來，為孩子的心智重新打下堅實的基礎。您可以從央視的紀錄片庫等優質資源開始，為孩子選擇適合他們年齡與興趣的內容。
+                </p>
+                <p>這三級階梯，並非各自獨立，而是一個完整的體系。它旨在由內而外地，幫助孩子重建對自我的正確認知、對世界的真實熱情，以及對生活的深度專注，從而自然地擺脫對虛擬世界的依賴。</p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-5">
+                <h2 id="4-文本核心信息分析">4. 文本核心信息分析 </h2>
+                <p>為了更深刻地理解這些教養智慧背後的屬靈原則，讓我們一同來省思原始資料中的幾句關鍵話語。</p>
+                <p>核心概念或引言 來自牧師的省思與解析<br>
+                    「你以為是在合理允許孩子放鬆，其實是親手給孩子遞上了精神毒藥。」
+                    這句話深刻地揭示了屬靈爭戰的真相。當我們不加分辨地將世界的價值觀（用娛樂換取勤奮）帶入家庭時，我們就在無意中污染了孩子的心靈。這是在教導他們，喜樂來自放縱，而非來自於完成神所託付的工作。我們親手讓他們的心，遠離了在勞動與創造中尋找滿足與安息的真理。<br>
+                    「手機的快樂太容易得到了...但學習不一樣...對半天才能看到進步。」
+                    這裡清楚地對比了「即時滿足」與「延遲滿足」在品格塑造上的巨大差異。手機文化所培養的，是一種浮躁、淺薄、無法忍耐的生命特質。然而，聖經中的智慧、信心與一切美好的品格，都來自於那些需要耐心、汗水和堅持才能結出的果實。這不僅是學習，更是對孩子品格與靈命至關重要的操練。<br>
+                    「你用手機當學習獎勵，反而讓孩子覺得手機才是好東西，學習只是換獎勵的苦差。」
+                    這種獎勵機制最大的危害，在於它徹底剝奪了學習本身的內在價值與樂趣。它在教導孩子一種功利主義的價值觀——做任何事都只是為了換取外在的好處。作為父母，我們的目標應是引導孩子愛上學習本身，發現知識的奇妙與創造的喜悅，而不是讓他們愛上學習的「獎品」。<br>
+                    「破解眼鏡蛇效應的關鍵是...用現實世界的成就感替代手機的廉價快樂。」
+                    這句話是整個教養模式轉變的核心，充滿了屬靈的智慧。這本質上是一種「以上帝的創造，取代世界的虛空」的行動。我們不是要從孩子手中粗暴地奪走什麼，而是要用愛心和耐心，將更豐盛、更美好、更真實的生命體驗呈現在他們面前——在真實世界中體驗創造、探索、付出與成功的喜悅。
+                </p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-6">
+                <h2 id="5-結束的代禱">5. 結束的代禱 </h2>
+                <p>親愛的天父，我們的創造主，我們來到祢的面前，將我們的心和我們的家庭都交託在祢的手中。</p>
+                <p>主啊，我們為著這個充滿挑戰的數位時代向祢呼求。我們承認我們的軟弱與有限，常常在教養的路上感到迷惘與挫敗。求祢賜給我們從祢而來的智慧，能分辨那些看似合理卻暗藏陷阱的「管教捷徑」，能看見「眼鏡蛇效應」在我們家庭中可能造成的傷害。
+                </p>
+                <p>求祢賜給我們無比的耐心，能放慢腳步，陪伴我們的孩子走上那條需要時間累積的「多巴胺階梯」。幫助我們成為孩子們最好的同行者，與他們一同發掘祢所賜的恩賜，一同在真實的生活中經歷得勝，一同在優質的知識中重塑心志。
+                </p>
+                <p>更求祢賜給我們滿溢的愛心，讓我們能用真實的擁抱與陪伴，去取代那虛擬世界的誘惑。求祢保守我們孩子的心懷意念，讓他們不被廉價的快樂所捆綁，反倒能在祢所創造的奇妙世界中，找到自己獨特的價值與熱情。</p>
+                <p>願我們的家，都成為祢的榮耀彰顯之地，讓我們的下一代，都能在真實的世界中，活出祢所賜的豐盛生命。</p>
+                <p>我們這樣同心合意的禱告，是奉靠我主耶穌基督得勝的名。阿們。</p>
+    </div>
+    </section>
+
+    </main>
+    </div>
+
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": ["發掘神所賜的獨特天賦","在真實世界中累積得勝經驗","用優質的養分重塑專注心志"]
+    }
+    </script>
+
+    <script>
+        // 确保TOC功能和折叠功能正常工作
+        document.addEventListener('DOMContentLoaded', function () {
+            // 初始化TOC
+            if (typeof generateTOC === 'function') {
+                generateTOC();
+            }
+
+            // 确保TOC按钮点击事件正常工作
+            const tocBtn = document.querySelector('[onclick="toggleTOC()"]');
+            if (tocBtn) {
+                tocBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    toggleTOC();
+                });
+            }
+
+            // 初始化折叠功能
+            setupCollapsibleSections();
+        });
+
+        // 定义toggleTOC函数（如果layout.js未正确加载）
+        let tocVisible = false;
+        function toggleTOC() {
+            const toc = document.getElementById('toc');
+            if (!toc) return;
+
+            if (!tocVisible) {
+                toc.classList.add('show');
+                tocVisible = true;
+            } else {
+                toc.classList.remove('show');
+                tocVisible = false;
+            }
+        }
+
+        // 定义generateTOC函数（如果layout.js未正确加载）
+        function generateTOC() {
+            const tocList = document.getElementById('toc-list');
+            if (!tocList) return;
+
+            // Clear existing to avoid duplicates
+            tocList.innerHTML = '';
+
+            const headers = document.querySelectorAll('h2');
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = `section-${index + 1}`;
+                }
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${header.id}`;
+                a.textContent = header.textContent;
+
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    header.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    if (window.innerWidth < 768 && typeof toggleTOC === 'function') {
+                        toggleTOC();
+                    }
+                });
+
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+
+        // 设置折叠功能
+        function setupCollapsibleSections() {
+            const contentContainer = document.querySelector('.markdown-preview');
+            if (!contentContainer) return;
+
+            const headers = Array.from(contentContainer.querySelectorAll('h2'));
+
+            headers.forEach(header => {
+                // 避免重复处理
+                if (header.parentNode.classList.contains('collapsible-header')) return;
+
+                // 创建section容器
+                const section = document.createElement('div');
+                section.className = 'collapsible-section';
+
+                // 创建header容器
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'collapsible-header';
+
+                // 图标
+                const icon = document.createElement('span');
+                icon.className = 'collapsible-icon';
+                icon.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+
+                // 在header前插入section
+                if (header.parentNode) {
+                    header.parentNode.insertBefore(section, header);
+
+                    // 将header移入headerDiv
+                    headerDiv.appendChild(header);
+                    headerDiv.appendChild(icon);
+                    section.appendChild(headerDiv);
+
+                    // 创建内容容器
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'collapsible-content';
+                    section.appendChild(contentDiv);
+
+                    // 将后续兄弟节点移入contentDiv
+                    let nextNode = section.nextSibling;
+                    while (nextNode) {
+                        // 在下一个H2或H1处停止
+                        if (nextNode.nodeName === 'H2' || nextNode.nodeName === 'H1') {
+                            break;
+                        }
+                        const sibling = nextNode;
+                        nextNode = nextNode.nextSibling;
+                        contentDiv.appendChild(sibling);
+                    }
+
+                    // 添加点击事件
+                    headerDiv.addEventListener('click', () => {
+                        section.classList.toggle('collapsed');
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
