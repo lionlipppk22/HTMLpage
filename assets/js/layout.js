@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
     setupTechniqueCardAnimations();
     setupKeywordHighlighting();
     setupCollapsibleElements();
+
+    // Initialize TOC and Collapsible Sections if needed
+    if (typeof generateTOC === 'function') generateTOC();
+    if (typeof setupCollapsibleSections === 'function') {
+        const defaultExpanded = window.COLLAPSIBLE_DEFAULT_EXPANDED !== undefined ? window.COLLAPSIBLE_DEFAULT_EXPANDED : true;
+        setupCollapsibleSections(defaultExpanded);
+    }
 });
 
 // Initialize layout
@@ -787,35 +794,31 @@ function handleMobileInteractions() {
 window.addEventListener('resize', handleMobileInteractions);
 handleMobileInteractions();
 
-// Prayer fade-in animation trigger
-document.addEventListener('DOMContentLoaded', function () {
-    const prayerContent = document.getElementById('prayer-content');
-    if (prayerContent) {
-        setTimeout(() => {
-            prayerContent.style.opacity = '1';
-            prayerContent.classList.add('prayer-fade');
-        }, 500); // Delay for smooth entrance
-    }
-});
-
 window.scrollToSection = scrollToSection;
 window.trackTechniqueInteraction = trackTechniqueInteraction;
+window.setupCollapsibleSections = setupCollapsibleSections; // Export to allow manual override
 
-/* --- Demo Page Specific Scripts --- */
-document.addEventListener("DOMContentLoaded", function () {
-    // Apply highlighting to the main content area if it exists
-    const contentContainer = document.querySelector('.markdown-preview') || document.body;
+// --- Collapsible Sections Logic ---
+function setupCollapsibleSections(defaultExpanded = true) {
+    console.log('Initializing collapsible sections, defaultExpanded:', defaultExpanded);
+    const contentContainer = document.querySelector('.markdown-preview');
+    if (!contentContainer) return;
 
-    // 2. Collapsible Section Logic (Demo specific)
     const headers = Array.from(contentContainer.querySelectorAll('h2'));
+    console.log(`Found ${headers.length} h2 headers to process.`);
 
     headers.forEach(header => {
-        // Avoid double processing if already processed
+        // Avoid double processing
         if (header.parentNode.classList.contains('collapsible-header')) return;
 
         // Create section container
         const section = document.createElement('div');
-        section.className = 'collapsible-section collapsed';
+        section.className = 'collapsible-section';
+
+        // Initial state
+        if (defaultExpanded === false) {
+            section.classList.add('collapsed');
+        }
 
         // Create header container
         const headerDiv = document.createElement('div');
@@ -852,18 +855,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 contentDiv.appendChild(sibling);
             }
 
-            // Add click event
+            // Click event
             headerDiv.addEventListener('click', () => {
                 section.classList.toggle('collapsed');
             });
         }
     });
-
-    // Initialize TOC
-    if (typeof generateTOC === 'function') {
-        generateTOC();
-    }
-});
+}
 
 function generateTOC() {
     const tocList = document.getElementById('toc-list');
