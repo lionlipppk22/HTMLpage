@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupTechniqueCardAnimations();
     setupKeywordHighlighting();
     setupCollapsibleElements();
+    setupLightbox();
 
     // Initialize TOC and Collapsible Sections if needed
     if (typeof generateTOC === 'function') generateTOC();
@@ -894,5 +895,38 @@ function generateTOC() {
 
         li.appendChild(a);
         tocList.appendChild(li);
+    });
+}
+
+function setupLightbox() {
+    // Create overlay if not exists
+    let overlay = document.getElementById('lightbox-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'lightbox-overlay';
+        overlay.className = 'lightbox-overlay';
+        overlay.innerHTML = '<img id="lightbox-image" class="lightbox-image" src="" alt="Enlarged Image">';
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            setTimeout(() => { overlay.style.display = 'none'; }, 300);
+        });
+    }
+
+    const images = document.querySelectorAll('.markdown-preview img, .header img, .zoomable');
+    images.forEach(img => {
+        img.addEventListener('click', (e) => {
+            // Only enlarge if it's a zoomable image
+            e.preventDefault();
+            e.stopPropagation();
+
+            const lightboxImg = document.getElementById('lightbox-image');
+            lightboxImg.src = img.src;
+            overlay.style.display = 'flex';
+            // Force reflow
+            overlay.offsetHeight;
+            overlay.classList.add('active');
+        });
     });
 }
