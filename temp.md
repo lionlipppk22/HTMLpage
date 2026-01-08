@@ -1,14 +1,24 @@
 
 
 <div style="page-break-after: always;"></div>
-1.新的事將要成就
-https://youtu.be/kszbPoctPbo?si=r9JflIhchzjtbAI7
-2.唯有耶穌+你是配得
-https://youtu.be/4j8abyGAmj0?si=7DjHPKON0hNntgzQ
-3.祢是我的一切
-https://youtu.be/Vs-XA9QgG34?si=MWTj3jNeOIPlTrh0
+我的生命獻給祢 I Will Offer You My Life
+詞、曲：曾祥怡 Grace Tseng 
+© 2021 Stream of Praise Music / BMI. CCLI # 7176789
 
-以下的詩歌敬拜, 感動代禱:
-新的事將要成就
-唯有耶穌+你是配得
-祢是我的一切
+[Verse]
+獻上生命　給最愛的耶穌　
+完全順服　完全降服　
+因祢恩典　使我得以事奉祢　
+祢的選召沒有懷疑　 
+
+[Chorus]
+我的生命獻給祢　背起十架跟隨祢　
+願祢的榮耀　彰顯在我生命　
+我的心不要忘記　祢如何為我捨命
+耶穌我愛祢　喜樂地跟隨祢　
+
+[Bridge]
+賜給我屬於祢的夢想　
+帶下祢國度如在天上　
+賜給我奔跑不倦的力量　
+如鷹展翅上騰翱翔
