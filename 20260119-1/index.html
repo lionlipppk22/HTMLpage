@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260119 主日信息</title>
+    <meta name="description" content="恩典的滋味:從一碗米飯看見生命的交託與洗滌">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .markdown-preview li {
+            font-size: 20px;
+        }
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260119 煮米信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">恩典的滋味:從一碗米飯看見生命的交託與洗滌
+                    <a href="https://youtu.be/0jv1om30VHc?si=ahnvVHBOWDaYVQQR">
+                        <img src="unnamed (3).jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://youtu.be/0jv1om30VHc?si=ahnvVHBOWDaYVQQR">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-1">
+                <h2 id="1-報告前言與背景重建">1. 報告前言與背景重建 </h2>
+                <p>在步履匆匆的現代生活中，我們往往在追求效率與成就的過程中，遺忘了靈魂最深處的飢渴。身為一名在牧場服事多年的老牧人，我常觀察到弟兄姊妹們在忙碌的家務與工作中掙扎，試圖尋找那一抹安息的片刻。其實，上帝的恩典往往不只在講台上，更隱藏在我們每日必經的廚房煙火中。
+                </p>
+                <p>這份報告的誕生，源於一次對「米飯」的深刻反思。在台灣這片豐饒的土地上，每一粒稻米都承載著造物主的匠心。當我們在廚房選米、洗米、浸泡、炊煮時，這不單是一場家事勞動，更是一場與上帝對話的修行。透過分析台灣主流米種的特性，我希望能引領各位從「一碗白米飯」的細節中，看見生命主權的交託，並在那份純粹的香甜中，<strong>領受洗滌原罪後的謙卑與喜樂</strong>。我們不求事多、不求事煩，只求在最平凡的日常裡，遇見最真實的恩典。
+                </p>
+            </section>
+
+            <section class="section" id="section-4">
+                <h2 id="2-主題總結與靈命要訣">2. 主題總結與靈命要訣 </h2>
+                <p>不同的米種擁有不同的「性情」，如同上帝賦予每個人不同的恩賜。理解這些特性，能讓我們在不同的生命情境中，找到最適切的靈命安慰。</p>
+                <h3 id="主題概述">主題概述 </h3>
+                <p>台灣米種在改良技術下展現了豐富的層次：從具備「牛奶皇后」血統、軟糯香甜的台南 20 號，到經典穩定、如同老友陪伴的台梗 9 號；從無懼全球暖化、自帶抗熱基因的高雄 147
+                    號，到血統純正、透過回交技術（Backcross）保有 94% 月光基因的「唯一之王」台南 16 號。</p>
+                <h3 id="靈命煮飯要訣">靈命煮飯要訣 </h3>
+                <ul>
+                    <li><strong>1. 泡米如同靜默禱告：</strong> 沒泡透就等於沒泡，信仰生活不能敷衍。唯有透過時間的浸潤，心靈的硬殼才能軟化，徹底領受神的話語。</li>
+                    <li><strong>2. 控溫如同守心：</strong> 堅持在低溫（5-10°C）中浸泡（可加入冰塊微調），象徵在冷靜與低調中預備心靈，方能激發出內在最純粹的甘甜。</li>
+                    <li><strong>3. 品種選擇如同順服恩賜：</strong> 承認每種米（每個人）都有其受限與強項，不強求事多，只求在上帝命定的位置上活出最好的質感。</li>
+                </ul>
+            </section>
+
+            <section class="section" id="section-5">
+                <h2 id="3-屬靈論點-ascii-綱要卡片">3. 屬靈論點 ASCII 綱要卡片 </h2>
+                <p><img src="./image.jpg" alt=""></p>
+            </section>
+
+            <section class="section" id="section-6">
+                <h2 id="4-生命見證與米種深度講述從挑選到品味">4. 生命見證與米種深度講述：從挑選到品味 </h2>
+                <p>真正的靈命，是在平凡的選擇中展現出溫柔與和善，而非用「忙亂」來證明價值。</p>
+                <h3 id="41-台南-20-號驚喜與分享的筵席">4.1 台南 20 號——驚喜與分享的筵席 </h3>
+                <p>台南 20 號繼承了日本「牛奶皇后」的血統。科學上，它降低了直鏈澱粉並提高支鏈澱粉，這使得米粒在口中極易分解，產生一種明顯的軟糯甜香。</p>
+                <blockquote>
+                    <p>屬靈應用： 當我們款待那些對信仰尚無熱情的客人時，台南 20 號就像那份「意外的驚喜」。許多信徒習慣在招待時顯露自己的忙碌與辛苦，試圖以此證明誠意；但我勸各位放下這種標籤。真正的接待，是像台南
+                        20 號一樣，單純地分享上帝那份不求回報、甜美入心的厚恩。</p>
+                </blockquote>
+                <h3 id="42-台梗-9-號與台梗-2-號穩定陪伴與季節的提醒">4.2 台梗 9 號與台梗 2 號——穩定陪伴與季節的提醒 </h3>
+                <p>台梗 9 號是經典，它雖在比賽中可能因白堊值較高而外型吃虧，但其穩定性極佳。而台梗 2 號則是「新米之王」，剛收成的一個月內無人能敵，卻不耐儲存。</p>
+                <blockquote>
+                    <p>屬靈應用： 當你在社會中被「荼毒」了一整天，台梗 9 號的穩定就像老友的陪伴。我要嚴厲批判那些喜歡將痛苦當成勳章、刻意顯露苦相來博取憐憫的人，這就像給靈魂紋上了「惡鬼紋身」。真正的強韌應如台梗
+                        9 號，不需外在華美，在安靜中保持誠實。同時，台梗 2 號提醒我們，靈命的火熱若不常在聖靈裡更新（儲存），很快就會失去風味。</p>
+                </blockquote>
+                <h3 id="43-高雄-147-號與高雄-145-號環境中的香氣與脆弱的勇氣">4.3 高雄 147 號與高雄 145 號——環境中的香氣與脆弱的勇氣 </h3>
+                <p>高雄 147 號因育種於屏東，具備強大的「抗熱基因」；而高雄 145 號雖是完美的「六邊形戰士」，卻極易「落粒」（風吹即落），讓農民痛苦。</p>
+                <blockquote>
+                    <p>屬靈應用： 在惡劣的環境中，147 號教導我們散發基督的馨香。而 145
+                        號則是許多優秀信徒的寫照：才華洋溢卻內心脆弱，需要牧者更細心的呵護。我們應當學習接納這份脆弱，在上帝的手中，即便易碎的器皿也能盛裝恩典。</p>
+                </blockquote>
+                <h3 id="44-台南-16-號歸回源頭的唯一之王">4.4 台南 16 號——歸回源頭的唯一之王 </h3>
+                <p>這支米透過多次回交技術，保有了 94% 的日本月光基因。它的偉大在於它的「全方位」，只要微調水量與時間，便能勝任各種料理。</p>
+                <blockquote>
+                    <p>屬靈應用： 「94%」象徵著一種極致的「歸回」（Repentance）。我們窮極一生，都在學習如何剝落雜質，回到神創造我們的「原始形像」（Imago
+                        Dei）。當我們願意配合神的引領去調整生命的比例，我們就能成為「可甜可鹹」的貴重器皿。</p>
+                </blockquote>
+            </section>
+            <section class="section" id="section-7">
+                <h2 id="5-烹飪的科學與靈性洗滌泡米的藝術">5. 烹飪的科學與靈性洗滌：泡米的藝術 </h2>
+                <p><img src="./image-1.jpg" alt=""><br>
+                    煮飯的過程，其實就是一場縮小版的生命更新。</p>
+                <ol>
+                    <li><strong>低溫浸泡的安息：</strong> 建議泡米水溫維持在
+                        5-10°C。我常鼓勵弟兄姊妹在盆中加入冰塊，讓米粒在低溫中緩緩甦醒。這隱喻著在靈命成長中，我們需要刻意營造一個「冷靜」的空間，避開世界的燥熱，讓恩典緩緩滲透進靈魂的最深處。</li>
+                    <li><strong>時間的功課（30-180 分鐘）：</strong> 沒泡透等於沒泡。信仰不能速成，靈魂的污垢需要時間洗滌，原罪的硬殼需要真理長時間的浸潤，方能呈現透明的質感。</li>
+                    <li><strong>工具的捨棄與更新：</strong>
+                        阿魯老師提到「放棄大同電鍋」，因為它本質上是個蒸爐，難以精準控溫。這象徵我們應勇敢捨棄那些過時、僅憑習慣而行的「懶惰信仰」。不要怕事煩，要追求與上帝建立更具深度、更有質感的連結，而非停留在便利卻粗糙的傳統慣性中。
+                    </li>
+                </ol>
+            </section>
+            <section class="section" id="section-8">
+                <h2 id="6-料理用途建議與生命情境對照表">6. 料理用途建議與生命情境對照表 </h2>
+                <ul>
+                    <li><strong>炒飯</strong> 台南 16 號、台梗 9 號 在瑣碎與繁雜中保持顆粒分明的清醒，不與世俗黏糊。</li>
+                    <li><strong>飯糰 (冷食)</strong> 台南 20 號 即使環境冷卻，依然保有支鏈澱粉的柔軟，對世界散發溫暖。</li>
+                    <li><strong>燉飯</strong> 花 26 (專武)、台南 14 在長時間的磨練與液體浸泡中，依然保有核心的堅韌。</li>
+                    <li><strong>稀飯</strong> 高雄 147 號 謙卑俯伏，將自我消融在服事中，化作滋潤他人的養分。</li>
+                </ul>
+            </section>
+            <section class="section" id="section-9">
+                <h2 id="7-影片論述綜合分析與牧師洞察">7. 影片論述綜合分析與牧師洞察 </h2>
+                <ul>
+                    <li><strong>論辨識禾場的重要性：</strong> 飯不好吃往往不是技術問題，而是「選擇問題」。信徒若不清楚自己的恩賜（米種特性），即便再努力勞作，也難以結出美好的果子。</li>
+                    <li><strong>論感官與靈命的連結：</strong> 頂級米種追求的是吞嚥時喉嚨的「滑順感」。這讓我們反思：我們的生命在與他人互動時，是讓人感到梗塞難受，還是如台南 16
+                        號般圓潤滑順，毫無殘留的苦澀？</li>
+                    <li><strong>論極端氣候下的見證：</strong> 隨著環境愈發艱難（全球暖化），抗熱品種如高雄 147 號的崛起，提醒我們在末世的艱難中，唯有根基深厚的信仰才能散發馨香。</li>
+                    <li><strong>論科學與精確的敬虔：</strong> 煮飯需要精確的水量與溫度。敬虔不代表模糊，真正的屬靈是
+                        <strong>「不求事多、不怕事煩」</strong>，在每一個細節上都對造物主負責。
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2 id="8-結語在飽足中遇見主">8. 結語：在飽足中遇見主 </h2>
+                <p>親愛的弟兄姊妹，<strong>生命不需要一直處於「爭競」與「顯露痛苦」的循環中。</strong>
+                    透過對台灣米種的剖析，我們看見了另一種生活的可能：不求事多、不怕事煩，只求每一口都吃得精確、活得有質感。</p>
+                <p>當我們不再用外在的忙碌或苦毒來證明自己時，<strong>一碗簡單的白米飯也能成為遇見主的祭壇。</strong> 讓我們學習台南 16 號的順服，學習台梗 9
+                    號的穩定，並在冰塊浸泡的安靜中，等待生命被真理「泡透」的那一刻。</p>
+
+            </section>
+            <section>
+                <h2 id="9-代禱與祝福">9. 代禱與祝福 </h2>
+                <p>我們在天上的父，感謝祢賜下這片土地豐盛的產出。</p>
+                <p>主啊，求祢降下聖靈的甘露，像浸泡米粒一樣，深深地洗滌我們靈魂的污垢，軟化我們剛硬的心靈。求祢教導我們在忙碌中懂得「交託」，不再用刻意的辛苦來換取憐憫，而是能像那些優質的米種，在冷靜中預備，在適當的溫度下綻放香氣。
+                </p>
+                <p>願祢祝福每位讀者的日用飲食，讓我們在每一口米飯的滋味中，都能嚐到主恩的甘甜，在身體飽足的同時，靈魂也得著真正的安息。</p>
+                <p>奉主耶穌基督的名求，阿們。</p>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": ["我們不求事多、不求事煩，只求在最平凡的日常裡，遇見最真實的恩典","沒泡透等於沒泡。信仰不能速成",
+        "深深地洗滌我們靈魂的污垢，軟化我們剛硬的心靈"]
+    }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
