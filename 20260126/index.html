@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260126 主日信息</title>
+    <meta name="description" content="洗革拉的恩典從破碎中重生的合神心意生命">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260126 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">洗革拉的恩典從破碎中重生的合神心意生命
+                    <a href="https://www.youtube.com/live/BsOCf2JE0mg?si=bU5-1rBeVL4LC2Ej">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/BsOCf2JE0mg?si=bU5-1rBeVL4LC2Ej">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-1">
+                <h2 id="1-報告前言洗革拉時刻的戰略意義">1. 報告前言：洗革拉時刻的戰略意義 </h2>
+                <p>在生命的地圖上，「洗革拉」不僅是一個地理坐標，它代表著每個人生命中那場「徹底失去」的戰略轉折點。當大衛回到洗革拉，面對的是焚毀的家園、被擄的妻兒，以及身邊六百名勇士憤怒到想用石頭打死他的絕境。這是一個事業、家庭與自我認同全面崩解的時刻，我們稱之為「洗革拉時刻」。
+                </p>
+                <p>作為一名牧者與生命建築師，我深知現代人同樣在經歷這樣的灰燼。無論是財務的崩盤、健康的喪失，或是人際關係的背叛，這其實是上帝對生命「主權」的一次深度重整。在絕境中尋求神的同在，其戰略意義在於將生命從「自我的防衛」轉向「主權的交託」。本報告將深度剖析：當我們在廢墟中選擇仰望，如何能將原罪的苦毒轉化為重生的力量，讓破碎的生命在神的手中重新定錨。
+                </p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-4">
+                <h2 id="2-核心論點卡片-ascii-argument-card">2. 核心論點卡片 (ASCII Argument Card) </h2>
+                <p>【核心主權】 神靠近破碎的人：在灰燼中確立上帝的第一優先<br>
+                    【轉化技術】 [自卑求同在] -&gt; [除去悲賤] -&gt; [主權交託]<br>
+                    【戰略路徑】</p>
+                <ol>
+                    <li>靜默：停止人脈運作與邏輯盤算。</li>
+                    <li>求問：求取「以弗得」的回應與印證。</li>
+                    <li>執行：在「追得上、救得回」的應許中前進。<br>
+                        【重生樣式】<br>
+                        | 不爭競 | -----&gt; | 不顯苦 | -----&gt; | 耐心等候 |</li>
+                </ol>
+                <p><img src="ziklag_warm_card_1769392555467.jpg" alt="alt text"></p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-5">
+                <h2 id="3-生命定位的重塑神眼中的合神心意">3. 生命定位的重塑：神眼中的「合神心意」 </h2>
+                <p>當我們對比掃羅與大衛，我們看到的不是完美的競爭，而是「生命主權」的根本差異。掃羅代表的是一種依靠自我的「窩囊生命」，當錯誤發生時，他第一時間為自己辯護、推諉責任，他的一生都在為了維護那個脆弱的君王寶座而掙扎。
+                </p>
+                <p>然而，上帝評價大衛是「合神心意的人」。這並非因為大衛不犯錯，而是大衛具備「悔改」而非「辯護」的靈。當他跌倒、當他失去一切，他選擇的是回轉向神。這種「原罪的洗滌」建立在一種純粹的連結上：凡事遵行神的旨意，而非追求事物的多寡。一個合神心意的人，其生命的核心戰略是：不論處境如何，耶和華永遠是他的神。在洗革拉的混亂中，大衛「心裡堅固」的來源，正是因為他將上帝放在了生命的第一優先<br>
+                    <img src="https://c4.wallpaperflare.com/wallpaper/480/818/343/red-dead-redemption-red-dead-redemption-2-rockstar-games-rd2-hd-wallpaper-preview.jpg"
+                        alt="alt text">
+                </p>
+                <hr>
+            </section>
+
+            <section class="section" id="section-6">
+                <h2 id="4-洗革拉的灰燼當你一生努力在一夕之間失去">4. 洗革拉的灰燼：當你一生努力在一夕之間失去 </h2>
+                <p><img src="https://i.ytimg.com/vi/JxbiHhRdlm4/maxresdefault.jpg" alt="alt text"><br>
+                    想像一下，你引以為傲的身份、奮鬥半生的資產，被上帝一聲不響地抽走。素材中提到的那位三十二歲的音樂博士，正值人生高峰，卻在一天內被診斷出鼻咽癌第四期。醫生的判斷如同死刑宣告：六次化療、八次放療，將摧毀他的聽力、味覺與嗅覺。
+                </p>
+                <p>對於一位音樂家而言，失去聽力就是看見自己的洗革拉化為灰燼。在這種時刻，人最容易問的是「Why me?」。但從牧養的角度看，這其實是上帝在詢問：「你是否願意在失去感官後，依然信靠我？」這是一個「Why
+                    not
+                    me」的靈性辯證。當上帝抽走你最引以為傲的東西，是為了讓你看見祂自己。那位音樂家在極大的絕望中，因為選擇不再懼怕、不再執著於失去的才華，而在上帝面前找回了另一種盼望。這就是洗革拉的功課：上帝允許灰燼，是為了篩選出那些「火燒不掉」的永恆價值。
+                </p>
+                <hr>
+            </section>
+            <section class="section" id="section-7">
+                <h2 id="5-拒絕受害者偽裝不顯苦-不爭競的優雅樣式">5. 拒絕「受害者」偽裝：不顯苦、不爭競的優雅樣式 </h2>
+                <p>在服事中，我常觀察到一種「悲賤」的負面表現——這是一種極其隱微的屬靈爭競。有些人刻意表現得很苦、很委屈，試圖透過展示傷痕來索取他人的同情，或是藉此偷取上帝的榮耀，這在本質上是拒絕了神的主權。</p>
+                <p>我想起我的弟兄「王弟兄」，他身患肝癌，左肝有七顆腫瘤，右肝完全衰竭。在生理極度疼痛、甚至頭痛到要裂開的時刻，他依然不斷地喊著「阿門」。老實說，那種頻繁的阿門有時甚至顯得「干擾」，但那卻是他與上帝緊緊連結的生命印記。他在苦難中不顯苦，甚至在臨終前要求的也是在敬拜中離去。
+                </p>
+                <p>真正的信心是「心裡堅固」，這需要在內室中進行操練，而不是在人群中進行「苦難博弈」。當我們拒絕落入受害者的偽裝，拒絕那種「競爭誰比較慘」的心理機制時，我們才能展現出大衛式的優雅。大衛雖然焦急，但他沒有向跟隨者訴苦，而是直接向神尋求安息。這種「不顯苦」的戰略深度，源於對上帝掌控全貌的絕對信任。
+                </p>
+                <h2><img src="https://d28clw9klscyzj.cloudfront.net/legacy/assets/2021-12-06/files/02_-_BACKLIGHTING.jpg"
+                        alt=""></h2>
+            </section>
+            <section class="section" id="section-8">
+                <h2 id="6-交託的技術亞比亞他的以弗得與求問的程序">6. 交託的技術：亞比亞他的以弗得與求問的程序 </h2>
+                <p>交託不是一種模糊的感覺，而是一套嚴謹的技術。大衛在洗革拉的第一反應是叫祭司亞比亞他拿過「以弗得」，這就是「先求問、後行動」的技術流程。</p>
+                <p>這讓我想起自己爭取中原大學教職的「第18名奇蹟」。在競爭激烈的學術圈，我的背景極其平凡，沒有海外名校光環。在初步評選中，我僅排在第18名。在人的眼光看來，這簡直是必敗的死刑。但我學習大衛的樣式，停止一切「人脈運作」，單單回到神面前求問。結果，在最終的面談會議上，上帝親自作工，彷彿「洗腦」了評審委員會，讓他們跳過前面的17人，決定錄取我。
+                </p>
+                <p>這就是 <strong>「以弗得式」的決策流程</strong>：</p>
+                <ol>
+                    <li>屏蔽人為噪音： 停止人的盤算與人際關係的鑽營。</li>
+                    <li>尋求聖言印證： 如同大衛求問「可以追追得上嗎？」我們必須在神的話語中尋找確據（如羅馬書 8:31：神若幫助我們，誰能抵擋我們呢？）。</li>
+                    <li>徹底執行的順服： 當上帝給出「可以追」的回應，即便是看起來不可能的第18名，也要帶著信心前進。</li>
+                </ol>
+                <p>我們不需要看見全貌，我們只需要知道「誰掌握全貌」。<br>
+                    <img src="https://media.gettyimages.com/id/1179778309/zh/%E7%85%A7%E7%89%87/%E7%A9%BF%E8%91%97%E9%9B%A8%E8%A1%A3%E7%9A%84%E6%83%85%E4%BE%B6%E5%9C%A8%E9%9B%A8%E4%B8%AD%E5%BE%92%E6%AD%A5%E6%97%85%E8%A1%8C%E7%9A%84%E5%BE%8C%E8%A6%96%E5%9C%96.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=yRGvi8TiQ3gI1y5bY_lqB865K9R0WNMki3Rrcs1hK_w="
+                        alt="">
+                </p>
+                <hr>
+            </section>
+            <section class="section" id="section-9">
+                <h2 id="7-綜合論述與時間表-逐字稿生命智慧整理">7. 綜合論述與時間表 (逐字稿生命智慧整理) </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">綜合論述與生命智慧</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align:center">第三日的核心試煉： 大衛回到洗革拉，發現一切化為烏有。這是一個「失去」的戰略點，測試誰是生命中真正的 Priority。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">感官與身份的剝離： 分析32歲音樂博士的癌症見證。上帝抽走才華與身份，是為了讓人在「無所有」中遇見神。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">內在堅固的實踐： 王弟兄肝癌末期的「阿門」。即便肉體毀壞，內心卻因信靠神而顯得無比堅強，不落入「顯苦」的試探。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">第18名的神蹟： 分享教職錄取經歷。證明當神要開門時，世界的排名（人脈與實力）都必須讓路，關鍵在於起初的求問。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">萬事互相效力： 實踐羅馬書 8:28。神知道亞馬利人的去向，也知道那個領路的少年人何時出現。上帝掌握全貌，信靠的人不著急。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+            </section>
+            <section class="section" id="section-10">
+                <h2 id="8-結語萬事互相效力與愛神的人">8. 結語：萬事互相效力與愛神的人 </h2>
+                <p>在本篇分析報告的最後，我要分享一個關於「上帝調度全貌」的極致見證。我能進入中原大學，背後竟源於林志民院長的一通電話。當時林院長遠在馬來西亞，正準備上台分享前，在後台禱告時，上帝清楚地給他一個意念，叫他立刻打電話給他的助理，指名要聘用我。
+                </p>
+                <p>這就是「愛神的人，萬事互相效力」。上帝知道洗革拉的灰燼何時熄滅，也知道在哪一個轉角預備了關鍵的電話。我們往往只看到地圖的一角，而上帝掌握著全幅的卷軸。我要對每一位正處於破碎中的朋友說：請停止你的焦急。上帝知道如何調度資源，祂知道如何讓一個18名的人站上講台。
+                </p>
+                <p>信靠的人必不著急。上帝正看著你洗革拉的廢墟，準備為你開啟那扇無人能關的恩典之門。</p>
+                <h2><img src="https://thumbs.dreamstime.com/b/rainy-night-ambiance-glowing-lantern-windowsill-lit-vintage-sits-warm-glow-contrasts-dark-wet-outside-383909955.jpg"
+                        alt=""></h2>
+            </section>
+            <section class="section" id="section-11">
+                <h2 id="9-結束代禱">9. 結束代禱 </h2>
+                <p>親愛的天父：</p>
+                <p>我們帶著一顆戰戰兢兢卻又充滿盼望的心來到祢施恩寶座前。主啊，為著每一位正看著手中灰燼、正處於「洗革拉時刻」的人禱告。求祢那堅固大衛的靈，此刻就進入他們的內心。</p>
+                <p>主啊，除去我們生命中那種想要與人爭競、想要表現「悲賤」以博取同情的負面習性。求祢教導我們「不顯苦」的樣式，讓我們看見王弟兄那種超越肉體痛苦的敬拜，看見那種即便失去感官依然要讚美祢的生命力。</p>
+                <p>求祢教導我們求問的藝術，讓我們在面對人生的抉擇與絕境時，第一時間尋求祢的「以弗得」，而非人脈的運作。主啊，我們宣告，祢掌握全貌！即便是第18名的劣勢，即便是在馬來西亞後台的一通電話，都在祢的調度之中。求主幫助我們在等候中站立得住，在破碎中看見祢的同在。
+                </p>
+                <p>奉主耶穌基督聖名求，阿們。</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": ["神與他同在，使他甚為尊大","信仰絕非單打獨鬥","日常生活中付代價尋求神",
+        "讓神的國在凡事上校準你的次序","真正的智慧不是用來炫耀的「智商」，而是用來服事他人的「心力」","在匱乏中依然緊抓神話語、慷慨奉獻的生命","羅得的失敗，源於他「挪移帳篷」直到所多瑪",
+        "警醒：成功的靈魂，比失敗的靈魂更難保持謙卑","智慧不是自私的求取，而是「給出去」服事百姓的能力","正的智慧並非一次性的領悟"]
+    }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
