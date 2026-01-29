@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 過年行程表 (完整路線版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f1f5f9;
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #4285F4;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .map-btn:hover {
+            background-color: #3367D6;
+            transform: scale(1.05);
+        }
+
+        .route-info {
+            border-left: 2px dashed #e2e8f0;
+            margin-left: 0.75rem;
+            padding-left: 1.25rem;
+        }
+
+        .img-container {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .desc-text {
+            border-left: 3px solid #ef4444;
+            padding-left: 0.75rem;
+            margin: 0.75rem 0;
+            font-size: 0.825rem;
+            color: #4b5563;
+        }
+
+        /* Full Screen Header */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            animation: bounce 2s infinite;
+            color: #ef4444;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Full Image Mode */
+        .hero-section.full-img .hero-ui {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+        }
+
+        .hero-section.full-img .bg-overlay {
+            opacity: 0;
+        }
+
+        .hero-section .hero-ui,
+        .hero-section .bg-overlay {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body class="pb-12">
+    <div class="hero-section mb-12 relative overflow-hidden cursor-pointer group bg-black"
+        onclick="this.classList.toggle('full-img')">
+        <img src="image.jpg" alt="Travel Banner" class="absolute inset-0 w-full h-full object-contain z-0">
+        <div class="bg-overlay absolute inset-0 bg-white/40 z-10 backdrop-blur-[1px]"></div>
+
+        <div class="hero-ui relative z-20 flex flex-col items-center">
+            <h1 class="text-6xl font-black text-red-600 tracking-tighter mb-6 drop-shadow-xl">🏮 2026<br>春節之旅</h1>
+            <div
+                class="mt-4 px-8 py-3 bg-white rounded-full shadow-lg text-gray-600 flex justify-center items-center gap-4 border border-red-100 scale-110">
+                <i class="fa-regular fa-calendar-days text-red-500 text-xl"></i>
+                <span class="font-bold tracking-[0.2em] text-xl">2/13 (五) - 2/16 (一)</span>
+            </div>
+
+            <div class="scroll-hint text-center">
+                <p class="text-xs font-bold tracking-widest uppercase mb-2">點擊圖片放大 / 向下滾動</p>
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-md mx-auto px-4">
+
+        <!-- 2/13 Friday -->
+        <div class="card">
+            <div class="p-4 bg-red-50 border-b border-red-100 flex justify-between items-center">
+                <h3 class="font-bold text-red-700 underline underline-offset-4">DAY 1: 2/13 (五) 北往南</h3>
+                <span class="text-xs text-red-500 font-bold">台北 → 國道服務區 → 雲林</span>
+            </div>
+            <!-- Google Maps 路線預覽 (使用更穩定的 Directions 格式) -->
+            <iframe class="map-container"
+                src="https://www.google.com/maps?saddr=台北車站&daddr=關西服務區+to:西湖服務區+to:清水服務區+to:三好國際酒店&hl=zh-TW&output=embed"
+                allowfullscreen="" loading="lazy"></iframe>
+            <div class="p-5">
+                <div class="space-y-3 text-sm">
+                    <p class="font-bold text-gray-800"><i class="fa-solid fa-gas-pump mr-2 text-blue-500"></i>10:00 出發
+                        (國三→國一)</p>
+                    <div class="route-info space-y-1">
+                        <p class="text-gray-600">停靠 1: 關西服務區 (76K)</p>
+                        <p class="text-gray-600">停靠 2: 西湖服務區 (134K)</p>
+                        <p class="text-gray-600">停靠 3: 清水服務區 (172K)</p>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <img src="sun_hao_hotel_view_1769672199530.jpg" alt="Sun Hao Hotel"
+                            class="img-container rounded-xl mb-3">
+                        <p class="font-bold text-red-700">🏨 下榻：斗六三好國際酒店</p>
+                        <p class="desc-text">雲林著名的五星級酒店，頂樓設有景觀游泳池，視野開闊，是旅途中放鬆身心的極佳選擇。</p>
+                    </div>
+
+                    <div class="mt-3">
+                        <a href="https://www.google.com/maps/dir/台北車站/關西服務區/西湖服務區/清水服務區/三好國際酒店" target="_blank"
+                            class="map-btn w-full justify-center">
+                            <i class="fa-solid fa-location-arrow mr-2"></i>開啟含停靠點導航
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2/14 Saturday -->
+        <div class="card">
+            <div class="p-4 bg-orange-50 border-b border-orange-100 flex justify-between items-center">
+                <h3 class="font-bold text-orange-700 underline underline-offset-4">DAY 2: 2/14 (六) 南下台南</h3>
+                <span class="text-xs text-orange-500 font-bold">雲林 → 麻豆 → 永康</span>
+            </div>
+            <iframe class="map-container"
+                src="https://www.google.com/maps?saddr=三好國際酒店&daddr=阿蘭碗粿+to:聯盈發點心專門店+to:永康火車站&hl=zh-TW&output=embed"
+                allowfullscreen="" loading="lazy"></iframe>
+            <div class="p-5 text-sm">
+                <div class="route-info space-y-3">
+                    <p class="font-bold text-gray-800">11:00 Check out</p>
+                    <div class="bg-orange-50 p-3 rounded-lg border border-orange-100">
+                        <img src="alan_bowl_cake_dish_1769672301084.jpg" alt="Bowl Cake"
+                            class="w-full h-32 object-cover rounded-md mb-2">
+                        <p class="text-orange-800 font-bold">🍴 午餐：麻豆阿蘭碗粿</p>
+                        <p class="desc-text border-orange-400">知名在地老店，口感Q彈扎實，配料豐富，必嚐的道地滋味。</p>
+                    </div>
+                    <p class="text-gray-600">→ 台灣首府大學 (校園散步享受寧靜時光)</p>
+
+                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-100 mt-2">
+                        <img src="tainan_local_dinner_takeaway_1769672422676.jpg" alt="Tainan Dinner"
+                            class="w-full h-32 object-cover rounded-md mb-2">
+                        <p class="text-blue-800 font-bold">🍱 16:30 買晚餐/伴手禮</p>
+                        <p class="desc-text border-blue-400">推薦外帶：<b>聯盈發港式點心</b> 或 <b>金桃家草莓大福</b>，帶去大姑姑家共同分享。</p>
+                    </div>
+
+                    <p class="font-bold text-red-600 underline">→ 17:00 抵達 永康火車站 (大姑姑家)</p>
+                </div>
+                <a href="https://www.google.com/maps/dir/三好國際酒店/阿蘭碗粿/聯盈發點心專門店/永康火車站" target="_blank"
+                    class="map-btn mt-4 w-full justify-center">
+                    <i class="fa-solid fa-route mr-2"></i>開啟今日多點導航
+                </a>
+            </div>
+        </div>
+
+        <!-- 2/15 Sunday -->
+        <div class="card border-2 border-green-500">
+            <div class="p-4 bg-green-50 border-b border-green-100 flex justify-between items-center">
+                <h3 class="font-bold text-green-700 underline underline-offset-4">DAY 3: 2/15 (日) 關廟與聚餐</h3>
+                <span class="text-xs text-green-500 font-bold">永康 ↔ 關廟</span>
+            </div>
+            <iframe class="map-container"
+                src="https://www.google.com/maps?saddr=永康火車站&daddr=悠然山莊+to:奇美博物館+to:LA-墨川樟茶鴨永康店&hl=zh-TW&output=embed"
+                allowfullscreen="" loading="lazy"></iframe>
+            <div class="p-5 text-sm">
+                <div class="space-y-4">
+                    <div class="flex flex-col gap-2">
+                        <div class="flex gap-2">
+                            <i class="fa-solid fa-clock text-green-600 mt-1"></i>
+                            <p><strong>09:00</strong> 悠然山莊 (關廟上課/吃辦桌)</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 border-t border-gray-100 pt-4">
+                        <img src="chimei_museum_exterior_1769672365062.jpg" alt="Chimei Museum"
+                            class="img-container rounded-xl mb-3">
+                        <div class="flex gap-2">
+                            <i class="fa-solid fa-clock text-amber-600 mt-1"></i>
+                            <p><strong>14:00</strong> 奇美博物館園區</p>
+                        </div>
+                        <p class="desc-text border-green-500">仿凡爾賽宮風格建築，藍天下純白館舍如詩如畫，廣大草坪非常適合放空與拍照。</p>
+                    </div>
+
+                    <div class="flex gap-2 bg-yellow-50 p-2 rounded">
+                        <i class="fa-solid fa-star text-red-500 mt-1"></i>
+                        <div>
+                            <p><strong>18:00</strong> 晚餐：LA-墨川樟茶鴨</p>
+                            <p class="text-xs text-gray-500 mt-1">在地口碑極佳，鴨肉皮脆肉嫩，散發獨特樟茶燻香。</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://www.google.com/maps/dir/永康火車站/悠然山莊/奇美博物館/LA-墨川樟茶鴨永康店" target="_blank"
+                    class="map-btn mt-4 w-full justify-center">
+                    <i class="fa-solid fa-map mr-2"></i>規劃今日行程地圖
+                </a>
+            </div>
+        </div>
+
+        <!-- 2/16 Monday -->
+        <div class="card bg-gray-900 text-white">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-xl">DAY 4: 2/16 (一) 除夕</h3>
+                    <i class="fa-solid fa-house-chimney text-blue-400 text-2xl"></i>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">早上 10:00 從永康出發回台北</p>
+                <div class="border-t border-gray-700 pt-4">
+                    <p class="text-center font-bold text-lg text-red-400">新年快樂！一路平安！</p>
+                </div>
+                <a href="https://www.google.com/maps/dir/永康火車站/台北車站" target="_blank"
+                    class="map-btn mt-6 w-full justify-center border border-gray-600">
+                    <i class="fa-solid fa-house-user mr-2"></i>回台北導航
+                </a>
+            </div>
+        </div>
+
+        <p class="text-center text-gray-400 text-xs italic px-6 mb-8">
+            提示：第一天地圖已加入中途服務區點位。點擊「開啟含停靠點導航」可直接導航。
+        </p>
+
+        <!-- 老牧師的祝福代禱 -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-xl shadow-inner mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-hands-praying text-blue-600 text-xl"></i>
+                <h2 class="text-xl font-bold text-blue-800">老牧師的祝福代禱</h2>
+            </div>
+            <p class="text-sm text-blue-900 leading-relaxed italic">
+                「親愛的天父，我們為著這次台北的春節之旅獻上感恩。主啊，求祢在恩典的道路上與我們同行，無論是北上南下的交通，或是親友聚餐的時刻，都求祢賜下平安與喜樂。願祢的主角地位在我們心中永不動搖，讓我們在歡慶中依舊有一顆警醒與感恩的心。願祢保守我們的前後進出，從今時直到永遠。奉主耶穌基督得勝的名求。阿們。」
+            </p>
+            <div class="mt-4 text-right">
+                <span class="text-xs font-bold text-blue-600">— 願神賜福這趟旅程 —</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
