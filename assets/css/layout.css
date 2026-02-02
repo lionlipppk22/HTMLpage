@@ -795,9 +795,102 @@ body {
     letter-spacing: 0.4px;
 }
 
-/* 小調整：整體按鈕在效應開啟時的顏色一致 */
-.effects-enabled .control-btn {
-    box-shadow: 0 12px 30px rgba(91, 111, 245, 0.12);
+/* Teleprompter Styles */
+.tele-line {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    /* Thicker to match text height */
+    background: rgba(255, 0, 0, 0.25);
+    /* Lower opacity for legibility */
+    z-index: 9999;
+    pointer-events: none;
+    display: none;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
+    transform: translateY(-50%);
+    /* Center the thicker line */
+    border-top: 2px solid rgba(255, 0, 0, 0.5);
+    /* Clearer edges */
+    border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+}
+
+.speed-control {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+#scroll-speed {
+    width: 200px;
+    height: 12px;
+    cursor: pointer;
+    accent-color: #667eea;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 6px;
+    outline: none;
+}
+
+#scroll-speed::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #667eea;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#scroll-speed::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #667eea;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile specific adjustment for slider */
+@media (max-width: 768px) {
+    .speed-control {
+        top: auto;
+        bottom: 100px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+        max-width: 400px;
+        justify-content: center;
+    }
+
+    #scroll-speed {
+        width: 100%;
+        height: 16px;
+    }
+
+    #scroll-speed::-webkit-slider-thumb {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Update active state for teleprompter button */
+#tele-btn.active {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+    opacity: 1;
 }
 
 .card h3 {

@@ -3,9 +3,15 @@
 // Global state
 let currentLayout = 'mobile';
 let zoomLevel = 1.0;
-let effectsEnabled = false;
 let tocVisible = false;
-let gradientAnimationEnabled = false;
+let teleprompterActive = false;
+let autoScrollPaused = false;
+let scrollRequest = null;
+let lastScrollTime = 0;
+let scrollSpeed = 1; // Default speed index (1-10)
+let scrollAccumulator = 0;
+// 10 levels of speed multipliers, focused on the slower range
+const SCROLL_SPEED_ARRAY = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.5, 0.6];
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
@@ -196,72 +202,97 @@ function toggleZoom() {
     }
 }
 
-// Enhanced effects with dynamic gradients and breathing animations
+// Enhanced effects repurposed as Teleprompter
 function toggleEffects() {
-    const gradientBg = document.querySelector('.gradient-bg');
-    const cards = document.querySelectorAll('.card, .technique-card');
+    const teleLine = document.getElementById('tele-line');
+    const speedControl = document.getElementById('speed-control');
+    const teleBtn = document.getElementById('tele-btn');
+    const speedInput = document.getElementById('scroll-speed');
 
-    if (!effectsEnabled) {
-        effectsEnabled = true;
+    if (!teleprompterActive) {
+        teleprompterActive = true;
+        autoScrollPaused = false;
+        scrollAccumulator = 0;
 
-        // Enable dynamic gradient animation
-        if (gradientBg) {
-            gradientBg.classList.add('animated');
-            gradientAnimationEnabled = true;
+        if (teleLine) teleLine.style.display = 'block';
+        if (speedControl) speedControl.style.display = 'flex';
+        if (teleBtn) {
+            teleBtn.classList.add('active');
+            teleBtn.title = '提詞器 (已啟用)';
         }
 
-        // Enhanced breathing effect for cards
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.style.animation = 'breathe 18s ease-in-out infinite';
-                card.style.animationDelay = `${index * 0.8}s`;
-            }, index * 100);
-        });
-
-        // Add floating animation to technique numbers
-        const techniqueNumbers = document.querySelectorAll('.technique-number');
-        techniqueNumbers.forEach((num, index) => {
-            setTimeout(() => {
-                num.style.animation = 'float 2s ease-in-out infinite';
-                num.style.animationDelay = `${index * 0.1}s`;
-            }, index * 50);
-        });
-
-        // Update effects button
-        const effectsBtn = document.querySelector('[onclick="toggleEffects()"]');
-        if (effectsBtn) {
-            effectsBtn.title = '特效 (已啟用)';
-            effectsBtn.style.background = 'rgba(102, 126, 234, 0.8)';
-            effectsBtn.style.color = 'white';
+        // Initialize speed
+        if (speedInput) {
+            scrollSpeed = parseInt(speedInput.value);
+            speedInput.oninput = function () {
+                scrollSpeed = parseInt(this.value);
+            };
         }
 
+        // Start auto-scroll
+        startAutoScroll();
+
+        // Add pause/resume on click
+        document.addEventListener('mousedown', togglePauseResume);
     } else {
-        effectsEnabled = false;
+        stopTeleprompter();
+    }
+}
 
-        // Disable gradient animation
-        if (gradientBg) {
-            gradientBg.classList.remove('animated');
-            gradientAnimationEnabled = false;
+function startAutoScroll() {
+    if (!teleprompterActive || autoScrollPaused) return;
+    if (scrollRequest) cancelAnimationFrame(scrollRequest);
+
+    const scrollStep = () => {
+        if (!teleprompterActive || autoScrollPaused) {
+            scrollRequest = null;
+            return;
         }
 
-        // Remove breathing effects
-        cards.forEach(card => {
-            card.style.animation = '';
-        });
+        // Use the value from our speed array for finer control
+        const multiplier = SCROLL_SPEED_ARRAY[scrollSpeed - 1] || 0.2;
+        scrollAccumulator += multiplier;
 
-        // Remove floating animation
-        const techniqueNumbers = document.querySelectorAll('.technique-number');
-        techniqueNumbers.forEach(num => {
-            num.style.animation = '';
-        });
-
-        // Reset effects button
-        const effectsBtn = document.querySelector('[onclick="toggleEffects()"]');
-        if (effectsBtn) {
-            effectsBtn.title = '特效';
-            effectsBtn.style.background = '';
-            effectsBtn.style.color = '';
+        if (scrollAccumulator >= 1) {
+            const pixelsToScroll = Math.floor(scrollAccumulator);
+            window.scrollBy(0, pixelsToScroll);
+            scrollAccumulator -= pixelsToScroll;
         }
+
+        scrollRequest = requestAnimationFrame(scrollStep);
+    };
+
+    scrollRequest = requestAnimationFrame(scrollStep);
+}
+
+function stopTeleprompter() {
+    teleprompterActive = false;
+    autoScrollPaused = false;
+    scrollAccumulator = 0;
+    if (scrollRequest) cancelAnimationFrame(scrollRequest);
+    scrollRequest = null;
+
+    const teleLine = document.getElementById('tele-line');
+    const speedControl = document.getElementById('speed-control');
+    const teleBtn = document.getElementById('tele-btn');
+
+    if (teleLine) teleLine.style.display = 'none';
+    if (speedControl) speedControl.style.display = 'none';
+    if (teleBtn) {
+        teleBtn.classList.remove('active');
+        teleBtn.title = '提詞器';
+    }
+
+    document.removeEventListener('mousedown', togglePauseResume);
+}
+
+function togglePauseResume(e) {
+    // Don't pause if clicking the button or slider
+    if (e.target.closest('.controls')) return;
+
+    autoScrollPaused = !autoScrollPaused;
+    if (!autoScrollPaused) {
+        startAutoScroll();
     }
 }
 
