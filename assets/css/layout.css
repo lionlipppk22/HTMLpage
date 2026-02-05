@@ -1216,7 +1216,7 @@ body.index-page {
 
     /* Optimize table for mobile */
     .file-table {
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
 
     .file-table th,
@@ -2009,6 +2009,11 @@ body.index-page {
 #social-dynamics-table th {
     background-color: #f2f2f2;
     font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#social-dynamics-table td {
+    font-size: 1.1rem;
 }
 
 #social-dynamics-table tr:nth-child(even) {
@@ -2053,7 +2058,7 @@ body.index-page {
     width: 100%;
     border-collapse: collapse;
     background: rgba(255, 255, 255, 0.95);
-    font-size: 0.9em;
+    font-size: 1.2rem;
 }
 
 .comparison-table th,
@@ -2130,7 +2135,6 @@ blockquote {
 
 blockquote p {
     margin: 0;
-    font-weight: bold;
     color: #2c3e50;
 }
 
@@ -2300,6 +2304,11 @@ blockquote p {
     display: block;
     margin: 20px auto;
     max-width: 100%;
+}
+
+.markdown-preview table {
+    margin: 20px auto;
+    font-size: 1.2rem;
 }
 
 /* Zoom Levels - for toggleZoom() functionality */

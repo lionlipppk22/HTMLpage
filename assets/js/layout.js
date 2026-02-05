@@ -661,82 +661,114 @@ function setupKeywordHighlighting() {
         }
     }
 
-    // 定義漸層背景給每個關鍵字
+    // 定義漸層背景給每個關鍵字 (同原邏輯)
     const gradients = [
-        'linear-gradient(135deg, #ff6b6b, #000000)', // 紅色到白，加大對比
-        'linear-gradient(135deg, #4ecdc4, #000000)', // 青色到黑
-        'linear-gradient(135deg, #45b7d1, #ffff00)', // 藍色到黃
-        'linear-gradient(135deg, #96ceb4, #ff0000)', // 綠色到紅
-        'linear-gradient(135deg, #feca57, #800080)', // 黃色到紫
-        'linear-gradient(135deg, #ff9ff3, #00ff00)', // 粉紅到綠
-        'linear-gradient(135deg, #54a0ff, #ff00ff)', // 淺藍到品紅
-        'linear-gradient(135deg, #5f27cd, #ffd700)', // 紫色到金
-        'linear-gradient(135deg, #00d2d3, #ff4500)', // 亮青到橙紅
-        'linear-gradient(135deg, #ff9f43, #4b0082)', // 橙色到靛
-        'linear-gradient(135deg, #01a3a4, #ffc0cb)', // 深青到粉
-        'linear-gradient(135deg, #f8b500, #00ffff)', // 金黃到青
-        'linear-gradient(135deg, #c44569, #00ff7f)', // 深粉到春綠
-        'linear-gradient(135deg, #786fa6, #ff1493)', // 深紫到深粉
-        'linear-gradient(135deg, #2ed573, #8b0000)'  // 亮綠到暗紅
+        'linear-gradient(135deg, #ff6b6b, #000000)',
+        'linear-gradient(135deg, #4ecdc4, #000000)',
+        'linear-gradient(135deg, #45b7d1, #ffff00)',
+        'linear-gradient(135deg, #96ceb4, #ff0000)',
+        'linear-gradient(135deg, #feca57, #800080)',
+        'linear-gradient(135deg, #ff9ff3, #00ff00)',
+        'linear-gradient(135deg, #54a0ff, #ff00ff)',
+        'linear-gradient(135deg, #5f27cd, #ffd700)',
+        'linear-gradient(135deg, #00d2d3, #ff4500)',
+        'linear-gradient(135deg, #ff9f43, #4b0082)',
+        'linear-gradient(135deg, #01a3a4, #ffc0cb)',
+        'linear-gradient(135deg, #f8b500, #00ffff)',
+        'linear-gradient(135deg, #c44569, #00ff7f)',
+        'linear-gradient(135deg, #786fa6, #ff1493)',
+        'linear-gradient(135deg, #2ed573, #8b0000)'
     ];
 
-    // 動態生成 CSS 樣式給每個關鍵字
+    const punctuationGradients = [
+        'linear-gradient(135deg, #ff6b6b, #ff0000)',
+        'linear-gradient(135deg, #4ecdc4, #00ffff)',
+        'linear-gradient(135deg, #45b7d1, #0000ff)',
+        'linear-gradient(135deg, #96ceb4, #00ff00)',
+        'linear-gradient(135deg, #feca57, #ffff00)',
+        'linear-gradient(135deg, #ff9ff3, #ff00ff)',
+        'linear-gradient(135deg, #54a0ff, #8a2be2)',
+        'linear-gradient(135deg, #ff9f43, #ff8c00)'
+    ];
+
+    // 添加 CSS 規則
     let cssRules = '';
     keywords.forEach((keyword, index) => {
         const gradient = gradients[index % gradients.length];
-        const className = `keyword-${index}`;
-        cssRules += `.${className} { background: ${gradient}; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold; } `;
+        cssRules += `.keyword-${index} { background: ${gradient}; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold; } `;
     });
-
-    // 定義8色漸層給全型標點符號（只改變文字顏色，不改變背景）
-    const punctuationGradients = [
-        'linear-gradient(135deg, #ff6b6b, #ff0000)', // 紅色系
-        'linear-gradient(135deg, #4ecdc4, #00ffff)', // 青色系
-        'linear-gradient(135deg, #45b7d1, #0000ff)', // 藍色系
-        'linear-gradient(135deg, #96ceb4, #00ff00)', // 綠色系
-        'linear-gradient(135deg, #feca57, #ffff00)', // 黃色系
-        'linear-gradient(135deg, #ff9ff3, #ff00ff)', // 粉紅系
-        'linear-gradient(135deg, #54a0ff, #8a2be2)', // 紫藍系
-        'linear-gradient(135deg, #ff9f43, #ff8c00)'  // 橙色系
-    ];
-
-    // 為每個標點符號顏色生成 CSS 類別
     punctuationGradients.forEach((gradient, index) => {
         cssRules += `.punctuation-${index} { background: ${gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; } `;
     });
 
-    // 添加 CSS 規則
     const style = document.createElement('style');
     style.textContent = cssRules;
     document.head.appendChild(style);
 
-    const textElements = document.querySelectorAll('p, li, td, th');
+    // 使用 TreeWalker 遍歷所有本文節點，確保連 li 內部的文字都能精準匹配
+    const contentArea = document.querySelector('.markdown-preview') || document.body;
+    const walker = document.createTreeWalker(contentArea, NodeFilter.SHOW_TEXT, null, false);
 
-    textElements.forEach(element => {
-        let html = element.innerHTML;
+    let textNode;
+    const nodesToProcess = [];
+    while (textNode = walker.nextNode()) {
+        // 過濾掉腳本和樣式標籤內的文字
+        const parentTag = textNode.parentElement.tagName;
+        if (parentTag !== 'SCRIPT' && parentTag !== 'STYLE' && parentTag !== 'NOSCRIPT') {
+            nodesToProcess.push(textNode);
+        }
+    }
 
-        // 先處理關鍵字高亮
+    let punctuationCounter = 0;
+    const fullWidthPunctuations = /([。，、；：？！「」『』（）【】《》〈〉…—～·＊＆％＄＃＠＋－＝＜＞｛｝［］｜＼／])/g;
+
+    nodesToProcess.forEach(node => {
+        let text = node.nodeValue;
+        let hasMatch = false;
+
+        // 暫時將匹配到的內容標記，避免重複處理
+        let htmlContent = text;
+
+        // 處理關鍵字
         keywords.forEach((keyword, index) => {
-            const className = `keyword-${index}`;
-            // 使用更寬鬆的 regex 來匹配中文關鍵字，忽略詞邊界
-            const regex = new RegExp(keyword, 'gi');
-            html = html.replace(regex, `<span class="${className}">${keyword}</span>`);
+            if (text.includes(keyword)) {
+                const regex = new RegExp(keyword, 'gi');
+                htmlContent = htmlContent.replace(regex, `__KWD_${index}__`);
+                hasMatch = true;
+            }
         });
 
-        // 處理全型標點符號高亮（8色循環）
-        // 全型標點符號列表：。，、；：？！「」『』（）【】《》〈〉…—etc.
-        const fullWidthPunctuations = /([。，、；：？！「」『』（）【】《》〈〉…—～·＊＆％＄＃＠＋－＝＜＞｛｝［］｜＼／])/g;
-        let punctuationCounter = 0;
+        // 處理標點符號
+        if (fullWidthPunctuations.test(text)) {
+            htmlContent = htmlContent.replace(fullWidthPunctuations, (match) => {
+                const colorIndex = punctuationCounter % punctuationGradients.length;
+                punctuationCounter++;
+                return `__PNC_${colorIndex}__${match}__ENDPNC__`;
+            });
+            hasMatch = true;
+        }
 
-        html = html.replace(fullWidthPunctuations, (match) => {
-            const colorIndex = punctuationCounter % punctuationGradients.length;
-            punctuationCounter++;
-            return `<span class="punctuation-${colorIndex}">${match}</span>`;
-        });
+        if (hasMatch) {
+            // 將標記轉回 HTML
+            keywords.forEach((keyword, index) => {
+                const marker = `__KWD_${index}__`;
+                const className = `keyword-${index}`;
+                // 使用 split/join 替換以避免與 RegExp 衝突
+                htmlContent = htmlContent.split(marker).join(`<span class="${className}">${keyword}</span>`);
+            });
 
-        element.innerHTML = html;
+            // 轉回標點符號
+            htmlContent = htmlContent.replace(/__PNC_(\d+)__(.*?)__ENDPNC__/g, (match, p1, p2) => {
+                return `<span class="punctuation-${p1}">${p2}</span>`;
+            });
+
+            const span = document.createElement('span');
+            span.innerHTML = htmlContent;
+            node.parentNode.replaceChild(span, node);
+        }
     });
 }
+
 
 // Enhanced scroll to section with smooth animation
 function scrollToSection(sectionId) {
