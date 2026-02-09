@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260209 主日信息</title>
+    <meta name="description" content="打開那扇已關上的門：從希西家王的屬靈更新看生命的重新出發">
+    <meta name="keywords"
+        content="從希西家王的屬靈更新看生命的重新出發, 拒絕了表面上的政績工程, 從心碎到心歡、從廢墟到聖殿的轉化過程, 終結了前任政府亞哈斯王的屬靈封鎖政策, 優先順序的重置 (Strategic Priority), 建立一條不再撿回、永不回頭的界限, 先處理關係，後處理事務, 放棄「我很好」的虛假社交面具, 不必完美才能來到神面前, 從「封鎖的荒涼」走向「開門的復興」">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260209 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">打開那扇已關上的門：從希西家王的屬靈更新看生命的重新出發
+                    <a href="https://www.youtube.com/live/lzPVS0lgvwg?si=p7Mkhfxea5Nkw8rO">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/lzPVS0lgvwg?si=p7Mkhfxea5Nkw8rO">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-1-主題總結與屬靈更新要訣">
+                <h2 id="1-主題總結與屬靈更新要訣">1. 主題、總結與屬靈更新要訣</h2>
+                <p>這份報告的戰略核心在於：<strong>復興不是一種情緒的衝動，而是一連串「對位」的決定。</strong>
+                    希西家在「元年正月」的決定，在法律與盟約層面上，徹底終結了前任政府亞哈斯王的屬靈封鎖政策。<strong>核心摘要：屬靈復興的戰略鏈條</strong>
+                    希西家的改革遵循著極其嚴謹的邏輯順序，環環相扣：</p>
+
+                <ul>
+                    <li><strong>開門（決斷）：</strong> 在元年正月立即重啟殿門，打破沈默與逃避。</li>
+                    <li><strong>修理（預備）：</strong> 恢復器皿的功能，確保屬靈系統的硬體到位。</li>
+                    <li><strong>潔淨（程序）：</strong> 執行「內聖而外王」的清理，從內部聖所延伸至外部院子。</li>
+                    <li><strong>敬拜（恢復）：</strong> 以完全的贖罪祭恢復與神的垂直連結，帶動整體的喜樂。<strong>屬靈更新要訣：找回自我的三個關鍵動作</strong></li>
+                </ul>
+
+                <ol>
+                    <li><strong>優先順序的重置 (Strategic Priority)：</strong> 不先處理外在的「國防與經濟」，而是先處理內在的「關係與聖所」。</li>
+                    <li><strong>邊界感的建立 (The Boundary Principle)：</strong> 徹底將污穢物搬到「汲淪溪」，建立一條不再撿回、永不回頭的界限。</li>
+                    <li><strong>恩典邏輯的內化 (Grace Orientation)：</strong> 承認自己的不完美，仰賴神所預備的贖罪祭，而非個人的行為表現。</li>
+                </ol>
+                <ul>
+                    <li>
+                        <strong>訣竅：</strong>
+                        形式化的信仰只是在關上的門外進行毫無生命的「宗教打卡」，而真實的心靈門戶是允許聖靈的光照進灰塵。這種從「表現焦慮」到「恩典依賴」的心理轉向，是現代人心理健康的終極出口。
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" id="section-2-論點綱要卡片">
+                <h2 id="2-論點綱要卡片">2. 論點綱要卡片</h2>
+                <p><img src="unnamed (4).jpg" alt="alt text"></p>
+            </section>
+
+            <section class="section" id="section-3-背景重構從廢墟中踏出的第一步">
+                <h2 id="3-背景重構從廢墟中踏出的第一步">3. 背景重構：從廢墟中踏出的第一步</h2>
+                <p>當 25
+                    歲的希西家登基時，他面對的是一個精神上的廢墟。他的父親亞哈斯王不僅拜偶像，更採取了極端的心靈封閉政策：封鎖廊門、吹滅燈火。這象徵著與神關係的徹底中斷，當「心靈燈火」熄滅，國家便陷入驚駭與嗤笑之中。
+                    <br>
+                    <br>
+                    <strong>優先順序的智慧：</strong>
+                    <br>
+                    令人驚訝的是，希西家在「元年正月」——也就是政權剛起步的最關鍵時刻，他沒有先搞國防建設以應對外敵，也沒有先振興經濟以安撫民心。他選擇了「先開殿門」。這反映了深層的
+                    <br>
+                    <strong>屬靈本體論：</strong>
+                    <br>
+                    如果「垂直」的源頭斷裂，所有的「水平」努力都只是在沙漠中徒勞。
+                    <br>
+                <ul>
+                    <li>
+                        <strong>訣竅：</strong>
+                        <br>
+                        「先處理關係，後處理事務」不只是宗教口號，而是最高明的管理策略。現代生活中的混亂往往源於根源性的錯位。若不先修復內心的祭壇，外在的防線與財富再堅固，也會因內心的虛空而崩塌。
+                    </li>
+                </ul>
+                </p>
+            </section>
+
+            <section class="section" id="section-4-核心論點一開啟心靈的殿門與解決問題的勇氣">
+                <h2 id="4-核心論點一開啟心靈的殿門與解決問題的勇氣">4. 核心論點一：開啟心靈的殿門與解決問題的勇氣</h2>
+                <p>每個人心中都有一個「特別的房間」，原本設計得漂漂亮亮，卻在不知不覺中堆滿了生活的雜物：積壓的挫折、未處理的傷痛、隱藏的罪咎。最後，我們選擇「眼不見為淨」，乾脆鎖上它。
+                    <br>
+                    <strong>誠實面對的勇氣：</strong>
+                    <br>
+                    「開門」是一個極具心理韌性的決定。希西家明白，儘管門後積塵盈尺，他仍必須召集「祭司與利未人」。這啟發我們，面對深層問題不應單打獨鬥。開門意味著放棄「我很好」的虛假社交面具，在團隊與支持系統中尋求透明度。
+                    <br>
+                <ul>
+                    <li>
+                        <strong>訣竅：</strong>
+                        <br>
+                        封鎖心靈門戶與「心理逃避」高度關聯。當你拒絕處理問題時，你其實是拒絕了生命的光。唯有打開門，讓灰塵在光中被看見，修理與復原才具備可能。
+                    </li>
+                </ul>
+                </p>
+            </section>
+
+            <section class="section" id="section-5-核心論點二由裡到外的深度潔淨汲淪溪的徹底拋棄">
+                <h2 id="5-核心論點二由裡到外的深度潔淨汲淪溪的徹底拋棄">5. 核心論點二：由裡到外的深度潔淨——汲淪溪的徹底拋棄</h2>
+                <p>潔淨聖殿並非表面裝飾，而是一場嚴謹的「技術性清理」。
+                    <br>
+                    <br>
+                    <strong>內部的優先性與階級職責：</strong>
+                    <br>
+                    聖經詳述了潔淨的順序：祭司進入「內部聖所」進行精密的潔淨，而利未人則負責將污穢物搬到「院子」。這教導我們，內省必須從靈魂最隱密、最神聖的核心開始，而非僅是修正外在行為。值得注意的是，利未人在此次改革中表現出「誠心自潔，勝過祭司」（29:34），這提醒我們：屬靈的深度不在於職位的高低，而在於心的赤誠。
+                    <br>
+                    <strong>汲淪溪：不回頭的界限</strong>
+                    <br>
+                    利未人將廢棄物搬到「汲淪溪邊」。在地理上，汲淪溪是耶路撒冷城外的溝渠，這代表了 <strong>徹底的拋棄與邊界感的建立</strong> 。這不是把垃圾從書房搬到客廳，而是搬出城外，永不撿回。
+                    <br>
+                    <strong>十六天的修復期：</strong> 清理工作整整花了 16 天。這告訴我們，屬靈更新需要耐性，我們不能指望用一個下午的禱告就解決累積二十年的心靈垃圾。
+                    <br>
+                </p>
+                <ul>
+                    <li>
+                        <strong>訣竅：</strong>
+                        真正的更新需要建立「不回頭的邊界」。將對神的失望、對人的苦毒搬到「汲淪溪」，意味著你不再給這些情緒留任何生存空間。
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" id="section-6-核心論點三恢復敬拜與救贖祭的成就">
+                <h2 id="6-核心論點三恢復敬拜與救贖祭的成就">6. 核心論點三：恢復敬拜與救贖祭的成就</h2>
+                <p>當垃圾清理乾淨，產生的真空必須由「恩典」來填滿。希西家獻上的贖罪祭（公牛、羊、羔各七隻）展現了救贖的「完全性」。
+                    <br>
+                    <br>
+                    <strong>超越表現的恩典邏輯：</strong>
+                    <br>
+                    祭司宰祭牲，將血灑在壇上。這指向了新約中耶穌基督的救贖祭。這對於現代飽受「表現焦慮」折磨的人來說是極大的釋放：我們與神的關係不是建立在「我表現多好」，而是建立在「祂已完成的救贖」之上。
+                    <br>
+                    <strong>喜樂的音響：</strong>
+                    <br>
+                    當祭獻上的那一刻，樂器齊鳴。希西家恢復了大衛式的敬拜。音樂與讚美不僅是儀式，更是氛圍的翻轉。當一個家庭、一個職場開始出現「讚美的聲音」，那種沈重的壓迫感便會消散，轉化為「心歡喜樂」。
+                    <br>
+                </p>
+                <ul>
+                    <li>
+                        <strong>訣竅：</strong>
+                        <br>
+                        「不必完美才能來到神面前」的邏輯，能摧毀我們內心的完美主義偶像。家庭祭壇不是等家裡一切整齊才開始，而是在混亂與爭吵後，共同來到恩典座前。
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" id="section-7-生活見證醫生的屬靈更新與盟約般的家">
+                <h2 id="7-生活見證醫生的屬靈更新與盟約般的家">7. 生活見證：醫生的屬靈更新與盟約般的家</h2>
+                <p>楊醫生的見證，是上述原則在現代專業人士生活中的生動應用。
+                    <br>
+                    <br>
+                    <strong>職場與興趣的「開門」：</strong>
+                    <br>
+                    身為一名外科醫生，他在一次手術中遇到器皿「卡住、抓不出來」的危機。在極度緊張中，他沒有僅靠技術，而是選擇「停下來禱告」。那一刻，他打開了職場中的殿門，神的手隨即介入，問題迎刃而解。甚至在他心愛的重機運動中，他在上路前的平安禱告，將愛好轉化為對神的交託。
+                    <br>
+                    <strong>家庭中的盟約與潔淨：</strong>
+                    <br>
+                    楊醫生的故事中最動人的是「盟約的實踐」。在病痛期間，他因服藥無法駕駛，他的妻子（在岳母葉女士的敬虔教育下）展現了盟約式的支持，每日晨起接送他往返職場與醫院。這種愛不是建立在「表現」上，而是建立在「不離不棄」的約上。當夫妻爭吵後，妻子次日主動準備早餐。這正是「汲淪溪原則」的實踐——丟棄隔夜的苦毒，恢復生活的供養。
+                    <br>
+                </p>
+                <ul>
+                    <li>
+                        <strong>訣竅：</strong>
+                        <br>
+                        信仰的真實影響力不在於宗教詞彙，而在於「生活化」。楊醫生的見證說明，當一個專業人士學會「在職場求助、在家庭和諧、在愛好中交託」，他便從「心碎」走向了「心歡」。
+                    </li>
+                </ul>
+                <p><img src="unnamed (5).jpg" alt="alt text"></p>
+            </section>
+
+            <section class="section" id="section-8-綜合論述逐字稿列表">
+                <h2 id="8-綜合論述逐字稿列表">8. 綜合論述逐字稿列表</h2>
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tbody>
+                        <tr>
+                            <th style="text-align: center;">關鍵論述提煉 (Pastoral &amp; Analytical Reflection)</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">見證轉折： 楊醫生從傳統信仰轉向基督，強調「我的好處不在祢之外」。醫學知識雖豐富，但生命主權需歸還神。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">行政與屬靈決斷： 希西家元年正月「開殿門」。分析：這是在混亂局勢中，回歸核心價值的最速戰略路徑。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">心靈殿門的隱喻： 探討「眼不見為淨」的心理防禦機制。提醒：逃避問題只會讓生命燈火熄滅，開門是唯一的生路。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">技術性潔淨 (The Kidron Protocol)：
+                                強調潔淨必須由內而外。利未人的誠心（真心）勝過祭司的形式（專業）。污穢物搬到汲淪溪，象徵永久切割。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">恩典本位論： 藉由贖罪祭的血，說明罪的斷裂只能由救贖填補。教導：不要因「表現不好」而不敢打開心門。</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">敬拜與豐盛： 描述聖殿恢復後的歌聲與奉獻。關鍵點：當神在眾民心中動工，喜樂會超越資源的限制。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="section" id="section-9-結語與代禱">
+                <h2 id="9-結語與代禱">9. 結語與代禱</h2>
+                <p>孩子們，記住：
+                    <strong>神不需要你完美，祂只需要你真心。</strong>希西家的故事告訴我們，不論你心中的那扇門已經鎖了多久，不論裡面堆積了多少亞哈斯時代留下的殘渣，只要你願意「開門」，恩典的重整就會立即開始。
+                    <br>
+                    <strong>結束代禱：</strong>
+                    <br>
+                    慈愛的天父，我為每一位正在閱讀、正在掙扎的靈魂代禱。主啊，祢看見我們心中那些積塵已久的角落。求聖靈賜下勇氣，讓我們在『元年正月』，就在此時此刻，做出那個開門的決定。求祢帶領我們將心中的苦毒、自卑與失望搬到汲淪溪，建立不再回頭的邊界。願主耶穌的寶血覆蓋我們的不完美，讓讚美與喜樂的樂器再次在我們的家庭與職場中響起。願我們每個人都從『封鎖的荒涼』走向『開門的復興』。
+                    <br>
+                    <br>
+                    奉耶穌的名禱告，阿門。
+                </p>
+            </section>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": [
+            "從希西家王的屬靈更新看生命的重新出發",
+            "拒絕了表面上的政績工程",
+            "從心碎到心歡、從廢墟到聖殿的轉化過程",
+            "終結了前任政府亞哈斯王的屬靈封鎖政策",
+            "優先順序的重置 (Strategic Priority)",
+            "建立一條不再撿回、永不回頭的界限",
+            "先處理關係，後處理事務",
+            "放棄「我很好」的虛假社交面具",
+            "不必完美才能來到神面前",
+            "從『封鎖的荒涼』走向『開門的復興』"
+        ]
+    }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
