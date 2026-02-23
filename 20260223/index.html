@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260223 主日信息</title>
+    <meta name="description" content="把人生重新對準神：從築壇開始的復興之路">
+    <meta name="keywords"
+        content="把人生重新對準神：從築壇開始的復興之路, 鬧鐘重新響起，孩子們回到了學校, 真正的安全感不在於外在的防禦工事, 不是要等人生整理好了才親近神, 等神進來，人生才會開始被整理, 養成早上記錄、晚間翻閱的習慣, 話語是有力量的，它可以「毀壞」生命, 一群人的力量：團進團出的集體重建, 教會不是等你好才來的地方，是陪你成長的地方, 在不同的哭聲與歡呼聲中，一同向著神前行">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260223 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">把人生重新對準神：從築壇開始的復興之路
+                    <a href="https://www.youtube.com/live/-JvDdkn3pqE?si=EIbzR3KG_4687eOk">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/-JvDdkn3pqE?si=EIbzR3KG_4687eOk">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-心論點綱要">
+                <h2 id="心論點綱要">心論點綱要 (人生重新對準策略卡)</h2>
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tbody>
+                        <tr>
+                            <th style="text-align: center;">【人生重新對準神：復興策略卡】</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">核心目標：在新起點重啟生命恢復，將主權重新對準神</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">三大基石：<br>1. [築壇] —— 恢復神的同在 (Presence)<br>2. [律法] —— 以神的話語建造
+                                (Word)<br>3.
+                                [城牆] —— 建立屬靈的遮蓋 (Covering)</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">生命實踐：<br>築壇開始 -> 互相取暖 -> 團進團出 -> 守望下一代</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">核心宣告：「我們的安全感不在於城牆，而在於耶和華。」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="section" id="section-第一論點">
+                <h2 id="第一論點">第一論點：在恐懼中優先築壇 (以斯拉記 3:1-6)</h2>
+                <img src="https://images.unsplash.com/photo-1503435824048-a799a3a84bf7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFpbnxlbnwwfHwwfHx8MA%3D%3D"
+                    style="width: 100%; border-radius: 15px; margin: 20px 0; object-fit: cover; aspect-ratio: 9/16;"
+                    alt="Thematic Imagery">
+                <p>當以色列民回到耶路撒冷時，面對的是鄰國的威脅與荒涼的土地。照常理，應該先蓋房子避寒，或先建城牆防敵。然而，他們卻「如同一人」聚集，首先建築「祭壇」。</p>
+
+                <p>這是一份對主權的宣告：<strong>真正的安全感不在於外在的防禦工事（城牆），而是在於耶和華。</strong></p>
+
+                <blockquote>
+                    <p>我也跟你們分享一個最近的小故事。前陣子，我脖子這邊長了一塊東西，我自己每天照鏡子都沒發現，反倒是龍潭的選到傳道在吃飯時提醒我：「牧師，你這裡怎麼出來一塊？」因為選到傳道以前有過腦部的病史，他這一講，我心裡也跟著緊張起來。那天開會我一直心神不寧，不斷地摸。
+                    </p>
+
+                    <p>但我學習到，在擔憂中我們什麼都不能做，唯一能做的就是先「築壇」。我到主面前禱告，把身體的主權交給祂。後來去照超音波，感謝主，只是一個脂肪瘤，虛驚一場。弟兄姊妹，不是要等人生整理好了才親近神，而是讓神進來，人生才會開始被整理。有了祭壇，我們才有了抵禦未來焦慮的根基。
+                    </p>
+                </blockquote>
+            </section>
+
+            <section class="section" id="section-第二論點">
+                <h2 id="第二論點">第二論點：以聖經話語建造生命 (靈修筆記的技術)</h2>
+                <img src="https://i.pinimg.com/736x/76/51/66/7651669471820450cd5dc3f26805587b.jpg"
+                    style="width: 100%; border-radius: 15px; margin: 20px 0; object-fit: cover; aspect-ratio: 9/16;"
+                    alt="Thematic Imagery">
+                <p>築壇之後，緊接著是話語的重建（律法）。我一直鼓勵大家養成「靈修筆記」的習慣。即便只有一節經文，早上抄寫下來，晚上睡前再翻一翻，你會發覺這一天有奇妙的帶領。</p>
+
+                <p>這種對話語的渴慕，深受清教徒信仰及百個牧師 (Paxon Bakke) 的影響。百個牧師對「內在生活」與家庭教會（如西安堂、龍教室、倪柝聲前輩等）有很深的影響力。他的文字雖然簡樸，卻能建造人的生命。
+                </p>
+
+                <p><strong>話語是有力量的</strong>，它可以「毀壞」生命（比如罵孩子爛透了），也可以「建造」生命。我常鼓勵父母傳經文給孩子，當孩子面對考試或挫折，你發一封簡訊告訴他：「我的恩典夠你用，我的能力在人的軟弱上顯為完全。」他就會知道有人在為他守望。話語不需要多，一點一滴地建造，就是最強大的遮蓋。
+                </p>
+            </section>
+
+            <section class="section" id="section-第三論點">
+                <h2 id="第三論點">第三論點：一群人的力量：團進團出的集體重建</h2>
+                <img src="https://images.alphacoders.com/109/thumbbig-1095631.webp"
+                    style="width: 60%; border-radius: 15px; margin: 20px 0; object-fit: cover; aspect-ratio: 9/16;"
+                    alt="Thematic Imagery">
+                <p>重建工作絕非單打獨鬥。以斯拉記記載，索羅巴伯、約穌亞及所有人「一同起來」興工。在屬靈的意義上，這就是「城牆」的重建——一種集體的遮蓋與保護。如果一個人走回鄉路要四個月，可能走三個月就放棄了，但一群人就能走完。
+                </p>
+
+                <p>這就是為什麼我強調「團進團出」。無論是「C1」或是「C2」課程，這不只是上課，而是在建立一個「互助系統」。以我的家庭為例，我的丈母娘臥床十六年，最近因為肺炎送醫，照顧起來非常艱辛。<strong>如果沒有小組弟兄姊妹的禱告支撐，單憑個人是很難撐下去的。</strong>
+                </p>
+
+                <p>城牆就是屬靈的遮蓋，讓我們在軟弱時不至於被惡者「欺負」。所以，如果你還沒報名課程，趕緊跟上這一波「團進團出」，不要讓自己落單。</p>
+            </section>
+
+            <section class="section" id="section-第四論點">
+                <h2 id="第四論點">第四論點：接納不完美：世代張力中的合一</h2>
+                <img src="https://images.unsplash.com/photo-1518882174711-1de40238921b?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    style="width: 60%; border-radius: 15px; margin: 20px 0; object-fit: cover; aspect-ratio: 9/16;"
+                    alt="Thematic Imagery">
+                <p>以斯拉記三章末尾有一個動人的畫面：當殿的根基立定，年輕人歡呼，見過舊殿榮華的老年人卻大聲哭號。</p>
+
+                <p>這就是「<strong>世代張力</strong>」。就像我們看一個數字，從這邊看是「6」，從那邊看是「9」，兩邊都對。這讓我想起我的岳父，他是安徽、滿清正青旗背景，親歷過戰亂逃難，所以他非常看重安全感。有一次過年，孩子們出去打球到天黑才回來，岳父看著滿桌涼掉的菜，心裡難免有些失落，卻還是溫柔地問：「要不要再去熱一下？」
+                </p>
+
+                <p>這就是「愛在張力中」。長輩有「記憶」，年輕人有「盼望」，感受不需要一致，但「心向」要一致對準神。<strong>教會不是等完美了才來，而是陪你成長的地方。我們接納彼此的不完美，在不同的哭聲與歡呼聲中，一同向著神前行。</strong>
+                </p>
+            </section>
+
+            <section class="section" id="section-主文綜合論述與逐字稿精華清單">
+                <h2 id="主文綜合論述與逐字稿精華清單">主文綜合論述與逐字稿精華清單</h2>
+                <p>以下精選本次教導中具備生命洞察力的關鍵金句：</p>
+
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tbody>
+                        <tr>
+                            <th style="text-align: center;">綜合論述與生命金句</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">「即便只有一節，你把它抄下來。早晨做筆記，晚上再翻一翻，你會發覺這一天有奇妙的帶領。」</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">「話語不需要很多，你一點一滴地去建造人的生命，而不是毀壞人的生命。」</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">「不是先整理好人生才進來，而是先讓神進來，人生才開始被整理。」</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">「我們真的安全不在城牆，而是在我們生命的根基，是否立在基督的磐石上。」</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">「不需要感受一致，但是心向要一致，都是要向著神，那才最重要。」</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">「教會不是等你好才來的地方，是陪你成長的地方。」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="section" id="section-總結要訣與結束代禱">
+                <h2 id="總結要訣與結束代禱">總結要訣與結束代禱</h2>
+                <p>【新年度重啟要訣】</p>
+
+                <ul>
+                    <li>優先築壇： 每天清晨不先打開手機，先打開聖經。</li>
+                    <li>靈修筆記： 養成早上記錄、晚間翻閱的習慣，讓神的話語成為遮蓋。</li>
+                    <li>參與課程： 報名 C2 或C1，進入群體的「團進團出」保障。</li>
+                    <li>耐心等候： 對家人與下一代保有耐心，在世代差異中尋求對準神的合一。</li>
+                </ul>
+
+                <p><strong>結束代禱</strong>：
+                    天父，我們感謝祢。祢是愛我們的主，即便我們過去面對許多的挑戰與不容易，但祢的恩典始終是我們年歲的冠冕，路徑都滴下脂油。在這新的一年，生活重新啟動之際，我們把心重新呈給祢，求祢讓我們的生命重新對準祢。
+                </p>
+
+                <p>主啊，祢是耶和華以勒，必為我們豐富預備；祢是耶和華拉法，必醫治我們身體的疾病與心靈的軟弱。求祢在我們的家中掌權，在職場與學校中設立祢的寶座。祝福即將開始的 C2 與
+                    C1裝備課程，建造我們屬天的生命。願祢在曠野為我們開道路，在沙漠中為我們開江河。讓我們像保羅一樣，向著標竿直跑，領受從上頭來的獎賞。謝謝主聽我們的禱告，奉耶穌的名求，阿門。</p>
+            </section>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": [
+            "把人生重新對準神：從築壇開始的復興之路",
+            "鬧鐘重新響起，孩子們回到了學校",
+            "真正的安全感不在於外在的防禦工事",
+            "不是要等人生整理好了才親近神",
+            "等神進來，人生才會開始被整理",
+            "養成早上記錄、晚間翻閱的習慣",
+            "話語是有力量的，它可以「毀壞」生命",
+            "一群人的力量：團進團出的集體重建",
+            "教會不是等你好才來的地方，是陪你成長的地方",
+            "在不同的哭聲與歡呼聲中，一同向著神前行"
+        ]
+    }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
