@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260227 信息</title>
+    <meta name="description" content="喜劇節奏拆解筆記：從傳統到現代的笑點藝術">
+    <meta name="keywords"
+        content="笑聲的產生，源於對節奏的絕對掌控, 任何笑聲都必須建立在專業的結構之上, 鋪墊階段絕不能太好笑, 喜劇的脈搏是跟著社會的時鐘走的, 太過用力的表演會產生侵略感, 真正的幽默來自於消解權威, 緊張感就像外套, 過氣不重要，只要不斷氣就好了">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260227 信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">喜劇節奏拆解筆記：從傳統到現代的笑點藝術
+                    <a href="https://youtu.be/IwWsT5S7DtQ?si=s_RLM1DHjLASZDdu">
+                        <img src="https://img.youtube.com/vi/IwWsT5S7DtQ/maxresdefault.jpg" alt="alt text"
+                            style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://youtu.be/IwWsT5S7DtQ?si=s_RLM1DHjLASZDdu">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-喜劇節奏拆解筆記從傳統到現代的笑點藝術">
+                <h3 id="喜劇節奏拆解筆記從傳統到現代的笑點藝術">喜劇節奏拆解筆記：從傳統到現代的笑點藝術</h3>
+                <p>作為一名在劇場與鏡頭後觀察數十年的編導，我常告訴學生：喜劇不是隨興的胡鬧，而是極其精密的「心理建築學」。笑聲的產生，源於對節奏的絕對掌控。以下這份筆記將帶你從喜劇的底層邏輯出發，理解這門讓觀眾「卸下防備」的藝術。
+                </p>
+            </section>
+
+            <section class="section" id="section-1-核心概念什麼是包袱">
+                <h5 id="1-核心概念什麼是包袱">1. 核心概念：什麼是「包袱」？</h5>
+                <p>在喜劇表演的體系中，核心結構被稱為「包袱」。這是一個關於「壓力累積」與「瞬間釋放」的動態過程。<strong>「埋包袱」（鋪墊）：</strong>
+                    指的是在笑點爆發前的結構搭建。表演者必須在觀眾心中建立一個穩固的邏輯軌道或預期情境，通常需要經過至少兩次的鋪陳。<strong>「抖包袱」（爆發）：</strong>
+                    這是當前面的邏輯堆疊到頂點後，透過一個出其不意的翻轉（Twist）將預期打破。
+                    <strong>正因為有了前面的「埋」，後面的「抖」才能產生力透紙背的撞擊感。</strong>在喜劇圈有一條鐵律：「三句不離本行」。這意味著任何笑聲都必須建立在專業的結構之上。新手常犯的錯誤是「急於求成」，想在鋪墊階段就逗笑觀眾。但從技術層面來看，鋪墊階段絕不能太好笑，因為過早的笑聲會破壞緊張感的堆疊，導致最後真正的「大包袱」因張力不足而失效。<em>那麼，隨著時代演進，這種結構的「速度」發生了什麼變化？</em>
+                </p>
+            </section>
+
+            <section class="section" id="section-2-節奏的演變從三番到兩番">
+                <h5 id="2-節奏的演變從三番到兩番">2. 節奏的演變：從「三番」到「兩番」</h5>
+                <p>喜劇的脈搏是跟著社會的時鐘走的。過去與現代在節奏處理上，存在著根本性的結構差異。| 特徵 | 傳統（三番四抖） | 現代（兩番一抖） || ------ | ------ | ------ ||
+                    <strong>社會背景</strong> | 農業社會，生活步調緩慢且悠閒。 | 快節奏資訊時代，觀眾感官閾值高。 || <strong>觀眾耐心</strong> |
+                    極高，願意花時間欣賞層次豐富的鋪陳。 | 較低，若三十秒內沒看到亮點便會轉移注意力。 || <strong>結構長度</strong> | 經過三輪鋪墊（番）後，才在第四段抖出笑點。 |
+                    僅經過兩輪鋪墊，第三段便迅速切入翻轉。 || <strong>關鍵例證</strong> | 如傳統段子中描述「老爺子在家蹲著」、「媳婦抓著手不放」等長篇對話，慢慢磨出荒謬感。 |
+                    捨棄繁瑣細節，直接進入情境衝突，講求效率與撞擊力。 |<br />
+                    <strong>學習重點：為何要「提速」與「收力」？</strong>
+                    在現代語境下，掌握「兩番一抖」是為了生存。表演者必須學會「提速」，剔除無效的過場資訊。同時，真正的高手懂得「收力」，太過用力的表演會產生侵略感，而適度的收力反而能讓笑點產生一種輕巧的「冷幽默」魅力。<em>掌握了節奏的結構後，表演者的「心態」與「角色定位」將是決定演出層次的下一個關鍵。</em>
+                </p>
+            </section>
+
+            <section class="section" id="section-3-表演者的修養讓讓讓">
+                <h5 id="3-表演者的修養讓讓讓">3. 表演者的修養：讓、讓、讓</h5>
+                <p>在群體演出或綜藝訪談中，表演者往往有「搶鏡頭」的本能。但從資深編導的角度來看， <strong>「讓」才是最高級的表演藝術。</strong></p>
+                <ul>
+                    <li><strong>眼神的交會與補位：</strong> 觀察主講者。當對方的眼神看向你時，那是他給出的「球」，這才是你補位發話的最佳時機。</li>
+                    <li><strong>不要破壞整體的律動：</strong> 隨意搶話不僅會弄亂節奏，從製作角度看，這些突兀的片段最終都會被剪掉，對演出毫無貢獻。</li>
+                    <li><strong>呼應優於主導：</strong> 學習在旁觀的角度進行「呼應」，透過給予適時的反饋，幫主講者加分。<strong>學習重點：主持人應定位為「武林大會主席」</strong>
+                        在喜劇表演的哲學中，「主持人就是個屁」。這並非自貶，而是一種自覺的謙卑。主持人應像「武林大會主席」，他的任務不是展現自己武功蓋世，而是負責介紹崆峒派、武當派（嘉賓）出場，引導他們展示絕招。一個優秀的表演者應是促成「來賓閃耀」的推手，而非試圖成為唯一的主角。<em>當我們學會了如何處理與他人的關係，便能進一步探討表演內容本身的「深度」與「邊界」。</em>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" id="section-4-喜劇化的本質醜化-vs-卡通化">
+                <h5 id="4-喜劇化的本質醜化-vs-卡通化">4. 喜劇化的本質：醜化 vs. 卡通化</h5>
+                <p>模仿是喜劇的常見手段，但「用意」決定了演出的格調。我們必須嚴格區分「醜化」與「喜劇化」的本質。<strong>專業辨析：</strong></p>
+                <ul>
+                    <li><strong>醜化：</strong> 僅僅是負面的攻擊與單純的惡意，會讓觀眾感到不適。</li>
+                    <li><strong>喜劇化（卡通化）：</strong> 透過誇張的技巧，將角色「去銳利化」。即使原型人物性格剛烈，經過卡通化處理後，其攻擊性會轉化為一種可笑的可愛感。</li>
+                    <li><strong>模仿的初心：</strong> 一個成功的模仿表演，應是讓觀眾透過你的詮釋「不再討厭該人物」，甚至覺得他很有趣。如果模仿只是增加仇恨，那這場表演是失敗的。</li>
+                    <li><strong>公眾人物的雅量：</strong> 真正的幽默來自於消解權威。公眾人物應具備被模仿的雅量，將其視為一種反串與幽默的共存。</li>
+                    <li><strong>拒絕神格化：</strong> 喜劇的本質是人性的展露。在喜劇的世界裡， <strong>「神格化是噁心的」</strong>
+                        ，因為沒有人是神，刻意的崇拜會徹底扼殺幽默感。<em>當表演涉及尖銳話題或個人情緒時，該如何處理？</em></li>
+                </ul>
+            </section>
+
+            <section class="section" id="section-5-實戰技巧與心理建設">
+                <h5 id="5-實戰技巧與心理建設">5. 實戰技巧與心理建設</h5>
+                <p>在真實的舞台競技場上，如何處理「尖銳感」與「能量分配」是每一位學員的必修課。</p>
+                <ul>
+                    <li><strong>「事實」是最好的消音器：</strong>
+                        處理敏感話題時，回歸「事實」能有效降低冒犯感。例如形容「路易莎比圖書館更像圖書館」，這雖具體但不尖銳，因為這是觀眾集體認知的「不可爭辯之事實」，能引發會心一笑而非反感。</li>
+                    <li><strong>即興發揮與目的性：</strong> 即興（Improv）不代表盲目亂繞。表演者心中必須清楚「目的地」在哪，否則繞圈子的過程只會讓觀眾感到疲勞。</li>
+                    <li><strong>表演能量的組織與分配：</strong></li>
+                    <li><strong>百米衝刺：</strong> 適用於三分鐘的短段子，全力爆發即可。</li>
+                    <li><strong>鐵人三項：</strong>
+                        適用於兩小時的專場秀。你需要組織能力與耐力分配，包含游泳（鋪陳）、騎車（推進）到最後的長跑（收尾），這考驗的是整體的架構組織能力。<em><strong>緊張感就像外套：</strong></em>
+                        <strong>當你準備上台時，想像門口有一個掛衣鉤。你把那件名為「緊張」的外套脫下來掛在那裡，進場做你該做的事。表演結束後，出門再把那件外套穿回去。這意味著：緊張可以跟著你，但它必須在你的身後，而不應擋在你的面前。</strong><em>表演藝術最終會提升到人生的哲學層面，一切的演出都是生活的延伸。</em>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" id="section-6-總結人生是一場不斷氣的秀">
+                <h5 id="6-總結人生是一場不斷氣的秀">6. 總結：人生是一場不斷氣的秀</h5>
+                <p>喜劇表演不只是在舞台上的那幾分鐘，它體現了一種對待生命的高度。</p>
+                <ul>
+                    <li><strong>「過氣不重要，只要不斷氣就好了。」</strong> —— 重點在於持續進行，只要秀還在繼續，這場表演就是進行式。</li>
+                    <li><strong>「一切都是過程，結果也是過程。」</strong> —— 不要過度糾結於單次的成敗。人生如戲，每一個被視為「結果」的時刻，其實都是通往下一幕的過渡。</li>
+                    <li><strong>「理解與欣賞，取代包容。」</strong> ——
+                        「包容」隱含著權力的高低與施捨；而「理解與欣賞」則是平等的對待。學習新的語言（如印尼文、客語）去與不同族群溝通，正是這種精神的具體實踐。<strong>給初學者的話：</strong>
+                        表演是一場「一期一會」的相遇。每一場秀、每一次對話，都是不可複製的瞬間。請持續在生活中觀察、在舞台上練習，並始終保持對他人的好奇與敬意。只要你還在思考如何讓這個世界變得更有趣，這場屬於你的個人秀就不會落幕。加油，持續這場「不斷氣」的表演吧！
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "笑聲的產生，源於對節奏的絕對掌控",
+                "任何笑聲都必須建立在專業的結構之上",
+                "鋪墊階段絕不能太好笑",
+                "喜劇的脈搏是跟著社會的時鐘走的",
+                "太過用力的表演會產生侵略感",
+                "真正的幽默來自於消解權威",
+                "緊張感就像外套",
+                "過氣不重要，只要不斷氣就好了"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
