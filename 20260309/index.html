@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260309 成長班</title>
+    <meta name="description" content="c1-成長班--第一堂課筆記 相見歡">
+    <meta name="keywords" content="成長班, 靈修, 聖經, 禱告, 信仰, 見證, 大使命, 讀經, 靈命成長, 教會, 解經, 出席規定">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260309 成长班</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">c1-成長班--第一堂課筆記 相見歡
+                    <a href="https://www.youtube.com/live/B4KzUF5s0sQ">
+                        <img src="https://thumbs.dreamstime.com/b/close-up-dog-face-curious-expression-husky-has-funny-large-eyes-great-pet-product-marketing-391313981.jpg"
+                            alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            <!-- H2 .. Area -->
+            <h2 id="一-開場禱告">一、開場禱告 </h2>
+            <p>主啊，感謝你將時間交在你的手中。奉靠耶穌基督的名禱告，阿門。</p>
+            <hr>
+            <h2 id="二-課程行政說明">二、課程行政說明 </h2>
+            <h3 id="21-出席規定">2.1 出席規定 </h3>
+            <ul>
+                <li>上課出席率必須達到 <strong>80%</strong>，即八堂課中最多缺席兩次</li>
+                <li>每週上課，需<strong>連續</strong>參加，不可隨意跳課</li>
+                <li>若因不可抗拒的因素缺席，可透過<strong>錄音補課</strong>，每班課程均有錄音</li>
+                <li>由於本班只開一班（不像行動教會可跨班補課），補課方式以收聽錄音為主</li>
+                <li>牧師態度：出席規定不是要嚇人，若真的有事缺席，歡迎繼續回來上課</li>
+            </ul>
+            <h3 id="22-作業規定">2.2 作業規定 </h3>
+            <ul>
+                <li>課本內有空格供<strong>抄寫聖經</strong>，每天填一頁，以免積欠進度</li>
+                <li>鼓勵學員在聖經上<strong>畫線、做筆記</strong>，用有色筆或紅筆標記有感動的經文</li>
+                <li>早上靈修讀到有感動的段落，到晚上睡前再拿出來默想，甚至背下來</li>
+                <li>聖經是「拿來用的」，不是「供奉的」；鼓勵直接在聖經上寫字</li>
+            </ul>
+            <h3 id="23-見證繳交">2.3 見證繳交 </h3>
+            <ul>
+                <li>每位學員須在<strong>第八堂課結束後一週內</strong>繳交個人信仰見證一篇</li>
+                <li>目的：幫助學員整理自己的得救經歷，將來可以簡短地向他人做見證</li>
+            </ul>
+            <h3 id="24-靈修日誌第三課起">2.4 靈修日誌（第三課起） </h3>
+            <ul>
+                <li>使用「靈修日誌」本子，每本約 <strong>40元</strong>，可一次購買五送一</li>
+                <li>從<strong>第三堂課</strong>開始正式撰寫，一週至少寫<strong>三篇</strong></li>
+                <li>目的：養成靈修筆記的習慣，記錄每天從神話語中的領受</li>
+                <li>牧師個人習慣：直接寫在聖經上，用原子筆（不會透過去）</li>
+            </ul>
+            <h3 id="25-每週出席記錄">2.5 每週出席記錄 </h3>
+            <ul>
+                <li>每次上課需填寫「屬靈建表」，記錄：
+                    <ul>
+                        <li>當週日期</li>
+                        <li>課程出席（打勾）</li>
+                        <li>主日聚會出席（打勾）</li>
+                        <li>小組聚會出席（港湖小組打勾）</li>
+                    </ul>
+                </li>
+            </ul>
+            <hr>
+            <h2 id="三-課程時間表">三、課程時間表 </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>堂次</th>
+                        <th>日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第一堂</td>
+                        <td>3月8日</td>
+                    </tr>
+                    <tr>
+                        <td>第二堂</td>
+                        <td>3月15日</td>
+                    </tr>
+                    <tr>
+                        <td>第三堂</td>
+                        <td>4月12日</td>
+                    </tr>
+                    <tr>
+                        <td>第四堂</td>
+                        <td>5月10日</td>
+                    </tr>
+                    <tr>
+                        <td>第五堂</td>
+                        <td>5月17日</td>
+                    </tr>
+                    <tr>
+                        <td>第六堂</td>
+                        <td>6月7日</td>
+                    </tr>
+                    <tr>
+                        <td>第七堂</td>
+                        <td>6月14日</td>
+                    </tr>
+                    <tr>
+                        <td>第八堂</td>
+                        <td>7月5日(暫定)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h2 id="四-本週功課">四、本週功課 </h2>
+            <ol>
+                <li>
+                    <p><strong>完成課本第8頁「相見表」</strong>（個人信仰背景與見證填寫）</p>
+                </li>
+                <li>
+                    <p><strong>抄寫聖經</strong>——課本空格每天填一頁，不要積欠進度</p>
+                </li>
+                <li>
+                    <p><strong>背誦以下兩節經文</strong>，下週上課時兩人互相背誦：</p>
+                    <ul>
+                        <li>
+                            <p><strong>約翰一書 1:9</strong></p>
+                            <blockquote>
+                                <p>「我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪，洗淨我們一切的不義。」</p>
+                            </blockquote>
+                        </li>
+                        <li>
+                            <p><strong>約翰福音 3:16</strong></p>
+                            <blockquote>
+                                <p>「神愛世人，甚至將他的獨生子賜給他們，叫一切信他的，不至滅亡，反得永生。」</p>
+                            </blockquote>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <hr>
+            <h2 id="五-讀經與靈修的重要性">五、讀經與靈修的重要性 </h2>
+            <h3 id="51-養成靈修習慣">5.1 養成靈修習慣 </h3>
+            <ul>
+                <li>靈修習慣是信仰根基。很多人初信主時很熱心，但因為缺乏穩定的靈修生活，感動一退就離開教會——就像談戀愛失去新鮮感就分手一樣</li>
+                <li>信仰不靠「感覺」維持，要靠<strong>每天與神的話語接觸</strong>建立穩固的關係</li>
+                <li>牧師自身經驗：每天在靈修中有新的亮光與看見，這正是他週日分享的來源</li>
+            </ul>
+            <h3 id="52-讀聖經的方式">5.2 讀聖經的方式 </h3>
+            <ul>
+                <li><strong>不要只求速度</strong>：快速讀完十章但毫無領受，是沒有益處的讀法</li>
+                <li><strong>要「精讀」</strong>：對某段經文好好查考，不懂的可以來問牧師</li>
+                <li><strong>以經解經</strong>：最好的解釋聖經方式是用<strong>聖經解釋聖經</strong>，這需要對聖經有足夠的熟悉度</li>
+                <li>熟悉聖經的好處：在聽講道時有<strong>分辨力</strong>，能判斷所講是否符合聖經本意；也不容易被異端帶偏</li>
+            </ul>
+            <h3 id="53-關於解經的提醒">5.3 關於解經的提醒 </h3>
+            <ul>
+                <li>靈恩派傾向用個人經歷或靈裡的感動來解釋聖經，不一定錯，但仍需要「印證」</li>
+                <li>不能「信口開合」地解釋聖經，也不可只憑某一教派的傳統教導</li>
+                <li>遇到與自己看法不同的人，不需要爭辯，因為「辯論無法改變一個人」</li>
+                <li>最好的方式：自己不斷深入研讀神的話，讓生命見證說話</li>
+            </ul>
+            <hr>
+            <h2 id="六-相見表填寫說明課本第8頁">六、相見表填寫說明（課本第8頁） </h2>
+            <p>以下問題幫助學員整理個人信仰背景，將來作為見證的基礎：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>問題</th>
+                        <th>目的</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>何時、如何接受耶穌？</td>
+                        <td>整理得救經歷</td>
+                    </tr>
+                    <tr>
+                        <td>過去的宗教背景？</td>
+                        <td>了解信仰起點</td>
+                    </tr>
+                    <tr>
+                        <td>人生中最幸福快樂的時候？</td>
+                        <td>看見神的恩典</td>
+                    </tr>
+                    <tr>
+                        <td>人生中最艱難或難過的時候？</td>
+                        <td>見證神的同在與帶領</td>
+                    </tr>
+                    <tr>
+                        <td>信主之前的人生目標？</td>
+                        <td>對比信主前後的改變</td>
+                    </tr>
+                    <tr>
+                        <td>信主之後的人生目標？</td>
+                        <td>建立以神為中心的人生方向</td>
+                    </tr>
+                    <tr>
+                        <td>參加成長班的決心與期待？</td>
+                        <td>立定心志，生命有所改變</td>
+                    </tr>
+                    <tr>
+                        <td>有什麼代禱事項？</td>
+                        <td>弟兄姐妹互相代禱</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h2 id="七-成長班的意義與價值課本第10頁">七、成長班的意義與價值（課本第10頁） </h2>
+            <h3 id="71-核心宣言">7.1 核心宣言 </h3>
+            <p>一個重生的新生命，若要從屬靈的嬰孩長大成熟、成為聖靈充滿的主門徒，必須經歷<strong>成長的過程</strong>。屬靈生命的成長，唯有透過養育與訓練才有可能達成。</p>
+            <h3 id="72-成長的比喻">7.2 成長的比喻 </h3>
+            <p><strong>嬰孩的比喻（彼得前書 2:2）</strong></p>
+            <blockquote>
+                <p>「就要愛慕那純淨的靈奶，像才生的嬰孩愛慕奶一樣，叫你們因此漸長，以致得救。」</p>
+            </blockquote>
+            <ul>
+                <li>嬰孩若沒有食物、沒有人教導，就無法長大</li>
+                <li>靈命成長也一樣，需要被餵養、被培育、被裝備</li>
+                <li>初信主時是最「溫順」的時候，是最好的受教時機</li>
+                <li>若錯過這個時機，往往等到「長大了」就開始批評教會、換教會</li>
+            </ul>
+            <p><strong>毛竹的比喻</strong></p>
+            <ul>
+                <li>毛竹在地底扎根三至四年，看似沒有成長，但根系已盤根錯節、扎得極深</li>
+                <li>一旦突破地面，一天可以長 20–30 公分，最終可達 20 多公尺高</li>
+                <li>我們現在的靈修、學習、禱告，正是在「扎根期」——不要因為看不見明顯的改變就放棄</li>
+            </ul>
+            <h3 id="73-三個核心目標">7.3 三個核心目標 </h3>
+            <ol>
+                <li>
+                    <p><strong>在真理上紮根</strong></p>
+                    <ul>
+                        <li>明白神的話語與心意</li>
+                        <li>透過學習、查考聖經，在真道上站穩</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong>在禱告中建立與神的關係</strong></p>
+                    <ul>
+                        <li>不是單純累積知識，而是與神建立真實的關係</li>
+                        <li>為自己祈求，也為弟兄姐妹代求</li>
+                        <li>牧師提醒：若只有知識沒有聖靈的工作，信仰會變得「很乾」</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong>在生活中活出信仰</strong></p>
+                    <ul>
+                        <li>信仰不是禮拜天才有的事，而是<strong>每天的生活</strong></li>
+                        <li>在家庭、職場、人際關係中活出神的愛、智慧與生命</li>
+                        <li>不能在教會是一種樣子，出了教會又變另一種人</li>
+                    </ul>
+                </li>
+            </ol>
+            <h3 id="74-目標經文">7.4 目標經文 </h3>
+            <ul>
+                <li><strong>彼得前書 2:2</strong> — 屬靈生命像嬰孩，需要純淨的靈奶來滋養成長</li>
+                <li><strong>以弗所書 4:13</strong> — 「直等到我們眾人在真道上同歸於一，認識神的兒子，得以長大成人，滿有基督長成的身量。」</li>
+            </ul>
+            <hr>
+            <h2 id="八-代禱生活的建立">八、代禱生活的建立 </h2>
+            <ul>
+                <li>弟兄姐妹要學習成為「守望者」，隨時為他人禱告</li>
+                <li>當心裡想到某個人，就是神的感動——簡短地說：「主啊，祝福他」、為他的需要祈求</li>
+                <li>不要以自我為中心，要關心他人的需要</li>
+                <li>教會雖然不大，但正因如此大家更熟悉，更容易彼此代禱、彼此扶持</li>
+                <li>有需要就說出來，不要客氣，讓弟兄姐妹一起為你禱告</li>
+            </ul>
+            <hr>
+            <h2 id="九-信仰成長中的常見誤區">九、信仰成長中的常見誤區 </h2>
+            <h3 id="91-靠感覺的信仰">9.1 靠感覺的信仰 </h3>
+            <ul>
+                <li>很多人參加特會、靈恩聚會後很「嗨」，但回到教會後感覺消退就離開</li>
+                <li>信仰不是靠感覺，而是靠意志與習慣的建立</li>
+            </ul>
+            <h3 id="92-以批判代替成長">9.2 以批判代替成長 </h3>
+            <ul>
+                <li>認識聖經的目的不是為了批判別人講錯</li>
+                <li>要有分辨力，但更重要的是<strong>活出生命的見證</strong></li>
+                <li>不要跟人辯論信仰，辯論無法改變人，禱告才能</li>
+            </ul>
+            <h3 id="93-靠知識而非靠靈">9.3 靠知識而非靠靈 </h3>
+            <ul>
+                <li>只有神學知識、沒有聖靈的工作，信仰會「很乾」</li>
+                <li>我們需要神的話<strong>與</strong>神的靈並行</li>
+            </ul>
+            <h3 id="94-面對恐懼">9.4 面對恐懼 </h3>
+            <ul>
+                <li>有信心不代表不會害怕；害怕是正常的，但要繼續往前</li>
+                <li>許多信心偉人（如大衛面對哥利亞、宗教改革者馬丁路德、殉道者胡斯）都曾充滿恐懼，但仍勇敢前行</li>
+                <li>恐懼面前的出路是：<strong>禱告，然後繼續往前</strong></li>
+            </ul>
+            <hr>
+            <h2 id="十-大使命與人生目標">十、大使命與人生目標 </h2>
+            <ul>
+                <li>
+                    <p>每個信徒都有一個不可逃避的人生使命——<strong>大使命</strong>：</p>
+                    <blockquote>
+                        <p>「你們要去使萬民作我的門徒，奉父子聖靈的名給他們施洗，凡我所吩咐你們的，都教訓他們遵守。」（馬太福音 28:19-20）</p>
+                    </blockquote>
+                </li>
+                <li>
+                    <p>愛神愛人是最大的誡命，而帶領家人信主是許多學員最重要的目標</p>
+                </li>
+                <li>
+                    <p>自己生命改變了，孩子、另一半自然會受到影響；即使他們現在不信，有一天遇到困難時，他們自然會來尋求這位上帝</p>
+                </li>
+            </ul>
+            <hr>
+            <h2 id="十一-成長班精神總結">十一、成長班精神總結 </h2>
+            <blockquote>
+                <p>「為了屬靈的生命能更上一層樓，我們需要努力自律。這意味著要付上代價——時間的代價、紀律的代價。如果我們不付上這些代價，我們是不會成長的。」</p>
+            </blockquote>
+            <ul>
+                <li>八週課程是一個<strong>關鍵的起點</strong>，不要輕易放棄</li>
+                <li>重要的是<strong>過程</strong>，不只是拿到結業證書</li>
+                <li>八週後，你的生命將會不一樣</li>
+            </ul>
+            <hr>
+            <h2 id="十二-結束禱告">十二、結束禱告 </h2>
+            <p>感謝主帶領這群弟兄姐妹。求你讓你的話語每天成為我們腳前的燈、路上的光，引領我們在職場、家庭、人際關係上都有美好的結果。賜給我們平安與喜樂。奉耶穌的名禱告，阿門。</p>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "成長班",
+                "靈修",
+                "聖經",
+                "禱告",
+                "信仰",
+                "見證",
+                "大使命",
+                "讀經",
+                "靈命成長",
+                "教會",
+                "解經",
+                "出席規定"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
