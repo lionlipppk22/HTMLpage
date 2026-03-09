@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260309 主日信息</title>
+    <meta name="description" content="失控是神佈局的起頭">
+    <meta name="keywords" content="信仰, 生活, 聖經, 主日, 恩典, 智慧, 真理">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260309 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">失控是神佈局的起頭
+                    <a href="https://www.youtube.com/live/a_JJQDOv9Fw?si=W4FGFAa_KK6GkTnx">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/a_JJQDOv9Fw?si=W4FGFAa_KK6GkTnx">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-一引言失控的人生">
+                <h2 id="一引言失控的人生">一、引言：失控的人生</h2>
+                <p>我們每個人都會有「失控」的時刻——那種好像人生脫離了原本軌道的感覺。很多事情我們無法掌握，正如聖經所說：「你們不知道明天會發生什麼事。」</p>
+                <blockquote>
+                    <p><strong>生活見證：</strong> 今天來到這裡，自己也不知道要分享什麼——這本身就是一種「失控」。但他相信，正是在這樣的時刻，神的安排往往才開始顯現。</p>
+                </blockquote>
+                <p>即便如此，我們仍有一個最重要的倚靠。耶穌說：<strong>「離了我，你們便不能做什麼。」</strong>（約翰福音 15:5）</p>
+                <p>今天透過以斯帖記第一章，我們要看見：<strong>那些看似失控的事情，背後都有神的手在引導、安排。失控，往往是神佈局的起頭。</strong></p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-二以斯帖記的背景">
+                <h2 id="二以斯帖記的背景">二、以斯帖記的背景</h2>
+                <h3 id="21-這卷書的特殊性">2.1 這卷書的特殊性</h3>
+                <p>以斯帖記在聖經中非常獨特——<strong>全書完全沒有提到「神」這個字</strong>。正因如此，猶太拉比起初曾爭議是否將它列入正典。</p>
+                <p>書中充滿了世俗的元素：</p>
+                <ul>
+                    <li>後宮政治與宮廷鬥爭</li>
+                    <li>政治陰謀與種族滅絕的威脅</li>
+                    <li>宴會、美人、驕傲與憤怒</li>
+                </ul>
+                <p>然而，正是在這些看似世俗的故事當中，我們看見神隱藏的手在默默運作。</p>
+                <h3 id="22-歷史背景">2.2 歷史背景</h3>
+                <ul>
+                    <li>故事發生地：<strong>波斯帝國</strong>（即今日伊朗）</li>
+                    <li>主要反派：大臣<strong>哈曼</strong>，企圖滅絕境內所有猶太人</li>
+                    <li>上帝的應許（創世記 12:3）：<strong>「為你祝福的，我必賜福；咒詛你的，我必咒詛。」</strong></li>
+                    <li>凡起來要消滅神子民的，最終都走向毀滅</li>
+                </ul>
+                <h3 id="23-與現今的連結">2.3 與現今的連結</h3>
+                <blockquote>
+                    <p><strong>生活見證：</strong>
+                        牧師談到，今日以色列與伊朗的衝突，正是以斯帖記這個屬靈爭戰的現代版。伊朗領導人曾公開宣稱要「把以色列從地圖上抹去」，並積極發展核武；以色列的回應是：「你還沒讓我消失之前，我先讓你消失。」飛彈來來回回，生命就這樣消失了。
+                    </p>
+                </blockquote>
+                <p>作為基督徒，我們的回應不是仇恨，而是禱告。仇恨只會引發更多仇恨，暴力只會引發更多暴力。耶穌在十字架上說的是：<strong>「父啊，赦免他們，因為他們所做的，他們不曉得。」</strong>（路加福音
+                    23:34）——那才是真正的力量。</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-三神聖的護理">
+                <h2 id="三神聖的護理">三、神聖的護理</h2>
+                <p>整個以斯帖記表面上充滿巧合，實際上背後有一個核心神學概念：</p>
+                <blockquote>
+                    <p><strong>神聖的護理（Divine Providence）</strong>——神在編織每一個人的人生故事。</p>
+                </blockquote>
+                <ul>
+                    <li>當我們走在神的軌道上，祂就繼續編織</li>
+                    <li>當我們偏離，我們就「脫軌」——就像火車出軌一樣，衝撞受損</li>
+                    <li>但感謝神，即便脫軌，祂仍渴望把我們拉回來</li>
+                </ul>
+                <blockquote>
+                    <p><strong>生活見證：</strong>
+                        會中有一位弟兄分享了自己的生命見證——生命中有許多不堪的過去，但神沒有定罪他，而是赦免他，給他一個全新的生命。牧師說，這正是神聖護理的具體樣貌：「凡在基督裡的，他就是新造的人，舊事已過，都變成新的了。」（哥林多後書
+                        5:17）</p>
+                </blockquote>
+                <blockquote>
+                    <p><strong>神的沉默，不等於神不在；神的隱藏，不等於神不作為。</strong></p>
+                </blockquote>
+                <hr />
+            </section>
+
+            <section class="section" id="section-四第一章的三個主題">
+                <h2 id="四第一章的三個主題">四、第一章的三個主題</h2>
+                <hr />
+                <h3 id="主題一炫耀的虛空權力的幻覺">主題一：炫耀的虛空——權力的幻覺</h3>
+                <h4>亞哈隨魯王的宴會</h4>
+                <p>亞哈隨魯王統治從印度到古實共 <strong>127 個省</strong>，是當時世界上最強大的帝國。他辦了一場長達 <strong>180天（半年）</strong>
+                    的大宴會，目的只有一個——展示帝國的財富與榮耀。</p>
+                <blockquote>
+                    <p>「他把他榮耀之國的豐富，和他美好威嚴的尊貴，給他們看了許多日。」（以斯帖記 1:4）</p>
+                </blockquote>
+                <p>宴會結束前，又連續宴請首都書珊城所有百姓七天，在宮廷院子裡大擺筵席。那個排場，用今天的話說，就是走路有風，百人隨行，就是要「秀給你看」。</p>
+                <h4>生活見證：那套從未用過的餐具</h4>
+                <blockquote>
+                    <p>牧師說，他有一次在海外（可能是英國或加拿大）買了一套非常昂貴的餐具，當時心想：哇，這麼精緻的東西，帶回家一定很有面子，朋友來聚會的時候就可以拿出來用。結果買回來之後，把它放在櫃子的某個角落，到現在一次都沒拿出來用過。為什麼？<strong>因為太貴了，捨不得用，萬一打破一個，整套就不完整了。</strong>
+                    </p>
+                    <p>他說，這就是「秀」的心態——買的時候是為了讓別人看見，但實際上連自己都沒用到。這種炫耀，有意義嗎？</p>
+                </blockquote>
+                <h4>炫耀的本質</h4>
+                <blockquote>
+                    <p><strong>炫耀的本質，是一種內心不安全感的呼救——渴望得到他人的肯定。</strong></p>
+                </blockquote>
+                <p>一個真正有安全感的人，需要用半年的時間來證明自己嗎？</p>
+                <p>牧師問年輕人：「為什麼需要別人看見你很厲害？」答案是：<strong>需要別人的肯定</strong>。這是人心深處的需求，但若用錯方式去滿足，就會走進炫耀與驕傲的陷阱。</p>
+                <h4>現代的炫耀</h4>
+                <p>我們今天也許沒有辦半年的宴會，但我們有社群媒體：</p>
+                <ul>
+                    <li>展示旅行、孩子、成就</li>
+                    <li>精心選角度拍照，只展示最好的那一面</li>
+                    <li>用點讚數來衡量自己的價值</li>
+                </ul>
+                <p>牧師說：<strong>「我希望大家show出健康的形態——不是為了讓別人羨慕，而是留下美好的記錄；若是工作需要，那無可厚非。但心態一定要健康，這很重要。」</strong></p>
+                <h4>巴比倫王的警告</h4>
+                <p>尼布甲尼撒王說：「這大巴比倫不是我用大能大力建為京都，要顯我威嚴的榮耀嗎？」——話還沒說完，神的審判就來了。他被趕出去，與野獸同居、吃草如牛，歷時七年。（但以理書 4章）</p>
+                <p><strong>聖經不反對財富</strong>，約伯、亞伯拉罕都很富有。問題不在於有財富，問題是：<strong>你將榮耀給誰？</strong></p>
+                <blockquote>
+                    <p>「使你與人不同的是誰呢？你有什麼不是領受的呢？若是領受的，為何自誇，仿佛不是領受的呢？」（哥林多前書 4:7）</p>
+                </blockquote>
+                <hr />
+                <h3 id="主題二不服從的勇氣尊嚴的代價">主題二：不服從的勇氣——尊嚴的代價</h3>
+                <h4>王后瓦實提的拒絕</h4>
+                <p>宴會第七天，眾人都喝得暢快，亞哈隨魯王命令王后瓦實提戴上冠冕出來，在眾人面前展示她的美貌。這是一種對女性的物化——把王后當作宴會的「壓軸節目」。</p>
+                <p>國王的命令就是法律。在那個時代，沒有人敢拒絕皇帝，因為代價可能是生命。瓦實提知道這一點，但她仍然說了 <strong>「不」</strong>。</p>
+                <h4>生活見證：瓦實提與約瑟的共鳴</h4>
+                <blockquote>
+                    <p>牧師說：「你看約瑟——主人的妻子一直引誘他，因為約瑟長得太帥了。但約瑟跑開了，他說：『我怎能做這大惡，得罪神呢？』（創世記 39:9）」</p>
+                    <p>他接著說：「弟兄們，如果有人來引誘你，你要能夠講出這句話——我怎能做這大惡，得罪神，得罪我的妻子，得罪我的孩子呢？不僅是得罪神，還得罪了你最親近的人。關係一旦有了裂痕，就很難復原了。」</p>
+                </blockquote>
+                <p>瓦實提是整個第一章裡<strong>唯一一個維護自身尊嚴的人</strong>。她的選擇讓她付出了王位的代價，但她保住了自己作為人的尊嚴。</p>
+                <h4>真正的順服是什麼？</h4>
+                <p>這個故事引出一個信仰中的核心問題：什麼時候該順服，什麼時候該拒絕？</p>
+                <ul>
+                    <li><strong>真正的順服</strong>：是在主裡面的順服，是合乎神心意的順服，是建立在互相尊重上的順服</li>
+                    <li><strong>不是盲目服從</strong>：若上位者要你做羞辱你、傷害你或違背聖經的事，你有責任說不</li>
+                    <li><strong>彼得的榜樣</strong>：「順從神，不順從人，這才是應當的。」（使徒行傳 5:29）</li>
+                </ul>
+                <blockquote>
+                    <p>牧師說：「當世界要你學他們的時候，每個人都要做出選擇。他們會告訴你：大家都這樣嘛。只是聊聊天啦。就喝一杯而已。靠近一點沒關係啦。然後慢慢地，界線就一步一步跨過去了，最後就失控了。」</p>
+                </blockquote>
+                <p>真正的順服是對真理與尊重的服從，<strong>而非對羞辱與傷害的屈服</strong>。</p>
+                <blockquote>
+                    <p><strong>「有時妥協的代價，比拒絕的代價更昂貴。」</strong></p>
+                </blockquote>
+                <p>瓦實提失去王位，但保住了尊嚴。每個人都必須在那個時刻做出自己的選擇，沒有人能替你回答。</p>
+                <hr />
+                <h3 id="主題三憤怒的失控情緒的教訓">主題三：憤怒的失控——情緒的教訓</h3>
+                <h4>王的憤怒</h4>
+                <p>王后拒絕之後，亞哈隨魯王「大為忿怒，心如烈火」。他的憤怒源自：</p>
+                <ul>
+                    <li><strong>面子掛不住</strong>——在所有大臣與賓客面前丟了顏面</li>
+                    <li><strong>酒的衝動</strong>——酒後判斷力大降，情緒加速失控</li>
+                </ul>
+                <p>他沒有詢問王后原因，沒有給任何解釋的機會，立刻轉向大臣們尋求「建議」。</p>
+                <h4>生活見證：尋求建議的真實動機</h4>
+                <blockquote>
+                    <p>牧師說：「你知道嗎？我們很多時候向別人尋求意見，其實不是真的在找真理。我們是在找一個人站到我們這邊。如果對方幫另一邊說話，我們就不高興：你怎麼可以幫他說話？你怎麼可以幫我先生說話？我們真正想要的，是有人替我們發更大的聲音去反擊對方。」
+                    </p>
+                </blockquote>
+                <p>這正是亞哈隨魯王所做的。他找到的是大臣米慕干，而米慕干給出了一個看似有理、實則充滿私心的建議：</p>
+                <blockquote>
+                    <p>「若不懲處王后，全國的婦女都會效仿，丈夫就無法管理妻子了，家裡的男人往哪裡擺？」</p>
+                </blockquote>
+                <p>大臣們真的是為王著想嗎？不是。他們是為了自己家中的「管理權」在說話。這種建議聽起來很有道理，但出發點是自私的利益，不是真理。</p>
+                <h4>生活見證：亞哈王與拿伯的葡萄園</h4>
+                <blockquote>
+                    <p>牧師舉了另一個例子：亞哈王看中了拿伯的葡萄園，想要買下來。拿伯說：「這是我祖先留下的產業，我不能賣。」亞哈王回去之後，在床上不吃飯，悶悶不樂。王后耶洗別來問：「你為什麼不吃飯？」他就說了那個原因。耶洗別說：「你貴為以色列王，還怕這個？我來幫你想辦法。」結果她用詭計害死了拿伯，奪走他的葡萄園。（列王紀上
+                        21章）</p>
+                    <p>牧師說：「你看，這些旁邊的人不是在幫你，他們是在害你。有些人給你的建議，表面上是在支持你，實際上是在讓你更往深淵走。」</p>
+                </blockquote>
+                <h4>生活見證：彼拉多洗手的幽默</h4>
+                <blockquote>
+                    <p>牧師說：「你知道彼拉多嗎？他其實要放耶穌的。他的妻子還做夢提醒他：這個人是義人啊。他自己也說，我查不出他有什麼罪。可是那些宗教領袖說：你如果放了他，你就是跟羅馬皇帝為敵。彼拉多一聽，嚇到了，他開始想自己的王位。所以他就把耶穌交出去，然後做了一個動作——去洗手，說：這件事不干我的事。」
+                    </p>
+                    <p>「你看，這些人都是什麼？怒氣、面子、群眾壓力，就導向了錯誤的決定。」</p>
+                </blockquote>
+                <h4>憤怒的聖經原則</h4>
+                <blockquote>
+                    <p>「生氣卻不要犯罪，不可含怒到日落，也不可給魔鬼留地步。」（以弗所書 4:26-27）</p>
+                </blockquote>
+                <p><strong>憤怒本身不是罪</strong>——耶穌也曾動怒，把聖殿裡做買賣的人都趕出去（約翰福音 2章），那是義怒。但<strong>憤怒往往是犯罪最快的捷徑</strong>。</p>
+                <h4>憤怒中的三個「不要」</h4>
+                <ol>
+                    <li><strong>不要在生氣時做重大決定</strong> — 亞哈隨魯王就是前車之鑑，一怒之下廢了王后，結果引出了整個以斯帖記的故事</li>
+                    <li><strong>不要在受傷時發出訊息</strong> — 話說出去、訊息傳出去，就收不回來了</li>
+                    <li><strong>不要在氣頭上決定終生</strong> — 牧師說：「被人甩了，就馬上去找另一個人，想證明自己有人愛、有價值，這叫氣頭上定終生。衝動之下做的決定，往往帶來更大的後悔。」
+                    </li>
+                </ol>
+                <h4>面對憤怒的四個步驟</h4>
+                <ol>
+                    <li><strong>停止</strong> — 停下來，不要繼續說話或行動</li>
+                    <li><strong>離開現場</strong> — 讓自己從衝突的環境中抽離，讓腦袋冷靜下來</li>
+                    <li><strong>禱告</strong> — 進入神的面前，讓聖靈平息你的情緒，讓神的智慧取代你的衝動</li>
+                    <li><strong>尋找合適時機溝通</strong> — 等情緒平復後，好好地與對方溝通，不可讓日落之後你還在生氣</li>
+                </ol>
+                <blockquote>
+                    <p>牧師說：「這些道理我們都懂，但你知道做嗎？當你想噴的時候，你是不是就噴了？這就是要一點一滴被神改變的地方。」</p>
+                </blockquote>
+                <hr />
+            </section>
+
+            <section class="section" id="section-五整章的核心洞見">
+                <h2 id="五整章的核心洞見">五、整章的核心洞見</h2>
+                <p>表面上第一章只是一個皇帝辦宴會、王后不聽話的故事，但這一切「失控」的背後，有一隻看不見的手：</p>
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tbody>
+                        <tr>
+                            <th style="text-align: center;">行動</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">炫耀財富、酒後動怒、廢后</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">拒絕屈辱，被廢</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">給出自私的建議</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>然而，若瓦實提沒有被廢，以斯帖就不會成為王后；若以斯帖不成為王后，以色列民族就沒有人來拯救。</p>
+                <blockquote>
+                    <p>牧師說：「你看，在這當中有一個虛榮的皇帝，有一個勇敢的王后，有一群自私的大臣。但是在他們的背後，有一雙看不見的手在引導整個故事走向拯救。這就是神聖的護理。」</p>
+                </blockquote>
+                <p><strong>「萬事都互相效力，叫愛神的人得益處。」</strong>（羅馬書 8:28）</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-六給我們的回應">
+                <h2 id="六給我們的回應">六、給我們的回應</h2>
+                <h3 id="61-停止炫耀將榮耀歸神">6.1 停止炫耀，將榮耀歸神</h3>
+                <p>我們所擁有的一切都是神賜的。不論是財富、才能、孩子、健康，都不是用來炫耀的，而是用來榮耀神、祝福他人的。</p>
+                <h3 id="62-學習真正的順服">6.2 學習真正的順服</h3>
+                <p>不是盲目服從，而是在神的真理與互相尊重中的順服。當有人要你跨越道德與信仰的界線，學瓦實提，學約瑟——說「不」，付上代價，但保住尊嚴。</p>
+                <h3 id="63-管理情緒慢慢動怒">6.3 管理情緒，慢慢動怒</h3>
+                <p>「快快的聽，慢慢的說，慢慢的動怒。」（雅各書 1:19）
+                    生氣不是罪，但在憤怒中做的決定，往往是最後悔的決定。</p>
+                <h3 id="64-信靠神的護理">6.4 信靠神的護理</h3>
+                <blockquote>
+                    <p>牧師說：「我不知道今天你帶著什麼樣的處境來到這個聚會。也許你現在就像以斯帖記第一章一樣，一片混亂，看不見神。但記住這一句話——<strong>神的沉默，不等於神不在；神的隱藏，不等於神不作為。祂正在為你預備更美好的事。</strong>」
+                    </p>
+                </blockquote>
+                <p>就像那位弟兄的見證一樣——過去有許多不堪，但神沒有放棄他。神賜給他一個新的生命，因為祂來不是要定罪我們，而是要赦免我們，重新開始。</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-七聖餐的意義">
+                <h2 id="七聖餐的意義">七、聖餐的意義</h2>
+                <p>今天我們一同領受聖餐，是再一次與神立約：</p>
+                <ul>
+                    <li><strong>餅</strong>代表耶穌的身體——為我們破碎，使我們可以領受復活的生命</li>
+                    <li><strong>杯</strong>代表耶穌的血——立定新約，赦免我們的罪，帶來醫治與恢復</li>
+                </ul>
+                <blockquote>
+                    <p>「他受的鞭傷，可以叫我們得醫治。」（以賽亞書 53:5）</p>
+                </blockquote>
+                <p>當我們領受聖餐，就是宣告：</p>
+                <ul>
+                    <li>我再一次把自己奉獻給神</li>
+                    <li>我相信祂是夠用的恩典</li>
+                    <li>無論身體、心靈、財務、婚姻有何需要，我將一切帶到祂面前</li>
+                </ul>
+                <p>領受之後，若有需要，歡迎到前面來，讓代禱團隊為你禱告。</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-八結束禱告">
+                <h2 id="八結束禱告">八、結束禱告</h2>
+                <p>主啊，求你除去我們所有的驕傲與自己的意志。讓我們藉著領受這餅與杯，與你恢復那個美好的關係。你是葡萄樹，我們是枝子——求你讓我們與你緊緊連結，使我們裡面滿有生命的汁漿。你是拉法的神，你的醫治要臨到；你是以勒的神，你的預備要臨到。即便我們看不見，我們知道你仍然在動工，你在預備更大的事在我們生命中。奉耶穌的名禱告，阿門。
+                </p>
+            </section>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "信仰",
+                "生活",
+                "聖經",
+                "主日",
+                "恩典",
+                "智慧",
+                "真理"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
