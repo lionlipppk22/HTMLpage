@@ -1,0 +1,816 @@
+/* ================================================================
+   style.css  ·  Academic Conference Theme
+   Target: Markdown Preview Enhanced  (body[for="html-export"])
+   Selector root: .crossnote.markdown-preview
+   Covers: h1-h6, p, a, blockquote, hr, table, ul/ol, task-list,
+           code(inline), pre>code, img, figure, strong/em/del,
+           kbd, dl/dt/dd, footnotes, math, TOC, print
+   ================================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Design Tokens ────────────────────────────────────────────── */
+:root {
+  --prussian:   #1a2e44;
+  --navy:       #243b55;
+  --ocean:      #2e5985;
+  --sky:        #4a88c7;
+  --ice:        #c8dff5;
+  --ice-light:  #eaf3fc;
+
+  --slate-900:  #1c2028;
+  --slate-700:  #3d4555;
+  --slate-600:  #525c72;
+  --slate-500:  #6b7591;
+  --slate-400:  #8f97b0;
+  --slate-300:  #b8bfd4;
+  --slate-200:  #d4d9e8;
+  --slate-100:  #eef1f8;
+  --white:      #fafbfd;
+
+  --gold:       #b8923c;
+  --gold-light: #e8d08a;
+  --gold-bg:    #fdf6e3;
+  --gold-border:#e8d4a0;
+
+  --crimson:    #b5314c;
+  --crimson-bg: #fdeef2;
+  --green:      #276749;
+  --green-bg:   #edfaf3;
+  --amber:      #d4a017;
+  --amber-bg:   #fff8e6;
+
+  --font-serif: 'Noto Serif TC', 'Georgia', 'Times New Roman', serif;
+  --font-sans:  'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:  'DM Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --radius-sm:  4px;
+  --radius:     8px;
+  --radius-lg:  14px;
+  --shadow-sm:  0 1px 4px rgba(26,46,68,.08);
+  --shadow-md:  0 3px 14px rgba(26,46,68,.11), 0 1px 4px rgba(26,46,68,.06);
+  --shadow-lg:  0 8px 32px rgba(26,46,68,.15), 0 2px 8px rgba(26,46,68,.07);
+  --ease:       cubic-bezier(.4,0,.2,1);
+  --transition: 180ms var(--ease);
+}
+
+
+/* ================================================================
+   1. PAGE BACKGROUND & CARD WRAPPER
+   ================================================================ */
+html body[for="html-export"] {
+  background: #dde6f0 !important;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(74,136,199,.2) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(26,46,68,.14) 0%, transparent 40%) !important;
+  min-height: 100vh !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* Override MPE built-in centering */
+html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview,
+html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+  position:      relative     !important;
+  left:          auto         !important;
+  transform:     none         !important;
+  top:           auto         !important;
+
+  max-width:     800px        !important;
+  width:         auto         !important;
+  margin:        2.5rem auto  !important;
+  padding:       3rem 3.5rem  !important;
+  box-sizing:    border-box   !important;
+
+  background:    var(--white)      !important;
+  border-radius: var(--radius-lg)  !important;
+  box-shadow:    var(--shadow-lg)  !important;
+  border-top:    5px solid var(--ocean) !important;
+
+  font-family:   var(--font-sans) !important;
+  font-size:     1rem             !important;
+  line-height:   1.85             !important;
+  color:         var(--slate-700) !important;
+}
+
+@media (max-width: 860px) {
+  html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+    margin:  1.25rem !important;
+    padding: 2rem 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+    margin:        0.5rem !important;
+    padding:       1.5rem 1.1rem !important;
+    border-radius: var(--radius) !important;
+  }
+}
+
+
+/* ================================================================
+   2. HEADINGS  h1 – h6
+   ================================================================ */
+.crossnote.markdown-preview h1,
+.crossnote.markdown-preview h2,
+.crossnote.markdown-preview h3,
+.crossnote.markdown-preview h4,
+.crossnote.markdown-preview h5,
+.crossnote.markdown-preview h6 {
+  font-family:    var(--font-serif) !important;
+  color:          var(--prussian)   !important;
+  line-height:    1.3               !important;
+  letter-spacing: -.015em           !important;
+  margin-top:     2rem              !important;
+  margin-bottom:  .65rem            !important;
+}
+
+/* H1 — page title with gold underline */
+.crossnote.markdown-preview h1 {
+  font-size:      2rem              !important;
+  font-weight:    700               !important;
+  margin-top:     0                 !important;
+  padding-bottom: .65rem            !important;
+  border-bottom:  3px solid var(--gold) !important;
+  color:          var(--prussian)   !important;
+}
+
+/* H2 — section with ocean left bar */
+.crossnote.markdown-preview h2 {
+  font-size:    1.45rem             !important;
+  font-weight:  600                 !important;
+  padding-left: .85rem              !important;
+  border-left:  4px solid var(--ocean) !important;
+  border-bottom: none               !important;
+  color:        var(--navy)         !important;
+  margin-top:   2.4rem              !important;
+}
+
+/* H3 — sky accent */
+.crossnote.markdown-preview h3 {
+  font-size:    1.15rem             !important;
+  font-weight:  600                 !important;
+  color:        var(--ocean)        !important;
+  padding-left: .6rem               !important;
+  border-left:  3px solid var(--ice) !important;
+}
+
+/* H4 */
+.crossnote.markdown-preview h4 {
+  font-size:   1.05rem              !important;
+  font-weight: 600                  !important;
+  color:       var(--slate-700)     !important;
+}
+
+/* H5 — small caps style */
+.crossnote.markdown-preview h5 {
+  font-size:      .875rem           !important;
+  font-weight:    600               !important;
+  color:          var(--slate-500)  !important;
+  text-transform: uppercase         !important;
+  letter-spacing: .07em             !important;
+  font-family:    var(--font-sans)  !important;
+}
+
+/* H6 */
+.crossnote.markdown-preview h6 {
+  font-size:   .875rem              !important;
+  font-weight: 600                  !important;
+  color:       var(--slate-400)     !important;
+  font-family: var(--font-sans)     !important;
+}
+
+/* Linked headings */
+.crossnote.markdown-preview h1 a,
+.crossnote.markdown-preview h2 a,
+.crossnote.markdown-preview h3 a,
+.crossnote.markdown-preview h4 a,
+.crossnote.markdown-preview h5 a,
+.crossnote.markdown-preview h6 a {
+  color:       inherit !important;
+  border-bottom: none !important;
+}
+
+
+/* ================================================================
+   3. PARAGRAPH & INLINE TEXT
+   ================================================================ */
+.crossnote.markdown-preview p {
+  margin-top:    0          !important;
+  margin-bottom: 1rem       !important;
+  color:         var(--slate-700) !important;
+  line-height:   1.85       !important;
+}
+
+.crossnote.markdown-preview strong,
+.crossnote.markdown-preview b {
+  font-weight: 600           !important;
+  color:       var(--prussian) !important;
+}
+
+.crossnote.markdown-preview em,
+.crossnote.markdown-preview i {
+  font-style: italic         !important;
+  color:      var(--slate-600) !important;
+}
+
+.crossnote.markdown-preview del,
+.crossnote.markdown-preview s {
+  color:           var(--slate-400) !important;
+  text-decoration: line-through     !important;
+}
+
+.crossnote.markdown-preview mark {
+  background:    #fff3b8            !important;
+  color:         var(--slate-900)   !important;
+  padding:       .1em .35em         !important;
+  border-radius: var(--radius-sm)   !important;
+}
+
+.crossnote.markdown-preview sup {
+  font-size:      .72em             !important;
+  vertical-align: super             !important;
+  line-height:    0                 !important;
+}
+.crossnote.markdown-preview sub {
+  font-size:      .72em             !important;
+  vertical-align: sub               !important;
+  line-height:    0                 !important;
+}
+
+.crossnote.markdown-preview abbr[title] {
+  text-decoration: underline dotted var(--slate-300) !important;
+  cursor:          help !important;
+}
+
+
+/* ================================================================
+   4. LINKS
+   ================================================================ */
+.crossnote.markdown-preview a {
+  color:           var(--ocean)             !important;
+  text-decoration: none                     !important;
+  border-bottom:   1px solid rgba(46,89,133,.3) !important;
+  transition:      color var(--transition), border-color var(--transition) !important;
+  word-break:      break-word               !important;
+}
+.crossnote.markdown-preview a:hover {
+  color:        var(--sky) !important;
+  border-color: var(--sky) !important;
+}
+
+/* Audio / media links — pill button style */
+.crossnote.markdown-preview a[href$=".mp3"],
+.crossnote.markdown-preview a[href$=".mp4"],
+.crossnote.markdown-preview a[href$=".wav"],
+.crossnote.markdown-preview a[href$=".ogg"] {
+  display:       inline-flex        !important;
+  align-items:   center             !important;
+  gap:           .4em               !important;
+  border-bottom: none               !important;
+  background:    var(--ice-light)   !important;
+  color:         var(--ocean)       !important;
+  padding:       .3em .85em         !important;
+  border-radius: 100px              !important;
+  font-size:     .9rem              !important;
+  font-weight:   500                !important;
+  transition:    background var(--transition), color var(--transition) !important;
+}
+.crossnote.markdown-preview a[href$=".mp3"]:hover,
+.crossnote.markdown-preview a[href$=".mp4"]:hover,
+.crossnote.markdown-preview a[href$=".wav"]:hover {
+  background: var(--ice)  !important;
+  color:      var(--navy) !important;
+}
+
+/* PDF links */
+.crossnote.markdown-preview a[href$=".pdf"] {
+  border-bottom: none !important;
+  background:    var(--crimson-bg) !important;
+  color:         var(--crimson)    !important;
+  padding:       .2em .7em        !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+
+/* ================================================================
+   5. HORIZONTAL RULE
+   ================================================================ */
+.crossnote.markdown-preview hr {
+  border:     none              !important;
+  height:     auto              !important;
+  background: none              !important;
+  margin:     2.5rem 0          !important;
+  text-align: center            !important;
+}
+.crossnote.markdown-preview hr::before {
+  content:        '· · ·'         !important;
+  display:        block            !important;
+  color:          var(--slate-300) !important;
+  font-size:      1.5rem           !important;
+  letter-spacing: .6em             !important;
+  line-height:    1                !important;
+}
+
+
+/* ================================================================
+   6. BLOCKQUOTE — scripture / citation style
+   ================================================================ */
+.crossnote.markdown-preview blockquote {
+  margin:        1.5rem 0               !important;
+  padding:       1rem 1.4rem 1rem 2rem  !important;
+  background:    var(--gold-bg)         !important;
+  border-left:   4px solid var(--gold)  !important;
+  border-radius: 0 var(--radius) var(--radius) 0 !important;
+  font-family:   var(--font-serif)      !important;
+  font-size:     1.05rem                !important;
+  font-style:    italic                 !important;
+  color:         var(--slate-700)       !important;
+  line-height:   1.9                    !important;
+  position:      relative               !important;
+  box-shadow:    var(--shadow-sm)       !important;
+}
+.crossnote.markdown-preview blockquote::before {
+  content:     '\201C'             !important;
+  position:    absolute            !important;
+  top:         -.3rem              !important;
+  left:        .5rem               !important;
+  font-size:   3rem                !important;
+  line-height: 1                   !important;
+  color:       var(--gold-border)  !important;
+  font-family: var(--font-serif)   !important;
+  font-style:  normal              !important;
+}
+.crossnote.markdown-preview blockquote p {
+  margin-bottom: 0 !important;
+}
+.crossnote.markdown-preview blockquote > :first-child { margin-top:    0 !important; }
+.crossnote.markdown-preview blockquote > :last-child  { margin-bottom: 0 !important; }
+
+/* Nested blockquote */
+.crossnote.markdown-preview blockquote blockquote {
+  margin-top:  .75rem             !important;
+  background:  var(--ice-light)   !important;
+  border-color: var(--sky)        !important;
+}
+.crossnote.markdown-preview blockquote blockquote::before {
+  color: var(--ice) !important;
+}
+
+
+/* ================================================================
+   7. LISTS  ul / ol / nested / task-list
+   ================================================================ */
+.crossnote.markdown-preview ul,
+.crossnote.markdown-preview ol {
+  padding-left:  1.6rem    !important;
+  margin-bottom: 1rem      !important;
+}
+.crossnote.markdown-preview li {
+  margin-bottom: .35rem    !important;
+  color:         var(--slate-700) !important;
+  line-height:   1.75      !important;
+}
+.crossnote.markdown-preview li > p { margin-bottom: .2rem !important; }
+
+/* -- Unordered — custom triangle bullet */
+.crossnote.markdown-preview ul          { list-style: none !important; }
+.crossnote.markdown-preview ul li       { position: relative !important; padding-left: .3rem !important; }
+.crossnote.markdown-preview ul li::before {
+  content:  '▸'              !important;
+  position: absolute         !important;
+  left:     -1.15rem         !important;
+  color:    var(--ocean)     !important;
+  font-size: .8em            !important;
+  top:      .18em            !important;
+}
+/* Level 2 */
+.crossnote.markdown-preview ul ul li::before {
+  content: '–' !important;
+  color:   var(--slate-400) !important;
+}
+/* Level 3 */
+.crossnote.markdown-preview ul ul ul li::before {
+  content: '·' !important;
+  color:   var(--slate-300) !important;
+}
+
+/* -- Ordered */
+.crossnote.markdown-preview ol { list-style: decimal !important; }
+.crossnote.markdown-preview ol li::marker {
+  color:       var(--ocean)     !important;
+  font-weight: 600              !important;
+  font-family: var(--font-mono) !important;
+  font-size:   .85em            !important;
+}
+.crossnote.markdown-preview ol ol     { list-style-type: lower-alpha !important; }
+.crossnote.markdown-preview ol ol ol  { list-style-type: lower-roman !important; }
+
+/* -- Task list */
+.crossnote.markdown-preview li.task-list-item {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+.crossnote.markdown-preview li.task-list-item::before { display: none !important; }
+.crossnote.markdown-preview .task-list-item-checkbox {
+  margin-right:   .5em         !important;
+  width:          1em          !important;
+  height:         1em          !important;
+  accent-color:   var(--ocean) !important;
+  vertical-align: middle       !important;
+  cursor:         pointer      !important;
+}
+
+
+/* ================================================================
+   8. TABLES
+   ================================================================ */
+.crossnote.markdown-preview table {
+  width:           100%              !important;
+  margin:          1.5rem 0          !important;
+  border-collapse: collapse          !important;
+  border-spacing:  0                 !important;
+  display:         table             !important;
+  font-size:       .9375rem          !important;
+  border-radius:   var(--radius)     !important;
+  overflow:        hidden            !important;
+  box-shadow:      var(--shadow-md)  !important;
+}
+.crossnote.markdown-preview table th {
+  background:     var(--prussian)    !important;
+  color:          var(--white)       !important;
+  font-family:    var(--font-sans)   !important;
+  font-weight:    600                !important;
+  font-size:      .8125rem           !important;
+  letter-spacing: .05em              !important;
+  text-transform: uppercase          !important;
+  padding:        .75rem 1rem        !important;
+  border:         none               !important;
+  text-align:     left               !important;
+}
+.crossnote.markdown-preview table td {
+  padding:        .65rem 1rem        !important;
+  border:         none               !important;
+  border-bottom:  1px solid var(--slate-100) !important;
+  color:          var(--slate-700)   !important;
+  vertical-align: top                !important;
+  line-height:    1.65               !important;
+}
+/* Zebra striping */
+.crossnote.markdown-preview table tr:nth-child(even) td {
+  background: var(--slate-100) !important;
+}
+/* Hover row highlight */
+.crossnote.markdown-preview table tr:hover td {
+  background:  var(--ice-light) !important;
+  transition:  background var(--transition) !important;
+}
+/* First column emphasis */
+.crossnote.markdown-preview table td:first-child {
+  font-weight: 500           !important;
+  color:       var(--navy)   !important;
+}
+/* No bottom border on last row */
+.crossnote.markdown-preview table tr:last-child td {
+  border-bottom: none !important;
+}
+
+
+/* ================================================================
+   9. INLINE CODE
+   ================================================================ */
+.crossnote.markdown-preview code {
+  font-family:   var(--font-mono)   !important;
+  font-size:     .84em              !important;
+  color:         var(--crimson)     !important;
+  background:    var(--crimson-bg)  !important;
+  border:        1px solid rgba(181,49,76,.15) !important;
+  border-radius: var(--radius-sm)   !important;
+  padding:       .15em .45em        !important;
+  word-break:    break-all          !important;
+}
+.crossnote.markdown-preview code::before,
+.crossnote.markdown-preview code::after {
+  content:         '' !important;
+  letter-spacing:  0  !important;
+}
+
+
+/* ================================================================
+   10. CODE BLOCKS  pre > code
+   ================================================================ */
+.crossnote.markdown-preview pre {
+  background:    var(--slate-900)    !important;
+  border-radius: var(--radius)       !important;
+  padding:       1.25rem 1.5rem      !important;
+  margin:        1.5rem 0            !important;
+  overflow-x:    auto                !important;
+  box-shadow:    var(--shadow-md)    !important;
+  position:      relative            !important;
+  border-left:   3px solid var(--sky) !important;
+}
+.crossnote.markdown-preview pre code {
+  font-family:  var(--font-mono) !important;
+  font-size:    .875rem          !important;
+  color:        #cdd6f4          !important;
+  background:   transparent      !important;
+  border:       none             !important;
+  padding:      0                !important;
+  line-height:  1.65             !important;
+  word-break:   normal           !important;
+  white-space:  pre              !important;
+}
+.crossnote.markdown-preview pre code::before,
+.crossnote.markdown-preview pre code::after { content: '' !important; }
+
+
+/* ================================================================
+   11. IMAGES
+   ================================================================ */
+.crossnote.markdown-preview img {
+  max-width:     100%              !important;
+  height:        auto              !important;
+  display:       block             !important;
+  margin:        1.5rem auto       !important;
+  border-radius: var(--radius)     !important;
+  box-shadow:    var(--shadow-md)  !important;
+  border:        1px solid var(--slate-200) !important;
+  transition:    box-shadow var(--transition), transform var(--transition) !important;
+}
+.crossnote.markdown-preview img:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform:  translateY(-2px) !important;
+}
+
+/* Full-bleed option: add {.full} after image in MPE */
+.crossnote.markdown-preview img.full {
+  max-width:     calc(100% + 7rem)  !important;
+  width:         calc(100% + 7rem)  !important;
+  margin-left:   -3.5rem           !important;
+  margin-right:  -3.5rem           !important;
+  border-radius: 0                 !important;
+  border:        none              !important;
+}
+
+/* Figure + caption */
+.crossnote.markdown-preview figure {
+  margin:     1.5rem 0   !important;
+  text-align: center     !important;
+}
+.crossnote.markdown-preview figure img { margin-bottom: .5rem !important; }
+.crossnote.markdown-preview figcaption {
+  font-size:  .8125rem          !important;
+  color:      var(--slate-500)  !important;
+  font-style: italic            !important;
+  margin-top: .4rem             !important;
+}
+
+
+/* ================================================================
+   12. KEYBOARD  kbd
+   ================================================================ */
+.crossnote.markdown-preview kbd {
+  display:       inline-block           !important;
+  font-family:   var(--font-mono)       !important;
+  font-size:     .8em                   !important;
+  color:         var(--prussian)        !important;
+  background:    var(--white)           !important;
+  border:        1px solid var(--slate-300) !important;
+  border-bottom: 3px solid var(--slate-300) !important;
+  border-radius: var(--radius-sm)       !important;
+  padding:       .15em .55em            !important;
+  box-shadow:    inset 0 -1px 0 var(--slate-200) !important;
+  white-space:   nowrap                 !important;
+}
+
+
+/* ================================================================
+   13. DEFINITION LISTS  dl / dt / dd
+   ================================================================ */
+.crossnote.markdown-preview dl {
+  margin-bottom: 1rem     !important;
+  padding:       0        !important;
+}
+.crossnote.markdown-preview dt {
+  font-weight:  600              !important;
+  color:        var(--navy)      !important;
+  font-family:  var(--font-serif) !important;
+  font-size:    1rem             !important;
+  font-style:   normal           !important;
+  margin-top:   1rem             !important;
+  margin-bottom: .25rem          !important;
+}
+.crossnote.markdown-preview dd {
+  padding-left:  1.5rem           !important;
+  margin-left:   0                !important;
+  margin-bottom: .5rem            !important;
+  color:         var(--slate-600) !important;
+  border-left:   2px solid var(--slate-200) !important;
+}
+
+
+/* ================================================================
+   14. FOOTNOTES  (.footnotes)
+   ================================================================ */
+.crossnote.markdown-preview .footnotes {
+  margin-top:  3rem              !important;
+  padding-top: 1.5rem            !important;
+  border-top:  1px dashed var(--slate-200) !important;
+  font-size:   .875rem           !important;
+  color:       var(--slate-500)  !important;
+}
+.crossnote.markdown-preview .footnotes ol { padding-left: 1.4rem !important; }
+.crossnote.markdown-preview .footnotes li { margin-bottom: .4rem !important; }
+.crossnote.markdown-preview .footnote-ref a,
+.crossnote.markdown-preview .footnotes a {
+  border-bottom: none               !important;
+  font-family:   var(--font-mono)   !important;
+  font-size:     .8em               !important;
+  background:    var(--ice-light)   !important;
+  padding:       .05em .35em        !important;
+  border-radius: var(--radius-sm)   !important;
+  color:         var(--ocean)       !important;
+}
+
+
+/* ================================================================
+   15. TABLE OF CONTENTS  .md-toc
+   ================================================================ */
+.crossnote.markdown-preview .md-toc {
+  background:    var(--ice-light)     !important;
+  border:        1px solid var(--ice) !important;
+  border-left:   3px solid var(--ocean) !important;
+  border-radius: var(--radius)        !important;
+  padding:       1rem 1.5rem          !important;
+  margin-bottom: 2rem                 !important;
+  font-size:     .9rem                !important;
+}
+.crossnote.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+  color:        var(--ocean) !important;
+  border-bottom: none        !important;
+  display:       inline-block !important;
+  padding:       .2rem 0     !important;
+  transition:    color var(--transition) !important;
+}
+.crossnote.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link:hover {
+  color: var(--prussian) !important;
+}
+.crossnote.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+  font-weight: 700             !important;
+  color:       var(--prussian) !important;
+}
+
+
+/* ================================================================
+   16. ALERT / ADMONITION BLOCKQUOTES
+   Usage in MPE: > text {.note} / {.warning} / {.danger} / {.tip}
+   ================================================================ */
+.crossnote.markdown-preview blockquote.note {
+  background:   var(--ice-light)  !important;
+  border-color: var(--sky)        !important;
+}
+.crossnote.markdown-preview blockquote.note::before   { color: var(--ice) !important; }
+
+.crossnote.markdown-preview blockquote.warning {
+  background:   var(--amber-bg)   !important;
+  border-color: var(--amber)      !important;
+}
+.crossnote.markdown-preview blockquote.warning::before { color: #f0d080 !important; }
+
+.crossnote.markdown-preview blockquote.danger {
+  background:   var(--crimson-bg) !important;
+  border-color: var(--crimson)    !important;
+}
+.crossnote.markdown-preview blockquote.danger::before  { color: #e08090 !important; }
+
+.crossnote.markdown-preview blockquote.tip {
+  background:   var(--green-bg)   !important;
+  border-color: var(--green)      !important;
+}
+.crossnote.markdown-preview blockquote.tip::before     { color: #80d4a8 !important; }
+
+
+/* ================================================================
+   17. MATH / MATHJAX / KATEX
+   ================================================================ */
+.crossnote.markdown-preview .mathjax-exps .MathJax_Display {
+  text-align: center  !important;
+  overflow-x: auto    !important;
+  padding:    .5rem 0 !important;
+}
+.crossnote.markdown-preview .MathJax {
+  color: var(--prussian) !important;
+}
+.crossnote.markdown-preview .katex-display {
+  overflow-x: auto                !important;
+  padding:    .75rem 0            !important;
+  text-align: center              !important;
+  color:      var(--prussian)     !important;
+}
+
+
+/* ================================================================
+   18. SIDEBAR TOC (when panel is open)
+   ================================================================ */
+html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc {
+  background:   var(--white)          !important;
+  border-right: 1px solid var(--slate-100) !important;
+  padding:      2rem 0 4rem           !important;
+  font-size:    .875rem               !important;
+  font-family:  var(--font-sans)      !important;
+}
+html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc a {
+  color:           var(--slate-600) !important;
+  text-decoration: none             !important;
+  transition:      color var(--transition) !important;
+}
+html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc a:hover {
+  color: var(--ocean) !important;
+}
+
+#sidebar-toc-btn {
+  color:      var(--ocean) !important;
+  opacity:    .5           !important;
+  transition: opacity var(--transition) !important;
+}
+#sidebar-toc-btn:hover { opacity: 1 !important; }
+
+
+/* ================================================================
+   19. SCROLLBAR  (WebKit)
+   ================================================================ */
+.crossnote.markdown-preview::-webkit-scrollbar         { width: 6px !important; }
+.crossnote.markdown-preview::-webkit-scrollbar-track   { background: transparent !important; }
+.crossnote.markdown-preview::-webkit-scrollbar-thumb   {
+  background:    rgba(46,89,133,.25) !important;
+  border-radius: 3px                 !important;
+}
+.crossnote.markdown-preview::-webkit-scrollbar-thumb:hover {
+  background: rgba(46,89,133,.5) !important;
+}
+
+
+/* ================================================================
+   20. PRINT
+   ================================================================ */
+@media print {
+  html body[for="html-export"] {
+    background: #fff !important;
+  }
+  html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+    margin:        0        !important;
+    padding:       1.5cm 2cm !important;
+    box-shadow:    none     !important;
+    border-top:    none     !important;
+    border-radius: 0        !important;
+    max-width:     100%     !important;
+  }
+  .crossnote.markdown-preview h1,
+  .crossnote.markdown-preview h2,
+  .crossnote.markdown-preview h3,
+  .crossnote.markdown-preview h4,
+  .crossnote.markdown-preview h5,
+  .crossnote.markdown-preview h6 {
+    color:            var(--prussian) !important;
+    page-break-after: avoid          !important;
+  }
+  .crossnote.markdown-preview p,
+  .crossnote.markdown-preview li { orphans: 3 !important; widows: 3 !important; }
+  .crossnote.markdown-preview pre,
+  .crossnote.markdown-preview blockquote,
+  .crossnote.markdown-preview table,
+  .crossnote.markdown-preview img {
+    page-break-inside: avoid  !important;
+  }
+  .crossnote.markdown-preview pre {
+    background:  var(--slate-100) !important;
+    color:       var(--slate-900) !important;
+    box-shadow:  none             !important;
+    border:      1px solid var(--slate-200) !important;
+  }
+  .crossnote.markdown-preview pre code {
+    color: var(--slate-900) !important;
+  }
+  .crossnote.markdown-preview table {
+    display:    table !important;
+    box-shadow: none  !important;
+  }
+  .crossnote.markdown-preview a {
+    color:        var(--prussian) !important;
+    border-bottom: none           !important;
+  }
+  .crossnote.markdown-preview a[href^="http"]::after,
+  .crossnote.markdown-preview a[href^="https"]::after {
+    content:   ' (' attr(href) ')' !important;
+    font-size: .75em               !important;
+    color:     var(--slate-400)    !important;
+  }
+  .crossnote.markdown-preview img {
+    box-shadow: none !important;
+    border:     1px solid #ccc !important;
+  }
+  .crossnote.markdown-preview hr::before {
+    color: #ccc !important;
+  }
+  #sidebar-toc-btn { display: none !important; }
+}

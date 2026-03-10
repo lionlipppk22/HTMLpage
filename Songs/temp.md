@@ -1,4 +1,5 @@
 
+![](https://www.shutterstock.com/shutterstock/videos/3926568365/thumb/7.jpg?ip=x480)
 C1 成長班
 ===
 
@@ -11,8 +12,11 @@ C1 成長班
 ---
 
 ## 第一堂
-<a href="./weeks_bible.html">課程資訊和服事表</a>
+<a href="../20260309/index.html">c1-成長班--第一堂課筆記 相見歡</a>
 ===
+<a href="./weeks_bible.html">課程資訊和服事表</a>
+---
+
 
 ---
 
