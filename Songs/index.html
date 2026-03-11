@@ -8,10 +8,92 @@
 
       <link rel="stylesheet" href="style.css" />
 
-      <!-- The content below will be included at the end of the <head> element. -->
+      <style>
+            /* Tabs Styling */
+            .tabs-header {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                  margin-bottom: 2rem;
+                  border-bottom: 1px solid var(--ice);
+                  padding-bottom: 15px;
+                  justify-content: center;
+            }
+
+            .tab-btn {
+                  padding: 10px 20px;
+                  border: 1px solid var(--ice);
+                  background: var(--white);
+                  color: var(--ocean);
+                  cursor: pointer;
+                  border-radius: var(--radius-lg);
+                  font-family: var(--font-sans);
+                  font-weight: 600;
+                  transition: all var(--transition);
+                  box-shadow: var(--shadow-sm);
+            }
+
+            .tab-btn:hover {
+                  background: var(--ice-light);
+                  transform: translateY(-2px);
+                  box-shadow: var(--shadow-md);
+            }
+
+            .tab-btn.active {
+                  background: var(--ocean);
+                  color: var(--white);
+                  border-color: var(--ocean);
+                  box-shadow: var(--shadow-md);
+            }
+
+            .tab-content {
+                  display: none;
+                  animation: fadeIn 0.4s ease-out;
+            }
+
+            .tab-content.active {
+                  display: block;
+            }
+
+            @keyframes fadeIn {
+                  from {
+                        opacity: 0;
+                        transform: translateY(10px);
+                  }
+
+                  to {
+                        opacity: 1;
+                        transform: translateY(0);
+                  }
+            }
+      </style>
       <script type="text/javascript">
+            function openTab(evt, lessonId) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tab-content");
+                  for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].classList.remove("active");
+                  }
+                  tablinks = document.getElementsByClassName("tab-btn");
+                  for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].classList.remove("active");
+                  }
+                  document.getElementById(lessonId).classList.add("active");
+                  evt.currentTarget.classList.add("active");
+
+                  // Save active tab to localStorage
+                  localStorage.setItem('activeLesson', lessonId);
+            }
+
             document.addEventListener("DOMContentLoaded", function () {
-                  // your code here
+                  // Restore active tab or default to lesson-2
+                  const savedLesson = localStorage.getItem('activeLesson') || 'lesson-2';
+                  const tabBtn = document.querySelector(`button[onclick*="${savedLesson}"]`);
+                  if (tabBtn) {
+                        tabBtn.click();
+                  } else {
+                        document.querySelector('.tab-btn').click();
+                  }
             });
       </script>
 </head>
@@ -19,25 +101,144 @@
 <body for="html-export">
 
 
-      <div class="crossnote markdown-preview  ">
+      <div class="crossnote markdown-preview">
+            <div class="tabs-header">
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-1')">1 堂</button>
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-2')">2 堂</button>
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-3')">3 堂</button>
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-4')">4 堂</button>
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-5')">5 堂</button>
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-6')">6 堂</button>
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-7')">7 堂</button>
+                  <button class="tab-btn" onclick="openTab(event, 'lesson-8')">8 堂</button>
+            </div>
 
-            <h1><img src="https://www.shutterstock.com/shutterstock/videos/3926568365/thumb/7.jpg?ip=x480" alt=""><br>
-                  C1 成長班</h1>
-            <h2 id="第二堂-背頌經文資料">第二堂 背頌經文資料 </h2>
-            <h3 id="a-href2w1mp3-約翰壹書-19-歌a"><a href="./2W1.mp3">🔊 約翰壹書 1：9 歌</a> </h3>
-            <blockquote>
-                  <p>我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪，洗淨我們一切的不義。</p>
-            </blockquote>
-            <h3 id="a-href2w2mp3-約翰福音-316-歌a"><a href="./2W2.mp3">🔊 約翰福音 3：16 歌</a> </h3>
-            <blockquote>
-                  <p>神愛世人，甚至將他的獨生子賜給他們，叫一切信他的，不致滅亡，反得永生。</p>
-            </blockquote>
-            <hr>
-            <h2 id="第一堂">第一堂 </h2>
-            <h1><a href="../20260309/index.html">c1-成長班--第一堂課筆記 相見歡</a></h1>
-            <h2><a href="./weeks_bible.html">課程資訊和服事表</a></h2>
-            <hr>
+            <div id="lesson-1" class="tab-content">
+                  <h2 id="第一堂">第一堂課 </h2>
+                  <h1><a href="../20260309/index.html">c1-成長班--第一堂課筆記 相見歡</a></h1>
+                  <h2><a href="./weeks_bible.html">課程資訊和服事表</a></h2>
+                  <hr>
+            </div>
 
+            <div id="lesson-2" class="tab-content">
+                  <h1><img src="https://www.shutterstock.com/shutterstock/videos/3926568365/thumb/7.jpg?ip=x480"
+                              alt=""><br>
+                        C1 成長班</h1>
+                  <h2 id="第二堂-赦罪和得救">第二堂 赦罪和得救 </h2>
+                  <h3 id="背頌經文資料"><mark>背頌經文資料:</mark> </h3>
+                  <h4 id="a-href2w1mp3-約翰壹書-19-歌a"><a href="./2W1.mp3">🔊 約翰壹書 1：9 歌</a> </h4>
+                  <blockquote>
+                        <p>我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪，洗淨我們一切的不義。</p>
+                  </blockquote>
+                  <h4 id="a-href2w2mp3-約翰福音-316-歌a"><a href="./2W2.mp3">🔊 約翰福音 3：16 歌</a> </h4>
+                  <blockquote>
+                        <p>神愛世人，甚至將他的獨生子賜給他們，叫一切信他的，不致滅亡，反得永生。</p>
+                  </blockquote>
+                  <h3 id="抄寫的經文"><mark>抄寫的經文:</mark> </h3>
+                  <blockquote>
+                        <ul>
+                              <li>
+                                    <p><strong>約翰一書1:9：</strong> 我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪，洗淨我們一切的不義。</p>
+                              </li>
+                              <li>
+                                    <p><strong>哥林多後書5:21：</strong> 神使那無罪的，替我們成為罪，好叫我們在他裡面成為神的義。</p>
+                              </li>
+                              <li>
+                                    <p><strong>雅各書4:17：</strong> 人所知道的善而故意不做，這就是他的罪。</p>
+                              </li>
+                              <li>
+                                    <p><strong>利未記26:43b：</strong> 並且他們要服罪孽的刑罰；因為他們厭棄了我的典章，心中厭惡了我的律例。</p>
+                              </li>
+                              <li>
+                                    <p><strong>約翰福音3:18：</strong> 信祂的人，不被定罪；不信的人，罪已經定了，因為他不信神所差來的獨生子。</p>
+                              </li>
+                              <li>
+                                    <p><strong>詩篇36:1-4：</strong>
+                                          惡人的罪在神面前越發顯露；他的眼不敬畏神。他自以為所行的事長久長存，在他眼中還不能歸罪於自己而休手。他滿口說了詭詭的話，行了惡事，不怕神。</p>
+                              </li>
+                              <li>
+                                    <p><strong>耶利米書18:11-12：</strong>
+                                          現在你就要對猶大人說，對耶路撒冷居民說：耶和華如此說：我預備了一禍，要攻擊你們；你們要改正你們的道路和行為。...他們卻說：這是枉然，我們要從心所欲的行，各隨心意頑梗而行。
+                                    </p>
+                              </li>
+                              <li>
+                                    <p><strong>耶利米書17:9：</strong> 人心比萬物都詭詐，壞到極處，誰能識透呢？</p>
+                              </li>
+                              <li>
+                                    <p><strong>以賽亞書64:6：</strong> 我們都像不潔淨的人，所有的義都像污穢的衣服；我們都像葉子枯乾，我們的罪孽像風把我們吹去。</p>
+                              </li>
+                              <li>
+                                    <p><strong>歌羅西書1:21-22：</strong>
+                                          你們從前與神隔絕，因着惡行心裡與祂為敵；但如今祂使你們與自己和好，憑著肉身受死，叫你們聖潔、無有瑕疵、無可責備。
+                                    </p>
+                              </li>
+                              <li>
+                                    <p><strong>以賽亞書13:11：</strong> 我要刑罰世上的惡，懲治惡人的罪，又要使驕傲人的驕傲止息，使暴虐人的狂傲歸零。</p>
+                              </li>
+                              <li>
+                                    <p><strong>羅馬書6:23：</strong> 因為罪的工價乃是死；惟有神的恩賜，在我們的主耶穌基督裡，乃是永生。</p>
+                              </li>
+                              <li>
+                                    <p><strong>約翰福音8:34：</strong> 耶穌說：「我實實在在告訴你們，凡犯罪的，就是罪的奴僕。」</p>
+                              </li>
+                              <li>
+                                    <p><strong>以弗所書4:17-18：</strong> 你們行事不要再像外邦人存虛妄的心行事。他們心地昏昧，與神所賜的生命隔絕了，都因自己無知，心裡剛硬。
+                                    </p>
+                              </li>
+                              <li>
+                                    <p><strong>以弗所書4:19：</strong> 他們無感覺，自己放縱私慾，貪婪度日，就是任意而行。</p>
+                              </li>
+                              <li>
+                                    <p><strong>約翰福音5:14：</strong> 後來耶穌在殿裡遇見他，對他說：「你已經痊癒了，不要再犯罪，恐怕你身上所患的比以前更利害。」</p>
+                              </li>
+                              <li>
+                                    <p><strong>啟示錄12:10：</strong> 大聲說：「我們的神已得勝權柄、能力與國度；因為控告我們弟兄的，那白天控告他們的，已被摔下去了。」</p>
+                              </li>
+                              <li>
+                                    <p><strong>約翰福音1:29：</strong> 次日，約翰看見耶穌來到他那裡，就說：「看哪，神的羔羊，除去世人罪孽的！」</p>
+                              </li>
+                              <li>
+                                    <p><strong>路加福音19:10：</strong> 人子來，為要尋找、拯救失喪的人。</p>
+                              </li>
+                              <li>
+                                    <p><strong>羅馬書5:8：</strong> 惟有基督在我們還作罪人的時候為我們死，神的愛就在此向我們顯明了。</p>
+                              </li>
+                              <li>
+                                    <p><strong>彼得前書2:24：</strong>
+                                          祂被掛在木頭上，親身擔當了我們的罪，使我們既然在罪身上死了，就得以在義上活著；因他受的刑罰，我們得平安；因他受的鞭傷，我們得醫治。</p>
+                              </li>
+                              <li>
+                                    <p><strong>加拉太書3:13：</strong> 基督既為我們受了咒詛，就贖我們脫離律法的咒詛，因為經上記著：「凡掛在木頭上都是被咒詛的。」</p>
+                              </li>
+                        </ul>
+                        <hr>
+                  </blockquote>
+            </div>
+
+            <div id="lesson-3" class="tab-content">
+                  <h2 id="第三堂">第三堂 </h2>
+                  <p>內容準備中...</p>
+            </div>
+            <div id="lesson-4" class="tab-content">
+                  <h2 id="第四堂">第四堂 </h2>
+                  <p>內容準備中...</p>
+            </div>
+            <div id="lesson-5" class="tab-content">
+                  <h2 id="第五堂">第五堂 </h2>
+                  <p>內容準備中...</p>
+            </div>
+            <div id="lesson-6" class="tab-content">
+                  <h2 id="第六堂">第六堂 </h2>
+                  <p>內容準備中...</p>
+            </div>
+            <div id="lesson-7" class="tab-content">
+                  <h2 id="第七堂">第七堂 </h2>
+                  <p>內容準備中...</p>
+            </div>
+            <div id="lesson-8" class="tab-content">
+                  <h2 id="第八堂">第八堂 </h2>
+                  <p>內容準備中...</p>
+            </div>
       </div>
 
 
