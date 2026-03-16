@@ -188,7 +188,17 @@ html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sideba
 .crossnote.markdown-preview h5 a,
 .crossnote.markdown-preview h6 a {
   color:       inherit !important;
-  border-bottom: none !important;
+  border-bottom:  2px solid var(--sky) !important;
+  transition:     all var(--transition) !important;
+}
+.crossnote.markdown-preview h1 a:hover,
+.crossnote.markdown-preview h2 a:hover,
+.crossnote.markdown-preview h3 a:hover,
+.crossnote.markdown-preview h4 a:hover,
+.crossnote.markdown-preview h5 a:hover,
+.crossnote.markdown-preview h6 a:hover {
+  color:          var(--ocean) !important;
+  border-bottom:  2px solid var(--ocean) !important;
 }
 
 
@@ -250,13 +260,17 @@ html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sideba
 .crossnote.markdown-preview a {
   color:           var(--ocean)             !important;
   text-decoration: none                     !important;
-  border-bottom:   1px solid rgba(46,89,133,.3) !important;
-  transition:      color var(--transition), border-color var(--transition) !important;
+  border-bottom:   2px solid var(--sky)     !important;
+  font-weight:     600                      !important;
+  transition:      all var(--transition)    !important;
   word-break:      break-word               !important;
 }
 .crossnote.markdown-preview a:hover {
-  color:        var(--sky) !important;
-  border-color: var(--sky) !important;
+  color:           var(--sky)               !important;
+  border-bottom:   2px solid var(--ocean)   !important;
+  background-color: var(--ice-light)        !important;
+  border-radius:   var(--radius-sm)         !important;
+
 }
 
 /* Audio / media links — pill button style */
@@ -813,4 +827,34 @@ html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc a:hover {
     color: #ccc !important;
   }
   #sidebar-toc-btn { display: none !important; }
+}
+
+/* ================================================================
+   21. ALTERNATING SECTION BACKGROUNDS (Zebra Striping)
+   ================================================================ */
+.crossnote.markdown-preview > p:nth-of-type(even),
+.crossnote.markdown-preview > blockquote:nth-of-type(even),
+.crossnote.markdown-preview > ul:nth-of-type(even),
+.crossnote.markdown-preview > ol:nth-of-type(even) {
+  background-color: var(--ice-light) !important;
+  padding: 1rem !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.crossnote.markdown-preview > p:nth-of-type(odd),
+.crossnote.markdown-preview > blockquote:nth-of-type(odd),
+.crossnote.markdown-preview > ul:nth-of-type(odd),
+.crossnote.markdown-preview > ol:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  padding: 1rem !important;
+  border-radius: var(--radius) !important;
+}
+
+/* Adjust spacing for elements with background */
+.crossnote.markdown-preview > p, 
+.crossnote.markdown-preview > blockquote, 
+.crossnote.markdown-preview > ul, 
+.crossnote.markdown-preview > ol {
+  margin-bottom: 1.5rem !important;
 }
