@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260323 主日信息</title>
+    <meta name="description" content="末世的警訊與好管家的召命 - 合神心意的好管家，謹慎自守警醒禱告">
+    <meta name="keywords"
+        content="萬物的結局近了, 合神心意的好管家, 彼此切實相愛, 謹慎自守警醒禱告, 客西馬尼園, 初代教會彼此款待, 作神百般恩賜的好管家, 愛能遮掩許多的罪, 互相款待不發怨言, 總要警醒禱告免得入了迷惑, 動盪不安, 那美好的仗我打過了當跑的路我跑完了, 主看一日如千年千年如一日, 趁著時候尚好作神百般恩賜的好管家, 在末世中作合神心意的好管家, 末世的警訊與好管家的召命, 彼得前書 4:7, 公義的冠冕為我存留">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260323 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle"><strong>末世的警訊與好管家的召命</strong>
+                    <a href="https://www.youtube.com/live/i--D592XKwk?si=KGx9LG4sFbhEMA30">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/i--D592XKwk?si=KGx9LG4sFbhEMA30">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-末世的警訊與好管家的召命">
+                <h2 id="末世的警訊與好管家的召命"><strong>末世的警訊與好管家的召命</strong></h2>
+                <p><strong>【會前禱告】</strong>
+                    讓我們在面對今天<strong>動盪不安</strong>的時代當中，我們可以回應祢的呼召。主啊，祢來開啟我們的心，讓我們有一個能聽的耳、受教的心。主啊，讓我們不僅是<strong>聽道</strong>而已，也可以成為一個行道的人。祢是一個復興的火，點亮我們的生命，在教會、在我們每一個人當中。主啊，讓我們在這時代當中可以為祢作光，也可以宣揚祢的名。主耶穌，謝謝祢帶領我們待會一起來認識祢寶貴的話語，能夠把祢的話放在我們心裡面。謝謝主，禱告是奉主<strong>耶穌基督</strong>的名，阿門。
+                </p>
+                <p><strong>【引言：氣候變遷的觀察】</strong>
+                    好，那今天要分享的是一個「<strong>合神心意</strong>的好管家」。那我們先來講一下，其實今天天氣蠻好的，對不對？那不知道大家是喜歡夏天還是冬天？大家會比較怕熱還是怕<strong>冷</strong>？喔，怕熱的多，喜歡冬天的比較多。我以前是很喜歡夏天的，因為我冬天是很怕<strong>冷</strong>的那種，想說冬天就要穿很厚、穿好幾件。但是，發現這幾年大家有沒有覺得天氣的變化越來越熱？感覺夏天就越來越長，到外面曬太陽的時候就會需要戴帽子遮陽。以前可能小時候都不用，但現在可能到秋天的時候，你還是覺得很酷熱，因為秋天會有那個叫「<strong>秋老虎</strong>」的悶熱天氣。所以，我現在就會比較喜歡冬天，只要<strong>穿夠保暖</strong>就好，有那種冰涼的感覺，對不對？就跟在座很多人一樣。
+                </p>
+                <blockquote>
+                    <p>自己<strong>以前非常喜歡夏天</strong>，因為體質非常<strong>怕冷</strong>，冬天常需要穿好幾件厚衣服。然而，這幾年感受到天氣變得極度酷熱且夏天漫長，甚至到秋天仍有「秋老虎」的悶熱感，出門必須戴帽子遮陽。因此，現在<strong>反而比較喜歡冬天</strong>冰涼舒爽的感覺。
+                    </p>
+                </blockquote>
+                <p><strong>【極端氣候與科學報告】</strong> 我們來看一下，關於天氣的變遷，大家都知道地球<strong>暖化</strong>。在 1988
+                    年，聯合國創立了「<strong>政府間氣候變遷專門委員會</strong>」（IPCC），主要關注人類活動對氣候造成的影響。從過去 35
+                    年到現在，總共有六次的氣候變化科學評估報告，見證了全球<strong>暖化</strong>的變遷。報告大約每五、六年發布一次，從起初第一次報告的保守與謹慎，到第六次最新的報告，語氣是非常強硬與<strong>嚴厲</strong>的，彷彿為人類的生存提出了「緊急警報」。
+                </p>
+                <p>報告中指出，未來這幾十年，全球所有地區都將面臨<strong>極端氣候</strong>加劇變快的考驗。<strong>夏</strong>天變得很長，冬天會變短。根據台灣的氣候變遷評估資訊平台提到，極端高溫包括熱浪、<strong>強降雨</strong>或乾旱，都會造成影響。乾旱地區會更乾，強烈的降雨則會引發<strong>水災</strong>。這幾年頻繁的氣候影響，對農業生產、水資源<strong>供應</strong>、生態環境及人類健康都帶來了艱巨的挑戰。我們看過去這<strong>一年</strong>當中，全世界發生的災難，例如去年花蓮<strong>馬太鞍溪堰塞湖</strong>的<strong>潰堤</strong>災害，對許多台灣人而言仍是記憶猶新。
+                </p>
+                <blockquote>
+                    <p>2024 年 4 月 3 日花蓮馬太鞍溪堰塞湖潰堤災難時，家人<strong>四個都曾親自前往花蓮災難現場協助</strong>。這對孩子們來說是一次非常深刻的生命體驗。</p>
+                </blockquote>
+                <hr />
+
+                <p id="一-氣候變遷與極端天氣的警訊"><strong>一、 氣候變遷與極端天氣的警訊</strong></p>
+                <p>講到氣候變遷，我很有感觸。像我們家四個小孩，之前都有到<strong>花蓮現場</strong>去幫忙，這對孩子來說是一個很深刻的體驗。我們看那次災害（2024年4月3日），它造成了整個
+                    <strong>504 公頃</strong>的農田被淹沒跟<strong>掩埋</strong>，損失的面積相當於將近 <strong>20 座的大安森林公園</strong>。
+                </p>
+                <p>我們再看世界各地：印尼蘇門答臘的洪災，造成人員死亡 <strong>500 名</strong>；去年印度的極端氣候，奪走了 <strong>419 條</strong>生命，農作物受損面積竟然高達
+                    <strong>4.8 個台灣大</strong>！根據《遠見》雜誌的新聞報導，那場災難導致 <strong>18 萬所</strong>房屋毀損，還有 <strong>8
+                        萬頭</strong>牲畜死亡。
+                </p>
+                <p>去年整個歐洲也面臨前所未有的<strong>熱浪</strong>，夏天多國氣溫超過 40 度，甚至因此停班停課。在加州的<strong>死谷</strong>（Death Valley），去年 7
+                    月甚至測到 <strong>50.5 度</strong>的極端高溫。光是過去這一年，歐洲就有約 <strong>16,500
+                        人</strong>因為熱浪導致的高溫而喪生。看著這些極端氣候造成的全球性傷害，心裡真的很沉重，真的是觸目驚心。這些報導就像在拚命拉警報，提醒我們：「現在是什麼時候了？」我們必須看重這件事，趕快採取行動，在還來得及的時候做出調整與改變。
+                </p>
+                <p id="二-現在是什麼時候-時代的緊迫感"><strong>二、 「現在是什麼時候？」—— 時代的緊迫感</strong></p>
+                <p>大家對「現在是什麼時候」這句話有沒有感覺很熟悉？ 就像我們小時候睡覺時，媽媽會大喊：「現在是什麼時候了？你還在睡！上課快要遲到了！」
+                    或者爸爸媽媽會對小孩說：「現在是什麼時候了？明天就要考試了，你還在玩手機，還不去準備！」 對青少年來說，半夜接到媽媽電話問這句，也會感受到那種時間快到了、很晚了的緊迫性。</p>
+                <p>但是我們也發現，當人類科技不斷進步時，其實也加速了環境的惡化。為什麼現在癌症這麼多？還有許多罕見疾病、<strong>失智症</strong>，其實或多或少都跟環境荷爾蒙的影響有關。</p>
+                <p id="三-國際局勢與中東戰火"><strong>三、 國際局勢與中東戰火</strong></p>
+                <p>除了氣候，最近大家看新聞也會關注國際局勢。像最近大家說暑假想出國，買機票時就發現票價變高了。我們看見美國、以色列聯軍跟<strong>伊朗</strong>爆發了戰爭，從 <strong>2026 年
+                        2 月 28 日</strong>開始到現在已經三週了，雙方不斷互相攻擊，戰火迅速擴散到中東各國。</p>
+                <p><strong>伊朗</strong>採取報復性行動，封鎖了中東石油出口最關鍵的關卡——<strong>荷姆茲海峽</strong>，甚至擊沉各國油輪，不僅讓國際油價持續飆升，更影響到全球經濟與資源分配。我們看到導彈造成中東地區極度混亂與大量傷亡，每天看新聞都覺得很恐怖，甚至會害怕台灣的處境。大家會問：這個世界怎麼變成這樣？這些戰事會不會引發第三次世界大戰？這是不是預表耶穌快要再來了？我們該做什麼準備？
+                </p>
+                <p id="四-馬太福音-24-章的末日預兆"><strong>四、 馬太福音 24 章的末日預兆</strong></p>
+                <p>這幾天我們讀《活潑的生命》靈修進度，正好讀到<strong>馬太福音 24 章</strong>。門徒問耶穌：「祢降臨和世界的末了有什麼預兆呢？」 雖然今天不讀整段經文，但我們可以看一下 1 到 14
+                    節提到的預兆：</p>
+                <p>首先，會有<strong>假先知</strong>起來迷惑眾人。接著，會有戰爭，多處必有<strong>飢荒</strong>跟地震。第九節提到基督徒會受逼迫，而且<strong>不法的事增多</strong>，許多人的愛心漸漸淡了。現在社會上不法、不公、不義的事真的太多了，你看詐騙集團騙到什麼程度？
+                </p>
+                <p>耶穌舉了這麼多例子，對照我們每天的新聞：地震、戰爭、極端氣候的災難、違法的事不斷發生。耶穌最後說，這天國的福音要傳遍天下，對<strong>萬民</strong>作見證，然後<strong>末期</strong>（結局）才來到。這一切都在提醒我們，要警醒預備自己，作神百般恩賜的好管家。
+                </p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-好管家的使命">
+                <h2 id="好管家的使命"><strong>好管家的使命</strong></h2>
+
+                <p id="一-末日的預兆與基督徒的回應"><strong>一、 末日的預兆與基督徒的回應</strong></p>
+                <p>各位弟兄姊妹，現在社會上有許多不公義、惡意欺騙的事情不斷發生，這讓我們想到耶穌在走向十字架之前，曾對門徒發出的預警。在這個末世當中，我們確實能感受到主耶穌所預告的種種狀況。現代人對「末日預言」都有高度的關注，看到世界變動成這樣，甚至會感到恐慌或害怕。
+                </p>
+                <p>身為基督徒，我們在面對各種混亂時該怎麼辦呢？聖經提醒我們要看重「現在是什麼時候」。我們一起來讀今天的核心經文，<strong>彼得前書 4:7-11</strong>：</p>
+                <blockquote>
+                    <p>「萬物的結局近了。所以，你們要謹慎自守，警醒禱告。最要緊的是彼此切實相愛，因為愛能遮掩許多的罪。你們要互相款待，不發怨言。各人要照所得的恩賜彼此服事，作神百般恩賜的好管家……」。</p>
+                </blockquote>
+                <p>這裡提到「萬物的結局近了」，彼得的意思是萬事萬物都會有一個終點、一個結束。這不是指個人生命的結束，而是指這個世界最後的終局。</p>
+
+                <p id="二-上帝的時間觀一日如千年"><strong>二、 上帝的時間觀：一日如千年</strong></p>
+                <p>可能有人會懷疑：「彼得在公元一世紀寫這些話，距離現在都已經快兩千年了，這『末後的時期』未免也太長了吧？」。關於這點，彼得在<strong>彼得後書 3:8-9</strong> 已經先幫我們解釋了：
+                </p>
+                <blockquote>
+                    <p>「親愛的弟兄啊，有一件事你們不可忘記，就是主看一日如千年，千年如一日。主所應許的尚未成就，有人以為他是耽延，其實不是耽延，乃是寬容你們，不願有一人沉淪，乃願人人都悔改。」,。</p>
+                </blockquote>
+                <p>在上帝眼中，這兩千年的時間，就像是過了兩天一樣。上帝是超越時間的，祂遲遲未定下最後的審判，是因為祂的慈愛與寬容，祂在等候更多人回轉向祂,。</p>
+                <p id="三-警醒預備不聽信末日日期"><strong>三、 警醒預備，不聽信末日日期</strong></p>
+                <p>聖經說，主的日子來到會「像賊來到一樣」。賊要來偷東西前，是不會先發通知說「我今晚要到你家」的，他總是突然、讓人意想不到地出現。所以，聖經明確告訴我們，主再來的日子沒有人知道，連天使也不知道，唯獨天父知道。
+                </p>
+                <p>我們在座有些弟兄姊妹可能記得，以前大家會去算耶穌幾年幾月會來，像是早年社會曾流行過「1995
+                    閏八月」的末日語言，當時對教會也造成了一些影響。但我們從經文就知道，不需要去聽這些計算日期的話。耶穌早就說過，祂回來的日子是我們想不到、猜不到的，絕對會讓大家嚇一跳。</p>
+                <blockquote>
+                    <p>回憶自己在<strong>青少年時期</strong>，曾經歷過社會上盛傳「<strong>1995
+                            閏八月</strong>」的末日預言。當時這類預言對教會確實造成了一些影響，藉此提醒信徒不需要聽信人所計算的末日日期。</p>
+                </blockquote>
+                <p id="四-拒絕消極作個警醒的好管家"><strong>四、 拒絕消極，作個「警醒」的好管家</strong></p>
+                <p>有些人面對末世會變得很消極，覺得反正世界這麼亂，耶穌快要來了，那我們就什麼都不用管，只要聚會等著被接到天國就好了。但耶穌的比喻不是這樣教導的。</p>
+                <p>耶穌在許多比喻中都提到一個關鍵字，就是「<strong>警醒</strong>」。
+                    例如<strong>五個聰明與五個愚拙（無知）童女的比喻</strong>：聰明的童女預備好了油，警醒迎接新郎；但那五個無知的童女卻沒有預備，甚至在睡覺。當她們事後去買油回來喊著「主啊，給我們開門」時，主卻回答說「我不認識你」。所以耶穌總結說：「你們要警醒，因為那日子，那時辰，你們不知道。」。
+                </p>
+                <p>除了警醒，耶穌也多次用「主人與管家」的比喻來提醒我們。我們不是消極等待，而是要「照所得的恩賜彼此服事」。如果你有講道的恩賜，就按著神的聖言講；有服事人的恩賜，就按著神賜的力量去行，好讓神在凡事上因耶穌基督得著榮耀。
+                </p>
+                <p>弟兄姊妹，讓我們在末世中不恐慌，而是謹慎自守、彼此相愛，成為神百般恩賜的好管家。阿門！</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-作個有福的管家在動盪中警醒禱告">
+                <h2 id="作個有福的管家在動盪中警醒禱告"><strong>作個有福的管家——在動盪中警醒禱告</strong></h2>
+                <h3 id="一-隨時預備做一個有福的人"><strong>一、 隨時預備：做一個有福的人</strong></h3>
+                <p>弟兄姊妹，我們都想成為一個「有福的人」，對嗎？請告訴旁邊的人說：「我們要成為有福的人！」。</p>
+                <p>那麼，該如何成為一個有福的人呢？耶穌在<strong>路加福音 12
+                        章</strong>給了我們一個很重要的提醒。祂形容一位主人遠行去參加婚宴，在那個沒有高鐵、沒有手機聯絡的時代，僕人根本不知道主人幾點會回來。但耶穌說，不管主人是二更天、三更天，甚至是清晨才到，只要主人看見僕人已經預備好了、正在等候他，那僕人就有福了！耶穌甚至三次強調「那僕人就有福了」，這告訴我們：一個隨時預備好、警醒面對主再來的人，絕對是一個有福的人。
+                </p>
+                <p>而彼得在聖經中更具體地告訴我們，成為有福之人的秘訣，就是做一個「<strong>合神心意的好管家</strong>」。而好管家的第一個特質，就是「<strong>謹慎自守，警醒禱告</strong>」。
+                </p>
+
+                <h3 id="二-警醒的態度不只是等待而是積極面對"><strong>二、 警醒的態度：不只是等待，而是積極面對</strong></h3>
+                <p><strong>彼得前書 4:7</strong> 說：「萬物的結局近了，所以你們要謹慎自守，警醒禱告。」
+                    大家要注意，彼得說「萬物的結局近了」，並不是要我們躲到山上去不問世事，只等著耶穌來。相反地，他在彼得前書的前三章中，不斷鼓勵我們要勇敢面對地上的生活，為主作見證、經營婚姻關係、順服掌權者。</p>
+                <p>彼得為什麼這麼強調「警醒禱告」？因為他曾有過慘痛的教訓。在<strong>客西馬尼園</strong>的時候，耶穌面對即將上十字架的極大痛苦，汗如血點般禱告；但彼得跟另外兩個門徒卻因為憂愁而睡著了。當時黑暗權勢籠罩，耶穌提醒他們：「總要警醒禱告，免得入了迷惑。你們心靈固然願意，肉體卻軟弱了。」
+                    彼得後來深深體會到，在艱難的時代中，如果沒有警醒禱告，人很容易會陷入迷惑與軟弱中。</p>
+                <h3 id="三-彼得的時代在極大逼迫中站穩"><strong>三、 彼得的時代：在極大逼迫中站穩</strong></h3>
+                <p>我們現在覺得生活不容易，但彼得當時的生存環境比我們艱難百倍。彼得出生於猶太背景，不像使徒保羅擁有羅馬公民權，他在強大的<strong>羅馬帝國</strong>統治下，只是一個卑微的平民。</p>
+                <p>當時的羅馬皇帝<strong>尼祿</strong>（Nero）非常殘酷。他曾縱火焚燒羅馬城，並嫁禍給基督徒。在那個時代，信耶穌是要付出生命代價的。使徒保羅身為羅馬公民，最後被砍頭殉道；而彼得則是被判處釘十字架。但他覺得自己不配與主以同樣的方式受刑，因此要求「倒釘十字架」。
+                </p>
+                <p>在那樣政治險惡、道德淪喪（充滿離婚、墮胎、殺害女嬰、角鬥士廝殺）的社會環境裡，彼得如果每天只聽街上的流言蜚語，只會感到極度的恐慌與恐嚇。但他卻能對信徒說：「一定要警醒禱告！」</p>
+                <h3 id="四-結論不讓時代的聲音淹沒理智"><strong>四、 結論：不讓時代的聲音淹沒理智</strong></h3>
+                <p>弟兄姊妹，彼得在面對這麼大的逼迫時，他給我們的榜樣是：<strong>不要讓自己的情緒隨著時代波動</strong>。當我們起來禱告，我們就能擁有清醒的頭腦與理性，不讓世界的紛亂聲淹沒了神的聲音。
+                </p>
+                <p>雖然萬物的結局近了，環境看起來越來越黑暗，但我們要起來警醒禱告。讓我們不看環境的憂愁，而是看重神給我們的託付，做一個忠心預備、隨時待命的好管家。這就是通往蒙福之路唯一的途徑。</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-在末世中作合神心意的好管家">
+                <h2 id="在末世中作合神心意的好管家"><strong>在末世中作合神心意的好管家</strong></h2>
+                <h3 id="一-不被時代淹沒起來禱告改變心境"><strong>一、 不被時代淹沒：起來禱告改變心境</strong></h3>
+                <p>弟兄姊妹，彼得透過他的書信教導我們，無論環境多麼艱難，我們依然有明天、依然有主。我們需要預備自己，迎接主的再來。</p>
+                <p>或許有人會想：「難道只要禱告就能改變這個事態嗎？世界不是會越來越糟嗎？」的確，末世的預兆就像警報器一樣不斷響起，但這並不代表我們就不用禱告了。耶穌提醒我們要「警醒」，而彼得在<strong>彼得前書
+                        4:7</strong> 也說：「萬物的結局近了，所以你們要謹慎自守，警醒禱告」。</p>
+                <p>為什麼要禱告？因為<strong>越禱告，我們的頭腦就會越清醒</strong>。這就是「謹慎自守」的意思。當你進入靈裡的禱告，你就能分辨現在是什麼時候，能聽出這個聲音是來自神的話語，還是像魔鬼如同吼叫的獅子發出的聲音。在屬靈裡看清真相，你就能起來抵擋魔鬼，不讓牠的聲音吞滅我們的盼望。
+                </p>
+                <p>看看我們身處的環境：職場上有同事的陷害、社會上有各種不公義的事，甚至連食安問題都讓人擔心，看到那些可怕的添加物，我們心裡會生氣，也會擔心健康。面對這末世的挑戰，我們如何不讓這些聲音淹沒思想？秘訣就在於<strong>「謹慎自守、警醒禱告」</strong>。我們要像耶穌在客西馬尼園提醒門徒的：「總要警醒禱告，免得入了迷惑」。無論神是否立即成就我們所求的，我們都要守住「管家」的職分，等候主再來的那一天。
+                </p>
+                <h3 id="二-彼此相愛遮掩罪消弭紛爭"><strong>二、 彼此相愛：遮掩罪、消弭紛爭</strong></h3>
+                <p>合神心意好管家的第二個特質，就是<strong>「彼此相愛」</strong>。彼得緊跟著耶穌的教導，強調最要緊的就是彼此相愛。</p>
+                <p>什麼是「切實地彼此相愛」？就是用神在基督耶穌裡的心，去包容弟兄姊妹之間的不完全。聖經說「愛能遮掩許多的罪」，這不是要我們對犯罪睜一隻眼閉一隻眼，而是指當我們願意彼此相愛時，教會裡的<strong>紛爭與結黨就會止息、被平息</strong>。在教會生活中，我們需要學習如何謙卑自己與虛己。
+                </p>
+                <h3 id="三-互相款待初代教會的見證"><strong>三、 互相款待：初代教會的見證</strong></h3>
+                <p>彼得還提到要「互相款待，不發怨言」。在<strong>初代教會</strong>時期，信徒面臨羅馬帝國的監視與逼迫，根本沒有華麗的教堂可以聚會，所以他們都是<strong>家庭式的教會</strong>。
+                </p>
+                <p>在家庭教會中，開放家庭的弟兄姊妹要承擔更多的服事：預備飯食、排班、帶小孩，大家輪流互相幫助。就像我們現在的小組一樣，如果每個人都只想當客人、不想服事，教會就無法建立起來。</p>
+                <p>有趣的是，這群勇敢活出信仰、彼此相愛的弟兄姊妹，最後竟然成了翻轉<strong>羅馬帝國</strong>社會與政治的力量。他們在強大的體制下，活出與當時墮落倫理完全不同的價值觀。這種力量越來越大，甚至讓皇帝的親信也信了主，最終帶動了整個羅馬帝國風氣的改變，這就是信徒活出見證的結果。
+                </p>
+                <p>在公元二世紀，有一位基督徒作家<strong>亞里斯提德</strong>（Aristides，原稿誤植為亞里斯彼得）曾寫信給羅馬皇帝哈德良護教。他在信中說：「你們政府不分青紅皂白地逼迫我們，但我來告訴你們，我們這群基督徒到底都在幹什麼……」他所見證的，正是那一群在末世中彼此相愛、互相款待，並以禱告站穩立場的好管家。
+                </p>
+                <p>弟兄姊妹，願我們也能在今天的時代，活出這份不被淹沒的信仰見證。</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-作神百般恩賜的好管家">
+                <h2 id="作神百般恩賜的好管家"><strong>作神百般恩賜的好管家</strong></h2>
+                <h3 id="一-初代教會翻轉社會的見證"><strong>一、 初代教會翻轉社會的見證</strong></h3>
+                <p>弟兄姊妹，我們要來看初代教會是如何翻轉當時的羅馬社會。那時候的基督徒被看作是友好、善良、謙虛且真誠的一群人。他們實踐<strong>「彼此相愛」</strong>，當他們看見孤兒寡婦有需要時，會主動去顧念、幫助他們。
+                </p>
+                <p>在教會當中，大家按著不同的<strong>「恩賜」<strong>甘心樂意地付出，完全沒有任何怨言。如果知道有窮人去世，大家會根據自己的經濟能力，為他的葬禮提供捐助；甚至碰到乞丐或奴隸需要幫助時，有些信徒會自願</strong>「禁食」</strong>兩三天，把自己省下來的食物分給那些飢餓的人。
+                </p>
+                <p>初代教會之所以能強盛起來，並不是因為有優良的聚會環境或華麗的排場，相反地，他們是在面臨逼迫、條件極其惡劣的環境中，反而更加彼此相愛、互相款待。他們珍惜在一起的時間，就像在同一個戰場上的「天國精兵」。這種影響力，不是在安逸中產生的，而是透過效法十字架、捨己的生命，在社會中分別為聖，進而翻轉了世界。
+                </p>
+                <h3 id="二-使用所得的恩賜來榮耀神"><strong>二、 使用所得的恩賜來榮耀神</strong></h3>
+                <p>接下來我們要看成為「合神心意好管家」的第三個重點：<strong>使用所得的恩賜來榮耀神</strong>。</p>
+                <p>所謂的<strong>「恩賜」</strong>，其實就是上帝給我們的「禮物」。運用恩賜，就是運用這份禮物來服事神。這份禮物不是為了讓我們留著自己用，而是要「分享」出去。恩賜就像「五餅二魚」一樣，當我們願意把它交在主的手中、分出去時，它才有可能餵飽眾多的人。
+                </p>
+                <p>聖經哥林多前書 12
+                    章告訴我們，教會就像一個身體，有不同的肢體——手、腳、眼睛、鼻子、嘴巴、耳朵，各司其職。我們不用去羨慕別人的恩賜好像比較大、比較有恩膏。你想想，眼睛會比鼻子珍貴嗎？其實都很珍貴！如果一個人沒有鼻子，那也是很可怕的事。所以，<strong>恩賜沒有大小之分，只有功用不同</strong>。
+                </p>
+                <p>在彼得前書中特別提到了兩種服事：</p>
+                <ol>
+                    <li><strong>教導的恩賜：</strong> 那些有教導恩賜的人，要忠心地按著神的話語來分享，讓人明白神的心意。</li>
+                    <li><strong>服事人的恩賜：</strong> 包含治理、管理行政，或是擔任執事。如果你有敬拜的恩賜，可以參與敬拜團；如果你有關懷與憐憫的心，可以做招待，或陪同小組長去探訪。</li>
+                </ol>
+                <h3 id="三-永不止息的愛與永恆的國度"><strong>三、 永不止息的愛與永恆的國度</strong></h3>
+                <p>最後我們要明白，恩賜是有「階段性」的。哥林多前書 13:8 告訴我們：「愛是永不止息。先知講道之能終必歸於無有，說方言之能終必止息，知識也終必歸於無有」。</p>
+                <p>當耶穌再來，我們進入新天新地、在榮耀的國度與主面面相對時，那裡不再有死亡與眼淚。在那樣完美的國度裡，我們不再需要有人講道，不再需要傳福音，也不再需要憐憫或奉獻的恩賜了，因為基督已經永遠掌權。</p>
+                <p>所以弟兄姊妹，趁著現在還有機會，讓我們按著所得的恩賜彼此服事，作神百般恩賜的好管家，直到見主面的那一天。阿門！</p>
+                <hr />
+            </section>
+
+            <section class="section" id="section-趁著時候尚好作神百般恩賜的好管家">
+                <h2 id="趁著時候尚好作神百般恩賜的好管家"><strong>趁著時候尚好，作神百般恩賜的好管家</strong></h2>
+                <h3 id="一-把握時機發揮神給你的禮物"><strong>一、 把握時機，發揮神給你的禮物</strong></h3>
+                <p>弟兄姊妹，我們要<strong>趁著時候尚好</strong>，趕快在我們的生命當中使用神給我們的<strong>恩賜</strong>。這份恩賜是神給我們的禮物，我們不需要去計較說：「神啊，為什麼祢給他這麼大的恩賜，而我只有這一點點？」我們不用去羡慕別人，因為每一份恩賜都是<strong>聖靈</strong>按著祂的旨意特別給你的。
+                </p>
+                <p>我們現在最需要做的，是好好管理神所託付給我們的那一份，在世上成為一個<strong>忠心有見識的好管家</strong>。我們要思考：我的恩賜是什麼？我如何讓這份恩賜更加長進，好讓它能更加被主所使用？
+                </p>
+                <h3 id="二-終有一天要向主交帳"><strong>二、 終有一天要向主交帳</strong></h3>
+                <p>在<strong>馬太福音 25
+                        章</strong>中，耶穌用「銀子的比喻」來教導我們。主人按著才幹給了僕人不同的份量：有<strong>五千、二千、還有一千</strong>。請記得，當主人回來的時候，我們每一個人都要<strong>交帳</strong>。
+                </p>
+                <p>如果我們每個人都願意奉獻自己的恩賜，用手托住教會，這個教會就能夠彰顯神的榮耀。就像<strong>初代教會</strong>一樣，即便在極其艱難的環境中，他們仍願意不斷地禱告，活出<strong>彼此相愛</strong>、互相款待、不發怨言的生活。當我們願意這樣行，神就要大大地祝福我們的教會。
+                </p>
+                <h3 id="三-從我開始的翻轉與改變"><strong>三、 從「我」開始的翻轉與改變</strong></h3>
+                <p>翻轉世代的力量，要從你我先願意被主改變開始。我們要先成為願意<strong>警醒禱告</strong>、<strong>彼此相愛</strong>並發揮恩賜的人。</p>
+                <p>在今天的台灣，或許有很多不合神心意的做法或光怪陸離的現象，但我們是否還能活出基督徒的樣式？當我們願意回應呼召，有一天見主面的時候，我們就可以很喜樂地告訴主說：「主啊，祢所交辦的事，我都執行了！」
+                    我們要以<strong>提摩太後書 4:7-8</strong> 作為目標：</p>
+                <blockquote>
+                    <p>「那美好的仗我打過了，當跑的路我跑完了，所信的道我守住了。從此以後，有公義的冠冕為我存留。」</p>
+                </blockquote>
+                <h3 id="四-在服事中學習愛與奉獻"><strong>四、 在服事中學習愛與奉獻</strong></h3>
+                <p>在教會服事中，我們難免會因為個性或做法不同而產生嫌隙，心裡覺得不舒服。這時候，我們要來到主面前禱告說：「主啊，求祢幫助我們學習<strong>切實相愛</strong>，因為愛能遮掩許多的罪。」
+                    讓我們不再堅持己見，而是讓神來掌握我們的生命。</p>
+                <p>或許過去你覺得太忙了，或是對自己沒有信心，就把神給你的恩賜隱藏了起來。但現在，求主的愛再次激勵我們，讓我們跟主說：「<strong>主啊，我願意！我願意被祢使用。</strong>」</p>
+                <p><strong>【最後的禱告】</strong>
+                    主啊，我們把自己交託在祢手中。求祢在這世代中幫助我們成為<strong>警醒且聰明的人</strong>，能明白祢的旨意，預備迎接祢的再來。主啊，求祢的聖靈再次澆灌我們，因為祢說在末後的時候，祢要將靈澆灌凡有血氣的，讓我們能見異象、作異夢、說預言。
+                </p>
+                <p>主啊，各樣美善的<strong>恩賜</strong>都是從祢這眾光之父而來的。求祢賜給我們勇敢的心，不被世界的價值觀洗腦，也不被媒體轟炸而失去平靜。讓我們不只是聽道，更是成為行道的人，成為合神心意的好管家。禱告奉主耶穌基督的名，阿門！
+                </p>
+            </section>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "萬物的結局近了",
+                "合神心意的好管家",
+                "彼此切實相愛",
+                "謹慎自守警醒禱告",
+                "客西馬尼園",
+                "初代教會彼此款待",
+                "作神百般恩賜的好管家",
+                "愛能遮掩許多的罪",
+                "互相款待不發怨言",
+                "總要警醒禱告免得入了迷惑",
+                "動盪不安",
+                "那美好的仗我打過了當跑的路我跑完了",
+                "主看一日如千年千年如一日",
+                "趁著時候尚好作神百般恩賜的好管家",
+                "在末世中作合神心意的好管家",
+                "末世的警訊與好管家的召命",
+                "彼得前書 4:7",
+                "公義的冠冕為我存留"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
