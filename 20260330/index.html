@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260330 主日信息</title>
+    <meta name="description" content="講道分析：熱情與責任">
+    <meta name="keywords" content="熱情與責任, 甘心做這事, 神是熱情的神, 熱心必成就這事, 享受過程, 忍受過程, 成為愛神的人, 接近熱情的人, 發現事工的價值, 帶下神榮耀的同在, 發掘其中的樂趣, 持守熱情的火">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260330 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">講道分析：熱情與責任
+                    <a href="https://www.youtube.com/live/qIaZ0UKNA0w?si=IMWWrS-6Og-a7k7W">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/qIaZ0UKNA0w?si=IMWWrS-6Og-a7k7W">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-引言與敬拜的觀察">
+                <h2 id="引言與敬拜的觀察">引言與敬拜的觀察</h2>
+                <p>大家是否依然懷抱著熱情呢？或許今天是因為有不同的講員，所以大家來聽聽看。無論出於什麼理由，既然坐在這裡，就讓我們用心來聆聽。教會常常禱告，期盼每一個空座位都能有得救的人坐滿。</p>
+<p>讓我們一起禱告：主啊，讓獻祭的人聚集在這裡，我們在祢面前獻上感恩的祭與平安的祭，將自己完全獻上、委身於祢面前。願今天的信息從天上而來，每一句話都能成為我們的餵養、感動與準繩，並成為我們的幫助。謝謝主，奉<strong>耶穌基督</strong>的聖名求，阿們。</p>
+<p>今天的敬拜時間是二十分鐘，因為要維持三十分鐘的敬拜氛圍非常不容易。我們現在面臨一個困難，就是這幾年華人創作的敬拜讚美詩歌，坦白說，似乎不如好幾年前的作品。現在的詩歌常常是由許多詞彙拼湊與排列組合而成，缺乏一個明確的主題與特別的恩膏。因此，我們常常必須從舊歌中尋找敬拜的素材。詩歌的創作與讚美，必須有熱情才能成就。</p>
+            </section>
+            
+            <section class="section" id="section-主題探討熱情與責任">
+                <h2 id="主題探討熱情與責任">主題探討：熱情與責任</h2>
+                <p>接下來，我要和各位探討的主題是「熱情與責任」。讓我們先來讀一段經文：「我傳福音原沒有可誇的，因為我是不得已的。若不傳福音，我便有禍了。我若甘心做這事，就有賞賜；若不甘心，責任卻已經託付我了。」這裡的「甘心」指的就是熱情。責任則是另一個相對的基準。一件事情，無論是出於熱情還是責任，都可以成就。保羅告訴我們，有熱情就會甘心樂意地去做，就有賞賜；若不甘心，那便是出於責任。</p>
+<p>弟兄姊妹，我們日常會做很多事情，例如上班、帶小孩、煮飯、來到教會服事。你覺得這些行動背後，是熱情居多，還是責任居多呢？其實很多時候，我們做事的動力多半來自於責任。根據統計，在美國喜歡工作、對工作有熱情的人只佔上班族的30%，這意味著70%的人是基於責任而工作。台灣的情況更是如此，高達75%的人是出於無奈、不得不上班。當一天和尚撞一天鐘，這其實是一個非常不理想的現象。</p>
+<p>以我看診為例，你覺得我看病人是基於熱情還是責任呢？其實我是有熱情的。我的病人甚至會說，我應該多講講他們的病情，少講一點耶穌。因為我在看診時經常傳福音，以至於他們覺得我對傳福音的熱情，勝過於對他們病情的關心。我們可以看到，責任常常是我們做事的動力，但聖經告訴我們，最好的動力其實是熱情。</p>
+            </section>
+            
+            <section class="section" id="section-第一點神是熱情的神">
+                <h2 id="第一點神是熱情的神">第一點：神是熱情的神</h2>
+                <p>第一點，神是熱情的神。熱情的英文是「Passion」。這個字還有另一個意義，那就是耶穌的受難。「Passion」源自拉丁文，意思是受苦與忍耐。耶穌為什麼要受難？祂是神的兒子，充滿榮耀且毫無瑕疵，為什麼要來到世上為罪人受難？因為神對人充滿了熱情。沒有人能夠命令神做這件事，也沒有人能強迫耶穌來到世界，因為沒有任何權柄大過神。耶穌來到世上是為了拯救罪人，這完全出於祂的熱情，而不是出於任何人加諸於祂的責任。</p>
+<p>在舊約中，每當提到神要成就的事，常常會加上一句話：「萬軍之耶和華的熱心必成就這事。」我們再來看看三位一體中的<strong>聖靈</strong>。以弗所書四章30節說：「不要叫神的聖靈擔憂。」這句話與熱情有什麼關係呢？當你對一個人或一件事充滿熱情時，如果結果不理想，你才會為此擔憂。因此，聖靈會擔憂，正說明了聖靈對<strong>基督徒</strong>充滿了熱情。</p>
+<p>羅馬書八章26節提到：「況且，我們的軟弱有聖靈幫助；我們本不曉得當怎樣禱告，只是聖靈親自用說不出來的歎息替我們禱告。」如果沒有熱情，就不會有說不出來的歎息。當你看到一個人做錯事，若是沒有熱情，你可能只是批評他；但若你對他有熱情，你就會為他深深歎息。從這些經文可以看出，聖靈對人懷有極大的熱情。因此，神自然也期望祂的兒女能成為充滿熱情的人，以熱情的態度來回應神。</p>
+            </section>
+            
+            <section class="section" id="section-第二點熱情勝過責任">
+                <h2 id="第二點熱情勝過責任">第二點：熱情勝過責任</h2>
+                <p>第二點，熱情勝過責任。責任往往是被動的、帶有強迫性與壓力；而熱情是主動的、自發的，能夠排除心理壓力。特別要注意的是，熱情是「享受過程」，而責任是「忍受過程」。試想，如果一個人只把工作當作責任，他可能下午四點半就開始頻頻看錶，想著五點半下班後要去哪裡吃飯；但如果他對工作充滿熱情，即使快下班了，他仍會思考如何把事情做得更好。這兩者的成效顯然有很大的差別。</p>
+<p>因為有熱情，人會盡力將事情做到完美，願意花費大量時間去預備與禱告；若只是出於責任，往往只會應付了事，最終的成果自然大不相同。責任缺乏優勢的原因在於它帶有強制力（例如打卡），這會帶來壓力；而熱情發自內心，出於甘心樂意，因此不會成為重擔。</p>
+<p>我舉一個具體的例子。我的兒子從小學一年級開始學鋼琴，但他其實不想學，他比較喜歡看卡通。鋼琴老師每週來驗收成果，所以每到上課前，家裡的氣氛就非常緊張。因為他平常不練習，老師也覺得他彈得不好，雙方都感到很挫折。這樣一直拖到了高年級，有一天老師對師母說，建議他不要再學了，這樣大家都能解脫。然而，當他上了國中之後，他突然對彈琴產生了熱情。每天放學回家，吃完點心後，他就自動坐到鋼琴前開始彈奏。這時已經沒有老師來要求他了。雖然他手很大、彈得很用力，琴聲很大且不太協調，對聽覺來說有時是一種壓力。有時我看他不斷翻著琴譜彈奏，心裡很感動，但走近一看，才發現他其實是在看漫畫，一邊翻漫畫一邊彈琴。後來他發現自己的指法不正確，大學考完後特別請了老師來調整，但因為已經長大，習慣難以改變。</p>
+<p>他學習鋼琴的第一階段是出於責任，第二階段則是出於熱情。哪一個階段的效果比較好呢？顯然是第二階段。這是一個非常具體的例子。這也可以應用在教會的小組牧養上。如果你是小組長，一味地要求組員靈修，他們可能會去做，但會把這當作重擔，難以持久。如果能引發他們的渴慕，帶領他們經歷神，讓他們體會到神是又真又活的，那麼靈修就不再是忍受，而是享受，這才是上策。熱情的原則可以運用在我們的工作、家庭生活、教會服事以及傳福音上。那麼，我們該如何獲得熱情呢？接下來我將分享幾點，鼓勵大家增加熱情。</p>
+            </section>
+            
+            <section class="section" id="section-如何增加熱情一成為愛神的人">
+                <h2 id="如何增加熱情一成為愛神的人">如何增加熱情：一、成為愛神的人</h2>
+                <p>第一點，要成為愛神的人。熱情的背後一定是愛。有了愛，才會產生熱情；愛神，你的服事才會有熱情。就像你愛上一個人，自然會對他充滿熱情。我還記得，當年我在追求師母時，我還是第一、第二年的住院醫師。我總是在吃飯的時候打電話給她。那時打電話到她家，常常講到電信局的人都插話進來，提醒我們掛斷，因為機器都快燒掉了。但隨著時間推移，婚後漸漸發現，彼此要講的話變少了。為什麼呢？因為熱情已經不如當年了。該講的話講完了，該吵的架也吵完了，溝通不來的缺點再講也沒有用，這是許多結過婚的人都能體會的事實。</p>
+<p>弟兄姊妹，愛是激發熱情最好的動力。有了愛，你就不會僅僅停留在責任的層面。如果一位家庭主婦只是因為「不得不」而煮飯，煮出來的飯菜通常不會太好吃。但我的師母煮飯時，總是希望能提供家人最好的營養與滋味，所以她會用心去預備。她嫁給我的第一餐，我還記得她特別打電話回去問她媽媽，米要放多少、水要放多少。因為她有熱情，充滿了誠意，現在她的廚藝已經非常精湛。每年大年初三，她一定會在家裡宴請所有的同工，預備幾十人份的餐點。不過這也有一個副作用，那就是把我的嘴給養刁了，變得越來越挑食。總而言之，愛神就會產生熱情。</p>
+            </section>
+            
+            <section class="section" id="section-如何增加熱情二接近熱情的人">
+                <h2 id="如何增加熱情二接近熱情的人">如何增加熱情：二、接近熱情的人</h2>
+                <p>第二，要接近熱情的人。如果你靠近火爐，自然會感到溫暖；若是靠近冰庫，就會感到寒冷。你跟熱情的人在一起久了，就會感染到他的熱情；跟冷漠的人在一起久了，也會變得冷漠。熱情能否成為教會的文化與氛圍，是非常重要的一件事。因此，我鼓勵大家要多去接近熱情的人，這會讓你也變成一個充滿熱情的人。</p>
+<p>路加福音中記載，耶穌顯現給前往以馬忤斯路上的兩個門徒。當時門徒對所發生的事情感到非常疑惑，耶穌便親自為他們講解聖經。耶穌離開後，門徒彼此說：「在路上，祂和我們說話，給我們講解聖經的時候，我們的心豈不是火熱的嗎？」這顯示出接近熱情源頭的重要性。我們教會有一位傳道人，他就是一個極度熱情的人。他每次從外面回來，總是興奮地向我報告各種好消息，他的熱情甚至會讓周圍的人感到震撼。例如，他遇到一位在外交部工作的姊妹，立刻就邀請對方一起在外交部開拓職場福音事工。因為這份熱情，他們甚至已經建立了一個職場小組。這就是熱情的感染力。</p>
+            </section>
+            
+            <section class="section" id="section-如何增加熱情三發現事工的價值">
+                <h2 id="如何增加熱情三發現事工的價值">如何增加熱情：三、發現事工的價值</h2>
+                <p>第三，要發現事工的價值。大家可能聽過一個故事：有三個泥水匠在砌磚。問第一個泥水匠在做什麼，他不耐煩地說：「我在工作你沒看到嗎？不工作家裡就沒飯吃。」問第二個泥水匠，他說：「我在砌牆。」問第三個泥水匠，他自豪地說：「我正在建造一座宏偉的教堂。」這三個人中，誰最快樂？顯然是第三個，因為他看見了這份工作的價值與意義。</p>
+<p>發現事工的價值非常重要，因為這會提升你的熱情。如果輪到你帶領敬拜，你心裡想的是「不得不輪到我了，犧牲了星期六的休息時間」，那自然帶不好。但如果你看見敬拜的價值是「帶下神榮耀的同在」，你就會對敬拜充滿熱情。</p>
+<p>再比如擔任兒童主日學的老師。如果校長只是單純要求你來幫忙，這是一種方式；但如果校長告訴你：「你有沒有想過，投入這項事工，你就能幫助一個孩子從小認識神。他若從小認識神，往後的幾十年都能過著與神親密的生活。」這樣看見價值，心態就完全不同了。曾有一位基督徒教授說過：「如果毛澤東曾是我的主日學學生，中國大陸或許就不會發生文化大革命了。」這句話深刻地指出了主日學的價值。我們每週去照顧孩子，不僅僅是因為教會的要求，而是因為透過我們的服事，這個孩子可能會成為一個敬虔、正直的人，甚至未來可能成為牧師或宣教士。這是一件充滿永恆價值的事。</p>
+<p>因此，一個好的領袖在推動事工時，不應該只是硬性要求，而是要先幫助同工看見事工的意義與價值。當我們把事工或工作漸漸看作是例行公事時，熱情就會消失，剩下的只有責任。當我們對服事感到疲乏，覺得沒有意義時，必須回頭去思想這件事的價值，回想神起初的呼召是什麼。否則，恩典很快就會變成沉重的責任。請大家常常提醒自己，要發現事工的價值。</p>
+            </section>
+            
+            <section class="section" id="section-如何增加熱情四發掘其中的樂趣">
+                <h2 id="如何增加熱情四發掘其中的樂趣">如何增加熱情：四、發掘其中的樂趣</h2>
+                <p>第四，發掘其中的樂趣。我有個朋友，大老遠把腳踏車運到日本富士山去騎車。一般人去日本旅遊都是觀光、喝咖啡或去免稅店購物，但他卻選擇在那裡騎車。唯一能解釋這種行為的，就是熱情與樂趣。我非常能理解這種心態，因為我年輕的時候非常沉迷於音響設備。我曾經花一公尺兩萬多的高價去買純度極高的銅線，甚至家裡還有高達190公分的喇叭，只為了在客廳完美重現音樂廳的效果。我曾經是台灣最頂尖的音響評論員之一。當我看到別人對腳踏車如此狂熱時，我能深刻體會到熱情的力量。</p>
+<p>這種對事物的熱情與樂趣，同樣可以應用在教會服事上。喜歡服事的人通常有兩個特點：第一，他們清楚看見服事的價值；第二，他們在服事的過程中與神同工，並真實享受到服事的樂趣。當你經歷到神的作為何等奇妙時，你就會愛上服事，打死不退。這不再是牧師交代的責任，而是你真心渴望去做的事。例如，當你為一個人禱告，他的病就得了醫治，你知道這不是你醫好的，而是<strong>聖靈</strong>的作為，你就會越來越喜歡為病人禱告。當你帶領敬拜時，看見會眾被神觸摸，你的敬拜就會越來越有熱情。</p>
+<p>所以，不要把服事當作交差了事的例行公事，這樣你永遠無法發現其中的樂趣。當你深入與神同工時，你會驚喜地發現，原來服事是這麼有意思，結出的果子遠超乎你的想像。這就是保持熱情最好的方式，我非常鼓勵大家在服事中發掘樂趣。</p>
+            </section>
+            
+            <section class="section" id="section-見證分享火戰車的啟示">
+                <h2 id="見證分享火戰車的啟示">見證分享：火戰車的啟示</h2>
+                <p>大家看過電影《火戰車》（Chariots of Fire）嗎？這部電影講述了一位前往中國的宣教士李愛銳（Eric Liddell）的故事。1920年代，他曾在劍橋大學讀書，具有極高的短跑天賦，是全英國100公尺賽跑的冠軍。後來，他代表國家參加奧運，但他並沒有拿到100公尺的冠軍，而是拿到了400公尺的金牌。為什麼呢？因為100公尺決賽那天剛好是主日（星期天），他選擇去教會做禮拜，放棄了比賽。一般人可能難以理解，一年有52個主日可以做禮拜，但奧運冠軍的機會千載難逢，難道拿金牌不能榮耀神嗎？但他堅持自己的信仰原則。</p>
+<p>後來，他在400公尺比賽中奪得了金牌。他對跑步充滿熱情，他的名言是：「當我跑步時，我能感受到神的喜悅。」這句話讓我非常感動。這告訴我們，當我們在做任何事時，都能經歷神的同在。無論是我在看診、開刀，或是在工作中，只要我們帶著敬畏的心，就能感受到神的喜悅。我們常常太小看神，以為只有做「大事」時神才會注意。其實不然，我們生活中的點滴，神都看顧。</p>
+<p>各位負責煮飯的弟兄姊妹，當你在廚房做飯時，不要一邊煮一邊抱怨每天煮飯太煩人。試著在煮飯時去感受神的喜悅，這就是保持熱情的秘訣。希望大家都能成為充滿熱情的人，無論是在工作、服事還是家庭中，不再是出於被迫或無奈，而是享受你現在所做的一切。</p>
+            </section>
+            
+            <section class="section" id="section-持守熱情的火避免被世界轉移">
+                <h2 id="持守熱情的火避免被世界轉移">持守熱情的火，避免被世界轉移</h2>
+                <p>最後我要提醒大家：要持守熱情的火。起初的熱情很有可能會被挫折澆熄。就像夫妻的婚姻，時間久了，起初的火花可能就不見了，取而代之的是意見不合與爭吵。因此，我們一定要持守熱情，時常為心中的火爐添加薪柴。當熱情開始冷卻時，就要趕緊加添柴火，讓火重新旺起來。</p>
+<p>此外，我們也要特別小心，不要讓世界的事物將我們的熱情從神的身上轉移走。我舉一個真實的例子。曾經有一位姊妹，服事非常認真，性格也很好。後來她與來到教會的一位慕道友結婚，並生了一個孩子。這本是一件美好的事，但漸漸地，她的注意力完全轉移到了孩子身上。她所有的精力、時間，甚至整個家族的焦點，都從神的服事轉向了這個孩子。大概一兩年後，他們就離開了教會。神賜福給她一個孩子，結果這個孩子卻取代了神的位置，讓她所有的熱情都傾注在孩子身上。</p>
+<p>我們要非常謹慎，有時神賜給我們的恩典，反而會讓我們的熱情從賜恩的神身上，轉移到恩典本身。當世界的吸引力變大時，我們對神的熱情就會流失，這是非常可惜的事。因此，我們要時刻警醒，持守住對神的熱情。</p>
+            </section>
+            
+            <section class="section" id="section-結語呼召成為為神癲狂的人">
+                <h2 id="結語呼召成為為神癲狂的人">結語呼召：成為為神癲狂的人</h2>
+                <p>弟兄姊妹，最後我要用保羅的一句話來勉勵大家。哥林多後書五章13節說：「我們若果顛狂，是為神；若果謹守，是為你們。」神正在呼召一群願意為祂癲狂的人！為神癲狂意味著什麼？在世人眼中，這可能看起來「不太正常」。就如別人會問我：「你醫生當得好好的，為什麼要去開拓教會呢？」我的師母在國際企業工作，收入非常優渥，別人也會問：「她為什麼要提早退休來全職服事呢？」這是因為我們被神的愛激勵，願意為神瘋狂，充滿熱情。</p>
+<p>神正在尋找一群充滿熱情、願意為祂瘋狂的人。無論是服事還是傳福音，如果你只停留在責任的層面，很容易就會感到疲乏。你必須看見，神對我們是充滿熱情的，祂也期待我們用熱情來回應祂。我盼望我們的教會是一個充滿熱情的教會。當新朋友來到這裡，他們會真實感受到這份熱情。這份熱情會讓你遇到挫折時不退縮、不放棄；當你看到軟弱的弟兄姊妹時，這份熱情會驅使你繼續為他們禱告，陪伴他們重新站立起來。</p>
+<p>每一次服事的開始，我們都要向神求熱情。不要讓服事變成「不得不」的責任，不要在忍受過程中感到壓力重重。當你帶著熱情服事，你會越來越看見價值，看見神與你同工的奇妙與美好，並看見服事結出美好的果子。你會成為一個非常快樂的<strong>基督徒</strong>，因為無論是在服事、傳福音還是上班時，你都能真實感受到神的喜悅。</p>
+            </section>
+            
+            <section class="section" id="section-結束禱告與回應">
+                <h2 id="結束禱告與回應">結束禱告與回應</h2>
+                <p>讓我們一起低頭禱告：</p>
+<p>主啊，求祢讓今天的信息進入我們的心中，點燃我們裡面的熱情。三位一體的神對人充滿了極大的熱情。聖靈若沒有熱情，沒有人能命令祢創造宇宙萬物。祢的創造充滿了熱情，並且看這一切為美好。主啊，我們既然認識了祢，就當常常親近祢，讓祢的熱情來影響我們、點燃我們的生命。願我們像保羅一樣，不只是出於責任去傳福音，而是甘心樂意地去做。讓我們享受與祢同工的過程，結出美好的果子，用我們的所作所為來回應祢那份長闊高深的熱情。</p>
+<p>主啊，祢是熱情的神，求祢也幫助我們成為充滿熱情的人。在每一件事上，點燃我們心中的熱情。即便是我們不擅長或原本不想做的事，因著愛的緣故，我們也願意去付出。求祢讓我們在每一次與祢同工的過程中，都能嚐到那份甘甜的滋味。讓我們對祢的呼召充滿熱情，看見福音的寶貴，並深知能被神使用是一件何等榮耀的事。</p>
+<p>謝謝主聽我們的禱告，奉耶穌基督的聖名求，阿們。</p>
+            </section>
+            
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "熱情與責任",
+                "甘心做這事",
+                "神是熱情的神",
+                "熱心必成就這事",
+                "享受過程",
+                "忍受過程",
+                "成為愛神的人",
+                "接近熱情的人",
+                "發現事工的價值",
+                "帶下神榮耀的同在",
+                "發掘其中的樂趣",
+                "持守熱情的火"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
