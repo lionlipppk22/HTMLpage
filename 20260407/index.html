@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260407 主日信息</title>
+    <meta name="description" content="20260407 主日信息 - 【開場與禱告】">
+    <meta name="keywords" content="基督徒, 復活, 救恩, 新造的人, 見證, 恩典, 平安, 十字架, 洗禮, 翻轉人生, 聖靈, 耶穌基督">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260407 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle"><strong>【開場與禱告】</strong>
+                    <a href="https://www.youtube.com/watch?v=yew71KeBCMA">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=yew71KeBCMA">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-strong開場與禱告strong">
+                <h2 id="strong開場與禱告strong"><strong>【開場與禱告】</strong></h2>
+                <p>要怎麼離開呢？到營外去見祂啊，不是嗎？所以今天有三位，待會兒就是要到營外去見這位主，真的是感謝神。你們這三位是很有福的。今天是一個榮耀的日子，如果耶穌沒有從死裡復活，我們真的得不著永遠的生命，所以真的很感謝主。今天有三位要在弟兄姊妹、在天使甚至在魔鬼面前，宣告他們是屬神的。既然是屬神的，魔鬼還能碰他們嗎？不可以。所以這是一個很榮耀的日子。</p>
+<p>我們先做個禱告，請他們上來做見證，牧師再做分享。</p>
+<p><strong>（禱告內容）：</strong>
+「天父，我們感謝祢。主啊，祢把這樣寶貴的救恩賜給我們每一個弟兄姊妹，尤其是今天有三位要受洗的弟兄姊妹。主啊，實在是祢揀選了他們成為祢所愛的兒女。祢說：『若有人在基督裡，他就是新造的人，舊事已過，都變成新的了。』主啊，是的，祢把新造放在他們的裡面，舊造都已經脫去。因為祢的代贖，我們才能夠得著這樣寶貴的生命。我相信他們三位今天就是要要在眾人的面前為祢做美好的見證，而且要受洗歸入祢的名下，成為祢的兒女。我們為他們來感謝祢，求主悅納他們在祢面前所要做的見證，也願主祢使用他們的見證來激勵我們每個弟兄姊妹。主我們感謝祢，願祢祝福他們所要分享、交通的，求主與他們同在，賜給他們膽量與從聖靈而來的膏抹，讓所釋放的信息帶著生命復活的大能。主，我們謝謝祢聽我們的禱告，奉耶穌的名求，阿門。」</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-strong邱媽媽的見證strong">
+                <h2 id="strong邱媽媽的見證strong"><strong>【邱媽媽的見證】</strong></h2>
+                <p><strong>牧師：</strong> 第一位要起來做見證，她說很緊張，我說不用緊張。</p>
+<p><strong>邱媽媽：</strong> 感謝主。親愛的弟兄姊妹們平安。經過今日的儀式，讓我可以很大聲地跟大家說：我是基督徒了。走在窄門、窄路，在神的懷中過。我願意。</p>
+<p>在這條主路上的感想，讓我很深的是在四十幾年前，那時我們家在做家庭代工，經濟較不寬裕。有一位楊女士，她利用假日的時候在他們家的簷下，請教會的弟兄姊妹帶我們附近的小孩去聽聖經、吃點心、禱告。我兩個女兒因為這樣信了主、認識了耶穌，心裡面種下了耶穌的種子，我也很開心。如今我想接受耶穌，她們是喜悅又榮耀的。</p>
+<p>神愛世人，信耶穌得永生。在 2025 年 1 月 24 號清晨，我先生近 82 歲，在睡夢中蒙主寵召。以前我要去哪裡都是我先生接送，我是他甜蜜的負擔，接送是他的義務與責任。我們曾經說好要一起受洗，可是上帝這麼早帶走他，我們真的無法意料。耶穌什麼時候再來我們也不知道，所以親愛的弟兄姊妹，請把握機會進入神的家。</p>
+<p>現在每日讀聖經，聽教會 LINE 精心整理過的經文、詩歌、分享與禱告。打開手機隨時隨地都可以讀經禱告，對於忙碌的現代人來說，無時無刻可以跟上帝連結是多麼重要的事情。我很感謝親愛的主，我來到祢面前，願上帝的光、平安與喜樂，臨到在座的每一位弟兄姊妹。奉主耶穌名禱告，阿門。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-strong明潔的見證strong">
+                <h2 id="strong明潔的見證strong"><strong>【明潔的見證】</strong></h2>
+                <p><strong>牧師：</strong> 之後會越來越喜樂，越來越有榮光。感謝神。下一位是明潔。明潔今天有三位朋友來觀禮對不對？歡迎。這三位是明潔的朋友，直接交給明潔。</p>
+<p><strong>明潔：</strong> 各位弟兄姊妹平安，我是明潔。我在成長路上一直看到基督徒有一種特別的特質，就是很平安、很溫暖。最近我開始讀聖經後，我覺得那種感覺是一種超凡的感覺，因為我們是尊貴的，我們都是神的女兒，這讓我很嚮往。可是因為家裡是很傳統的家庭，信仰傳統宗教，但我內心一直把這樣的嚮往放在心裡。</p>
+<p>我二十幾歲剛出社會工作時，有一位保險客人帶領我去參加教會，那時參加過一次主日。第二次他邀請我去，我也跟著大家一起到台前，忽然就被灑水，他說你已經受洗，現在是神的兒女。那時因為還不那麼認識主，我內心覺得很驚訝、很錯愕。回到家後感受沒有那麼好，甚至有點害怕，同時對基督教與神產生了誤解跟隔閡。</p>
+<p>直到最近這一年，我看到身邊的朋友、同事身上有基督的樣式，我內心還是很嚮往。轉折點是在去年 12 月，兒童主日學辦了聖誕節活動，我的小朋友拿到一張做聖誕花圈的傳單，他們很想參加。這張傳單讓我重新有機會踏入神的殿。跟著他們玩花圈、開心地吃喝玩樂。一月的活動結束後，原本想說小朋友下次不會想來了吧，結果小朋友回家說以後每個禮拜都要來。</p>
+<p>我覺得真的很棒。跟著他們來，我也覺得神一直在呼喚我回家。一進來我就覺得這裡讓我很平靜、很安全、很沉浸、很舒服、很喜悅，內心覺得就像回家一樣。小朋友給了我理由和力量跟著他們回來。這種平靜與沉浸的感覺，對比我以前跟主隔絕、拜黑暗權勢的時候，那時求健康、求財富，可是愈拜愈恐懼、愈焦慮。</p>
+<p>來到主的殿堂，一坐下來，就有很深的意念進入我的心，可能是神在告訴我：祂會供應我所需要的。昨天我在聚會時抽到神的話，我一看就想哭。那段話的意思是：我是一個蠟燭，我想辦法燃燒自己照亮別人，可是蠟燭常有燒完的時候，當我快燒完時就很焦慮、擔憂，拼命賺錢再去換下一個蠟燭...。</p>
+<p>神告訴我，教會對我來說不再是蠟燭，而是我的插座。我可以直接連接、充電，連接神後，神會給我源源不絕的能量，我再也不會燒完，我的力量是來自於神。這就是神要跟我講的話，祂給我這樣的意念與力量。</p>
+<p>自從我開始接近主以後，包括我的家庭和孩子，收穫真的很多。不論是孩子的情緒、課業或親子關係，還有我跟我先生，甚至跟我公婆原本有些不好處理的結，都在慢慢修復。我感覺到神不只進入我裡面，更進入我的家庭，帶領我們越來越好。在工作上，主也一直帶領我度過許多瓶頸，無論工作或生活，主都與我同在。</p>
+<p>信主以後，我才知道什麼是真正的和平。以前我是一個很有恩賜的人，但不懂那是恩賜，只想靠自己的力量去抓事情，但其實靠自己是不容易的。信主以後，我再也不用靠自己活在不安與焦慮中。這次我選擇受洗，不再是一時衝動，而是我真的經歷過神，知道神是真的，知道祂會帶領我。謝謝。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-strong子軒的見證strong">
+                <h2 id="strong子軒的見證strong"><strong>【子軒的見證】</strong></h2>
+                <p><strong>子軒：</strong> 各位弟兄姊妹早安。前面兩位見證太完整了，我好緊張，看一下小抄。</p>
+<p>我從小在基督家庭長大，出生就接觸教會環境。國小時，外婆會說幾點不起來就要用水潑我才去教會，我會拿著早餐在教會門口吃到十一點半才進去。因為長輩用賽德克語講道我聽不懂，覺得進去都是老一輩的事，國高中時都沒有讀到真正的聖經。後來看到《埃及王子》才知道，原來一個棍子就可以讓紅海分開，覺得主的力量好厲害。</p>
+<p>高中時我離開了教會，進入叛逆期，會去做一些不好的事，抽菸、喝酒、打架。有一次被打到流血躺在地上，覺得自己像個罪人。去年我媽媽生病，我陪她在醫院度過，媽媽要我每天禱告。原本她是癌症第四期，後來奇蹟般地變成第一期，這讓我感覺是時候該回來了。</p>
+<p>最近工作發生一件蠻好笑的事。我在做瓦斯與熱水器維修，要在北投、天母的山上扛五十公斤的瓦斯。那裡寺廟和尼姑庵很多，有一次遇到一位年輕尼姑，她說跟我蠻有緣的，問我幾歲。她說她三十歲出家，希望我也能試著看看這附近的環境，還說廟裡沒有後人，希望有人接手。雖然那邊資產可能價值幾百萬、幾千萬，但在我心裡耶穌一直都在，所以她說那些東西我沒有任何感覺。我這次受洗是想要更堅定我自己，謝謝大家。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-strong牧師分享復活與翻轉人生strong">
+                <h2 id="strong牧師分享復活與翻轉人生strong"><strong>【牧師分享：復活與翻轉人生】</strong></h2>
+                <p>感謝主把子軒重新帶回到神的家。弟兄姊妹，我們要分享關於復活的主題：祂已復活，而你的人生也可以被翻轉。</p>
+<p>我們有舊的生命也有新的生命。如果你的人生可以重新開始，你最想改變什麼？很多人喜歡看穿越劇，想回到某一年重新活過，希望這一生能活得更精彩。這對於你我有沒有可能？當然有可能，沒有可能的話，我們人生就沒盼望了。雖然時間沒辦法倒轉，但就像導航一樣，走錯了可以再回頭。</p>
+<p>人生可以重新改變，但你需要這位上帝。靠自己改是很有限的，因為還是在舊造裡面。如果不認識上帝，我們都是拖著沉重的包袱，活在一個無法回頭的現實裡面。所以你需要福音。福音就是好消息：在耶穌基督裡面可以重新開始。這就是十字架的意義。十字架告訴我們，耶穌的死亡不是終點，而是愛的起點，因為祂復活了。復活帶來極大的翻轉，你的人生是可以翻轉的。</p>
+<p>「赦免」的意思就是寬恕，而被動語態就是「被赦免」。</p>
+<p>這是耶穌在十字架上帶給我們的，是一個聖事，而且祂是毫無保留地把自己賜給我們。有其他宗教的教主這樣毫無保留嗎？有很多師傅，有師傅為你死的嗎？有師傅用自己的生命跟你交換的嗎？沒有。反而是你想給他很多東西，想要從他那裡撈到好處，結果他把你所有的都撈走了，最後你就開始不爽他，然後拋棄這個師傅。</p>
+<p>唯有一位主是為你死的，就是<strong>耶穌基督</strong>。祂是無條件、毫無保留地把自己賜給你。十字架的釘子不是結束，而是神完全的給出，祂將祂的愛毫無保留地傾倒在我們身上。在羅馬政府統治時代，十字架代表死刑，是用來處罰犯人非常殘酷的工具。今天有些人戴十字架項鍊，這是一個救贖與榮耀的記號，但羅馬時代沒人會戴十字架。耶穌來了就把這些改變了，神用最黑暗的工具成為最光明的救恩。</p>
+<p>耶穌被釘十字架不是因為祂失敗，而是願意承擔我們所有人的罪，代替我們付不出的代價。祂是無罪的，只有無罪的才能代替有罪的人。我們都是罪人，虧缺了神的榮耀，沒有任何人能代替他人死，唯有無罪的耶穌能夠代替我們。</p>
+<p>在傳統信仰裡，常覺得必須變好了神才會接納，這就像明潔所講的，很努力地去燃燒自己，想把自己弄好一點、努力一點，好讓人看見並肯定自己。我們以前需要人的讚美，所以很努力往上爬，要成為龍鳳。但這位神不是要你先變好才接納你，祂是先愛我們，我們領受祂的愛再去回應。一個人會改變，唯有他先被愛。就像追女朋友送花表達愛，對方感受到被愛，才願意接受並加倍回應。上帝也是先愛我們、先為我們死，我們感受到被愛，才願意去回應祂的愛。</p>
+            </section>
+            
+            <section class="section" id="section-strong恩典真理與生命的翻轉strong">
+                <h2 id="strong恩典真理與生命的翻轉strong"><strong>【恩典、真理與生命的翻轉】</strong></h2>
+                <p>十字架清楚告訴我們，神是在我們還不配的時候就已經愛我們了。很多人活在「我要更好，神才會接納我」的表現主義中。有些孩子活得很辛苦，因為父母永遠用成績來界定他的好壞。有一對父母對孩子要求非常高，要求是對的，但過度的要求是不對的，孩子在成長過程中會受到權威帶來的傷害。</p>
+<p>牧師小時候過得很開心，雖然我是領養的，但我得天獨厚，上面有兩個姐姐、下面一個妹妹，身為唯一的兒子，吃好穿好什麼都好。我以前也拜得很兇，但在大學認識主後，才知道什麼才是真的，什麼能成為我生命的幫助與改變。神把一個詭詐的人、一個以前「不是好東西」的人改變了。認識神後我完全了嗎？也沒有，還有很多需要被神改變的地方。</p>
+<p>神一直沒有離棄我，我感受到祂的愛，所以願意去回應。父母如果常用愛去面對孩子，孩子感受到愛，就會逐漸改變。如果你只講真理卻沒有愛，那會變成傷害；講真理加上愛，才是給予生命。約翰福音說，主充充滿滿地有恩典、有真理，並把恩典（愛）放在真理前面。你要有恩典也有真理，才能給人生命。</p>
+<p>你不是靠表現被接納，而是因為被接納所以成長。耶穌看見你最糟的樣子，仍認定你值得祂為你而死。祂沒有說你先變好一點才救你。這句話對許多人來說很難相信，因為我們太習慣用表現來定義一個人的價值。我們常在好的時候覺得被愛，在失敗的時候覺得被丟棄。希望你們聽完後要改變這種想法，耶穌不是這樣的。祂看見彼得三次不認祂，但祂復活之後，不是要找彼得算帳，而是來恢復他。</p>
+<p>主主動來找彼得、愛他，並重新呼召他。神沒有用失敗來定義彼得，祂用愛重新來建造他。神今天看我們每一個人也是如此，祂知道你的掙扎、軟弱，以及反覆跌倒的地方。即便你心中有一些隱藏的黑暗不願人知，祂也沒有遠離你，還是很靠近。</p>
+<p>神的愛不是因為你值得，而是因為祂本來就是愛，這是祂的本質。就像一個媽媽愛她的孩子一樣，再怎麼壞還是愛。求神把祂的愛更多充滿在你的裡面，你就有能力去愛，我們就可以活得真實。</p>
+            </section>
+            
+            <section class="section" id="section-strong新生命與聖靈的工作strong">
+                <h2 id="strong新生命與聖靈的工作strong"><strong>【新生命與聖靈的工作】</strong></h2>
+                <p>以真實的本相來到祂面前，我們不需要偽裝。我們有一位和平之君，就是耶穌。跟隨這位主、這位王，裡面一定會有平安。復活的現實是新的生命與真實同行。如果耶穌只停在十字架上，福音只是一個悲傷的故事，但耶穌留下的是空墳墓。</p>
+<p>復活不是神學概念，而是讓我們真實經歷生命的大能。你本來沒有能力去愛或饒恕一個人，但因為復活的生命與<strong>聖靈</strong>在你裡面工作，你就有那個能力。以前讀不懂聖經，現在讀起來像挖到寶一樣，這就是復活生命在妳身上的工作。活著的不再是我，乃是基督在我裡面活，舊事已過，都變成新的了。</p>
+<p>這位復活的主每天與你同行，祂走在你前面開路，在身旁陪你經歷人生所有的風暴。在你困難、失落的時候，眾人可能離你而去，但這位主沒有丟棄你，祂住在你裡面成為力量的來源。當你感到軟弱、迷失時，祂引導你人生的方向。聖經說我們如羊走迷，各人偏行己路，但祂把我們帶回來。</p>
+<p>洗禮是進入新生命的公開見證，是一個深刻的屬靈宣告，與基督同死、同埋葬、同復活，領受全新的生命。從水裡起來後，要有一舉一動新生的樣式，這代表生命要持續地改變。</p>
+<p>過去可能脾氣很暴躁，從水裡起來後雖然還是會遇到挑戰，但你可以呼求主。當你快要爆發時，先在裡面安靜三分鐘，讓<strong>聖靈</strong>在裡面作工，因為復活的主就在你裡面活著。<strong>洗禮是人生重大的轉折點，過去的生命不再定義你，罪跟羞愧不再捆綁你。</strong></p>
+<p>你開始有了一個新的身份：<strong>神的兒女</strong>。這不只是下水一次，而是一生最重要的宣告：我不再屬於過去，我是屬於基督。這是一個勇敢的決定，也是蒙福的開始。</p>
+<p>未來日子仍會有挑戰、軟弱與掙扎，但你們的身份已經改變，神的生命已在身上運行。跌倒時祂扶持，迷失時祂引導，疲憊時祂成為力量。凡呼求主名的就必得救，這不僅是救贖，更是全人的恢復。我們不是靠自己走這條路，而是有復活的主同行，經歷翻轉的人生。</p>
+<p>復活不只是歷史，而是現在進行式。當你沮喪、壓力大時，去禱告，神的力量就會進來，讓人重新活過來。<strong>重點是要抬頭仰望神，而不是只看環境。</strong> 就像剛才提到的「插座」，插上電就有能量，如果不來連接（聚會），就會沒電。孩子們在兒主能得著喜樂，我們大人也應該如此，靠耶和華而得的喜樂就是我們的力量。</p>
+<p>對於已經受洗的人，要思考自己是否仍活在新生命中，還是回到了舊有的習慣與模式。<strong>洗禮不是一次性的記號，而是一生的呼召。</strong> 我們每天都需要活出與基督同死同活的生命。</p>
+<p>神一直都在呼召人，改變人的生命，帶給人重新開始的機會。如果你還沒認識這位神，可以好好思考。神的愛是為每個人預備的，祂已復活，而你的人生也可以被翻轉。</p>
+            </section>
+            
+            <section class="section" id="section-strong結尾禱告strong">
+                <h2 id="strong結尾禱告strong"><strong>（結尾禱告）：</strong></h2>
+                <p>「上帝，我感謝祢，將祢獨生的愛子耶穌賜給我們。不僅祂道成肉身住在我們中間，充充滿滿地有恩典、有真理，而且為我們每一個罪人釘死在十字架上。第三天從死裡復活，這樣一個新的生命是給我們的。我們感謝主，讓我可以與基督同死、同埋葬、同復活，以至於我們有一個新的生命在我們這個人身上。不僅是今生，而且來生也有盼望。今天我們再次感謝祢，不僅救贖了我們每一個弟兄姊妹，也救贖了子軒、明潔、邱媽媽。我們感謝祢，他們要在眾人面前見證，受洗歸入到祢的名下。我們深信他們要成為祢家中祢所愛的兒女，我們也深信祢會為他們負責一生的道路。在他們感到灰心、感到疲倦、感到軟弱的時候，主，求祢來靠近他們，與他們同在。帶領他們進入到祢自己命定的旨意當中。祝福他們，不僅是他們自己，而且他們的家庭，也能夠一起得享在<strong>耶穌基督</strong>裡面豐盛的生命。主，我們感謝祢，我們將一切榮耀都歸給祢，奉耶穌的名禱告，阿門。」</p>
+<p>好，我們現在就請三位，我們就到中庭去。那要觀禮的話，你們可以圍著玻璃幕，那有些如果可以在樓梯間也可以站在樓梯間。</p>
+<p>喂，這樣子聽得到嗎？外面聽得到嗎？一、二、三，有聽到聲音嗎？</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-strong洗禮儀式strong">
+                <h2 id="strong洗禮儀式strong"><strong>【洗禮儀式】</strong></h2>
+                <p><strong>（子軒受洗）</strong></p>
+<p><strong>牧師：</strong> 子軒，你承認你的罪了嗎？你相信耶穌在十字架上已經為你的罪釘死了嗎？
+<strong>子軒：</strong> 相信。
+<strong>牧師：</strong> 你願意接受<strong>耶穌基督</strong>成為你生命的主嗎？
+<strong>子軒：</strong> 願意。
+<strong>牧師：</strong> 感謝主，我們請以利弟兄來為他禱告。</p>
+<p><strong>（禱告內容）：</strong>
+「耶穌，祢的話說：『我若展開清晨的翅膀，飛到海的極處，就是在那裡，祢的手也必引導我，祢的右手也必扶持我。』今天我們真實看見祢不放棄子軒，把他帶到祢的面前。當他決定轉向祢、走入祢的洗禮的時候，祢就像那位慈愛的父親，相離甚遠就動了慈心，跑去抱著他，連連與他親嘴。求祢藉著這個洗禮，洗淨他一切的罪孽與重擔。當他從水裡上來的時候，求祢親自為他披上尊貴的外套，讓他深深知道他是祢所愛的孩子，是永遠屬於祢家裡的人。他一生要走在祢的恩典與光中，並且這新的生命好像黎明的光，越照越明，直到日午。奉主耶穌的名禱告，阿門。」</p>
+<p><strong>牧師：</strong> 好，子軒，我奉<strong>聖父、聖子、聖靈</strong>的名為你施洗。</p>
+<p>（唱詩歌：看啊看啊，一切都更新；聽啊聽啊，耶穌為我，祂不離，帶我進入祂應許之地。從今天起，從此刻起，我是新造，我是新造的人。）</p>
+<hr />
+<p><strong>（明潔受洗）</strong></p>
+<p><strong>牧師：</strong> 明潔，你承認你的罪了嗎？你相信耶穌在十字架上已經為你的罪釘死了嗎？
+<strong>明潔：</strong> 我相信。
+<strong>牧師：</strong> 你願意接受耶穌成為你生命的主嗎？
+<strong>明潔：</strong> 我願意。</p>
+<p><strong>（禱告內容）：</strong>
+「阿門！主，是的，哈利路亞！從此以後明潔她不再是一個人，主，這是一條與天父同行的啟程，這是一個新的生命的開始。主走在她的前面，哦主啊，是的，義人的路好像黎明的光，越照越明。主，明潔她前面的道路，祢為她點亮那個燈火，越照越明。主，是的耶穌，祢要使用她，祢也要負責她，她是祢寶愛的孩子。主，祢不僅用水為她施洗，祢也用<strong>聖靈</strong>為她施洗。主，<strong>聖靈</strong>成為她靈裡面的一個剛強，成為她靈裡面的一個能力，不再一樣，有新生的生命在她的裡面。謝謝主。奉父、子、聖靈的名為妳施洗。」</p>
+<p>（唱詩歌：我已經決定要跟隨耶穌，永不回頭，永不回頭。）</p>
+<hr />
+<p><strong>（邱媽媽受洗）</strong></p>
+<p><strong>牧師：</strong> 邱媽媽，她不是用浸禮，她用點水禮。好，邱媽媽，妳承認妳的罪了嗎？
+<strong>邱媽媽：</strong> 是的。
+<strong>牧師：</strong> 妳相信耶穌已經在十字架上為妳的罪死了嗎？
+<strong>邱媽媽：</strong> 是的。
+<strong>牧師：</strong> 妳願意接受耶穌成為妳生命的主嗎？
+<strong>邱媽媽：</strong> 願意。
+<strong>牧師：</strong> 我請博真傳道來為邱媽媽禱告。</p>
+<p><strong>（禱告內容）：</strong>
+「愛我們的天父，我們感謝讚美祢，因為今天是一個歡喜、快樂、榮耀的時刻。邱媽媽受洗歸入祢的名下。她是祢所寶貴、所揀選的孩子。主，祢就是這樣地恩待她，讓她在基督裡要成為一個新造的人，有新的生命，在基督裡有一個新的生活。主，求祢常常引導她，讓她在基督的裡面成為一個新造的人，也讓她的內心一天新似一天，然後她的生命當中要反應出基督的樣式，因為現在活著不再是她，而是祢在她裡面活著。讓她每天都能夠更加地喜樂、更加地平安，經歷祢的同在。謝謝天父祢的揀選與看顧。我們這樣子的禱告是奉靠主<strong>耶穌基督</strong>的名，阿門。」</p>
+<p><strong>牧師：</strong> 奉聖父、聖子、聖靈的名為妳施洗。</p>
+<p>（宣告：宣告祂的愛在她的裡面。我們相信祢今天用聖靈親自會來，讓她更能來經歷到祢的同在，經歷祢的喜樂與祢給她的平安。奉耶穌的名禱告，阿門。）</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-strong牧師結語與勉勵strong">
+                <h2 id="strong牧師結語與勉勵strong"><strong>【牧師結語與勉勵】</strong></h2>
+                <p><strong>牧師：</strong> 靠耶穌，我罪洗淨。感謝主。</p>
+<p>今天有些人可能是第一次看到教會受洗的這樣一個聚會，那牧師今天所講的一個重點：你是可以經歷神的。而且祂是可以帶給我們生命改變的那位主。不僅是我們生命可以帶來改變，我們整個家庭也可以帶來改變。</p>
+<p>我們常講說，有些人他可能在一個不是那麼理想的家庭成長，受到很多的傷害，心裡有很多的抱怨，甚至會說為什麼神要把我擺在這個家庭裡面。今天我要鼓勵你，你要從這樣的思維裡面跳出來，你反而是要去思考，你要跟神禱告，求神從你這個人身上開始改變，帶下那個復興。</p>
+<p>當我們這個生命改變的時候，很自然地，神會一步一步地解決許多的問題。但是一個起點就是：我這個人一定要先得著這寶貴的救恩。我看過在教會裡面有許多的弟兄姊妹，尤其是常常都是姊妹先信主，先生還沒有信主。但是因為姊妹她們就收起抱怨。為什麼？因為她們覺得她們所付的一些責任，常常會覺得：哇，我做了這麼多，我在這個家做牛做馬，然後呢又被嫌。可能被老公嫌，如果跟公婆住在一起的人，還會被公公婆婆嫌，裡面就有很多的傷害。</p>
+<p>但是當這樣一位姊妹，她改變她的態度，她不再去抱怨，她更多來到上帝的面前跟神禱告，求神加給她力量，加給她喜樂，帶領她能夠走過這樣不容易的日子。往往因為她自己生命的改變，這些公公婆婆甚至是先生在看她的時候，態度也開始轉變，甚至孩子在看父母親的時候也開始改變。</p>
+<p>這就是神一個復活的大能在我們身上持續在做一個更新改變的工作。所以當我們禱告說，裡面那個人會「一天新似一天」。那是誰做的？就是神在我們裡面做。一天新似一天，才會有新生的樣式。所以你的改變是從誰開始？從我們自己開始。</p>
+<p>往往我們都是告訴別人要改變，對不對？你要告訴孩子要改變：「你是什麼態度啊？你跟媽媽講話是這種態度嗎？你要改變！」可是當我們這樣子的時候，孩子都看到了：「媽媽妳都不用改變嗎？爸爸你不用改變嗎？」孩子會指回來對不對？就是互相指責、互相定罪。</p>
+<p>可是耶穌來不是要定我們的罪。耶穌沒有說：「某人以後好了，妳這是什麼態度啊？妳沒有改變，得不到救恩。」祂沒有這樣子。所以就如牧師所講的，祂就是先來愛我們，所以我們也要用聖經裡面所有的教導去面對我們所有人。所以耶穌講這句話很寶貴，祂說：「我怎樣愛你們，你們也要怎樣相愛。我怎樣赦免你們的罪，你們也要怎樣赦免人的罪。」</p>
+<p>所以我們要放下那種「不肯饒恕」。有些時候，你知道父親對孩子不肯饒恕。你看<strong>浪子回頭</strong>的故事吧，那個爸爸有沒有說，小兒子回來的時候：「你先去外面...</p>
+<p>滾一圈，變好了之後再回來」？沒有啊，他就擁抱他，二話不說就擁抱他。而且你知道他沒有嫌他。他在豬舍裡面住，身上很臭，他沒有嫌他臭，對不對？</p>
+<p>所以我們應該用這種態度去愛每一個人。感謝神。我們來唱一首詩歌《一生愛你》。我們就一生要來回應這位主，活在祂的裡面，為祂所用，阿門。</p>
+            </section>
+            
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "基督徒",
+                "復活",
+                "救恩",
+                "新造的人",
+                "見證",
+                "恩典",
+                "平安",
+                "十字架",
+                "洗禮",
+                "翻轉人生",
+                "聖靈",
+                "耶穌基督"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
