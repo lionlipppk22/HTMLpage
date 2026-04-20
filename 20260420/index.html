@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260420 主日信息</title>
+    <meta name="description" content="從苦難到祝福 (約伯記 36章)">
+    <meta name="keywords" content="從苦難到祝福, 約伯記 36章, 苦難是化妝的祝福, 痛苦是上帝的擴音器, 喚醒沉睡的靈魂, 進入寬闊自由之地, 生命操練, 豐盛筵席, 荒漠甘泉, 考門夫人, 上帝的恩典是一生之久, 曠野開道路">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260420 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">從苦難到祝福 (約伯記 36章)
+                    <a href="https://www.youtube.com/live/YByxPdXnEYM?si=kSG8DBe1HHbSZvyf">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/YByxPdXnEYM?si=kSG8DBe1HHbSZvyf">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-前言在病痛中看見恩典">
+                <h2 id="前言在病痛中看見恩典">前言：在病痛中看見恩典</h2>
+                <p>各位弟兄姐妹平安。今天我是帶著病痛來與大家分享的，但內心充滿感謝。在出門前，我在家還咳得很厲害。當時太太對我說：「你要不要再多看幾家診所？再去買些藥？你已經看了醫生也吃了藥，但到今天還是一直在咳。」然而，就在剛才敬拜時，我驚覺自己不咳了。感謝主，這真的是神蹟。如果接下來的分享中我沒有咳嗽，那就是上帝奇妙的作為。</p>
+<p>我們一起來禱告：
+「我們感謝讚美你。主啊，你為我們來到世上，為我們而死，也為我們復活。你用生命買贖了我們，使我們可以坦然無懼地來到你面前。主，我們何等有福能成為你的兒女，因為我們知道人生無論經過什麼樣的挑戰、困難或苦難，你都是我們最大的靠山，你的慈愛永遠不離開我們。主啊，願你至上的話語安慰我們、應許我們，帶領我們進入你的祝福。在今天的分享中，也求你親自在我們生命中動工，開通我們的耳朵，使我們聽見你的話語並順服進入你的應許。謝謝主聽我們的禱告，奉耶穌基督的名，阿門。」</p>
+<p>今天分享的主題是「從苦難到祝福」。最近大家都在讀《約伯記》，上禮拜牧師分享了第12章，今天我們要看第36章。雖然沒有人喜歡遇到苦難，但我們常聽說：「苦難是化妝的祝福。」我們都喜歡祝福，追求一帆風順、心想事成、步步高升與功成名就，希望成為人生的贏家。</p>
+<p>然而，人生中有一件事是無法避免的，那就是苦難。我們會遇到困難、痛苦與挫折。苦難在生命中確實難以面對，這也是基督教信仰中一個深刻的課題：為什麼慈愛的上帝會讓我們遭遇到這樣的苦難？</p>
+<p>苦難的形式多種多樣：可能是身體的病痛，可能是情緒或身心的煎熬，也可能是社會性的壓迫（如信仰逼迫），甚至是自然災害（如地震、海嘯或疫情）。這些痛苦的確令人難以接受，例如前幾年的疫情造成了嚴重的傷亡。當苦難臨到時，我們不禁會問：神為什麼容許這些事發生？</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-痛苦是上帝的擴音器喚醒沉睡的靈魂">
+                <h2 id="痛苦是上帝的擴音器喚醒沉睡的靈魂">痛苦是上帝的擴音器：喚醒沉睡的靈魂</h2>
+                <p>大家對 C.S. Lewis（路易斯）熟悉嗎？他寫了著名的《納尼亞傳奇》，也寫了一本書叫《痛苦的奧秘》（The Problem of Pain）。他在書中寫道：「神在我們的歡愉中對我們低語，在我們的良知中對我們說話，但在我們的痛苦中大聲疾呼：痛苦是神用以喚醒一個耳聾世界的擴音器。」</p>
+<p>苦難正是上帝的擴音器。在現今資訊爆炸的時代，獲取訊息非常容易，但為什麼人在苦難中常覺得聽不到上帝的聲音？神為什麼沉默了？C.S. Lewis 提醒我們，痛苦本身就是上帝向我們說話的工具。</p>
+<p>有時候我們對某些事情太過熟悉，或者人際關係（特別是親子關係）太過親近，會產生一種「我不說你也該知道」的錯覺。父母常對孩子說：「你一個眼神、一個表情，我不聽你說就知道你在想什麼。」但事實上，這種缺乏溝通的關係往往會產生衝突。當對方想說話時，我們若回應「我都知道了，不用說」，關係就會停滯甚至疏離。</p>
+<p>身為基督徒，在信仰道路上是否也有類似的情況？信主多年後，我們對教會的術語、運作、小組、經文都瞭如指掌，卻可能在不知不覺中變得「行禮如儀」。直到有一天，上帝藉著苦難這個擴音器在我們耳邊大喊，我們才驚覺自己雖然身在教會，心卻離上帝很遠。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-約伯的苦境當義人遭遇不平">
+                <h2 id="約伯的苦境當義人遭遇不平">約伯的苦境：當義人遭遇不平</h2>
+                <p>我們來看以利戶對約伯說的話（約伯記 36:16-21）。這段經文提醒我們，神必引領人脫離患難，進入寬闊之地，且擺上肥甘。但以利戶也指出，約伯當時滿口是批評惡人的言語，被判斷和刑罰抓住。他警告約伯不可容忿怒觸動心靈，不可因受苦的代價大就偏行己路，更要謹慎，不可重看罪孽過於重看苦難。</p>
+<p>約伯成了全人類中受苦者的代表。想像一個守法的人，開車從不違規，卻被酒駕者撞死。眾人會覺得這太不公平，為什麼這樣的事會發生在好人身上？這正是約伯的處境。約伯敬畏神、遠離惡事，私人品格與社會服務都做得極好，但苦難卻像酒駕者一樣突然撞進他的生命，讓他失去兒女、財產與健康。</p>
+<p>面對這場變故，各方的回應不同：
+他的妻子建議他「棄掉神吧」，認為神不公義，不如乾脆離開神。
+他的三位朋友則持「定罪論」，認為約伯一定是犯了不為人知的罪，才遭此不幸，甚至輪番逼他認罪。</p>
+<p>然而，約伯受難並非因為犯罪。他感到無辜且憤怒。從求死、咒詛自己的生日，到最後火力全開回擊朋友，每個人都在試圖用自己的邏輯去解釋苦難。</p>
+<p>在《約伯記》27章到31章的獨白中，約伯控訴上帝奪去了他的公義。他一方面強調自己清白，一方面向神發出挑戰，情緒激動地要求神「出來講清楚」。他想知道為什麼，卻得不到答案。約伯甚至要求上帝寫下罪狀，因為他自認站得住腳。儘管充滿困惑與抱怨，約伯始終沒有放棄神，他仍然渴望全能者能回答他。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-如何在苦難中對焦轉向神的心意">
+                <h2 id="如何在苦難中對焦轉向神的心意">如何在苦難中對焦：轉向神的心意</h2>
+                <p>我們該如何面對苦難？雖然我們受的苦可能不像約伯那麼大，但人生難免遇到無法解決的挫折。面對苦難，我們的焦點常落在「為什麼是我？」（Why me?），卻很少問「神啊，你要藉此做什麼？你的心意是什麼？」</p>
+<p>苦難未必是上帝的懲罰。我們不應急著尋找自己的過錯或神的處罰。有時我們會跟神理論，認為自己忠心奉獻、熱心聚會，不該遭遇這些事。我們常試圖以行為來證明自己有理，若沒得到預期的順遂，便會對上帝產生懷疑。</p>
+<p>事實上，苦難是上帝的擴音器。它不是為了毀滅，而是為了拯救。神透過患難打開我們的耳朵，讓我們在軟弱中重新聽見祂的聲音。在事業順利、家庭美滿時，人常覺得靠自己就能過得很好，不需要耶穌；但當人處於病痛、軟弱或挫折中，心靈會變得柔軟，因為意識到無法自救。</p>
+<p>無論是事業挫折、情感創傷或孩子叛逆，上帝常藉此提醒我們：心中是否有什麼東西已經取代了神？我們是否因忙碌而漸行漸遠？來教會聚會是否成了機械式的動作？</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-苦難後的應許生命操練與豐盛筵席">
+                <h2 id="苦難後的應許生命操練與豐盛筵席">苦難後的應許：生命操練與豐盛筵席</h2>
+                <p>上帝藉苦難成就的第二個祝福是：脫離困境、操練生命，進入寬闊自由之地。如經文所說，神要引領我們進入寬闊之地，擺上肥甘。</p>
+<p>苦難背後隱藏著生命的祝福。它不是終點，而是進入祝福的起點。苦難如同煉鋼的爐火，可以磨煉靈性。鋼鐵要堅韌，需經過1600度高溫的淬鍊。金子要純淨，需經過千錘百鍊。</p>
+<p>Nvidia（輝達）執行長黃仁勳曾對學生說：「我希望你們經歷足夠的痛苦與苦難。」他認為成功來自於品格，而品格是從苦難中磨練出來的。麥克阿瑟將軍也曾為兒子禱告，不求生活安逸，而求神讓孩子在困難與挑戰中學習堅強、勇敢與誠實。</p>
+<p>這是一個愛孩子之父親的禱告。在人生旅途中，面對孤單、背叛、排擠或輕視，我們需要安靜下來，思考上帝要傳達什麼訊息。</p>
+<p>第三個祝福是神最終的目的：讓人嚐到豐盛的筵席。
+苦難是化妝的祝福。《詩篇》23篇應許：即便行過死蔭幽谷，也不怕遭害，因為主與我們同在，且在敵人面前為我們擺設筵席。以約伯為例，他最後獲得了加倍的補還。神要在受苦者身上成就的，是那別人奪不去的平安與寶貴生命價值。</p>
+<p>耶穌是我們的榜樣。祂也曾受過試探與苦難，卻沒有犯罪。祂在十字架上的順服，使我們可以經歷更盛的生命。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-靈魂的警戒不要在苦難中選擇罪孽">
+                <h2 id="靈魂的警戒不要在苦難中選擇罪孽">靈魂的警戒：不要在苦難中選擇罪孽</h2>
+                <p>我們要留意：不要選擇犯罪過於選擇苦難。以利戶提醒約伯，不可因憤怒而偏行己路。人在受苦時，最容易口無遮攔、心生怨恨。例如在職場中遭遇不公，人可能會從受害者轉變為加害者，甚至產生反社會人格，將自己的罪行歸咎於過去的不幸。</p>
+<p>苦難就像一場有時限的考試。我們不要問「為什麼是我要考」，而要安靜去面對。上帝給這場考試，不是為了打分數，而是要看我們是否更認識祂，是否經歷到祂的屬性與同在。</p>
+<p>《詩篇》84:6 說：「他們經過流淚谷，叫這谷變為泉源之地。」經過流淚谷後，必有秋雨之福。我們需要給神一點時間，也給自己一點時間，不要太快對神下定論，也不要活在陰影中。</p>
+<p>耶穌在被抓、受辱、釘十字架時，面對嘲笑與挑釁，祂沒有反擊。祂選擇了順服，成就了救贖。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-結論上帝的恩典是一生之久">
+                <h2 id="結論上帝的恩典是一生之久">結論：上帝的恩典是一生之久</h2>
+                <p>神的美意大過我們的軟弱。在世上雖有苦難，但在主裡面有平安。對苦難有正確的認識，比承受多少苦難更重要。苦難不是報應，而是神在說話。</p>
+<p>上帝最深的目的不是讓你受苦，而是要拯救你進入豐盛，重新的認識自己與神。《詩篇》30:5 應許：「一宿雖然有哭泣，早晨便必歡呼。」《哥林多後書》4:16-18 也提醒我們，外體雖然毀壞，內心卻一天新似一天，至暫至輕的苦楚要成就永遠的榮耀。</p>
+<p>受苦使我們學習神的律例。不要用自己的邏輯定義上帝，要靠近祂，聽祂在擴音器中對你說的話。</p>
+<p>最後，我以考門牧師（Charles Cowman）的故事為例。他在20世紀初創立了遠東宣教會，卻在繁忙中患了心臟病，回美休養並受病痛折磨六年。當時許多人不明白，為何神不醫治這位忠心的僕人。但在這六年中，考門夫人（Lettie Cowman）記錄下靈裡的感悟與上帝的話語，最終彙整成經典靈修書《荒漠甘泉》（Streams in the Desert）。這本書安慰了無數在乾渴中的靈魂，讓人在任何困境中都能靠主得勝。</p>
+<p>上帝在曠野開道路，在沙漠開江河。願神的話語成為我們的力量。我們一起來禱告。</p>
+            </section>
+            
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "從苦難到祝福",
+                "約伯記 36章",
+                "苦難是化妝的祝福",
+                "痛苦是上帝的擴音器",
+                "喚醒沉睡的靈魂",
+                "進入寬闊自由之地",
+                "生命操練",
+                "豐盛筵席",
+                "荒漠甘泉",
+                "考門夫人",
+                "上帝的恩典是一生之久",
+                "曠野開道路"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
