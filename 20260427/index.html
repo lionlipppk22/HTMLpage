@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260427 主日信息</title>
+    <meta name="description" content="怎樣的人生">
+    <meta name="keywords" content="十字架的道路, 蝴蝶效應, 公正世界觀, 豬欄的理想, 空巢期, 真正的自由, 自我肯定, 關係, 進窄門, 暫停鍵, 七宗罪, 黃金法則">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260427 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">
+                    <a href="https://www.youtube.com/live/tUjIOD_Q-44?si=jqR57zLeWI_P3wnm">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/tUjIOD_Q-44?si=jqR57zLeWI_P3wnm">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-選擇的開端與十字架的道路">
+<h2 id="選擇的開端與十字架的道路">選擇的開端與十字架的道路</h2>
+<h3 id="strong選擇的代價與重生的渴望strong"><strong>選擇的代價與「重生」的渴望</strong></h3>
+<p>人生充滿了各種抉擇。戲劇或小說常說「小孩子才做選擇」，暗示成年人可以全都要；但現實往往很「骨感」，魚與熊掌不可兼得。許多年前，我在長老教會服事時，對閩南語形容<strong>「重生」為「重投生」</strong>感到非常有觸動，其意為「重來一遍」。人的一生常渴望能重來，畢竟正如那首老歌所唱，「青春的小鳥一去不復返」，不小心就透露了年齡。我們在人生的十字路口所做的決定，往往在那一刻就決定了未來的走向。聖經教導我們，世人愛走寬闊的大路，但通往永生的十字架道路往往是窄的。當我們在喧鬧的世界中來到神面前，透過聖靈的更新讓心安定下來，這本身就是一種生命中最重要的選擇功課。</p>
+<h3 id="strong能力不代表一切選擇決定本質strong"><strong>能力不代表一切，選擇決定本質</strong></h3>
+<p>這就是所謂的<strong>「蝴蝶效應」</strong>：一隻蝴蝶在花叢中振翅，其帶動的連鎖反應最終可能在加勒比海形成颶風。有時當下錯過了，可能就是一輩子。真正決定我們是怎樣的人，並非我們的「能力」，而是我們的「選擇」。神對世人的愛是平等的，無論身分貴賤，在神眼中我們都是蒙恩的罪人。在善惡交替的當下，選擇走向光明還是沈溺於私慾，將決定你最終成為什麼樣的人。</p>
+<h3 id="strong人生的平衡雜技與上好的福分strong"><strong>人生的平衡雜技與上好的福分</strong></h3>
+<p>若將人生比作 100 點的資源分配，涵蓋事業、財富、家庭、健康、朋友與學問，不同年齡層會有不同的側重。可口可樂的執行長曾提出<strong>「平衡雜技」</strong>的概念，認為人生是在工作、家庭、健康、朋友與心靈這五顆球之間維持平衡。面對生活的忙亂，我們應學習聖經中的馬利亞，選擇那「上好的福分」，在耶穌跟前渴慕主恩。這種選擇能帶來隨心所欲也換不來的平安，而非像有些人為了錢財，最終卻愁苦地刺透了自己。</p>
+<h3 id="strong平凡日子裡的命運劇變strong"><strong>平凡日子裡的命運劇變</strong></h3>
+<p>作家倪匡曾寫道，回首人生時會發現，出國留學、第一份工作或結婚等決定命運的時刻，在發生的當下往往只是一個尋常的日子，當時還以為只是生命中普通的一天。茨威格也曾提醒，所有命運贈送的禮物，早已在暗中標好了價格。為了事業成就，可能付出的代價是失去陪伴子女成長的唯一機會。因此，我們需要屬靈的眼光，在看似平凡的每日更新中，察驗神的旨意，而非僅僅效法世界。</p>
+<h3 id="strong公正世界觀與那聲老師strong"><strong>「公正世界觀」與那聲「老師」</strong></h3>
+<p>心理學中有個<strong>「公正世界觀」</strong>的概念，相信一分耕耘一分收穫，正義雖然會遲到，但終究會來。然而，這套觀念最終的主宰在於神。當我們把生命主權歸給神，選擇就會決定我們生命的樣子。</p>
+<p>這裡有個幽默的見證：昨天我帶著全家人到裕隆城用餐，手裡正抱著孫子，突然有人叫住我說：「老師！你不認識我了嗎？」我端詳了半天，才認出那是三十多年前我教過的學生。<strong>有趣的是，他當時來上課時就已經是在職班的學生了，所以現在他看起來也像個「老人家」。</strong> 雖然被學生認出來很驚訝，但也體會到時間的流逝與生命的傳承。我們的選擇決定了生活的樣貌，而這份生命的連結與恩典，正是神在我們日常生活中最奇妙的帶領。</p>
+<hr />            </section>
+            
+            <section class="section" id="section-蝴蝶效應與選擇的代價">
+<h2 id="蝴蝶效應與選擇的代價">蝴蝶效應與選擇的代價</h2>
+<h3 id="strong選擇的本質與豬欄的理想strong"><strong>選擇的本質與「豬欄的理想」</strong></h3>
+<p>三十多年前，我見證了一位教授順利完成論文並光榮退休，看到他與家人團聚用餐的溫馨畫面，心中充滿感恩。這讓我深刻思考，「選擇」這件事不只是決定「要什麼」，其核心在於釐清背後的原子思維與原則。</p>
+<p>正如電影《阿甘正傳》所言：「人生就像一盒巧克力，你永遠不知道下一顆是什麼味道。」正因為未知，我們才需要做出選擇。然而，選擇是有代價的，每一項抉擇背後都有其價格。愛因斯坦曾幽默地說，他從不將「安逸與快樂」視為生活的目的，並將這種單純追求感官滿足的倫理基礎稱為<strong>「豬欄的理想」</strong>。這對現在流行「躺平」的年輕人來說是個提醒，若只追求安逸，其實就是落入了一種平庸的循環，每天重複著缺乏目標的老日子。</p>
+<h3 id="strong意向的缺失與第二次空巢期strong"><strong>意向的缺失與第二次「空巢期」</strong></h3>
+<p>現在的年輕世代（如 Z 世代或 Alpha 世代）常因房價高昂、生活壓力大而失去目標。這導致許多家庭出現了有趣的<strong>「第二次空巢期」</strong>：孩子本該長大離巢，卻因為失業、離婚或外面房租太貴，紛紛搬回父母家住。</p>
+<p>聖經提醒我們：「沒有意向（Vision），民就放肆。」當生命的目標模糊時，力量便無法集中。基督釋放了我們，是為了讓我們得自由，因此我們不應再被罪的負擔狹制，像牛馬一樣被架上沉重的軛。</p>
+<h3 id="strong時代的代價與不容易孝順的兒子strong"><strong>時代的代價與「不容易孝順」的兒子</strong></h3>
+<p>回顧台灣五、六十年代，當時並沒有所謂的「生涯規劃」，這個概念是後來學者從美國引進的。那時許多女性為了撐起家庭，小學畢業就去當女工，犧牲了一輩子的幸福，那是時代的代價。</p>
+<p>到了現代，出國深造動輒耗費百萬，家裡甚至要賣房、傾家蕩產來栽培孩子。但諷刺的是，許多孩子學成後留在美國，反而變成了「最不容易孝順的兒子」。這並非他們不孝，而是空間與距離讓一切變得困難。我母親最近住在加護病房，探病時間非常有限，這種親情的牽掛讓我體會到，所有的選擇確實都有其沈重的代價。</p>
+<h3 id="strong真正的自由與屬靈的洞察力strong"><strong>真正的自由與屬靈的洞察力</strong></h3>
+<p>保羅曾說，他雖然是自由的，卻甘心作眾人的僕人，為要多得人。這揭示了<strong>「真正的自由」：為了更高的使命而願意放棄眼前的自由</strong>。例如，你擁有滑抖音、看電視的自由，但若能為了完成任務而放棄這些娛樂，你才能獲得最終心理上的真正自由。</p>
+<p>這需要一種「穿透感」與眼光，也就是洞察力。研究指出，具備高度洞察力的團隊，在決策品質與衝突管理上的成功率遠高於一般團隊。因此，當你每天起床發現雜事繁多時，別急著慌亂，應先安靜禱告，尋求上帝的眼光。</p>
+<h3 id="strong職場倫理與監獄裡的戶外教學strong"><strong>職場倫理與監獄裡的「戶外教學」</strong></h3>
+<p>在職場中，許多高階主管常因長期受人尊重而陷入迷惘，甚至在平凡的每日作息中，利用專業優勢進行犯罪。這種墮落往往不是發生在異常狀態，而是在看似尋常的一天。</p>
+<p>為了警惕學生，馬里蘭大學的商管課程有一項特別的「戶外教學」：<strong>帶學生去參觀監獄</strong>。在那裡，你會看到許多律師、建築師等專業人士，讓學生親眼見證失去自律後的代價。我們以為只是平凡的一個選擇，卻可能決定了往後數十年的命運。</p>
+<hr />                
+            </section>
+            
+            <section class="section" id="section-選擇決定我們真正是誰">
+ <h2 id="選擇決定我們真正是誰">選擇決定我們真正是誰</h2>
+<h3 id="strong自我肯定與王子公主的真身strong"><strong>自我肯定與「王子、公主」的真身</strong></h3>
+<p>我們的一生需要經歷生命質量的質變。首先是 <strong>「自我肯定」</strong>，這並非單純覺得自己很棒，而是深信我們是神國的子民，擁有聖潔且尊榮的身分。在日常生活中，我們常會忘記自己是「王子」或「公主」，當遇到難處時，容易陷入焦慮，甚至忘了抬起頭仰望神。基督徒的生命應該有一種「穿透感」，讓我們在面對人生的各種選擇時，能具備必要的 <strong>「自我覺察」</strong>。</p>
+<h3 id="strong導航與山路間的信心考驗strong"><strong>導航與山路間的信心考驗</strong></h3>
+<p>這裡有個幽默的生活經歷：某次週六早上我有課，結束後要趕往陽明山的美軍俱樂部參加學生的婚禮。沒想到一個不小心開錯了路，本該往陽明山大道的，卻導向了石牌榮總方向。雖然有導航，但它帶我走了一條極其狹窄的山路，很多路段窄到只能容納一台車通行。</p>
+<p>當時我心裡非常焦慮，一方面有時間壓力，二方面路況完全不熟。在那樣的時刻，我開始禱告，提醒自己是神的兒女，這趟行程是為了服事弟兄姊妹。這就是生命中的選擇——<strong>在困境中，你是選擇被焦慮吞噬，還是選擇仰望神？</strong> 雖然我們微小，但靠著神，微小的生命中必能散發出發達的盼望。</p>
+<h3 id="strong河岸第一排與幸福的唯一條件strong"><strong>「河岸第一排」與幸福的唯一條件</strong></h3>
+<p>談到人生，許多人開始問我什麼時候退休，這聽起來有些感傷。我常開玩笑說，我的同學們一個個退休，我現在已經站到了 <strong>「生命河岸的第一排」</strong>，感受著時間的流逝。</p>
+<p>哈佛大學一項長達 80 多年的研究發現，<strong>良好的「關係」是獲得幸福的唯一條件</strong>，這無關乎財富或成就。華人社會非常重視關係，尤其是長輩的社交生活。現在許多年輕人很難坐下來跟阿嬤聊上半小時，因為阿嬤講的內容可能都一樣。但持續的社交與關係，是防止退化的關鍵。雖然我們不知道明天會如何，但我們認識那位掌管明天的主。</p>
+<h3 id="strong索羅門王的智慧與亞伯蘭的寬廣strong"><strong>索羅門王的智慧與亞伯蘭的寬廣</strong></h3>
+<p>聖經中，索羅門王在神面前不求金銀財寶或長壽，而是求 <strong>「智慧聰明」</strong>，好讓他能判斷眾多的百姓。他先求神的國與神的義，這份選擇蒙神喜悅。</p>
+<p>另一個經典的選擇來自亞伯蘭與羅德。當兩方的牧人相爭時，亞伯蘭展現了身為長輩的氣度，對羅德說：「我們是骨肉，不可相爭。」他讓羅德先選。羅德選擇了看似滋潤、榮華富貴的約旦河平原，卻逐漸挪移帳篷靠近了罪惡之城所多瑪；亞伯蘭則選擇留在迦南地。這提醒我們，<strong>每一個選擇都決定了永恆人生的走向</strong>。</p>
+<h3 id="strong進窄門與我們就是我們的選擇strong"><strong>進窄門與「我們就是我們的選擇」</strong></h3>
+<p>耶穌教導我們要 <strong>「進窄門」</strong>，因為引向滅亡的門是寬的，路是大的，走的人也多；但引向永生的門是窄的，路是小的，找著的人也少。</p>
+<p>珍·古德曾說：「每個選擇都能改變世界，關鍵在於你想創造怎樣的不同。」 亞馬遜創辦人貝佐斯也曾在演講中強調，天賦與選擇不同，最終決定我們是誰的，並非天賦，而是我們的<strong>選擇 (We are our choices)</strong>。今天的選擇決定了明天的人生，當我們領受了神的託付，我們就應在真理中做出那決定未來的關鍵抉擇。</p>
+<hr />
+               
+            </section>
+            
+            <section class="section" id="section-人生平衡與命運的劇變">
+ <h2 id="人生平衡與命運的劇變">人生平衡與命運的劇變</h2>
+<h3 id="strong日常的微小抉擇與早晨的暫停strong"><strong>日常的微小抉擇與早晨的暫停</strong></h3>
+<p>我們的生活中充斥著無數看似微小的選擇：週末要去夜店嗎？要參加旅行團嗎？要跟朋友去抽水煙、打麻將，甚至小賭怡情嗎？可以為了事業收入的成就，暫時把家庭婚姻拋諸腦後嗎？可以為了顧全關係，對不合法的事情睜一隻眼閉一隻眼嗎？這每一項抉擇都在無形中塑造我們的生命。</p>
+<p>面對這些無限多的選擇，即使是午餐吃什麼、下午要去運動還是宅在家裡，每一個當下都需要智慧。正如一位前輩所言：「每天早晨起床，在進入一天的忙碌之前，我必須先按下『暫停鍵』。」正因為我們有太多事情要完成，我們更必須先花時間在神面前禱告，察覺何為必選、何可放棄，讓神來引導我們一天的腳步。</p>
+<h3 id="strong光明與黑暗的抉擇信心是走出來的strong"><strong>光明與黑暗的抉擇：信心是走出來的</strong></h3>
+<p>聖經將選擇對比得非常鮮明：我們是選擇情慾的放縱，還是聖靈的豐盛？我們是願意將自己放在光明中，還是享受隱晦在黑暗裡、別人看不見的罪惡？人類真正的區別，在於你是「光明中的人」還是「黑暗中的人」。</p>
+<p>這些道理我們都懂，唯一缺乏的往往是「信心」。其實沒有信心是正常的，信心是慢慢長大出來的。當你祈求神賜下信心，勇敢邁出第一步，第二次你就有勇氣再跨過去，因為前面的經驗會告訴你神與你同在。就連被稱為「信心之父」的亞伯拉罕，也曾軟弱到否定妻子撒拉，甚至娶了夏甲。他與我們一樣是有血有肉、會軟弱的人，但他最終選擇信靠神，這份堅持讓他的生命迎來了蛻變。</p>
+<hr />
+            </section>
+            
+             <section class="section" id="section-公正世界觀的迷思與放下自由">
+<h2 id="公正世界觀的迷思與放下自由">公正世界觀的迷思與放下自由</h2>
+<h3 id="strong真正的自由建立在紀律與責任之上strong"><strong>真正的自由建立在紀律與責任之上</strong></h3>
+<p>一個好的選擇，必須兼顧自由與責任。俗話說：「沒有紀律就沒有自由。」自由是人類最基本的渴求，就像我那剛學會走路的小孫子，牽著他不肯走，非得自己亂跑，最後媽媽只好買個防走失小背包牽著他。人從小就不喜歡受約束，但自由的背後，往往意味著沉重的責任。</p>
+<p>當美國的父親把車鑰匙交給兒子時，代表兒子重獲了行動的自由，可以開車走遍各地，但這份自由也伴隨著必須安全駕駛的責任。相對地，當我們年紀漸長，視力與反應力退化時，我們也會開始被「剝奪」開車的自由。我曾認識一位非常富有的房地產大亨，他在高速公路上只敢開時速 40 公里，所有宜蘭基隆的交警都認識他這台「龜速前進」的豪車。為了不造成公共危險，他最終必須放下自己開車的權利。真正的自由往往代表著承擔責任，有時你甚至必須主動放下隨心所欲的自由，遵守紀律，才能獲得真正的平安。</p>
+<h3 id="strong為更高的呼召放下自由strong"><strong>為更高的呼召放下自由</strong></h3>
+<p>我們常誤以為自由就是隨心所欲，但米蘭·昆德拉在《生命中不能承受之輕》中提到：「真正的自由是懂得放棄。」電影《布拉格的春天》裡也有一句話：「生命中的真正自由不是逃避，而是承擔。」</p>
+<p>1989 年，當我碩士班畢業時，一位學長邀請我擔任企業訓練師，負責東南亞與中國大陸的業務，當時開出的月薪高達 30 萬台幣。而另一個選擇，是留在大學當老師，月薪大約只有 10 萬元。雖然 30 萬非常誘人，但我最終選擇了留在大學。因為如果我接受了那份工作，我每天早上醒來可能都在不同的城市，我會失去穩定的教會生活與服事的機會。</p>
+<p>十幾年後，另一位前輩邀請我到美國一所大學擔任校長，這同樣是個極具吸引力的機會。但我還是拒絕了。因為這意味著全家必須面臨巨大的變動，且我的核心任務將變成四處奔波招生，這會讓我偏離教育與服事的初衷。有時候，我們以為放棄了「最好」的選擇（如高薪或高職位），但回首一看，神卻讓這看似「次好」的選擇，成為了我們生命中真正的最好，因為那裡有神的心意與同在。</p>
+<hr />                
+            </section>
+            
+             
+            <section class="section" id="section-遠離罪惡與黃金法則">
+<h2 id="遠離罪惡與黃金法則">遠離罪惡與黃金法則</h2>
+<h3 id="strong遠離七宗罪與熱心行善的使命strong"><strong>遠離七宗罪與熱心行善的使命</strong></h3>
+<p>我們必須謹慎選擇，遠離罪惡。除了傳統天主教所講的「七宗罪」（傲慢、貪婪、色慾、嫉妒、暴食、憤怒、怠惰）外，2008 年梵蒂岡也發表了現代社會的「新七宗罪」，包括環境污染、不道德的人體實驗、社會不公義與造成貧窮。在現今詐騙橫行（台灣每年遭詐騙金額高達兩千億）、貧富差距擴大的社會中，我們更要警惕自己不可沾染這些不當斂財或濫用藥物的惡習。</p>
+<p>相對地，我們被呼召是要成為一個「行善」的人。以弗所書2章10節說：「我們原是他的工作，在基督耶穌裡造成的，為要叫我們行善。」行善不一定是捐錢，它可以是付出你的時間、專業、體力，甚至只是一個友善的微笑。在電影《搶救雷恩大兵》中，一小隊軍人為了拯救雷恩而全數犧牲。多年後，年邁的雷恩站在他們的墓碑前，撫摸著那些為了讓他活下來而犧牲的戰友名字，他立志要活出一個「好人」的樣子來回報這份恩典。我們也當如此，在一切關係上活出基督的榮耀。</p>
+<h3 id="strong智慧法則與避免成癮的轄制strong"><strong>智慧法則與避免成癮的轄制</strong></h3>
+<p>當你不知道如何做選擇時，請記住聖經給我們的兩個寶貴原則。第一個是 <strong>「黃金法則」</strong>（路加福音6:31）：「你們願意人怎樣待你們，你們也要怎樣待人。」</p>
+<p>第二個是 <strong>「智慧法則」</strong>（哥林多前書6:12）：「凡事我都可行，但不都有益處；凡事我都可行，但無論哪一件，我總不受它的轄制。」我們千萬不能被任何事物轄制，無論是抽菸、喝酒還是色情資訊。這些成癮物質會刺激腦部神經，讓閾值越來越高，最終使人無法自拔，落入罪的奴僕中。我們做任何事，都要考量是否能「造就人」，若不能造就自己與他人，多做無益。</p>
+<h3 id="strong結語儀表板上的全家福strong"><strong>結語：儀表板上的全家福</strong></h3>
+<p>最後，腓立比書4章8節提醒我們，凡是真實的、可敬的、公義的、清潔的、可愛的、有美名的，這些事我們都要思念。如果還是不知道怎麼選，想想這個幽默又真實的生活見證：</p>
+<p>有次我搭計程車，發現司機在儀表板正前方貼了一張大大的「全家福」照片。我問他為什麼，他說：「有時候油門一踩，想衝到時速 120 公里，但一看到這張全家福，腳就自動鬆開，降回 80、甚至 60 公里了。」他用自己最愛的一切，隨時匡正自己的選擇。願神幫助我們，在人生的每一個十字路口，都能看見明天的旭日東昇，用神所賜的智慧，做出合神心意的美好選擇。</p>
+<p>我相信，神隨時都在用祂所愛的一切來引導我們做出選擇。願神幫助我們成為真實跟隨的門徒，做一個擁有屬天智慧的選擇者，願神祝福大家！</p>
+<p>最後，讓我們將今天聽到的信息放在心裡，帶到上帝面前。接下來，敬拜團將帶領我們唱一首回應詩歌。</p>
+<p>回顧今天的分享：<strong>人生的選擇往往是「牽一髮而動全身」，每一個看似微小的選擇都是一種累積。</strong> 這些選擇累積起來，將決定你成為什麼樣的人、決定你的生活樣貌，更會塑造出你最終的生命型態。</p>
+<p>這裡有一個重要的提醒：我們是神所揀選的，而且有聖靈的幫助！倚靠主，我們就能在這個世界上，做出合神心意的選擇。我們要對上帝有絕對的信心，因為聖經上說：<strong>「你們要先求祂的國和祂的義，這些東西都要加給你們了。」</strong></p>
+<p>當我們對神充滿信心，就能不盲從這個世界的潮流，而是堅定地跟隨神，選擇祂所喜悅的道路。</p>
+<p>好不好？現在就請大家一起從座位上起立，讓我們透過這首詩歌，將自己的生命再次帶到神的面前。</p>
+                
+            </section>
+            
+             
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "十字架的道路",
+                "蝴蝶效應",
+                "公正世界觀",
+                "豬欄的理想",
+                "空巢期",
+                "真正的自由",
+                "自我肯定",
+                "關係",
+                "進窄門",
+                "暫停鍵",
+                "七宗罪",
+                "黃金法則"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
