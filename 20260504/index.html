@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260504 主日信息</title>
+    <meta name="description" content="為父為母的心與傳福音">
+    <meta name="keywords" content="為父為母的心, 傳福音, 傳道書, 機智人生活, 虛空的虛空, 人生勝利組, 計畫趕不上變化, 大體老師, 恩賜, 小確幸, 刺繡, 萬務都有定時">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260504 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">為父為母的心與傳福音
+                    <a href="https://www.youtube.com/live/tUjIOD_Q-44?si=jqR57zLeWI_P3wnm">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/tUjIOD_Q-44?si=jqR57zLeWI_P3wnm">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-為父為母的心與傳福音">
+<h2 id="為父為母的心與傳福音">為父為母的心與傳福音</h2>
+<h3 id="strong驚喜與重逢的喜悅strong"><strong>驚喜與重逢的喜悅</strong></h3>
+<p>弟兄姐妹平安！我來過這裡幾次，雖然一開始感到陌生，但第一次來就給了我許多驚喜。這裡有很多高中的學長姐和校友，大家都是一路辛苦熬過來的，能見面真的很開心。每次來到這裡，看見弟兄姐妹熱情的回應與專注的聆聽，我都覺得非常喜樂。</p>
+<h3 id="strong傳道書尋找人生的盼望strong"><strong>傳道書：尋找人生的盼望</strong></h3>
+<p>今天我們要來看一段特別的聖經經文。平常我們打開聖經，總想尋找積極正面的盼望，但我想要問問在座的各位：有多少人看過《傳道書》？舉手看看。哇，看來蠻多的！那有深入讀過、覺得很有趣或很有同感的，請再舉手。其實我選這個題目是有點巧思的。如果你平時有看韓劇——我因為在醫院工作，偶爾會看醫療劇，像是《機智醫生生活》——但我今天講的跟那部劇無關，我只是借用劇名，把題目訂為「機智人生活」。</p>
+<h3 id="strong何謂機智與成功的人生strong"><strong>何謂機智與成功的人生？</strong></h3>
+<p>談到「機智人生活」，大家可能會想：什麼才是好生活？是不是生命要過得很充實、很成功，成為「人生勝利組」？但當你翻開《傳道書》時，最有名的一句話是什麼？大家有印象嗎？是「虛空的虛空」。這卷書探討的成功，可能跟我們想像的很不一樣。有時候，世界上或屬靈的規則似乎會被打破。我們總以為人生可以照計畫進行，但走到今天，不論你年輕或年長，一定會發現計畫永遠趕不上變化。年輕時我們對「成功」充滿想像，但當你真的達到那個目標時，它真的帶給你滿足了嗎？或者，你其實還沒達到那個目標，卻已經開始反思：生命中真正有意義、值得追尋的到底是什麼？讓我們一起先來禱告。</p>
+<h3 id="strong禱告strong"><strong>禱告</strong></h3>
+<p>主啊，謝謝祢！有時候我們對生命充滿盼望，積極地照著計畫往前走，甚至認定這就是祢的心意；但有時計畫趕不上變化，規則被打破，讓我們不禁困惑生命到底在追尋什麼。祈求創造我們、與我們生命同在的神，今天繼續對我們說話，指引我們前方的道路。奉主耶穌的名求，阿們。</p>
+<h3 id="strong近視與老花的迷思strong"><strong>近視與老花的迷思</strong></h3>
+<p>我想問一下，在座有近視的人請舉手。我就是一個從小愛看書的人。以前家人常叮嚀我要多看綠色植物、少看電視，免得度數一直加深。我的視力確實比較深。不過，有天我發現了一個「好消息」！以前看長輩們看東西時，總會把物品拿得遠遠的，我想那就是老花眼嘛。於是我就告訴自己：既然我是近視眼，將來老花的時候，剛好可以抵銷，我就不用擔心老花的問題了！直到我活到現在這個歲數才發現，根本不是這麼回事！近視的人老了依然會老花，結果就是近的看不到，遠的也看不到！</p>
+<h3 id="strong看不清的人生因果strong"><strong>看不清的人生因果</strong></h3>
+<p>其實，《傳道書》在講的不只是視力，更是在描述我們走到人生的某個階段，會發現很多事情根本「看不清楚」。你曾以為的因果關係——努力就會成功、信耶穌就不會遇到壞事、禱告就一定有成就——這些定律好像都被打破了。人生的發展常常不如預期，甚至令人困惑，我們不明白上帝為什麼要這樣安排。這種看不清楚的狀態，就像是有一層煙霧遮蔽了視線。你想抓，卻什麼也抓不住；你想掌握些什麼，卻發現一切都很模糊。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-見證與苦難中的盼望">
+<h2 id="見證與苦難中的盼望">見證與苦難中的盼望</h2>
+<h3 id="strong萬務都有定時strong"><strong>萬務都有定時</strong></h3>
+<p>有時候你以為看清楚了，煙霧散去後卻發現還是老樣子。今天我們要看一段非常有名的經文，許多人甚至拿它來寫歌詞，所以這不只是教會裡的話語，更是許多人生命中極有共鳴的感嘆。我們一起來讀這段經文：</p>
+<blockquote>
+<p>「殺戮有時，醫治有時；拆毀有時，建造有時。
+哭泣有時，歡笑有時；哀慟有時，跳舞有時。
+拋擲石頭有時，堆聚石頭有時；懷抱有時，不懷抱有時。
+撕裂有時，縫補有時；靜默有時，言語有時。」</p>
+</blockquote>
+<p>今天我不想逐字探究這段經文，而是要探討一個很有趣的觀念：「凡事都有定期」。這意味著，很多時候我們根本無法主動掌控事情的發生。</p>
+<h3 id="strong計畫趕不上變化strong"><strong>計畫趕不上變化</strong></h3>
+<p>就拿最近的事來說。我有位同事預產期在六月初，她一直希望能趕上朋友在六月中的婚禮。結果前幾天，她突然傳訊息說：「我今天生了！」這種事完全無法預期。還有，前幾天台北發生了有感地震，我們家住五樓也搖得厲害。那天晚上國家音樂廳剛好有一場俄羅斯音樂會，地震發生時警報大響，演奏瞬間被打斷。大家都在下面留言說，從來沒遇過這種事。你看，事情說來就來，生老病死、意外與天災，都不在我們的計畫之中。</p>
+<h3 id="strong那些來不及的遺憾strong"><strong>那些來不及的遺憾</strong></h3>
+<p>去年九月，學校剛迎接新生，到了十月，有位剛入學的學生因為車禍，短短兩天就過世了。在馬偕醫學院，去參加這些年輕學生的告別式，心情總是特別沉重。去陪伴他們的同學時，聽見他們遺憾地說：「他還有好多大好的青春，怎麼就這樣走了？」</p>
+<p>前幾年還有另一個優秀的學生，在實習期間發現自己眼睛視野有缺損，檢查後發現罹患了重症。雖然學校和老師們想盡辦法協助，但這件事嚴重影響了他未來的選科。更感傷的是，在他畢業前夕，他的父親被檢查出罹患癌症末期。這位父親原本已經打算退休好好陪家人，最後卻只能拖著病體，從台中趕來參加孩子的加袍典禮。父親沒有機會享受到原本規劃好的退休生活。這些例子可能就發生在你我周圍，生命真的充滿了不可預期。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-面對人生的劇本與神的心意">
+<h2 id="面對人生的劇本與神的心意">面對人生的劇本與神的心意</h2>
+<h3 id="strong社會局勢的無常strong"><strong>社會局勢的無常</strong></h3>
+<p>不只是個人，有時我們也會被捲入社會局勢的無常中。幾年前的疫情大爆發，不知道大家還記不記得是在星期幾？所有的牧者都記得，因為那天剛好是星期六！隔天就是主日崇拜，所有的牧師都手忙腳亂地架設直播設備。有些朋友準備開的店，也因為疫情被迫重頭來過。這一切都由不得我們控制。</p>
+<h3 id="strong回首過去的懊悔與遺憾strong"><strong>回首過去的懊悔與遺憾</strong></h3>
+<p>當時間過去，面對那些無法解決、影響重大的事情，我們心裡常會充滿懊悔。前陣子，我搭車時司機跟我聊天，他說他住在三芝，每天開車通勤。當年他猶豫要買八里還是三芝的房子，最後他覺得三芝風景漂亮，而八里當時還很荒涼，於是買了三芝。沒想到幾年後，八里發展迅速，房價大漲；而三芝還是老樣子。他充滿遺憾地說：「早知道當初就買八里了！」這就像買錯股票，或者後悔當年沒叫孩子選對科系一樣。當生命中發生來不及的事，我們總會想：「如果當時多花一點時間陪他，會不會就不一樣了？」</p>
+<h3 id="strong焦慮與過度控制strong"><strong>焦慮與過度控制</strong></h3>
+<p>有時候，我們的心情會轉變為憤怒，想要找人負責，甚至抱怨上帝：「為什麼要讓這種事發生？」當我們無法掌控生命時，焦慮感就會隨之而來。為了降低焦慮，我們常會用錯誤的方式去試圖控制。</p>
+<p>還記得有一年花蓮大地震後，我們學校安排了去東部的服務隊。有位學生跑來找我，說他媽媽因為擔心餘震，堅決不准他去。經過妥協，媽媽答應讓他去，但條件是「必須搭高鐵繞過半個台灣，從西部過去」。我跟這位同學聊了很久，他流著淚說，他有很多想嘗試的事，但媽媽的憂慮成了一種巨大的掌控。
+在精神科裡有個症狀叫「疑病症」，這類人因為太渴望健康，只要身體有一點小動靜，就立刻去掛號檢查。當你不能掌握未來時，焦慮感會驅使你產生這些不恰當的控制欲。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-生命更新與真誠陪伴">
+<h2 id="生命更新與真誠陪伴">生命更新與真誠陪伴</h2>
+<h3 id="strong現在與未來的視角strong"><strong>現在與未來的視角</strong></h3>
+<p>你怎麼看待過去，就會影響你怎麼選擇未來。如果我們一直深陷在遺憾與焦慮中，就沒有餘裕去好好活在當下。那我們到底該如何面對過去的遺憾，以及未來的不可預期呢？</p>
+<h3 id="strong上帝的刺繡作品strong"><strong>上帝的刺繡作品</strong></h3>
+<p>我想用一個比喻來說明。大家有看過刺繡的反面嗎？正面看起來是一幅美麗的圖案，但如果你把它翻過來，背後全是混亂、糾結的線頭。這就像我們的生命。上帝是一位完美的設計師，祂在我們的生命中有一個美麗的藍圖。在刺繡的過程中，祂決定在哪裡下針、用什麼顏色的線。這就是上帝在我們生命中的引導與允許。</p>
+<p>但我們因為受限於時間和智慧，往往只看到刺繡的反面——那些混亂、不解、甚至令人憤怒的經歷。然而，這位超越時間的創造主，正在編織一幅美麗的作品。保羅曾說，我們現在彷彿對著鏡子觀看，模糊不清，但到了那一天，我們就會完全明白。</p>
+<h3 id="strong學習交託與放手strong"><strong>學習交託與放手</strong></h3>
+<p>上帝的眼光和我們不同。既然我們無法看透全局，我們能做的就是對過去和未來「放手」，將生命交託給這位慈愛的神。有趣的是，《傳道書》雖然通篇在講「虛空」，看似消極，但其中卻貫穿了一個極為重要的概念：恩賜。</p>
+<hr />
+            </section>
+            
+            <section class="section" id="section-在苦難中看見神的手">
+<h2 id="在苦難中看見神的手">在苦難中看見神的手</h2>
+<h3 id="strong生活中的小確幸就是恩賜strong"><strong>生活中的小確幸就是恩賜</strong></h3>
+<p>在無常與虛空之中，《傳道書》提到的「恩賜」並不是功成名就，而是生活中最簡單的美好：家庭的溫暖、好好吃一頓飯、享受好天氣，或者在勞苦之後能有一個安穩的休息。我們常把這些「小確幸」視為理所當然，直到危機來臨時，才發現它們有多麼寶貴。</p>
+<p>我有一位在醫院工作的學生，看多了突如其來的生死。他告訴我，雖然回家有時還是會跟家人起衝突，但他現在更願意把握機會，帶全家一起出去玩。在我們學校，醫學生解剖課前會去拜訪「大體老師」的家屬。聽了這麼多年的家屬分享，我發現他們在最後時刻回憶的，從來不是這位親人生前事業有多成功、賺了多少錢；他們回憶的，都是全家一起去哪裡玩、一起吃飯的時光，或是爸爸在週末抽空陪伴他們的點點滴滴。</p>
+<h3 id="strong珍惜當下的每一刻strong"><strong>珍惜當下的每一刻</strong></h3>
+<p>最近社會上也有個知名的訪談，一位前台大醫院院長，後來罹患了失智症。他的太太在照顧他時雖然充滿挑戰與辛勞，但她分享說，每天早上最開心的事，就是先生還認得她的那一刻。那些看似簡單的瞬間，在生命中卻是最真實的恩賜。</p>
+<p>生命不可預期，我們無法掌握長短與順逆。當你為過去遺憾，為未來焦慮時，請記住：有一位慈愛、充滿智慧的神在掌權。當你願意放手，將過去與未來都交在祂手中時，你就能真正珍惜現在。</p>
+<p>讓我們一起禱告：
+主啊，我們常對過去感到遺憾，對未來感到焦慮。但我們知道祢是那一位穿針引線的創造主。求祢幫助我們，把過去和未來都交在祢手中，讓我們在放手的時候，能緊緊牽著祢的手。奉耶穌的名求，阿們。</p>
+            </section>
+            
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "為父為母的心",
+                "傳福音",
+                "傳道書",
+                "機智人生活",
+                "虛空的虛空",
+                "人生勝利組",
+                "計畫趕不上變化",
+                "大體老師",
+                "恩賜",
+                "小確幸",
+                "刺繡",
+                "萬務都有定時"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
