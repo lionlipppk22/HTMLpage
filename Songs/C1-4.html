@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260517 C1-第4课 祷告的确据</title>
+    <meta name="description" content="目錄 (Table of Contents)">
+    <meta name="keywords" content="真誠的禱告, 禱告的確據, 馬太福音, 喬治·慕勒, 孤兒之父, 教會建堂, 榮耀堂, 龍潭開拓, 奇妙的預備, 調度萬有, 認獻磚塊, 成功神學">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260517 C1-第4课 祷告的确据</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">目錄 (Table of Contents)
+                    <a href="https://www.youtube.com/live/tUjIOD_Q-44?si=jqR57zLeWI_P3wnm">
+                        <img src="https://m.media-amazon.com/images/M/MV5BYjEyODdlODMtNzg0YS00MDk3LTg1NDYtYjRmY2M3ZDYzYzIwXkEyXkFqcGc@._V1_.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-strong如朋友般真誠的禱告strong">
+<h2 id="strong如朋友般真誠的禱告strong"><strong>如朋友般真誠的禱告</strong></h2>
+<p>禱告不需要用很漂亮的文字，也不用刻意堆砌華麗的詞藻，就跟平常跟神講話一樣，如同跟你的戀人說話一般。所以，不需要發表長篇大論。當然，如果你想這樣做也可以，但是我相信神看重的是你真誠的心。</p>
+<p>接下來我們看到第四課「禱告的確據」。我們先一起來讀下面這段經文：</p>
+<blockquote>
+<p>「我們在天上的父：願人都尊你的名為聖。願你的國降臨；願你的旨意行在地上，如同行在天上。我們日用的飲食，今日賜給我們。免我們的債，如同我們免了人的債。不叫我們遇見試探；救我們脫離兇惡。因為國度、權柄、榮耀，全是你的，直到永遠。阿們！」（馬太福音 6:9-13）</p>
+</blockquote>
+<p>學文講到，禱告是我們跟神之間的對話，同時也是我們屬靈的呼吸。藉著禱告，我們為著需要來向神祈求。一般人會禱告，通常是有所求，不管是什麼樣的事情。但透過禱告，我們也可以享受神的工作，因為有時候禱告是跟神一起同工。當你為別人禱告，而不是只為自己禱告時，其實就是盼望別人能在生命中得到救贖，這就是與神同工，神也很樂意應允我們的禱告。</p>
+            </section>
+            
+            <section class="section" id="section-strong孤兒之父喬治慕勒的禱告見證strong">
+<h2 id="strong孤兒之父喬治慕勒的禱告見證strong"><strong>孤兒之父：喬治·慕勒的禱告見證</strong></h2>
+<p>這裡向大家介紹一位禱告的勇士——喬治·慕勒（George Müller）。我們先來看這一段影片：喬治·慕勒一生經歷超過五萬次禱告蒙應允。一個人一生禱告五萬次蒙應允，你算算看他每一天要禱告多少次？他活到八十多歲，一年也才三百六十五天。</p>
+<p><em>（影片內容敘述：喬治·慕勒被稱為「孤兒之父」，他憑著《詩篇》中「神是孤兒的父親」這句話，確信眼前的孤兒都是神的兒女，並將一生奉獻於照顧孤兒。他開始建孤兒院時，深知需要龐大的資金、食物、衣服和宿舍，但他只有一雙空空的雙手。他做了一個決定：絕不向人募款，只向神禱告。「神啊，這不是我的事業，而是祢的工作，求祢親自供應這一切的需要。」於是，神真的信實地供應了孤兒院所有的需要。）</em></p>
+                    <a href="https://www.youtube.com/watch?v=nFNp0pSGbts&list=PLQP1xFMbc6F_0CvXwpGe_ONFSCwxI32Tn">
+                        YouTube 喬治·慕勒來源
+                    </a>
+                </section>
+            
+            <section class="section" id="section-strong教會建堂的奇妙帶領尋找聚會場地strong">
+<h2 id="strong教會建堂的奇妙帶領尋找聚會場地strong"><strong>教會建堂的奇妙帶領：尋找聚會場地</strong></h2>
+<p>我之前跟弟兄姊妹分享過我們是怎麼搬到這個地方來的，大家還記得嗎？</p>
+<p>2003年我從英國回來，當時幫以琳書房做一些翻譯的工作，翻譯了一部關於倪柝聲的書。後來我就問李老師教會需不需要幫忙？李老師說歡迎加入，但教會沒辦法付我很多薪水。我說沒關係，當時葉哥（英文牧師）提早從職場退休去念神學院，每個月也只有一萬塊的車馬費。</p>
+<p>年輕時李老師在牧會過程中，曾有一批人離開去植堂，包括文浩（文浩後來又回來了）。當時李老師邀請一位靈糧堂的姊妹一起配搭，但後來發生了一些狀況，把一些人帶走了。教會本來人就不多，這樣一走影響很大。後來李老師仰望神，希望能有一位弟兄來陪他服事，於是找了葉哥。葉哥是台大畢業的，來到教會後就帶領科學班，做一些實驗。</p>
+<p>我2003年回來時，就跟葉哥、李老師他們一起服事。其實當時榮耀堂也有找我，那時候榮耀堂還在東興街家樂福那邊（聽說現在那地方還空著，還有些鬧鬼的傳聞）。榮耀堂的牧師打電話給李老師，說想邀請我過去。李老師轉告我，但我說我沒有意願。我說，如果我想去大教會，早就去台北靈糧堂了，因為我之前在倫敦靈糧堂也有服事。</p>
+<p>我跟老師說，我還是想留下來。李老師提醒我留在這裡沒什麼錢，我說沒關係，太太那邊還有些教書的收入。以前李老師帶青少年的時候，是我們的大輔導，我們是小輔導，所以有這份深厚的情誼。</p>
+            </section>
+            
+            <section class="section" id="section-strong放棄頂樓加蓋放眼未來發展strong">
+<h2 id="strong放棄頂樓加蓋放眼未來發展strong"><strong>放棄頂樓加蓋，放眼未來發展</strong></h2>
+<p>到了2005年，我們在松德路樓上聚會的房子是劉媽媽的，那是七樓和八樓的頂樓加蓋。劉媽媽住在溫哥華，她的兒子跟我們一樣都是復興美工畢業的。那時候劉媽媽因為經濟考量，有意願要把房子賣掉。</p>
+<p>李老師當時很興奮，問我要不要把這房子買下來？甚至連隔壁的房子都想買下來打通。我跟李老師說：「老師，這裡買下來不便宜，而且空間會受限制。七樓大約三十幾坪，加上八樓頂樓大概也才一百二十坪。而且這是電梯大樓，不是隨便能穿牆打通的。」</p>
+<p>我很感謝神，以前在國外宣道會參與過教會未來發展計畫的評估，看了很多教會發展的模式，神把這些觀念放在我心裡。我跟李老師建議：「如果教會未來要發展，買下這裡的空間會受限，我們應該要搬到地面上，因為在樓上人家根本看不到這裡有教會。」</p>
+            </section>
+            
+            <section class="section" id="section-strong龍潭開拓與忠孝東路尋堂記strong">
+<h2 id="strong龍潭開拓與忠孝東路尋堂記strong"><strong>龍潭開拓與忠孝東路尋堂記</strong></h2>
+<p>同年，神也給了我一個感動。我跟李老師說：「龍潭那些孩子如果繼續在這裡聚會，上了小學、國中後，還會不會大老遠跑來這裡？我們是不是該思考在龍潭設立一個分堂？」李老師當下覺得教會沒那麼多錢，也缺傳道人。但我說只要有五個家庭就可以開拓教會了！這是我在國外宣道會學到的開拓模式。</p>
+<p>於是，李老師決定我們每個禮拜四晚上，開車到龍潭的預立和預方家，跟他們兩個家庭一起禱告。我們就這樣整整禱告了一年。後來他們的心預備好了，社區裡剛好有個交誼廳，有小舞台和視聽設備，大約可以容納四、五十人，感覺就像是上帝預備好的。於是龍潭的分堂就這樣開始了。</p>
+            </section>
+            
+            <section class="section" id="section-strong禱告尋求與奇妙的預備strong">
+<h2 id="strong禱告尋求與奇妙的預備strong"><strong>禱告尋求與奇妙的預備</strong></h2>
+<p>對於台北這邊，我們從2006年開始尋找地面上的聚會地點。起初棣瓏姊和明洲先去找。明洲跟雪菲生了四個孩子，非常愛主。他們第一次看到的地方，就在榮耀堂現在的位置，地下兩層，開價一億！那個空間很大，雖然是地下室，但沒有壓迫感。不過那對我們來說實在太遙不可及了。</p>
+<p>在看那個地方之前，他們還去看了廣慈博愛園區附近。那時廣慈還沒拆除，旁邊有些民宅。棣瓏姊看到一個一百多坪的地下室，開價才一千多萬。我們覺得離松德路、信義路六段很近，地緣也熟。正準備下訂金時，我問李老師教會有多少錢？老師說我們只有一百多萬。我說：「沒關係，一百多萬到時候可以認獻。」我在國外也有參與過建堂認獻的經驗。李老師禱告後也覺得不錯。結果正準備去談時，屋主卻說不賣了！原來他知道廣慈要改建，覺得未來會增值，所以就不賣了。我們只好繼續尋找。</p>
+<p>後來信元（那時他好像還沒結婚）在中坡路和虎林街轉角找到一個銀行留下來的地下室。李老師、葉哥和我都去看了，有兩百多坪，開價兩千多萬，非常吸引人。但缺點是天花板很低，手一伸就摸到了。大家覺得當教會壓迫感太重了，後來榮耀堂也想買，很快就下了訂金，我們也就沒有強求。</p>
+            </section>
+            
+            <section class="section" id="section-strong看見神預備的迦南地strong">
+<h2 id="strong看見神預備的迦南地strong"><strong>看見神預備的迦南地</strong></h2>
+<p>我們繼續禱告尋找，終於找到了現在這個呈「ㄇ」字型的地方。屋主是一個家族，派了一個人作代表。這地方原本要蓋像全聯、家樂福那樣的大賣場，但因為腹地不夠大，沒有通過政府的消防法規，所以一直空著。一部分租給人做插花教室，另一部分租給美語安親班。</p>
+<p>屋主開價兩千七百萬，三個單位各九百萬。李老師說我們哪來這麼多錢？我跟老師提議：「我們先買兩個單位。」老師問那另一間怎麼辦？我很肯定地說：「我宣告那一間最後也會是我們的！因為很少人會買地下室當住家。」我跟老師說：「老師，你現在只要專心籌錢就好。」於是我們就迫切地禱告。</p>
+            </section>
+            
+            <section class="section" id="section-strong見證神調度萬有strong">
+<h2 id="strong見證神調度萬有strong"><strong>見證神調度萬有</strong></h2>
+<p>後來，李老師去跟屋主交涉，開價一千八百萬買兩個單位。屋主一開始還想漲價，說一千八百萬不賣，要兩千兩百萬。我們在松德路一樓的咖啡廳跟屋主談判。我們動之以情、說之以理，告訴屋主我們是做社區關懷的。我們指著社區裡的孩子說：「你看這些社區的孩子，我們老師很有愛心，煮飯給他們吃。如果他們成為社會上有用的人，對社會也是很大的貢獻。」李老師也為屋主禱告，求神賜福他在香港的生意。</p>
+<p>感謝神，屋主最後同意以一千八百萬成交！至於資金的部分，我們發起了「認獻磚塊」的活動，這也是我在國外學到的建堂募款概念。雖然我們是社團法人「全人關懷學會」，一般來說很難向銀行貸款，但透過同工的迫切禱告，我們真的順利貸到了款！這一切的過程，都是神一步一步的帶領。</p>
+<p>幾年後，屋主想把剩下的那個單位也賣掉。當時房價已經上漲，他開價一千四百萬。我們覺得太貴買不起，他就在市場上賣。賣了一陣子都賣不掉，我們當時也有點擔心會被別人買走。感謝神攔阻了其他買家，最後我們以一千一百萬左右的價格順利買下，成就了今天的教會空間。因為我們用這個場地辦老人據點，社會局每個月有三萬塊的房租補助，我們就用這筆錢去繳貸款。神真的很奇妙！</p>
+            </section>
+            
+            <section class="section" id="section-strong信心的操練喬治慕勒與午餐的麵包strong">
+<h2 id="strong信心的操練喬治慕勒與午餐的麵包strong"><strong>信心的操練：喬治·慕勒與午餐的麵包</strong></h2>
+<p>所以我們就把它送到你們這個孤兒院來了。神很奇妙吧！喬治·慕勒並沒有這樣禱告：「主啊，祢把麵包送來啊！」他是說：「求主來餵飽這些孩子們。」我們也要像他一樣單純地禱告。雖然可能會經歷很多次的失敗，但是只要是合神心意的禱告，神其實是悅納的，神也會成就。</p>
+            </section>
+            
+            <section class="section" id="section-strong為家人的禱告與經歷strong">
+<h2 id="strong為家人的禱告與經歷strong"><strong>為家人的禱告與經歷</strong></h2>
+<p>我之前跟大家分享過我自己為家人禱告的經歷。那時候李老師生病，我不得不留在台灣。後來我就跟太太說，請她帶著我們家老二先回台灣。因為那是一個熟悉的環境，兩個人在一起也有個彼此相互照應。我覺得這樣安排蠻好的，因為過去師母跟老二相處的時間其實很少。在這段期間，他們有很長的時間相處，相對地摩擦也很多，當然會有衝突，但在摩擦中彼此也更多了解。</p>
+<p>後來我們禱告，我跟神說，希望老二畢業後能跟媽媽一起回來，但這需要長官同意讓她再順延一年。感謝主，她真的獲准順延一年，而老二也順利在六月十五號畢業了，七月二十九號就會先回來。如果媽媽先調回來，老二就得在外面租房子，那又是一筆開銷。所以神聽禱告，神真的很愛我們。</p>
+            </section>
+            
+            <section class="section" id="section-strong神為何應允我們的禱告strong">
+<h2 id="strong神為何應允我們的禱告strong"><strong>神為何應允我們的禱告？</strong></h2>
+<p>第一個原因，<strong>因為我們是站在兒女的地位，來向父親發出請求。</strong> 一開始我們讀的那段經文裡說「我們在天上的父」，因為祂是我們的天父，我們是祂的兒女。如果真的是上帝的兒女，跟不是上帝的兒女，那是差很多的，因為兒女才能夠繼承產業。</p>
+<p>過去那個年代有些重男輕女的觀念，女孩子不能分產業，產業通常都留給兒子。但現在法律改了，大家都有繼承權。在神的國度裡更是如此，我們都有兒女的身份，上帝沒有偏待任何人。不是說因為你當了牧師、傳道或小組長，上帝才聽你的禱告；只要你是上帝的兒女，只要你的祈求合神喜悅，神都願意聽。</p>
+<blockquote>
+<p>「及至時候滿足，神就差遣他的兒子，為女子所生，且生在律法以下，要把律法以下的人贖出來，叫我們得著兒子的名分。你們既為兒子，神就差他兒子的靈進入你們的心，呼叫：『阿爸！父！』可見，從此以後，你不是奴僕，乃是兒子了；既是兒子，就靠著神為後嗣。」（加拉太書 4:4-7）</p>
+</blockquote>
+<p>我們不再是奴僕，我們是神家中的兒女。約翰福音一章12節也說：「凡接待他的，就是信他名的人，他就賜他們權柄作神的兒女。」因為我們接待耶穌作我們的救主，所以我們要有一個把握：我是上帝的兒女。就像你在家裡，只要合情合理的請求，父母都會願意給你。</p>
+<p>第二個原因，<strong>因為神要使我們經歷豐盛的生命。</strong> 豐盛的生命不僅是物質方面的，也包括屬靈方面的救恩。</p>
+<blockquote>
+<p>「盜賊來，無非要偷竊，殺害，毀壞；我來了，是要叫羊（或作：人）得生命，並且得的更豐盛。」（約翰福音 10:10）</p>
+</blockquote>
+<p>生命裡的豐盛，是指你的度量被拓寬了，你整個人更有喜樂、更有平安。一個沒有喜樂的人容易軟弱跌倒，所以領受豐盛的生命非常重要。</p>
+<p>豐盛的生命包含了靈性的豐盛與關係的豐盛。靈性的豐盛包括永恆的生命、結出聖靈的果子以及屬靈的恩賜。屬靈的恩賜是為了服事別人，當你去服事別人的時候，你會更有喜樂。就像你帶人來教會，看到他信主受洗，你心裡會充滿滿足。</p>
+            </section>
+            
+            <section class="section" id="section-strong聖靈的果子與關係的豐盛strong">
+<h2 id="strong聖靈的果子與關係的豐盛strong"><strong>聖靈的果子與關係的豐盛</strong></h2>
+<p>屬靈的恩賜是為了服事別人，但「聖靈的果子」是給你自己的。當你結出仁愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制的果子，你這個人會變得更加溫柔謙卑，這就是神在我們身上的工作。同時，你散發出基督的馨香之氣，也能夠去影響別人。</p>
+<p>除了靈性的豐盛，還有關係上的豐盛：夫妻之間的關係、肢體之間的關係、小組之間的關係。這也是一種豐盛，你就不會把自己關起來過自己的生活，而是能更多地去服事人。</p>
+            </section>
+            
+            <section class="section" id="section-strong財務與生活上的祝福strong">
+<h2 id="strong財務與生活上的祝福strong"><strong>財務與生活上的祝福</strong></h2>
+<p>神也會在財務上賜下祝福。我們年輕時結婚，收到了不少禮金。我岳父很疼我們，他把收到的禮金全部給我們。他每天都在看股市，就用師母的名字把那筆錢拿去買了「台積電」。</p>
+<p>還有一次，大概在2000年左右，我們在國外認識一位元大證券的姊妹（她先生去那裡念博士）。她問我們有沒有閒錢要不要投資理財？她說建商她都認識，現在板橋有新建案，她自己已經買了兩戶，還可以給我們七折的優惠。那時候板橋的房子大概只要四百多萬。我們自認是老實人，對這個沒什麼太大的興趣，於是就婉拒了，把錢一直放在那裡。到了2004年，我們才買了現在的房子。後來回來時，板橋那裡的房價已經漲了一倍。雖然當時沒有聽她的建議，但感謝神，我們後來還是順利買了房子。</p>
+<p>這也是一種豐盛，但我們凡事都要敬畏神。另外，工作上的祝福、身體的健康，也都是豐盛的生命。</p>
+            </section>
+            
+            <section class="section" id="section-strong如何分辨成功神學strong">
+<h2 id="strong如何分辨成功神學strong"><strong>如何分辨「成功神學」？</strong></h2>
+<p>有人可能會問：「我相信神會賜下豐盛的生命，但市面上有很多『成功神學』，我們要怎麼區分神所講的豐盛與成功神學呢？」</p>
+<p>這是個很好的問題。成功神學的意思是，不管怎麼樣，只要你禱告，神「一定」會讓你成功、發財，並且教導人生活中「不應該」有試煉。有些極端靈恩派甚至會有一種「交換條件」的說法：你奉獻兩百萬，神就會加倍祝福你。</p>
+<p>以前在英國，有些電視佈道節目，牧師在電視上帶領大家禱告後，螢幕就會秀出捐款專線，呼籲大家不僅要禱告，還要用「捐款的行動」來換取神加倍的祝福。他們會引用聖經，告訴你「多奉獻就多得」。這種把信仰變成「交換」的觀念就是成功神學。</p>
+            </section>
+            
+            <section class="section" id="section-strong防備變質的成功神學strong">
+<h2 id="strong防備變質的成功神學strong"><strong>防備變質的成功神學</strong></h2>
+<p>許多成功神學的牧者，當信徒遇到生活中的困難時，他們不會用聖經全備的真理來引導，反而會把一切推給撒旦，說「這是撒旦在攻擊你」，或者指責信徒「你的信心不夠」，然後繼續叫你要捐錢。</p>
+<p>美國有位非常有名的佈道家，生活極其奢華，擁有私人噴射客機。他來台灣林口辦佈道會時，收了一次奉獻後覺得不夠，竟然要求再收第二次、第三次。不過據說他晚年對這些行徑也有了一些悔改。我想說的是，奉獻是基督徒理所當然的本分，但我們必須存著正確的心態。你不能抱著「我要藉此大撈一筆」的心態去奉獻，那是民間信仰「用行為表現去賺取神明恩惠」的錯誤觀念。我們奉獻，完全是為了回應上帝的愛。</p>
+            </section>
+            
+            <section class="section" id="section-strong第三因為這是祂的應許strong">
+<h2 id="strong第三因為這是祂的應許strong"><strong>第三：因為這是祂的應許</strong></h2>
+<p>神應允我們禱告的第三個原因，是因為這是祂的應許。</p>
+<blockquote>
+<p>「向來你們沒有奉我的名求什麼，如今你們求，就必得著，叫你們的喜樂可以滿足。」（約翰福音 16:24）</p>
+</blockquote>
+<p>神應許我們求就必得著，但前提是「奉主的名求」，意思就是所求的必須合乎神的心意。如果我們只按著自己的心意求，一定會「獅子大開口」。就像小孩子跟父母要東西，什麼都想要，但父母心裡有一把尺，知道什麼才是對孩子最好的。</p>
+<blockquote>
+<p>「他若求告我，我就應允他；他在急難中，我要與他同在；我要搭救他，使他尊貴。」（詩篇 91:15）</p>
+</blockquote>
+<p>神不僅應允我們，還應許要與我們同在。神的同在不代表我們從此無災無難，而是無論在什麼樣的急難中，祂都與我們同在。就像約瑟被關在監獄裡，神依然與他同在，使他百事順利；雖然身處苦難，但神最終搭救了他，並使他尊貴。大衛也是如此，他在被掃羅追殺的急難中呼求神，甚至躲在山洞裡，營地還被亞瑪力人洗劫，但神最後將一切都歸還給他。</p>
+            </section>
+            
+            <section class="section" id="section-strong第四因為神是全能的strong">
+<h2 id="strong第四因為神是全能的strong"><strong>第四：因為神是全能的</strong></h2>
+<p>我們禱告蒙應允的第四個原因，是因為神是全能的。</p>
+<blockquote>
+<p>「神能照著運行在我們心裡的大力充充足足地成就一切，超過我們所求所想的。」（以弗所書 3:20）</p>
+</blockquote>
+<p>這運行在我們心裡的大力，就是聖靈。當聖靈運行的時候，會帶來屬天的醫治與恢復。當你為某人禱告時，你可以想像聖靈此刻正運行在他的身上，帶給他身體的恢復與醫治，成就超過我們所求所想的奇妙作為。</p>
+            </section>
+            
+            <section class="section" id="section-strong第五聖靈的親自幫助strong">
+<h2 id="strong第五聖靈的親自幫助strong"><strong>第五：聖靈的親自幫助</strong></h2>
+<p>神應允我們禱告的第五個原因，是因為有聖靈的幫助。聖靈是保惠師，也就是我們的幫助者。就像讀書遇到不懂的地方，你需要一位家教來指導，聖靈就像那位家教，一指點你就通了。</p>
+<p>一個充滿信心的人，就是把自己交在神的手裡。不知道怎麼禱告沒有關係，因為聖靈會用說不出來的嘆息為我們禱告。聖靈會幫助我們明白神的心意，並照著神的旨意替我們祈求。</p>
+<p>聖經是神已經說過的話（Logos），而聖靈會把神「當下」要對我們說的話（Rhema）賜給我們。當你心裡有感動要去禱告、去讀經時，這就是聖靈發出的微小聲音，也就是「知識的言語」。你要趕緊順服下來去行。有時候我們覺得「怎麼都聽不到神的聲音？」其實是因為你沒有安靜下來，也沒有選擇順服。</p>
+            </section>
+            
+            <section class="section" id="section-strong主禱文的架構先垂直後水平strong">
+<h2 id="strong主禱文的架構先垂直後水平strong"><strong>主禱文的架構：先垂直，後水平</strong></h2>
+<p>禱告的內容有哪些呢？主禱文給了我們很清楚的架構：<strong>先是垂直向上的關係，然後才是水平向外的關係</strong>，兩者交織成一個十字架。這就像「十誡」一樣，前四誡談到我們跟神之間的關係（不可有別的神、守安息日等），這是垂直的；後六誡談到人際關係（不可殺人、不可作假見證等），這是水平的。</p>
+<p>主禱文一開始說：「我們在天上的父，願人都尊你的名為聖。願你的國降臨；願你的旨意行在地上，如同行在天上。」什麼叫做「讓神的國降臨」？只要你遵照神的話去做，按著天國的律例與法則（例如「山上寶訓」的八福、關於奉獻與禱告的教導）去行，你就是把神的國帶下來了。</p>
+<p>處理完與神的關係後，接著才講到我們生活上的需要：「我們日用的飲食，今日賜給我們。」然後是：「免我們的債（罪債），如同我們免了人的債。」如同神怎樣饒恕我們，我們也要怎樣饒恕別人。最後是：「不叫我們遇見試探；救我們脫離兇惡。」我們每天都非常需要這樣的禱告，求神保守我們和家人脫離一切的兇惡。</p>
+<p>這就是主禱文的精髓：先看重與神的垂直關係，再帶入與人的水平關係。</p>
+            </section>
+            
+            <section class="section" id="section-strong神回應禱告的四種方式strong">
+<h2 id="strong神回應禱告的四種方式strong"><strong>神回應禱告的四種方式</strong></h2>
+<p>我們都知道主禱文，但重點是能否真實地運用它。接著，我們來談談神通常會用哪四個方向來回應我們的禱告。其實這就跟父母回應孩子的要求一樣，有四種回答：</p>
+<p>第一種是<strong>「好」（Yes）</strong>，並且立刻成就。</p>
+<blockquote>
+<p>「又要以耶和華為樂，他就將你心裡所求的賜給你。當將你的事交託耶和華，並倚靠他，他就必成全。」（詩篇 37:4-5）</p>
+</blockquote>
+<p>第二種是<strong>「不好」（No）</strong>。因為我們求的可能對我們無益，或者那不是我們真正需要的。面對神的拒絕，我們不要像小孩子一樣生氣打滾，或抱怨「為什麼別人有，我沒有？」神拒絕我們，有時候不需要給太多解釋，因為祂知道什麼對我們最好。</p>
+<p>我分享一個親身經歷。我們在英國時，孩子在賣場看中了一款日本合金玩具（鋼彈），吵著要買。我跟他說不行，他就在地上鬧脾氣。我索性走到外面不理他，他看我不妥協也只好跟出來。沒想到他竟然偷偷把玩具藏在衣服裡帶出來！我立刻板起臉，把他帶回賣場裡，當場機會教育，嚴格要求他把東西放回去。我告訴他：「不是不給你，而是要等。等你生日的時候，爸爸會買一個更好的給你。」</p>
+<p>這就帶出了神回應禱告的第三種和第四種方式：<strong>「等候」（Wait）</strong> 以及 <strong>「我有更好的給你」</strong>。有時候神要我們等候祂的時間；有時候，神會用超乎我們想像、更好的事物來回應我們。萬事都互相效力，叫愛神的人得益處，所以當神要我們等候時，我們要心存感謝，相信神有更美好的安排。</p>
+            </section>
+            
+            <section class="section" id="section-strong禱告未蒙應允的五個攔阻strong">
+<h2 id="strong禱告未蒙應允的五個攔阻strong"><strong>禱告未蒙應允的五個攔阻</strong></h2>
+<p>既然神樂意聽禱告，為什麼有時候我們的禱告似乎沒有得到回應呢？可能有以下幾個原因：</p>
+<p>第一，<strong>我們忘了禱告，或者根本沒有求。</strong></p>
+<blockquote>
+<p>「你們貪戀，還是得不著；你們殺害嫉妒，又鬥毆爭戰，也不能得。你們得不著，是因為你們不求。」（雅各書 4:2）</p>
+</blockquote>
+<p>很多時候我們遇到困難就直接放棄了，甚至輕易放棄為我們的孩子禱告。有些父母常罵孩子笨，卻沒想過應該放下成見，好好為孩子禱告，求神賜給孩子超過父母的聰明與智慧。</p>
+<p>第二，<strong>以自我為中心的妄求。</strong></p>
+<blockquote>
+<p>「你們求也得不著，是因為你們妄求，要浪費在你們的宴樂中。」（雅各書 4:3）</p>
+</blockquote>
+<p>這也是許多變質的成功神學的盲點，只為了滿足個人的享樂與私慾而求。我們奉獻與禱告，應該是期盼神國度的擴張，吸引更多人認識救恩，而不是只為了擴張自己的財富與地盤。</p>
+<p>第三，<strong>帶著疑惑的態度。</strong></p>
+<blockquote>
+<p>「只要憑著信心求，一點不疑惑；因為那疑惑的人，就像海中的波浪，被風吹動翻騰。這樣的人不要想從主那裡得什麼。」（雅各書 1:6-7）</p>
+</blockquote>
+<p>第四，<strong>心裡注重罪孽，未曾認罪。</strong></p>
+<blockquote>
+<p>「耶和華的膀臂並非縮短，不能拯救，耳朵並非發沉，不能聽見，但你們的罪孽使你們與神隔絕；你們的罪惡使他掩面不聽你們。」（以賽亞書 59:1-2）</p>
+</blockquote>
+<p>罪會成為我們與神之間的隔斷。遮掩罪過的必不亨通，承認並離棄罪的，必蒙憐恤。</p>
+<p>第五，<strong>撒旦的攔阻。</strong>
+在生活中，確實存在屬靈的爭戰。保羅也曾說過：「我們有意到你們那裡……只是撒旦阻擋了我們。」這也是為什麼主禱文要我們求神「救我們脫離兇惡」。有時候我們為某人禱告，對方本來答應要來教會，最後卻突然不能來，背後可能就有仇敵的攔阻。</p>
+            </section>
+            
+            <section class="section" id="section-strong正確的禱告態度與方法strong">
+<h2 id="strong正確的禱告態度與方法strong"><strong>正確的禱告態度與方法</strong></h2>
+<p>了解攔阻後，我們該帶著什麼樣的態度來禱告呢？</p>
+<p>首先，<strong>必須奉耶穌的名求。</strong> 無論求什麼，我們是奉救主耶穌的名，而不是奉任何名牧或偉人的名。</p>
+<p>第二，<strong>除掉我們與神、與人之間隔斷的牆。</strong> 這包含「饒恕」。當我們站著禱告的時候，若想起有人得罪你，就當饒恕他，好讓天上的父也饒恕你的過犯。不饒恕會成為領受神祝福極大的攔阻。</p>
+<p>第三，<strong>帶著順服神旨意的心態。</strong> 只要我們願意認罪悔改，求羔羊的寶血潔淨，我們就能坦然無懼地來到施恩寶座前。悔改，就是生命一百八十度地轉向神。</p>
+<p>第四，<strong>憑信心忍耐到底。</strong> 在《路加福音》第十八章中，耶穌用「切求的寡婦與不義的官」的比喻，教導我們要常常禱告，不可灰心。連不義的官都會因為寡婦的切求而為她伸冤，更何況是我們公義的神呢？所以，把心裡的困難勇敢地告訴神吧！</p>
+            </section>
+            
+            <section class="section" id="section-strong第六持續不懈與用神的話禱告strong">
+<h2 id="strong第六持續不懈與用神的話禱告strong"><strong>第六：持續不懈與用神的話禱告</strong></h2>
+<p>第五，<strong>我們需要憑信心持續不懈地禱告。</strong> 就像以利亞為降雨禱告，他派僕人去看了七次。前面幾次僕人都說沒看到什麼，直到第七次，僕人說：「我看見有一小片雲從海裡上來，不過如人手那樣大。」以利亞就知道神應允了。同樣地，乃縵元帥長了大痲瘋，神要他去約旦河洗七次。他一開始很不高興，覺得家鄉的河水更乾淨。但他順服去洗了，洗到第七次，他的皮膚就完全潔淨了。所以，我們要不住地禱告，直到看見神應允的徵兆。</p>
+<p>第六，<strong>要使用聖經的話來禱告。</strong> 不是單憑自己的思想，而是照著神的話語來禱告，因為出於神的話，沒有一句不帶能力的。馬利亞說：「我是主的使女，情願照你的話成就在我身上。」耶穌在曠野面對魔鬼的試探時，也是用神的話來抵擋。我們可以用詩篇來宣告：「耶和華是我四圍的盾牌，是我的榮耀，又是叫我擡起頭來的。」也可以宣告：「耶和華的使者在敬畏他的人四圍安營，搭救他們。」（詩篇 34:7）。</p>
+<p>當遇到困難時，可以用這兩段經文來宣告：</p>
+<blockquote>
+<p>「在世上你們有苦難，但你們可以放心，我已經勝了世界。」（約翰福音 16:33）
+「小子們哪，你們是屬神的，並且勝了他們；因為那在你們裡面的，比那在世界上的更大。」（約翰一書 4:4）</p>
+</blockquote>
+<p>最後，禱告表明我們承認自己的無能與對神全能的信靠。我們的禱告可以搖動神的手，成就那又大又難的事！</p>
+            </section>
+            
+            <section class="section" id="section-strong單獨會主靈修分享與操練strong">
+<h2 id="strong單獨會主靈修分享與操練strong"><strong>「單獨會主」靈修分享與操練</strong></h2>
+<p><em>(此處進入問答與靈修操練分享環節)</em></p>
+<p>有弟兄姊妹問到不知道怎麼寫「單獨會主」的靈修筆記。其實方法很簡單，打開課本的靈修進度（例如約翰福音第十章1-10節），你可以照著這三個步驟來寫：</p>
+<ol>
+<li>
+<p><strong>你從經文領受了哪些真理與教導？</strong>
+先把經文讀兩、三次，第一次快讀，第二次慢讀，第三次更慢。不需要立刻去看解經書，就單純讀這段經文。你覺得這段經文在教導什麼？寫下你感受到的重點。</p>
+</li>
+<li>
+<p><strong>這段經文可以怎麼運用在生活中？</strong>
+這些真理如何應用在你的職場、家庭或人際關係中？</p>
+</li>
+<li>
+<p><strong>安靜聆聽，神今天對你說了什麼？</strong>
+安靜下來，想像神在對你說話。通常我們會聽見內心有個微小的聲音說：「我的孩子啊，我愛你，我要賜給你更豐盛的生命。你要每天來靠近我，因為離了我你就不能做什麼……」這就是聖靈在我們裡面的感動（Rhema）。有時候聖靈也會帶著一點責備，那是為了讓我們更多迴轉歸向祂。聽到神的聲音後，你也要在筆記上寫下你的回應：「主啊，謝謝祢今天告訴我這些話，我願意順服……」這就是一個完整的單獨會主。</p>
+</li>
+</ol>
+            </section>
+            
+            <section class="section" id="section-strong靈修的真實互動與回應strong">
+<h2 id="strong靈修的真實互動與回應strong"><strong>靈修的真實互動與回應</strong></h2>
+<p>寫靈修筆記不是在學校考試，沒有標準的正確答案。不用擔心自己寫得對不對、有沒有符合規定，只要把你心裡感動的話寫下來就可以了。經文是固定的，但每個人當下的領受與感動都不同。只要你願意安靜等候，上帝一定會引導你。</p>
+<p>我們下次上課是30號。接下來，我們一起來做個結束的禱告。</p>
+            </section>
+            
+            <section class="section" id="section-strong結尾禱告strong">
+<h2 id="strong結尾禱告strong"><strong>結尾禱告</strong></h2>
+<p>主啊！我們來到祢的面前，我們感謝祢。祢教導我們凡事禱告，凡事將我們心裡面的需要告訴祢，祢就要照著運行在我們裡面的大力，充充足足地成就一切，超過我們所求所想。</p>
+<p>主，我們感謝祢今天的教導。我們往往因為無知而不求，或者帶著自我為中心的心意妄求。主啊，求祢再來幫助我們，讓我們學習更多在祢的心意裡面來祈求，讓祢自己的心意可以成就在我們個人的生命中，也成就在我們的家庭與教會裡。</p>
+<p>主啊，求祢繼續開啟我們心靈的眼睛，讓我們常常領受屬天的啟示，把祢當下的話語（Rhema）時時刻刻賜給我們。當我們的心轉向祢的時候，祢就轉向我們。幫助我們常常謙卑、安靜地等候在祢面前，聆聽祢的聲音。讓我們在每天繁忙的生活中，依然願意保留「單獨會主」的時間，好讓我們透過祢的話語，更明白祢的心意，並將天上的國度帶到地上。</p>
+<p>主我們感謝祢，求祢祝福我們當中的每一位弟兄姊妹，包括今天沒有來參與的。主啊，求祢保守我們接下來這一週的生活，讓我們在凡事上都來倚靠祢。求祢將祢的喜樂、平安、豐盛的賞賜、健康與自由，多多地賜給我們。主啊，祢要與我們同在，謝謝主聽我們的禱告，奉靠耶穌基督寶貴的聖名祈求，阿們！</p>
+            </section>
+            
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "真誠的禱告",
+                "禱告的確據",
+                "馬太福音",
+                "喬治·慕勒",
+                "孤兒之父",
+                "教會建堂",
+                "榮耀堂",
+                "龍潭開拓",
+                "奇妙的預備",
+                "調度萬有",
+                "認獻磚塊",
+                "成功神學"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
