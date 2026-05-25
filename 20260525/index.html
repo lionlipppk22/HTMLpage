@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20260525 主日信息</title>
+        <meta name="description" content="福音本是神的大能" />
+        <meta
+            name="keywords"
+            content="福音是神的大能, 楊錫儒牧師, 幸福小組, 十字架的道理, 義人必因信得生, 黃寶傑, 殯葬業, 凱旋門, 羅馬帝國, 聖靈充滿, 大馬士革, 保羅"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../assets/css/layout.css" />
+
+        <style>
+            /* From reference.md */
+            p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* From demo.html - Additional styles */
+            .markdown-preview p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            .markdown-preview p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            .markdown-preview p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* Add highlighting for keywords if needed, layout.js handles it */
+            /* Table styles from markdown */
+            .markdown-preview table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 1em 0;
+            }
+
+            .markdown-preview th,
+            .markdown-preview td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .markdown-preview th {
+                background-color: #f2f2f2;
+            }
+
+            .markdown-preview h1 {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            /* Collapsible Section Styles */
+            .collapsible-section {
+                margin-bottom: 20px;
+                border-radius: 8px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .collapsible-section p {
+                margin: 0;
+                padding: 0.5em;
+                font-size: 1.6em;
+                font-family: Chiron GoRound TC;
+            }
+
+            .collapsible-header {
+                padding: 15px 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background 0.3s ease;
+            }
+
+            .collapsible-header:hover {
+                background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+            }
+
+            .collapsible-header h2 {
+                margin: 0;
+                padding: 0;
+                background: none;
+                color: white;
+                font-size: 1.5em;
+            }
+
+            .collapsible-icon {
+                transition: transform 0.3s ease;
+                width: 24px;
+                height: 24px;
+            }
+
+            .collapsible-section.collapsed .collapsible-icon {
+                transform: rotate(-90deg);
+            }
+
+            .collapsible-content {
+                padding: 20px;
+                transition: max-height 0.3s ease;
+                max-height: 20000px;
+                overflow: hidden;
+            }
+
+            .collapsible-section.collapsed .collapsible-content {
+                max-height: 0;
+                padding: 0 20px;
+            }
+
+            .markdown-preview ol {
+                list-style: none;
+                counter-reset: custom-counter;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ol li {
+                counter-increment: custom-counter;
+                background: rgba(255, 255, 255, 0.7);
+                margin-bottom: 18px;
+                padding: 18px 25px 18px 65px;
+                border-radius: 16px;
+                position: relative;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                font-size: 1.25em;
+                line-height: 1.7;
+                border-left: 6px solid #667eea;
+                backdrop-filter: blur(8px);
+                font-family: "LXGW WenKai Mono TC", serif;
+                color: #2d3436;
+            }
+
+            .markdown-preview ol li::before {
+                content: counter(custom-counter);
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+            }
+
+            .markdown-preview ol li:hover {
+                transform: translateX(10px);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-left-color: #764ba2;
+            }
+
+            /* Unordered List Styles */
+            .markdown-preview ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ul li {
+                background: rgba(255, 255, 255, 0.6);
+                margin-bottom: 15px;
+                padding: 15px 25px 15px 50px;
+                border-radius: 14px;
+                position: relative;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                transition: all 0.3s ease;
+                font-size: 1.2em;
+                line-height: 1.6;
+                border-left: 6px solid #764ba2;
+                backdrop-filter: blur(5px);
+                font-family: "LXGW WenKai Mono TC", serif;
+            }
+
+            .markdown-preview ul li::before {
+                content: "✦";
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #764ba2;
+                font-size: 1.2em;
+                font-weight: bold;
+                text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+            }
+
+            .markdown-preview ul li:hover {
+                transform: translateX(8px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+
+            /* Adjustments for nested content in li */
+            .markdown-preview ol li br + b,
+            .markdown-preview ol li br + span {
+                display: inline-block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body class="mobile-layout">
+        <!-- Gradient Background -->
+        <div class="gradient-bg"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button
+                class="control-btn"
+                onclick="toggleLayout()"
+                title="切換佈局 (Mobile/PC)"
+                id="layout-btn"
+            >
+                📱
+            </button>
+            <button class="control-btn" onclick="toggleZoom()" title="縮放">
+                🔍
+            </button>
+            <button
+                class="control-btn"
+                onclick="toggleEffects()"
+                title="提詞器"
+                id="tele-btn"
+            >
+                ✨
+            </button>
+            <button class="control-btn" onclick="toggleTOC()" title="目錄">
+                📋
+            </button>
+            <div class="speed-control" id="speed-control" style="display: none">
+                <input
+                    type="range"
+                    id="scroll-speed"
+                    min="1"
+                    max="10"
+                    value="2"
+                    title="捲動速度"
+                />
+            </div>
+        </div>
+
+        <!-- Teleprompter Guide Line -->
+        <div id="tele-line" class="tele-line"></div>
+
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h3>📋 目錄</h3>
+            <ul id="toc-list"></ul>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div
+                    style="
+                        font-size: 36px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;Zhi Mang Xing&quot;;
+                    "
+                >
+                    <h1 id="main-title">20260525 主日信息</h1>
+                </div>
+                <div
+                    style="
+                        font-size: 26px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;LXGW WenKai Mono TC&quot;, monospace;
+                    "
+                >
+                    <p class="subtitle">
+                        福音本是神的大能
+                        <a
+                            href="https://www.youtube.com/watch?v=bYQUSXIQar8&t=5s"
+                        >
+                            <img
+                                src="image.jpg"
+                                alt="alt text"
+                                style="
+                                    width: 50%;
+                                    display: block;
+                                    margin: 0 auto;
+                                "
+                            />
+                        </a>
+                        <a
+                            href="https://www.youtube.com/watch?v=bYQUSXIQar8&t=5s"
+                        >
+                            YouTube 直播來源
+                        </a>
+                    </p>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content markdown-preview" id="main-content">
+                <section
+                    class="section"
+                    id="section-楊錫儒牧師的見證從賭徒到門徒"
+                >
+                    <h2 id="楊錫儒牧師的見證從賭徒到門徒">
+                        楊錫儒牧師的見證：從賭徒到門徒
+                    </h2>
+                    <h3 id="strong賭博的捆綁與空虛strong">
+                        <strong>賭博的捆綁與空虛</strong>
+                    </h3>
+                    <p>
+                        楊錫儒牧師分享他過去的生命經歷。他曾經沉迷<strong>賭博</strong>，甚至連續五天五夜不睡覺地賭。賭博結束之後，不管是贏還是輸，他心裡面都非常空虛——贏也空虛，輸了也空虛。他不禁自問：「為什麼我要把自己的人生搞得這麼慘？我的人生還有什麼價值？未來還要繼續這樣的生活嗎？」
+                    </p>
+                    <p>
+                        他知道有一種看不見的黑暗勢力把他拖去賭場。他心裡面並不想去，就像使徒<strong>保羅</strong>所說的：「立志為善由得我，只是行出來由不得我」（羅馬書
+                        7:18）。他嘗試戒賭超過<strong>三百次</strong>，卻沒有一次成功，完全無法掙脫，前途一片灰暗，整個人陷入極度的恐懼與空虛之中。
+                    </p>
+                    <h3 id="strong離開台北遇見福音strong">
+                        <strong>離開台北，遇見福音</strong>
+                    </h3>
+                    <p>
+                        後來，他決定離開台北的生活，回到<strong>高雄</strong>去工作。當時公司裡有一位<strong>基督徒</strong>同事主動向他傳福音。起初他心想：「我一定要跟這位同事辯論。」
+                    </p>
+                    <p>
+                        經過幾場辯論之後，他開始認真思考：到底這世界最偉大的神是哪一位？是<strong>阿拉</strong>？是<strong>佛祖</strong>？還是基督教的上帝？他為了辯論，大量閱讀、不斷研究與考證。最終他心裡面確知：有一位最大的神，掌管全人類的歷史與未來——這位就是<strong>上帝</strong>。
+                    </p>
+                    <h3 id="strong降服的禱告與超自然釋放strong">
+                        <strong>降服的禱告與超自然釋放</strong>
+                    </h3>
+                    <p>
+                        當他發現這位神何等偉大，而自己又是何等卑微渺小——只是一個罪人時，他跪伏下來做了一個極其重要的禱告。他向神呼求：「<strong>神啊，我願意降服！我信你！我將一生的生命獻給你。</strong>」
+                    </p>
+                    <p>
+                        就在他決志歸主的那一刻，他經歷了一個<strong>超自然的釋放</strong>。賭博的癮頭在瞬間不再捆綁他，他得了自由。多年來纏繞他的賭癮，竟然在一瞬間就戒掉了。他過去靠自己的努力掙扎了那麼久，但當他願意把主權交給神的時候，上帝就將他從一個<strong>賭徒變成了主的門徒</strong>。
+                    </p>
+                    <h3 id="strong價值觀的翻轉與幸福小組strong">
+                        <strong>價值觀的翻轉與幸福小組</strong>
+                    </h3>
+                    <p>
+                        從此以後，他在教會中認真追求，甚至讀經讀到三更天還在讀。他的人生價值觀產生了大翻轉——以前以賺錢為中心，現在以<strong>基督</strong>為中心，以傳福音為使命。他感受到基督的心腸：上帝要人人都得救，不願意一人沉淪。他知道當人沉淪的時候，耶穌的心是何等沉痛，因此他願意為福音而活。
+                    </p>
+                    <p>
+                        <strong>楊錫儒牧師</strong
+                        >從2012年開始推動<strong>幸福小組</strong>研習，十多年來造就了國內外超過四千間教會的牧者同工，帶領無數人信主歸主。幸福小組聯繫會在海內外已超過60場，帶來了無遠弗屆的影響力。這一切，都是因為他深知什麼叫做<strong>福音的大能</strong>。
+                    </p>
+                    <p>
+                        幸福小組所傳遞的，就是<strong>耶穌復活的見證</strong>，讓人看見基督徒的生命因著耶穌基督的復活而帶來真實的改變。每一個信主的人都一樣：自己領受了祝福，上帝也使用我們去祝福更多的人。誰能想到，一個賭徒竟然成為在台灣極有影響力的牧師呢？
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-羅馬書一章14到17節經文">
+                    <h2 id="羅馬書一章14到17節經文">羅馬書一章14到17節經文</h2>
+                    <p>
+                        我們來看今天的經文——<strong>羅馬書一章14到17節</strong>：
+                    </p>
+                    <blockquote>
+                        <p>
+                            「無論是希利尼人、化外人、聰明人、愚拙人，我都欠他們的債。所以情願盡我的力量，將福音也傳給你們在羅馬的人。我不以福音為恥；這福音本是神的大能，要救一切相信的，先是猶太人，後是希利尼人。因為神的義正在這福音上顯明出來；這義是本於信，以致於信。如經上所記：義人必因信得生。」
+                        </p>
+                    </blockquote>
+                    <h3 id="strong保羅的迫切感strong">
+                        <strong>保羅的迫切感</strong>
+                    </h3>
+                    <p>
+                        <strong>羅馬書</strong
+                        >是保羅寫給羅馬教會信徒的書信。保羅說：無論是什麼身份、什麼地位、什麼種族——希利尼人、化外人、聰明人、愚拙人——「我都欠他們的債」。這不是欠錢的債，而是<strong>福音的債</strong>。
+                    </p>
+                    <p>
+                        只要有機會，他就情願盡一切的力量去傳福音，不管遇到什麼挑戰、要付多少代價，他就是要把福音傳出去。因為<strong
+                            >「這福音本是神的大能，要救一切相信的人。」</strong
+                        >
+                    </p>
+                    <p>
+                        保羅為什麼有這樣的迫切感？因為他自己先經歷了這福音的大能。
+                    </p>
+                    <h3 id="strong大馬士革路上的翻轉strong">
+                        <strong>大馬士革路上的翻轉</strong>
+                    </h3>
+                    <p>
+                        我們知道保羅在信主之前，覺得福音荒謬至極，甚至逼迫教會、抵擋耶穌。但在<strong>大馬士革</strong>的路上，他蒙了光照，耶穌親自向他說話。他經歷到這不可思議的大能，人生因此產生180度的大轉變。
+                    </p>
+                    <p>
+                        他原本是一個用盡力氣要抓基督徒入監獄的人，如今卻成為基督福音的使者，被主大大使用，建立了許多教會，真是一個被神大大使用的使徒。
+                    </p>
+                    <p>
+                        保羅是一個真正經歷恩典的人。他的心裡有一個強烈的感動：這麼好的福音，不能留給自己。他一定要想辦法用盡一切的力氣，盡可能地分享出去、傳揚出去。
+                    </p>
+                    <hr />
+                </section>
+
+                <section
+                    class="section"
+                    id="section-福音的希臘文-δύναμιςDynamis"
+                >
+                    <h2 id="福音的希臘文-δύναμιςDynamis">
+                        福音的希臘文 δύναμις（Dynamis）
+                    </h2>
+                    <p>
+                        「這福音本是神的大能」——<strong>大能</strong>在希臘文中叫做
+                        <strong>δύναμις</strong
+                        >（dynamis），意思是神蹟、奇事。這裡講的是上帝的大能，上帝的神蹟與奇事。這個希臘文延伸到英文，就是
+                        <strong>dynamite</strong>（炸藥）。
+                    </p>
+                    <p>
+                        換句話說，這個福音本來就是有一個<strong>爆炸性的力量</strong>。從兩千多年前到現在，這個福音的果效和力量是可以被聽見、被看見、被感受到的——感受到一個人接受福音之後生命的改變、思想的改變。這個改變生命的能力，就是福音，就是上帝的大能。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-羅馬教會的起源">
+                    <h2 id="羅馬教會的起源">羅馬教會的起源</h2>
+                    <p>
+                        <strong>羅馬教會</strong
+                        >不是保羅建立的，也不是彼得建立的。保羅寫這封信的時候，其實還沒有到過羅馬。那麼羅馬教會到底是怎麼開始的呢？
+                    </p>
+                    <p>
+                        聖經給了我們一個線索——<strong>使徒行傳二章5到11節</strong>記載，<strong>五旬節</strong>聖靈大澆灌的時候，世界各地的猶太人回到<strong>耶路撒冷</strong>過節。當時有來自意大利羅馬的人，他們在那個過程中被聖靈澆灌充滿，領受了福音的大能。他們回到自己的地方，就把福音帶回了羅馬。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-福音Euangelion的意涵">
+                    <h2 id="福音Euangelion的意涵">福音（Euangelion）的意涵</h2>
+                    <p>
+                        福音在希臘文裡面叫做
+                        <strong>εὐαγγέλιον</strong
+                        >（euangelion），意思是<strong>好消息</strong>。在新約之前的希臘文化中，這個詞用在軍事或政治的領域。
+                    </p>
+                    <p>在<strong>羅馬帝國</strong>時期，它有兩個情境的用法：</p>
+                    <p>
+                        第一，羅馬軍隊打勝仗的時候<strong>凱旋歸回</strong>——他們就會打造一座<strong>凱旋門</strong>。在耶穌基督的時期，意大利羅馬的凱旋門至今仍保留了三座。「好消息」就是打了勝仗凱旋歸來的喜訊。
+                    </p>
+                    <p>
+                        第二，<strong>皇帝生了兒子</strong>——普天歡慶，因為版圖如此遼闊的帝國有了繼承人。
+                    </p>
+                    <p>
+                        當時的羅馬帝國統管歐亞非三大洲，是全世界最有影響力的國家，東西羅馬帝國延續長達<strong>1500年</strong>。在初代教會傳福音的期間，羅馬帝國的版圖就有<strong>500萬平方公里</strong>，人口數達<strong>六七千萬人</strong>。
+                    </p>
+                    <p>
+                        對當時世界上最繁榮、最有政治影響力的羅馬人來說，他們認為軍事和政治上的能力才是真正的「大能」。這也像今天的世界，有背景、地位、財富、社交能力的人會認為那才是力量的來源。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-獨一的福音耶穌基督">
+                    <h2 id="獨一的福音耶穌基督">獨一的福音：耶穌基督</h2>
+                    <p>
+                        但保羅告訴羅馬的信徒，也同樣告訴我們——<strong>羅馬書一章2到4節</strong>：
+                    </p>
+                    <blockquote>
+                        <p>
+                            「這福音是神從前藉眾先知在聖經上所應許的，論到他兒子——我主耶穌基督。按肉體說，是從大衛後裔生的；按聖善的靈說，因從死裡復活，以大能顯明是神的兒子。」
+                        </p>
+                    </blockquote>
+                    <p>
+                        這才是所謂的<strong>福音</strong>，是獨一的好消息。我們一生當中要不斷回到這個核心：獨一的福音不是我們所依靠的力量、才能、勢力或地位，而是這位<strong>凱旋歸來的耶穌</strong>——祂勝過死亡、勝過陰間權勢，這位得勝的君王是<strong>萬王之王、萬主之主</strong>。祂要在我們的生命中彰顯凱旋得勝的能力，這就是在你我身上可以產生的好消息。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-十架的羞辱與大能">
+                    <h2 id="十架的羞辱與大能">十架的羞辱與大能</h2>
+                    <p>
+                        保羅說：「<strong>我不以福音為恥。</strong>」其實傳福音並不容易。在那個時代，有人會嘲笑說：「還在講十字架？」就像今天也有人說：「這是什麼年代了，還在講這些？」
+                    </p>
+                    <p>
+                        保羅當時就已面對各方的嘲笑。對<strong>猶太人</strong>來說，十字架是羞辱——因為摩西的律法上寫著：「被掛的人在神面前是受咒詛的」（申命記
+                        21:23）。猶太人處死罪犯，寧可用石頭打死。<strong>羅馬人</strong>覺得十字架是軟弱的象徵。<strong>希臘人</strong>在雅典追求哲學與智慧——使徒行傳十七章記載，他們與保羅辯論，嘲笑他傳講十字架復活的福音。
+                    </p>
+                    <p>
+                        保羅是一個有學問的知識分子，非常聰明有能力。但他願意為了福音被嘲笑，願意為福音的緣故努力傳揚，不管遇到任何困難。他引用<strong>哥林多前書一章18節</strong>回應：
+                    </p>
+                    <blockquote>
+                        <p>
+                            「因為十字架的道理，在那滅亡的人為愚拙；在我們得救的人，卻為神的大能。」
+                        </p>
+                    </blockquote>
+                    <p>
+                        我們知道如今人們會把十字架美化，做成項鍊、手環等裝飾品。但在初代教會時期，十字架是羞辱、卑微的象徵，甚至可能因此遭受逼迫，為福音付上極大的代價。然而保羅一再宣告：「我不以福音為恥，因為這是上帝的大能。」
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-軟弱中的剛強">
+                    <h2 id="軟弱中的剛強">軟弱中的剛強</h2>
+                    <p>
+                        我們有時覺得自己很軟弱，不斷地停留在軟弱裡面。但我們有沒有想到：我們已經<strong>因信得以稱義</strong>，已經接受了福音。在軟弱的時候，有沒有想到神的能力要來扶持我們、幫助我們、賜給我們力量？
+                    </p>
+                    <p>
+                        保羅也有軟弱的時候。他在<strong>哥林多後書十二章9到10節</strong>說：
+                    </p>
+                    <blockquote>
+                        <p>
+                            「祂對我說：『我的恩典夠你用的，因為我的能力是在人的軟弱上顯得完全。』所以，我更喜歡誇自己的軟弱，好叫基督的能力覆庇我。我為基督的緣故，就以軟弱、凌辱、急難、逼迫、困苦為可喜樂的；因我什麼時候軟弱，什麼時候就剛強了。」
+                        </p>
+                    </blockquote>
+                    <p>保羅一再回到福音，從耶穌那裡支取能力和力量。</p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-得生命且得更豐盛">
+                    <h2 id="得生命且得更豐盛">得生命且得更豐盛</h2>
+                    <p>
+                        讓我們省思自己的生命：是不是信主得救了就覺得這樣就好了，又回去過自己的生活？我們的生命有沒有得勝？有沒有讓基督福音的大能在我們生命中掌權？
+                    </p>
+                    <p>
+                        面對軟弱的時候，我們得勝了嗎？是不是很容易生氣、暴怒？是不是常常被負面的想法和憂鬱所困？是不是喜歡跟家人爭競、總想證明自己是對的，或太在乎別人的眼光？有時候是不是也不願意主動聚會、不願道歉、不願饒恕？好像有一股力量綁住了你——就像楊牧師信主前一樣，被那股邪惡的力量捆綁，無法自拔。
+                    </p>
+                    <p>
+                        耶穌說，祂來是要叫我們<strong>得生命，而且得的更豐盛</strong>（約翰福音
+                        10:10）。那個叫做得勝。上帝早就要賜給我們能力，但我們願不願意去支取？常常來到祂的面前，宣告：福音是上帝的大能，彰顯在耶穌基督的身上——祂死裡復活。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-生命更新的比喻">
+                    <h2 id="生命更新的比喻">生命更新的比喻</h2>
+                    <p>
+                        這個復活的能力，不只是指將來我們會有一個新的身體，也包括我們現在的生命就開始改變。
+                    </p>
+                    <p>
+                        就像我們的家，住了五年、十年、十五年，就需要開始維修了。同樣，我們的生命是不是也需要再次被<strong>聖靈</strong>來更新？
+                    </p>
+                    <p>
+                        從大自然中我們看到：<strong>毛蟲</strong>在繭裡面，最終會羽化成為<strong>蝴蝶</strong>——那是一個蛻變。種子會成長為麥穗。我們的生命也是如此，神復活的能力可以讓我們不斷地蛻變更新。上帝不要我們只活在毛蟲的生命裡，在地上辛苦地爬行蠕動。上帝已經把羽化成蝴蝶的生命賜給了我們——在上帝的恩典中，在靈裡面得自由，在真理中得自由。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-楊錫儒牧師見證回顧">
+                    <h2 id="楊錫儒牧師見證回顧">楊錫儒牧師見證回顧</h2>
+                    <p>
+                        <strong>楊錫儒牧師</strong
+                        >在見證中提到，上帝不只把他從賭徒變成門徒。他在21年的賭癮當中，戒了三百次都戒不掉。但信主之後，神的道在他裡面運行，他順服聖靈的引導與神的話語，生命開始與主同死、同埋葬、同復活，就像麥子落在地裡死了，就結出許多子粒來。
+                    </p>
+                    <p>
+                        正如<strong>加拉太書二章20節</strong>所說：「現在活著的不再是我，乃是基督在我裡面活著。」
+                    </p>
+                    <p>
+                        他20年的賭癮，竟然在一瞬之間就被斷開。那些纏繞的荊棘與雜草，都被耶穌溫柔而大能的手拔除了。我們信主多年，是不是裡面也被一些荊棘或纏累困住？好像撒種的比喻中，種子被擠壓，長不出生命來。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-義人必因信得生">
+                    <h2 id="義人必因信得生">義人必因信得生</h2>
+                    <p><strong>羅馬書一章17節</strong>——今天最後一節經文：</p>
+                    <blockquote>
+                        <p>
+                            「因為神的義正在這福音上顯明出來；這義是本於信，以致於信。如經上所記：義人必因信得生。」
+                        </p>
+                    </blockquote>
+                    <p>
+                        什麼叫做<strong>神的義</strong>？就是上帝賜給我們救恩，讓我們的地位從本來不認識神、與神為敵的人，轉變成為神的兒女。我們開始想神的旨意是什麼，神的國、神的義是什麼。
+                    </p>
+                    <p>
+                        這就像我們有心愛的人，吃到好吃的東西會想幫他帶一份回去分享，看到對孩子好的東西會買給他，看到有益的課程會讓他去上。愛一個人，就會心心念念想著怎麼對他最好。
+                    </p>
+                    <p>
+                        我們跟上帝的關係也是如此。我們是什麼時候會想到上帝呢？只有在吃飯禱告的時候、遇到困難喊「主啊，救我」的時候嗎？上帝要我們在<strong>日常生活</strong>中常常想到祂：「主啊，我的這個意念你喜不喜悅？我說的這句話討你喜悅嗎？我現在看的這個東西，主你知道是你不喜悅的。」
+                    </p>
+                    <p>
+                        因為我們的地位已經轉變了。我們是成為基督的兒女，心心念念的是這位愛我們的主、為我們捨命的主。當我們這樣愛祂、接受祂的愛，慢慢就會去想怎樣叫祂喜悅。本來被看為不對的事情或行為，開始慢慢變成神看為對的、神所喜悅的。
+                    </p>
+                    <p>
+                        這不是靠自己，不是靠個人努力，而是<strong>相信上帝的救恩，信靠祂的恩典</strong>。這就是福音的大能，要拯救一切相信的人——不只是對慕道友說的，更是對我們每一個人說的。我們持續要經歷神的大能，經歷聖靈的澆灌與充滿，在生命裡賜給我們力量。
+                    </p>
+                    <p>
+                        這個力量就是上帝<strong>愛</strong>的力量。當我們不斷被聖靈充滿、領受神的愛，這愛的力量會讓我們不再只求自己的益處，開始想神的話、神的義、神喜悅的事。在這個過程中，我們會經歷到成為一個<strong>義人</strong>——不是完美的人，但是以神為中心、心裡念念不忘愛我們的主、與神和好的人。
+                    </p>
+                    <p>
+                        我們的靈性會慢慢得勝，生命會經歷成長、更新、蛻變，帶來一個豐盛得勝的生命。這就是所謂的「<strong>義人必因信得生</strong>」。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-黃寶傑弟兄的見證">
+                    <h2 id="黃寶傑弟兄的見證">黃寶傑弟兄的見證</h2>
+                    <p>
+                        最後分享一個見證。大家聽過<strong>黃寶傑</strong>弟兄嗎？他曾經拍過一支影片——「<strong>要信就要信最大尾的</strong>」。他現在是<strong>慕靈生命禮儀公司</strong>的負責人，常被邀請到各教會分享生命見證。
+                    </p>
+                    <p>
+                        他說他以前非常討厭基督教，是一個「最不可能信耶穌」的人。但就是這樣一個覺得不可能的人，卻被上帝找了回來。
+                    </p>
+                    <h3 id="strong虔誠的佛教徒strong">
+                        <strong>虔誠的佛教徒</strong>
+                    </h3>
+                    <p>
+                        黃寶傑信主前是一個相當虔誠的<strong>佛教徒</strong>。他曾擔任宮廟委員，熱心投入宮廟事務，還到<strong>佛學學院</strong>進修深造，以第一名的成績畢業，非常認真。他坦言不敢說自己是拜拜專家，但可以算是權威。各方面的神都拜過，跟神明打交道非常在行。補卦、看<strong>風水</strong>，他樣樣都會。
+                    </p>
+                    <h3 id="strong人生的崩塌與殯葬業strong">
+                        <strong>人生的崩塌與殯葬業</strong>
+                    </h3>
+                    <p>
+                        年輕時候的黃寶傑拼命賺錢，卻疏於照顧婚姻和家庭。後來因一次失敗的投資，家庭一瞬之間<strong>破產</strong>，甚至有地下錢莊來追債。<strong>離婚</strong>後，他一個人帶著兩個孩子生活，身上背著上千萬的債務。為了快速還債，他轉投入了<strong>殯葬業</strong>。
+                    </p>
+                    <p>
+                        整天在那個環境工作，心裡面充滿恐懼害怕，於是他拜得更多。但他的精神狀況卻越來越差。
+                    </p>
+                    <h3 id="strong父女關係決裂與憂鬱症strong">
+                        <strong>父女關係決裂與憂鬱症</strong>
+                    </h3>
+                    <p>
+                        有一次他情緒失控，管教失當，過度體罰了他的女兒，打到她臉都腫了。他心愛的女兒從此跟他<strong>決裂</strong>——不再正眼看他，也不跟他說話，心中只剩下<strong>仇恨</strong>。
+                    </p>
+                    <p>
+                        在人生最低潮的時候，他發現過去投入的宗教信仰並不能幫助他度過難關。他不知道<strong>憂鬱症</strong>該去拜哪個神明。他甚至想過跳樓結束自己的生命。失眠嚴重，不知道誰能幫助他。他最在乎的，還是跟女兒的關係——怎樣才能得到修復？
+                    </p>
+                    <h3 id="strong基督徒朋友的邀請strong">
+                        <strong>基督徒朋友的邀請</strong>
+                    </h3>
+                    <p>
+                        就在那時候，有一位<strong>基督徒</strong>朋友主動出現了，邀請他和兩個孩子一起去教會參加聚會。
+                    </p>
+                    <h3 id="strong父女和好的神蹟strong">
+                        <strong>父女和好的神蹟</strong>
+                    </h3>
+                    <p>
+                        在某一次的聚會中，他在眾人面前公開向女兒<strong>道歉</strong>，說出了內心的真心話，承認也是自己誤會了女兒。他沒想到女兒竟然走上去<strong>抱住了他</strong>，父女二人相擁而泣，彼此求饒恕和原諒。上帝的愛恢復了他們之間的<strong>親子關係</strong>。
+                    </p>
+                    <p>
+                        就在那一天，他們一起成為天父的兒女。黃寶傑肯定地說，從那一天開始，他就再也沒有吃過<strong>憂鬱症</strong>的藥了。這真是福音是神的大能！
+                    </p>
+                    <h3 id="strong從死亡的味道到復活的味道strong">
+                        <strong>從死亡的味道到復活的味道</strong>
+                    </h3>
+                    <p>
+                        起初去教會的一段時間，黃寶傑常常拒絕上帝——小組打電話來就放在旁邊，繼續抽他的煙；聚會結束時才大聲說「阿門哈利路亞」，用敷衍的方式應付教會人的關心。
+                    </p>
+                    <p>
+                        但有一次，教會的弟兄姊妹親自到他的<strong>殯儀館</strong>去探訪他。他非常感動：「怎麼會有這樣的愛？」他一次又一次地拒絕上帝，但<strong>上帝從未放棄過他</strong>。最終他真正經歷到上帝是又真又活的神，敞開心接受，當年就<strong>受洗成為基督徒</strong>。
+                    </p>
+                    <p>
+                        信主之後，他繼續從事殯葬業。很多人發現他身上的味道不一樣了——他說：「<strong>不再有死亡的味道，而是復活的味道。</strong>」人在面對死亡的時候，生命會覺得晦暗和痛苦。但他開始把福音傳給喪家，介紹復活的主耶穌怎樣在他生命裡帶來祝福和改變。
+                    </p>
+                    <h3 id="strong信仰不是交易而是關係strong">
+                        <strong>信仰不是交易，而是關係</strong>
+                    </h3>
+                    <p>
+                        他回想過去花錢買供品祭祀、花錢消災，把信仰當成一種交易。後來他領悟到一個問題：「如果我拜的是真神的話，<strong>信仰不應該是交易</strong>才對。」
+                    </p>
+                    <p>
+                        他從耶穌基督的救恩中發現：天父上帝不是要跟我們交易，而是要讓我們<strong>認識祂是誰</strong>，跟祂建立關係。就像他自己有親愛的兒女，當然不希望跟兒女的關係是交易，而是<strong>愛的關係</strong>。他開始學習跟天父建立關係，生命得到恢復。
+                    </p>
+                    <p>
+                        黃寶傑在人生最低潮的時候遇見了上帝，生命得著救贖。上帝的愛修復了親子關係，他的家人在基督裡面成為<strong>新造的人</strong>。這是何等大的見證！
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-福音的總結">
+                    <h2 id="福音的總結">福音的總結</h2>
+                    <p>
+                        什麼是<strong>福音</strong>？福音就是有一位神願意進到我們的生命裡面、進到我們的內心和思想中。上帝要恢復我們生活的次序，恢復我們跟祂的關係，成為<strong>和好的關係</strong>。我們跟家人也會是和好的關係。你相信嗎？你相信的話，就可以看見<strong>神的榮耀</strong>在我們的生命當中彰顯。
+                    </p>
+                    <p>
+                        保羅當年傳講「福音是神的大能」，被多少人嘲笑，被視為愚笨。但<strong>兩千多年來</strong>，福音的能力穿越時空，影響了千千萬萬、上億的人，在生命中帶來屬靈的翻轉與更新。
+                    </p>
+                    <p>
+                        <strong>福音是神的大能</strong
+                        >，能夠彰顯神的神蹟與異能。不管我們的身份地位如何——平凡人也好，賭徒也好，皇帝也好——基督在十架上擔當了我們的罪，祂從<strong>死裡復活</strong>的能力到現在仍在運行。這福音的大能也要臨到我們的家人和親朋好友身上。
+                    </p>
+                    <p>
+                        這福音不只是要我們得救而已，更是讓我們活出一個<strong>得勝豐盛的生命</strong>。神也使用我們成為福音的使者，透過我們活出福音，讓人看見、聽見、經歷福音。
+                    </p>
+                    <p>
+                        <strong>福音本是神的大能，要拯救一切相信的人。</strong>
+                    </p>
+                    <p>
+                        盼望今天的信息，讓我們更能與神建立深厚的關係。也求主賜給我們勇敢、膽量充滿的心，成為福音的使者。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-結束禱告">
+                    <h2 id="結束禱告">結束禱告</h2>
+                    <p>
+                        主啊，我們感謝讚美你。透過這段經文，你說福音本是你的大能，要拯救一切相信的。主啊，我們向你感恩，因為你的恩典，我們得以站在你面前。這福音唯獨是從耶穌基督而來。主啊，願你讓這福音在我們生命中掌權做王。
+                    </p>
+                    <p>
+                        主啊，你幫助我們。有時候我們裡面有許多黑暗的地方，像是籠罩在我們生命的當中。但主啊，我們知道當你的光進到我們的生命裡面，黑暗就被趕走。因為唯獨的光是從你而來，這福音的能力是從你而來。我們單單信靠你，不依靠人的力量，只依靠你。
+                    </p>
+                    <p>
+                        我們知道這段經文不只是對慕道友說的，更是對我們每一個生命說的——福音的大能要在我們身上產生。主啊，幫助我們回到你的面前。今天我們的生命要經歷更新、突破、翻轉，活出得勝的生命。主啊，這是脫胎換骨的生命。因為有你聖靈的能力在我們裡面，這寶貝在瓦器裡要顯出你莫大的能力。
+                    </p>
+                    <p>
+                        我們來到你面前敞開我們的心，把所經歷的、所聽到的見證都帶到主面前。我們要成為經歷神蹟的人，成為被你使用的人。主啊，膏抹我們、恩膏我們。讚美你！
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-回應詩歌改變我">
+                    <h2 id="回應詩歌改變我">回應詩歌：改變我</h2>
+                    <p>
+                        <em
+                            >求你改變我，讓我能更像你。到一個境界，心重新被你啟動。求你改變我，這一生為你而活。不再是我，乃是基督在我裡面活著。改變我，讓我的心像你。改變我的心，讓我更多體貼你的心意。改變我，讓我不再為自己。</em
+                        >
+                    </p>
+                </section>
+            </main>
+        </div>
+        <!-- Include layout.js -->
+        <script src="../assets/js/layout.js"></script>
+
+        <!-- Add keywords config for highlighting -->
+        <script id="keywords-config" type="application/json">
+            {
+                "keywords": [
+                    "福音是神的大能",
+                    "楊錫儒牧師",
+                    "幸福小組",
+                    "十字架的道理",
+                    "義人必因信得生",
+                    "黃寶傑",
+                    "殯葬業",
+                    "凱旋門",
+                    "羅馬帝國",
+                    "聖靈充滿",
+                    "大馬士革",
+                    "保羅"
+                ]
+            }
+        </script>
+
+        <script>
+            // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+            window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+        </script>
+    </body>
+</html>
