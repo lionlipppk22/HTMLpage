@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20260601 主日信息</title>
+        <meta
+            name="description"
+            content="我們原是祂的工作——人生的六場征戰與得勝之路"
+        />
+        <meta
+            name="keywords"
+            content="以弗所書, 命定, 屬靈征戰, 趕鬼, 情慾, 人際關係, 經濟, 三合一的敵人, 心意更新, 蒙神引導, 信靠神, 聖靈"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../assets/css/layout.css" />
+
+        <style>
+            /* From reference.md */
+            p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* From demo.html - Additional styles */
+            .markdown-preview p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            .markdown-preview p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            .markdown-preview p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* Add highlighting for keywords if needed, layout.js handles it */
+            /* Table styles from markdown */
+            .markdown-preview table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 1em 0;
+            }
+
+            .markdown-preview th,
+            .markdown-preview td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .markdown-preview th {
+                background-color: #f2f2f2;
+            }
+
+            .markdown-preview h1 {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            /* Collapsible Section Styles */
+            .collapsible-section {
+                margin-bottom: 20px;
+                border-radius: 8px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .collapsible-section p {
+                margin: 0;
+                padding: 0.5em;
+                font-size: 1.6em;
+                font-family: Chiron GoRound TC;
+            }
+
+            .collapsible-header {
+                padding: 15px 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background 0.3s ease;
+            }
+
+            .collapsible-header:hover {
+                background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+            }
+
+            .collapsible-header h2 {
+                margin: 0;
+                padding: 0;
+                background: none;
+                color: white;
+                font-size: 1.5em;
+            }
+
+            .collapsible-icon {
+                transition: transform 0.3s ease;
+                width: 24px;
+                height: 24px;
+            }
+
+            .collapsible-section.collapsed .collapsible-icon {
+                transform: rotate(-90deg);
+            }
+
+            .collapsible-content {
+                padding: 20px;
+                transition: max-height 0.3s ease;
+                max-height: 20000px;
+                overflow: hidden;
+            }
+
+            .collapsible-section.collapsed .collapsible-content {
+                max-height: 0;
+                padding: 0 20px;
+            }
+
+            .markdown-preview ol {
+                list-style: none;
+                counter-reset: custom-counter;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ol li {
+                counter-increment: custom-counter;
+                background: rgba(255, 255, 255, 0.7);
+                margin-bottom: 18px;
+                padding: 18px 25px 18px 65px;
+                border-radius: 16px;
+                position: relative;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                font-size: 1.25em;
+                line-height: 1.7;
+                border-left: 6px solid #667eea;
+                backdrop-filter: blur(8px);
+                font-family: "LXGW WenKai Mono TC", serif;
+                color: #2d3436;
+            }
+
+            .markdown-preview ol li::before {
+                content: counter(custom-counter);
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+            }
+
+            .markdown-preview ol li:hover {
+                transform: translateX(10px);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-left-color: #764ba2;
+            }
+
+            /* Unordered List Styles */
+            .markdown-preview ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ul li {
+                background: rgba(255, 255, 255, 0.6);
+                margin-bottom: 15px;
+                padding: 15px 25px 15px 50px;
+                border-radius: 14px;
+                position: relative;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                transition: all 0.3s ease;
+                font-size: 1.2em;
+                line-height: 1.6;
+                border-left: 6px solid #764ba2;
+                backdrop-filter: blur(5px);
+                font-family: "LXGW WenKai Mono TC", serif;
+            }
+
+            .markdown-preview ul li::before {
+                content: "✦";
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #764ba2;
+                font-size: 1.2em;
+                font-weight: bold;
+                text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+            }
+
+            .markdown-preview ul li:hover {
+                transform: translateX(8px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+
+            /* Adjustments for nested content in li */
+            .markdown-preview ol li br + b,
+            .markdown-preview ol li br + span {
+                display: inline-block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body class="mobile-layout">
+        <!-- Gradient Background -->
+        <div class="gradient-bg"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button
+                class="control-btn"
+                onclick="toggleLayout()"
+                title="切換佈局 (Mobile/PC)"
+                id="layout-btn"
+            >
+                📱
+            </button>
+            <button class="control-btn" onclick="toggleZoom()" title="縮放">
+                🔍
+            </button>
+            <button
+                class="control-btn"
+                onclick="toggleEffects()"
+                title="提詞器"
+                id="tele-btn"
+            >
+                ✨
+            </button>
+            <button class="control-btn" onclick="toggleTOC()" title="目錄">
+                📋
+            </button>
+            <div class="speed-control" id="speed-control" style="display: none">
+                <input
+                    type="range"
+                    id="scroll-speed"
+                    min="1"
+                    max="10"
+                    value="2"
+                    title="捲動速度"
+                />
+            </div>
+        </div>
+
+        <!-- Teleprompter Guide Line -->
+        <div id="tele-line" class="tele-line"></div>
+
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h3>📋 目錄</h3>
+            <ul id="toc-list"></ul>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div
+                    style="
+                        font-size: 36px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;Zhi Mang Xing&quot;;
+                    "
+                >
+                    <h1 id="main-title">20260601 主日信息</h1>
+                </div>
+                <div
+                    style="
+                        font-size: 26px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;LXGW WenKai Mono TC&quot;, monospace;
+                    "
+                >
+                    <p class="subtitle">
+                        我們原是祂的工作——人生的六場征戰與得勝之路
+                        <a
+                            href="https://i.pinimg.com/originals/63/c7/c7/63c7c785e96b7b386ab8ec8dc2cf8b16.jpg"
+                        >
+                            <img
+                                src="https://i.pinimg.com/originals/63/c7/c7/63c7c785e96b7b386ab8ec8dc2cf8b16.jpg"
+                                alt="alt text"
+                                style="
+                                    width: 50%;
+                                    display: block;
+                                    margin: 0 auto;
+                                "
+                            />
+                        </a>
+                    </p>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content markdown-preview" id="main-content">
+                <section class="section" id="section-神的工作與命定">
+                    <h2 id="神的工作與命定">神的工作與命定</h2>
+                    <p>
+                        我們原是祂的工作。在不認識神的時候，人總是覺得一切都靠自己；然而認識神之後，凡事都會來到神面前禱告：「主啊，祢帶領我走這一步，接下來該怎麼做？」——這就是跟隨神的生命。
+                    </p>
+                    <p>
+                        <strong
+                            >我們原是祂的工作，在基督耶穌裡造成的，為要叫我們行善，就是神所預備叫我們行的</strong
+                        >（以弗所書
+                        2:10）。經文中提到一個關鍵詞：「預備」——這就是<strong>神的計劃</strong>。神已經為每一個人預備了計劃。
+                    </p>
+                    <h3 id="strong每個人都有獨特的命定strong">
+                        <strong>每個人都有獨特的命定</strong>
+                    </h3>
+                    <p>
+                        每一個人身上都有神的計劃，<strong>那就是命定</strong>。你的命定跟別人的命定不會一樣，因為每個人都是獨立的個體。所以不用去羨慕別人，也不用跟人比較。除非你也想來做牧師，那當然歡迎——不過牧師之間也各有各的命定。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-人生的六場戰爭">
+                    <h2 id="人生的六場戰爭">人生的六場戰爭</h2>
+                    <p>
+                        人生是一場戰爭，無論我們願不願意，都身處這場戰爭當中。<strong>戰爭有勝利者也有戰敗者</strong>，在戰敗者中也有受傷或死亡的。然而蒙神引導的人總是會得勝，神賜給祂兒女的應許之一，便是在一生的年日中以恩慈和良善引導我們的道路，使我們能夠得勝。因此信主的人有試煉，但不會被打敗，因為終究我們要得勝。<strong
+                            >你相信這應許嗎？</strong
+                        >
+                    </p>
+                    <p>
+                        人生究竟是什麼？就是戰爭。而我們處在什麼樣的戰爭當中呢？
+                    </p>
+                    <h3 id="strong六種戰爭的全景strong">
+                        <strong>六種戰爭的全景</strong>
+                    </h3>
+                    <p>
+                        <strong
+                            >第一，精神上的戰爭；第二，疾病的戰爭；第三，情慾上的戰爭；第四，人際關係的戰爭；第五，經濟上的戰爭；第六，屬靈的戰爭。</strong
+                        >
+                    </p>
+                    <p>讓我們逐一來看。</p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-精神上的戰爭">
+                    <h2 id="精神上的戰爭">精神上的戰爭</h2>
+                    <p>
+                        首先是精神上的戰爭。經上說：<strong>「你要保守你的心，勝過保守一切，因為一生的果效是由心發出。」</strong>（箴言
+                        4:23）這就是所謂的「心思的戰場」。受壓力的折磨、憂鬱、憂慮——這些都是精神上的戰爭。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-疾病的戰爭">
+                    <h2 id="疾病的戰爭">疾病的戰爭</h2>
+                    <p>
+                        疾病是怎麼來的？因為罪。人墮落之後才有疾病，原本我們都是健健康康的。使徒行傳記載：「因為有許多人被污鬼附著，那些鬼大聲呼叫，從他們身上出來；還有許多癱瘓的、瘸腿的，都得了醫治。在那城裡就大有歡喜。」（使徒行傳
+                        8:7-8）
+                    </p>
+                    <p>
+                        在這墮落的世界裡，人們常罹患各種疾病。那麼，你們有看過被鬼附的人嗎？
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-趕鬼的見證">
+                    <h2 id="趕鬼的見證">趕鬼的見證</h2>
+                    <h3 id="strong倫敦的上海姐妹strong">
+                        <strong>倫敦的上海姐妹</strong>
+                    </h3>
+                    <p>
+                        我在倫敦的時候，有一個姐妹，她是大陸上海人，到倫敦幫流行服飾做衣服設計，賺了不少錢。有一次她回到上海，她媽媽用金條幫她打造了一尊純金的觀世音像，她就把它帶到倫敦。
+                    </p>
+                    <p>
+                        後來她信主了。但她以前長期崇拜偶像，很可能在靈界裡已經把許多東西交給了這些黑暗權勢——譬如說：「你給我大富大貴，我就如何如何。」所以她一直非常迷信，覺得她的一切成就都是觀世音祝福的，才會特地打造一尊純金觀世音像。
+                    </p>
+                    <h3 id="strong從憂鬱到趕鬼strong">
+                        <strong>從憂鬱到趕鬼</strong>
+                    </h3>
+                    <p>
+                        信主之後，她晚上開始都睡不著覺，得了憂鬱症。她來到教會時，有一位從台灣去的黃牧師問她：「你的憂鬱是從什麼時候開始的？」她說自己一向其實是蠻開朗的人，也不知道為什麼會這樣。但她晚上覺得被很多東西壓著，非常不舒服。黃牧師就告訴她：「你這個應該是有一些需要處理的。」
+                    </p>
+                    <p>
+                        後來黃牧師開始為她趕鬼，還叫我去幫忙。我要幫忙什麼？我沒趕過鬼！他說：「你來助陣。」那時候我在那邊念書，只是教會的理事，在教會認識的。我說：「我沒趕過鬼，跳到我身上怎麼辦？」他就找了我和太太一起去。
+                    </p>
+                    <p>
+                        我們看黃牧師怎麼趕鬼。結果趕不出去，因為她裡面不只一個，是一群。她當下口吐白沫，倒在地上抽搐。我當然很害怕，第一次嘛。黃牧師說這個「工程」太大了，今天先告一個段落。
+                    </p>
+                    <h3 id="strong輾轉求助的過程strong">
+                        <strong>輾轉求助的過程</strong>
+                    </h3>
+                    <p>
+                        黃牧師後來把她帶到倫敦另一間教會。那間教會的牧師跟我們家老大的名字一樣。到了那裡，牧師出來為她禱告，她馬上就在地上打滾。那天我們家老大也去了，我跟孩子說：「你在樓上就好，不要看。」但還是看到了。那個牧師也沒辦法趕出去，就建議我們去倫敦最大的五旬節教會尋求幫助。
+                    </p>
+                    <h3 id="strong趕鬼經歷的啟示strong">
+                        <strong>趕鬼經歷的啟示</strong>
+                    </h3>
+                    <p>
+                        兒子回去的時候問我：「爸爸，那個張豔阿姨為什麼在地上滾？為什麼她口吐白沫？」我說因為她被鬼附了。他問什麼是被鬼附，問了一大堆，充滿好奇。我心想那天不應該帶他去。
+                    </p>
+                    <p>
+                        後來我們到倫敦那邊，找到一位女牧師。她曾經在澳洲的土著部落中，跟那些巫師在靈界打過仗，所以是很有權柄的。出發前我問黃牧師：「如果路上那個姐妹發作怎麼辦？」他說：「你就奉主的命令，叫她裡面的靈安靜就好。不要跟邪靈對話。」
+                    </p>
+                    <p>
+                        我們三點提早到了，等到四點。中間那一個小時我一直在禱告。她果然開始躁動，我就照黃牧師教的，說：「奉耶穌的命令，裡面安靜。」她就安靜下來了。等到四點，那位女宣教士出來處理。我說我們都趕不出去了，她卻說：「算不得什麼。」她把那個姐妹帶到辦公室，開窗，叫她裡面的污鬼離開。<strong
+                            >不到五分鐘就搞定了。</strong
+                        >
+                    </p>
+                    <p>
+                        有些人的確有這個恩賜權柄。有些鬼，有些人就是趕不出去——但在有權柄的人面前，邪靈必須離開。
+                    </p>
+                    <p>污鬼、疾病，這都是罪惡帶下來的。</p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-情慾的征戰">
+                    <h2 id="情慾的征戰">情慾的征戰</h2>
+                    <p>
+                        「你們當順著聖靈而行，就不放縱肉體的情慾了。因為情慾和聖靈相爭，聖靈和情慾相爭，這兩個是彼此相敵，使你們不能做所願意做的。」（加拉太書
+                        5:16-17）
+                    </p>
+                    <p>
+                        如果我們不跟隨聖靈，就很自然會跟隨世界的聲音。這是一輩子的功課——如果不活在跟隨聖靈裡面，這世界有太多引誘，我們很容易落入情慾各方面的試探。
+                    </p>
+                    <h3 id="strong情慾的具體表現strong">
+                        <strong>情慾的具體表現</strong>
+                    </h3>
+                    <p>
+                        加拉太書五章19到21節列出：「情慾的事都是顯而易見的，就如姦淫、污穢、邪蕩、拜偶像、邪術、仇恨、爭競、忌恨、惱怒、結黨、紛爭、異端、嫉妒、醉酒、荒宴等類。我從前告訴你們，現在又告訴你們，行這樣事的人必不能承受神的國。」
+                    </p>
+                    <p>
+                        這一連串的罪，只要我們不活在聖靈裡面，就很容易陷入。偶像不只是看得見的偶像，財富也可以成為一種偶像。惱怒呢？做媽媽的最容易惱怒了。我很佩服范長老，他說從不嫉妒。如果有爭競比較，就會去嫉妒，這些都是環環相扣的。
+                    </p>
+                    <h3 id="strong保羅的吶喊strong">
+                        <strong>保羅的吶喊</strong>
+                    </h3>
+                    <p>
+                        人心裡面有許多的慾望——情慾、貪財、權力欲——這都是人心中的交戰。保羅才會發出那句深沉的吶喊：「我真是苦啊！誰能救我脫離這取死的身體呢？」（羅馬書
+                        7:24）。感謝神，靠著聖靈就可以得勝。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-人際關係的征戰">
+                    <h2 id="人際關係的征戰">人際關係的征戰</h2>
+                    <p>
+                        <strong
+                            >「人心比萬物都詭詐，壞到極處，誰能識透呢？」</strong
+                        >（耶利米書 17:9）
+                    </p>
+                    <p>
+                        加爾文主義正是在講這件事：人心比萬物都詭詐，全然的敗壞。我很喜歡跟長輩傳福音的時候引用這段經文，他們不敢否認，因為我們都有違背良心的時候。當然要先講自己的經歷，對方就很容易柔軟下來。
+                    </p>
+                    <p>
+                        這世代人與人之間的不信任、勾心鬥角、互相欺騙、自我中心——都是我們要面對的征戰。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-經濟上的征戰">
+                    <h2 id="經濟上的征戰">經濟上的征戰</h2>
+                    <p>
+                        「又對亞當說：你既聽從妻子的話，吃了我所吩咐你不可吃的那樹上的果子，地必為你的緣故受咒詛；你必終身勞苦，才能從地裡得吃的。」（創世記
+                        3:17）
+                    </p>
+                    <p>
+                        本來亞當和夏娃需要勞苦嗎？不用。他們只要吃生命樹的果子就好了。但因為犯罪墮落，被趕出伊甸園，從此終身勞苦才能從地裡得吃的。
+                    </p>
+                    <h3 id="strong現代經濟壓力strong">
+                        <strong>現代經濟壓力</strong>
+                    </h3>
+                    <p>
+                        在經濟不景氣之下，人們想盡辦法脫離困境，經濟壓力真的很大。現在對年輕人的壓力更大——香港有40%的年輕人非常痛苦，因為大學畢業就面臨失業。為什麼？人工智慧可以取代很多人的工作，企業不再需要那麼多人了。前陣子有些公司用工程師訓練AI，訓練完之後就裁員了，真的很殘酷。
+                    </p>
+                    <p>
+                        每一個世代都有各自的經濟壓力。在職場上，當大家都用同一套方式處理事情，你不照著做就成了異類，會被排擠。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-范長老的見證合歡山">
+                    <h2 id="范長老的見證合歡山">范長老的見證：合歡山</h2>
+                    <h3 id="strong堅持不報假帳strong">
+                        <strong>堅持不報假帳</strong>
+                    </h3>
+                    <p>
+                        范長老當兵的時候擔任排長，上面的連長叫他去載車子、去採購，然後交代他：「你回來就寫早上去中午回、中午去晚上回。」——一天報兩次，就是要報假帳。
+                    </p>
+                    <p>
+                        范長老覺得怎麼可以這樣？明明就只有一次，怎麼可以報兩次？連長說：「叫你這樣做你就這樣做。」他回答：「我是基督徒，不能這樣做。」結果就被調到合歡山去了。
+                    </p>
+                    <p>
+                        他想，去合歡山那時候確實很冷，但在那邊也不錯，每天都過得很開心。這就是一個基督徒在經濟與職場壓力下，選擇持守信仰原則的美好見證。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-屬靈征戰">
+                    <h2 id="屬靈征戰">屬靈征戰</h2>
+                    <p>
+                        <strong
+                            >「因為我們並不是與屬血氣的爭戰，乃是與那些執政的、掌權的、管轄這幽暗世界的，以及天空屬靈氣的惡魔爭戰。」</strong
+                        >（以弗所書 6:12）
+                    </p>
+                    <h3 id="strong三層天的架構strong">
+                        <strong>三層天的架構</strong>
+                    </h3>
+                    <p>
+                        我們活在第一層天；第一層天之上是第二層天，那是魔鬼運作的地方；第二層天再上去是第三層天——至高神的所在。誰曾去過第三層天？保羅（哥林多後書
+                        12:2）。
+                    </p>
+                    <p>
+                        我們活在黑暗的權勢底下，因為我們在第一層天，而第二層天是魔鬼的領域。但魔鬼終究要仆倒在至高神面前。
+                    </p>
+                    <p>
+                        當魔鬼撒但跟神較量的時候，拿誰開刀？舊約的約伯。神說約伯全然敬畏祂（約伯記
+                        1:8），撒但就跟神說：「祢只要拿走他身上所有的祝福，他就背棄祢了。」上帝說：「不會的。」然後就允許試煉臨到約伯。
+                    </p>
+                    <p>
+                        第二層天有魔鬼，但我們有最高的神——這就是三層天的架構。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-三合一的敵人">
+                    <h2 id="三合一的敵人">三合一的敵人</h2>
+                    <p>
+                        我們為什麼要面臨屬靈征戰？因為我們面對一個三合一的敵人——<strong>第一，世界；第二，肉體；第三，魔鬼</strong>。
+                    </p>
+                    <h3 id="strong世界的引誘strong">
+                        <strong>世界的引誘</strong>
+                    </h3>
+                    <p>
+                        世界就是巴比倫、埃及所象徵的。舊約裡面，埃及象徵什麼？世界。以色列人離開埃及的時候，他們還很懷念那裡。埃及有什麼可以吃？有黃瓜，還有韭菜（民數記
+                        11:5）。他們離開了埃及，但他們的心有沒有離開？沒有。
+                    </p>
+                    <p>
+                        舊約都是在預表新約，預表我們這些百姓。我們不屬這世界，但心常常還是停留在世界。不是牛肉麵好吃的錯，是私慾的問題。世界有各方面的引誘，耶穌不也是這樣被魔鬼試探的嗎？石頭變麵包，各種試探。
+                    </p>
+                    <p>
+                        <strong
+                            >「肉體的情慾、眼目的情慾、今生的驕傲，都是從世界來的。」</strong
+                        >（約翰一書 2:16）這就是感官的世界，我們都會受到影響。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-魔鬼如何運作">
+                    <h2 id="魔鬼如何運作">魔鬼如何運作</h2>
+                    <h3 id="strong三合一的驅動鏈strong">
+                        <strong>三合一的驅動鏈</strong>
+                    </h3>
+                    <p>
+                        三合一的敵人怎麼驅動我們？因為我們裡面有慾望，這來自我們的肉體。世界會驅動我們的肉體，而驅動這個世界的就是魔鬼。
+                    </p>
+                    <h3 id="strong魔鬼知道你在想什麼嗎strong">
+                        <strong>魔鬼知道你在想什麼嗎？</strong>
+                    </h3>
+                    <p>
+                        魔鬼知道你的內心在想什麼嗎？
+                        <strong>不知道，只有神知道。</strong>
+                        但是一旦你有行動的時候，魔鬼就知道了，他就會用這些來定罪我們、來驅動我們。
+                    </p>
+                    <p>
+                        能鑒察人心的是聖靈，那是聖靈在裡面做感動的工作。我不知道你在想什麼，你也不知道我在想什麼——人怎麼會知道呢？
+                    </p>
+                    <p>
+                        但魔鬼會從行動下手。我們在行動之前會有思想，而那些思想怎麼來？就是以前敗壞的東西還在裡面轄制著我們。墮落的思想、世界各方面罪惡的思想、沒有被更新的意念，都一直在我們的腦袋裡。
+                    </p>
+                    <h3 id="strong心意更新的必要strong">
+                        <strong>心意更新的必要</strong>
+                    </h3>
+                    <p>
+                        所以保羅在<strong>羅馬書12章2節</strong>說：「不要效法這個世界，只要心意更新而變化，叫你們察驗何為神的善良、純全、可喜悅的旨意。」
+                    </p>
+                    <p>
+                        在還沒有認識上帝的時候，我們所有的價值觀都是世界裝滿的。如果沒有被更新，就很容易回到過去。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-大衛的鑑戒">
+                    <h2 id="大衛的鑑戒">大衛的鑑戒</h2>
+                    <h3 id="strong情慾的軟弱strong">
+                        <strong>情慾的軟弱</strong>
+                    </h3>
+                    <p>
+                        我以前很愛錢，想要做一個建商。但如果沒有繼續活在上帝裡面，就會被慾望驅動。情慾是男人的軟弱，如果我們沒有活在神的裡面，就會被驅動。一旦有了行動，魔鬼就知道了，他就會來控告、來強化那個試探引誘，抓住你不放。
+                    </p>
+                    <h3 id="strong大衛一步步的墮落strong">
+                        <strong>大衛一步步的墮落</strong>
+                    </h3>
+                    <p>
+                        只有上帝知道我們的心思意念。但如果付諸行動呢？看看大衛的例子。
+                    </p>
+                    <p>
+                        大衛在太陽平西的時候看到拔示巴在洗澡，他如果掩目離開就沒事了。因為我們難免有時候看到不該看的，但他駐足了——繼續欣賞、繼續欣賞——「拔示巴怎麼這麼漂亮！」他一直停留在那裡看的時候，魔鬼就知道了，就來攪動他裡面的情慾。
+                    </p>
+                    <p>
+                        大衛怎麼做？他差人去把拔示巴找過來。魔鬼又看到了——太好了，他已經有動作了。大衛裡面會不會有掙扎？身為男人，還是會有掙扎。但在掙扎的過程當中，他有沒有抓住上帝？他沒有。沒有抓住的時候，他就完全掉進去了，陷入了撒但的網羅。
+                    </p>
+                    <h3 id="strong越陷越深的悲劇strong">
+                        <strong>越陷越深的悲劇</strong>
+                    </h3>
+                    <p>
+                        做錯事之後就要掩蓋，掩蓋他的姦情。一步一步越陷越深——他破了很多的誡命，犯了很多錯誤。他又殺了拔示巴的丈夫烏利亞，叫約押大將軍把他送到最前線，借刀殺人。
+                    </p>
+                    <p>
+                        大衛的可惡！人心比萬物都詭詐，壞到極處。然而他後來還是在<strong>詩篇51篇</strong>中認罪悔改。這就是屬靈征戰，也是人際關係征戰的深刻鑑戒。
+                    </p>
+                </section>
+
+                <section class="section" id="section-為什麼在人生戰爭中失敗">
+                    <h2 id="為什麼在人生戰爭中失敗">為什麼在人生戰爭中失敗</h2>
+                    <p>
+                        回到第二個大項：為什麼很多人在人生的戰爭中失敗？原因有四：第一，不依靠神的道；第二，不知道聖靈的帶領；第三，對撒但的戰略無知；第四，失去了人生的方向。
+                    </p>
+                    <h3 id="strong不依靠神的道strong">
+                        <strong>不依靠神的道</strong>
+                    </h3>
+                    <p>
+                        我們裡面有神的形象——真理的仁義和聖潔，但有些時候卻把裡面的真理給掩蓋起來了。大衛難道不知道自己不該犯罪嗎？我相信他知道，不然他怎麼可能寫出詩篇51篇？他明明知道錯了，卻沒有去做對的事。我們也常常如此——不要只說大衛，我們自己也不是什麼好東西。所以加爾文才說：沒有什麼可誇的，你來誇你的自由意志跟上帝配合？
+                    </p>
+                    <p>
+                        「可見信道是從聽道來的，聽道是從基督的話來的」（羅馬書
+                        10:17）。人最難的不是不知道神的心意，而是知道卻不願意照著去行。因信稱義，也要因行稱義——不是只有因信稱義，也要有行為。
+                    </p>
+                    <h3 id="strong不知道聖靈的帶領strong">
+                        <strong>不知道聖靈的帶領</strong>
+                    </h3>
+                    <p>
+                        「你們若順從肉體活著，必要死；若靠著聖靈治死身體的惡行，必要活著。」（羅馬書
+                        8:13）。大衛就是沒有靠著聖靈治死惡行，所以他跟拔示巴所生的那個孩子沒有存活，他也為此非常難過。
+                    </p>
+                    <h3 id="strong大衛與拔示巴之子的結局strong">
+                        <strong>大衛與拔示巴之子的結局</strong>
+                    </h3>
+                    <p>
+                        那個孩子其實是有福的——他不用經歷人生的生老病死，直接到天上去了。不要以為他死了就沒有了，肉體雖然死了，但靈魂在上帝那裡。後來大衛和拔示巴生了所羅門，也生了耶底底亞。
+                    </p>
+                    <p>如果我們不知道如何被聖靈帶領，人生就會失敗。</p>
+                    <h3 id="strong對撒但的戰略無知strong">
+                        <strong>對撒但的戰略無知</strong>
+                    </h3>
+                    <p>
+                        撒但的智商非常高，所以我們需要禱告，求神的智慧引導。撒但很勤勞、不休息，無時無刻在旁邊觀察你的破口。一旦看到你生命中有破口，就會趁虛而入。因此我們不要在生活中留有任何破口。十誡告訴我們不可說謊、不可做假見證、不可貪愛別人的妻子——若我們不知道撒但的詭計，就容易在人生的戰役中失敗。
+                    </p>
+                    <h3 id="strong倫君的見證男女分際strong">
+                        <strong>倫君的見證：男女分際</strong>
+                    </h3>
+                    <p>
+                        幾週前的禮拜六，在倫君家的小組聚會中，倫君分享了一個見證。那是我們教會復活節的事——她帶著幾位慕道友來到教會：子軒、子復、明杰，還有一個媽媽，這是去年12月24日的事。
+                    </p>
+                    <p>
+                        那一天她來的時候說：「牧師，我們要不要先做一個禱告？」因為旁邊有一些人，她就找我去辦公室。她怕吵到別人，把門關起來。而我隨即去把另外一側的門打開來。她注意到我這個小動作——這就是男女分際。
+                    </p>
+                    <p>
+                        弟兄不要主動去關心一個姐妹，姐妹也不要主動去關心一個弟兄，除非你們清楚知道那個界線在哪裡。倫君在小組分享這件事的時候，才注意到那天我把那扇門打開的用意。其實她是講給她先生聽的，因為她講的主題就是男女的分際。上次查經不是在講雅各書嗎？提到禁閉的園、花園，這就是男女之間我們要注意的界線，才不會落入試探裡面。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-蒙神引導而得勝">
+                    <h2 id="蒙神引導而得勝">蒙神引導而得勝</h2>
+                    <p>怎樣才可以蒙神引導而得勝呢？</p>
+                    <h3 id="strong第一承認我們需要引導strong">
+                        <strong>第一：承認我們需要引導</strong>
+                    </h3>
+                    <p>
+                        <strong>以賽亞書53章6節</strong
+                        >說：「我們都如羊走迷，各人偏行己路，耶和華使我們眾人的罪孽都歸在他身上。」
+                    </p>
+                    <p>
+                        <strong>箴言14章12節</strong
+                        >說：「有一條路，人以為正，至終成為死亡之路。」
+                    </p>
+                    <p>
+                        <strong>詩篇25篇9節</strong
+                        >：「他必按公平引領謙卑人，將他的道教訓他們。」謙卑，就是願意照著神的心意去行，放下自己的堅持。家裡面最先道歉的人都是贏家。
+                    </p>
+                    <h3 id="strong第二在信心中祈求方向strong">
+                        <strong>第二：在信心中祈求方向</strong>
+                    </h3>
+                    <p>
+                        <strong>馬太福音7章7-8節</strong
+                        >：「你們祈求，就給你們；尋找，就尋見；叩門，就給你們開門。因為凡祈求的，就得著；尋找的，就尋見；叩門的，就給他開門。」在信心中祈求，每天都需要祈求、尋找、叩門——英文就是
+                        Ask, Seek, Knock。
+                    </p>
+                    <p>
+                        <strong>雅各書1章5-6節</strong
+                        >：「你們中間若有缺少智慧的，應當求那厚賜與眾人、也不斥責人的神，主就必賜給他。只要憑著信心求，一點不疑惑；因為那疑惑的人，就像海中的波浪，被風吹動翻騰。」這樣的人不要想從主那裡得到什麼。我們若缺少智慧，就要向神求，這是至關重要的。
+                    </p>
+                    <h3 id="strong第三傾聽神的回應strong">
+                        <strong>第三：傾聽神的回應</strong>
+                    </h3>
+                    <p>
+                        <strong>約伯記33章14節</strong
+                        >：「神說一次、兩次，世人卻不理會。」要傾聽，就一定要安靜下來。為什麼我們常常不理會？因為我們沒有調整與神之間的連結，就像頻道沒有調整好一樣。
+                    </p>
+                    <h3 id="strong第四當我還不明白的時候要信靠神strong">
+                        <strong>第四：當我還不明白的時候，要信靠神</strong>
+                    </h3>
+                    <p>
+                        亞伯拉罕因著信，蒙召的時候就遵命出去，往將來要得為業的地方去，出去的時候還不知道往哪裡去（希伯來書
+                        11:8）。范長老不是講過亞伯拉罕75歲嗎？他好像拿了一張不知道目的地的機票就出發了。而且他都75歲了，還要長途旅行！亞伯拉罕活到175歲，86歲生以實瑪利，100歲的時候生以撒。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-信靠神的應許">
+                    <h2 id="信靠神的應許">信靠神的應許</h2>
+                    <p>
+                        <strong>箴言3章5-6節</strong
+                        >：「你要專心仰賴耶和華，不可倚靠自己的聰明。在你一切所行的事上都要認定他，他必指引你的路。」
+                    </p>
+                    <p>
+                        <strong>詩篇37篇23-24節</strong
+                        >：「義人的腳步被耶和華立定，他的道路耶和華也喜愛。他雖失腳，也不致全然仆倒，因為耶和華用手攙扶他。」
+                    </p>
+                    <p>
+                        要真正專心仰賴耶和華，常常跟神禱告：「神啊，你的命定要成就在我孩子的身上。」持續為你的孩子禱告，每天都為他禱告。五年、七年、十年，你就會看到神的確在他身上做工。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-疫情中的見證神的恩典預備">
+                    <h2 id="疫情中的見證神的恩典預備">
+                        疫情中的見證：神的恩典預備
+                    </h2>
+                    <h3 id="strong兒子的升學之路strong">
+                        <strong>兒子的升學之路</strong>
+                    </h3>
+                    <p>
+                        我之前跟大家提過，我們家老二去到渥太華的時候，才念一年的高中，接下來馬上就碰到疫情爆發。那疫情三年，他們都沒辦法去學校上課，只能線上教學。看他那種線上教學的狀況，我很擔心他到時候要考大學怎麼辦？他們也有學科考試，也要申請學校。
+                    </p>
+                    <p>
+                        我其實蠻擔心的，因為每天都不知道疫情什麼時候結束。我們都禱告希望疫情趕快結束，就像那一段五級警戒時期，配恩在那時候結婚，我們室內不能聚集太多人，花不完還要出去外面——真的印象深刻。我們一直禱告盼望趕快結束，但疫情就是持續了將近三年。
+                    </p>
+                    <h3 id="strong恩典出人意外strong">
+                        <strong>恩典出人意外</strong>
+                    </h3>
+                    <p>
+                        後來他在安大略省要申請學校的時候，安大略省那一年竟然取消了大學入學考試，直接採用高中在校成績。台灣去的孩子數學都很棒，數學都考第一名。如果真要考入學考試，這傢伙怎麼辦？這就是恩典。他就靠著數學這一個強項學科，進了安大略省三所還不錯的學校。後來我就跟他說：「你就留在渥太華就好。」
+                    </p>
+                    <p>
+                        看看神給的恩典！我很擔心，師母也很擔心。這傢伙打電動打到那種程度——凌晨三點都不用去學校，電玩都好玩。我心想怎麼辦？但你不用擔心了，上帝會預備。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-神賜下能力">
+                    <h2 id="神賜下能力">神賜下能力</h2>
+                    <p>第三個大項：神正在為我們做什麼呢？賜下能力。</p>
+                    <p>
+                        <strong>哥林多前書10章13節</strong
+                        >：「你們所遇見的試探，無非是人所能受的。神是信實的，必不叫你們受試探過於所能受的；在受試探的時候，總要給你們開一條出路，叫你們能忍受得住。」
+                    </p>
+                    <h3 id="strong大衛可以逃卻沒有逃strong">
+                        <strong>大衛可以逃，卻沒有逃</strong>
+                    </h3>
+                    <p>
+                        大衛跟拔示巴的事情，大衛可以逃嗎？可以。弟兄們可不可以逃？可以。保羅講過類似的道理——快跑！沒錯，要趕快跑，趕快跑就逃了。但是大衛有趕快跑嗎？沒有。他反而叫人趕快去把拔示巴請過來，把腳黏在原地。
+                    </p>
+                    <p>
+                        我們所遇見的試探，無非是人所能受的，表示其實是可以逃離的。神是給我們能力的，無論何時，叫我們能忍受得住。神會堅固我們，也會搭救我們。而且耶穌復活之後，還在神的右邊為我們代求，聖靈也為我們代求。我們有兩位代求者——聖靈為我們代求，耶穌在父神寶座的右邊也為我們代求。除非我們不去抓住神——一旦沒有抓住神，就會落入仇敵的網羅裡面。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-結語與公告">
+                    <h2 id="結語與公告">結語與公告</h2>
+                    <p>
+                        接下來，有寫單獨會主日誌的嗎？如果還沒寫，接下來要寫的羅馬書跟哥林多後書，請把握時間寫一寫。
+                    </p>
+                    <p>
+                        下一次上課是6月7號。敬拜是恩賜，破冰是芭比，分享是佩如，茶點也是芭比。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-結束禱告">
+                    <h2 id="結束禱告">結束禱告</h2>
+                    <p>
+                        主，我們來到你面前，我們知道這世界、我們的肉體、魔鬼都會成為我們極大的試探與網羅。主，求你幫助我們，讓我們脫離情慾各樣的敗壞。當我們學習來倚靠聖靈、跟隨聖靈，因為隨從聖靈的就是生命，隨從肉體的就是死亡。
+                    </p>
+                    <p>
+                        主啊，求你賜福我們每個弟兄姐妹每一天的生活，讓我們真正效法主你自己，能夠靠著你的恩典勝過一切的引誘與罪惡的轄制。因為我們不屬這世界，我們是屬神的。
+                    </p>
+                    <p>
+                        <strong
+                            >主，你常常用微小的聲音來提醒我們，讓我們順著聖靈的聲音行走。因為你是我們的好牧人，我們認得你的聲音，我們要跟著你的腳蹤行。</strong
+                        >
+                        主，你在我們每一個人的生命當中，在我們每一個家庭裡面。願我們成為好的屬靈榜樣，讓我們的孩子也能夠從我們身上看出我們是屬神的，也願意跟我們一起奔走這一條屬天的路。
+                    </p>
+                    <p>
+                        主，我們感謝你，求你繼續恩待我們每一個弟兄姐妹，也祝福今天沒有來的人，保守他們都十分平安。你與我們同在，當我們要分散的時候，主啊，求你祝福我們，與我們同在。我們感謝你，奉耶穌的名求，阿門。
+                    </p>
+                </section>
+            </main>
+        </div>
+        <!-- Include layout.js -->
+        <script src="../assets/js/layout.js"></script>
+
+        <!-- Add keywords config for highlighting -->
+        <script id="keywords-config" type="application/json">
+            {
+                "keywords": [
+                    "以弗所書",
+                    "命定",
+                    "屬靈征戰",
+                    "趕鬼",
+                    "情慾",
+                    "人際關係",
+                    "經濟",
+                    "三合一的敵人",
+                    "心意更新",
+                    "蒙神引導",
+                    "信靠神",
+                    "聖靈"
+                ]
+            }
+        </script>
+
+        <script>
+            // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+            window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+        </script>
+    </body>
+</html>
