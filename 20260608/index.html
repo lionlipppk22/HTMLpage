@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20260608 主日信息</title>
+        <meta name="description" content="面對屬靈的征戰" />
+        <meta
+            name="keywords"
+            content="面對屬靈的征戰，在動盪的世代中活出得勝的人生, 立志行善由不得我, 神在我們身上是有命定的, 你們就當挺身昂首，因為你們得贖的日子近了, 我們並不是與屬血氣的爭戰, 魔鬼最大的武器就是分裂, 我們最大的敵人其實就是自己, 很多時候仇敵不用打倒我們，只要讓我們停止親近神就夠了, 因為我們餵養肉體太多，餵養靈魂太少了, 得勝是從順服神的話開始, 人活著不是單靠食物，乃是靠神口裡所出的一切話, 得勝不是贏過家人，是贏過自己的脾氣, 神沒有叫我們赤手空拳地上戰場, 我們不是為勝利而戰，我們是從勝利出發, 靠著愛我們的主，在這一切的事上已經得勝有餘了"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../assets/css/layout.css" />
+
+        <style>
+            /* From reference.md */
+            p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* From demo.html - Additional styles */
+            .markdown-preview p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            .markdown-preview p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            .markdown-preview p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* Add highlighting for keywords if needed, layout.js handles it */
+            /* Table styles from markdown */
+            .markdown-preview table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 1em 0;
+            }
+
+            .markdown-preview th,
+            .markdown-preview td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .markdown-preview th {
+                background-color: #f2f2f2;
+            }
+
+            .markdown-preview h1 {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            /* Collapsible Section Styles */
+            .collapsible-section {
+                margin-bottom: 20px;
+                border-radius: 8px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .collapsible-section p {
+                margin: 0;
+                padding: 0.5em;
+                font-size: 1.6em;
+                font-family: Chiron GoRound TC;
+            }
+
+            .collapsible-header {
+                padding: 15px 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background 0.3s ease;
+            }
+
+            .collapsible-header:hover {
+                background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+            }
+
+            .collapsible-header h2 {
+                margin: 0;
+                padding: 0;
+                background: none;
+                color: white;
+                font-size: 1.5em;
+            }
+
+            .collapsible-icon {
+                transition: transform 0.3s ease;
+                width: 24px;
+                height: 24px;
+            }
+
+            .collapsible-section.collapsed .collapsible-icon {
+                transform: rotate(-90deg);
+            }
+
+            .collapsible-content {
+                padding: 20px;
+                transition: max-height 0.3s ease;
+                max-height: 20000px;
+                overflow: hidden;
+            }
+
+            .collapsible-section.collapsed .collapsible-content {
+                max-height: 0;
+                padding: 0 20px;
+            }
+
+            .markdown-preview ol {
+                list-style: none;
+                counter-reset: custom-counter;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ol li {
+                counter-increment: custom-counter;
+                background: rgba(255, 255, 255, 0.7);
+                margin-bottom: 18px;
+                padding: 18px 25px 18px 65px;
+                border-radius: 16px;
+                position: relative;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                font-size: 1.25em;
+                line-height: 1.7;
+                border-left: 6px solid #667eea;
+                backdrop-filter: blur(8px);
+                font-family: "LXGW WenKai Mono TC", serif;
+                color: #2d3436;
+            }
+
+            .markdown-preview ol li::before {
+                content: counter(custom-counter);
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+            }
+
+            .markdown-preview ol li:hover {
+                transform: translateX(10px);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-left-color: #764ba2;
+            }
+
+            /* Unordered List Styles */
+            .markdown-preview ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ul li {
+                background: rgba(255, 255, 255, 0.6);
+                margin-bottom: 15px;
+                padding: 15px 25px 15px 50px;
+                border-radius: 14px;
+                position: relative;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                transition: all 0.3s ease;
+                font-size: 1.2em;
+                line-height: 1.6;
+                border-left: 6px solid #764ba2;
+                backdrop-filter: blur(5px);
+                font-family: "LXGW WenKai Mono TC", serif;
+            }
+
+            .markdown-preview ul li::before {
+                content: "✦";
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #764ba2;
+                font-size: 1.2em;
+                font-weight: bold;
+                text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+            }
+
+            .markdown-preview ul li:hover {
+                transform: translateX(8px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+
+            /* Adjustments for nested content in li */
+            .markdown-preview ol li br + b,
+            .markdown-preview ol li br + span {
+                display: inline-block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body class="mobile-layout">
+        <!-- Gradient Background -->
+        <div class="gradient-bg"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button
+                class="control-btn"
+                onclick="toggleLayout()"
+                title="切換佈局 (Mobile/PC)"
+                id="layout-btn"
+            >
+                📱
+            </button>
+            <button class="control-btn" onclick="toggleZoom()" title="縮放">
+                🔍
+            </button>
+            <button
+                class="control-btn"
+                onclick="toggleEffects()"
+                title="提詞器"
+                id="tele-btn"
+            >
+                ✨
+            </button>
+            <button class="control-btn" onclick="toggleTOC()" title="目錄">
+                📋
+            </button>
+            <div class="speed-control" id="speed-control" style="display: none">
+                <input
+                    type="range"
+                    id="scroll-speed"
+                    min="1"
+                    max="10"
+                    value="2"
+                    title="捲動速度"
+                />
+            </div>
+        </div>
+
+        <!-- Teleprompter Guide Line -->
+        <div id="tele-line" class="tele-line"></div>
+
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h3>📋 目錄</h3>
+            <ul id="toc-list"></ul>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div
+                    style="
+                        font-size: 36px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;Zhi Mang Xing&quot;;
+                    "
+                >
+                    <h1 id="main-title">20260608 主日信息</h1>
+                </div>
+                <div
+                    style="
+                        font-size: 26px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;LXGW WenKai Mono TC&quot;, monospace;
+                    "
+                >
+                    <p class="subtitle">
+                        面對屬靈的征戰
+                        <a
+                            href="https://www.youtube.com/live/tUjIOD_Q-44?si=jqR57zLeWI_P3wnm"
+                        >
+                            <img
+                                src="image.jpg"
+                                alt="alt text"
+                                style="
+                                    width: 50%;
+                                    display: block;
+                                    margin: 0 auto;
+                                "
+                            />
+                        </a>
+                        <a href="https://www.youtube.com/live/sBM4YeYIPuw">
+                            YouTube 直播來源
+                        </a>
+                    </p>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content markdown-preview" id="main-content">
+                <section class="section" id="section-面對屬靈的征戰">
+                    <h2 id="面對屬靈的征戰">面對屬靈的征戰</h2>
+                    <p>
+                        今天要跟姐妹分享一個題目，<strong>面對屬靈的征戰，在動盪的世代中活出得勝的人生</strong>。其實我覺得在所有基督的生活裡面，這個題目是最重要的。這個題目是我信仰和生活當中是最重要的。有些人都說，什麼叫<strong>屬靈爭戰</strong>？搞不清楚狀態。你每天都在打仗。只是你不一定知道你在為什麼打仗。
+                    </p>
+                </section>
+
+                <section class="section" id="section-什麼是屬靈征戰">
+                    <h2 id="什麼是屬靈征戰">什麼是屬靈征戰？</h2>
+                    <p>
+                        有一位弟兄就問牧師說，我最近沒有跟任何人吵架，也沒有遇到什麼大的問題，應該沒有屬靈爭戰吧？那牧師就問他說，你最近有沒有不想禱告？他說有。那你有沒有突然不想聚會？他說有。有沒有明明知道要饒恕，卻一直生氣？他說有。有沒有想讀一節聖經，卻一直滑手機？他說有。所以牧師就笑著說，恭喜你，你正在打仗，你正在打仗。現在有些教會聚會時是不准帶手機進來的。很多人以為屬靈爭戰就是什麼感覺啊，異象啊，要趕偶像，其實不一定。你知道當你想要愛的時候，卻被世界所吸引；當你想要饒恕的時候，卻選擇計較的時候；當你想要禱告的時候，卻被惰性打敗的時候；你們早上要起床的時候，想說起來、再躺一點、起來。其實這就是屬靈征戰。怎麼叫屬靈征戰？給它一個定義。只要你知道<strong>「立志行善由不得我」</strong>，那就是屬靈爭戰。為什麼？因為攔阻神的心意可以成就在你生命的當中，這就是屬靈爭戰。所以立志行善由得我，只是行出來由不得我。
+                    </p>
+                </section>
+
+                <section class="section" id="section-命運與命定">
+                    <h2 id="命運與命定">命運與命定</h2>
+                    <p>
+                        所以你以前不認識神的時候，你就認命。然後你就認命。所以很多人就會去相信外面的命運，可是<strong>神在我們身上是有命定的</strong>，有命定的。只要任何的事情攔阻我們，讓神的命定無法成就在我們身上，那就叫做屬靈爭戰。
+                    </p>
+                    <p>
+                        所以你要選擇命運，還是選擇命定？<strong
+                            >命定需要神來參與。<strong>以前那個命運就是沒有神參與。沒有神參與就沒有方向。但我們現在認識神，我們知道神在我們身上是有計劃的、是有命定的，所以你會想要去抓住這位神，所以你就不認命。要認定的是</strong>神的命定。</strong
+                        >
+                    </p>
+                    <p>
+                        這就是屬靈爭戰——進入神的命定。任何攔阻你進入神命定的事物，那就是屬靈征戰。
+                    </p>
+                </section>
+
+                <section class="section" id="section-末世的徵兆">
+                    <h2 id="末世的徵兆">末世的徵兆</h2>
+                    <p>
+                        今天的時代是充滿焦慮、混亂又迷惑。家裡有壓力，年輕人也有迷惘。特別如果大學要畢業了或是研究所畢業了，你就開始不知道接下來要怎麼做。我們家人就在這個階段，那我們需為他守望、為他禱告。我們進這個經文來：<strong
+                            >「日月星辰要顯出異兆，地上的邦國也有困苦，因海中波浪的響聲就慌惶不定。天勢都要震動，人想起那將要臨到世界的事，就都嚇得魂不附體。那時他們要看見人子有能力、大有榮耀的降臨。一有這些事，你們就當挺身昂首，因為你們得贖的日子近了。」</strong
+                        >
+                    </p>
+                    <p>
+                        這段經文講到末世的光景。末世到處是災難、困苦、逼迫、地震、飢荒，包括之前的
+                        COVID（新冠疫情）。但這些都是耶穌再來之前的徵兆，這些都會一再地發生，這一切都會一再發生。但是耶穌講一句話，我們在這裡面紅色的這個字：<strong>「一有這些事，你們就當挺身昂首，因為你們得贖的日子近了。」</strong>所以耶穌告訴我們，基督徒應該抬頭起來，<strong>仰望為我們信心創始成終的耶穌</strong>。
+                    </p>
+                </section>
+
+                <section class="section" id="section-耶穌已經得勝">
+                    <h2 id="耶穌已經得勝">耶穌已經得勝</h2>
+                    <p>
+                        你禱告就是說，祂講的就是讓你回到那個角色，你是有神的，你就回來。你不需要為自己為什麼操心、來擔憂。耶穌復活之後，升天之後祂在哪裡？<em
+                        ></em
+                        >天父的右邊。<strong>祂在那邊代求，而且是坐著的。<strong>坐著代表祂已經得勝，祂已經成就一切了</strong>，所以祂坐在父神右邊。我們是站著的，你知道我們在害怕的時候會怎樣？會焦慮。然後要禱告還是焦慮還是很擔憂。那耶穌是怎樣子？耶穌會焦慮嗎？你</strong>因為祂是榮耀的君王，祂是得勝的君王，祂是坐在父神的右邊，祂是坐著的，祂是坐著的。所以你有什麼好擔心的。<strong
+                            >神不要我們害怕，神要我們得勝。</strong
+                        >
+                    </p>
+                    <p>
+                        所以我們今天要學習如何在屬靈爭戰中做一個得勝者。耶穌已經得勝了，所以我們要靠著祂得勝。
+                    </p>
+                </section>
+
+                <section class="section" id="section-以弗所書穿戴屬靈軍裝">
+                    <h2 id="以弗所書穿戴屬靈軍裝">以弗所書——穿戴屬靈軍裝</h2>
+                    <p>
+                        <strong
+                            >「我還有末了的話，你們要靠著主，倚賴祂的大能大力作剛強的人。要穿戴神所賜的全副軍裝，就能抵擋魔鬼的詭計。因我們並不是與屬血氣的爭戰，乃是與那些執政的、掌權的、管轄這幽暗世界的，以及天空屬靈氣的惡魔爭戰。所以要拿起神所賜的全副軍裝，好在磨難的日子抵擋仇敵，並且成就了一切，還能站立得住。所以要站穩了，用真理當做帶子束腰，用公義當做護心鏡遮胸，又用平安的福音當做預備走路的鞋穿在腳上。此外又拿著信德當做藤牌，可以滅盡那惡者一切的火箭。並戴上救恩的頭盔，拿著聖靈的寶劍，就是神的道。靠著聖靈，隨時多方禱告祈求，並要在此儆醒不倦，為眾聖徒祈求。」</strong
+                        >
+                    </p>
+                    <p>
+                        祂說你要知道，耶穌是坐著的，我們知道。祂說我們不是要讓耶穌站起來跟著我們一起站。我們是因為耶穌是坐著的，因為祂是君王，祂是榮耀的。那我們就——我們要靠著祂站穩做站定的人。我們要儆醒。
+                    </p>
+                </section>
+
+                <section class="section" id="section-聖靈與情慾相爭">
+                    <h2 id="聖靈與情慾相爭">聖靈與情慾相爭</h2>
+                    <p>
+                        <strong
+                            >「我說，你們當順著聖靈而行，就不放縱肉體的情慾了。因為情慾和聖靈相爭，聖靈和情慾相爭，這兩個是彼此相敵，使你們不能做所願意做的。」</strong
+                        >
+                    </p>
+                    <p>
+                        所以為什麼一直立志行善由不得我，立志行出來由不得我？因為本來你還沒有認識這位神的時候，你都是順著你的肉體而行。就是一個自我中心的人，叫肉體。你的自我非常強大，你是自我強大的人。不承認沒關係。當兩個人吵架的時候，你就知道你的自我就膨脹大了。你們都要爭個輸贏那種感覺。
+                    </p>
+                </section>
+
+                <section class="section" id="section-三合一的敵人">
+                    <h2 id="三合一的敵人">三合一的敵人</h2>
+                    <p>
+                        <strong
+                            >「你們若心裡懷著苦毒的嫉妒和紛爭，就不可自誇，也不可說謊話抵擋真道。這樣的智慧不是從上頭來的，乃是屬地的、屬情慾的、屬鬼魔的。」</strong
+                        >
+                    </p>
+                    <p>
+                        <strong
+                            >「不要愛世界和世界上的事。人若愛世界，愛父的心就不在他裡面了。因為凡世界上的事，就像肉體的情慾、眼目的情慾、今生的驕傲，都不是從父來的，乃是從世界來的。」</strong
+                        >
+                    </p>
+                    <p>
+                        這邊講到一個屬肉體的生命就是屬地的、屬情慾的——肉體的情慾、眼目的情慾、今生的驕傲，這些都會成為我們屬靈征戰的攔阻，都會成為我們屬靈的征戰。<strong
+                            >「親愛的弟兄啊，你們是客旅、是寄居的，我勸你們要禁戒肉體的私慾，這私慾是與靈魂爭戰的。」</strong
+                        >
+                    </p>
+                    <p>
+                        <strong
+                            >「情慾的事都是顯而易見的，就如姦淫、污穢、邪蕩、拜偶像、邪術、仇恨、爭競、忌恨、惱怒、結黨、紛爭、異端、嫉妒、醉酒、荒宴等類。我從前告訴你們，現在又告訴你們，行這等事的人必不能承受神的國。」</strong
+                        >
+                    </p>
+                    <p>
+                        你看到加拉太書這一段，情慾的事有幾個層面：情慾的事有關乎偶像。拜偶像、邪術啊。情慾也關乎人際關係——仇恨、爭競、忌恨、惱怒、結黨、紛爭。關乎性方面的道德，姦淫。還有放縱方面的荒宴、醉酒。
+                    </p>
+                    <p>
+                        所以你看哦，<strong>屬靈爭戰的三個主要敵人</strong>。我上一次在小組的時候，我們講了三合一的敵人。那三合一在這裡看到：<strong>魔鬼</strong>——天空屬靈氣的惡魔；<strong>世界</strong>——約翰一書說不要愛世界，人若愛世界，愛父的心就不在了；<strong>肉體情慾</strong>。那就是聖靈相爭、聖靈和情慾相爭。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-認清真正的敵人">
+                    <h2 id="認清真正的敵人">認清真正的敵人</h2>
+                    <p>
+                        第一個，我們要知道的時候，我們要認清真正的敵人。真正的敵人是誰？保羅說我們並不是與屬血氣的爭戰。是跟你自己肉體的爭戰。你旁邊那個是你的弟兄姐妹，那是你的家人，你不要搞錯。你不要回去說我跟我老婆在爭戰。你是在跟你裡面存在的那些不饒恕的心態爭戰。這邊告訴我們說，我們不是跟人爭戰。<strong
+                            >我們最大的敵人其實就是自己。</strong
+                        >
+                    </p>
+                    <p>
+                        很多人以為是老闆害我生氣，是配偶害我憂鬱，是孩子害我血壓升高，是因為我的同事害我想離職。但事實上，我們不是與屬血氣的爭戰。<strong>真正的問題在自己</strong>，還有背後的黑暗權勢。
+                    </p>
+                </section>
+
+                <section class="section" id="section-魔鬼的策略強化你的弱點">
+                    <h2 id="魔鬼的策略強化你的弱點">
+                        魔鬼的策略——強化你的弱點
+                    </h2>
+                    <p>
+                        魔鬼最喜歡做的就是——<strong>「盜賊來，無非要偷竊、殺害、毀壞；我來了，是要叫羊得生命，並且得的更豐盛。」</strong>（約翰福音
+                        10:10）
+                    </p>
+                    <p>
+                        所以當人一旦有一個自我中心，一旦有那個肉體展現出來的時候。仇敵看出你那個弱點，他就會來強化，他就會來搧動。所以魔鬼最喜歡做的事情就是——看到這對夫妻已經在吵架了。看到夫妻在吵架，魔鬼最高興，魔鬼希望你們吵得越兇越好。他就會讓夫妻不和，然後讓孩子埋怨。然後讓教會之間彼此論斷，讓朋友之間彼此傷害。所以<strong>魔鬼最大的武器就是分裂——分裂教會、分裂你的家庭。</strong>因為他就是來偷竊、殺害、毀壞的。一切的罪都是逐漸形成的。<strong>魔鬼不能隨便攻擊你，但他會利用你的弱點來攻擊。</strong>我剛剛講，他看到這個人很驕傲，他就強化驕傲。這個人有苦毒，他就在強化苦毒；這個人嫉妒，他就強化嫉妒；這個人很沉迷色情。他就強化色情。
+                    </p>
+                </section>
+
+                <section class="section" id="section-大衛的教訓">
+                    <h2 id="大衛的教訓">大衛的教訓</h2>
+                    <p>
+                        我上一次在小組跟大家舉個例子——大衛。大衛有一天太陽平西的時候，他才起床。然後他就到陽台去走一走，然後他在對面看到一個人在洗澡。哇，怎麼那麼好看，怎麼那麼漂亮。然後大衛接下來——派一個僕人去把那個女人邀請過來。然後接下來就發生了一些事情。你看，大衛如果在陽台上不小心看到，他應該趕快轉頭離開。可是他越看越——他一直注視在那裡的時候，<strong>仇敵的攻擊就越來越大</strong>。仇敵就強化，因為仇敵發現你一直在看。
+                    </p>
+                    <p>所以仇敵就會利用人生命裡面的一些破口。</p>
+                </section>
+
+                <section class="section" id="section-生命中的破口">
+                    <h2 id="生命中的破口">生命中的破口</h2>
+                    <p>
+                        所以有一次有人來分享，他說牧師，我一直禱告，裡面沒有平安，內心很亂。後來他才發現說，他一直沒有原諒傷害他的人。問題就在他裡面的破口。其實我知道，我跟你們講一件事，我以前跟你們講過：我在國中的時候被老師嚴厲對待。所以我常常晚上做噩夢。晚上做的夢都是噩夢，通常噩夢都是跟我考試有關係。我常常夢到今天在考試，然後都不會寫。然後不會寫的時候很緊張很緊張，很緊張很緊張，今天又要被打又被罵了。然後我就在這種緊張緊張、很害怕很害怕中驚醒。然後清醒的時候，我都已經結婚生子了。怎麼還在夢到國中考試？感謝神，原來我已經不是在國中了。追根究底，<strong>我裡面有那個破口，我還沒有饒恕那個老師。</strong>後來我就在那個群組的時候就很公開地講。對，國中的群組，那裡面有老師。我說謝謝我們偉大的兩位老師過去這樣子不眠不休陪我們留下來，因為我們是升學班，禮拜六禮拜天都上課，然後都被打得很慘。但是我要說一些感謝的話，就感謝他們了。接下來我就寫了，然後那個老師就在裡面寫說：對不起，我們以前打過你們蠻多的，如果你們被打傷害過，請原諒老師。但是我還是繼續在做那個噩夢，所以我要繼續禱告。上個月還還繼續在做夢，我一年大概有三次是這樣的夢境。所以啊，但是我要告訴弟兄姐妹，如果裡面還有些你需要去處理的，還是要處理。所以有些時候問題不在環境，而在裡面的人。<strong>很多時候仇敵不用打倒我們，只要讓我們停止親近神就夠了</strong>。
+                    </p>
+                </section>
+
+                <section class="section" id="section-世界的誘惑也是戰場">
+                    <h2 id="世界的誘惑也是戰場">世界的誘惑也是戰場</h2>
+                    <p>世界的誘惑也是戰場：</p>
+                    <p>
+                        <strong
+                            >「這比喻乃是這樣：種子就是神的道。那些在路旁的，就是人聽了道，隨後魔鬼來了，從他們心裡把道奪去，恐怕他們信了得救。那些在磐石上的，就是人聽了道，歡喜領受，但心中沒有根。不過暫時相信，及至遇見試煉的時候就退後了。那落在荊棘裡的，就是人聽了道，走開以後，被今生的思慮、錢財、宴樂擠住了，便結不出成熟的子粒來。那落在好土裡的，就是人聽了道，持守在誠實善良的心裡，並且忍耐著結實。」</strong
+                        >（路加福音 8:11-15）
+                    </p>
+                    <p>
+                        我們聽神的道，目的是<strong>生命被改變，生命被更新</strong>，結出聖靈的果子。仁愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制。這些都是聖靈的果子。但是有些時候，我們活不出這些聖靈的果子，我們活不出來，人的能力很有限。就很切身的例子：禮拜四晚上下大雨，我來教會禱告會。我騎的車子在市民大道，我差一點被撞。有一部車子就左轉就衝出來。我是綠燈的，我直行的。這種感覺很不好。
+                    </p>
+                    <p>
+                        有些時候我們都知道——「父啊，赦免他們，因為他們所做的，他們不知道。」但是當下要講出這句話，我還是還是會說不出來。當下真的是真的是會氣憤的。真的會氣憤的。所以魔鬼會來奪去你心中那個平安，會來奪去你心中那個喜樂——仁愛、喜樂、和平嘛。所以你明明神告訴我們就是你要去愛人、去愛神，但是你就活不出來愛人跟愛神。你知道<strong>這就是屬靈征戰</strong>。屬靈爭戰一點都不抽象。<strong
+                            >你只要活不出愛神愛人，你就是處在一個爭戰的裡面。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-餵養靈魂而非肉體">
+                    <h2 id="餵養靈魂而非肉體">餵養靈魂而非肉體</h2>
+                    <p>
+                        所以你看，我們有些時候生活非常平順，但是我們會被錢財的思慮牽引。熱錢退了，有些人開始在緊張。禮拜五美國股市大跌。禮拜一台灣開盤的時候，你知道。所以我們需要上帝的話。耶穌在講那個撒種的比喻——我們講說有些種子被今生的思慮、錢財、宴樂擠住了。<strong>不是魔鬼直接把你的信仰拿走，而是魔鬼讓你很忙很忙</strong>，讓你很累，讓你很分心，讓你很享樂，很自然地你就會慢慢遠離，你就會慢慢冷淡。所以<strong>今天最大的試探不是夜店，而是你手中的手機</strong>——串流影音。對，現在很多你大概就可以看了。有些人你看手機就滑很久。有可能一天滑了超過五個小時。然後讀經可能只有五分鐘不到，甚至根本不讀。你自己還會說什麼？哎呀，為什麼都感受不到神？你當然感受不到神啊！因為你都被這些世界的思慮、牽引、迷惑都已經跟著去了，你怎麼會感受到神呢？<strong
+                            >因為我們餵養肉體太多，餵養靈魂太少了。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-得勝從順服神的話開始">
+                    <h2 id="得勝從順服神的話開始">得勝從順服神的話開始</h2>
+                    <p>
+                        你要持守神的話，<strong>得勝是從順服神的話開始。</strong>我說在座的弟兄姐妹，你們講到聽道已經聽了很多年了，你都很會聽道，你也會聽出來哪裡講錯、哪裡講對啊。但是實際上重點不在聽道。重點不在挑一個傳道人講道的錯誤在哪裡。<strong>重點是你要自己去行道啊。</strong>你我們都很——都變成是聽道的博士班。都是聽道的
+                        PhD。你要像耶穌一樣。能夠用神的話去抵擋魔鬼，那才是最重要的。
+                    </p>
+                </section>
+
+                <section class="section" id="section-耶穌在曠野的榜樣">
+                    <h2 id="耶穌在曠野的榜樣">耶穌在曠野的榜樣</h2>
+                    <p>
+                        你看耶穌在曠野裡面，祂給我們一個榜樣。當耶穌被聖靈引到曠野去受魔鬼的試探，祂禁食四十天，後來餓了。那試探人的進前來對祂說，你若是神的兒子，可以吩咐這些石頭變成食物。耶穌回答說：<strong>「經上記著說：人活著不是單靠食物，乃是靠神口裡所出的一切話。」</strong>（馬太福音
+                        4:4）
+                    </p>
+                    <p>
+                        弟兄姐妹，我們活著不是單靠食物——雖然教會旁邊的中式餐廳東西不好吃，今天中午還是要拿起來吃。
+                    </p>
+                </section>
+
+                <section class="section" id="section-三個試探的功課">
+                    <h2 id="三個試探的功課">三個試探的功課</h2>
+                    <p>
+                        接著魔鬼又有兩個試探對耶穌了。第二個試探是試探神——<strong>魔鬼就帶耶穌進了聖城，叫祂站在殿頂上，對祂說，你若是神的兒子，可以跳下去。<strong>耶穌對他說：</strong>「經上又記著說，不可試探主你的神。」</strong>（馬太福音
+                        4:7）
+                    </p>
+                    <p>
+                        第三個試探又來了——<strong>榮華富貴</strong>。誰不喜歡榮華富貴？你已經被今生的錢財牽引出去了。所以我剛剛保羅說，我們要站立得穩。站立得穩的時候，你不要被隨時牽引出去。大衛就是被牽引出去了。那個眼目的情慾、肉體的情慾就牽引出去了。魔鬼就是專幹這種事情——就是牽引你出去。弟兄姐妹，我們最容易被試探的就是什麼？信心。很容易被牽引出去了。所以<strong>「撒但退去吧，因為經上記著說：當拜主你的神，單要事奉祂。」</strong>（馬太福音
+                        4:10）記得。所以當你有誘惑的時候就記得這句話——退去吧。你要趕快逃，你就要趕快逃。你不要以為你是耶穌。
+                    </p>
+                </section>
+
+                <section class="section" id="section-在基督裡的雙重身份">
+                    <h2 id="在基督裡的雙重身份">在基督裡的雙重身份</h2>
+                    <p>
+                        所以耶穌在曠野的榜樣。魔鬼攻擊祂的身份，然後試探祂——用榮華富貴來試探祂。然後仇敵說：你若是神的兒子——耶穌是不是神的兒子？祂就是神的兒子了。神的兒子就是神啊。<strong>祂既是完全的人，又是完全的神。<strong>你是完全的人，你是罪人，但你也是</strong>義人——因信稱義的義人</strong>。所以我們有雙重的身份。只要你不躲在耶穌的裡面的時候，跳脫出來就很容易被攻擊。你就很容易被這些試探和罪惡牽引出去。
+                    </p>
+                </section>
+
+                <section class="section" id="section-常住在基督裡面">
+                    <h2 id="常住在基督裡面">常住在基督裡面</h2>
+                    <p>
+                        所以聖經說我們要常常住在耶穌基督裡面。約翰福音講：<strong>祂是葡萄樹，我們是枝子。</strong>枝子要連結葡萄樹。所以你要每天24小時要跟什麼？要跟祂有連結啊。跟祂連結了，不然的話你就會脫節。<strong>沒有連結就會脫節。</strong>那你就很容易落入試探網羅的裡面。
+                    </p>
+                </section>
+
+                <section class="section" id="section-經上說你的寶劍">
+                    <h2 id="經上說你的寶劍">經上說——你的寶劍</h2>
+                    <p>
+                        所以你看哦，耶穌就是神的兒子，所以祂隨時都用<strong
+                            >上帝的話去抵擋魔鬼——經上說，經上說，經上說。</strong
+                        >
+                    </p>
+                    <p>
+                        所以下一次，你的太太挑戰你的時候，你先生挑戰你的時候，你就說「經上說」——<strong>經上說不可含怒到日落</strong>。然後你自己就不可含怒到日落。然後經上說不可嫉妒紛爭。經上說，就對自己說，就要對自己說。<strong>魔鬼在攻擊人的身份，而神的話就是你的寶劍。</strong>耶穌沒有辯論，只宣告神的真理。吵架不需要辯論。用「經上說」，吵架就吵不起來了——回到神的話裡面，去宣告神的話。但是問題是，你裡面有沒有「經上說」？如果聖經都不翻，也不讀，然後也不默想，也不背，那你怎麼會有「經上說」？
+                    </p>
+                    <p>
+                        所以<strong>我們要常常讀神的話。</strong>你才能在屬靈爭戰的時候，你才會有「經上說」。不然的話，還是你的私慾在說，你的老我在說，你的肉體在說。那你很難就很難得勝嘛。
+                    </p>
+                </section>
+
+                <section class="section" id="section-嗎哪的原則每天倚靠神">
+                    <h2 id="嗎哪的原則每天倚靠神">嗎哪的原則——每天倚靠神</h2>
+                    <p>
+                        所以你看以色列人在曠野有一個功課，他們需要學的，也就是<strong>嗎哪的原則</strong>。嗎哪的原則，因為耶穌講一句話：<strong>「人活著不是單靠食物，乃是靠耶和華口裡所出的一切話。」</strong>（申命記
+                        8:3）
+                    </p>
+                    <p>
+                        嗎哪的原則是什麼？<strong>「耶和華對摩西說，我要將糧食從天降給你們，百姓可以出去，每天收每天的份量，我好試驗他們遵不遵守我的法度。」</strong>（出埃及記
+                        16:4）
+                    </p>
+                    <p>
+                        以色列人在曠野四十年，他們很擔心沒有飯可以吃。他們很想念埃及的韭菜和大蒜。那確實曠野裡面真的沒有東西吃，後來神降下鵪鶉給他們吃，又降下<strong
+                            >嗎哪。</strong
+                        >
+                    </p>
+                    <p>
+                        嗎哪的原意是什麼？What's this? What's that?
+                        <strong>「那是什麼？」</strong
+                        >它的原來意思就是——因為它從天降下來的時候，大家說 What's
+                        this?
+                        後來拿起來嚐，哦，原來可以拿去做薄餅。嗎哪就是這個意思——「那是什麼？」
+                    </p>
+                    <p>
+                        結果嗎哪就是可以拿來收取的時候就回去做薄餅。<strong>神告訴他們：每天收每天的份量。</strong>後面講一句話：我好試驗他們遵不遵守我的法度。
+                    </p>
+                </section>
+
+                <section class="section" id="section-信心的功課每天收每天的份">
+                    <h2 id="信心的功課每天收每天的份">
+                        信心的功課——每天收每天的份
+                    </h2>
+                    <p>
+                        每天收當天的一份嗎哪，難免想多收一點。他們以前收嗎哪的時候就是這樣子。就是神要試驗他們是不是順服上帝跟他們講的：<strong
+                            >每天收每天的份。</strong
+                        >
+                    </p>
+                    <p>
+                        所以一開始的時候有人可能會去搶。可是上帝告訴他們的話，<strong>「然而他們不聽從摩西的話，有人留到早晨，就生蟲變臭了。」</strong>摩西便向他們發怒。他每天都收一份，禮拜五要收兩份。因為接著要守安息日。結果有人就不信上帝的話就去多收，結果就發臭了。好，<strong>這是一個信心的功課。</strong>但是神要教導他們，<strong>在曠野裡面就是每天要倚靠祂，而不是倚靠自己。<strong>每天都要去領受神的恩典，而不是去預支明天的恩典。<strong>一天的難處一天當就夠了</strong>。主禱文怎麼說？</strong>「我們日用的飲食，今日賜給我們。」</strong>（馬太福音
+                        6:11）
+                    </p>
+                    <p>
+                        所以<strong>曠野中的嗎哪其實就是一場屬靈的征戰</strong>——是選擇相信自己的存量，還是相信神每天會供應。神不是這樣的神，神不是這樣運作的。所以靈命就像吃飯了。你必須每天都要吃，每天都要吃。
+                    </p>
+                </section>
+
+                <section class="section" id="section-得勝在於持續的順服">
+                    <h2 id="得勝在於持續的順服">得勝在於持續的順服</h2>
+                    <p>
+                        所以你看，<strong>得勝在於持續的順服。</strong>順服看起來是很平凡，但卻是最大的力量——<strong
+                            >每天讀經，每天禱告，每天饒恕，每天感恩，每天愛人。</strong
+                        >
+                    </p>
+                    <p>神在問你：<strong>你今天有沒有順服我？</strong></p>
+                </section>
+
+                <section class="section" id="section-家庭中的屬靈征戰">
+                    <h2 id="家庭中的屬靈征戰">家庭中的屬靈征戰</h2>
+                    <p>
+                        丈夫下班很累了，回到家看到七點了。小孩功課還沒寫。全家都快爆炸了。誰先道歉？誰先饒恕？誰先禱告？誰先閉嘴？
+                    </p>
+                    <p>
+                        所以你知道<strong
+                            >那一刻就是屬靈征戰。得勝不是贏過家人，是贏過自己的脾氣。</strong
+                        >
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-穿戴神全副的軍裝">
+                    <h2 id="穿戴神全副的軍裝">穿戴神全副的軍裝</h2>
+                    <p>
+                        <strong
+                            >「所以要拿起神所賜的全副軍裝，好在磨難的日子抵擋仇敵，並且成就了一切，還能站立得住。」</strong
+                        >（以弗所書 6:13-18）
+                    </p>
+                    <p><strong>神沒有叫我們赤手空拳地上戰場。</strong></p>
+                </section>
+
+                <section class="section" id="section-真理的帶子束腰">
+                    <h2 id="真理的帶子束腰">真理的帶子束腰</h2>
+                    <p>
+                        <strong>真理的帶子。</strong
+                        >用真理當做帶子束腰。<strong>神的道就是真理。</strong>我們要行在神的道裡面，你才有自由。<strong
+                            >你不行在真理的裡面，你就不是活在光的裡面。神的話就是道路、真理、生命。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-公義的護心鏡">
+                    <h2 id="公義的護心鏡">公義的護心鏡</h2>
+                    <p>
+                        <strong
+                            >神告訴你：你是被愛的、是被揀選的、是有價值的。</strong
+                        >
+                    </p>
+                    <p><strong>魔鬼最喜歡的就是控告。</strong></p>
+                    <p>
+                        所以我們需要<strong>公義的護心鏡</strong>。因為<strong>耶穌在十字架上已經付清了所有代價</strong>。我們都是因信稱義，不是因為行為的表現，不是因為你完美而被稱義。
+                    </p>
+                </section>
+
+                <section class="section" id="section-平安福音的鞋">
+                    <h2 id="平安福音的鞋">平安福音的鞋</h2>
+                    <p>
+                        什麼是福音——<strong
+                            >你的笑容就是福音。你的愛心就是福音。你的饒恕就是福音。你的誠實就是福音。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-信德的盾牌">
+                    <h2 id="信德的盾牌">信德的盾牌</h2>
+                    <p>
+                        魔鬼最擅長的火箭——<strong
+                            >害怕的火箭、焦慮的火箭、憂鬱的火箭、懷疑的火箭。</strong
+                        >
+                    </p>
+                    <p>
+                        你要舉起你的信心，宣告：<strong
+                            >神仍然掌權，神仍然愛我，神仍然會供應我。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-救恩的頭盔">
+                    <h2 id="救恩的頭盔">救恩的頭盔</h2>
+                    <p>
+                        <strong>救恩的頭盔。</strong>你要保護你的思想。<strong
+                            >思想會決定我們的人生。</strong
+                        >
+                    </p>
+                    <p>
+                        保羅說：<strong>你要心意更新而變化。<strong>不要讓外在的環境或是新聞、社群媒體來塑造你的思想，你要讓</strong>神的話來塑造你的思想</strong>。
+                    </p>
+                </section>
+
+                <section class="section" id="section-聖靈的寶劍唯一的攻擊武器">
+                    <h2 id="聖靈的寶劍唯一的攻擊武器">
+                        聖靈的寶劍——唯一的攻擊武器
+                    </h2>
+                    <p>
+                        <strong>聖靈的寶劍。神的話是唯一的攻擊武器。</strong
+                        >前面都是防禦的。<strong
+                            >耶穌勝過魔鬼一切的詭計就是靠神的話。</strong
+                        >
+                    </p>
+                    <hr />
+                </section>
+
+                <section
+                    class="section"
+                    id="section-得勝的秘訣靠著羔羊的血與見證的道"
+                >
+                    <h2 id="得勝的秘訣靠著羔羊的血與見證的道">
+                        得勝的秘訣——靠著羔羊的血與見證的道
+                    </h2>
+                    <p>
+                        <strong
+                            >「大龍就是那古蛇，名叫魔鬼，又叫撒但，是迷惑普天下的，牠被摔在地上。我聽見在天上有大聲音說：我神的救恩、能力、國度，並祂基督的權柄，現在都來到了。因為那在我們神面前晝夜控告我們弟兄的，已經被摔下去了。弟兄勝過牠，是因羔羊的血和自己所見證的道。他們雖至於死，也不愛惜性命。」</strong
+                        >（啟示錄 12:9-11）
+                    </p>
+                    <p>
+                        <strong
+                            >我們不是靠自己得勝，我們也不是靠意志力來得勝，而是靠著耶穌的寶血。</strong
+                        >魔鬼控告你的時候，你可以宣告：<strong
+                            >耶穌已經赦免我了，耶穌已經洗淨我了，耶穌已經接納我了。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-見證的力量">
+                    <h2 id="見證的力量">見證的力量</h2>
+                    <p>
+                        <strong>你的見證是有力量的。</strong
+                        >有人可能不讀聖經，但他會讀你的生命。<strong>當你在患難中仍然喜樂，這就是見證。</strong>當你在有壓力的當中，你不會隨意動搖，能信靠神，那就是見證。當你感到你很受傷的時候，你仍然選擇饒恕，那就是見證。
+                    </p>
+                </section>
+
+                <section class="section" id="section-靠主得勝得勝有餘">
+                    <h2 id="靠主得勝得勝有餘">靠主得勝——得勝有餘</h2>
+                    <p>
+                        <strong
+                            >「靠著愛我們的主，在這一切的事上已經得勝有餘了。」</strong
+                        >（羅馬書 8:37）
+                    </p>
+                    <p>
+                        <strong
+                            >不是將來的得勝，是已經得勝了。我們不是為勝利而戰，我們是從勝利出發。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-成為這時代的得勝者">
+                    <h2 id="成為這時代的得勝者">成為這時代的得勝者</h2>
+                    <p>
+                        屬靈爭戰是真實的，但<strong
+                            >神的得勝是更為真實的。</strong
+                        >
+                    </p>
+                    <p>
+                        <strong
+                            >「你們就當挺身昂首，因為你們得贖的日子近了。」</strong
+                        >（路加福音 21:28）
+                    </p>
+                    <p>
+                        <strong>不要害怕，不要退縮，也不要放棄。</strong
+                        >願我們每個人都成為基督的精兵。
+                    </p>
+                    <hr />
+                </section>
+
+                <section class="section" id="section-結束禱告">
+                    <h2 id="結束禱告">結束禱告</h2>
+                    <p>
+                        我們一起禱告。主，我們來到你的面前，我們感謝你賜給我們這樣寶貴的救恩。主，你已經把我們放在得勝的磐石裡頭。我們只要仰望為我們信心創始成終的耶穌。求主幫助我們每個弟兄姐妹能夠得勝過這一切的環境，讓我們與你一同作王，做那個得勝者。讓你的話語成為我們腳前的燈、路上的光，讓我們每個人都進入到你命定的旨意當中。求主祝福我們、與我們同在。謝謝主，這禱告乃是奉靠耶穌基督寶貴聖名求的，阿們。我們一起來唱一首詩歌。哈利路亞，我們一起讚美，哈利路亞。
+                    </p>
+                </section>
+            </main>
+        </div>
+        <!-- Include layout.js -->
+        <script src="../assets/js/layout.js"></script>
+
+        <!-- Add keywords config for highlighting -->
+        <script id="keywords-config" type="application/json">
+            {
+                "keywords": [
+                    "面對屬靈的征戰，在動盪的世代中活出得勝的人生",
+                    "立志行善由不得我",
+                    "神在我們身上是有命定的",
+                    "你們就當挺身昂首，因為你們得贖的日子近了",
+                    "我們並不是與屬血氣的爭戰",
+                    "魔鬼最大的武器就是分裂",
+                    "我們最大的敵人其實就是自己",
+                    "很多時候仇敵不用打倒我們，只要讓我們停止親近神就夠了",
+                    "因為我們餵養肉體太多，餵養靈魂太少了",
+                    "得勝是從順服神的話開始",
+                    "人活著不是單靠食物，乃是靠神口裡所出的一切話",
+                    "得勝不是贏過家人，是贏過自己的脾氣",
+                    "神沒有叫我們赤手空拳地上戰場",
+                    "我們不是為勝利而戰，我們是從勝利出發",
+                    "靠著愛我們的主，在這一切的事上已經得勝有餘了"
+                ]
+            }
+        </script>
+
+        <script>
+            // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+            window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+        </script>
+    </body>
+</html>
