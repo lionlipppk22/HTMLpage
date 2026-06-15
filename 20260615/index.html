@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20260615 主日信息</title>
+        <meta name="description" content="你最近好嗎？" />
+        <meta
+            name="keywords"
+            content="詩篇第八篇, 真實的經歷, 顧念與眷顧, 冠冕的尊貴, 從孤獨到被擁抱, 孤單跟無意義感的重量, 唯有你可以把我救活, 希伯來原文, 主的介入, 管家的職分, 輕如鴻毛, 首尾呼應"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../assets/css/layout.css" />
+
+        <style>
+            /* From reference.md */
+            p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* From demo.html - Additional styles */
+            .markdown-preview p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            .markdown-preview p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            .markdown-preview p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* Add highlighting for keywords if needed, layout.js handles it */
+            /* Table styles from markdown */
+            .markdown-preview table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 1em 0;
+            }
+
+            .markdown-preview th,
+            .markdown-preview td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .markdown-preview th {
+                background-color: #f2f2f2;
+            }
+
+            .markdown-preview h1 {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            /* Collapsible Section Styles */
+            .collapsible-section {
+                margin-bottom: 20px;
+                border-radius: 8px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .collapsible-section p {
+                margin: 0;
+                padding: 0.5em;
+                font-size: 1.6em;
+                font-family: Chiron GoRound TC;
+            }
+
+            .collapsible-header {
+                padding: 15px 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background 0.3s ease;
+            }
+
+            .collapsible-header:hover {
+                background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+            }
+
+            .collapsible-header h2 {
+                margin: 0;
+                padding: 0;
+                background: none;
+                color: white;
+                font-size: 1.5em;
+            }
+
+            .collapsible-icon {
+                transition: transform 0.3s ease;
+                width: 24px;
+                height: 24px;
+            }
+
+            .collapsible-section.collapsed .collapsible-icon {
+                transform: rotate(-90deg);
+            }
+
+            .collapsible-content {
+                padding: 20px;
+                transition: max-height 0.3s ease;
+                max-height: 20000px;
+                overflow: hidden;
+            }
+
+            .collapsible-section.collapsed .collapsible-content {
+                max-height: 0;
+                padding: 0 20px;
+            }
+
+            .markdown-preview ol {
+                list-style: none;
+                counter-reset: custom-counter;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ol li {
+                counter-increment: custom-counter;
+                background: rgba(255, 255, 255, 0.7);
+                margin-bottom: 18px;
+                padding: 18px 25px 18px 65px;
+                border-radius: 16px;
+                position: relative;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                font-size: 1.25em;
+                line-height: 1.7;
+                border-left: 6px solid #667eea;
+                backdrop-filter: blur(8px);
+                font-family: "LXGW WenKai Mono TC", serif;
+                color: #2d3436;
+            }
+
+            .markdown-preview ol li::before {
+                content: counter(custom-counter);
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+            }
+
+            .markdown-preview ol li:hover {
+                transform: translateX(10px);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-left-color: #764ba2;
+            }
+
+            /* Unordered List Styles */
+            .markdown-preview ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ul li {
+                background: rgba(255, 255, 255, 0.6);
+                margin-bottom: 15px;
+                padding: 15px 25px 15px 50px;
+                border-radius: 14px;
+                position: relative;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                transition: all 0.3s ease;
+                font-size: 1.2em;
+                line-height: 1.6;
+                border-left: 6px solid #764ba2;
+                backdrop-filter: blur(5px);
+                font-family: "LXGW WenKai Mono TC", serif;
+            }
+
+            .markdown-preview ul li::before {
+                content: "✦";
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #764ba2;
+                font-size: 1.2em;
+                font-weight: bold;
+                text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+            }
+
+            .markdown-preview ul li:hover {
+                transform: translateX(8px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+
+            /* Adjustments for nested content in li */
+            .markdown-preview ol li br + b,
+            .markdown-preview ol li br + span {
+                display: inline-block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body class="mobile-layout">
+        <!-- Gradient Background -->
+        <div class="gradient-bg"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button
+                class="control-btn"
+                onclick="toggleLayout()"
+                title="切換佈局 (Mobile/PC)"
+                id="layout-btn"
+            >
+                📱
+            </button>
+            <button class="control-btn" onclick="toggleZoom()" title="縮放">
+                🔍
+            </button>
+            <button
+                class="control-btn"
+                onclick="toggleEffects()"
+                title="提詞器"
+                id="tele-btn"
+            >
+                ✨
+            </button>
+            <button class="control-btn" onclick="toggleTOC()" title="目錄">
+                📋
+            </button>
+            <div class="speed-control" id="speed-control" style="display: none">
+                <input
+                    type="range"
+                    id="scroll-speed"
+                    min="1"
+                    max="10"
+                    value="2"
+                    title="捲動速度"
+                />
+            </div>
+        </div>
+
+        <!-- Teleprompter Guide Line -->
+        <div id="tele-line" class="tele-line"></div>
+
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h3>📋 目錄</h3>
+            <ul id="toc-list"></ul>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div
+                    style="
+                        font-size: 36px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;Zhi Mang Xing&quot;;
+                    "
+                >
+                    <h1 id="main-title">20260615 主日信息</h1>
+                </div>
+                <div
+                    style="
+                        font-size: 26px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;LXGW WenKai Mono TC&quot;, monospace;
+                    "
+                >
+                    <p class="subtitle">
+                        你最近好嗎？
+                        <a href="https://www.youtube.com/watch?v=SSiPtq1SX9E">
+                            <img
+                                src="image.jpg"
+                                alt="alt text"
+                                style="
+                                    width: 50%;
+                                    display: block;
+                                    margin: 0 auto;
+                                "
+                            />
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=SSiPtq1SX9E">
+                            YouTube 直播來源
+                        </a>
+                    </p>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content markdown-preview" id="main-content">
+                <section class="section" id="section-你最近好嗎">
+                    <h2 id="你最近好嗎">你最近好嗎？</h2>
+                    <p>
+                        各位弟兄姐妹平安。我記得就是來服侍教會的時候，讓我做了一個決定——大概是去年還是前年吧——就是說我以後分享的，一定都要有<strong>真實的經歷</strong>。我一定要把真實的經歷放在裡面，不會是純粹解經而已。
+                    </p>
+                    <p>
+                        我第一個要問大家的就是：你最近好嗎？老實說，我最近過得不太好。就從2026年一開始，真的就過得不太好。甚至我一度失去工作的動力，也失去計劃工作的動力。
+                    </p>
+                </section>
+
+                <section class="section" id="section-凡事計劃的人">
+                    <h2 id="凡事計劃的人">凡事計劃的人</h2>
+                    <p>
+                        其實我是一個凡事計劃的人。我哥哥以前就笑過我，大概就是國小國中的時候，他說：「君子立恆志，小人恆立志。」他拐個彎在說我，因為他知道我什麼事情都有個計劃，這個計劃沒有達到就再換一張，Always有一個時間表、有個計劃。
+                    </p>
+                    <p>
+                        但是今年我經歷到失去工作的動力跟計劃工作的動力，事實上有好多事情都需要我去計劃。那我不知道你有沒有這樣的困境？你或者是你曾經是不是也有這樣困境？閉起眼睛來想20秒，來想一下自己是不是現在真的也提不起勁來做很多的規劃，做很多前瞻性的想法。
+                    </p>
+                </section>
+
+                <section class="section" id="section-公公在睡夢中離世">
+                    <h2 id="公公在睡夢中離世">公公在睡夢中離世</h2>
+                    <p>
+                        那為什麼我會這樣呢？其實是2026年，就今年的<strong>2月1日</strong>，我<strong>94歲的公公在睡夢中離世了</strong>。他跟我婆婆兩個一起住在護理之家。其實是我婆婆<strong>失智</strong>多年，我公公不願意讓我們這個中年的這一代花力氣——他不願意婆婆的失智造成我們時間各方面的損失。他就自己照顧我婆婆，照顧到91歲。就是說91歲的公公照顧91歲的婆婆。當然照顧品質不好，我們也都跟他抗議，但是他就是不讓我們碰。後來他真的也就承認了，承認說他照顧不來了，所以也不願意住到兒孫的家裡，就幫他安排了護理之家。
+                    </p>
+                    <p>
+                        事實上我公公其實還是能自理的，只是我婆婆不能自理。所以他就這樣貼心、貼近地繼續照顧我的婆婆，然後有護理之家的醫護人員從旁協助。他每天親自為我婆婆餵飯，吃完飯還要幫她刷牙漱口等等。他就這樣服侍到2026年2月1日的午餐。
+                    </p>
+                    <p>
+                        然後只是正常地中午11點多、12點去午睡。<strong>兩點鐘的時候就叫不起來了</strong>。他們一點半其實是要被叫起床的，結果就叫不起來了。護理人員趕快為他量血壓，血壓很低。最後量不到了，量不到血壓了，這個人就走了。
+                    </p>
+                </section>
+
+                <section class="section" id="section-死亡不敲門不預告">
+                    <h2 id="死亡不敲門不預告">死亡不敲門不預告</h2>
+                    <p>
+                        其實<strong>死亡就是這樣</strong>。最近不是也有本土藝人過世，新聞也一直覆蓋蠻多媒體的版面。他就是一個很有善心的人，也被眾人喜歡。所以其實死亡總是這樣——也許你可以開始去想，你有沒有經歷過死亡的事件？當然不一定是自己親身經歷，可能就是最要好的朋友、親友。
+                    </p>
+                    <p>
+                        那一天中午是主日，洪老師有服侍，我也有服侍，我們兩個服侍完之後一起回到家裡面，才剛打開便當要吃午餐，然後就接到電話。<strong>死亡總是這樣，不敲門、不預告，像一陣冷風就穿透我們的日常。</strong>那一刻我再一次意識到死亡的真實，整個心都涼了。
+                    </p>
+                    <p>
+                        那不是一種認知上的概念。死亡，不是一個認知上的概念，也不是別人故事中的片段，而是<strong>真實地壓在胸口的重量</strong>。我們學心理學的人到最後會很注重要用文字把我們的經驗講清楚——那是一種重量，你就發現那個重量一旦湧上心頭，就好像揮不去，一直是重的，一直重重的，好像你心上就放了一顆石頭，你不知道它什麼時候可以掉了、可以挪去。
+                    </p>
+                </section>
+
+                <section
+                    class="section"
+                    id="section-一生努力在死亡面前都變得模糊"
+                >
+                    <h2 id="一生努力在死亡面前都變得模糊">
+                        一生努力在死亡面前都變得模糊
+                    </h2>
+                    <p>
+                        治喪期間，就回想我跟公公認識相處四十多年，可是好像彷彿只有幾天。我公公在地方上也算是一個人物，他是國中的老師，後來以教育從政，參選彰化縣<strong>北斗鎮的鎮長</strong>，非常清廉，當了鎮長八年，所以也是地方上的一個人物，後來歷任的鎮長也都很敬重他。
+                    </p>
+                    <p>
+                        他那麼的努力，一生努力、很有成就。北斗鎮的中華路是他開發的，因為中華路的開發就帶動了整個北斗的經濟、各方面的繁榮。周邊鄉鎮像田尾等地，一想到要去吃點好的，一定會去中華路。
+                    </p>
+                    <p>
+                        我的公公很努力。但是在他一生的努力，<strong>所有的成就在死亡面前好像都變得模糊了，輕如鴻毛</strong>。我們到殯儀館接到遺體的時候，摸他的臉頰還是有點彈性的，我們真的很不捨，就摸摸他的臉頰。然後這個時候就覺得怎麼輕如鴻毛、怎麼這麼模糊。
+                    </p>
+                </section>
+
+                <section class="section" id="section-心上放了一顆石頭">
+                    <h2 id="心上放了一顆石頭">心上放了一顆石頭</h2>
+                    <p>
+                        頓時之間我就失去了工作跟計劃工作的動力，我覺得我什麼事都不想做了。我心裡面在問——其實這是很老梗的問題，你可能都問過，又或者是教科書上也問過你。但是在一個真實的死亡面前，你在問這樣的問題——很老梗，但是是帶著重量的：<strong
+                            >人活著到底是為什麼？如果生命終究要消失，那我現在的努力有什麼意義？</strong
+                        >
+                    </p>
+                    <p>
+                        我開始覺得，如果沒有重新去找回那個意義——而且是那種意義不是被說服的——如果沒有重新去找回那個意義感，其實我就覺得我做的事情很可笑。你在生誰的氣？你在爭什麼名？你在謀什麼利？這一切在死亡面前都變得非常可笑。這些問題很老梗，但是卻很真實。
+                    </p>
+                    <p>
+                        這種很老梗的問題，說很容易回答，確實很容易回答。用理性可以回答，用聖經真理可以回答。用理性、用聖經真理整理一些文字，AI也可以回應你，你不滿意還可以換另外一版，換到你滿意為止。但是它卻沒有辦法除去我心裡面靈魂深處的那一個沉重——那個沉重是<strong>死亡放進來的</strong>。你終究會死。所以這一切的意義，真的是這樣嗎？死亡放進來的，就是一種<strong>孤單跟無意義感的重量</strong>。
+                    </p>
+                </section>
+
+                <section class="section" id="section-節慶中更顯孤單">
+                    <h2 id="節慶中更顯孤單">節慶中更顯孤單</h2>
+                    <p>
+                        2月1號過世，我們是2月11號辦喪事，因為要趕著過年前殯儀館都趕著要辦。辦完喪事之後，周遭很快就被過年的歡天喜地的慶祝氣氛、人們的忙碌所淹沒了。有誰會在意？失去了我的公公，老師失去了他的爸爸。那一份<strong>孤獨感其實反而因著環境的熱鬧更顯孤獨</strong>、更顯孤單。不會因為節慶而消散。
+                    </p>
+                    <p>
+                        美食不行——神很大的恩典，我當然沒有力氣去做年夜飯。其實我的手藝不錯，我婆婆在還沒失智之前，每一年的年夜飯，我婆婆都是拱手把廚房主廚的位置讓給我，她就當我的下手，她沒有不做事，她就做我的下手，然後讓我來操持年夜飯。所以每一年年夜飯我都會拍下來做一張賀卡，都在秀我的廚藝。
+                    </p>
+                    <p>
+                        但是今年我連年夜飯一點胃口也沒有、一點動力也沒有。神很恩典，我隨便打去漢來海港餐廳，除夕當天居然訂到位置——你這不是神蹟是什麼？居然訂到位置。但是我其實也吃不下。美食不行，好友學生的問安不行，兒孫的歡笑也不能——我就一直覺得這個重量還在，很沉、很孤單，然後覺得人生沒有意義。美食、學生的問安、兒孫的歡笑都不行，孫子好可愛，不行。
+                    </p>
+                </section>
+
+                <section class="section" id="section-唯有主可以把我救活">
+                    <h2 id="唯有主可以把我救活">唯有主可以把我救活</h2>
+                    <p>
+                        我心裡面真的面對神的時候，我就跟主說：「主啊，<strong>唯有你可以把我救活</strong>。」我知道只有主。可是主會怎麼出手我不知道。但是我知道唯有主能把我心裡面的這個重量移走。唯有你、唯有你。
+                    </p>
+                    <p>
+                        事實上有這種經歷，類似的經歷，我人生這不是第一次。如果再繼續下去的話，我就是憂鬱症了。因為我在年輕的時候，跟洪老師結婚的第一年——我們是一月結婚的——第一年的暑假7月的時候，我就有所有<strong>憂鬱症</strong>的狀況。那個憂鬱症的情況其實事後才知道，因為那個時候很年輕。只知道看到任何人都想哭，那個症狀就是這樣——就看到任何人都想哭。然後看到洪老師更想哭。
+                    </p>
+                    <p>
+                        那我腦子裡面在想什麼呢？我腦子裡面真的就在想死亡。因為我想：以後你會死，以後我會死。我看到任何人都想哭。那個時候，很長一段時間，大概兩三個禮拜，看到路人、不認識的人，我還是想哭。為什麼？因為我看到不認識的人，就會想：你會死，你的家人會哭。而且你家人會死，你也會哭。我腦子裡面就一直在想這樣的事，所以就每天都苦、每天都哭，愁眉苦臉的。那個時候我是政大心理系的助教。
+                    </p>
+                </section>
+
+                <section class="section" id="section-洗澡中的釋放經歷">
+                    <h2 id="洗澡中的釋放經歷">洗澡中的釋放經歷</h2>
+                    <p>
+                        怎麼辦呢？我後來有一次是在洗澡的時候，就這樣憂憂愁愁地進去洗澡。其實<strong>開口唱，這是很重要的</strong>——我那個時候就很沉重，每一天都想哭。然後洗澡的時候，我腦子裡面想起一個旋律，我就開始哼，然後就開始開口唱，邊唱邊洗澡。<strong>唱到一半的時候，我感受到我心上有一塊石頭掉了。<strong>那個經歷——我出來看到洪老師，哭著會笑了，笑著哭應該是最醜的樣子，但是我知道</strong>我心開了</strong>。
+                    </p>
+                    <p>
+                        所以我很知道那個經歷。我知道說這次完蛋了，我又來了。因為這些所有周遭的信息都不能挪去我心裡面的這一塊石頭。我知道我有主可以把我救活，可是我不知道祂會怎麼做。
+                    </p>
+                </section>
+
+                <section class="section" id="section-婆婆的健康急轉直下">
+                    <h2 id="婆婆的健康急轉直下">婆婆的健康急轉直下</h2>
+                    <p>
+                        婆婆在公公過世之後，雖然她失智，但是很明顯她心情不好。她其實是知道的，所以她<strong>拒食</strong>——不吃，幾天也不飲不喝，也不喝水，也不吃東西。當然有其他的方法，後來就幫她接了<strong>鼻胃管</strong>等等的。但是她的健康狀況就急速下降——血紅素低下，已有內出血，腎臟功能不好。
+                    </p>
+                    <p>
+                        但是94歲的高齡，如果就醫學來講，就應該要照胃鏡啊、找出血點啊，還有腎臟功能不好，就要<strong>洗腎</strong>。可是這麼大的年紀，照胃鏡跟洗腎都令人擔心。後來經過檢查判斷，都是從不讓婆婆受苦的情況下——就是抽血檢查什麼的——確認她其實是<strong>癌細胞已經擴散腹腔</strong>。
+                    </p>
+                    <p>
+                        那個沉重感就更加重了。難道我2026年同時要失去公公跟婆婆嗎？事實上我跟公公婆婆的關係是很好的。難道就同一年就要失去他們？而且死亡原來是這麼地霸道、這麼地無法抗拒。那<strong
+                            >我的意義到底在哪裡？</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-深夜車上的神聖相遇">
+                    <h2 id="深夜車上的神聖相遇">深夜車上的神聖相遇</h2>
+                    <p>
+                        這個時候我就經歷到
+                        <strong>主的介入</strong>
+                        了。有一天我們去探望婆婆，是開車下去的。探視完婆婆之後要上來，已經是凌晨了，但其實凌晨還是塞車，車子還蠻多的。我跟洪老師在車上，我們兩個真的心情也都不太好，所以就沒有講話。那我為了不影響他開車，我就用耳機隨便滑、隨便聽。
+                    </p>
+                    <p>
+                        我坐在副駕駛座，因為是深夜開車，我也不敢睡——我睡了，萬一洪老師打瞌睡怎麼辦？我不敢睡，那我就帶著耳機，漫無目標地一直滑手機。<strong>我居然滑到一個AI的講道。<strong>真的不要抗拒AI，善用它就好了。平常我看到這種講道是不會聽的，你知道那種AI的聲音。可是那時候我居然就慢慢地把它聽完了，因為它在講</strong>詩篇第八篇</strong>。
+                    </p>
+                    <p>
+                        詩篇第八篇我們也很熟，但是它裡面講很多例子——什麼王媽媽、陳太太、王老先生之類的，然後怎樣怎樣聽了詩篇第八篇就怎樣怎樣。我居然聽完了，講了一個半小時。
+                        <strong>聽完之後我發現我的心開了</strong
+                        >——就像當年很年輕的時候去浴室洗澡，腦子裡面有一個意念、一個旋律，然後就跟著那個旋律開始唱，唱到石頭掉了。這次類似的經驗就是：我不敢說那個石頭完全掉了，但是感覺那被壓著很沉重的心好像開了一個可能性，<strong>重量變輕了</strong>。
+                    </p>
+                    <p>
+                        所以我就很好奇：詩篇第八篇為什麼對沉重而且沮喪的我這麼有力量？我回家之後，不是去把AI的講道再轉成我的講道，不是。我就回到聖經裡面開始一節一節地來了解，為什麼<strong>詩篇第八篇這麼有力量</strong>。
+                    </p>
+                </section>
+
+                <section class="section" id="section-公讀詩篇第八篇">
+                    <h2 id="公讀詩篇第八篇">公讀詩篇第八篇</h2>
+                    <p>詩篇第八篇，才九節。我們一起來公讀：</p>
+                    <blockquote>
+                        <p>
+                            耶和華我們的主啊，你的名在全地何其美！你將你的榮耀彰顯於天。你因敵人的緣故，從嬰孩和吃奶的口中建立了能力，使仇敵和報仇的閉口無言。我觀看你指頭所造的天，並你所陳設的月亮星宿，便說：人算什麼，你竟顧念他？世人算什麼，你竟眷顧他？你叫他比天使微小一點，並賜他榮耀尊貴為冠冕。你派他管理你手所造的，使萬物——就是一切的牛羊、田野的獸、空中的鳥、海裡的魚，凡經行海道的——都服在他的腳下。耶和華我們的主啊，你的名在全地何其美！
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-從軟弱中彰顯的能力">
+                    <h2 id="從軟弱中彰顯的能力">從軟弱中彰顯的能力</h2>
+                    <p>
+                        我一定要仔細地查考、仔細地去體會，為什麼我被這一篇詩篇感動到這麼深。
+                    </p>
+                    <p>
+                        第一節到最後一節是完全一樣的經文，這個我最後再講。第二節說：「你因敵人的緣故，從嬰孩和吃奶的口中建立了能力。」也就是說，<strong>神建立祂的能力，都是從軟弱無力的人身上</strong>。神不需要靠黃仁勳去彰顯榮耀——是從吃奶的、嬰孩的口中。也就是說，神在最軟弱的人身上——我們都覺得他軟弱到家了，這個人也承認他的軟弱——神卻透過這樣的人彰顯出很大的能力，使仇敵啞口無言。仇敵看到只能說：這真的是神所做的，因為憑這個人根本不可能。
+                    </p>
+                    <p>
+                        第二節的意義就是：一開始神就宣告、就表明<strong>祂是用軟弱者來顯明祂的能力的</strong>。剛在唱詩歌的時候唱到「仇敵所有的武器都潰散」——事實上我們一樣，攻擊都抵擋不住。我們沒有被這些攻擊打倒，就是因為<strong>神擋在我們的前面</strong>，因為神使這一切的武器都潰散。仇敵也知道我們這麼軟弱，應該一攻擊就倒了，結果居然怎麼攻擊都沒有倒——是神。
+                    </p>
+                </section>
+
+                <section class="section" id="section-宇宙的浩瀚與人的渺小">
+                    <h2 id="宇宙的浩瀚與人的渺小">宇宙的浩瀚與人的渺小</h2>
+                    <p>
+                        第三節、第四節，開始對比<strong>宇宙的浩瀚跟人的渺小</strong>。各位弟兄姐妹，你是渺小的，我是渺小的，我們真的是渺小的。我在死亡面前，我真的覺得我的公公那麼長壽、那麼在地方上受敬重，他也的確愛家、愛鄉、愛土地，把他一生的愛都這樣子貢獻出來，也受人敬仰。可是在死亡面前，我還是覺得那<strong>輕如鴻毛</strong>。所以人是很渺小的。
+                    </p>
+                    <p>
+                        然後我們再看到宇宙的浩瀚，第三節：「我觀看你指頭所造的天，並你所陳設的月亮星宿。」宇宙有多浩瀚？我從一個專訪聽到的——專訪一個NASA的太空科學家。他說，星球的數字連科學家到現在都還估算不出來。他說：<strong>宇宙的星球數量，大過從有人類以來的人口總數</strong>——從有人類以來的人口總數，這個數字還小於宇宙天體的數量。所以我才會印象深刻。
+                    </p>
+                </section>
+
+                <section class="section" id="section-你竟然驚嘆的顧念">
+                    <h2 id="你竟然驚嘆的顧念">「你竟然」——驚嘆的顧念</h2>
+                    <p>
+                        從這樣的一個天文事實來看，我們再來看第三節到第四節：「我觀看你指頭所造的天，並你所陳設的月亮星宿，便說：<strong>人算什麼，你竟顧念他？世人算什麼，你竟眷顧他？</strong>」
+                    </p>
+                    <p>
+                        事實上，含金量最高的是在第四節。我們查到<strong>希伯來原文</strong>——我沒有去學希伯來文，但是很容易可以查。希伯來原文這裡「人算什麼？你竟顧念他」——這個「竟」其實是中文翻譯要把那個驚訝的口氣翻出來，所以叫「你竟」。在希伯來原文裡面是沒有這個字的，但是它表達一個<strong>驚嘆</strong>——你竟然！
+                    </p>
+                    <p>
+                        這裡的「人」，希伯來原文是指<strong>有限的、渺小的人</strong>。而「顧念」的希伯來原文是什麼？<strong>記在心上，而且是一種持續的記得</strong>。不是像我們平常很忙，看到你說「我記得你」，然後接下來要去做下一件事的時候，就把你忘了。神這裡講的記得是<strong>記在心上，而且持續記得</strong>。
+                    </p>
+                </section>
+
+                <section class="section" id="section-顧念與眷顧的深意">
+                    <h2 id="顧念與眷顧的深意">顧念與眷顧的深意</h2>
+                    <p>
+                        「人算什麼？你竟顧念他。」更精彩的來了——「<strong>世人算什麼？你竟眷顧他。</strong>」這裡的「世人」，事實上有個神學的意義。我們都以為亞當就是男生，夏娃就是女生。但事實上希伯來原文的
+                        Adam，每一個受造者都叫 Adam，夏娃也是。這個 Adam
+                        就是指<strong>人有尊嚴、有尊貴、受造有使命</strong>。有使命的才叫
+                        Adam。
+                    </p>
+                    <p>
+                        所以在一節經文裡面講「人」，就用了兩個希伯來原文：<strong>人是有限的、渺小的，但是卻是尊貴的、有尊嚴的，而且是受造、有使命的。</strong>這同時存在上帝的眼光裡面。讀到這裡心裡面熱起來，準備講章的時候越來越火熱。
+                    </p>
+                    <p>
+                        「你竟眷顧他」——這個「眷顧」跟前面的「顧念」，希伯來原文又不一樣了。這裡的眷顧就是<strong>探訪、介入，而且親手照料</strong>。就很像你躺在醫院，一直顧念你的家人來到你的病床旁邊，親手介入、照顧——不是來看看你、跟你寒暄幾句又去忙了，不是這樣的。
+                    </p>
+                </section>
+
+                <section class="section" id="section-從人的角度到上帝的角度">
+                    <h2 id="從人的角度到上帝的角度">從人的角度到上帝的角度</h2>
+                    <p>
+                        讀到這裡的時候，裡面非常非常感動。我就開始回想——我前面講那麼多細節，就是要告訴你，我的那個心境的狀況。我知道<strong>唯有主可以把我救活</strong>。我的心思意念，這位神知不知道？知道。然後祂就用一個AI的講道出手了。親自地來到我的身旁，介入、照料。包括我在那個車上聽到，我就知道我可以準備一篇詩篇第八篇的講章。然後就開始準備的過程裡面，就開始跟神有更深的交流跟對話。解經解到這裡的時候，那個心更輕鬆了。
+                    </p>
+                    <p>
+                        那不是從人的角度。我從人的角度，我看我公公的豐功偉業——我們講說「人走茶涼」，事實上這都是世人的角度。但是今天<strong>詩篇第八篇是從上帝的角度</strong>。也許世人會覺得就是人走茶涼，然後那個豐功偉業——雖然我們辦了兩場告別追思會，在台中辦一場，然後在家鄉又辦一場，在家鄉的時候有好多公公以前的同仁下屬、好幾屆的鎮長都來了。又怎樣呢？從人的角度來看，真的就是輕如鴻毛。
+                    </p>
+                    <p>
+                        但是從經文裡面彰顯出來的就不一樣。各位弟兄姐妹、各位好朋友，這位上帝<strong>先是把你一直放在心上，從來沒有忘記過你</strong>，一直把你放在心上。然後當你遇到事情、你也呼求祂的時候，<strong>祂就親自走向你</strong>。所以祂從顧念你，到祂會眷顧你。當然你如果不呼求祂，你就分辨不出來——其實那個照顧的手是祂介入的。所以我們人還是要有一個轉向祂的動作，你才會辨識說這是神的介入。感謝上帝！
+                    </p>
+                </section>
+
+                <section class="section" id="section-被冠冕的尊貴">
+                    <h2 id="被冠冕的尊貴">被冠冕的尊貴</h2>
+                    <p>
+                        所以上帝先是把你放在心上，然後親自走向你。我們雖然是渺小的，但是我們是<strong>尊貴而且有治理使命的</strong>。
+                    </p>
+                    <p>
+                        第五節到第八節，第五節這裡說：「你叫他比天使微小一點，並賜他榮耀尊貴為冠冕。」神叫我們比神小一點。第五節這裡有沒有說我們已經做了什麼事了？我已經當上什麼董事長了，我已經升上什麼教授了，我已經坐上什麼教會的主任牧師的位置了，我已經怎麼怎麼樣了，神才把冠冕賜給我們？不是。<strong
+                            >神在我們出生的時候，那個冠冕就已經放上去了。</strong
+                        >
+                    </p>
+                    <p>
+                        所以如果你現在還沒有去發揮、彰顯神要你做的那個使命任務的話，其實你是讓那個冠冕蒙灰啊。事實上你已經有冠冕了。所以我們有冠冕這件事是被動的，我們是<strong>被冠冕的</strong>。那你有沒有讓你的冠冕發揮該有的那個榮耀呢？你出生的時候就帶著冠冕來到人間，你有沒有讓那個冠冕得到榮耀呢？彰顯祂的榮耀呢？這就是我們要問自己的。但事實上，我們每一個人都是被冠冕的。
+                    </p>
+                </section>
+
+                <section class="section" id="section-管家的職分">
+                    <h2 id="管家的職分">管家的職分</h2>
+                    <p>
+                        六到八節就講到，神派我們管理祂手所造的一切。這裡有三個重點：第一，<strong>人被造的時候非常接近神性，帶著尊嚴跟能力</strong>，這是人的本質。第二，人的尊貴不是外加的，而是被冠冕的，是一個被冠冕的本質。第三，我們是<strong>管家的職分</strong>，我們不是統治，不是壓制，是管家，是被交付來管理的。
+                    </p>
+                    <p>
+                        管理神手所造的一切，哇，事情可多著。雖然我們也有人造物，但是在神所造的這個環境裡面，把任何一個地方都安排得井然有序，發揮它該有的功能——樂器、地板，哪裡都讓它非常的井然有序，發揮我們管理的能力。事實上這都在彰顯神的榮耀，也就是在讓你頭上的這一頂冠冕發揮出它的榮耀。
+                    </p>
+                </section>
+
+                <section class="section" id="section-首尾呼應的榮耀">
+                    <h2 id="首尾呼應的榮耀">首尾呼應的榮耀</h2>
+                    <p>
+                        最後我也學到了，看一些解經的書，就是說這種詩歌的文字有一個特色，就是<strong>首尾呼應</strong>。首尾呼應，詩人要表達在整首詩裡面核心的概念。所以第一節跟第九節字完全一樣，標點符號當然是後面才加的，但是字完全一樣，一個字都沒有改。我們一起讀：「<strong>耶和華我們的主啊，你的名在全地何其美！</strong>」
+                    </p>
+                    <p>
+                        在整首詩中間有什麼？有神的偉大，有人的有限；有神怎麼顧念、怎麼眷顧人；有人的功能、任務是什麼。這一切都包在神的榮耀裡——「耶和華我們的主啊，你的名在全地何其美！」
+                    </p>
+                </section>
+
+                <section class="section" id="section-冠冕的意義">
+                    <h2 id="冠冕的意義">冠冕的意義</h2>
+                    <p>
+                        各位弟兄姐妹，事實上我看完這一篇詩篇之後，我就不再糾結我的意義在哪裡了。<strong>我的任務就是把我已經被冠冕的這個皇冠重新擦亮。</strong>該做什麼就去做什麼，該吃該喝，該努力做事就努力做事，該做決定就做決定，按著真理做決定。這都是在讓你頭上的這個冠冕繼續地發光。至於它的意義是什麼，至於最後是如何，那是在神的手中。
+                    </p>
+                    <p>
+                        我也不把自己交給人去評價我。也許別人評價我，還是輕如鴻毛；別人看我，還是相當模糊。有什麼關係？<strong>我的主不是這樣看我，就好了。</strong>那個心裡面的重量，那種孤單、無意義感的重量就全部不見了。我的動力又回來了，我的動力就回來了。
+                    </p>
+                </section>
+
+                <section class="section" id="section-在神的榮耀中被理解">
+                    <h2 id="在神的榮耀中被理解">在神的榮耀中被理解</h2>
+                    <p>
+                        <strong
+                            >人的脆弱跟尊貴、渺小跟使命，都在神的榮耀中被理解。</strong
+                        >神的話語一解開，就充滿了榮光跟力量。也就再一次地教導我，眼光是定睛在我們這一位顧念我又眷顧我的神。祂知道我軟弱，但是祂卻讓我有使命。我就是完成這樣的使命就夠了，而不是去看我到底能夠留下什麼，這不是重點。
+                    </p>
+                    <p>
+                        所以我用詩篇第八篇再一次地來跟弟兄姐妹一起來共勉——顧念跟眷顧我們的神。其實我們只要真實地來到祂面前，你就會真實地經歷到<strong>從孤獨到被擁抱</strong>。我真的就是從很孤單、覺得沒有意義、人生真的沒有意義，到被擁抱。然後神再一次地說：「孩子，你看向我，不要看向這個世界。」當然人終究有一天會過去，在地上的日子會結束，但是請你把焦點放在我的身上。詩篇第八篇似乎就是神告訴我這件事情——<strong
+                            >你要把焦點放在我身上，而不是放在世人的評價上面。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-找神傾訴">
+                    <h2 id="找神傾訴">找神傾訴</h2>
+                    <p>
+                        最後，好想找人說卻找不著嗎？其實我就是從年初，那個時候真的好想找人說，但是我就覺得不適合、不適合。有些時候在某些位置上的人真的很孤單，我自己也知道我很孤單。我是牧靈諮商科的主任，前面也擔任過很多職務。我就發現我走不進諮商室。我不是說你們不要去諮商，諮商很有用，但是我覺得我走不進諮商室。所以我就直接找神諮商。當然，我們還是需要諮商的。
+                    </p>
+                    <p>
+                        好想找人說卻找不著嗎？孤單的重量壓住你嗎？我是親人離開。那對你來講呢？你是關係破裂嗎？還是在職場的壓力內捲，捲得很厲害？或者是被誤解？有些時候好東西被搶奪——被搶奪的經驗，事實上在我這一生當中也有經歷過，就默默地被你其實很要好的人搶奪了。又或者是被霸凌，是你正在經歷的嗎？
+                    </p>
+                    <p>
+                        <strong
+                            >不要忘記，顧念你、一直把你放在心上、從來沒有忘記過你的，顧念你、願意走進你身旁眷顧你的神，此刻願意走向你。</strong
+                        >願意把心打開嗎？神一直把你放在心上，並且祂要親自走向你。就讓我們此刻來抬頭仰望祂，我們來唱回應詩歌。
+                    </p>
+                </section>
+            </main>
+        </div>
+        <!-- Include layout.js -->
+        <script src="../assets/js/layout.js"></script>
+
+        <!-- Add keywords config for highlighting -->
+        <script id="keywords-config" type="application/json">
+            {
+                "keywords": [
+                    "詩篇第八篇",
+                    "真實的經歷",
+                    "顧念與眷顧",
+                    "冠冕的尊貴",
+                    "從孤獨到被擁抱",
+                    "孤單跟無意義感的重量",
+                    "唯有你可以把我救活",
+                    "希伯來原文",
+                    "主的介入",
+                    "管家的職分",
+                    "輕如鴻毛",
+                    "首尾呼應"
+                ]
+            }
+        </script>
+
+        <script>
+            // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+            window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+        </script>
+    </body>
+</html>
