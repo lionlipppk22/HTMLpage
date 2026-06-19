@@ -1,501 +1,849 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>巴比倫：歷史真實與神話色彩的交織</title>
+        <meta
+            name="description"
+            content="深入探討巴比倫的歷史、神話、考古發現，以及圍繞巴別塔的敘事。"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../assets/css/layout.css" />
+        <!-- Mermaid for potential diagrams -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+            mermaid.initialize({ startOnLoad: true, theme: "default" });
+        </script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>巴比倫：歷史真實與神話色彩的交織</title>
-    <meta name="description" content="深入探討巴比倫的歷史、神話、考古發現，以及圍繞巴別塔的敘事。">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&display=swap"
-        rel="stylesheet">
-    <!-- External CSS -->
-    <link rel="stylesheet" href="../assets/css/layout.css">
-    <!-- Mermaid for potential diagrams -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-        mermaid.initialize({ startOnLoad: true, theme: 'default' });
-    </script>
-</head>
+    <body class="mobile-layout">
+        <!-- Gradient Background -->
+        <div class="gradient-bg"></div>
 
-<body class="mobile-layout">
-    <!-- Gradient Background -->
-    <div class="gradient-bg"></div>
+        <!-- Controls -->
+        <div class="controls">
+            <button
+                class="control-btn"
+                onclick="toggleLayout()"
+                title="切換佈局 (Mobile/PC)"
+                id="layout-btn"
+            >
+                📱
+            </button>
+            <button class="control-btn" onclick="toggleZoom()" title="縮放">
+                🔍
+            </button>
+            <button class="control-btn" onclick="toggleEffects()" title="特效">
+                ✨
+            </button>
+            <button class="control-btn" onclick="toggleTOC()" title="目錄">
+                📋
+            </button>
+        </div>
 
-    <!-- Controls -->
-    <div class="controls">
-        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
-        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
-        <button class="control-btn" onclick="toggleEffects()" title="特效">✨</button>
-        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
-    </div>
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h3>📋 目錄</h3>
+            <ul>
+                <li><a href="#executive-summary">執行摘要</a></li>
+                <li><a href="#background">背景</a></li>
+                <li><a href="#outline">結構大綱/流程圖</a></li>
+                <li><a href="#themes-conclusions">主題與結論</a></li>
+                <li><a href="#core-arguments">核心論點卡片</a></li>
+                <li><a href="#detailed-arguments">論點詳述</a></li>
+                <li>
+                    <a href="#unclear-info">待澄清資訊、明確假設與潛在風險</a>
+                </li>
+                <li><a href="#prayer">我的禱告</a></li>
+                <li><a href="#C1">C1 的資料</a></li>
+            </ul>
+        </div>
 
-    <!-- Table of Contents -->
-    <div class="toc" id="toc">
-        <h3>📋 目錄</h3>
-        <ul>
-            <li><a href="#executive-summary">執行摘要</a></li>
-            <li><a href="#background">背景</a></li>
-            <li><a href="#outline">結構大綱/流程圖</a></li>
-            <li><a href="#themes-conclusions">主題與結論</a></li>
-            <li><a href="#core-arguments">核心論點卡片</a></li>
-            <li><a href="#detailed-arguments">論點詳述</a></li>
-            <li><a href="#unclear-info">待澄清資訊、明確假設與潛在風險</a></li>
-            <li><a href="#prayer">我的禱告</a></li>
-            <li><a href="#C1">C1 的資料</a></li>
-        </ul>
-    </div>
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header -->
+            <a
+                href="../exampleHTML/index.html"
+                style="
+                    color: #007bff;
+                    text-decoration: none;
+                    font-weight: bold;
+                    background: rgba(255, 255, 255, 0.9);
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                "
+                >Layout Example</a
+            >
+            <a
+                href="../exampleHTML/AllFilms.html"
+                style="
+                    color: #007bff;
+                    text-decoration: none;
+                    font-weight: bold;
+                    background: rgba(255, 255, 255, 0.02);
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                "
+                >.</a
+            >
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Header -->
-        <a href="../exampleHTML/index.html"
-            style="color: #007bff; text-decoration: none; font-weight: bold; background: rgba(255, 255, 255, 0.9); padding: 10px 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Layout
-            Example</a>
-        <a href="../exampleHTML/AllFilms.html"
-            style="color: #007bff; text-decoration: none; font-weight: bold; background: rgba(255, 255, 255, 0.02); padding: 10px 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">.</a>
+            <header class="header">
+                <h1 id="main-title">巴比倫：歷史真實與神話色彩的交織</h1>
+                <p class="subtitle">
+                    旨在闡明巴比倫這座傳奇大都會的歷史真實性與其神話色彩之間的複雜交織，特別是圍繞著巴別塔的敘事，以及現代考古學如何運用科技逐步揭開其神秘面紗。
+                </p>
+                <section class="section" id="additional-resources">
+                    <div
+                        class="youtube-link"
+                        style="margin-top: 1rem; text-align: center"
+                    >
+                        <a
+                            href="https://www.youtube.com/embed/IxzWl0Ewr_8?list=TLGGKZiM_fjFVgcxNjA5MjAyNQ"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/IxzWl0Ewr_8/maxresdefault.jpg"
+                                alt="YouTube 影片縮圖：GitHub spec kit"
+                                style="
+                                    max-width: 100%;
+                                    height: auto;
+                                    border-radius: 8px;
+                                    display: block;
+                                    margin: 0 auto;
+                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                "
+                            />
+                            <p
+                                style="
+                                    margin-top: 0.5rem;
+                                    font-size: 0.9em;
+                                    color: #666;
+                                "
+                            >
+                                ▶️ 點擊觀看原始 YouTube 影片
+                            </p>
+                        </a>
 
-        <header class="header">
-            <h1 id="main-title">巴比倫：歷史真實與神話色彩的交織</h1>
-            <p class="subtitle">旨在闡明巴比倫這座傳奇大都會的歷史真實性與其神話色彩之間的複雜交織，特別是圍繞著巴別塔的敘事，以及現代考古學如何運用科技逐步揭開其神秘面紗。</p>
-            <section class="section" id="additional-resources">
-                <div class="youtube-link" style="margin-top: 1rem; text-align: center;">
-                    <a href="https://www.youtube.com/embed/IxzWl0Ewr_8?list=TLGGKZiM_fjFVgcxNjA5MjAyNQ" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="https://img.youtube.com/vi/IxzWl0Ewr_8/maxresdefault.jpg"
-                            alt="YouTube 影片縮圖：GitHub spec kit"
-                            style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                        <p style="margin-top: 0.5rem; font-size: 0.9em; color: #666;">▶️ 點擊觀看原始 YouTube 影片</p>
-                    </a>
+                        <!-- test.test.test -->
+                        <a href="../prayer/index.html" class="file-link"
+                            >禱告會</a
+                        >
+                        <a href="../prayer/weeks.html" class="file-link"
+                            >小組</a
+                        >
+                        <a href="../Math3-1/20260619.html" class="file-link"
+                            >Math</a
+                        >
+                        <a href="../20251229/travel.html" class="file-link"
+                            >Travel</a
+                        >
+                        <a
+                            href="../Math3-1/index20260109.html"
+                            class="file-link"
+                            >Math20260109</a
+                        >
+                        <a
+                            href="../Math3-1/index20260115.html"
+                            class="file-link"
+                            >Math20260115</a
+                        >
+                        <a
+                            href="../Math3-1/full_ocr_analysis_1.html"
+                            class="file-link"
+                            >full_ocr_analysis_1</a
+                        >
+                        <a
+                            href="../Math3-1/full_ocr_analysis_2.html"
+                            class="file-link"
+                            >full_ocr_analysis_2</a
+                        >
+                        <a href="../years/index.html" class="file-link"
+                            >new_years</a
+                        >
+                        <a href="../Songs/index.html" class="file-link"
+                            >C1_Data</a
+                        >
 
-                    <!-- test.test.test -->
-                    <a href="../prayer/index.html" class="file-link">禱告會</a>
-                    <a href="../prayer/weeks.html" class="file-link">小組</a>
-                    <a href="../Math3-1/index.html" class="file-link">Math</a>
-                    <a href="../20251229/travel.html" class="file-link">Travel</a>
-                    <a href="../Math3-1/index20260109.html" class="file-link">Math20260109</a>
-                    <a href="../Math3-1/index20260115.html" class="file-link">Math20260115</a>
-                    <a href="../Math3-1/full_ocr_analysis_1.html" class="file-link">full_ocr_analysis_1</a>
-                    <a href="../Math3-1/full_ocr_analysis_2.html" class="file-link">full_ocr_analysis_2</a>
-                    <a href="../years/index.html" class="file-link">new_years</a>
-                    <a href="../Songs/index.html" class="file-link">C1_Data</a>
+                        <h3>維基百科</h3>
+                        <p>
+                            <a
+                                href="https://zh.wikipedia.org/zh-tw/%E5%B7%B4%E5%88%A5%E5%A1%94"
+                                target="_blank"
+                                >巴別塔 - 維基百科，自由的百科全書</a
+                            >
+                        </p>
+                    </div>
+                </section>
+            </header>
 
-                    <h3>維基百科</h3>
-                    <p><a href="https://zh.wikipedia.org/zh-tw/%E5%B7%B4%E5%88%A5%E5%A1%94" target="_blank">巴別塔 -
-                            維基百科，自由的百科全書</a></p>
-                </div>
-            </section>
-        </header>
+            <!-- Main Content Area -->
+            <main class="content" id="main-content">
+                <section class="section" id="executive-summary">
+                    <h2>📝 執行摘要</h2>
+                    <div class="card">
+                        <p>
+                            透過對所提供資料的深入剖析，我觀察到巴比倫，特別是在尼布甲尼撒二世統治下的輝煌時期，不僅是一座擁有令人驚嘆建築與先進技術的城市，更是一個承載著豐富神話與傳說的文明搖籃。我的分析顯示，巴比倫的真實面貌長期以來被聖經敘事與古希臘歷史學家的想像所塑造，使得歷史事實與傳奇故事難以區分。然而，自19世紀末羅伯特·科爾德韋等考古學家的努力，到21世紀初期運用全息術與衛星影像等尖端科技，考古學家們正逐步重建這座失落的都市，證實其宏偉成就，同時也釐清了諸如巴別塔和空中花園等傳說背後的可能真相。儘管許多技術細節與事件根源仍待解，這項持續的探索不僅深化了我們對古代世界的高度文明理解，也挑戰並豐富了既有的文化敘事。
+                        </p>
+                    </div>
 
-        <!-- Main Content Area -->
-        <main class="content" id="main-content">
+                    <div class="image-container">
+                        <img
+                            src="https://e1.pxfuel.com/desktop-wallpaper/337/106/desktop-wallpaper-assassin-s-creed-odyssey-s-new-expansion-is-pure-sci-assassins-creed-odyssey-the-fate-of-atlantis.jpg"
+                            alt="亞特蘭提斯神話想像圖像"
+                            style="
+                                max-width: 100%;
+                                height: auto;
+                                display: block;
+                                margin: 20px auto;
+                                border-radius: 8px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            "
+                        />
+                        <p class="image-caption">
+                            亞特蘭提斯神話的視覺想像，類比古代文明的傳說與歷史交織。
+                        </p>
+                    </div>
+                </section>
 
-            <section class="section" id="executive-summary">
-                <h2>📝 執行摘要</h2>
-                <div class="card">
-                    <p>透過對所提供資料的深入剖析，我觀察到巴比倫，特別是在尼布甲尼撒二世統治下的輝煌時期，不僅是一座擁有令人驚嘆建築與先進技術的城市，更是一個承載著豐富神話與傳說的文明搖籃。我的分析顯示，巴比倫的真實面貌長期以來被聖經敘事與古希臘歷史學家的想像所塑造，使得歷史事實與傳奇故事難以區分。然而，自19世紀末羅伯特·科爾德韋等考古學家的努力，到21世紀初期運用全息術與衛星影像等尖端科技，考古學家們正逐步重建這座失落的都市，證實其宏偉成就，同時也釐清了諸如巴別塔和空中花園等傳說背後的可能真相。儘管許多技術細節與事件根源仍待解，這項持續的探索不僅深化了我們對古代世界的高度文明理解，也挑戰並豐富了既有的文化敘事。
-                    </p>
-                </div>
-
-                <div class="image-container">
-                    <img src="https://e1.pxfuel.com/desktop-wallpaper/337/106/desktop-wallpaper-assassin-s-creed-odyssey-s-new-expansion-is-pure-sci-assassins-creed-odyssey-the-fate-of-atlantis.jpg"
-                        alt="亞特蘭提斯神話想像圖像"
-                        style="max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <p class="image-caption">亞特蘭提斯神話的視覺想像，類比古代文明的傳說與歷史交織。</p>
-                </div>
-            </section>
-
-            <section class="section" id="background">
-                <h2>📖 背景</h2>
-                <div class="sop-overview">
-                    <div class="sop-items">
-                        <div class="sop-item">
-                            <article class="collapsible-card argument-card">
-                                <h3><span class="sop-number">1. </span>時間 <span class="toggle-indicator">(+)</span></h3>
-                                <div class="argument-content" style="display: none;">
-                                    <p>這份分析涵蓋了廣闊的歷史時間軸。核心時期聚焦於古巴比倫帝國的輝煌，特別是新巴比倫帝國國王尼布甲尼撒二世（約公元前605-562年）的統治時期，彼時巴比倫達到其文化、軍事與建築成就的巔峰。時間的脈絡亦延伸至更早的公元前3000年，蘇美人發明楔形文字的年代，以及涉及巴別塔故事的聖經紀載。此外，資料也回溯至公元前5世紀希羅多德的遊記，並橫跨至近現代，即從19世紀末法國領事與德國考古學家開始重新發掘巴比倫，直至20世紀末和21世紀初，現代科技如全息術與衛星影像被應用於考古研究的當代。
-                                    </p>
-                                </div>
-                            </article>
+                <section class="section" id="background">
+                    <h2>📖 背景</h2>
+                    <div class="sop-overview">
+                        <div class="sop-items">
+                            <div class="sop-item">
+                                <article class="collapsible-card argument-card">
+                                    <h3>
+                                        <span class="sop-number">1. </span>時間
+                                        <span class="toggle-indicator"
+                                            >(+)</span
+                                        >
+                                    </h3>
+                                    <div
+                                        class="argument-content"
+                                        style="display: none"
+                                    >
+                                        <p>
+                                            這份分析涵蓋了廣闊的歷史時間軸。核心時期聚焦於古巴比倫帝國的輝煌，特別是新巴比倫帝國國王尼布甲尼撒二世（約公元前605-562年）的統治時期，彼時巴比倫達到其文化、軍事與建築成就的巔峰。時間的脈絡亦延伸至更早的公元前3000年，蘇美人發明楔形文字的年代，以及涉及巴別塔故事的聖經紀載。此外，資料也回溯至公元前5世紀希羅多德的遊記，並橫跨至近現代，即從19世紀末法國領事與德國考古學家開始重新發掘巴比倫，直至20世紀末和21世紀初，現代科技如全息術與衛星影像被應用於考古研究的當代。
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="sop-item">
+                                <article class="collapsible-card argument-card">
+                                    <h3>
+                                        <span class="sop-number">2. </span> 領域
+                                        <span class="toggle-indicator"
+                                            >(+)</span
+                                        >
+                                    </h3>
+                                    <div
+                                        class="argument-content"
+                                        style="display: none"
+                                    >
+                                        <p>
+                                            本次分析主要涉及考古學、歷史學、聖經研究以及文化人類學等多個學術領域。同時，也觸及了建築學、工程學（如釉面磚技術）、天文學、醫學與語言學（語言分化的探討）等跨學科知識，以全面理解巴比倫文明的多樣成就。
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="sop-item">
+                                <article class="collapsible-card argument-card">
+                                    <h3>
+                                        <span class="sop-number">3. </span>受眾
+                                        <span class="toggle-indicator"
+                                            >(+)</span
+                                        >
+                                    </h3>
+                                    <div
+                                        class="argument-content"
+                                        style="display: none"
+                                    >
+                                        <p>
+                                            本報告的目標受眾為廣大對古代文明、歷史考古、宗教神話以及科技如何在歷史研究中應用感興趣的讀者。這些讀者可能包括專業研究人員、學生，以及任何渴望深入了解巴比倫這座傳奇城市的公眾。
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="sop-item">
+                                <article class="collapsible-card argument-card">
+                                    <h3>
+                                        <span class="sop-number">4. </span>問題
+                                        <span class="toggle-indicator"
+                                            >(+)</span
+                                        >
+                                    </h3>
+                                    <div
+                                        class="argument-content"
+                                        style="display: none"
+                                    >
+                                        <p>
+                                            核心問題是如何在有限的考古證據與豐富的文學（如聖經）及歷史記述（如希羅多德）之間，辨識並重建古巴比倫文明的真實面貌。這包括了驗證其著名的「世界奇觀」如巴別塔與空中花園的歷史真實性，解讀其社會結構、宗教信仰、科技成就，並理解其最終衰落的原因，同時解釋這些故事如何演變成為跨越時空的普遍神話。
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="sop-item">
+                                <article class="collapsible-card argument-card">
+                                    <h3>
+                                        <span class="sop-number">5. </span>目標
+                                        <span class="toggle-indicator"
+                                            >(+)</span
+                                        >
+                                    </h3>
+                                    <div
+                                        class="argument-content"
+                                        style="display: none"
+                                    >
+                                        <p>本分析的目標是：</p>
+                                        <ul>
+                                            <li>
+                                                闡明巴比倫的歷史與神話：區分圍繞巴比倫，特別是尼布甲尼撒二世時期的真實成就，以及巴別塔等流傳甚廣的神話敘事。
+                                            </li>
+                                            <li>
+                                                展示考古學的貢獻：突顯現代考古學，包括運用高科技手段，如何從廢墟中挖掘知識，重建城市面貌，並修正過去的歷史誤解。
+                                            </li>
+                                            <li>
+                                                解析巴比倫的技術與文化成就：深入探討巴比倫在建築、天文、醫學和文字方面的創新與精湛技藝。
+                                            </li>
+                                            <li>
+                                                探索巴比倫衰落的根源：理解導致這座偉大城市最終走向滅亡的內外因素。
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="sop-item">
+                                <article class="collapsible-card argument-card">
+                                    <h3>
+                                        <span class="sop-number">6. </span>限制
+                                        <span class="toggle-indicator"
+                                            >(+)</span
+                                        >
+                                    </h3>
+                                    <div
+                                        class="argument-content"
+                                        style="display: none"
+                                    >
+                                        <p>本分析受限於以下因素：</p>
+                                        <ul>
+                                            <li>
+                                                資料來源限制：主要依賴一份YouTube紀錄片摘錄和一份維基百科條目，兩者在深度和廣度上各有側重，可能無法提供所有細節。
+                                            </li>
+                                            <li>
+                                                證據的殘缺性：許多古代建築僅存基礎和瓦礫，需透過推測與重建來還原其原貌。
+                                            </li>
+                                            <li>
+                                                語言與文化的隔閡：對楔形文字的解讀仍是長期而艱鉅的任務，大量泥板有待翻譯。
+                                            </li>
+                                            <li>
+                                                傳說與史實的模糊界限：古人的記述（如希羅多德）常夾雜想像，需要現代考古學來驗證和校正。
+                                            </li>
+                                            <li>
+                                                地理與政治因素：考古發掘受限於當地的地理條件和政治穩定性。
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-                        <div class="sop-item">
-                            <article class="collapsible-card argument-card">
-                                <h3><span class="sop-number">2. </span> 領域 <span class="toggle-indicator">(+)</span>
-                                </h3>
-                                <div class="argument-content" style="display: none;">
-                                    <p>本次分析主要涉及考古學、歷史學、聖經研究以及文化人類學等多個學術領域。同時，也觸及了建築學、工程學（如釉面磚技術）、天文學、醫學與語言學（語言分化的探討）等跨學科知識，以全面理解巴比倫文明的多樣成就。
-                                    </p>
-                                </div>
-                            </article>
+                    </div>
+                </section>
+
+                <section class="section" id="outline">
+                    <h2>📋 結構大綱/流程圖</h2>
+                    <div class="card">
+                        <p>
+                            我的思考流程可以視覺化為一個層層遞進的分析模型，旨在從宏觀到微觀、從歷史到神話，全面解構巴比倫文明。
+                        </p>
+                        <div class="svg-container">
+                            <img
+                                src="../assets/svg/flowchart.svg"
+                                alt="Flowchart of the analysis model"
+                                style="max-width: 100%; height: auto"
+                            />
                         </div>
-                        <div class="sop-item">
-                            <article class="collapsible-card argument-card">
-                                <h3><span class="sop-number">3. </span>受眾 <span class="toggle-indicator">(+)</span></h3>
-                                <div class="argument-content" style="display: none;">
-                                    <p>本報告的目標受眾為廣大對古代文明、歷史考古、宗教神話以及科技如何在歷史研究中應用感興趣的讀者。這些讀者可能包括專業研究人員、學生，以及任何渴望深入了解巴比倫這座傳奇城市的公眾。
-                                    </p>
-                                </div>
-                            </article>
+                    </div>
+                </section>
+
+                <section class="section" id="themes-conclusions">
+                    <h2>🎯 主題與結論</h2>
+                    <div class="card">
+                        <h3>主題</h3>
+                        <p>
+                            本報告的核心主題是古巴比倫文明的宏偉與其神話傳說的持續影響力，以及現代考古學如何運用創新方法，在歷史事實與文化記憶之間穿梭，以重構這座傳奇都市的真實面貌。我們將聚焦於尼布甲尼撒二世治下的巴比倫，其卓越的建築、科技與文化成就，同時深入探討巴別塔作為一個核心符號，如何在不同文明中被解釋與傳承。
+                        </p>
+                        <h3>結論</h3>
+                        <p>我的分析得出以下結論：</p>
+                        <ol>
+                            <li>
+                                <strong
+                                    >巴比倫是古代世界的工程與文化奇蹟：</strong
+                                >在尼布甲尼撒二世的統治下，巴比倫發展出令人驚嘆的技術和藝術，例如其堅固的城牆、鮮豔的伊什塔爾城門釉面磚技術、以及先進的天文與醫學知識。這些成就超越了當時的普遍認知，使其成為名副其實的世界奇觀。
+                            </li>
+                            <li>
+                                <strong>神話與歷史的複雜共生：</strong
+                                >巴比倫的形象在很大程度上由聖經故事和古希臘歷史記述所塑造，其中不乏誇大與偏見。巴別塔作為一個典型的例子，其聖經描述與現實中埃特曼安吉神廟等建築的關聯，以及其在多個文化中語言分化神話的相似性，都證明了歷史與神話之間存在著深刻且複雜的互動。
+                            </li>
+                            <li>
+                                <strong>考古學是揭示真相的關鍵：</strong
+                                >從19世紀末羅伯特·科爾德韋的長期發掘，到現代利用全息術保護泥板和衛星影像定位古城遺址，考古學家們不斷採用創新技術，從塵土中重構巴比倫的真實尺寸、城市布局和日常生活。這些發現不僅修正了古人的錯誤記載，也為我們理解一個曾經輝煌的文明提供了具體而詳盡的見解。
+                            </li>
+                            <li>
+                                <strong
+                                    >巴比倫的衰落是一個內外兼具的過程：</strong
+                                >儘管巴比倫擁有看似堅不可摧的防禦工事，其最終的衰落卻被歸因於內部權力的崩潰，而非外部敵人的攻陷。這與聖經中關於其荒蕪的預言形成了一種歷史上的巧合，使其持續作為一個永恆的謎團存在。
+                            </li>
+                        </ol>
+                        <h3>範圍</h3>
+                        <p>
+                            本報告的分析範圍主要集中於尼布甲尼撒二世統治下的巴比倫，以及圍繞巴別塔這一核心符號的聖經、歷史和考古學討論。我將著重於巴比倫的實體成就、其文化象徵意義、現代考古發現如何挑戰和證實歷史記錄，以及這一切如何共同描繪出一個充滿魅力卻又神秘的古老文明。
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section" id="core-arguments">
+                    <h2>💡 核心論點卡片</h2>
+                    <article class="argument-card collapsible-card">
+                        <h3>
+                            1. 巴比倫的宏偉與尼布甲尼撒的遺產
+                            <span class="toggle-indicator">(+)</span>
+                        </h3>
+                        <div class="argument-content" style="display: none">
+                            <p>
+                                <strong>定義：</strong
+                                >此論點探討了巴比倫在尼布甲尼撒二世統治下的非凡發展，使其成為古代世界的城市奇觀和文化燈塔，其建築與技術成就至今仍令人驚嘆。
+                            </p>
+                            <p><strong>方法/步驟：</strong></p>
+                            <ol>
+                                <li>
+                                    城市基礎建設：分析其大規模的城牆系統，該系統被設計為堅不可摧的堡壘，給予居民安全感。
+                                </li>
+                                <li>
+                                    建築藝術與工程：研究伊什塔爾城門的藝術風格及其背後的釉面磚技術，這是一種複雜且先進的化學與燒製工藝。
+                                </li>
+                                <li>
+                                    文化象徵：探討空中花園這一傳說中七大奇蹟之一的建築，儘管其真實性有爭議，但模型證明了其在技術上的可行性。
+                                </li>
+                            </ol>
+                            <p><strong>例子：</strong></p>
+                            <ul>
+                                <li>
+                                    <strong>伊什塔爾城門：</strong
+                                    >覆蓋著兩萬多塊鮮豔藍色釉面磚，描繪著受崇拜的動物形象，是尼布甲尼撒向神祇馬爾杜克和納布獻祭的標誌性作品，展現了高超的陶瓷與建築技術。
+                                </li>
+                                <li>
+                                    <strong>城市防禦工事：</strong
+                                    >由12米高、寬如高速公路的雙層磚牆構成，配合戰鬥塔、投石車等先進軍事技術，使其在當時幾乎無懈可擊。
+                                </li>
+                                <li>
+                                    <strong>空中花園：</strong
+                                    >儘管傳說色彩濃厚，但模型重建揭示了其可能採用的防漏（鉛板、瀝青、黏土層）和複雜灌溉系統（如螺旋輸送器），彰顯了巴比倫人在水利工程上的智慧。
+                                </li>
+                            </ul>
                         </div>
-                        <div class="sop-item">
-                            <article class="collapsible-card argument-card">
-                                <h3><span class="sop-number">4. </span>問題 <span class="toggle-indicator">(+)</span></h3>
-                                <div class="argument-content" style="display: none;">
-                                    <p>核心問題是如何在有限的考古證據與豐富的文學（如聖經）及歷史記述（如希羅多德）之間，辨識並重建古巴比倫文明的真實面貌。這包括了驗證其著名的「世界奇觀」如巴別塔與空中花園的歷史真實性，解讀其社會結構、宗教信仰、科技成就，並理解其最終衰落的原因，同時解釋這些故事如何演變成為跨越時空的普遍神話。
-                                    </p>
-                                </div>
-                            </article>
+                    </article>
+                    <article class="argument-card collapsible-card">
+                        <h3>
+                            2. 神話與歷史的交織：以巴別塔為核心
+                            <span class="toggle-indicator">(+)</span>
+                        </h3>
+                        <div class="argument-content" style="display: none">
+                            <p>
+                                <strong>定義：</strong
+                                >此論點旨在分析巴比倫，特別是巴別塔，如何在不同文化和時間維度中，被塑造為歷史事實與宗教神話相互作用的中心，挑戰了人們對過去的單一理解。巴比倫與巴別塔之間的關係是歷史事實、考古發現與宗教神話複雜交織的結果。
+                            </p>
+                            <p><strong>方法/步驟：</strong></p>
+                            <ol>
+                                <li>
+                                    聖經敘事與解讀：深入研究《創世紀》中關於巴別塔的故事，探討其作為語言分化和人類分散起源的解釋，以及對巴比倫「傲慢」的道德譴責。
+                                </li>
+                                <li>
+                                    考古學連結：探究巴別塔傳說與巴比倫歷史建築（如埃特曼安吉神廟，一座獻給巴比倫主神馬爾杜克的七層高塔廟，被視為巴別塔的靈感來源）的可能關聯，包括地理位置、詞源學、考古印證與象徵意義。
+                                </li>
+                                <li>
+                                    跨文化比較：比對巴別塔故事與蘇美爾、伊斯蘭、愛爾蘭及其他美洲、非洲神話中關於語言混亂或通天高塔的類似傳說，揭示其普世主題，包括中國《尚書》的「絕地天通」。
+                                </li>
+                            </ol>
+                            <p><strong>例子：</strong></p>
+                            <ul>
+                                <li>
+                                    <strong>《創世紀》中的巴別塔故事：</strong
+                                    >一群人在大洪水後欲建造通天高塔以揚名立萬，上帝介入使其語言混亂，最終導致人類分散，城市停建。這是理解語言多樣性的釋源體裁故事。
+                                </li>
+                                <li>
+                                    <strong>埃特曼安吉神廟：</strong
+                                    >巴比倫位於底格里斯河與幼發拉底河之間的美索不達米亞平原，即今天的伊拉克境內，被譽為「文明的搖籃」。大約在2500年前，尼布甲尼撒二世將巴比倫打造成一座舉世聞名的奇觀之城。《聖經》中的巴別塔故事發生在「示拿地區」，該地區與古蘇美爾地區，即後來巴比倫帝國的所在範圍相符。在《聖經》中，「巴別」（Babel）在希伯來語中被解釋為「混亂」（balal），但從阿卡德語來看，「巴別」（Bab-ilu）的本意卻是「上帝之門」（Gate
+                                    of
+                                    God）。這座宏偉的塔廟是獻給巴比倫主神馬爾杜克的，後期由新巴比倫帝國國王那波帕拉薩爾和尼布甲尼撒二世重建。2011年發現的「巴別石柱塔」畫作，追溯至尼布甲尼撒二世時期，提供了迄今最早的埃特曼安吉神廟圖像證據。衛星空拍圖也顯示，這座傳說中的建築基座是方形的階梯金字塔，高度可能約為100公尺，而非中世紀畫家所繪的圓形塔樓。古代希臘歷史學家希羅多德在遊歷巴比倫時，也曾描述過這座巨大塔樓的尺寸。巴別塔不僅是一個地理和歷史概念，它更成為一個強大的文化符號，代表著人類「通天」的野心、傲慢，以及隨後因上帝介入導致的語言混亂和人類分散。巴比倫這座城市本身，在《舊約》中也常被視為「不敬與傲慢」的象徵，與巴別塔的故事主題不謀而合。
+                                </li>
+                                <li>
+                                    <strong>全球語言分化神話：</strong
+                                    >在蘇美爾神話《恩麥卡爾和阿拉塔王》、伊斯蘭傳統、愛爾蘭傳說乃至中國《尚書》的「絕地天通」中，都存在類似「統一語言被分化」或「天地通道被阻斷」的情節。中國《尚書》中的「絕地天通」是一個古代神話傳說，其核心意義是將天地之間的通道隔斷，使神與人分隔開來，結束了早期神人混雜的狀態，建立了新的宇宙秩序。在黃帝時代，存在著「民神雜糅」的現象，即神明可以自由地往來於天上人間，而人類也可以透過「天梯」，例如傳說中的崑崙山，自由地在天地之間穿梭。然而，這種神人雜處的狀態後來導致了混亂。當少皞衰落時，「九黎亂德」，使得「民神雜糅，不可方物」。人們和神祇有了相同的地位，導致人們輕慢神聖，神祇也輕易干預人間，不再降福，反而招致禍災。面對這種混亂局面，顓頊帝（黃帝的繼承者之一）對天地間的秩序進行了一次大整頓。他命令兩位孫子，即南正「重」和火正「黎」，分別負責不同的職責。「重」負責「司天以屬神」，意思是將天界的管理權歸屬神明，同時，傳說中他用雙手將天奮力上舉，使天地分離。「黎」負責「司地以屬民」，意思是將地界的管理權歸屬人類，同時，他用雙手將地盡力下壓，進一步拉開天地間的距離。「絕地天通」的結果是天地之間的距離越來越大，除了極少數的特殊通道（如崑崙天梯），所有連結天地的通道都被隔斷了。此後，「神人不經『重』『黎』許可便不能夠隨便上天下地」，神與人之間的界限變得明確，恢復了「民神異業，敬而不瀆」的舊秩序。《尚書·呂刑》中也提到「乃命重黎，絕地天通，罔有降格」，意味著天上神明不再降臨於地，地上生靈也無法達到天界，彼此之間明確不再干擾。儘管「絕地天通」沒有涉及建造一座實體的高塔，但它與巴別塔故事的核心主題有異曲同工之妙：兩者都描述了神權對人類試圖「通天」或神人混雜狀態的干預，並最終導致了人與神（或天界）之間隔閡的產生。巴別塔故事導致語言混亂和人類分散，而「絕地天通」則導致人神職責分離和天地通道阻斷，皆為建立新的秩序，限制了人與神之間過去的自由往來。凸顯了巴別塔故事的廣泛文化共鳴。
+                                </li>
+                            </ul>
                         </div>
-                        <div class="sop-item">
-                            <article class="collapsible-card argument-card">
-                                <h3><span class="sop-number">5. </span>目標 <span class="toggle-indicator">(+)</span></h3>
-                                <div class="argument-content" style="display: none;">
-                                    <p>本分析的目標是：</p>
+                    </article>
+                    <article class="argument-card collapsible-card">
+                        <h3>
+                            3. 考古學的科技驅動與持續探索
+                            <span class="toggle-indicator">(+)</span>
+                        </h3>
+                        <div class="argument-content" style="display: none">
+                            <p>
+                                <strong>定義：</strong
+                                >此論點闡述了考古學如何從傳統發掘過渡到融合現代高科技工具，以更精準、全面地揭示巴比倫的奧秘，不斷推動對古文明的理解。
+                            </p>
+                            <p><strong>方法/步驟：</strong></p>
+                            <ol>
+                                <li>
+                                    早期艱辛發掘：羅伯特·科爾德韋長達18年的堅持不懈的挖掘工作，儘管條件艱苦，卻為後世打下了基礎。
+                                </li>
+                                <li>
+                                    泥板文獻的保存與解讀：運用全息術將珍貴的楔形文字泥板數位化並儲存於玻璃板上，便於全球學者協作翻譯和研究，對抗時間的侵蝕。
+                                </li>
+                                <li>
+                                    廣域偵測與三維重建：利用冷戰時期開發的偵察衛星拍攝的空拍照片識別地下建築的輪廓，輔以電腦模型與雷射切割技術進行大規模城市與建築的實驗性重建，校正古人的測量誤差。
+                                </li>
+                            </ol>
+                            <p><strong>例子：</strong></p>
+                            <ul>
+                                <li>
+                                    <strong>泥板文獻的數位化：</strong
+                                    >德國明斯特物理研究所開發的全息術能以極高解析度掃描並儲存泥板上的楔形文字，讓學者無需觸碰原件即可詳細研究，並透過網路分享，促進國際合作。
+                                </li>
+                                <li>
+                                    <strong>衛星影像輔助考古：</strong
+                                    >偵察衛星拍攝的伊拉克地區影像，能夠透過土壤顏色或植被的微小變化，揭示古代巴比倫城牆和建築的地下輪廓，甚至顯示出巴別塔的方形基座。
+                                </li>
+                                <li>
+                                    <strong>城市模型重建：</strong
+                                    >科學家們運用雷射切割技術，以1:100的比例重建巴比倫城牆，驗證了希羅多德尺寸記載的誇大，並精確描繪出城市街道的直線網格佈局，展現其作為「巨大堡壘」的設計。
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="section" id="detailed-arguments">
+                    <h2>📄 論點詳述</h2>
+
+                    <div class="image-container">
+                        <img
+                            src="https://cdn.80.lv/api/upload/post/5296/images/5d2cf2b18762d/widen_2440x0.jpg"
+                            alt="巴比倫古城重建圖像"
+                            style="
+                                max-width: 100%;
+                                height: auto;
+                                display: block;
+                                margin: 20px auto;
+                                border-radius: 8px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            "
+                        />
+                        <p class="image-caption">
+                            巴比倫古城的想像重建，展現其宏偉的城牆與建築。
+                        </p>
+                    </div>
+                    <article class="argument-card collapsible-card">
+                        <h3>
+                            1. 巴比倫的宏偉與尼布甲尼撒的遺產
+                            <span class="toggle-indicator">(+)</span>
+                        </h3>
+                        <div class="argument-content" style="display: none">
+                            <p>
+                                巴比倫，這片位於底格里斯河與幼發拉底河之間美索不達米亞平原上的古老城市，在約2500年前的尼布甲尼撒二世統治下，被打造為舉世聞名的奇觀之城。這位來自幼發拉底河畔的國王，留下了大量傳奇性的建築，這些建築超越了純粹的功能性，成為了權力、信仰和高度文明的象徵。
+                            </p>
+                            <h4>城市防禦與規劃</h4>
+                            <p>
+                                巴比倫的城市防禦系統是一項工程奇蹟。它擁有一套雙層城牆，高達12公尺，寬度足以與現代高速公路匹敵，將整個城市區域完全屏蔽起來。這些城牆不僅巨大，且其建造方式在當時的軍事技術條件下，使得城市幾乎堅不可摧。考古模型實驗顯示，巴比倫的街道呈現完美的直線網格狀，如同現代美國的城市規劃，但其核心差異在於，巴比倫被設計為一個巨大的堡壘，一個讓居住在平頂房屋中的巴比倫人能獲得巨大安全感和自信心的城市。攻城戰的石刻浮雕展示了巴比倫人如何運用戰鬥塔、金屬盔甲、彈弓等先進軍事裝備，配合精密的攻擊策略和圍城戰術，以及上千名弓箭手發射的強大穿透力箭矢，成功攻陷耶路撒冷等堅固城池。這顯示了巴比倫在軍事工程和策略上的卓越。
+                            </p>
+                            <h4>伊什塔爾城門與釉面磚技術</h4>
+                            <p>
+                                在巴比倫眾多建築奇蹟中，獻給女神伊什塔爾的藍色城門無疑是最引人注目的傑作之一。考古學家科爾德韋被其磚塊的獨特美麗所深深吸引。這座城門由兩萬多塊鮮豔的藍色釉面磚覆蓋，磚上雕刻著神祇的動物伴侶形象，例如獅子、龍和公牛，這些肖像引導著進入城市中心的每一位訪客。這種釉面磚技術在2500年前可謂一項技術傑作。化學家斯特凡·費澤與陶瓷專家安德烈斯·費澤透過光譜分析揭示了其奧秘：首先將鉀鹼與矽砂熔合成一種名為「玻璃漿」的基礎釉料。隨後，加入微量的鈷和氧化銅，這些化學物質的精妙組合產生了鮮明的藍色。最困難的挑戰在於，巴比倫人如何精確稱量這些金屬氧化物，並在燒製過程中維持950°C至1000°C的恆定高溫，這在當時缺乏精密儀器設備的時代，無疑是頂尖的技術成就。
+                            </p>
+                            <h4>空中花園的謎團</h4>
+                            <p>
+                                傳說中的巴比倫空中花園，被列為古代世界七大奇蹟之一，據說是尼布甲尼撒為其情婦薩米拉米斯公主所建。儘管其歷史真實性長期備受爭議，許多學者認為其僅是後人的想像，但現代科學家透過建造工作模型，已能重建其結構，並證明其在技術上是可行的。這項建築面臨的最大問題是防漏處理，巴比倫人可能嘗試了多種方法，如使用鉛板、瀝青塗層、黏土層以及額外的拱頂結構。其灌溉系統也十分複雜，可能透過螺旋輸送器將幼發拉底河的水提升至最高層，然後水再沿著梯田滲透而下。這座建築的穩定性本身就是一個奇蹟，它需要巨大的牆體來支撐，並考量到樹根可能深入土壤25公尺，這顯示了巴比倫人在水利和建築工程上的超前思維。儘管公主本人在歷史上難以追溯，但空中花園作為「地球上的天堂」的古老夢想，已成為這座宏偉大都會的浪漫象徵。
+                            </p>
+                        </div>
+                    </article>
+                    <article class="argument-card collapsible-card">
+                        <h3>
+                            2. 神話與歷史的交織：以巴別塔為核心
+                            <span class="toggle-indicator">(+)</span>
+                        </h3>
+                        <div class="argument-content" style="display: none">
+                            <p>
+                                巴比倫，不僅是物質文明的巔峰，更是神話與傳說的沃土。其中，巴別塔無疑是其最為人熟知且最具象徵意義的符號，它連接了聖經敘事、古代歷史學家的記載，以及世界各地相似的文化傳說，呈現出歷史與神話的複雜交織。巴比倫與巴別塔之間的關係是歷史事實、考古發現與宗教神話複雜交織的結果。以下是兩者關聯的核心原因：
+                            </p>
+                            <ol>
+                                <li>
+                                    <strong>地理位置與歷史語境：</strong>
                                     <ul>
-                                        <li>闡明巴比倫的歷史與神話：區分圍繞巴比倫，特別是尼布甲尼撒二世時期的真實成就，以及巴別塔等流傳甚廣的神話敘事。</li>
-                                        <li>展示考古學的貢獻：突顯現代考古學，包括運用高科技手段，如何從廢墟中挖掘知識，重建城市面貌，並修正過去的歷史誤解。</li>
-                                        <li>解析巴比倫的技術與文化成就：深入探討巴比倫在建築、天文、醫學和文字方面的創新與精湛技藝。</li>
-                                        <li>探索巴比倫衰落的根源：理解導致這座偉大城市最終走向滅亡的內外因素。</li>
+                                        <li>
+                                            巴比倫位於底格里斯河與幼發拉底河之間的美索不達米亞平原，即今天的伊拉克境內，被譽為「文明的搖籃」。大約在2500年前，尼布甲尼撒二世將巴比倫打造成一座舉世聞名的奇觀之城。
+                                        </li>
+                                        <li>
+                                            《聖經》中的巴別塔故事發生在「示拿地區」，該地區與古蘇美爾地區，即後來巴比倫帝國的所在範圍相符。因此，故事的地理背景直接指向了巴比倫。
+                                        </li>
                                     </ul>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="sop-item">
-                            <article class="collapsible-card argument-card">
-                                <h3><span class="sop-number">6. </span>限制 <span class="toggle-indicator">(+)</span></h3>
-                                <div class="argument-content" style="display: none;">
-                                    <p>本分析受限於以下因素：</p>
+                                </li>
+                                <li>
+                                    <strong>詞源學的連結：</strong>
                                     <ul>
-                                        <li>資料來源限制：主要依賴一份YouTube紀錄片摘錄和一份維基百科條目，兩者在深度和廣度上各有側重，可能無法提供所有細節。</li>
-                                        <li>證據的殘缺性：許多古代建築僅存基礎和瓦礫，需透過推測與重建來還原其原貌。</li>
-                                        <li>語言與文化的隔閡：對楔形文字的解讀仍是長期而艱鉅的任務，大量泥板有待翻譯。</li>
-                                        <li>傳說與史實的模糊界限：古人的記述（如希羅多德）常夾雜想像，需要現代考古學來驗證和校正。</li>
-                                        <li>地理與政治因素：考古發掘受限於當地的地理條件和政治穩定性。</li>
+                                        <li>
+                                            在《聖經》中，巴別塔的故事解釋了人類語言多樣化的起源，而「巴別」（Babel）這個名字在希伯來語中被解釋為「混亂」（balal）。
+                                        </li>
+                                        <li>
+                                            然而，從阿卡德語來看，「巴別」（Bab-ilu）的本意卻是「上帝之門」（Gate
+                                            of
+                                            God）。在「七十士譯本」中，希伯來語的「Babel」對應的希臘文就是「巴比倫」（Βαβυλὼν）。這種詞源上的雙重意義，使得「巴別」這個概念直接與「巴比倫」這座城市緊密相連。
+                                        </li>
                                     </ul>
-                                </div>
-                            </article>
+                                </li>
+                                <li>
+                                    <strong
+                                        >考古學的印證與「埃特曼安吉神廟」：</strong
+                                    >
+                                    <ul>
+                                        <li>
+                                            根據許多現代學者的看法，聖經中巴別塔的故事，很可能受到了巴比倫城中一座名為埃特曼安吉神廟（Etemenanki
+                                            temple，蘇美爾語意為「天地之基神廟」，一座獻給巴比倫主神馬爾杜克的七層高塔廟，被視為巴別塔的靈感來源）的影響。
+                                        </li>
+                                        <li>
+                                            這座宏偉的塔廟是獻給巴比倫主神馬爾杜克的，後期由新巴比倫帝國國王那波帕拉薩爾和尼布甲尼撒二世重建。2011年發現的「巴別石柱塔」（Babel
+                                            Stele）畫作，追溯至尼布甲尼撒二世時期，提供了迄今最早的埃特曼安吉神廟圖像證據。
+                                        </li>
+                                        <li>
+                                            衛星空拍圖也顯示，這座傳說中的建築基座是方形的階梯金字塔，高度可能約為100公尺，而非中世紀畫家所繪的圓形塔樓，這修正了長期以來的藝術想像，並將其定位在巴比倫的實際遺址上。古代希臘歷史學家希羅多德在遊歷巴比倫時，也曾描述過這座巨大塔樓的尺寸，儘管他對其用途只能推測。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>共同的象徵意義：</strong>
+                                    <ul>
+                                        <li>
+                                            巴別塔不僅是一個地理和歷史概念，它更成為一個強大的文化符號，代表著人類「通天」的野心、傲慢，以及隨後因上帝介入導致的語言混亂和人類分散。
+                                        </li>
+                                        <li>
+                                            巴比倫這座城市本身，在《舊約》中也常被視為「不敬與傲慢」的象徵，與巴別塔的故事主題不謀而合。因此，無論是實際的建築（埃特曼安吉神廟）還是其在聖經中的描述，巴別塔都與巴比倫這座傳奇大都會的形象緊密不可分，共同構成了其宏偉與悲劇的敘事。
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <h4>巴別塔的聖經敘事與解讀</h4>
+                            <p>
+                                巴別塔的故事源於《舊約全書·創世紀篇》，講述了大洪水之後，一群只說一種語言的人來到示拿地區（今天的伊拉克），決定建造一座城市和一座「能夠通天的」高塔，以傳播自己的名聲，免得被分散到世界各地。上帝見此情景，擔憂人類因過度自由而肆意妄為，便打亂了他們的語言，使他們無法溝通，並將他們分散到世界各地，城市和高塔的建造也因此停止。這座城市因此得名「巴別」，在希伯來語中意為「混亂」。
+                            </p>
+                            <p>
+                                這個故事被視為一種釋源體裁，旨在解釋人類語言多樣化的起源，以及上帝與人之間的權力關係。在早期猶太解讀中，例如弗拉維奧·約瑟夫斯的《猶太古史》，暴君寧錄被描繪成建造巴別塔的主謀，其動機是傲慢地反抗上帝。然而，現代學者也將此解讀為上帝對人類傲慢的懲罰，同時也是文化多樣性的緣由，將巴別塔視為「文明的搖籃」，而非單純的罪惡之源。
+                            </p>
+                            <h4>巴別塔的考古學連結：埃特曼安吉神廟</h4>
+                            <p>
+                                現代考古學家和學者普遍認為聖經中的巴別塔故事很可能受到巴比倫城中一座名為埃特曼安吉神廟的影響。這座由新巴比倫帝國國王那波帕拉薩爾和尼布甲尼撒二世重建的塔廟，高達91公尺，曾是獻給馬爾杜克神的宏偉建築。雖然它在亞歷山大大帝時期被拆毀，但2011年發現的「巴別石柱塔」畫作提供了迄今最早的圖像證據。
+                            </p>
+                            <p>
+                                關於巴別塔的實際形狀，衛星空拍圖提供了關鍵線索。它顯示這座傳奇建築的基座是方形的，而不是中世紀畫家經常描繪的圓形。這證明了巴別塔實際上是一個方形階梯金字塔，高度可能約為100公尺，修正了長期以來的藝術想像。
+                            </p>
+                            <h4>跨文化中語言分化的普世神話</h4>
+                            <p>
+                                巴別塔的故事並非孤例，世界各地流傳著許多與之相似的神話，探討語言分化或通天建築。
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>蘇美爾神話：</strong
+                                    >在蘇美爾故事《恩麥卡爾和阿拉塔王》中，烏魯克的恩麥卡爾曾懇求神恩基恢復人類居住地區的語言統一性，顯示了對「單一語言」黃金時代的嚮往。
+                                </li>
+                                <li>
+                                    <strong>伊斯蘭傳統：</strong
+                                    >《古蘭經》中也有類似法老命哈曼建造高塔欲見摩西的情節，另有敘事提到人類因大風聚集於「巴比爾」之地，上帝在此地分派了不同語言，隨後將人類分散。
+                                </li>
+                                <li>
+                                    <strong>愛爾蘭傳說：</strong
+                                    >在愛爾蘭文獻中，傳奇國王費尼烏斯·法爾薩從被混亂的語言中選取精華，創造了愛爾蘭語的前身戈伊德爾語。
+                                </li>
+                                <li>
+                                    <strong>美洲與非洲傳說：</strong
+                                    >中美洲的喬魯拉大金字塔與巴別塔有相似傳說，如巨人在陽光首次照耀地面時建造通天高塔，引發天神震怒而摧毀並分散巨人。在非洲，恩加米湖附近的居民流傳著惡人堆疊桅杆追隨造物主，最終被倒塌桅杆砸死的傳說。剛果和坦尚尼亞也有類似堆疊木棍欲登月卻失敗的故事。
+                                </li>
+                                <li>
+                                    <strong>中國《尚書》的「絕地天通」：</strong
+                                    >中國古代神話中，黃帝時代「民神雜糅」，人神可以自由往來天地之間。顓頊帝命重和黎分別托天按地，使得天地距離越來越大，且人神不得隨意往來。這與巴別塔導致人類無法「通天」並被分散，有異曲同工之妙，反映了人類對「秩序」和「分隔」的共同理解。
+                                </li>
+                            </ul>
+                            <p>
+                                這些跨文化的相似性，強調了巴別塔不僅僅是一個聖經故事，更是一個普世性的文化原型，反映了人類對語言、秩序和權力界限的共同思考。
+                            </p>
                         </div>
+                    </article>
+                    <article class="argument-card collapsible-card">
+                        <h3>
+                            3. 考古學的科技驅動與持續探索
+                            <span class="toggle-indicator">(+)</span>
+                        </h3>
+                        <div class="argument-content" style="display: none">
+                            <p>
+                                巴比倫的考古發掘是一場漫長而艱辛的旅程，從19世紀的古物尋寶，逐步演變為由現代科技驅動的系統性科學探索。這些創新方法不僅幫助考古學家從瓦礫中「復活」了巴比倫，更修正了許多流傳千年的誤解。
+                            </p>
+                            <h4>羅伯特·科爾德韋的拓荒性發掘</h4>
+                            <p>
+                                德國考古學家羅伯特·科爾德韋在20世紀初期扮演了關鍵角色。他在古巴比倫遺址上發現的只有被沙漠黃沙覆蓋的土丘和碎石。然而，科爾德韋堅信此處埋藏著傳奇的巴比倫，並投入了18年的時間，甚至橫跨第一次世界大戰，幾乎不間斷地進行挖掘。他的工作很快就證實了他的遠見：出土的磚塊上刻著「我尼布甲尼撒做了前所未有的事」的楔形文字，這正是復興巴比倫的證明。科爾德韋的繼任者至今仍在伊拉克延續著這項百年考古之旅。
+                            </p>
+                            <h4>楔形文字泥板的保存與解讀</h4>
+                            <p>
+                                楔形文字泥板是理解巴比倫文明的關鍵。巴比倫人是狂熱的書寫者，他們記錄了從日常信件到文學、神話、占星學的一切知識。在塞帕爾地區發現的圖書館，其300多塊泥板是無價的知識寶庫，描述了儀式、習俗、神話與政治。然而，這些古老文本面臨著崩解的風險，溫度和濕度的波動會使黏土破碎，導致知識喪失。
+                            </p>
+                            <p>
+                                為此，現代科學家引入了全息術等高科技手段來保存這些遺產。在德國明斯特的物理研究所開發的這項技術，透過雷射掃描泥板表面，利用一系列稜鏡和鏡子曝光照相底片，然後透過特殊定影劑顯影並保存。這項技術產生的高解析度全息圖像，不僅能讓科學家在顯微鏡下檢查個別楔形文字而不損壞原件，更能透過網際網路傳播，讓全球的解讀團隊協同合作，使古老的東方知識得以永遠儲存。
+                            </p>
+                            <h4>衛星影像與實驗考古學的應用</h4>
+                            <p>
+                                冷戰時期開發的偵察衛星，其高空拍攝的空拍照片成為現代考古學家的寶貴資產。專家可以從270公里高空拍攝的巴比倫遺址影像中，透過顏色或植被的變化，辨識出地下潛藏的古代建築輪廓。例如，衛星影像首次清楚地展示了巴比倫的完整城市範圍，其面積是今天重建部分的60多倍，揭示了尼布甲尼撒城牆的巨大規模。
+                            </p>
+                            <p>
+                                這些高科技影像更修正了歷史記載的誤區。例如，衛星圖清楚顯示，傳說中的巴別塔並非如中世紀畫家所描繪的圓形塔樓，而是方形階梯金字塔，高度可能約100公尺。
+                            </p>
+                            <p>
+                                實驗考古學則將這些發現轉化為實際模型。科學家們利用精密的雷射切割技術，以1:100的比例重建巴比倫城牆的城垛和磚牆細節。這項工作明確顯示，希羅多德記載的96公里城牆周長存在嚴重誇大，實際長度可能約為19公里。此外，模型也指出，除了大型代表性建築，大都會的磚房通常只有一到兩層。這些技術不僅降低了認知負荷，也提升了我們對古巴比倫城市設計和規模的理解，讓這座傳奇都市從傳說走向可觸摸的真實。
+                            </p>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="section" id="prayer">
+                    <h2>🙏 我的禱告</h2>
+                    <div class="card">
+                        <p>
+                            親愛的天父，我們謙卑地來到祢施恩的寶座前，<br />
+                            將這份對文化、對歷史、對人類未來的深切關懷呈獻在祢面前。<br />
+                            祢是那位超越時間、空間，掌管萬有的真神，<br />
+                            祢的智慧深不可測，祢的愛永不改變。<br />
+                            在這變幻莫測的世界中，我們尋求祢那深邃的平安、<br />
+                            堅定的盼望與溫柔的安慰，深知祢的話語是我們生命的力量，<br />
+                            引導我們穿越如自然般變化的生命軌跡，最終得見突破與新盼。
+                        </p>
+
+                        <p>
+                            主啊，我們為世上所有寶貴的文化遺產向祢禱告，<br />
+                            特別是那些如巴比倫泥板文獻般，歷經風霜、瀕臨失落的古代文明知識。<br />
+                            祢曾透過約伯教導我們，智慧是何等難尋、其價值無人能知
+                            (約伯記 28章12至13節, 20-21)。<br />
+                            然而，祢也將察明萬事的能力賜予人類。我們懇求祢，<br />
+                            將超越時代的智慧和創新的科技賜予人類，好比全息術這樣的前瞻技術，<br />
+                            使我們能有效、安全地保存這些人類共同的遺跡。<br />
+                            願這些跨越千年的智慧光芒，不僅得以延續，更能持續啟迪後世，<br />
+                            讓我們從中學習、成長，明白祢在歷史長河中的作為，展現其歷久彌新的價值。
+                        </p>
+
+                        <p>
+                            我們也特別為那些孜孜不倦、在艱困中探索真相的考古學家和歷史學家代求。<br />
+                            他們如同忠實的僕人，在烈日下的沙漠中挖掘，<br />
+                            在塵封的博物館裡細心翻譯，在精密儀器前分析每一片殘骸，<br />
+                            只為揭示祢所隱藏的奧秘，察明歷史的根由。<br />
+                            正如箴言 25章2節
+                            所說：「將事隱藏，是神的榮耀；將事察明，是君王的榮耀。」<br />
+                            我們禱告祢，保守他們在艱難的環境中，賜予他們充足的資助與支持，<br />
+                            讓他們能勇敢而審慎地辨明傳說與事實，並以清晰、客觀且具洞察力的方式，<br />
+                            將這些寶貴的知識傳達給全人類，避免謬誤與偏見的煩憂。
+                        </p>
+
+                        <p>
+                            父啊，我們回顧巴別塔的教訓，看見人類因傲慢與隔閡而帶來的分裂。<br />
+                            我們承認，在我們的語言、文化、信仰與意識形態之間，<br />
+                            仍存在著重重的死結。<br />
+                            主啊，我們懇求祢幫助我們學習謙卑，正如撒迦利亞書
+                            8章16節 所教導：<br />
+                            「各人與鄰舍說實話，在城門口按真實公平判斷，使人和睦。」<br />
+                            願祢賜予我們一顆開放的心，深度理解並尊重彼此的差異，<br />
+                            化解因誤解和偏見所造成的衝突與分裂。<br />
+                            願人類能夠超越這些阻礙，團結一心，共同為建造一個更和諧、互助、<br />
+                            充滿同理心的世界而努力，不再重蹈因自大而導致「通天之塔」崩塌的慘烈。
+                        </p>
+
+                        <p>
+                            主啊，我們的心為那飽受戰亂之苦的伊拉克地區感到沉重，<br />
+                            那裡是古巴比倫的所在地，卻也因衝突而阻礙了許多神聖的考古與文化保護工作。<br />
+                            正如耶利米書 29章7節
+                            的話語，祢教導我們要為我們所在的城市求平安。<br />
+                            我們懇求祢，將長久而深遠的平安與穩定賜予伊拉克，<br />
+                            使當地人民能夠安全地重建家園，擺脫戰火的枷鎖。<br />
+                            願考古學家們能在安全的環境下，繼續他們神聖的探索使命，<br />
+                            揭示更多古文明的奧秘，並保護這些全人類共有的寶貴文化遺產免於進一步的失落。<br />
+                            願和平的曙光能在那片古老的土地上重新振作。
+                        </p>
+
+                        <p>
+                            最後，我們為人類對「真相」的謙卑探索與學習向祢禱告。<br />
+                            主啊，我們知道祢的智慧是深奧的，人類的知識仍待明了。<br />
+                            從古老的史料，到哲學的辯證，再到聖經的道德訓誡，<br />
+                            乃至現代科技的驗證，這一切都提醒我們，對真理的理解<br />
+                            是一個不斷演進、永無止境的真道。<br />
+                            我們懇求祢賜予我們一顆謙卑的心，承認知識的有限性，<br />
+                            並持續以開放、批判且充滿敬畏的態度去探索和思考。<br />
+                            願我們能避免固步自封、輕易下定論，永遠對未知的奧秘抱持著好奇與探索之心，<br />
+                            因我們深知，最終的真理由祢顯照。
+                        </p>
+
+                        <p>
+                            主啊，感謝祢垂聽我們的禱告。<br />
+                            願這份代求能觸動人心，如同清泉滋養乾涸的荒草。<br />
+                            願我們在尋求古老智慧的過程中，在跨越隔閡的努力中，<br />
+                            在追求和平的盼望中，都深深經歷祢的光照。<br />
+                            願祢的名在全地被高舉，願祢的旨意行在地上，如同行在天上，<br />
+                            帶領全人類走向最終的合一與真正的真道。<br />
+                            奉主耶穌基督的聖名禱告，真心信靠。阿們。
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>綜合報告 - 基於對巴比倫歷史與神話的分析</p>
+                    <div class="footer-links">
+                        <a href="#executive-summary">執行摘要</a>
+                        <a href="#background">背景</a>
+                        <a href="#themes-conclusions">主題與結論</a>
+                        <a href="#core-arguments">核心論點</a>
+                        <a href="#detailed-arguments">論點詳述</a>
                     </div>
                 </div>
-            </section>
+            </footer>
+        </div>
 
-            <section class="section" id="outline">
-                <h2>📋 結構大綱/流程圖</h2>
-                <div class="card">
-                    <p>我的思考流程可以視覺化為一個層層遞進的分析模型，旨在從宏觀到微觀、從歷史到神話，全面解構巴比倫文明。</p>
-                    <div class="svg-container">
-                        <img src="../assets/svg/flowchart.svg" alt="Flowchart of the analysis model"
-                            style="max-width: 100%; height: auto;">
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="themes-conclusions">
-                <h2>🎯 主題與結論</h2>
-                <div class="card">
-                    <h3>主題</h3>
-                    <p>本報告的核心主題是古巴比倫文明的宏偉與其神話傳說的持續影響力，以及現代考古學如何運用創新方法，在歷史事實與文化記憶之間穿梭，以重構這座傳奇都市的真實面貌。我們將聚焦於尼布甲尼撒二世治下的巴比倫，其卓越的建築、科技與文化成就，同時深入探討巴別塔作為一個核心符號，如何在不同文明中被解釋與傳承。
-                    </p>
-                    <h3>結論</h3>
-                    <p>我的分析得出以下結論：</p>
-                    <ol>
-                        <li><strong>巴比倫是古代世界的工程與文化奇蹟：</strong>在尼布甲尼撒二世的統治下，巴比倫發展出令人驚嘆的技術和藝術，例如其堅固的城牆、鮮豔的伊什塔爾城門釉面磚技術、以及先進的天文與醫學知識。這些成就超越了當時的普遍認知，使其成為名副其實的世界奇觀。
-                        </li>
-                        <li><strong>神話與歷史的複雜共生：</strong>巴比倫的形象在很大程度上由聖經故事和古希臘歷史記述所塑造，其中不乏誇大與偏見。巴別塔作為一個典型的例子，其聖經描述與現實中埃特曼安吉神廟等建築的關聯，以及其在多個文化中語言分化神話的相似性，都證明了歷史與神話之間存在著深刻且複雜的互動。
-                        </li>
-                        <li><strong>考古學是揭示真相的關鍵：</strong>從19世紀末羅伯特·科爾德韋的長期發掘，到現代利用全息術保護泥板和衛星影像定位古城遺址，考古學家們不斷採用創新技術，從塵土中重構巴比倫的真實尺寸、城市布局和日常生活。這些發現不僅修正了古人的錯誤記載，也為我們理解一個曾經輝煌的文明提供了具體而詳盡的見解。
-                        </li>
-                        <li><strong>巴比倫的衰落是一個內外兼具的過程：</strong>儘管巴比倫擁有看似堅不可摧的防禦工事，其最終的衰落卻被歸因於內部權力的崩潰，而非外部敵人的攻陷。這與聖經中關於其荒蕪的預言形成了一種歷史上的巧合，使其持續作為一個永恆的謎團存在。
-                        </li>
-                    </ol>
-                    <h3>範圍</h3>
-                    <p>本報告的分析範圍主要集中於尼布甲尼撒二世統治下的巴比倫，以及圍繞巴別塔這一核心符號的聖經、歷史和考古學討論。我將著重於巴比倫的實體成就、其文化象徵意義、現代考古發現如何挑戰和證實歷史記錄，以及這一切如何共同描繪出一個充滿魅力卻又神秘的古老文明。
-                    </p>
-                </div>
-            </section>
-
-            <section class="section" id="core-arguments">
-                <h2>💡 核心論點卡片</h2>
-                <article class="argument-card collapsible-card">
-                    <h3>1. 巴比倫的宏偉與尼布甲尼撒的遺產 <span class="toggle-indicator">(+)</span></h3>
-                    <div class="argument-content" style="display: none;">
-                        <p><strong>定義：</strong>此論點探討了巴比倫在尼布甲尼撒二世統治下的非凡發展，使其成為古代世界的城市奇觀和文化燈塔，其建築與技術成就至今仍令人驚嘆。</p>
-                        <p><strong>方法/步驟：</strong></p>
-                        <ol>
-                            <li>城市基礎建設：分析其大規模的城牆系統，該系統被設計為堅不可摧的堡壘，給予居民安全感。</li>
-                            <li>建築藝術與工程：研究伊什塔爾城門的藝術風格及其背後的釉面磚技術，這是一種複雜且先進的化學與燒製工藝。</li>
-                            <li>文化象徵：探討空中花園這一傳說中七大奇蹟之一的建築，儘管其真實性有爭議，但模型證明了其在技術上的可行性。</li>
-                        </ol>
-                        <p><strong>例子：</strong></p>
-                        <ul>
-                            <li><strong>伊什塔爾城門：</strong>覆蓋著兩萬多塊鮮豔藍色釉面磚，描繪著受崇拜的動物形象，是尼布甲尼撒向神祇馬爾杜克和納布獻祭的標誌性作品，展現了高超的陶瓷與建築技術。
-                            </li>
-                            <li><strong>城市防禦工事：</strong>由12米高、寬如高速公路的雙層磚牆構成，配合戰鬥塔、投石車等先進軍事技術，使其在當時幾乎無懈可擊。</li>
-                            <li><strong>空中花園：</strong>儘管傳說色彩濃厚，但模型重建揭示了其可能採用的防漏（鉛板、瀝青、黏土層）和複雜灌溉系統（如螺旋輸送器），彰顯了巴比倫人在水利工程上的智慧。
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="argument-card collapsible-card">
-                    <h3>2. 神話與歷史的交織：以巴別塔為核心 <span class="toggle-indicator">(+)</span></h3>
-                    <div class="argument-content" style="display:none;">
-                        <p><strong>定義：</strong>此論點旨在分析巴比倫，特別是巴別塔，如何在不同文化和時間維度中，被塑造為歷史事實與宗教神話相互作用的中心，挑戰了人們對過去的單一理解。巴比倫與巴別塔之間的關係是歷史事實、考古發現與宗教神話複雜交織的結果。
-                        </p>
-                        <p><strong>方法/步驟：</strong></p>
-                        <ol>
-                            <li>聖經敘事與解讀：深入研究《創世紀》中關於巴別塔的故事，探討其作為語言分化和人類分散起源的解釋，以及對巴比倫「傲慢」的道德譴責。</li>
-                            <li>考古學連結：探究巴別塔傳說與巴比倫歷史建築（如埃特曼安吉神廟，一座獻給巴比倫主神馬爾杜克的七層高塔廟，被視為巴別塔的靈感來源）的可能關聯，包括地理位置、詞源學、考古印證與象徵意義。
-                            </li>
-                            <li>跨文化比較：比對巴別塔故事與蘇美爾、伊斯蘭、愛爾蘭及其他美洲、非洲神話中關於語言混亂或通天高塔的類似傳說，揭示其普世主題，包括中國《尚書》的「絕地天通」。</li>
-                        </ol>
-                        <p><strong>例子：</strong></p>
-                        <ul>
-                            <li><strong>《創世紀》中的巴別塔故事：</strong>一群人在大洪水後欲建造通天高塔以揚名立萬，上帝介入使其語言混亂，最終導致人類分散，城市停建。這是理解語言多樣性的釋源體裁故事。
-                            </li>
-                            <li><strong>埃特曼安吉神廟：</strong>巴比倫位於底格里斯河與幼發拉底河之間的美索不達米亞平原，即今天的伊拉克境內，被譽為「文明的搖籃」。大約在2500年前，尼布甲尼撒二世將巴比倫打造成一座舉世聞名的奇觀之城。《聖經》中的巴別塔故事發生在「示拿地區」，該地區與古蘇美爾地區，即後來巴比倫帝國的所在範圍相符。在《聖經》中，「巴別」（Babel）在希伯來語中被解釋為「混亂」（balal），但從阿卡德語來看，「巴別」（Bab-ilu）的本意卻是「上帝之門」（Gate
-                                of
-                                God）。這座宏偉的塔廟是獻給巴比倫主神馬爾杜克的，後期由新巴比倫帝國國王那波帕拉薩爾和尼布甲尼撒二世重建。2011年發現的「巴別石柱塔」畫作，追溯至尼布甲尼撒二世時期，提供了迄今最早的埃特曼安吉神廟圖像證據。衛星空拍圖也顯示，這座傳說中的建築基座是方形的階梯金字塔，高度可能約為100公尺，而非中世紀畫家所繪的圓形塔樓。古代希臘歷史學家希羅多德在遊歷巴比倫時，也曾描述過這座巨大塔樓的尺寸。巴別塔不僅是一個地理和歷史概念，它更成為一個強大的文化符號，代表著人類「通天」的野心、傲慢，以及隨後因上帝介入導致的語言混亂和人類分散。巴比倫這座城市本身，在《舊約》中也常被視為「不敬與傲慢」的象徵，與巴別塔的故事主題不謀而合。
-                            </li>
-                            <li><strong>全球語言分化神話：</strong>在蘇美爾神話《恩麥卡爾和阿拉塔王》、伊斯蘭傳統、愛爾蘭傳說乃至中國《尚書》的「絕地天通」中，都存在類似「統一語言被分化」或「天地通道被阻斷」的情節。中國《尚書》中的「絕地天通」是一個古代神話傳說，其核心意義是將天地之間的通道隔斷，使神與人分隔開來，結束了早期神人混雜的狀態，建立了新的宇宙秩序。在黃帝時代，存在著「民神雜糅」的現象，即神明可以自由地往來於天上人間，而人類也可以透過「天梯」，例如傳說中的崑崙山，自由地在天地之間穿梭。然而，這種神人雜處的狀態後來導致了混亂。當少皞衰落時，「九黎亂德」，使得「民神雜糅，不可方物」。人們和神祇有了相同的地位，導致人們輕慢神聖，神祇也輕易干預人間，不再降福，反而招致禍災。面對這種混亂局面，顓頊帝（黃帝的繼承者之一）對天地間的秩序進行了一次大整頓。他命令兩位孫子，即南正「重」和火正「黎」，分別負責不同的職責。「重」負責「司天以屬神」，意思是將天界的管理權歸屬神明，同時，傳說中他用雙手將天奮力上舉，使天地分離。「黎」負責「司地以屬民」，意思是將地界的管理權歸屬人類，同時，他用雙手將地盡力下壓，進一步拉開天地間的距離。「絕地天通」的結果是天地之間的距離越來越大，除了極少數的特殊通道（如崑崙天梯），所有連結天地的通道都被隔斷了。此後，「神人不經『重』『黎』許可便不能夠隨便上天下地」，神與人之間的界限變得明確，恢復了「民神異業，敬而不瀆」的舊秩序。《尚書·呂刑》中也提到「乃命重黎，絕地天通，罔有降格」，意味著天上神明不再降臨於地，地上生靈也無法達到天界，彼此之間明確不再干擾。儘管「絕地天通」沒有涉及建造一座實體的高塔，但它與巴別塔故事的核心主題有異曲同工之妙：兩者都描述了神權對人類試圖「通天」或神人混雜狀態的干預，並最終導致了人與神（或天界）之間隔閡的產生。巴別塔故事導致語言混亂和人類分散，而「絕地天通」則導致人神職責分離和天地通道阻斷，皆為建立新的秩序，限制了人與神之間過去的自由往來。凸顯了巴別塔故事的廣泛文化共鳴。
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="argument-card collapsible-card">
-                    <h3>3. 考古學的科技驅動與持續探索 <span class="toggle-indicator">(+)</span></h3>
-                    <div class="argument-content" style="display: none;">
-                        <p><strong>定義：</strong>此論點闡述了考古學如何從傳統發掘過渡到融合現代高科技工具，以更精準、全面地揭示巴比倫的奧秘，不斷推動對古文明的理解。</p>
-                        <p><strong>方法/步驟：</strong></p>
-                        <ol>
-                            <li>早期艱辛發掘：羅伯特·科爾德韋長達18年的堅持不懈的挖掘工作，儘管條件艱苦，卻為後世打下了基礎。</li>
-                            <li>泥板文獻的保存與解讀：運用全息術將珍貴的楔形文字泥板數位化並儲存於玻璃板上，便於全球學者協作翻譯和研究，對抗時間的侵蝕。</li>
-                            <li>廣域偵測與三維重建：利用冷戰時期開發的偵察衛星拍攝的空拍照片識別地下建築的輪廓，輔以電腦模型與雷射切割技術進行大規模城市與建築的實驗性重建，校正古人的測量誤差。</li>
-                        </ol>
-                        <p><strong>例子：</strong></p>
-                        <ul>
-                            <li><strong>泥板文獻的數位化：</strong>德國明斯特物理研究所開發的全息術能以極高解析度掃描並儲存泥板上的楔形文字，讓學者無需觸碰原件即可詳細研究，並透過網路分享，促進國際合作。
-                            </li>
-                            <li><strong>衛星影像輔助考古：</strong>偵察衛星拍攝的伊拉克地區影像，能夠透過土壤顏色或植被的微小變化，揭示古代巴比倫城牆和建築的地下輪廓，甚至顯示出巴別塔的方形基座。
-                            </li>
-                            <li><strong>城市模型重建：</strong>科學家們運用雷射切割技術，以1:100的比例重建巴比倫城牆，驗證了希羅多德尺寸記載的誇大，並精確描繪出城市街道的直線網格佈局，展現其作為「巨大堡壘」的設計。
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </section>
-
-            <section class="section" id="detailed-arguments">
-                <h2>📄 論點詳述</h2>
-
-                <div class="image-container">
-                    <img src="https://cdn.80.lv/api/upload/post/5296/images/5d2cf2b18762d/widen_2440x0.jpg"
-                        alt="巴比倫古城重建圖像"
-                        style="max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <p class="image-caption">巴比倫古城的想像重建，展現其宏偉的城牆與建築。</p>
-                </div>
-                <article class="argument-card collapsible-card">
-                    <h3>1. 巴比倫的宏偉與尼布甲尼撒的遺產 <span class="toggle-indicator">(+)</span></h3>
-                    <div class="argument-content" style="display: none;">
-                        <p>巴比倫，這片位於底格里斯河與幼發拉底河之間美索不達米亞平原上的古老城市，在約2500年前的尼布甲尼撒二世統治下，被打造為舉世聞名的奇觀之城。這位來自幼發拉底河畔的國王，留下了大量傳奇性的建築，這些建築超越了純粹的功能性，成為了權力、信仰和高度文明的象徵。
-                        </p>
-                        <h4>城市防禦與規劃</h4>
-                        <p>巴比倫的城市防禦系統是一項工程奇蹟。它擁有一套雙層城牆，高達12公尺，寬度足以與現代高速公路匹敵，將整個城市區域完全屏蔽起來。這些城牆不僅巨大，且其建造方式在當時的軍事技術條件下，使得城市幾乎堅不可摧。考古模型實驗顯示，巴比倫的街道呈現完美的直線網格狀，如同現代美國的城市規劃，但其核心差異在於，巴比倫被設計為一個巨大的堡壘，一個讓居住在平頂房屋中的巴比倫人能獲得巨大安全感和自信心的城市。攻城戰的石刻浮雕展示了巴比倫人如何運用戰鬥塔、金屬盔甲、彈弓等先進軍事裝備，配合精密的攻擊策略和圍城戰術，以及上千名弓箭手發射的強大穿透力箭矢，成功攻陷耶路撒冷等堅固城池。這顯示了巴比倫在軍事工程和策略上的卓越。
-                        </p>
-                        <h4>伊什塔爾城門與釉面磚技術</h4>
-                        <p>在巴比倫眾多建築奇蹟中，獻給女神伊什塔爾的藍色城門無疑是最引人注目的傑作之一。考古學家科爾德韋被其磚塊的獨特美麗所深深吸引。這座城門由兩萬多塊鮮豔的藍色釉面磚覆蓋，磚上雕刻著神祇的動物伴侶形象，例如獅子、龍和公牛，這些肖像引導著進入城市中心的每一位訪客。這種釉面磚技術在2500年前可謂一項技術傑作。化學家斯特凡·費澤與陶瓷專家安德烈斯·費澤透過光譜分析揭示了其奧秘：首先將鉀鹼與矽砂熔合成一種名為「玻璃漿」的基礎釉料。隨後，加入微量的鈷和氧化銅，這些化學物質的精妙組合產生了鮮明的藍色。最困難的挑戰在於，巴比倫人如何精確稱量這些金屬氧化物，並在燒製過程中維持950°C至1000°C的恆定高溫，這在當時缺乏精密儀器設備的時代，無疑是頂尖的技術成就。
-                        </p>
-                        <h4>空中花園的謎團</h4>
-                        <p>傳說中的巴比倫空中花園，被列為古代世界七大奇蹟之一，據說是尼布甲尼撒為其情婦薩米拉米斯公主所建。儘管其歷史真實性長期備受爭議，許多學者認為其僅是後人的想像，但現代科學家透過建造工作模型，已能重建其結構，並證明其在技術上是可行的。這項建築面臨的最大問題是防漏處理，巴比倫人可能嘗試了多種方法，如使用鉛板、瀝青塗層、黏土層以及額外的拱頂結構。其灌溉系統也十分複雜，可能透過螺旋輸送器將幼發拉底河的水提升至最高層，然後水再沿著梯田滲透而下。這座建築的穩定性本身就是一個奇蹟，它需要巨大的牆體來支撐，並考量到樹根可能深入土壤25公尺，這顯示了巴比倫人在水利和建築工程上的超前思維。儘管公主本人在歷史上難以追溯，但空中花園作為「地球上的天堂」的古老夢想，已成為這座宏偉大都會的浪漫象徵。
-                        </p>
-                    </div>
-                </article>
-                <article class="argument-card collapsible-card">
-                    <h3>2. 神話與歷史的交織：以巴別塔為核心 <span class="toggle-indicator">(+)</span></h3>
-                    <div class="argument-content" style="display:none;">
-                        <p>巴比倫，不僅是物質文明的巔峰，更是神話與傳說的沃土。其中，巴別塔無疑是其最為人熟知且最具象徵意義的符號，它連接了聖經敘事、古代歷史學家的記載，以及世界各地相似的文化傳說，呈現出歷史與神話的複雜交織。巴比倫與巴別塔之間的關係是歷史事實、考古發現與宗教神話複雜交織的結果。以下是兩者關聯的核心原因：
-                        </p>
-                        <ol>
-                            <li><strong>地理位置與歷史語境：</strong>
-                                <ul>
-                                    <li>巴比倫位於底格里斯河與幼發拉底河之間的美索不達米亞平原，即今天的伊拉克境內，被譽為「文明的搖籃」。大約在2500年前，尼布甲尼撒二世將巴比倫打造成一座舉世聞名的奇觀之城。
-                                    </li>
-                                    <li>《聖經》中的巴別塔故事發生在「示拿地區」，該地區與古蘇美爾地區，即後來巴比倫帝國的所在範圍相符。因此，故事的地理背景直接指向了巴比倫。</li>
-                                </ul>
-                            </li>
-                            <li><strong>詞源學的連結：</strong>
-                                <ul>
-                                    <li>在《聖經》中，巴別塔的故事解釋了人類語言多樣化的起源，而「巴別」（Babel）這個名字在希伯來語中被解釋為「混亂」（balal）。</li>
-                                    <li>然而，從阿卡德語來看，「巴別」（Bab-ilu）的本意卻是「上帝之門」（Gate of
-                                        God）。在「七十士譯本」中，希伯來語的「Babel」對應的希臘文就是「巴比倫」（Βαβυλὼν）。這種詞源上的雙重意義，使得「巴別」這個概念直接與「巴比倫」這座城市緊密相連。
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>考古學的印證與「埃特曼安吉神廟」：</strong>
-                                <ul>
-                                    <li>根據許多現代學者的看法，聖經中巴別塔的故事，很可能受到了巴比倫城中一座名為埃特曼安吉神廟（Etemenanki
-                                        temple，蘇美爾語意為「天地之基神廟」，一座獻給巴比倫主神馬爾杜克的七層高塔廟，被視為巴別塔的靈感來源）的影響。</li>
-                                    <li>這座宏偉的塔廟是獻給巴比倫主神馬爾杜克的，後期由新巴比倫帝國國王那波帕拉薩爾和尼布甲尼撒二世重建。2011年發現的「巴別石柱塔」（Babel
-                                        Stele）畫作，追溯至尼布甲尼撒二世時期，提供了迄今最早的埃特曼安吉神廟圖像證據。</li>
-                                    <li>衛星空拍圖也顯示，這座傳說中的建築基座是方形的階梯金字塔，高度可能約為100公尺，而非中世紀畫家所繪的圓形塔樓，這修正了長期以來的藝術想像，並將其定位在巴比倫的實際遺址上。古代希臘歷史學家希羅多德在遊歷巴比倫時，也曾描述過這座巨大塔樓的尺寸，儘管他對其用途只能推測。
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>共同的象徵意義：</strong>
-                                <ul>
-                                    <li>巴別塔不僅是一個地理和歷史概念，它更成為一個強大的文化符號，代表著人類「通天」的野心、傲慢，以及隨後因上帝介入導致的語言混亂和人類分散。</li>
-                                    <li>巴比倫這座城市本身，在《舊約》中也常被視為「不敬與傲慢」的象徵，與巴別塔的故事主題不謀而合。因此，無論是實際的建築（埃特曼安吉神廟）還是其在聖經中的描述，巴別塔都與巴比倫這座傳奇大都會的形象緊密不可分，共同構成了其宏偉與悲劇的敘事。
-                                    </li>
-                                </ul>
-                            </li>
-                        </ol>
-                        <h4>巴別塔的聖經敘事與解讀</h4>
-                        <p>巴別塔的故事源於《舊約全書·創世紀篇》，講述了大洪水之後，一群只說一種語言的人來到示拿地區（今天的伊拉克），決定建造一座城市和一座「能夠通天的」高塔，以傳播自己的名聲，免得被分散到世界各地。上帝見此情景，擔憂人類因過度自由而肆意妄為，便打亂了他們的語言，使他們無法溝通，並將他們分散到世界各地，城市和高塔的建造也因此停止。這座城市因此得名「巴別」，在希伯來語中意為「混亂」。
-                        </p>
-                        <p>這個故事被視為一種釋源體裁，旨在解釋人類語言多樣化的起源，以及上帝與人之間的權力關係。在早期猶太解讀中，例如弗拉維奧·約瑟夫斯的《猶太古史》，暴君寧錄被描繪成建造巴別塔的主謀，其動機是傲慢地反抗上帝。然而，現代學者也將此解讀為上帝對人類傲慢的懲罰，同時也是文化多樣性的緣由，將巴別塔視為「文明的搖籃」，而非單純的罪惡之源。
-                        </p>
-                        <h4>巴別塔的考古學連結：埃特曼安吉神廟</h4>
-                        <p>現代考古學家和學者普遍認為聖經中的巴別塔故事很可能受到巴比倫城中一座名為埃特曼安吉神廟的影響。這座由新巴比倫帝國國王那波帕拉薩爾和尼布甲尼撒二世重建的塔廟，高達91公尺，曾是獻給馬爾杜克神的宏偉建築。雖然它在亞歷山大大帝時期被拆毀，但2011年發現的「巴別石柱塔」畫作提供了迄今最早的圖像證據。
-                        </p>
-                        <p>關於巴別塔的實際形狀，衛星空拍圖提供了關鍵線索。它顯示這座傳奇建築的基座是方形的，而不是中世紀畫家經常描繪的圓形。這證明了巴別塔實際上是一個方形階梯金字塔，高度可能約為100公尺，修正了長期以來的藝術想像。
-                        </p>
-                        <h4>跨文化中語言分化的普世神話</h4>
-                        <p>巴別塔的故事並非孤例，世界各地流傳著許多與之相似的神話，探討語言分化或通天建築。</p>
-                        <ul>
-                            <li><strong>蘇美爾神話：</strong>在蘇美爾故事《恩麥卡爾和阿拉塔王》中，烏魯克的恩麥卡爾曾懇求神恩基恢復人類居住地區的語言統一性，顯示了對「單一語言」黃金時代的嚮往。
-                            </li>
-                            <li><strong>伊斯蘭傳統：</strong>《古蘭經》中也有類似法老命哈曼建造高塔欲見摩西的情節，另有敘事提到人類因大風聚集於「巴比爾」之地，上帝在此地分派了不同語言，隨後將人類分散。
-                            </li>
-                            <li><strong>愛爾蘭傳說：</strong>在愛爾蘭文獻中，傳奇國王費尼烏斯·法爾薩從被混亂的語言中選取精華，創造了愛爾蘭語的前身戈伊德爾語。</li>
-                            <li><strong>美洲與非洲傳說：</strong>中美洲的喬魯拉大金字塔與巴別塔有相似傳說，如巨人在陽光首次照耀地面時建造通天高塔，引發天神震怒而摧毀並分散巨人。在非洲，恩加米湖附近的居民流傳著惡人堆疊桅杆追隨造物主，最終被倒塌桅杆砸死的傳說。剛果和坦尚尼亞也有類似堆疊木棍欲登月卻失敗的故事。
-                            </li>
-                            <li><strong>中國《尚書》的「絕地天通」：</strong>中國古代神話中，黃帝時代「民神雜糅」，人神可以自由往來天地之間。顓頊帝命重和黎分別托天按地，使得天地距離越來越大，且人神不得隨意往來。這與巴別塔導致人類無法「通天」並被分散，有異曲同工之妙，反映了人類對「秩序」和「分隔」的共同理解。
-                            </li>
-                        </ul>
-                        <p>這些跨文化的相似性，強調了巴別塔不僅僅是一個聖經故事，更是一個普世性的文化原型，反映了人類對語言、秩序和權力界限的共同思考。</p>
-                    </div>
-                </article>
-                <article class="argument-card collapsible-card">
-                    <h3>3. 考古學的科技驅動與持續探索 <span class="toggle-indicator">(+)</span></h3>
-                    <div class="argument-content" style="display: none;">
-                        <p>巴比倫的考古發掘是一場漫長而艱辛的旅程，從19世紀的古物尋寶，逐步演變為由現代科技驅動的系統性科學探索。這些創新方法不僅幫助考古學家從瓦礫中「復活」了巴比倫，更修正了許多流傳千年的誤解。
-                        </p>
-                        <h4>羅伯特·科爾德韋的拓荒性發掘</h4>
-                        <p>德國考古學家羅伯特·科爾德韋在20世紀初期扮演了關鍵角色。他在古巴比倫遺址上發現的只有被沙漠黃沙覆蓋的土丘和碎石。然而，科爾德韋堅信此處埋藏著傳奇的巴比倫，並投入了18年的時間，甚至橫跨第一次世界大戰，幾乎不間斷地進行挖掘。他的工作很快就證實了他的遠見：出土的磚塊上刻著「我尼布甲尼撒做了前所未有的事」的楔形文字，這正是復興巴比倫的證明。科爾德韋的繼任者至今仍在伊拉克延續著這項百年考古之旅。
-                        </p>
-                        <h4>楔形文字泥板的保存與解讀</h4>
-                        <p>楔形文字泥板是理解巴比倫文明的關鍵。巴比倫人是狂熱的書寫者，他們記錄了從日常信件到文學、神話、占星學的一切知識。在塞帕爾地區發現的圖書館，其300多塊泥板是無價的知識寶庫，描述了儀式、習俗、神話與政治。然而，這些古老文本面臨著崩解的風險，溫度和濕度的波動會使黏土破碎，導致知識喪失。
-                        </p>
-                        <p>為此，現代科學家引入了全息術等高科技手段來保存這些遺產。在德國明斯特的物理研究所開發的這項技術，透過雷射掃描泥板表面，利用一系列稜鏡和鏡子曝光照相底片，然後透過特殊定影劑顯影並保存。這項技術產生的高解析度全息圖像，不僅能讓科學家在顯微鏡下檢查個別楔形文字而不損壞原件，更能透過網際網路傳播，讓全球的解讀團隊協同合作，使古老的東方知識得以永遠儲存。
-                        </p>
-                        <h4>衛星影像與實驗考古學的應用</h4>
-                        <p>冷戰時期開發的偵察衛星，其高空拍攝的空拍照片成為現代考古學家的寶貴資產。專家可以從270公里高空拍攝的巴比倫遺址影像中，透過顏色或植被的變化，辨識出地下潛藏的古代建築輪廓。例如，衛星影像首次清楚地展示了巴比倫的完整城市範圍，其面積是今天重建部分的60多倍，揭示了尼布甲尼撒城牆的巨大規模。
-                        </p>
-                        <p>這些高科技影像更修正了歷史記載的誤區。例如，衛星圖清楚顯示，傳說中的巴別塔並非如中世紀畫家所描繪的圓形塔樓，而是方形階梯金字塔，高度可能約100公尺。</p>
-                        <p>實驗考古學則將這些發現轉化為實際模型。科學家們利用精密的雷射切割技術，以1:100的比例重建巴比倫城牆的城垛和磚牆細節。這項工作明確顯示，希羅多德記載的96公里城牆周長存在嚴重誇大，實際長度可能約為19公里。此外，模型也指出，除了大型代表性建築，大都會的磚房通常只有一到兩層。這些技術不僅降低了認知負荷，也提升了我們對古巴比倫城市設計和規模的理解，讓這座傳奇都市從傳說走向可觸摸的真實。
-                        </p>
-                    </div>
-                </article>
-            </section>
-
-            <section class="section" id="prayer">
-                <h2>🙏 我的禱告</h2>
-                <div class="card">
-                    <p>親愛的天父，我們謙卑地來到祢施恩的寶座前，<br>
-                        將這份對文化、對歷史、對人類未來的深切關懷呈獻在祢面前。<br>
-                        祢是那位超越時間、空間，掌管萬有的真神，<br>
-                        祢的智慧深不可測，祢的愛永不改變。<br>
-                        在這變幻莫測的世界中，我們尋求祢那深邃的平安、<br>
-                        堅定的盼望與溫柔的安慰，深知祢的話語是我們生命的力量，<br>
-                        引導我們穿越如自然般變化的生命軌跡，最終得見突破與新盼。</p>
-
-                    <p>主啊，我們為世上所有寶貴的文化遺產向祢禱告，<br>
-                        特別是那些如巴比倫泥板文獻般，歷經風霜、瀕臨失落的古代文明知識。<br>
-                        祢曾透過約伯教導我們，智慧是何等難尋、其價值無人能知 (約伯記 28章12至13節, 20-21)。<br>
-                        然而，祢也將察明萬事的能力賜予人類。我們懇求祢，<br>
-                        將超越時代的智慧和創新的科技賜予人類，好比全息術這樣的前瞻技術，<br>
-                        使我們能有效、安全地保存這些人類共同的遺跡。<br>
-                        願這些跨越千年的智慧光芒，不僅得以延續，更能持續啟迪後世，<br>
-                        讓我們從中學習、成長，明白祢在歷史長河中的作為，展現其歷久彌新的價值。</p>
-
-                    <p>我們也特別為那些孜孜不倦、在艱困中探索真相的考古學家和歷史學家代求。<br>
-                        他們如同忠實的僕人，在烈日下的沙漠中挖掘，<br>
-                        在塵封的博物館裡細心翻譯，在精密儀器前分析每一片殘骸，<br>
-                        只為揭示祢所隱藏的奧秘，察明歷史的根由。<br>
-                        正如箴言 25章2節 所說：「將事隱藏，是神的榮耀；將事察明，是君王的榮耀。」<br>
-                        我們禱告祢，保守他們在艱難的環境中，賜予他們充足的資助與支持，<br>
-                        讓他們能勇敢而審慎地辨明傳說與事實，並以清晰、客觀且具洞察力的方式，<br>
-                        將這些寶貴的知識傳達給全人類，避免謬誤與偏見的煩憂。</p>
-
-                    <p>父啊，我們回顧巴別塔的教訓，看見人類因傲慢與隔閡而帶來的分裂。<br>
-                        我們承認，在我們的語言、文化、信仰與意識形態之間，<br>
-                        仍存在著重重的死結。<br>
-                        主啊，我們懇求祢幫助我們學習謙卑，正如撒迦利亞書 8章16節 所教導：<br>
-                        「各人與鄰舍說實話，在城門口按真實公平判斷，使人和睦。」<br>
-                        願祢賜予我們一顆開放的心，深度理解並尊重彼此的差異，<br>
-                        化解因誤解和偏見所造成的衝突與分裂。<br>
-                        願人類能夠超越這些阻礙，團結一心，共同為建造一個更和諧、互助、<br>
-                        充滿同理心的世界而努力，不再重蹈因自大而導致「通天之塔」崩塌的慘烈。</p>
-
-                    <p>主啊，我們的心為那飽受戰亂之苦的伊拉克地區感到沉重，<br>
-                        那裡是古巴比倫的所在地，卻也因衝突而阻礙了許多神聖的考古與文化保護工作。<br>
-                        正如耶利米書 29章7節 的話語，祢教導我們要為我們所在的城市求平安。<br>
-                        我們懇求祢，將長久而深遠的平安與穩定賜予伊拉克，<br>
-                        使當地人民能夠安全地重建家園，擺脫戰火的枷鎖。<br>
-                        願考古學家們能在安全的環境下，繼續他們神聖的探索使命，<br>
-                        揭示更多古文明的奧秘，並保護這些全人類共有的寶貴文化遺產免於進一步的失落。<br>
-                        願和平的曙光能在那片古老的土地上重新振作。</p>
-
-                    <p>最後，我們為人類對「真相」的謙卑探索與學習向祢禱告。<br>
-                        主啊，我們知道祢的智慧是深奧的，人類的知識仍待明了。<br>
-                        從古老的史料，到哲學的辯證，再到聖經的道德訓誡，<br>
-                        乃至現代科技的驗證，這一切都提醒我們，對真理的理解<br>
-                        是一個不斷演進、永無止境的真道。<br>
-                        我們懇求祢賜予我們一顆謙卑的心，承認知識的有限性，<br>
-                        並持續以開放、批判且充滿敬畏的態度去探索和思考。<br>
-                        願我們能避免固步自封、輕易下定論，永遠對未知的奧秘抱持著好奇與探索之心，<br>
-                        因我們深知，最終的真理由祢顯照。</p>
-
-                    <p>主啊，感謝祢垂聽我們的禱告。<br>
-                        願這份代求能觸動人心，如同清泉滋養乾涸的荒草。<br>
-                        願我們在尋求古老智慧的過程中，在跨越隔閡的努力中，<br>
-                        在追求和平的盼望中，都深深經歷祢的光照。<br>
-                        願祢的名在全地被高舉，願祢的旨意行在地上，如同行在天上，<br>
-                        帶領全人類走向最終的合一與真正的真道。<br>
-                        奉主耶穌基督的聖名禱告，真心信靠。阿們。</p>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>綜合報告 - 基於對巴比倫歷史與神話的分析</p>
-                <div class="footer-links">
-                    <a href="#executive-summary">執行摘要</a>
-                    <a href="#background">背景</a>
-                    <a href="#themes-conclusions">主題與結論</a>
-                    <a href="#core-arguments">核心論點</a>
-                    <a href="#detailed-arguments">論點詳述</a>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- External JavaScript -->
-    <script src="../assets/js/layout.js"></script>
-    <!-- Keyword configuration for highlighting -->
-    <script id="keywords-config" type="application/json">
-        {
-            "keywords": [
-                "尼布甲尼撒二世", "巴別塔", "楔形文字","薩米拉米斯","那波帕拉薩爾","尚書",
-                "伊什塔爾城門", "空中花園", "埃特曼安吉神廟", "希羅多德", "羅伯特·科爾德韋",
-                "全息術", "衛星影像", "美索不達米亞"
-            ]
-        }
-    </script>
-</body>
-
+        <!-- External JavaScript -->
+        <script src="../assets/js/layout.js"></script>
+        <!-- Keyword configuration for highlighting -->
+        <script id="keywords-config" type="application/json">
+            {
+                "keywords": [
+                    "尼布甲尼撒二世",
+                    "巴別塔",
+                    "楔形文字",
+                    "薩米拉米斯",
+                    "那波帕拉薩爾",
+                    "尚書",
+                    "伊什塔爾城門",
+                    "空中花園",
+                    "埃特曼安吉神廟",
+                    "希羅多德",
+                    "羅伯特·科爾德韋",
+                    "全息術",
+                    "衛星影像",
+                    "美索不達米亞"
+                ]
+            }
+        </script>
+    </body>
 </html>
