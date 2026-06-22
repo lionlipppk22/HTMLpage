@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260622 主日信息</title>
+    <meta name="description" content="陪讀班分享">
+    <meta name="keywords" content="分辨的智慧, 愛人，但不要失去方向, 停止拯救才是真正的愛, 浪子回頭, 建立界限, 不被操控, 耶穌的榜樣, 使命導向, 保護你的心, 摩西與葉忒羅, 不要取代神的位置, 狐狸與獅子, 陪讀班, 愛不等於縱容, 放手不等於放棄">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260622 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">陪讀班分享
+                    <a href="https://www.youtube.com/live/ptwL9WzaV2U?si=ClCJD4RmhNn89vqy">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/ptwL9WzaV2U?si=ClCJD4RmhNn89vqy">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-陪讀班分享">
+<h2 id="陪讀班分享">陪讀班分享</h2>
+<p>今天來和大家分享一下<strong>陪讀班</strong>。先問大家一個問題：假設有一個小朋友來問你「28加12等於多少」，又有一個小朋友來問你「解禍的貨要怎麼寫」，再來一個小朋友來問你「為什麼耶穌愛我」——請問大家，你要先回答哪一個小朋友？</p>
+<p>這就是我們陪讀班老師每一天的日常。我們不只是教小朋友寫作業、檢查作業，還要當輔導——吵架的時候要當裁判，有時候還要當偵探，幫他們找不見的作業或是橡皮擦之類的。這其實就像每個家庭裡面的爸爸媽媽一樣，十八般武藝都要有一些。</p>
+<p>陪讀班希望能夠成為<strong>傳道、授業、解惑的共學體</strong>。傳道就是在陪讀班裡面分享上帝的話語，授業就是教他們作業、檢查作業，解惑就是解答他們生活中的疑難雜症。除此之外，我們也和這些學生一起成長，我個人就在陪讀班成長了不少。</p>
+<p>目前我們有十個學生，平常有兩位老師。週三和週五因為小朋友人數比較多，會有三位老師一起陪伴孩子。感謝神，孩子們的學習態度都有更積極，在陪伴中也感受到神的愛。</p>
+<p>不過我們也面臨了一些挑戰——有一位老師在2027年因為身體的關係提出需要休息，因此我們在週三和週五的下午一點到四點會有人力上的缺口。如果明年有新生加入的話，人數也會增加。所以誠摯地邀請各位：如果你有感動服務社區、對孩子也不排斥，願意一週固定或是輪流來參加陪讀班的服侍行列。</p>
+<p>陪讀班從過去到現在有非常多人投入。每當有人投入的時候，我都可以感覺到這個陪讀班多了一個不一樣的元素，是讓這些孩子們更豐富的元素。也期待上帝再繼續把豐富的元素加給我們。如果你時間上沒有辦法也沒有關係，就請你為陪讀班來代禱。</p>
+<p>以上是我的分享，謝謝大家。</p>
+<p>小朋友其實是很不容易的，因為每一個孩子的狀況都很不一樣。你們家的孩子好搞嗎？教會的孩子好搞嗎？其實也不好搞。但是他們都很特別——<strong>每一個都是上帝的傑作</strong>。所以很感謝神。陪讀班的老師其實蠻辛苦的，我每個禮拜四晚上看到弟兄姐妹因為身體有些狀況，非常疲憊。所以我們真的是需要為這些老師們禱告。</p>
+<p>如果你願意去加入、願意去參與的話，可以跟曉珮老師講一下，看你怎麼幫忙。</p>
+<p>感謝主，神也透過陪讀班來祝福癌度教會。我們有額少據點，過去還有「19」，台北也有參加「19」。我們從救助協會那裡拿到很多的補助，現在龍潭就是透過「19」得到很多的補助。龍潭癌度這兩年都投入到陪讀的工作裡面。禮拜天如果牧師去那邊講道的時候，前面這一排兩三排全部都是陪讀班的小朋友。弟兄姐妹的家長就坐在稍微後面，敬拜完了之後他們就要去參加兒童主日學，彩藝就把他們帶到教室去。然後就空了，只剩下兩排——牧師看來看去，但是我們看到的， <strong>是教會的未來啊！</strong></p>
+            </section>
+            
+            <section class="section" id="section-張茂牧師的提醒">
+<h2 id="張茂牧師的提醒">張茂牧師的提醒</h2>
+<p>我這個禮拜在生林公園散步的時候，聽到<strong>張茂牧師</strong>在講道。他講到他以前跟其他牧師一樣，很重視主日聚會的人數多不多。他也會擔心——今天來聚會的人怎麼那麼少？</p>
+<p>後來有一次他安靜下來，上帝就跟他講話。上帝說：<strong>「神來比較重要，還是人來比較重要？」<strong>他當時候就好像被當頭棒喝一樣，整個人都醒過來了。上帝告訴他：你看重神來，還是看重人來？當然我們也看重人來，但是神告訴他說：</strong>「我沒有來，人怎麼會來呢？」</strong></p>
+<p>所以我們就是要禱告。鼓勵弟兄姐妹參加禮拜四晚上的禱告會，<strong>堆疊神的恩膏在教會裡面</strong>。如果教會的禱告會是興旺的、火熱的，禮拜天自然就來了。因為神的同在、神的寶座在這裡，每一個人進來必定會被神的靈所觸摸。所有的工作，<strong>是神自己在工作。</strong>不是看某一個人的表演——不是敬拜團，不是牧者，是神自己在工作。</p>
+<p>所以我們要禱告。你每一次來到聚會，要說：「神啊，你今天要對我說什麼？我今天要更深的經歷你。」那才是最重要的。不是聽完牧師講道回去說「今天牧師講得好爛」——不是來教會批評論斷的，是來教會<strong>經歷神、經歷神的同在</strong>。</p>
+<p>每樣事工都非常重要，但是需要弟兄姐妹去關心、去禱告。你如果要看見教會更加的興旺，就只有你投入在禱告的裡面。就像一個國家——不少人批評論斷，但少的是大家為這個國家來禱告。政府做得不好，你就要為他禱告，因為你也是在這個政府治理下的一份子。他爛了，你也跟著不好。所以我們需要禱告。</p>
+<p>我們一起來禱告：哈利路亞！主啊，我們來到你的面前感謝你。你興起我們，把我們安置在各樣的服侍當中，賞賜給我們各樣的恩賜才幹。盼望我們在這樣的服侍裡面，能夠把自己奉獻給你來使用，能夠彰顯神你自己的榮耀、彰顯神你自己的同在。求主親自帶領。特別在陪讀班——不管台北癌度、龍潭癌度——我們都要看見神你自己奇妙的工作，繼續在這些孩子生命的當中、在這些孩子家庭的當中來做工。主啊，我們不僅要得著這些孩子，我們要得著這些孩子和他們的家人。求你繼續恩待每一個參與服侍的老師，知道他們身體上面的需要，求主來看顧，用你大能的手來托住，堅固每一個人的信心。主啊，我們突求你，讓我們看見福音要更加的興旺，因為做工的乃是主你自己。我們將一切榮耀都歸給你，奉耶穌的名禱告，阿門！</p>
+            </section>
+            
+            <section class="section" id="section-分辨的智慧愛人但不要失去方向">
+<h2 id="分辨的智慧愛人但不要失去方向">分辨的智慧：愛人，但不要失去方向</h2>
+<p>今天跟弟兄姐妹分享一個題目——<strong>「分辨的智慧：愛人，但不要失去方向」</strong>。這特別是在我們有些時候，弟兄姐妹可能在教會裡面參與一些服侍，不管你是被服侍的人還是服侍的人。今天這個分享都是要給我們每一個人一個很大的提醒。</p>
+<p>我們來讀這四節經文：</p>
+<blockquote>
+<p><strong>希伯來書 12:1</strong> —— 我們既有這許多的見證人，如同雲彩圍著我們，就當放下各樣的重擔，脫去容易纏累我們的罪，存心忍耐，奔那擺在我們前頭的路程。</p>
+<p><strong>提多書 3:10</strong> —— 分門結黨的人，警戒過一兩次就要棄絕他。</p>
+<p><strong>耶利米書 17:5</strong> —— 耶和華如此說：依靠人血肉的膀臂，心中離棄耶和華的那人有禍了。</p>
+<p><strong>箴言 4:23</strong> —— 你要保守你心，勝過保守一切，因為一生的果效是由心發出來。</p>
+</blockquote>
+            </section>
+            
+            <section class="section" id="section-基督徒是不是要幫助每一個人">
+<h2 id="基督徒是不是要幫助每一個人">基督徒是不是要幫助每一個人？</h2>
+<p>今天我要問大家一個問題：基督徒是不是要幫助每一個人？不一定，要看狀況。</p>
+<p>如果半夜兩點有朋友打電話來說「我失戀了，我好痛苦，你可以陪我聊一下嗎」，你會不會接？當然應該會接——不然你真的沒有愛心。</p>
+<p>但是，如果同一個人一個星期打三次，一個月打十次，一年都在同樣的問題打轉——那你會不會接？你怎麼去陪伴他？這時候你可能開始懷疑：我到底這樣繼續陪他，是在<strong>幫他</strong>還是<strong>害他</strong>？</p>
+<p>有些人需要扶持，有些人需要勸勉，有些人需要陪伴。但這些要不要有一點界限？</p>
+<p>今天的世代有一種很錯誤的觀念——<strong>愛就是永遠的答應</strong>。但其實不是。真正的愛需要分辨力。</p>
+<p>耶穌愛所有的人，但祂沒有滿足所有人的需求——祂醫治了許多人，卻沒有停留在每一個城鎮裡。所以你有愛心，但也要有智慧，要進入一個<strong>成熟的愛</strong>。</p>
+<p>愛心沒有分辨就容易<strong>被利用</strong>。憐憫沒有智慧就可能變成<strong>縱容</strong>。幫助沒有界限，最後兩個人一起<strong>跌倒</strong>。</p>
+            </section>
+            
+            <section class="section" id="section-第一個原則愛不等於縱容">
+<h2 id="第一個原則愛不等於縱容">第一個原則：愛不等於縱容</h2>
+<p>神愛罪人，但不縱容罪。箴言說：「狗轉過來吃牠所吐的，人所行的惡事，行了又行。」</p>
+<p>有些人不是不知道真理——他聽過你所講的真理，也讀了一點聖經，你也勸過他、提醒過他，甚至跟他一起哭過。但最後他還是選擇繼續同樣的道路。這時候很多基督徒掉入一個陷阱：「如果我不幫他，我是不是沒有愛心？」</p>
+<p>但我們要思想：<strong>有些時候，停止拯救才是真正的愛。</strong></p>
+            </section>
+            
+            <section class="section" id="section-浪子回頭的智慧">
+<h2 id="浪子回頭的智慧">浪子回頭的智慧</h2>
+<p>浪子回頭的故事很有意思。第一個，<strong>父親的愛是給自由，也讓人承擔後果。</strong></p>
+<p><strong>路加福音 15:11-12</strong> —— 一個人有兩個兒子，小兒子對父親說：「父親，請你把我應得的家業分給我。」他父親就把產業分給他們。不多幾日，小兒子就把他一切所有的都收拾起來，往遠方去了，在那裡任意放蕩，浪費資財。</p>
+<p>在做父母的，如果這是你的孩子，你會讓他走嗎？「爸爸，今天給我一萬塊，我要離家出走了。」你會不會讓他走？父親沒有去阻止他。</p>
+<p><strong>路加福音 15:14-16</strong> —— 他耗盡了一切所有的，又遇那地方大遭飢荒，就窮苦起來，於是去投靠那地方的一個人；那人打發他到田裡去放豬。他恨不得拿豬所吃的豆莢充飢，也沒有人給他。</p>
+<p>他散盡了家產，結果就去幫人養豬，肚子餓跟豬搶食物吃。這在猶太人來講，豬是不潔淨的食物，跟豬搶食物吃，這是很大的羞辱。</p>
+<p>但聖經沒有記載父親打聽到他的消息後趕快給他送錢。要是你，一定會趕快送錢。如果是你的孩子，每一個爸爸一定都會趕快送錢。媽媽更是直接煮好食物送去給他吃。如果他欠債，父親幫他還債，然後說「跟我回家」。</p>
+<p>但這位父親沒有。父親讓兒子經歷<strong>自己選擇帶來的後果</strong>。因為有些功課是在痛苦當中才能學到的，有些<strong>悔改是在破碎的時候才能產生的</strong>。</p>
+            </section>
+            
+            <section class="section" id="section-做父母的心態">
+<h2 id="做父母的心態">做父母的心態</h2>
+<p>我最近在上一門「真善美」的課程，裡面講到夫妻相處——妻子要順服自己的丈夫，丈夫要愛自己的妻子。可是往往做太太的把丈夫該做的事情都拿來做，最後丈夫都不用做了。講員提醒說：如果你給丈夫一點壓力，你不要幫他做，他會去做的，而且會做得很好。你不要把別人該做的事情都拿來自己做，要讓他盡該盡的責任——<strong>某種壓力是幫助他成長。</strong></p>
+<p>你看浪子回頭的智慧：父親明知兒子的心態不對，也沒有說「不准不准，離家就關起來」。真正的愛不是控制。第二，父親沒有去拯救他。兒子淪落到跟豬搶食，父親沒有派人送錢或幫他還債——他沒有拿掉後果，讓兒子去經歷選擇所帶來的痛苦。</p>
+<p><strong>神常藉著後果喚醒人。</strong>我們太急著救人，反而阻止了神的工作。</p>
+<p>我們以前學騎腳踏車，你就是要讓他上去踩。如果你一直在後面操控，他反而不知道要往前還是要往左，就搖搖晃晃。有些時候你需要放手—— <strong>放手是讓他自由。</strong></p>
+<p>浪子回頭的啟示：<strong>選擇 → 承擔後果 → 破碎 → 醒悟 → 經歷恩典。</strong>不然他不會知道什麼是恩典。</p>
+            </section>
+            
+            <section class="section" id="section-個人見證">
+<h2 id="個人見證">個人見證</h2>
+<p>我們家老二七月二十六號回台灣。他在拉麵店做幫廚，老闆很喜歡他，一個禮拜就學會了，老闆就給他加時間。如果沒有給他這樣的操練，他就只是伸手要錢。交女朋友當然要花錢。現在年輕人都吃好料——我都捨不得吃。這時候你要掏錢讓他請女朋友去吃飯嗎？跟他講：要請女朋友吃飯，就像你爸爸年輕的時候一樣——<strong>去打工，自己去賺錢。</strong></p>
+<p>很多人以為愛就是保護人不受苦，其實神的愛不是如此。</p>
+<p>神愛大衛，容許他經歷犯罪之後的痛苦。神愛彼得，容許他三次不認主。神當然可以阻止——祂是神。但祂讓它發生。神愛約拿，容許他在大魚的肚腹裡面待了三天三夜。祂沒有馬上就把他拉出來。</p>
+            </section>
+            
+            <section class="section" id="section-父親的等待">
+<h2 id="父親的等待">父親的等待</h2>
+<p>我們一般很快就會把人拉出來。我以前念大學的時候，在瑞安街的木造隔間租屋，一層有五六個人共用廁所和浴室。我媽來看，說：「啊，這怎麼住？」我跟她說便宜啊，住在這裡也很方便。做父母都很急著要把孩子從苦難當中拉出來，但有些時候這不是在幫助他們。</p>
+<p>也許有人覺得浪子回頭這個故事父親很冷漠，但其實他不是冷漠——<strong>他一直都在等待、都在守望。</strong>有些時候你要換個角度去想：爸爸為什麼做那個決定？有些時候那是一個成長的學習。</p>
+<p>我去龍潭的時候跟他們分享：以前我爸爸叫我去河岸割草，種空心菜。爸爸說你只要把那一個河岸的草都除完了就可以去玩了。我都是禮拜六中午去除草，曬得很黑，又不喜歡戴斗笠。有一次吃完飯去除草，一邊割一邊睡覺，後來就掉到河裡面去了。又有一次割到手上都是血痕，就拿泥土敷上去——那時候哪有什麼消毒的概念。這些經歷讓我知道<strong>父親工作的辛苦。</strong></p>
+<p>弟兄姐妹，<strong>受苦是與我們有益的。</strong>你不要怕讓孩子吃苦。</p>
+            </section>
+            
+            <section class="section" id="section-父親的愛">
+<h2 id="父親的愛">父親的愛</h2>
+<p><strong>路加福音 15:20</strong> —— 相離還遠，他父親看見，就動了慈心，跑去抱著他的頸項，連連與他親嘴。</p>
+<p>父親一直在等。如果不是天天盼望，怎麼可能「相離還遠」的時候就認出來呢？父親沒有去拯救他，但父親<strong>沒有停止愛他。<strong>父親沒有替他承擔後果，卻</strong>一直為他預備回家的路。</strong></p>
+<p>我們住在鄉下的時候，如果你在北部念書，一通電話告訴爸爸媽媽說這禮拜放假、大概幾點會到家，你媽媽一定會拿一個板凳坐在門口等。他們都很期盼看到自己的孩子回家。這個浪子的父親也一樣。</p>
+<p>何時該幫、何時該停，是許多父母或我們在教會擔任小組長、牧者最難學的功課。有時候神要我們去扶持一個人，有時候神要我們去等待。</p>
+<p><strong>放手不等於放棄，停止拯救不等於停止愛。</strong></p>
+<p>我們要來診斷一下：我是在扶持，還是在保護罪？有些父母永遠在替孩子收拾爛攤子——欠債幫他還，犯錯幫他遮掩，這要不得。孩子就會學會一件事情：<strong>反正有人救我。</strong></p>
+<p>我們幫助人的時候要問自己：我是要幫助他成長，還是在替他逃避責任？我是在愛他，還是在害他？<strong>成熟的愛是扶持一個人，但不會保護人繼續犯罪。</strong></p>
+            </section>
+            
+            <section class="section" id="section-第二個原則建立界限不被操控">
+<h2 id="第二個原則建立界限不被操控">第二個原則：建立界限，不被操控</h2>
+<p>不要讓你的 <strong>愧疚感</strong> 成為別人控制你的工具。</p>
+<p>有一種人很特別，每次都會說：「你不是基督徒嗎？你不是應該愛我嗎？你不來幫我，你真是沒有愛心。」聽起來很屬靈，但這是一種操控。</p>
+            </section>
+            
+            <section class="section" id="section-耶穌的榜樣">
+<h2 id="耶穌的榜樣">耶穌的榜樣</h2>
+<p><strong>耶穌一生從未被人的壓力所控制。</strong></p>
+<p><strong>路加福音 4:42-44</strong> —— 天亮的時候，耶穌出來走到曠野的地方。眾人去找祂，到祂那裡要留住祂，不要祂離開他們。但耶穌對他們說：「我也必須在別城傳神國的福音，因我奉原是為此。」於是耶穌在加利利各會堂裡傳道。</p>
+<p>前一天耶穌醫治了很多的人。隔天，凡有病的人不論害什麼病都帶到耶穌那裡，耶穌按手在他們各人身上，醫治好他們。如果耶穌已經做了這件事情，肯定會吸引更多人來。鬼被趕出去，病人得醫治，家庭被恢復，整個城鎮都很轟動。</p>
+<p>第二天大家都來了。他們希望耶穌繼續留下來——這不是惡意，這是一種愛戴，好像明星一樣。但<strong>人的需要並不等於神的旨意。</strong></p>
+<p>耶穌先去禱告，再決定方向。平行的經文在<strong>馬可福音 1:35</strong>說：「次日早晨天未亮的時候，耶穌起來到曠野地方去，在那裡禱告。」前一天服侍到半夜，凌晨又爬起來在那邊禱告，尋求神的心意。因為祂知道：<strong>若沒有天父的引導，人群的聲音很容易取代神的聲音。</strong></p>
+<p>今天我們每個人都有一隻手機，一直響——孩子叫你、先生叫你、家人叫你、工作一直催。這時候，你需要安靜等候在神的面前。我們很容易被事情牽著走，卻忘了還有更重要的事。</p>
+<p>當群眾說「不要離開這裡」，耶穌回答：「我也必須在別城傳神國的福音，因為我奉原是為此。」那個「必須」原文有一種神聖的使命感——<strong>我不能停留在人的期待裡面，我在天父那裡有一個更大的計劃。</strong></p>
+<p>如果耶穌只停留在迦百農，當地人會很高興。但是加利利其他地方、撒瑪利亞、猶太全地呢？還有十字架——要不要上十字架？</p>
+<p>有些時候我們幫助一個人，事奉也可能排得滿滿的。但我們要去做一些取捨，不能讓自己也乾掉了。耶穌沒有讓眼前的成功綁住，因為祂知道<strong>自己為何而來。</strong></p>
+<p>有些人一生忙碌，卻不知道自己在忙什麼。每天回信息、解決問題、滿足人的期待，最後累得筋疲力盡，卻離神的呼召越來越遠。</p>
+<p>年輕人有朋友找你：「陪我去唱卡拉OK，陪我去玩。」你要不要做一些取捨？如果你每次都因為害怕拒絕而答應，你會發現別人的人生沒有改變，你的屬靈生命卻越來越軟弱。</p>
+<p>有些父母被孩子控制——孩子一哭你就妥協，孩子一鬧你就讓步。久而久之，孩子就變成家裡的小皇帝。<strong>父母不失去權柄，家庭就失去秩序。</strong></p>
+<p>所以我們應該這樣說：</p>
+<blockquote>
+<p><strong>「我愛你，但我不能什麼都答應你。我願意幫助你，但不是照你的方式。我會陪伴你，但不會被你控制。」</strong></p>
+</blockquote>
+<p>你今天這一堂信息學到這些就可以了。我是愛你的，但我不能什麼都答應你。我願意幫助你，但不是照你的方式——是照著神的方式。我願意陪伴你，但我不會被你控制。你要設立那個界限，不能談到半夜還在談。</p>
+<p>我們如果被服侍，也要體諒別人的需要。每個人都有家庭。不是你說「愛心愛心愛心」，別人就要馬上跟你講話直到結束。</p>
+<p><strong>耶穌的榜樣是使命導向，而非需求導向。</strong>需求導向的話，你的焦點就會被人的期待帶著走，永遠在解決緊急的問題，消耗盡你的心力。使命導向就是天父的旨意所帶領，專注於重要的呼召，有意識地說「不」。先來到神的面前禱告，再決定方向。</p>
+<p>這不是說從今天開始都不用服侍了——而是我們要很有智慧地做一些取捨。</p>
+<blockquote>
+<p><strong>如果你不知道你的使命是什麼，別人的需要就會成為你的使命。</strong></p>
+</blockquote>
+            </section>
+            
+            <section class="section" id="section-第三個原則保護你的心與使命遠離製造紛爭的人">
+<h2 id="第三個原則保護你的心與使命遠離製造紛爭的人">第三個原則：保護你的心與使命，遠離製造紛爭的人</h2>
+<p><strong>提多書 3:10</strong> —— 分門結黨的人，警戒過一兩次就要棄絕他。</p>
+<p>這些經文關乎家庭和教會的合一。撒但最喜歡做的一件事情就是<strong>製造分裂。<strong>有些人走到哪裡，哪裡就有是非——走到公司公司亂，走到小組小組亂，走到家庭家庭亂。不是因為他太倒楣，而是因為他習慣</strong>散播負面。</strong></p>
+<p>閒話會造成關係的破裂，引起團隊的猜疑，以至於失去合一。保羅沒有說「你們要一直忍耐他們」——保羅給了很清晰的界限：「這樣的人你們要警戒他們。」</p>
+<p>如果有人在講八卦，你可以說：「你不用跟我講這些。」講人是非的人，你不用跟我講。要勸導說，我們這樣講對人家沒什麼太大的幫助。那些毒的酵會帶來很大的破壞。</p>
+<p>所以我們要<strong>保護自己的耳朵</strong>不要喜歡聽八卦，<strong>保護自己的心</strong>不要參與那些閒話，<strong>保護自己的使命</strong>不要把時間浪費在無止境的衝突裡面。</p>
+            </section>
+            
+            <section class="section" id="section-第四個原則不要取代神的位置">
+<h2 id="第四個原則不要取代神的位置">第四個原則：不要取代神的位置</h2>
+<p>我們是帶人來親近神，而不是來依靠自己。我們是<strong>領人歸主，不是領人來歸某某人。</strong></p>
+<p><strong>耶利米書 17:5</strong> —— 依靠人血肉的膀臂，心中離棄耶和華的那人有禍了。</p>
+<p>有些人凡事都跑來問你：「我要不要換工作？我要不要跟這個人交往？我要不要買房？我要不要服侍？」但他連禱告都不自己去。一開始你服侍這樣的人會感覺很有成就感，慢慢的你會發現不對勁——因為<strong>他依靠的是你，不是神。</strong></p>
+            </section>
+            
+            <section class="section" id="section-摩西與葉忒羅">
+<h2 id="摩西與葉忒羅">摩西與葉忒羅</h2>
+<p>有一個人從事畜牧業四十年之久，後來上帝來找他，跟他說：「你跟你哥哥成立一家出埃及有限公司。」他就帶領兩百萬員工出埃及了。</p>
+<p>在曠野裡面，員工沒有水喝就來找老闆摩西，摩西就跟上帝講。上帝讓摩西擊打磐石出水給他們喝。沒有肉吃又來找摩西，神就賜下鵪鶉跟嗎哪給他們吃。老百姓有什麼問題都來找摩西——摩西一人公司，從早到晚坐在那裡聽訟。</p>
+<p><strong>出埃及記 18:14</strong> —— 摩西的岳父看見他向百姓所做的一切事，就說：「你向百姓做的是什麼事呢？你為什麼獨自坐著，眾百姓從早到晚都站在你的左右呢？」</p>
+<p>家庭有問題找摩西，鄰居有紛爭找摩西，財產有問題找摩西，信仰有問題找摩西，法律有問題都找摩西。這是一個很失敗的客服中心。他的岳父來提醒他：<strong>「你這樣做不好，你和這些百姓都會很疲憊的。因為這事太重，你獨自一個人是辦理不了的。」</strong></p>
+<p>摩西沒有說「我才是老闆」——他說，好，要改變。</p>
+<p>葉忒羅建議他從百姓中揀選有才能的——就是敬畏神、誠實無妄、恨不義之財的人，派他們做千夫長、百夫長、五十夫長、十夫長管理百姓。大事呈到摩西這裡，小事他們自己審判。<strong>摩西不是一人公司——他是一個團隊。</strong></p>
+<p>葉忒羅沒有說「摩西你不夠愛百姓」。摩西當然愛百姓。但葉忒羅說「你這樣做不明智，你會裂垮的」。每天工作十幾個小時沒有休息、沒有團隊、沒有分工，最後一定是耗盡，百姓也會受苦，效率極低。</p>
+<p>神沒有要摩西做所有的事情。摩西只需要處理最重要、最困難的事情，其他的交給團隊。</p>
+            </section>
+            
+            <section class="section" id="section-給我們的提醒">
+<h2 id="給我們的提醒">給我們的提醒</h2>
+<p>對父母來講，<strong>最大的成功不是孩子永遠都需要你，而是孩子長大後自己會尋求神</strong>——會自己去禱告，會自己做決定，會自己承擔責任。</p>
+<p>牧者的責任不是讓人依賴我們，而是幫助人依賴耶穌。小組長的責任不是成為救主，而是把人帶到救主面前。</p>
+<p><strong>希伯來書 12:1</strong> —— 放下各樣的重擔，奔那擺在前頭的路程。</p>
+<p>神給每一個人都有呼召、有使命、有賽道。有些人是幫助你奔跑的，有些人卻會拖累你。有些關係不是犯罪，卻會消耗你。有些邀請不是邪惡，卻會偏離方向。</p>
+<p>所以我們需要分辨。</p>
+            </section>
+            
+            <section class="section" id="section-狐狸與獅子的故事">
+<h2 id="狐狸與獅子的故事">狐狸與獅子的故事</h2>
+<p>有一個人很懶，最希望不用做工就有人給食物吃。有一天他很餓了，看到一個蘋果園，左望右望沒有人，就爬籬笆要進去偷果實。結果被果園老闆發現了，追下來，他趕快跳下來逃走，逃到森林裡面。</p>
+<p>他在森林裡看到一隻狐狸躲在一個巨大岩石的後面。過了不久，有一隻獅子叼了一塊肉，站在高高的磐石上面，然後獅子把嘴裡那塊肉給了狐狸吃。</p>
+<p>他看到這一幕很感動，認為上帝在啟示他——會有人叼食物給他吃。他就從早上開始等，越等越沒有人來，繼續等還是沒有人來，等到太陽快下山了還是沒有人來。後來一個老先生經過，他很開心地說：「終於來了！你是不是上帝派你來送食物給我吃的？」老先生聽完他描述的畫面後說：「年輕人，你那個畫面解讀錯誤了。上帝是要讓你去當那隻<strong>獅子</strong>，不是讓你去當那隻<strong>狐狸</strong>。」</p>
+<p><strong>獅子要去叼食物給人吃，而不是一直窩在那裡等人給食物吃。</strong></p>
+<p>如果我們來教會很久了，你的靈命一定要被拉起來。你不能一直都是伸手要食物吃，你要能夠<strong>吃乾糧</strong>。我們上課的目的就是幫助弟兄姐妹屬靈成長。你要當猶大的獅子——就是耶穌。耶穌雖然有四十天的試探，但祂得勝了。我們已經站在得勝的地位上了。所以我們要起來！</p>
+            </section>
+            
+            <section class="section" id="section-結語">
+<h2 id="結語">結語</h2>
+<p>愛心要有智慧，憐憫要有界限。</p>
+<p><strong>第一</strong>，愛人不等於縱容。有時讓人面對後果反而是真正的愛。</p>
+<p><strong>第二</strong>，不要讓愧疚感成為別人操控你的工具。</p>
+<p><strong>第三</strong>，遠離製造紛爭的人，不要成為傳八卦的人。</p>
+<p><strong>第四</strong>，不要讓人依賴你超過依賴神。他要學習成長、學習獨立。</p>
+<p>我們每一個人都要跟神建立一個親密的關係。每一隻羊之所以安全，不是因為牠們認識每一隻狼，而是因為認識牧人。我們要更深的認識這位牧人。當我們越認識神，我們就聽見神的聲音，也明白神的聲音，也越知道哪些人該我們去擁抱、哪些人該我們去勸戒、哪些人該交託、哪些人該保持界限。</p>
+<p>求神幫助我們每一位。</p>
+            </section>
+            
+            <section class="section" id="section-禱告">
+<h2 id="禱告">禱告</h2>
+<p>主啊，我們來到你的面前感謝你。你賜給我們一顆充滿愛的心，也求你賜給我們每一個弟兄姐妹有這樣一個智慧去分辨。讓我們在服侍的時候不會失去憐憫，也不會失去方向。能夠繼續去愛每一個人，而能夠忠心於神你自己所交付給我們的這些使命。</p>
+<p>主，我們感謝你。主也知道我們當中有一些弟兄姐妹可能在生活當中處在一種不容易的光景裡面。但是我們知道，主啊，你是為我們平靜風浪的那一位，你也是與我們同在的那一位。你沒有離開過我們，因為你是<strong>以馬內利的神</strong>。</p>
+<p>主，我們再一次的將自己完全的交託給你，求主來帶領我們、幫助我們。讓我們每一天就是專心的來依靠你，而且願意更多花時間安靜等候在你的面前，明白神你自己的心意。好讓我們所服侍的每一個小羊、我們所關心的每一個人都能夠跟主你自己建立一個親密的關係。</p>
+<p>主，我們感謝你，聽我們的禱告。奉耶穌的名求，阿門！</p>
+<p>我們一起來唱這一首詩歌。</p>
+<hr />
+<p><em>詩歌：我在你大能手中，大海翻騰，我與你乘風破浪。你能在紅水中做王，我要安靜知道你是神。</em></p>
+<hr />
+<p>弟兄姐妹，我們要安靜知道：<strong>我們所依靠的不是人的血肉、不是人的膀臂。</strong>我們要依靠的是那一位創造我們的神。唯有祂成為我們的幫助。</p>
+<p>我們常常會想要去依靠人、依靠這個、依靠那個。但是神告訴我們的——不管我們在服侍、在被服侍，我們最重要的都是要來依靠這一位神。</p>
+<p>也許你正處在一個風暴的狀態裡面，但是不要忘了：唯有神能夠幫助你。不是你的小組長能幫助你，不是某個姐妹能夠幫助你。<strong>唯有耶穌基督能夠幫助你，因為祂是你的主，祂是你生命的主。</strong></p>
+<p>聖經說：<strong>祂是道路，祂是真理，祂是生命。</strong>當我們跟隨祂，我們就有路可以走。當我們跟隨祂，我們才能夠領受那個真實的生命——是復活的生命，是滿有能力的生命。當我們跟隨祂，我們就會走在真理當中，就不會搖搖晃晃不知道目標在哪裡，我們會知道我們的使命在哪裡。</p>
+<p>所以今天我們再一次的把自己完全的交託給祂——交託給我們這一位為我們信心創始成終的耶穌。</p>
+<p>我們安靜一段時間，把你的需要帶到這位愛你的主面前，把你的需要告訴祂。告訴祂說：「主啊，我要單單的來依靠你。我要單單的來跟隨你。因為除你以外別無拯救。求你成為我的道路、成為我的真理、成為我的生命。我生活當中一切的風浪——你是我們的好牧人。我們雖然行過死蔭的幽谷，也不怕遭害，因為你的杖、你的竿都安慰我們。你是在曠野裡面為我們擺設宴席的那一位。我們就是要專心的來跟隨你，專心的來仰望你。」</p>
+<p>把我們每個弟兄姐妹的需要、我們的軟弱都交託在你的手中。把我們的重擔都交託給你，因為你是看顧我的神，你是幫助我的神。</p>
+<p>我們一起領受祝福：<strong>但願我主耶穌基督的恩惠，天父上帝的慈愛，聖靈的感動、交通與團契，常與我們眾弟兄姐妹同在，從今時直到永永遠遠。</strong>我們一起說：阿門！阿門！阿門！</p>
+            </section>
+            
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+        {
+            "keywords": [
+                "分辨的智慧",
+                "愛人，但不要失去方向",
+                "停止拯救才是真正的愛",
+                "浪子回頭",
+                "建立界限",
+                "不被操控",
+                "耶穌的榜樣",
+                "使命導向",
+                "保護你的心",
+                "摩西與葉忒羅",
+                "不要取代神的位置",
+                "狐狸與獅子",
+                "陪讀班",
+                "愛不等於縱容",
+                "放手不等於放棄"
+            ]
+        }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
