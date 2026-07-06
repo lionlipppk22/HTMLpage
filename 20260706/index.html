@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>20260706 主日信息</title>
+        <meta name="description" content="上帝手中的樂器" />
+        <meta
+            name="keywords"
+            content="我們的生命是否需要調音, 大衛在有驚無險的經歷中所寫下的詩篇, 以賽亞書31:5, 上帝的旨意能成就在他身上, 神要我們這個「人」成為祂的樂器, 上帝與你約會的時間, 就是我們靈修的「山洞, 獨自退到曠野去禱告, 為神保留一個「山洞」的時間"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../assets/css/layout.css" />
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"],
+                    ],
+                },
+            };
+        </script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+        ></script>
+
+        <style>
+            /* From reference.md */
+            p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* From demo.html - Additional styles */
+            .markdown-preview p {
+                margin: 0;
+                padding: 0.5em;
+            }
+
+            .markdown-preview p:nth-child(odd) {
+                background: #f0f0f0;
+            }
+
+            .markdown-preview p:nth-child(even) {
+                background: #ffffff;
+            }
+
+            /* Add highlighting for keywords if needed, layout.js handles it */
+            /* Table styles from markdown */
+            .markdown-preview table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 1em 0;
+            }
+
+            .markdown-preview th,
+            .markdown-preview td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .markdown-preview th {
+                background-color: #f2f2f2;
+            }
+
+            .markdown-preview h1 {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            /* Collapsible Section Styles */
+            .collapsible-section {
+                margin-bottom: 20px;
+                border-radius: 8px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .collapsible-section p {
+                margin: 0;
+                padding: 0.5em;
+                font-size: 1.6em;
+                font-family: Chiron GoRound TC;
+            }
+
+            .collapsible-header {
+                padding: 15px 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background 0.3s ease;
+            }
+
+            .collapsible-header:hover {
+                background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+            }
+
+            .collapsible-header h2 {
+                margin: 0;
+                padding: 0;
+                background: none;
+                color: white;
+                font-size: 1.5em;
+            }
+
+            .collapsible-icon {
+                transition: transform 0.3s ease;
+                width: 24px;
+                height: 24px;
+            }
+
+            .collapsible-section.collapsed .collapsible-icon {
+                transform: rotate(-90deg);
+            }
+
+            .collapsible-content {
+                padding: 20px;
+                transition: max-height 0.3s ease;
+                max-height: 20000px;
+                overflow: hidden;
+            }
+
+            .collapsible-section.collapsed .collapsible-content {
+                max-height: 0;
+                padding: 0 20px;
+            }
+
+            .markdown-preview ol {
+                list-style: none;
+                counter-reset: custom-counter;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ol li {
+                counter-increment: custom-counter;
+                background: rgba(255, 255, 255, 0.7);
+                margin-bottom: 18px;
+                padding: 18px 25px 18px 65px;
+                border-radius: 16px;
+                position: relative;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                font-size: 1.25em;
+                line-height: 1.7;
+                border-left: 6px solid #667eea;
+                backdrop-filter: blur(8px);
+                font-family: "LXGW WenKai Mono TC", serif;
+                color: #2d3436;
+            }
+
+            .markdown-preview ol li::before {
+                content: counter(custom-counter);
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+            }
+
+            .markdown-preview ol li:hover {
+                transform: translateX(10px);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-left-color: #764ba2;
+            }
+
+            /* Unordered List Styles */
+            .markdown-preview ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ul li {
+                background: rgba(255, 255, 255, 0.6);
+                margin-bottom: 15px;
+                padding: 15px 25px 15px 50px;
+                border-radius: 14px;
+                position: relative;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                transition: all 0.3s ease;
+                font-size: 1.2em;
+                line-height: 1.6;
+                border-left: 6px solid #764ba2;
+                backdrop-filter: blur(5px);
+                font-family: "LXGW WenKai Mono TC", serif;
+            }
+
+            .markdown-preview ul li::before {
+                content: "✦";
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #764ba2;
+                font-size: 1.2em;
+                font-weight: bold;
+                text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+            }
+
+            .markdown-preview ul li:hover {
+                transform: translateX(8px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+
+            /* Adjustments for nested content in li */
+            .markdown-preview ol li br + b,
+            .markdown-preview ol li br + span {
+                display: inline-block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body class="mobile-layout">
+        <!-- Gradient Background -->
+        <div class="gradient-bg"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button
+                class="control-btn"
+                onclick="toggleLayout()"
+                title="切換佈局 (Mobile/PC)"
+                id="layout-btn"
+            >
+                📱
+            </button>
+            <button class="control-btn" onclick="toggleZoom()" title="縮放">
+                🔍
+            </button>
+            <button
+                class="control-btn"
+                onclick="toggleEffects()"
+                title="提詞器"
+                id="tele-btn"
+            >
+                ✨
+            </button>
+            <button class="control-btn" onclick="toggleTOC()" title="目錄">
+                📋
+            </button>
+            <div class="speed-control" id="speed-control" style="display: none">
+                <input
+                    type="range"
+                    id="scroll-speed"
+                    min="1"
+                    max="10"
+                    value="2"
+                    title="捲動速度"
+                />
+            </div>
+        </div>
+
+        <!-- Teleprompter Guide Line -->
+        <div id="tele-line" class="tele-line"></div>
+
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h3>📋 目錄</h3>
+            <ul id="toc-list"></ul>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div
+                    style="
+                        font-size: 36px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;Zhi Mang Xing&quot;;
+                    "
+                >
+                    <h1 id="main-title">20260706 主日信息</h1>
+                </div>
+                <div
+                    style="
+                        font-size: 26px;
+                        line-height: 1.6;
+                        text-align: center;
+                        font-family: &quot;LXGW WenKai Mono TC&quot;, monospace;
+                    "
+                >
+                    <p class="subtitle">
+                        上帝手中的樂器
+                        <a
+                            href="https://www.youtube.com/live/z5OV4CFT2yI?si=h6SxVtKgm0I3Q3ND"
+                        >
+                            <img
+                                src="image.jpg"
+                                alt="alt text"
+                                style="
+                                    width: 50%;
+                                    display: block;
+                                    margin: 0 auto;
+                                "
+                            />
+                        </a>
+                        <a
+                            href="https://www.youtube.com/live/z5OV4CFT2yI?si=h6SxVtKgm0I3Q3ND"
+                        >
+                            YouTube 直播來源
+                        </a>
+                    </p>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content markdown-preview" id="main-content">
+                <section class="section" id="section-上帝手中的樂器">
+                    <h2 id="上帝手中的樂器">上帝手中的樂器</h2>
+                    <p>我們一起來禱告。</p>
+                    <p>
+                        主耶穌，我們感謝讚美你。我們能在此敬拜你，是你的恩典。謝謝你揀選我們成為你的兒女。願接下來的時間，透過你的話語和孩子的分享，激勵我們每一個人，使聽者與講者都同得益處。願我們在你的聖殿中，得見你的面和你的能力。謝謝主，奉靠主耶穌基督的名禱告，阿門。
+                    </p>
+                </section>
+
+                <section class="section" id="section-生命的樂章需要調音">
+                    <h2 id="生命的樂章需要調音">生命的樂章需要調音</h2>
+                    <p>我們今天的分享主題是「成為上帝手中的樂器」。</p>
+                    <p>
+                        每個人的生命都像一個樂器。一把昂貴的小提琴或一架昂貴的鋼琴，都需要調音。人生的生命也是如此。在生活中，我們可能面臨許多壓力、挫折、傷害，或在忙碌中，心漸漸「走音」。
+                    </p>
+                    <p>
+                        今天，我們將透過大衛在山洞中寫下的詩篇57篇來反思：<strong
+                            >我們的生命是否需要調音？</strong
+                        >
+                        上帝能聽出我們生命的樂章是否走音。
+                    </p>
+                </section>
+
+                <section class="section" id="section-詩篇五十七篇背景與啟示">
+                    <h2 id="詩篇五十七篇背景與啟示">
+                        詩篇五十七篇：背景與啟示
+                    </h2>
+                    <p>讓我們先來讀詩篇57篇。</p>
+                    <p>
+                        這篇詩篇並非大衛在皇宮安逸時所寫，而是在他逃避掃羅、藏於洞穴時創作的。這首「金詩」交給伶長，用「休要毀壞」的曲調來唱，由利未的詩班帶領。這意味著，當大衛登基為王後，他組織了詩班來演唱這首詩。<strong
+                            >大衛是聖經歷史中第一位組成詩班的君王。</strong
+                        >
+                    </p>
+                    <blockquote>
+                        <p>
+                            大衛在洞穴中寫下詩篇57篇，並成為首位組織詩班的君王，提醒我們生命需要與神對齊、時常「調音」。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-休要毀壞的曲調">
+                    <h2 id="休要毀壞的曲調">「休要毀壞」的曲調</h2>
+                    <p>
+                        大衛不僅是詩人，更是音樂家，他能彈奏、作詞、作曲，因此他極其看重敬拜。這首詩的曲調註明為「休要毀壞」，意思是「不要毀壞我」。當惡者攻擊時，上帝卻要來拯救和建造。
+                    </p>
+                    <p>
+                        在詩篇中，57、58、59篇都使用此曲調，記錄了<strong>大衛在有驚無險的經歷中所寫下的詩篇</strong>。這是一個固定的曲調，可以填入不同的歌詞，不像今日的詩歌一詞一曲。
+                    </p>
+                </section>
+
+                <section class="section" id="section-金詩的背景">
+                    <h2 id="金詩的背景">「金詩」的背景</h2>
+                    <p>
+                        這首詩也被稱為「金詩」（Miktam）。其確切意義已難以考究，但在詩篇中，所有六首金詩（包括16篇、56-60篇）都是大衛所寫。這些詩篇的共同特色是，它們都寫於<strong>大衛面臨人生巨大考驗、在危難中求告上帝的背景下</strong>，祈求神的保護。最廣為人知的便是他被自己的岳父掃羅王追殺、四處流亡的經歷。
+                    </p>
+                </section>
+
+                <section class="section" id="section-從將軍到通緝犯的逃亡之路">
+                    <h2 id="從將軍到通緝犯的逃亡之路">
+                        從將軍到通緝犯的逃亡之路
+                    </h2>
+                    <p>
+                        我們對大衛的生平不陌生：從牧童到將軍，再到成為君王的女婿（駙馬）。然而，他的功高震主，威望甚至超越了掃羅王，引發了岳父的嫉妒，最終導致追殺。
+                    </p>
+                    <p>
+                        大衛的身份一夕劇變，從捍衛國家的勇士淪為全國通緝犯。他開始了長達約十年的逃亡生涯。據聖經記載，大衛至少有11次主要的逃亡路線。這張地圖是根據聖經記載繪製的，其中第九次逃亡路線（紅色標示）顯示他逃到了西弗、馬雲，最終進入猶大曠野，藏匿在隱基底的洞穴中。隱基底位於死海沿岸，是一個荒涼的沙漠地帶。
+                    </p>
+                    <blockquote>
+                        <p>
+                            我們追溯了大衛從將軍到通緝犯的逃亡歷程，最終他藏身於死海沿岸的隱基底曠野，這段經歷成為他創作「金詩」的背景。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-隱基底絕境中的綠洲">
+                    <h2 id="隱基底絕境中的綠洲">隱基底：絕境中的綠洲</h2>
+                    <p>
+                        當大衛的人生跌入谷底，看似已是死路一條時，卻柳暗花明又一村——他發現了隱基底（En
+                        Gedi）這個沙漠中的綠洲。
+                    </p>
+                    <p>
+                        「隱」（En）意為「泉源」，「基底」（Gedi）意為「小羊」，因此「隱基底」可譯為「羊的泉源」。這裡是許多野生動物的棲息地，包括無需人為餵養、靠神供應而肥美的大角羊。這個地方有山洞、綠洲與瀑布，成為大衛的藏身之處。
+                    </p>
+                    <p>
+                        當掃羅王聽聞大衛在此，便率領三千精兵前來追殺。大衛躲在洞穴深處，在恐懼與焦慮中，他寫下了這首詩篇。這是一首回顧過往、見證上帝如何帶領他有驚無險、蒙神拯救的詩歌。
+                    </p>
+                </section>
+
+                <section class="section" id="section-投靠在上帝翅膀的蔭下">
+                    <h2 id="投靠在上帝翅膀的蔭下">投靠在上帝翅膀的蔭下</h2>
+                    <p>
+                        我們再次思想詩篇57篇第1節：「神啊，求你憐憫我，憐憫我！因為我的心投靠你。我要投靠在你翅膀的蔭下，等到災害過去。」
+                    </p>
+                    <p>
+                        可以想像，大衛每天睜開眼就要面對被追殺的焦慮。他不住地向上帝呼求：「神啊，求你恩待我，恩待我！」他連續兩次呼求憐憫（恩待），表明他急切地尋求神的保護。
+                    </p>
+                    <p>
+                        <strong>保護在何處？大衛說，在上帝翅膀的蔭下。</strong>
+                        即便後來成為君王、住在華麗的皇宮，大衛最渴慕的居所，依然是上帝的翅膀蔭下。
+                    </p>
+                    <p>這在聖經中多處得到印證：</p>
+                    <ul>
+                        <li>
+                            <strong>詩篇17:8</strong
+                            >：「求你保護我，如同保護眼中的瞳人，將我隱藏在你翅膀的蔭下。」
+                        </li>
+                        <li>
+                            <strong>詩篇63:7</strong
+                            >：「因為你曾幫助我，我就在你翅膀的蔭下歡呼。」（這也是大衛在猶大曠野逃亡時所寫）
+                        </li>
+                        <li>
+                            <strong>以賽亞書31:5</strong
+                            >：「雀鳥怎樣搧翅覆雛，萬軍之耶和華也要照樣保護耶路撒冷。他必保護拯救，要越門保守。」
+                        </li>
+                    </ul>
+                    <p>
+                        經文啟示我們，上帝保護我們，如同母鳥保護雛鳥。因此，讓我們用這節經文為自己、家人、教會和我們的國家禱告，一心投靠在上帝的翅膀蔭下。
+                    </p>
+                    <blockquote>
+                        <p>
+                            我們看到大衛在絕境中倚靠神，並渴望投靠在上帝翅膀的蔭下，如同雛鳥被母鳥保護，也如同在聖殿中尋求庇護。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-最安全的地方上帝的施恩座">
+                    <h2 id="最安全的地方上帝的施恩座">
+                        最安全的地方：上帝的施恩座
+                    </h2>
+                    <p>
+                        對大衛而言，最安全的地方並非任何軍事強權，而是「上帝翅膀的蔭下」。這個意象更深一層的含義，指向了聖殿中的<strong>約櫃</strong>。
+                    </p>
+                    <p>
+                        約櫃上有兩個基路伯（天使）張開翅膀，遮蓋之處被稱為「施恩座」。這裡是上帝與人相會、施恩的地方。正如出埃及記25章所描述的，上帝應許在施恩座上與人相會，並頒布祂的旨意。
+                    </p>
+                    <p>
+                        約櫃內存放著十誡法版、嗎哪和亞倫發芽的杖，分別代表上帝的話語、供應與權柄。當我們來到神的施恩寶座前，我們就領受這一切。
+                    </p>
+                </section>
+
+                <section class="section" id="section-在任何地方與神相會">
+                    <h2 id="在任何地方與神相會">在任何地方與神相會</h2>
+                    <p>
+                        當大衛躲在山洞時，他身邊並沒有實體的約櫃。但在最孤單無助之時，他透過禱告、默想神的話語，他所在的那個山洞，就變成了上帝設立施恩座的地方。<strong
+                            >這啟示我們，真正最安全的地方，是在於神的保護與同在，是與神面對面相會的經歷，而不受物理地點的限制。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-為我成全諸事的神">
+                    <h2 id="為我成全諸事的神">為我成全諸事的神</h2>
+                    <p>
+                        我們再看詩篇57篇第2節：「我要求告至高的神，就是為我成全諸事的神。」
+                    </p>
+                    <p>
+                        這裡「為我成全諸事」的原文意思是「為我成就神旨意的神」。這是大衛生命中最寶貴的特質。儘管他滿有理由報復追殺他的掃羅王——事實上他有兩次絕佳的機會可以親手殺掉掃羅，結束多年的逃亡生涯——但他選擇了敬畏神。
+                    </p>
+                    <p>
+                        大衛沒有用自己的方式來解決問題。倘若他憑血氣行事，或許能提早結束苦難，但他也將因此失去成為合神心意君王的資格。
+                    </p>
+                    <blockquote>
+                        <p>
+                            大衛即使在逃亡中，仍選擇敬畏神，不願親手傷害掃羅，他相信上帝會在祂的時間成就祂的旨意。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-在苦難中尋求神的旨意">
+                    <h2 id="在苦難中尋求神的旨意">在苦難中尋求神的旨意</h2>
+                    <p>
+                        大衛深知掃羅是耶和華的受膏者，若非上帝的吩咐，他不能用自己的方式取代神的計劃。在極大的苦難中，許多人可能會質疑「主啊，你在哪裡？」，或試圖為自己伸冤。然而，大衛最在乎的，是<strong>上帝的旨意能成就在他身上</strong>。
+                    </p>
+                    <p>
+                        他將生命中的挑戰與考驗，視為上帝在他身上的雕琢，並相信在整個過程中，上帝始終掌權。儘管逃亡近十年，他每日親近神、呼求神，堅信神的慈愛會保護他，神的信實會成全祂的旨意——即上帝早已膏立他為王。他不知道那日何時會到來，但他選擇敬畏並等候。
+                    </p>
+                </section>
+
+                <section class="section" id="section-反思我們的生命">
+                    <h2 id="反思我們的生命">反思我們的生命</h2>
+                    <p>
+                        如今，一年已過半，我們需要反思是否每天來到神面前靈修，而不是一睜眼就拿起手機，關注世界的動態。在下半年，我們要思考如何更多地親近神。
+                    </p>
+                    <p>
+                        想像如果你是大衛，在今日的生活中，你會面對的可能是充滿壓力的職場，被有權勢者或老闆針對，或是感覺被整個社會的大環境打壓。
+                    </p>
+                </section>
+
+                <section class="section" id="section-如同身在獅子中間">
+                    <h2 id="如同身在獅子中間">如同身在獅子中間</h2>
+                    <p>
+                        大衛在詩篇57篇第4節描述了他的處境：「我的性命在獅子中間…我躺臥在性如烈火的世人當中，他們的牙齒是槍、是劍，他們的舌頭是快刀。」
+                    </p>
+                    <p>
+                        我們生活中或許沒有實質的敵人，但在職場、朋友或社交群組中，時常會面對毀謗、言語攻擊或霸凌。這些「快刀」般的舌頭和「槍劍」般的牙齒，常讓人的心像大衛一樣，從一個曠野漂泊到另一個曠野。
+                    </p>
+                    <blockquote>
+                        <p>
+                            描述了大衛如何將生命的挑戰視為神的雕琢，並反思我們當代人應如何親近神，而非被世界的毀謗與攻擊所困擾。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-隱基底絕境中的世外桃源">
+                    <h2 id="隱基底絕境中的世外桃源">
+                        隱基底：絕境中的世外桃源
+                    </h2>
+                    <p>
+                        大衛，一位被膏立的未來君王，卻淪落到四處逃亡、無處安身。在他最走投無路之時，上帝為他開了一條活路，引領他進入一個如同世外桃源的地方——隱基底（En
+                        Gedi）。
+                    </p>
+                    <p>
+                        如今，隱基底是以色列的國家生態公園，位於死海西岸、猶大曠野的邊緣。這裡地處海平面以下四百多米，被稱為「地球的肚臍眼」。然而，就在這看似荒涼之地，卻湧出泉源，孕育了超過一千兩百種植物，甚至被美國國家地理學會譽為「世界奇觀」之一。<strong
+                            >在最不可能的地方，上帝為大衛預備了避難所。</strong
+                        >
+                    </p>
+                </section>
+
+                <section class="section" id="section-在低谷中神開出泉源">
+                    <h2 id="在低谷中神開出泉源">在低谷中，神開出泉源</h2>
+                    <p>
+                        我們的人生有時也像大衛一樣，一路向下，走進曠野、低谷，進入一個無人理解的孤獨山洞。然而，隱基底提醒我們：<strong
+                            >即使在最低谷、最糟糕、最荒涼、最無助的時刻，上帝依然能開出泉源。</strong
+                        >
+                        在人生最艱難的時刻，上帝仍會為祂所愛的人預備藏身之處和最深的供應。
+                    </p>
+                </section>
+
+                <section class="section" id="section-心境的轉折從禱告到讚美">
+                    <h2 id="心境的轉折從禱告到讚美">
+                        心境的轉折：從禱告到讚美
+                    </h2>
+                    <p>
+                        在親近神之後，大衛的心境發生了轉折。他從害怕、恐懼、焦慮中走出來，在詩篇57篇第5節宣告：「神啊，願你崇高，過於諸天！願你的榮耀高過全地！」
+                    </p>
+                    <p>
+                        當大衛越親近神，神在他心中就變得越大，困難和敵人則變得渺小。<strong
+                            >外在的環境沒有改變，但他的眼光和心境改變了。</strong
+                        >
+                    </p>
+                    <p>
+                        大衛每天只做兩件事：禱告和讚美。他從求告開始，一步步進入讚美的境界。在詩篇57篇的後段（7-11節），他不斷地讚美神：「神啊，我心堅定，我心堅定！我要唱詩，我要歌頌！我的靈啊，你當醒起！琴瑟啊，你們當醒起！我自己要極早醒起。主啊，我要在萬民中稱謝你，在列邦中歌頌你！因為你的慈愛高及諸天，你的誠實達到穹蒼。」
+                    </p>
+                    <blockquote>
+                        <p>
+                            大衛在絕境中從禱告轉向讚美。儘管環境未變，但因著仰望神，他的心境徹底改變，將低谷變為讚美之地。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-為何禱告會無力">
+                    <h2 id="為何禱告會無力">為何禱告會無力？</h2>
+                    <p>
+                        我們有時會不會覺得越禱告越無力、愁苦，甚至禱告不下去？這很可能是因為，我們的焦點放在自己的問題上，而不是在上帝身上。
+                    </p>
+                    <p>
+                        大衛的生命展現了一個深刻的轉折。他從起初呼求「神啊，求你憐憫我」，到最後宣告「我要唱詩，我要歌頌」。環境沒有改變，但他的生命改變了。這是因為<strong
+                            >他將眼光從仇敵和危險，轉向了神的慈愛與信實；從恐懼，轉向了信靠。</strong
+                        >
+                        當他聚焦於神，他的心就越發堅定，從低谷中發出了讚美。
+                    </p>
+                </section>
+
+                <section class="section" id="section-生命的樂器需要調音">
+                    <h2 id="生命的樂器需要調音">生命的樂器需要調音</h2>
+                    <p>
+                        大衛願意讓上帝來為他「調音」，調整他內心走音的心弦，才能重新奏出美妙的讚美旋律。
+                    </p>
+                    <p>
+                        一台再昂貴的鋼琴，彈久了也會走音；一把由世界級大師演奏過的小提琴，也不會永遠保持完美狀態，它會因氣候、濕度的變化而需要保養和調整。名琴尚且如此，我們屬神的人，更是需要被神重新調整。
+                    </p>
+                    <p>
+                        神愛我們，祂不只是要安慰、保護我們，更要「調整」我們，使我們能重新發出讚美的聲音。
+                    </p>
+                </section>
+
+                <section class="section" id="section-如琴師調整琴弦">
+                    <h2 id="如琴師調整琴弦">如琴師調整琴弦</h2>
+                    <p>陶恕（A.W. Tozer）曾有過一段深刻的描述：</p>
+                    <p>
+                        一位琴師何等珍愛他的古琴，將它抱在胸前，親它、撫它。但你看他如何調整琴弦——他緊握住琴，用力在弦上一撥，琴弦在「痛」楚中戰慄。琴師側耳細聽，若音未準，他便將弦再拉緊一些，再次彈撥，直到它能發出柔和、準確的聲音，他臉上才露出滿意的笑容。
+                    </p>
+                    <p>
+                        神對待我們亦是如此。祂愛你遠勝琴師愛琴。當祂發覺你的生命之音不和諧時，祂會把你緊緊抓住，用力撥動你的心弦。若聽見的是咒詛和埋怨，祂只得再攪緊你的心弦，反覆彈撥，<strong
+                            >直到你的聲音轉為讚美、感謝，並能說：「不要成就我的意思，只要成就你的意思。」</strong
+                        >
+                    </p>
+                    <p>這，才是神所喜悅的音樂。</p>
+                    <blockquote>
+                        <p>
+                            我們藉由陶恕的比喻，理解到神如何像琴師調整琴弦一樣，透過雕琢使我們的生命能發出讚美與順服的樂音，而非埋怨。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-在靈修的洞穴中與神相會">
+                    <h2 id="在靈修的洞穴中與神相會">
+                        在「靈修的洞穴」中與神相會
+                    </h2>
+                    <p>
+                        神調整我們，不是要讓我們發出痛苦的聲音，而是要使我們的生命能重新奏出讚美祂的旋律。耶穌在客西馬尼園的禱告——「不要成就我的意思，只要成就你的意思」——正是這種順服的極致體現。
+                    </p>
+                    <p>
+                        在今日網路便利的時代，我們隨時能進入網路世界的花花綠綠。追劇、玩遊戲、瀏覽社群媒體，這些休閒娛樂和社交活動固然是生活的一部分。但我們需要反思，親近神不應是最後的選項。
+                    </p>
+                    <p>
+                        弟兄姊妹們，我們需要找到自己的「靈修洞穴」，每天優先選擇親近神。
+                    </p>
+                </section>
+
+                <section class="section" id="section-學習讚美的功課">
+                    <h2 id="學習讚美的功課">學習讚美的功課</h2>
+                    <p>
+                        當我們不知如何親近神，就很難真正地禱告；當不懂得禱告，就更難發出讚美的聲音。我們很容易開口訴苦、埋怨、批評、論斷，卻不容易開口讚美和感恩。這些都需要我們來到神面前操練。
+                    </p>
+                    <p>
+                        我們可能擅長社交、做事、服事，能把活動安排得很好，卻很少安靜地來到神面前，將心交給祂。
+                    </p>
+                </section>
+
+                <section class="section" id="section-上帝有絕對的音感">
+                    <h2 id="上帝有絕對的音感">上帝有絕對的音感</h2>
+                    <p>
+                        我們是上帝手中的琴，需要讓祂來調音、來彈奏。如果我們不懂得安靜，主就很難在我們身上做調整的工作，我們的生命也就很難發出祂所喜悅的樂章。
+                    </p>
+                    <p>
+                        上帝有絕對的音感，祂完全聽得懂我們裡面的聲音。當我們在敬拜時，祂不僅聽我們口中所唱出的旋律，更能聽清我們靈魂深處的聲音。因此，敬拜不僅僅是主日來教會唱詩，而是在平日的生活中，讓生命的每一個音符都與神和諧。
+                    </p>
+                    <blockquote>
+                        <p>
+                            上帝有絕對的音感，祂不僅聽我們口中的敬拜，更能聽透我們靈魂深處的聲音，因此，敬拜是在生活中的每個音符都與神和諧。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-你就是上帝的樂器">
+                    <h2 id="你就是上帝的樂器">你，就是上帝的樂器</h2>
+                    <p>
+                        真正的敬拜，關鍵不在於外在的樂器，而是<strong>神要我們這個「人」成為祂的樂器</strong>。大衛是個懂得彈奏和製造樂器的人，但他更清楚，有一位最偉大的音樂家——上帝。因此，他將自己交在這位大音樂家手中，成為祂的樂器，每天親近神，讓上帝在他生命中「調音」。他從求告開始，最終發出了悅耳的讚美之聲。
+                    </p>
+                    <p>
+                        大衛之所以被稱為「合神心意的人」，並非因為他完美無瑕，而是因為無論外在環境多麼不友善、充滿挑戰和壓力，他的內心始終為神的愛保留了一個空間。很多時候，我們沒有為上帝保留這個「被愛的空間」，反而讓自己被他人的批評論斷或自己內心的苦毒埋怨所充滿，以至於越來越難親近神。
+                    </p>
+                </section>
+
+                <section class="section" id="section-靈修與上帝的約會">
+                    <h2 id="靈修與上帝的約會">靈修：與上帝的約會</h2>
+                    <p>
+                        一個真實的問題是：你多久沒有靈修了？或者，我們是否覺得靈修不重要？
+                    </p>
+                    <p>
+                        靈修不是教會的規定，而是<strong>上帝與你約會的時間</strong>。我們可能會覺得，不靈修、不禱告，照樣可以服事、當小組長、分享、做許多事，甚至在職場上步步高升。但上帝有絕對的音感，祂早就聽出我們內心深處已經「走音」了。
+                    </p>
+                    <p>
+                        鼓勵大家，在接下來的每一天，分別出一段時間，找到一個不被打擾的「山洞」。在那裡，你可以播放詩歌，固定地讀經、親近神。可以跟隨教會的讀經進度，或僅是將神的話一字一句地讀出來，放在禱告中，將你一天要面對的人事物交給神。這就是靈修——讓神在我們生命中做重新調整的時刻。
+                    </p>
+                </section>
+
+                <section class="section" id="section-在不完美的世界中前行">
+                    <h2 id="在不完美的世界中前行">在不完美的世界中前行</h2>
+                    <p>
+                        我們活在一個不完美的世界，沒有完美的教會，有人的地方永遠有問題。我們很容易對人事物充滿埋怨和不滿。當我們陷入這種光景時，內心其實就像大衛一樣，已經下到了最低谷。
+                    </p>
+                    <blockquote>
+                        <p>
+                            人就是上帝的樂器，需要透過靈修這個「約會時間」來讓上帝為我們「調音」，否則內心就會在不知不覺中「走音」。
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section class="section" id="section-屬靈的避暑祕境">
+                    <h2 id="屬靈的避暑祕境">屬靈的避暑祕境</h2>
+                    <p>
+                        大衛在人生最低谷、下到海平面以下時，上帝卻為他預備了隱基底這個綠洲和泉源之地。當他進到山洞，才發現上帝的寶座早已設立在那裡，那裡就是上帝翅膀的蔭下，是藏身的磐石。
+                    </p>
+                    <p>
+                        在炎熱天氣中，人們會尋找避暑祕境，一個可以遠離喧囂、重新得力的地方。在屬靈生命中，上帝也為我們預備了這樣一個「人間祕境」——<strong>就是我們靈修的「山洞」</strong>。在這個神要與我們相遇的地方，我們這群主的羊，可以在泉源之地重新得力。
+                    </p>
+                    <p>在這裡，我們能將埋怨變為禱告，將疲憊化為安息。</p>
+                </section>
+
+                <section class="section" id="section-效法耶穌退到隱祕處">
+                    <h2 id="效法耶穌退到隱祕處">效法耶穌，退到隱祕處</h2>
+                    <p>
+                        耶穌基督自己在世服事時，也為我們立下了榜樣。祂常常在服事了大量人群、面對繁重需求後，<strong>獨自退到曠野去禱告</strong>。祂深知，必須退到隱祕處與天父連結，才能重新得力，並確認自己的使命不至模糊。
+                    </p>
+                </section>
+
+                <section
+                    class="section"
+                    id="section-只管坦然無懼地來到施恩寶座前"
+                >
+                    <h2 id="只管坦然無懼地來到施恩寶座前">
+                        只管坦然無懼地來到施恩寶座前
+                    </h2>
+                    <p>最後，讓我們以希伯來書4章15-16節共勉：</p>
+                    <blockquote>
+                        <p>
+                            「因我們的大祭司並非不能體恤我們的軟弱，他也曾凡事受過試探，與我們一樣，只是他沒有犯罪。所以我們只管坦然無懼地來到施恩的寶座前，為要得憐恤，蒙恩惠，作隨時的幫助。」
+                        </p>
+                    </blockquote>
+                </section>
+
+                <section
+                    class="section"
+                    id="section-結論為神保留一個山洞的時間"
+                >
+                    <h2 id="結論為神保留一個山洞的時間">
+                        結論：為神保留一個「山洞」的時間
+                    </h2>
+                    <p>
+                        從今天起，在接下來的半年，鼓勵每一位弟兄姊妹，無論生活多麼忙碌，都要<strong>為神保留一個「山洞」的時間</strong>。讓自己可以天天投靠主、讚美神。
+                    </p>
+                    <p>
+                        如此，我們的心就不再被環境牽動，不再被人的言語影響，不再活在抱怨或批評中。願我們每一天都能對主說：「主啊，我要投靠你，我要親近你。求你使我重新得力，讓我的生命，為你唱出一首讚美的詩歌。」
+                    </p>
+                </section>
+            </main>
+        </div>
+        <!-- Include layout.js -->
+        <script src="../assets/js/layout.js"></script>
+
+        <!-- Add keywords config for highlighting -->
+        <script id="keywords-config" type="application/json">
+            {
+                "keywords": [
+                    "我們的生命是否需要調音",
+                    "大衛在有驚無險的經歷中所寫下的詩篇",
+                    "以賽亞書31:5",
+                    "上帝的旨意能成就在他身上",
+                    "神要我們這個「人」成為祂的樂器",
+                    "上帝與你約會的時間",
+                    "就是我們靈修的「山洞",
+                    "獨自退到曠野去禱告",
+                    "為神保留一個「山洞」的時間"
+                ]
+            }
+        </script>
+
+        <script>
+            // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+            window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+        </script>
+    </body>
+</html>
