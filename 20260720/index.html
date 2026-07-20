@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260720 主日信息</title>
+    <meta name="description" content="祈求主靈更新與啟示">
+    <meta name="keywords" content="主啊，祈求祢持續更新我們, 一切真理、方法與啟示, 轉變人生觀與世界觀, 生命的飛躍與提升, 約伯記第四章12節至16節, 聖靈工作的接收器, 我們的身體，就是聖靈工作的接收器, 心思意念突獲啟示, 身體與屬靈感官都會有所回應, 水流感與火的恩膏, 奉耶穌基督的名抵擋並方言禱告">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+ 
+     <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260720 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">祈求主靈更新與啟示
+                    <a href="https://www.youtube.com/watch?v=VlWN10Y1dvg">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=VlWN10Y1dvg">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-祈求主靈更新與啟示">
+<h2 id="祈求主靈更新與啟示">祈求主靈更新與啟示</h2>
+<p><strong>主啊，祈求祢持續更新我們</strong>，使我們在地上的日子能與祢更<strong>親近</strong>，深入明白祢的<strong>工作與作為</strong>。我們願作祢謙卑的僕人與器皿，如同手套與真正在背後做工的<strong>手</strong>，學習與祢<strong>配搭</strong>。主啊，幫助我們謙卑在祢面前，因為<strong>一切真理、方法與啟示</strong>都記載在聖經中。祈求主打開我們的 <strong>眼睛與心竅</strong>，讓我們領受祢話語的奇妙，進入那真理的深處。感謝讚美主，將今日的時間交託在祢手中，奉耶穌基督的名禱告，阿門。</p>
+            </section>
+            
+            <section class="section" id="section-親切的團契與網絡連結">
+<h2 id="親切的團契與網絡連結">親切的團契與網絡連結</h2>
+<p>各位弟兄姐妹平安。很高興能回到大家中間，距離上次來已有兩年。由於蕙如在這間教會成長，我也算是個台灣女婿，每隔一兩年飛回來與大家分享與交通，在主裡感到格外親切。最近透過<strong>網絡</strong>，我們與一些弟兄姐妹一同操練<strong>烈火讀經</strong>，深感獲益良多。儘管距離遙遠，透過網絡連結，讓我們在靈裡更加<strong>緊密相連</strong>。</p>
+            </section>
+            
+            <section class="section" id="section-認識聖靈進入聖靈的服侍">
+<h2 id="認識聖靈進入聖靈的服侍">認識聖靈：進入聖靈的服侍</h2>
+<p>今天的信息主題是「認識聖靈」系列之一，關於<strong>「進入聖靈的服侍」</strong>。請大家翻開聖經，哥林多後書三章4至18節。這段經文大家相當熟悉，記載摩西臉上蒙著帕子，因其臉面反射榮光，以色列人無法直視。第17節這句經文尤為著名：「主的靈在哪裡，哪裡就有自由」。我們常引用此句，但經文中幾處關鍵的教導可能因中文譯本的用字選擇而被忽略。</p>
+<p>在哥林多後書三章4節起，作者對比了兩種服侍：一是<strong>字句的服侍</strong>（律法的服侍），另一則是今日的重點——<strong>聖靈的服侍</strong>。在中文和合本第八節中，聖靈的服侍被譯為「聖靈的職事」，這容易讓人誤以為是指特定的「服侍崗位」。</p>
+<p>禱告祈求主靈更新與啟示，並引出認識聖靈主題中關於進入聖靈服侍的經文對比。</p>
+            </section>
+            
+            <section class="section" id="section-認識聖靈的服侍">
+<h2 id="認識聖靈的服侍">認識聖靈的服侍</h2>
+<p>提到「聖靈的職事」，許多教會並未設立此職位，導致概念模糊。此詞更準確的意義是指「在靈裡的服事」。相較於教會中常見的音響控制、兒童主日學等職能，聖靈的服事代表一種屬靈層面的深層侍奉，是在神國度裡運作的核心關鍵。</p>
+            </section>
+            
+            <section class="section" id="section-新舊約服事的對比">
+<h2 id="新舊約服事的對比">新舊約服事的對比</h2>
+<p>在哥林多後書三章七節中，保羅將其與「刻在石頭上的律法服事」做對比。舊約的律法服事雖有榮耀，但那種榮耀是會「漸漸退去」的。身處新約時代的我們，既已成為尊貴的祭司，就不應再停留在舊約的侍奉模式中。我們必須轉向進入「聖靈的服事」，唯有如此，才能看見神更大的榮耀。</p>
+            </section>
+            
+            <section class="section" id="section-進入屬靈的自由">
+<h2 id="進入屬靈的自由">進入屬靈的自由</h2>
+<p>舊約服事往往令人懼怕，因其帶著束縛且讓人難以直視榮耀。然而經上記著：「主的靈在哪裡，哪裡就得以自由。」當我們真正跨入靈裡的服事，才能體會到聖靈帶來的真自由；反之，若仍陷在律法的侍奉中，所領受的終究是律法的捆綁。</p>
+            </section>
+            
+            <section class="section" id="section-基督徒信仰的屬靈平行歷程">
+<h2 id="基督徒信仰的屬靈平行歷程">基督徒信仰的屬靈平行歷程</h2>
+<p>為了理解何謂「靈的服事」，我們必須回溯舊約歷史。出埃及記中，神帶領以色列人脫離埃及（象徵世界）的為奴之地，經歷紅海（象徵受洗），最終進入曠野。這一歷程與我們今日基督徒的信仰道路完全平行：我們曾是世界的奴僕，如今已蒙召成為神的子民，是尊貴的祭司，受神親自帶領。</p>
+            </section>
+            
+            <section class="section" id="section-以色列人的曠野與信徒的恩典期">
+<h2 id="以色列人的曠野與信徒的恩典期">以色列人的曠野與信徒的恩典期</h2>
+<p>以色列人初期進入曠野時，靈命如同<strong>嬰孩</strong>，因不諳律法而頻繁犯罪、抱怨。這段時期對應信徒的「恩典期」，雖常把神視作偶像，神卻依然垂聽禱告。隨著靈命成長，我們對神的律法與心意有了更深的認識，便進入了「律法」的階段。這不僅是神對敬拜與生活的規範，更是信徒進入教會後，開始學習奉獻、服侍並與神建立關係，從而<strong>轉變人生觀與世界觀</strong>的過程。</p>
+            </section>
+            
+            <section class="section" id="section-祭司的服侍與帳幕的維持">
+<h2 id="祭司的服侍與帳幕的維持">祭司的服侍與帳幕的維持</h2>
+<p>在以色列人中，祭司的主要任務是維護聖殿（當時為帳幕），他們每日進行帳幕的拆卸、組裝與遷移，維持其持續運作。這與我們初信主時在教會的服侍極為相似：我們透過參加查經班、主日學、敬拜、招待與奉獻，貢獻力量來回報神的救贖。</p>
+            </section>
+            
+            <section class="section" id="section-以色列人的服侍本質與警示">
+<h2 id="以色列人的服侍本質與警示">以色列人的服侍本質與警示</h2>
+<p>這種教會內的服侍，多數圍繞著主日與團契進行，其核心在於維持聚會的正常運作。這與當年以色列人在曠野，以帳幕為中心的生活方式如出一轍，保羅稱之為「律法的服侍」。遺憾的是，因不順服與缺乏對神話語的信心，以色列人錯失了進入迦南地的機會，受懲罰在曠野徘徊了四十年。然而，這四十年他們並非無所事事，他們依然在曠野中，日復一日地服侍。</p>
+            </section>
+            
+            <section class="section" id="section-以帳幕為中心的曠野生活">
+<h2 id="以帳幕為中心的曠野生活">以帳幕為中心的曠野生活</h2>
+<p><strong>以色列人</strong>在曠野的四十年，生活始終圍繞著帳幕。無論是拆卸、遷移、搭起帳幕，還是每日的獻祭、學習律法、過節，這樣的循環重複了四十年。這是一種<strong>屬神的服侍</strong>，保羅稱此有榮光，但這榮光會隨時間退去，人會感到疲憊與疲乏，因為這服侍在重複中缺乏變化。</p>
+<p>這與我們今日許多教會的情景何其相似。信主後有了服侍，但大部分的時間與精力，都耗費在維護教會的聚會與各樣事工上。</p>
+            </section>
+            
+            <section class="section" id="section-教會服侍的瓶頸與反思">
+<h2 id="教會服侍的瓶頸與反思">教會服侍的瓶頸與反思</h2>
+<p>曾與一位資深家庭教會牧者交流。該教會建立二十多年，經歷過復興、動盪與人員更替，雖然始終在傳福音、做門徒培訓、辦查經班，也努力差派宣教士並邀請講員辦特會，但他們仍深感陷入瓶頸。每當講員離開，教會又會回到過去的循環中。</p>
+<p>教會所做的事本身並無錯誤，每一件都是正確的，然而他們卻內心焦急，深知需要突破，卻無從下手。當我問及二十、三十年後是否仍重複這些模式時，他給出了肯定的回答。</p>
+            </section>
+            
+            <section class="section" id="section-進入聖靈的服侍">
+<h2 id="進入聖靈的服侍">進入聖靈的服侍</h2>
+<p>我告訴他們，這並非他們做錯了什麼，而是需要進入一個<strong>新的階段</strong>——也就是進入「聖靈的服侍」。這就像是從初中進階到大學，需要提升到一個完全不同層次的服侍之中。</p>
+<p>我們過去的服侍固然有基礎，但若停滯不前，就如同十八歲仍背誦九九乘法表，無法達到生命的成熟。我們必須尋求<strong>生命的飛躍與提升</strong>，進入聖靈的服侍。</p>
+            </section>
+            
+            <section class="section" id="section-認識聖靈的工作模式">
+<h2 id="認識聖靈的工作模式">認識聖靈的工作模式</h2>
+<p>進入聖靈的服侍，關鍵在於明白聖經對聖靈工作的啟示。這並非追求虛無縹緲的新事物，而是在既有的真理中突破自我。聖經運用了十二至十六個不同的<strong>比喻</strong>來描述聖靈的工作。這些比喻如同我們面對未知事物時，使用已知知識去類比，是神藉著地上已知的元素，幫助我們理解聖靈如何運行。例如：聖靈如風、如火，或是受洗時如印記、如憑據，甚至如流動的水。這些比喻呈現了聖靈在教會與個人生命中運行的特點。</p>
+            </section>
+            
+            <section class="section" id="section-聖靈恩賜的運作">
+<h2 id="聖靈恩賜的運作">聖靈恩賜的運作</h2>
+<p>除了比喻，我們更需明白聖靈所賜的恩賜。這些恩賜是神給予我們的<strong>寶貴禮物</strong>，我們應當學習如何運作。以哥林多前書十二章提到的九大恩賜為例，包括知識言語、智慧言語、分辨諸靈、信心、異能、醫治、翻方言、方言與預言等，深入認知這些恩賜的運行方式，才能使我們與聖靈真正同工，進入自由的服侍之中。</p>
+<p>這些步驟並非絕對的階段劃分，而是可以<strong>同時進行</strong>的探索。透過學習與認知，我們將更深地領受神在聖靈裡的工作。</p>
+            </section>
+            
+            <section class="section" id="section-認識聖靈的運行與恩賜">
+<h2 id="認識聖靈的運行與恩賜">認識聖靈的運行與恩賜</h2>
+<p>我們要明白，聖經中的<strong>知識言語</strong>與<strong>智慧言語</strong>，以及<strong>分辨諸靈</strong>是如何運作的。當聖靈降臨時，這些<strong>恩賜</strong> 能在我們生命中發揮功能，使我們能與聖靈同工。這關鍵在於認識 <strong>聖靈的律</strong> 。如同宇宙中存在著物質界的律，例如 <strong>重力</strong> 與 <strong>春夏秋冬的運行</strong>，這些規律不以人的地位或認知為轉移；在靈界中，同樣存在著屬靈的規律，諸如罪帶來的代價、神的救贖，以及順服神的話帶來 <strong>祝福</strong>，而違背則招致<strong>咒詛</strong>。</p>
+            </section>
+            
+            <section class="section" id="section-破除咒詛的權柄">
+<h2 id="破除咒詛的權柄">破除咒詛的權柄</h2>
+<p>在舊約中，我們看見遵守神的話即帶來祝福，而破壞神的話則招致咒詛，後者常表現為破壞關係、身體疾病、家族遺傳疾病或財務上的虧損。然而，基督徒擁有<strong>權柄</strong>去破除這些咒詛，因為耶穌在<strong>十字架</strong>上成就的救恩，已將這份得勝的權柄賜予我們。每一位基督徒都具備<strong>醫治與釋放</strong>的能力。</p>
+            </section>
+            
+            <section class="section" id="section-支取救恩中的豐盛">
+<h2 id="支取救恩中的豐盛">支取救恩中的豐盛</h2>
+<p>許多信徒尚未經歷這份大能，往往是因為未去<strong>認知與學習</strong>。這如同那位搭乘郵輪橫渡海洋，卻因不知飯食已含在船票內而挨餓的乘客。我們在救恩中，本就擁有了破除咒詛與勝過黑暗權勢的權柄。</p>
+            </section>
+            
+            <section class="section" id="section-生命的更新與改變">
+<h2 id="生命的更新與改變">生命的更新與改變</h2>
+<p>當我們處理內在醫治、辨識家族疾病的根源，或是面對嫉妒、紛爭、焦慮與情緒失控時，應反思：耶穌會有這些個性嗎？答案顯然是否定的。透過聖經的教導，我們明白自己能在救恩中<strong>改變</strong>，並非一定要尋求他人的代禱，只要明白這些屬靈規律，我們便能在生活中<strong>得勝</strong>，真正經歷<strong>聖靈的大能</strong>。</p>
+            </section>
+            
+            <section class="section" id="section-身體作為聖靈的接收器">
+<h2 id="身體作為聖靈的接收器">身體作為聖靈的接收器</h2>
+<p>明白聖靈的運作，需要從聖經的根基開始，特別是關於身體如何與聖靈互動、恩賜的運作以及醫治釋放的機制。唯有理解這些，我們才能真正進入聖靈的「水流」，體會「神的靈在哪裡，哪裡就有自由」。</p>
+<p>這並非高不可攀的奧秘，更不是講員專有的特權。你看許多講員在台上宣告聖靈的醫治，似乎有特殊的感應能力，這其實是透過<strong>練習與認知</strong>所達到的結果。當聖靈的流來臨，講員若能辨識並接收到聖靈的信號，就能將聖靈的作為宣告出來。聖靈的工作不會跳出聖經的範疇，無論是如膏油、如風、如火或如手，聖靈的工作總是有跡可循。透過不斷在聖靈裡體會，你我同樣能學習這門功課，雖然這需要時間累積。</p>
+            </section>
+            
+            <section class="section" id="section-約伯記的屬靈洞見">
+<h2 id="約伯記的屬靈洞見">約伯記的屬靈洞見</h2>
+<p>讓我們閱讀<strong>約伯記第四章12節至16節</strong>：</p>
+<p>「我暗中得了默示，我耳朵也聽見微小的聲音。在思念中，異象之間，世人沉睡的時候，恐懼戰兢臨到我身，使我百骨打戰；有靈從我面前經過，我身上毫毛直立。那靈停住，我卻不能辨其形狀，有影像在我眼前；我在靜默中聽見有聲音說......」</p>
+<p>這段經文闡明了身體作為屬靈感知核心的原則。我們的全人——從頭髮到腳趾、感官系統，不僅限於五官，而是整體皆為<strong>聖靈工作的接收器</strong>。如同舊時的收音機，當你調對頻率，就能清晰接收訊號。請務必建立這個關鍵的屬靈觀念：<strong>我們的身體，就是聖靈工作的接收器。</strong> 當靈經由面前經過而產生一系列生理反應，這不僅是宗教體驗，更是聖靈在特定環境，如敬拜或講道時，於我們身上彰顯能力的實證。</p>
+            </section>
+            
+            <section class="section" id="section-聖靈經過的生理訊號">
+<h2 id="聖靈經過的生理訊號">聖靈經過的生理訊號</h2>
+<p>當聖靈在你身旁經過，身體常會出現明顯的訊號，例如<strong>起雞皮疙瘩</strong>或<strong>毫毛直立</strong>。這些反應並非怪異現象，而是聖靈工作時，身體捕捉到的屬靈信號。此外，所謂「暗中得默示」，指的便是<strong>心思意念突獲啟示</strong>，在讀經或聚會時突然領受真理。同時，你能聽見聖靈那<strong>細微的聲音</strong>。這些現象在聖靈充滿的環境中，顯得格外容易發生。</p>
+            </section>
+            
+            <section class="section" id="section-意向與敬畏的體現">
+<h2 id="意向與敬畏的體現">意向與敬畏的體現</h2>
+<p>在夜間，尤其是人沉睡之時，是異象與異夢發生的好時機。擁有異象恩賜的人，閉眼即可見圖畫，這正是聖靈運行時的特徵。第十四節提到的「恐懼戰兢」，原文語境中更貼切的翻譯應為「敬畏」。當神的靈臨到，身體自然會產生敬畏之情，就像以西結、但以理與以賽亞看見神榮耀時，會不由自主地俯伏一般。</p>
+<p>此外，聖靈充滿時的<strong>骨頭打顫</strong>（身體抖動或搖晃），也是對神同在的自然生理反應。應當分辨：若是在追求神時發生，即是聖靈的運行；若僅是在觀看恐怖片而產生的恐懼或戰慄，那僅是單純的娛樂被驚嚇，不可混為一談。</p>
+            </section>
+            
+            <section class="section" id="section-聖靈臨在的屬靈感知">
+<h2 id="聖靈臨在的屬靈感知">聖靈臨在的屬靈感知</h2>
+<p>在聖靈運行的過程中，約伯記的記載提供了我們寶貴的參考：<strong>屬靈感官的開啟</strong>不僅限於身體的直接反應，更包含視覺與聽覺的層面。當靈眼被開啟時，即便在閉眼狀態下，也能感受到神的靈臨在。有些時候，你會察覺到神的靈在面前停駐，雖無法精確描繪其形狀，卻能感知那影像的存在，這正是聖靈親自臨在的記號。</p>
+            </section>
+            
+            <section class="section" id="section-辨識聖靈的微聲與聲音">
+<h2 id="辨識聖靈的微聲與聲音">辨識聖靈的微聲與聲音</h2>
+<p>除了視覺，聽覺也是聖靈運行的重要管道。除了先前提到的「微小聲音」——那是在心意念領域極其細微的指引之外，有時聖靈澆灌時，人會聽見如對話般清晰的聲音。儘管後者較為罕見，但這四節經文清楚告訴我們：當神的靈降臨或充滿時，<strong>身體與屬靈感官都會有所回應</strong>。</p>
+<p>對於這些反應，我們不應忽略，更不應心存迷惑或刻意抵擋。這些生理與感官的現象，實則是神在我們生命中做工的自然結果。我們需要熟悉並習慣這些做工的方式，這好比收音機的調頻，需要透過不斷被聖靈充滿來精準定位。</p>
+            </section>
+            
+            <section class="section" id="section-聖靈運行的多樣表現">
+<h2 id="聖靈運行的多樣表現">聖靈運行的多樣表現</h2>
+<p>正如以弗所書五章十八節的教導，我們當常常被聖靈充滿。當我們經歷聖靈澆灌，身體反應往往多樣且深刻。這些表現形式包括：</p>
+<ul>
+<li><strong>電流感</strong>：像電流般的強烈刺激，往往伴隨著悔改的動力，帶來生命的更新。</li>
+<li><strong>水流感與火的恩膏</strong>：如同我們在敬拜中所經歷的熱烈恩膏，是神靈在聚會中真實交灌的明證。</li>
+</ul>
+<p>事實上，我們當中許多人的屬靈感官已經被神開啟。所謂的「屬靈五官」並非僵化的定義，而是一個描述我們對神臨在保持敏感的途徑。讓我們學習敏銳於神的靈，在敬拜中更深地經歷祂的工作。</p>
+<p>所以，這意味著我們當中有一些弟兄姐妹，身體已然<strong>被神開啟</strong>，能夠敏銳感受到聖靈的工作。</p>
+            </section>
+            
+            <section class="section" id="section-聖靈水流中的自由服侍">
+<h2 id="聖靈水流中的自由服侍">聖靈水流中的自由服侍</h2>
+<p>例如，在敬拜時，那種<strong>聖靈澆灌</strong>而下的膏抹，正是神作為的體現。當我們能敏銳辨認出這恩膏，便不再是依憑己力，而是順著聖靈的帶領去運作。在我帶領的查經聚會中，我們習慣在結束後<strong>等候神</strong>，藉著音樂邀請聖靈親自做工。過程中沒有既定的預案，一切完全依憑當下在靈裡的辨識與感應。若神要醫治，祂會如何顯明？如同耶穌在約翰福音中所述：「我看見父神做什麼，我便做什麼。」這並非天書，而是在意向中清晰看見父的作為，進而在地上順服宣告出來。我不過是一位僕人，作為出口將其宣告，成就便在於神。</p>
+            </section>
+            
+            <section class="section" id="section-身體作為聖靈工作的接收器">
+<h2 id="身體作為聖靈工作的接收器">身體作為聖靈工作的接收器</h2>
+<p>有些時候，我的身體會成為接收聖靈信號的器皿。例如，在追求聖靈的敬拜中，我無端感到心痛，既非身體有疾，也非外在因素導致。此時，我便明白這是 <strong>神要醫治</strong>現場心臟有問題之人的印記。我只需領受這信號，並宣告出來：「今天神要醫治心臟有問題的人，請舉手領受。」我僅僅是個<strong>器皿</strong>，宣告後，神親自做成祂的工。無論是耳朵疾病、腿部問題、憂鬱困擾，或是需要鼓勵的時刻，聖靈藉由身體的反應作為恩賜運作的導管，讓神在水流中<strong>自由服侍</strong>，帶來安慰、造就與醫治。</p>
+            </section>
+            
+            <section class="section" id="section-辨別屬靈爭戰的印記">
+<h2 id="辨別屬靈爭戰的印記">辨別屬靈爭戰的印記</h2>
+<p>不僅是聖靈主動做工，當仇敵魔鬼對我們的生命、家庭施加攻擊時，身體往往也是第一時間有反應的媒介。然而，這類的辨別需要時間去學習與認知。這過程好比醫生診斷發燒，雖有許多致病因素，仍需透過專業排查找出<strong>根源</strong>。我們在靈裡也需要經歷這番分辨的磨練。許多時候，當仇敵施以巫術等黑暗權勢攻擊時，我們的身體會先行警示，若我們缺乏對屬靈領域的認知，極易誤判為單純的物質界問題。</p>
+            </section>
+            
+            <section class="section" id="section-污術的身體反應與分辨">
+<h2 id="污術的身體反應與分辨">污術的身體反應與分辨</h2>
+<p>巫術攻擊時常伴隨身體反應， <strong>頭痛</strong> 即為常見症狀之一。然而，每人的生理感知不同，這些反應需藉由<strong>與聖靈同行</strong>來學習、體會與經歷。當聖靈充滿時，你的感知可能包含熱感、風感或水感等，皆屬正常，重點在於你能否在聖經的架構內辨別與處理。</p>
+            </section>
+            
+            <section class="section" id="section-辨別攻擊的模式">
+<h2 id="辨別攻擊的模式">辨別攻擊的模式</h2>
+<p>例如，我曾與身上帶有強烈操控巫術的人交談，掛斷電話後，頭部隨即出現脹跳的痛感。根據經驗，這通常是<strong>巫術攻擊</strong>的訊號。若要分辨這種頭痛是否源於巫術，而非疲勞，關鍵在於對聖經真理的認知。</p>
+<p>常見的巫術攻擊模式包括：</p>
+<ul>
+<li><strong>屬靈昏睡</strong>：平日精神極佳，但一進行讀經、聚會等屬靈活動便感到困倦，甚至一聽講道就睡，禱告結束才清醒。這旨在阻礙神的兒女專注於神的事物。</li>
+<li><strong>異常頭痛</strong>：如前述掛斷電話後的即時痛感。</li>
+</ul>
+            </section>
+            
+            <section class="section" id="section-正確的靈性回應">
+<h2 id="正確的靈性回應">正確的靈性回應</h2>
+<p>當我察覺是巫術攻擊時，我的靈裡反應是立刻<strong>奉耶穌基督的名抵擋並方言禱告</strong>。若此痛楚迅速消失，即可確認攻擊源頭確實為巫術。</p>
+<p>然而，若頭痛是因為個人生活問題（如與家人爭吵），盲目地抵擋巫術將毫無效果。此時，我們必須<strong>認真悔改</strong>，而非將一切責任歸咎於魔鬼或巫術。靈性成熟的關鍵，在於透過生活中的不斷嘗試，學習正確分辨神的話語與個人的過犯，不隨意推諉責任。</p>
+            </section>
+            
+            <section class="section" id="section-屬靈敏感體質的身體預警">
+<h2 id="屬靈敏感體質的身體預警">屬靈敏感體質的身體預警</h2>
+<p>在教會中，有些弟兄姐妹屬於<strong>「屬靈敏感體質」</strong>。這類人經過神多年的訓練，逐漸明白神會透過身體的反應直接對他們說話。</p>
+<p>例如在多倫多的教會，有一位肢體就極其敏感。當有新人坐在他身邊，若對方靈裡生命有問題，他的身體會立刻感到疼痛。這類肢體其實過得相當辛苦，需要學習如何應對與處理——當身體接收到訊號，感到莫名不適時，應意識到這是神在透過身體發出提醒。</p>
+            </section>
+            
+            <section class="section" id="section-沾染與靈界提醒">
+<h2 id="沾染與靈界提醒">沾染與靈界提醒</h2>
+<p>這類敏感度是可以訓練的。神常藉由「沾染」來訓練人。無論是在教會或是商店，若不具備靈裡的警覺，很容易受到環境中污穢靈的影響。</p>
+<p>例如，有些人進入擺放偶像的商店，出來後身體會感到不適。若不明白這是神在提醒環境中的污穢靈已經影響了自己，往往會感到困惑。其實，我們擁有<strong>醫治釋放的權柄</strong>，只要運用潔淨禱告：奉主耶穌基督的名，以寶血潔淨並遮蓋自己，斷開所有沾染，身體的不適通常會立即得著釋放。</p>
+            </section>
+            
+            <section class="section" id="section-真實案例與禱告功效">
+<h2 id="真實案例與禱告功效">真實案例與禱告功效</h2>
+<p>這位肢體曾受邀前往當地一家規模相當大的華人教會。當他星期五坐下不久，身體便開始出現異常的發癢，這讓他立刻意識到該教會有靈理上的狀況，儘管具體原因不明，也不便當面詢問。</p>
+<p>如何辨別這種癢與醫學上的皮膚發炎或過敏不同？關鍵在於經歷。當他馬上進行潔淨禱告後，肉眼可見地，原本大片紅疹迅速消退。這種立竿見影的果效證明了禱告的對應性——這並非醫學上的過敏，而是屬靈上的沾染。神確實透過身體在對我們說話，重點在於我們是否留意並學會如何處理。</p>
+            </section>
+            
+            <section class="section" id="section-識別屬靈爭戰的身體反應">
+<h2 id="識別屬靈爭戰的身體反應">識別屬靈爭戰的身體反應</h2>
+<p>我們應當留意身體的反應，這需要相關領域的真理知識。當屬靈捷徑、宗教的靈或各種靈進行攻擊時，身體通常會出現特定的徵兆。掌握這些知識後，在生活中遇到問題時，便能採取捷徑，透過禱告進行抵擋，並觀察是否有效。如果禱告兩天仍無果效，再去諮詢醫生，這非常簡單。基督徒並不應固執，這並非難事。在家中禱告往往比掛號看醫生更迅速。只需幾秒鐘，將心力專注於禱告並開始抵擋，若兩天後無果效，再尋求其他醫療方法。基督徒本擁有此權柄，只是往往未曾實際應用。</p>
+            </section>
+            
+            <section class="section" id="section-在生活中實踐屬靈真理">
+<h2 id="在生活中實踐屬靈真理">在生活中實踐屬靈真理</h2>
+<p>在這個領域中，需透過實際生活中的學習與應用，而不僅止於教會環境。以孩子生病為例，我們常會意識到可能是從學校或同儕影響而來。在處理這類狀況時，我們運用屬靈的律，在孩子身上有許多醫治的見證。對於許多疾病，透過禱告往往能迅速解決；但當然，有些疾病仍需就醫服藥。這需要你在實際生活中去經歷，信仰並非僅在主日聚會中才發揮功效，它發生在逛街、生活中各個領域。當我們將聖經真理應用於生活的各個層面，最終蒙福的是我們自己。在這樣的環境中，我們要更加認識這位寶貴的神。</p>
+            </section>
+            
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": ["主啊，祈求祢持續更新我們", "一切真理、方法與啟示", "轉變人生觀與世界觀", "生命的飛躍與提升", "約伯記第四章12節至16節", "聖靈工作的接收器", "我們的身體，就是聖靈工作的接收器", "心思意念突獲啟示", "身體與屬靈感官都會有所回應", "水流感與火的恩膏", "奉耶穌基督的名抵擋並方言禱告"]
+    }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
