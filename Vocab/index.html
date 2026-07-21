@@ -285,29 +285,22 @@
   }
 
   // ── TTS ──
-  let ttsVoices = [];
   function speak(text) {
-    if (!window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US';
-    u.rate = 0.9;
-    // Android Chrome: voices empty on first call, need explicit voice
-    if (ttsVoices.length === 0) {
-      ttsVoices = window.speechSynthesis.getVoices();
-    }
-    if (ttsVoices.length > 0) {
-      const en = ttsVoices.find(v => v.lang.startsWith('en'));
-      if (en) u.voice = en;
-    }
-    window.speechSynthesis.speak(u);
-  }
-  // Load voices asynchronously (Chrome loads them lazy)
-  if (window.speechSynthesis) {
-    window.speechSynthesis.addEventListener('voiceschanged', function() {
-      ttsVoices = window.speechSynthesis.getVoices();
-    }, { once: true });
-    ttsVoices = window.speechSynthesis.getVoices();
+    if (!text) return;
+    // Google TTS audio — works on Android Chrome
+    const url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q='
+      + encodeURIComponent(text);
+    const audio = new Audio(url);
+    audio.play().catch(function() {
+      // Fallback: Web Speech API
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = 0.9;
+        window.speechSynthesis.speak(u);
+      }
+    });
   }
 
   // ── Navigation (with slide animation) ──
