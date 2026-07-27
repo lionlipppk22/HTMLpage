@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260727 主日信息</title>
+    <meta name="description" content="經文記載">
+    <meta name="keywords" content="你們有幾個人敢為牧師禱告, 長出了不一樣的力量, 為了讓我們反思問題從何開始, 你的出現就是對弟兄姐妹最好的服侍, 然而，最大的損失其實是自己">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+     <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="2" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260727 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">經文記載
+                    <a href="https://www.youtube.com/live/Z6Bxu3ynRAc?si=WMB3gwE2IKJOF_qZ">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/Z6Bxu3ynRAc?si=WMB3gwE2IKJOF_qZ">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+
+            <section class="section" id="section-經文記載">
+<h2 id="經文記載">經文記載</h2>
+<p>(經文內容略)
+這段經文我將其分為三段，來看其中的端倪。我開始思想為何要這樣劃分，發現切分得非常有意義。</p>
+<p>一開始，先知行了神蹟醫治乃曼大將軍，隨後章節進入日常生活。剛經歷過大神蹟，隨後又面臨打仗，似乎都不是在平靜無波的日常中。然而，這裡突然帶出了先知門徒與以利沙的對話：「我們住的地方太小了。」就像是跟牧師反映教會空間不足，他們請求往約旦河去砍伐木材建造房屋。為了讓環境變大，他們進行擴建。第三節更提到，門徒懇請老師以利沙隨行。以利沙當時被視為有能力、有恩膏的領袖，眾人希望老師能親自帶領，以利沙也應允了。</p>
+<p>隨後發生了斧頭掉落水中、先知行神蹟浮起斧頭的事。講完了。讀到這裡，我思考多年仍感到困惑，這故事似乎就此截止。聖經在當年羊皮昂貴的書寫成本下，為何要花篇幅記載這段看似不重要的故事？聖經的每一句都有其意義，讀經時應常求問神箇中的旨意。</p>
+            </section>
+
+            <section class="section" id="section-擴張的挑戰">
+<h2 id="擴張的挑戰">擴張的挑戰</h2>
+<p>雖然這看似不是太大的神蹟，但對我們每個人有其提醒。第一，這裡提到「地方太小」，所以要擴建。神蹟通常在我們有需要、需要越發興旺時顯現，上帝顯出能力來幫助我們處理問題。即使是在看似平凡的環境，若門徒增加，空間不夠，就需要尋求解決辦法。</p>
+<p>當我們立志成為基督徒，並願意認真委身時，生命會變得越來越順利，還是越來越多挑戰？這很難一概而論。許多人在做見證時說，信主後經濟、健康或家庭問題解決了，但若是為了問題解決而信，問題處理完後便可能回到世界。上帝的心意不僅於此。在挑戰中，上帝帶我們經歷更多，當我們認真跟隨主，並非所有眼前的困難都會被上帝處理掉。</p>
+<p>這並不代表信主後就必須經歷艱難，但我會說，因為你認真跟隨主，你需要經歷的生命擴張就會越多，包括對你自己生命的挑戰。若不願意好好跟隨主，或許現狀也就足夠了。我最近遇到許多過去金融業的同事，工作約二十年後幾乎都退休了，就如同佩鑫一樣，出國遊玩、享受美食，生活很開心。</p>
+            </section>
+
+            <section class="section" id="section-生命的突破">
+<h2 id="生命的突破">生命的突破</h2>
+<p>然而，當我們認真跟隨主，在教會服事、開拓教會，就會遇到許多過去無法想像的問題。這是因為我認真跟隨主嗎？還是上帝要透過這些困難更祝福我的生命？當我們認真追求時，會發現自己住的地方太小了，靈性的容量太小，需要擴張。這時，你才會遇見神的能力、幫助與神蹟。</p>
+<p>你們想要經歷神蹟嗎？因為神蹟很特別，代表我們渴望擴張、更認識這位上帝的能力，並看見祂在我身上能做更大的事。越跟隨主，確實會遇到過去未曾預料的狀況，但你要相信，如果是神帶你去經歷的，祂必會賜下能力讓你突破並得勝。如果發現自己越來越少經歷神，要反思是否躲在舒適圈裡。若生活太安逸，不需要上帝介入也能過得自在，那麼就該求問神，是否該跳出舒適圈，看看祂還要帶你做什麼事。</p>
+<p>第二節門徒請求時，說的是「我們」，而非「我」。前陣子我在台中協助教會上生命建造課程，看到過去你們教會的弟兄姊妹參與。大家在課堂上認真分享、背經、寫作業，那個氛圍是同心合意在承擔教會的擴張與突破。那種上帝看見眾人合一做事的喜悅，是極其美好的。為什麼我們需要共同的目標？因為神很喜悅同心合一的禱告、服事與經歷。</p>
+            </section>
+
+            <section class="section" id="section-共同的負擔">
+<h2 id="共同的負擔">共同的負擔</h2>
+<p>門徒們主動願意為居住空間不足，去找木材擴建。以我們桃園開拓教會為例，至今約七年。起初只有一個小組，非常辛苦，必須負責主日敬拜、佈道、傳福音與牧養。但那時候大家一起同心合意地喜悅奔走。我們利用禮拜六早上，在旁邊的南菜市場擺攤，讓居民玩遊戲、接受啟示性祝福禱告。雖然人不多，但同工們犧牲時間去服事。在那個過程中，我們接觸到了許多後來來到教會聚會的弟兄姊妹，就是因為當時的擺攤禱告。神確實喜悅大家同心合意在神的事上付出。</p>
+<p>然而，問題出現了。在建造房屋時，工具很缺乏，斧頭不像現在去特力屋買就有，必須向人借。結果，斧頭掉了，掉進水裡。僕人發出哀嚎：「哎呀，主啊，這斧頭是借的！」這句話有幾層意義。首先是請求幫助。再者，老師看見斧頭背後，這名學生可能負擔了全部的財產，如果沒了這把斧頭，砍伐木材、蓋房屋的計畫就無法完成。</p>
+<p>這個斧頭對學生而言，不僅是工具，更是一種信用。借來的東西必須歸還，且價值貴重，他可能連賠償的能力都沒有。因此，斧頭遺失帶給他極大的壓力與責任感，工作無法完成的挫折感油然而生，於是發出呼求。你何時會向主發出「主啊，怎麼辦？」的呼求？是在走投無路、想盡辦法卻無解時，還是凡事順利時？通常是前者。</p>
+<p>我們常說人的盡頭就是神的起頭。但我認為神不會刻意將人逼到絕境才出現。許多時候，是因為我們做了錯誤的選擇，走進死胡同，上帝才顯現幫助。並非因為神要我們認識祂，才把我們逼到絕境。而是當我們遇到困境，覺得無法承擔時，上帝開始出手。</p>
+<p>像我剛說在桃園菜市場擺攤佈道時，我們曾為一位憂傷的女性禱告，雖然當時他還未受洗，無法稱為弟兄姊妹，但那種在服事中遇見神的契機，正是神動工的時刻。</p>
+<p>那因為他媽媽過世，所以他就精神狀況很不好，然後也到這個醫院呢去救診，一直在吃藥，所以他就在禱告裡面，他覺得好像得到一些安慰幫助，所以他就跟我們連接，然後我們就有一位傳道呢，就固定的去關懷他，打電話為他禱告，可是呢他一直在在這個憂慮憂鬱裡面哦，他來到教會其實我都很怕他跌倒，他年紀大概30幾歲，可能不到40,那走路是這個搖搖晃晃，一個因為吃腰再來就是長期在這個神心狀態不好，可能你都睡不好，所以整個人你看他就是沒有精神，沒有活力。</p>
+            </section>
+
+            <section class="section" id="section-堅持禱告與陪伴">
+<h2 id="堅持禱告與陪伴">堅持禱告與陪伴</h2>
+<p>那他常常會，我們常常會接到他的電話，他會說牧師幫我禱告。傳道幫我禱告，小組長請為我代禱。這句話他常掛在嘴邊，因為他很需要他人的陪伴、平安與力量。我們陪伴他走過十二課程的建造。前幾個主日，我看到一個見證：一位深受困擾、亟需代禱的人，現在竟然能為我們的傳道禱告。那個禱告非常有能力且充滿恩膏，他完全脫胎換骨。</p>
+<p><strong>你們有幾個人敢為牧師禱告？</strong> 當我說不舒服時，他馬上說：「我為你禱告」，語氣流暢充滿能力。這並非他信主後問題就消失，而是他<strong>長出了不一樣的力量</strong>。他開始學會面對問題，處理問題。我們過去傳福音，常以為信主後問題就該消失，但問題總會不斷出現。關鍵是經歷神後，他能透過禱告來到神面前求助。<strong>我們最大的問題不是困難本身，而是我們自己。</strong></p>
+            </section>
+
+            <section class="section" id="section-練習與神互動">
+<h2 id="練習與神互動">練習與神互動</h2>
+<p>我們常卡住，因為習慣靠自己解決，直到走入絕境。若平日不操練，遇到大事就會忘記上帝。我們需要操練大事小事都來到神面前，跟他求問、互動。以利沙問斧頭掉在哪裡，神明明全知卻詢問，是<strong>為了讓我們反思問題從何開始</strong>。你有沒有東西失落了？那份對敬拜的火熱，對神的信心？</p>
+            </section>
+
+            <section class="section" id="section-神的介入與人際關係">
+<h2 id="神的介入與人際關係">神的介入與人際關係</h2>
+<p>我們需像僕人一樣誠實告訴神：「上帝啊，我掉了，幫我找回來。」當我們無力解決時，求神介入。就像神讓木頭漂浮引出斧頭，這超自然的神蹟是我們困境中的出路。</p>
+<p>此外，信主不僅是與神的關係，更包含與周遭人的關係。有些人因人際挫折離開教會，其實損失最大的是自己。<strong>你的出現就是對弟兄姐妹最好的服侍。</strong> 當人際關係出現衝突，別逃避，要回到神面前禱告，求主幫助我們放下，勝過困難。神不在乎大事小事，只在乎這事對你的意義。</p>
+            </section>
+
+            <section class="section" id="section-大事小事皆要禱告">
+<h2 id="大事小事皆要禱告">大事小事皆要禱告</h2>
+<p>反正處理不了也不用禱告？這種想法是錯誤的。無論大事小事，我們都應當禱告。有沒有人覺得小事不必麻煩神，神太忙了，祂有很多事要做，很多人要照顧。但是，若不在日常小事上操練，你真的在重要的大事上面，也真的就不知道如何禱告。好。所以從日常的生活裡面，我們就要去求問神，我們就在日常生活裡面學習怎麼跟神有一個互動的關係。</p>
+            </section>
+
+            <section class="section" id="section-離清問題的根源">
+<h2 id="離清問題的根源">離清問題的根源</h2>
+<p>那這個斧頭掉了，這個以利沙就問說：「斧頭掉在哪裡？」上帝知不知道掉在哪裡？你讀聖經有沒有常常讀到上帝之問？有沒有，為什麼要問？上帝是全知全能的，他從那個創世紀開始，亞當夏娃分別善惡樹之後，那個上帝一來問他們什麼？「你在哪裡？」祂不知道他在哪裡嗎？那為什麼要問？</p>
+<p>其實祂是神人，他是先知，他可能不知道掉在哪裡，但上帝一定知道。上帝是不是常常問他有答案的問題？那是要做什麼？你們會不會很好奇？你會跟上帝回答說，那你就知道答案，你問我幹嘛？其實答案寫在這裡。上帝常常會問一些問題是他知道答案的，可是我們不知道答案。但是他要問我們，讓我們去想一想問題出在哪裡啊，或是問題從哪裡開始的。</p>
+<p>這個也是一樣，這個問題：「斧頭掉在哪裡？」問題發生在哪裡，從哪裡開始的？所以上帝常常問題呢，他問亞當夏娃說，你在哪裡？他真的是要他回答說我在這裡嗎？他好像是問說你為什麼躲避我對吧？所以那個問題的背後我們有沒有去得到那個上帝要問我們的那個問題的用意。所以這裡上帝也是常常問一些他知道答案的問題，重點是讓我們自己來釐清我現在發生什麼問題，我現在這個問題從哪裡開始的？我產生了什麼問題？所以這也是上帝今天要跟我們問的問題：掉在哪裡？</p>
+<p>你有沒有東西失落？大家雖然都坐在這裡，你有沒有什麼東西掉在哪裡啊？你來主日的那個心跟你受洗認識神的那個心有沒有掉到水里？你對上帝的信心有沒有掉到水里？你對上帝的熱情是不是沉到水里？你可以想一想你在敬拜的心是火熱的呢，還是是形式的呢，掉在哪裡？所以上帝問這個問題是讓我們重新回到我們的身上，看我們什麼東西失落了。怎麼把它找回來？願不願意像這個僕人一樣說：「哎呀，上帝啊，我掉了，幫我找回來。」阿門。</p>
+            </section>
+
+            <section class="section" id="section-神蹟是困境中的出路">
+<h2 id="神蹟是困境中的出路">神蹟是困境中的出路</h2>
+<p>那這個神做了什麼事情？他就砍了一根木頭，然後丟在水里，木頭會飄在水面上嘛。然後很神奇，就好像磁鐵把這個斧頭吸引上來。這就是反自然嘛，超自然對吧？所以就是一個神蹟。所以當神介入的時候，可以使沈在下面本來不會浮上來的東西浮上來，阿門。</p>
+<p>那當你自己沒有辦法找到，你沒有辦法讓他浮上來的時候，你必須求神來介入。現在你的生命裡面需要上帝介入什麼？在哪裡介入？你需要先知道你掉了什麼，阿門。所以上帝這個以利沙問說掉在哪裡，然後這個僕人說這個斧頭是借的，我沒有辦法。上帝也知道我們常常問題的背後，是有一個我們無法承擔的，可能是一個關係，可能是一個責任，是你沒有辦法承擔的，所以他才需要解決這個問題。</p>
+            </section>
+
+            <section class="section" id="section-價值與責任的失落">
+<h2 id="價值與責任的失落">價值與責任的失落</h2>
+<p>今天如果斧頭有好幾隻，掉了一隻或許還能完成工作，但那隻對這人卻無比重要。這失落的斧頭，可能代表了一段人際關係——一個他極為重視且信任的人。因為丟失了，他陷入極大的自責、壓力與挫折中，連帶失去工作的信心。<strong>上帝解決我們的問題，往往不只是為了清除困難，更是為了修復我們與人、與神的關係。</strong></p>
+            </section>
+
+            <section class="section" id="section-關係修復的勇氣">
+<h2 id="關係修復的勇氣">關係修復的勇氣</h2>
+<p>當斧頭掉落、問題未解，你與家人、孩子、主管或同事之間的關係，往往就此斷裂。有些人受洗後，遭遇一點挫折或人際傷害，就覺得去教會麻煩、甚至逃避見到那些讓他受傷的人。<strong>然而，最大的損失其實是自己。</strong></p>
+<p>上帝常要我們面對問題。為什麼某人的言語會讓你如此受傷？你是否需要學習面對、處理並勝過它？</p>
+            </section>
+
+            <section class="section" id="section-你的存在就是服侍">
+<h2 id="你的存在就是服侍">你的存在就是服侍</h2>
+<p>成為基督徒，不僅僅是與上帝的關係，還包含與身旁弟兄姐妹的連結。我常對教會的弟兄姐妹說，只要你開心坐在位置上，就是<strong>很好的服侍</strong>。試想，若聚會時旁邊空無一人，你是什麼心情？若大家都認真敬拜、充滿喜樂，你感受到的又是什麼？所以，別放棄任何一次來到這裡的機會。</p>
+            </section>
+
+            <section class="section" id="section-來到神面前的謙卑">
+<h2 id="來到神面前的謙卑">來到神面前的謙卑</h2>
+<p>面對無法解決的人際衝突，別急著逃避或指望牧師作為中間人。牧師在這種情況下往往最為難。<strong>你必須回到神面前，謙卑地說：「主啊，我為何過不了這關？為什麼無法放下？求祢幫助我。」</strong> 用這樣的態度去面對無法解決的難題，而不是選擇躲避。</p>
+<p>上帝不在乎事情的大小，祂只看這件事對你是否有生命意義。在這些看似平淡的小事中，若你願意讓上帝介入，你便會經歷那份特別的引導與成長。</p>
+<p>上帝在乎你的在乎。上帝知道這事對你有意義，所以祂會出手讓你驚訝：原來主真的知道。我講一個自己的見證。難免會遇到挫折，包括剛剛說的那些，實在很多，要講兩天兩夜也講不完。我就會透過運動去舒壓。現在也上了年紀，真的需要跑步流汗。我不像各位可以騎車騎到日本去，只能在家旁邊的小公園跑個步，大概半個小時。</p>
+<p>很神奇，我已經在那邊跑了七八年、快十年了，從來不會在那裡遇見熟人，也不會有人跟我說話。但那個禮拜心情特別低落，我還是想去跑步。跑著跑著，遠遠就有人看著我。我不認識他，也從來沒在公園遇過他。當我越跑越近的時候，他突然跟我說加油。我跑過去，那天就結束了。</p>
+<p>隔兩天我又去跑步，又有一個人對我笑。我又不認識他，跑過他旁邊，他又跟我說加油。從那個時候到現在，我再去跑步，再也沒有人跟我說加油，沒有人對我笑了。所以我知道，那時候是上帝在跟我說加油。上帝存在你每天的生活裡，不是要你跪在那邊痛哭流淚說主啊我好低落、弟兄姊妹都欺負我、很多事不順心。而是在你日常生活裡，上帝自己就找人跟你說加油。真的到現在都沒有人跟我說加油了，希望也不要再有，那就表示我心情變好了。</p>
+<p>還有前幾週，我在聚會時有一個意念，就跟上帝說我現在通常不是坐在那邊禱告求什麼，而是在工作、在服侍的時候，有一個想法就說：最近主日好像很少來新朋友，甚至連城島來的新朋友都比主日多。我講完之後，禮拜六跟家人去吃飯，接到一通電話。是桃園的電話，因為只有我一個人，所以轉接到我的手機。我接起來，對方問這裡是行動使徒什麼什麼，他也講不清楚我們教會名稱。我就問：請問你們禮拜天聚會是幾點？他說十點鐘。請問您是誰介紹的呢？他說我是自己來的。所以上帝又回應我了。我說最近主日怎麼都沒有新朋友啊，這兩週連續來兩個新朋友，一個是自己打電話來的。其實我蠻害怕人家自己打電話來，因為我以前做保險，自己說要買保險的通常就是有問題。啊開教會自己要來，我也是怕怕的。通常就是別人都收不了的，就要讓我們教會來。可是感謝主，我們還接過蠻多這種的，現在都活得好好的，也沒有搗亂。所以上帝就在日常生活裡回應你加油。對。我們的信仰真的不是只有在很大的事才要禱告會、跪在那邊一個小時兩個小時求問神，祂才會回答。如果你平常就願意跟這位神有良好的關係和互動，那種經歷只在一瞬間。</p>
+<p>我再講一個見證。有一次我要上班，坐上車子，我每天早上就是從板橋開車到南港上班。那一天一坐上駕駛座，就有一個聲音說你今天會車禍。我說好，我會小心一點。高速公路要開多慢也很難，我就特別小心出門，到教會，到中午好像都沒事了。</p>
+<p>但是還有半天，下午要去保養車子。我出門，記得要小心，開車都很慢，紅燈早早就停了，去保養車子，沒事。過了一天又過了三分之二。保養完，車廠很貼心，送了一個洗車券。我就猶豫要不要去洗車，因為那天天氣陰的，洗了會不會下雨呢？我在修車場出來這邊跟家油站中間繞了兩圈，最後想說反正有期限，就去洗吧。才剛轉進去，碰的一聲，一台車子倒在我前面。摩托車撞到我，倒在前面。那個媽媽載一個小孩，有點受傷，就叫了救護車。我看我的車，啊怎麼板金都沒事，他是撞到哪？撞到我的輪框。輪框撞上去，他跌倒，輪框有點凹進去。就這樣，處理完了。</p>
+<p>我跟上帝最近學到一個功課。在教會服事，我那時候少做了一件事情。怎樣？神告訴你說今天會車禍了，我只有跟上帝說好我會小心，我沒有來到神面前說：那可不可以避免？怎樣避免？是那天坐車去嗎？還是怎樣？我沒有到神面前求問祂，怎麼去面對今天你告訴我的這個問題困難。我只有說好我會小心，結果還是出了車禍，不過感謝主，只是小小的。所以在日常生活裡面，神是不是有跟你同在？還是你只有在大事的時候才經歷神？就是要即時禱告，要求小組跟弟兄姊妹一起為你禱告呼求，得到答案，才會經歷神。所以要看看你跟上帝平時的關係如何。我們的信仰真的不是只有在教會主日裡面，而是在日常生活的每一個層面。</p>
+<p>甚至我還有想要吃蘿蔔糕，自己弄，沒有做好，就吃不了。可是隔天，我的岳母打電話給我太太說，我煮了蘿蔔糕，下班叫支領拿回家。我也沒有跟神禱告，我只有說上帝好可惜吃不到蘿蔔糕，祂就請我。岳母幫我煮了蘿蔔糕，下班就去拿回家吃。所以上帝在我們日常生活裡，要讓我們知道祂跟你同在。在大事的時候你才知道，連這些小事你都在乎，那我的大事你絕對不會不管。阿門。</p>
+<p>所以我們真的要在平時就操練。我覺得這段聖經寫在打仗跟為將軍醫治皮膚病這麼大的神蹟中間，是要做什麼？就是在很多大事、大神蹟的中間，你有沒有跟上帝有屬於你個人的生活小故事？你跟神的關係如何？從這裡可以看得出來。上帝給我們經歷神蹟，不管大的神蹟、小的神蹟，絕對不是只有跟你解決問題而已。祂是希望透過神蹟，跟你這個人建立你跟祂的關係，讓你真知道他就在你身邊。祂出門就知道你一天的行程路徑會遇到什麼，祂就提醒你。祂不是只有把斧頭行神蹟找回來，祂讓你又重新認識這位上帝在你生命當中的位置，這位上帝多么在乎你。神蹟，大大小小都是為了讓人跟神建立關係，讓你跟他關係更好，讓你更認識這位上帝。認識上帝在乎你一切的在乎。</p>
+<p>好，所以這我說的，我們真的在日常生活中，你要去經歷這位上帝。</p>
+<p>日常生活中的每件事，無論是吃飯、睡覺，或是出國旅遊，都能經歷神的恩典。例如有位在航空公司子公司任職的同工，享有員工票優惠。最近遇到颱風，原本以為班機無法起飛，最終不僅順利起飛，還幸運被升等至商務艙；又或者去住飯店時，意外被升等到頂級總統套房。這些都是在生活中經歷神蹟的例子。我們並不是只有在教會或小組裡辛苦付出時，才能聽到上帝對我們說「辛苦了」。我們的信仰是活潑且融入生活的，在日常點滴中，我們就能體驗到上帝就在身旁，並且關心我們一切大小需求。阿門。</p>
+
+<p>所以如果你發現自己過去所擁有的熱情或渴望，如今沉沒、遺失了，不妨來到神面前禱告：「主啊，我在這裡迷失了，求祢幫我找回來。」也許你丟失的是對神的熱情、對服事的心意、對家人的關愛，或是對孩子的期待。每個人的情況不同，但上帝都有能力為我們找回來。</p>
+
+<p>總結這短短七節經文，它要告訴我們的是：門徒當時跟隨的是大有能力的先知以利沙，而我們所跟隨的耶穌，則擁有超越以利沙的大能與恩典。然而，我們依然會面臨現實的困難與缺乏。但這段經文提醒我們不必擔心，只需來到主耶穌面前。上帝不僅處理天大的難事，連微小的需求，祂也在乎並願意為我們預備。祂行神蹟不僅是為了幫我們尋回失物，更是為了拉近我們與祂的關係，讓我們體會祂對我們的深切關懷與愛護。</p>
+
+<p>當我們遇到問題時，常急著尋求解答，希望神立刻解決。但有時無論如何禱告禁食，似乎都得不到回應。此時，我們應回到這段經文的核心思維：重新認識並相信祂。無論神有沒有回應、有沒有把東西找回來，我們都要選擇重新相信祂。神會幫助我們找回來，阿門。</p>
+
+<p>我們一起來禱告。主啊，雖然這是一個聖經中看似不起眼的小神蹟，我們或許不完全明白祢為何記載這件事，但我們知道，祢極其在乎我們。無論大事小事，甚至是我們流失的信心與勇氣，祢全都瞭解。主啊，祢知道我們遺失了什麼，求祢讓我們勇於面對自己，並指引我們如何尋回，在祢的恩典中持續認識祢的能力與深愛。主啊，面對生命的困境，我們常如面對「借來的斧頭」般無能為力，但求祢親自幫助我們。我們所信靠的神是顧念我們生命的神，求祢透過今天的話語，恢復我們對祢單純信靠的心。只要是祢所說的話，我們就全然相信；聖經所記載的，我們也要在生命中親自經歷，毫無懷疑。禱告奉主耶穌的名，阿門。</p>
+            </section>
+
+            <section class="section" id="section-詩歌回應">
+<h2 id="詩歌回應">詩歌回應</h2>
+<p>好，我們一起起立，我們用這首詩歌來回應上帝。祂的話怎麼說，我們就怎麼相信，沒有懷疑的。祂的話帶著能力，帶著復興我們的能力。</p>
+<p>（詩歌：你呼召我，我捨棄一切就跟了上去，不再回頭說一生就如此前進。這心無法回頭的命定。在革尼撒勒，你呼召我，我捨棄一切就跟了上去，不再回頭說一生就如此前進。這心無法回頭的命定。我知道你是我的公義，我知道你是我一生的拉比。）</p>
+            </section>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": ["你們有幾個人敢為牧師禱告", "長出了不一樣的力量", "為了讓我們反思問題從何開始", "你的出現就是對弟兄姐妹最好的服侍", "然而，最大的損失其實是自己", "先知行神蹟浮起斧頭的事","如果是神帶你去經歷的，祂必會賜下能力讓你突破並得勝","桃園菜市場擺攤佈道","怎麼去面對今天你告訴我的這個問題困難","上帝就在身旁，並且關心我們一切大小需求","重新相信祂。神會幫助我們找回來"]
+    }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
