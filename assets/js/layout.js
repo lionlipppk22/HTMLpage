@@ -916,6 +916,252 @@ function setupCollapsibleSections(defaultExpanded = true) {
     });
 }
 
+// --- Section Text-to-Speech Controls ---
+function setupSectionTtsControls() {
+    if (window.__sectionTtsInitialized) return;
+    window.__sectionTtsInitialized = true;
+    (function () {
+            'use strict';
+
+            const CHUNK_SIZE = 1800;
+            const TTS_HIGHLIGHT_CLASS = 'tts-current';
+            let speechRun = 0;
+            let activeButton = null;
+            let activeUnits = [];
+            let activeUnitIndex = -1;
+            let activeGroups = [];
+            let activeStatus = null;
+
+            function clearHighlights() {
+                document.querySelectorAll('.' + TTS_HIGHLIGHT_CLASS)
+                    .forEach(function (node) {
+                        node.classList.remove(TTS_HIGHLIGHT_CLASS);
+                    });
+            }
+
+            function restoreUnits() {
+                document.querySelectorAll('.tts-unit').forEach(function (unit) {
+                    const parent = unit.parentNode;
+                    if (!parent) return;
+                    while (unit.firstChild) parent.insertBefore(unit.firstChild, unit);
+                    parent.removeChild(unit);
+                });
+            }
+
+            function buildCommaUnits(paragraph) {
+                const walker = document.createTreeWalker(
+                    paragraph,
+                    NodeFilter.SHOW_TEXT,
+                    null
+                );
+                const textNodes = [];
+                let node;
+                while ((node = walker.nextNode())) {
+                    if (node.nodeValue.trim()) textNodes.push(node);
+                }
+
+                const units = [];
+                textNodes.forEach(function (textNode) {
+                    const parts = textNode.nodeValue.split(/([,，])/);
+                    const fragment = document.createDocumentFragment();
+                    parts.forEach(function (part) {
+                        if (/^[,，]$/.test(part)) {
+                            fragment.appendChild(document.createTextNode(part));
+                        } else if (part.trim()) {
+                            const wrapper = document.createElement('span');
+                            wrapper.className = 'tts-unit';
+                            wrapper.textContent = part;
+                            fragment.appendChild(wrapper);
+                            units.push(wrapper);
+                        }
+                    });
+                    textNode.parentNode.replaceChild(fragment, textNode);
+                });
+                return units.filter(function (unit) {
+                    return unit.innerText.trim().length > 0;
+                });
+            }
+
+            function stopReading() {
+                speechRun += 1;
+                if (window.speechSynthesis) {
+                    window.speechSynthesis.cancel();
+                }
+                clearHighlights();
+                restoreUnits();
+                activeUnits = [];
+                activeUnitIndex = -1;
+                activeGroups = [];
+                if (activeButton) {
+                    activeButton.textContent = '🔊 朗讀';
+                    activeButton = null;
+                }
+                if (activeStatus) {
+                    activeStatus.textContent = '0/4';
+                    activeStatus = null;
+                }
+            }
+
+            function buildGroups() {
+                const groups = [[], [], [], []];
+                activeUnits.forEach(function (unit, index) {
+                    const groupIndex = Math.min(3, Math.floor(index * 4 / Math.max(1, activeUnits.length)));
+                    groups[groupIndex].push(unit);
+                });
+                return groups;
+            }
+
+            function setStatus(index) {
+                if (activeStatus) {
+                    activeStatus.textContent = String(index + 1) + '/4';
+                }
+            }
+
+            function readParagraphs(paragraphs, button, statusLabel, startGroupIndex) {
+                if (!paragraphs.length || !window.speechSynthesis) return;
+
+                stopReading();
+                restoreUnits();
+                const run = speechRun;
+                activeButton = button;
+                activeStatus = statusLabel;
+                button.textContent = '⏹ 停止';
+                activeUnits = paragraphs.reduce(function (all, paragraph) {
+                    return all.concat(buildCommaUnits(paragraph));
+                }, []);
+                activeGroups = buildGroups();
+                const startIndex = Math.max(0, Math.min(3, startGroupIndex || 0));
+                activeUnitIndex = activeGroups[startIndex].length
+                    ? activeUnits.indexOf(activeGroups[startIndex][0])
+                    : 0;
+                speakUnit(run);
+            }
+
+            function speakUnit(run) {
+                if (run !== speechRun || activeUnitIndex < 0 || activeUnitIndex >= activeUnits.length) {
+                    if (run === speechRun) stopReading();
+                    return;
+                }
+                const unit = activeUnits[activeUnitIndex];
+                clearHighlights();
+                unit.classList.add(TTS_HIGHLIGHT_CLASS);
+                unit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setStatus(activeGroups.findIndex(function (group) {
+                    return group.indexOf(unit) !== -1;
+                }));
+                const chunks = unit.innerText.match(
+                    new RegExp('[\\s\\S]{1,' + CHUNK_SIZE + '}(?:\\s+|$)', 'g')
+                ) || [unit.innerText];
+                let chunkIndex = 0;
+
+                function speakChunk() {
+                    if (run !== speechRun || chunkIndex >= chunks.length) {
+                        activeUnitIndex += 1;
+                        speakUnit(run);
+                        return;
+                    }
+                    const spokenText = chunks[chunkIndex++]
+                        .replace(/[，。！？；：、,.!?;:]+/g, ' ')
+                        .trim();
+                    if (!spokenText) {
+                        speakChunk();
+                        return;
+                    }
+                    const utterance = new SpeechSynthesisUtterance(spokenText);
+                    utterance.lang = 'zh-TW';
+                    utterance.rate = 2;
+                    utterance.onend = speakChunk;
+                    utterance.onerror = speakChunk;
+                    window.speechSynthesis.speak(utterance);
+                }
+                speakChunk();
+            }
+
+            function jumpSentence(offset, button, statusLabel) {
+                if (!activeUnits.length) return;
+                const highlightedIndex = activeUnits.findIndex(function (unit) {
+                    return unit.classList.contains(TTS_HIGHLIGHT_CLASS);
+                });
+                const currentIndex = highlightedIndex >= 0 ? highlightedIndex : activeUnitIndex;
+                const currentGroupIndex = activeGroups.findIndex(function (group) {
+                    return group.indexOf(activeUnits[currentIndex]) !== -1;
+                });
+                const targetGroupIndex = Math.max(0, Math.min(3, currentGroupIndex + offset));
+                speechRun += 1;
+                window.speechSynthesis.cancel();
+                clearHighlights();
+                activeButton = button;
+                activeStatus = statusLabel;
+                button.textContent = '⏹ 停止';
+                activeUnitIndex = activeGroups[targetGroupIndex].length
+                    ? activeUnits.indexOf(activeGroups[targetGroupIndex][0])
+                    : 0;
+                const run = speechRun;
+                speakUnit(run);
+            }
+
+            function addSectionButtons() {
+                document.querySelectorAll('.collapsible-section').forEach(function (section) {
+                    const header = section.querySelector('.collapsible-header');
+                    const content = section.querySelector('.collapsible-content');
+                    if (!header || !content || header.querySelector('.section-read-button')) return;
+
+                    const controls = document.createElement('span');
+                    controls.className = 'section-tts-controls';
+                    const backButton = document.createElement('button');
+                    const button = document.createElement('button');
+                    const forwardButton = document.createElement('button');
+                    const statusLabel = document.createElement('span');
+                    [backButton, button, forwardButton].forEach(function (control) {
+                        control.type = 'button';
+                        control.className = 'section-read-button';
+                    });
+                    backButton.textContent = '⏪';
+                    button.textContent = '🔊 朗讀';
+                    forwardButton.textContent = '⏩';
+                    statusLabel.className = 'section-tts-status';
+                    statusLabel.textContent = '0/4';
+                    backButton.title = '跳到上一句';
+                    button.title = '逐逗號朗讀本段內容';
+                    forwardButton.title = '跳到下一句';
+                    button.addEventListener('click', function (event) {
+                        event.stopPropagation();
+                        if (activeButton === button) {
+                            stopReading();
+                            return;
+                        }
+                        const paragraphs = Array.from(content.querySelectorAll('p'))
+                            .filter(function (paragraph) {
+                                return paragraph.innerText.trim().length > 0;
+                            });
+                        readParagraphs(paragraphs, button, statusLabel, 0);
+                    });
+                    backButton.addEventListener('click', function (event) {
+                        event.stopPropagation();
+                        jumpSentence(-1, button, statusLabel);
+                    });
+                    forwardButton.addEventListener('click', function (event) {
+                        event.stopPropagation();
+                        jumpSentence(1, button, statusLabel);
+                    });
+                    controls.append(backButton, button, forwardButton, statusLabel);
+                    header.appendChild(controls);
+                });
+            }
+
+            addSectionButtons();
+    }());
+}
+
+window.setupSectionTtsControls = setupSectionTtsControls;
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof window.setupCollapsibleSections === 'function') {
+        window.setupCollapsibleSections(window.COLLAPSIBLE_DEFAULT_EXPANDED !== false);
+    }
+    setupSectionTtsControls();
+});
+
 function generateTOC() {
     const tocList = document.getElementById('toc-list');
     if (!tocList) return;

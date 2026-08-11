@@ -239,6 +239,47 @@
             display: inline-block;
             margin-top: 10px;
         }
+
+        .section-read-button {
+            margin-left: auto;
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.16);
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .section-tts-controls {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: auto;
+        }
+
+        .section-tts-controls .section-read-button {
+            margin-left: 0;
+        }
+
+        .section-tts-status {
+            min-width: 34px;
+            color: #ffffff;
+            font-size: 0.85em;
+            text-align: center;
+            align-self: center;
+        }
+
+        .section-read-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .tts-current {
+            background: #fff3a3 !important;
+            border-radius: 6px;
+            box-shadow: 0 0 0 3px rgba(240, 180, 0, 0.45);
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
     </style>
 </head>
 
@@ -339,6 +380,7 @@
     </div>
     <!-- Include layout.js -->
     <script src="../assets/js/layout.js"></script>
+
 
     <!-- Add keywords config for highlighting -->
     <script id="keywords-config" type="application/json">
