@@ -17,8 +17,18 @@
         />
         <!-- External CSS -->
         <link rel="stylesheet" href="../assets/css/layout.css" />
+        <script>
+            MathJax = {
+              tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+              }
+            };
+        </script>
+        <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
 
-        <style>
+         <style>
             /* From reference.md */
             p {
                 margin: 0;
@@ -46,6 +56,7 @@
             .markdown-preview p:nth-child(even) {
                 background: #ffffff;
             }
+
 
             /* Add highlighting for keywords if needed, layout.js handles it */
             /* Table styles from markdown */
@@ -132,6 +143,144 @@
             .collapsible-section.collapsed .collapsible-content {
                 max-height: 0;
                 padding: 0 20px;
+            }
+
+            .markdown-preview ol {
+                list-style: none;
+                counter-reset: custom-counter;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ol li {
+                counter-increment: custom-counter;
+                background: rgba(255, 255, 255, 0.7);
+                margin-bottom: 18px;
+                padding: 18px 25px 18px 65px;
+                border-radius: 16px;
+                position: relative;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                font-size: 1.25em;
+                line-height: 1.7;
+                border-left: 6px solid #667eea;
+                backdrop-filter: blur(8px);
+                font-family: 'LXGW WenKai Mono TC', serif;
+                color: #2d3436;
+            }
+
+            .markdown-preview ol li::before {
+                content: counter(custom-counter);
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+            }
+
+            .markdown-preview ol li:hover {
+                transform: translateX(10px);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-left-color: #764ba2;
+            }
+
+            /* Unordered List Styles */
+            .markdown-preview ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 1.5em 0;
+            }
+
+            .markdown-preview ul li {
+                background: rgba(255, 255, 255, 0.6);
+                margin-bottom: 15px;
+                padding: 15px 25px 15px 50px;
+                border-radius: 14px;
+                position: relative;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                transition: all 0.3s ease;
+                font-size: 1.2em;
+                line-height: 1.6;
+                border-left: 6px solid #764ba2;
+                backdrop-filter: blur(5px);
+                font-family: 'LXGW WenKai Mono TC', serif;
+            }
+
+            .markdown-preview ul li::before {
+                content: "✦";
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #764ba2;
+                font-size: 1.2em;
+                font-weight: bold;
+                text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+            }
+
+            .markdown-preview ul li:hover {
+                transform: translateX(8px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+
+            /* Adjustments for nested content in li */
+            .markdown-preview ol li br+b,
+            .markdown-preview ol li br+span {
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            .section-read-button {
+                margin-left: auto;
+                padding: 6px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.55);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.16);
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 0.85em;
+                white-space: nowrap;
+            }
+
+            .section-tts-controls {
+                display: inline-flex;
+                gap: 4px;
+                margin-left: auto;
+            }
+
+            .section-tts-controls .section-read-button {
+                margin-left: 0;
+            }
+
+            .section-tts-status {
+                min-width: 34px;
+                color: #ffffff;
+                font-size: 0.85em;
+                text-align: center;
+                align-self: center;
+            }
+
+            .section-read-button:hover {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            .tts-current {
+                background: #fff3a3 !important;
+                border-radius: 6px;
+                box-shadow: 0 0 0 3px rgba(240, 180, 0, 0.45);
+                transition: background 0.2s ease, box-shadow 0.2s ease;
             }
         </style>
     </head>
