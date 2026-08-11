@@ -188,56 +188,6 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Default reader layout: text-first and compact on every viewport. */
-body.mobile-layout .container {
-    max-width: 760px;
-    padding: 8px;
-}
-
-body.mobile-layout .header {
-    margin-bottom: 8px;
-    padding: 12px 10px;
-    border-radius: 10px;
-}
-
-body.mobile-layout .content {
-    padding: 8px;
-    border-radius: 10px;
-}
-
-body.mobile-layout .section,
-body.mobile-layout .content-card,
-body.mobile-layout .card,
-body.mobile-layout .technique-card,
-body.mobile-layout .argument-card,
-body.mobile-layout .detailed-section,
-body.mobile-layout .thinking-section,
-body.mobile-layout .prayer-section {
-    margin: 6px 0;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-body.mobile-layout .collapsible-section {
-    margin-bottom: 6px;
-}
-
-body.mobile-layout .collapsible-header {
-    padding: 10px 12px;
-}
-
-body.mobile-layout .collapsible-content {
-    padding: 8px;
-}
-
-body.mobile-layout .collapsible-section.collapsed .collapsible-content {
-    padding: 0 8px;
-}
-
-#main-content {
-    font-size: calc(1rem * var(--reader-zoom, 1));
-}
-
 /* Sections */
 .section {
     margin-bottom: 40px;
@@ -848,7 +798,7 @@ body.mobile-layout .collapsible-section.collapsed .collapsible-content {
 /* Teleprompter Styles */
 .tele-line {
     position: fixed;
-    top: 35%;
+    top: 50%;
     left: 0;
     width: 100%;
     height: 75px;
@@ -1102,10 +1052,6 @@ body.mobile-layout .collapsible-section.collapsed .collapsible-content {
 
     .section {
         padding: 20px;
-    }
-
-    body.mobile-layout .section {
-        padding: 10px;
     }
 }
 
@@ -2189,7 +2135,6 @@ blockquote {
 
 blockquote p {
     margin: 0;
-    font-weight: bold;
     color: #2c3e50;
 }
 

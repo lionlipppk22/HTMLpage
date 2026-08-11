@@ -8,7 +8,7 @@ let teleprompterActive = false;
 let autoScrollPaused = false;
 let scrollRequest = null;
 let lastScrollTime = 0;
-let scrollSpeed = 6; // Default speed index (1-10), near 3/5 of slider
+let scrollSpeed = 1; // Default speed index (1-10)
 let scrollAccumulator = 0;
 // 10 levels of speed multipliers, focused on the slower range
 const SCROLL_SPEED_ARRAY = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.5, 0.6];
@@ -167,17 +167,28 @@ function updateLayoutIndicator() {
     }
 }
 
-// Cycle readable text size without compounding font sizes on nested elements.
+// Enhanced zoom functionality with multiple levels
 function toggleZoom() {
+    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, li, .card, .technique-card');
+
+    // Remove previous zoom classes
+    textElements.forEach(el => {
+        el.classList.remove('zoomed-1-1', 'zoomed-1-2', 'zoomed-1-3', 'zoomed-1-4', 'zoomed-1-5');
+    });
+
+    // Cycle through zoom levels
     if (zoomLevel >= 1.5) {
         zoomLevel = 1.0; // Reset to normal
     } else {
-        zoomLevel = Math.round((zoomLevel + 0.1) * 10) / 10;
+        zoomLevel += 0.1;
     }
 
-    const content = document.getElementById('main-content');
-    if (content) {
-        content.style.setProperty('--reader-zoom', zoomLevel);
+    // Apply zoom class based on level
+    if (zoomLevel > 1.0) {
+        const zoomClass = `zoomed-${zoomLevel.toFixed(1).replace('.', '-')}`;
+        textElements.forEach(el => {
+            el.classList.add(zoomClass);
+        });
     }
 
     // Update zoom button indicator
