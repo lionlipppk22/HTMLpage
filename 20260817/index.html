@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260817 主日信息</title>
+    <meta name="description" content="耶穌的「在前的將要在後，在後的將要在先」">
+    <meta name="keywords" content="公平是人類文明運作的基石, 顛覆了這個神聖不可侵犯的原則, 父親的心轉向兒女，就是不要激怒兒女, 父親的話可以建立，也可以拆毀, 母親主動打電話給前夫, 願意原諒他，並且跟他傳福音, 教會是可以成為一個屬靈的家的, 在基督裡面，教會是一個屬靈的家, 恢復就會帶來祝福">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+ 
+     <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .section-read-button {
+            margin-left: auto;
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.16);
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .section-read-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .tts-current {
+            background: #fff3a3 !important;
+            border-radius: 6px;
+            box-shadow: 0 0 0 3px rgba(240, 180, 0, 0.45);
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="6" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260817 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">耶穌的「在前的將要在後，在後的將要在先」
+                    <a href="https://www.youtube.com/live/ia8whRBF_RU?si=C3i7JC0vU-D-2DvT">
+                        <img src="image.jpg" alt="alt text" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/ia8whRBF_RU?si=C3i7JC0vU-D-2DvT">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+            
+            <section class="section" id="section-耶穌的在前的將要在後在後的將要在先">
+<h2 id="耶穌的在前的將要在後在後的將要在先">耶穌的「在前的將要在後，在後的將要在先」</h2>
+<p>我們來讀今天的主題，在聖經裡這句話到底講什麼？「在後的將要在前，在前的將要在後」。這句話在台灣人的觀念裡很特別，台灣人排隊是很世界有名的。聖經有一些地方讀了再讀都不了解，這就是其中之一。</p>
+<p>我們會很快想到：在前的應該要在先，在後的應該要在後，這才合理嘛！但耶穌說的卻是違背人的想法。我們常會覺得不合理，甚至聽到神的話會覺得：既然神是愛，為什麼有的應該要給他，有的卻要把他拿走？因為他是耶穌，我們又不好意思否認他。</p>
+            </section>
+            
+            <section class="section" id="section-葡萄園工人的比喻">
+<h2 id="葡萄園工人的比喻">葡萄園工人的比喻</h2>
+<p>我們看馬太福音 20 章，關於葡萄園工人的比喻。有人在清晨出去雇工人，後來到晚上，園主對管事的說：「叫工人都來，給他們工錢。」給從後來的開始，給到先來的，各人得了一錢銀子。先來的就抱怨：「我們整天勞苦受熱，到後來只做了一個小時，你給他們一樣嗎？」</p>
+<p>園主回答其中一人說：「朋友，我不虧負你，你與我所定的不是一錢銀子嗎？我想給那後來的和你一樣，這是我心甘情願的。」</p>
+<p>葡萄園需要工人，但每一批做的事都不一樣。早上六點去的做了 12 個小時，還有九小時、六小時、三小時，最後還有只做一小時的。你希望你是哪一個？你們可能覺得不解。</p>
+            </section>
+            
+            <section class="section" id="section-公平原則的衝擊">
+<h2 id="公平原則的衝擊">公平原則的衝擊</h2>
+<p>做 12 小時的會不會不服氣？這確實不合理。我們看這段經文時，會覺得不太同意，因為「不同工卻同酬」。這是世界所公認一個非常公平的原則。當然「同工不同酬」的事所在多有，但「不同工卻同酬」，這是非常奇怪的事。如果你是做 12 小時的那個人，我保證你第二天會去告到勞資處。</p>
+<p>這是不合理的事。所以基督徒讀到這個比喻，常常滿頭霧水，因為這違反了人間公認的公平原則，甚至違反了法律上的規範。耶穌非常故意，他不用五個小時跟六個小時比，而是用 12 小時跟 1 小時對比，這太強烈了。你會覺得耶穌是故意的。但奇怪的是，說出這個原則的，正是神，是耶穌基督。神是公義的神，但這裡卻出現了違反公平原則的狀況。</p>
+<p>本段透過耶穌關於葡萄園工人的比喻，挑戰了人們對「公平原則」的傳統認知，探討了「不同工卻同酬」在神國度中的奧秘。</p>
+            </section>
+            
+            <section class="section" id="section-公平原則與天國奧秘">
+<h2 id="公平原則與天國奧秘">公平原則與天國奧秘</h2>
+<p>你初步這樣看，你覺得有沒有不太放心？感覺好像跟公義者脫離了。可是他是公義的神。各位，你如果去問別人或查解經書，會懂了一半或一段，但心中仍然不太服氣。因為我們熟悉且充分認同社會的公平法則。<strong>公平是人類文明運作的基石</strong>，經濟、政治、法律所本的就是公平原則：有付出就有收穫、有勞動就有獲得。這是人類社會追求的權利義務對等。</p>
+<p>犯罪受處罰是公平，損壞要賠償是公平。社會若失去公平，動盪必生。但是，耶穌的比喻顯然<strong>顛覆了這個神聖不可侵犯的原則</strong>，這正是我們很難接受的原因。</p>
+            </section>
+            
+            <section class="section" id="section-十字架上的救贖恩典">
+<h2 id="十字架上的救贖恩典">十字架上的救贖恩典</h2>
+<p>耶穌不只是說比喻，他更是照這個原則做出事實。來看路加福音23章39節，讀那兩個強盜的反應。耶穌對這一個已經被社會法律判死刑的罪犯說：「我實在告訴你，今天你必定跟我同在樂園裡。」</p>
+<p>這句話不是對忠心的使徒約翰講的，也不是對長期服侍他的團隊講的，而是對一個跟他同釘十字架的罪犯說的。這個人該死嗎？是，罪有應得。可是耶穌說：「我實在告訴你，今天你必定跟我同在樂園裡。」這句話有沒有保證？這太過分了。<strong>人世間的理所當然，在神國度中往往不是理所當然。</strong></p>
+<p>這個人連悔改的機會都沒有證明，連教會的真理班都沒上過，只說了一句「求你紀念我」，耶穌就宣告他得救了。你看這句話，你覺得有沒有盼望？你總比他好一點吧？耶穌宣告這人得救，且是今天馬上得救。這多大的榮寵。</p>
+            </section>
+            
+            <section class="section" id="section-神的主權與恩典">
+<h2 id="神的主權與恩典">神的主權與恩典</h2>
+<p>大罪人。耶穌赦免他，更給予保證：「我實在告訴你，你今天就要同我在樂園裡了。」多大的榮重！這對一般人的公平邏輯與思考模式而言，極其難以說服。耶穌這麼說，也這麼做了。弟兄姊妹，你心裡不服嗎？或許會不服，但宣判者是宇宙最高的審判長——耶穌基督。當我們的「不服」碰到最高審判長的宣判時，便不再有議論空間。</p>
+<p>這位與耶穌同釘十字架的大罪人，若套用在葡萄園的比喻中，他甚至連一個小時的工作都沒做，卻進去領了工錢。這位大罪人，就是一個明證，證明葡萄園的比喻是一個崇高又「古怪」的理念。原來，這就是天國的鐵則，這法則至今仍通用於教會與世界。請暫時壓下內心的不平與不服，回到比喻本身，答案就在其中。</p>
+            </section>
+            
+            <section class="section" id="section-工作的順序與抗議">
+<h2 id="工作的順序與抗議">工作的順序與抗議</h2>
+<p>最抗議的是早上六點進去的那個人，他覺得最不公平。聖經記載，最早進去的那一批人來到家主面前抗議。耶穌做了一件事：發工錢的順序，是從最後一個小時做工的人開始發。這讓早上六點來的人如何不抗議？但這是比喻。12小時做工的人與最後一小時做工的人領同樣的一個銀幣。抗議完全合理，因為這是人心。大家當然都喜歡做「五點鐘進去領錢」的那一個，因為大家都很有智慧。</p>
+<p>家主怎麼回答？「我跟你約定的是一個銀幣，我也沒有虧待你。」家主在說：這錢是我的，難道我沒有主權處理嗎？所以，第一點，我們一起說：<strong>神的主權</strong>。這是神所定的法則。弟兄姊妹，祂有沒有資格定這個法則？有，因為祂是神。</p>
+<p>（個人見證：我記得小孫子三歲時，禮拜天下午會來家裡玩。我們玩比大小的象棋遊戲，軍、士、象、將……那一天下午，我出仕，他出象，誰贏了？我說我贏，他卻說他贏了。因為筆劃較多。）</p>
+            </section>
+            
+            <section class="section" id="section-恩典的本質">
+<h2 id="恩典的本質">恩典的本質</h2>
+<p>神是至高的真理，其遊戲規則不容質疑。如同與孩子下棋，即便孩子規則由其而定，作為父母我們仍會配合。神既是至高，其原則更有資格定立。這比喻的核心在於「恩典」。得救非靠個人努力，全然在於神。正如聖經所言：「在人是不能，在神，凡事都能。」這段經文並非指個人能力，而是強調得救必須依賴基督耶穌的寶血。若以人的公平角度思考，必難以理解此比喻；唯有從神的恩典視角切入，方能豁然開朗。</p>
+            </section>
+            
+            <section class="section" id="section-恩典對人的公平">
+<h2 id="恩典對人的公平">恩典對人的公平</h2>
+<p>人間公平原則一旦遇到神嫉妒的恩典，便需讓步。恩典並非人類努力的成果或報酬，因此人無立場去計較或定義其應如何分配。這正是比喻微妙之處，凡人的計較在神的恩典面前，都必須低頭降服。即便理智上明白，感性上我們仍常感不公。例如，在教會長大、行善、遵守誡命的信徒，與臨終前才悔改的罪人，若同樣得救，我們難免會覺得「虧大了」。這類想法源於我們仍未徹底領悟恩典的真諦，總想以人的功績來換取神的賞賜。</p>
+            </section>
+            
+            <section class="section" id="section-神的恩典與我們的態度">
+<h2 id="神的恩典與我們的態度">神的恩典與我們的態度</h2>
+<p>弟兄姐妹，我們思想早上六點進葡萄園的人，他們那種不平的心態。我們其實很能同理。想像一下，如果你是那個一直努力工作的人，看到最後的結果，你會怎麼想？是不是會覺得自己虧大了，早知道就去喝咖啡、逛街，等五點再來就好了？但你有沒有想過，如果葡萄園已經滿了，主人不再需要人了，你連那一天的工錢都拿不到。在外面滑手機抱怨，會比在葡萄園裡與大家一同工作更快樂嗎？</p>
+<p>弟兄姐妹，如果我們一生對上帝的道路都沒有心存信靠，結果就是沉淪，所以不如六點、九點就進葡萄園吧！我們要相信葡萄園的主人是有恩典、有愛心的。如果主人是指神，與祂同在是最美好的事情。與其在外面徘徊、等待，不如在葡萄園裡服侍，我們的人生會更精彩、更滿足。你同意嗎？</p>
+            </section>
+            
+            <section class="section" id="section-我們與神的關係">
+<h2 id="我們與神的關係">我們與神的關係</h2>
+<p>人很難在「公平」這件事上與神和解。你可能會想：「我這麼認真服侍神，熱心敬拜、忠心奉獻，為什麼我不信主的小舅子，什麼都不做，薪水卻比我高，房子比我大？」你會不會因此滿腹怨言、感恩減少呢？那是因為你沒有看到他生活中的掙扎，沒有看到他小孩品德教育的缺乏，也沒有看到他工作壓力大到睡不好，而你可以安然入睡。你擁有的是永生與神的同在，這才是真正寶貴的，我們必須從正確的角度去看我們與神的關係。</p>
+            </section>
+            
+            <section class="section" id="section-神的理所當然">
+<h2 id="神的理所當然">神的理所當然</h2>
+<p>我要強調一個重要的事：我們要為神的「理所當然」喝彩！「在前的將要在後，在後的將要在前。」這句話，別的宗教講不出來。別的宗教通常強調「付出多少，收穫多少」，也就是「功德」。這非常合乎人性，所以人們拼命追求功德，為了得到更多的福報，心裡也不會有什麼掙扎。但基督教不同，我們不講功德。雖然這違反人性，但我們要為神這種超越世俗邏輯的「理所當然」而喝采。其他宗教主張「不同工不同酬」，而神卻賜下超越我們付出的恩典。</p>
+            </section>
+            
+            <section class="section" id="section-神的原則與人的理所當然">
+<h2 id="神的原則與人的理所當然">神的原則與人的理所當然</h2>
+<p>神為與其他宗教分別，制定了恩典原則，這代價由無罪的<strong>神的兒子</strong>承擔。這與世人的常理不同，常使基督徒感到尷尬或傳福音時遭遇困難。但請思考：若神的思維模式與我們完全一致，未超出我們的價值觀系統，那祂便無須被尊為神。</p>
+<p>神制定這原則，並非標新立異。恩典的成立，完全是因為神的兒子在十字架上為我們付出了代價。我們應為此結果喝采讚美。哥林多後書5章21節提到：「神使那無罪的替我們成為罪，好叫我們在他裡面成為神的義。」對神而言，這是不公平的——因為祂沒有放過自己的兒子，卻讓祂替所有罪人承擔罪債。正是這「不公平」，換來了我們今日的「非理所當然」。</p>
+            </section>
+            
+            <section class="section" id="section-神的道路高過人的道路">
+<h2 id="神的道路高過人的道路">神的道路高過人的道路</h2>
+<p>以賽亞書55章8-9節說：「耶和華說：我的意念非同你們的意念；我的道路非同你們的道路。天怎樣高過地，照樣，我的道路高過你們的道路；我的意念高過你們的意念。」在人看來是「理所當然」的事，在神眼中卻是「非理所當然」。若非神那高過人的理所當然的救贖，我們便毫無希望，因我們本應在罪中滅亡、沉淪。是神的救贖翻轉了這一切，使罪人能得救。</p>
+            </section>
+            
+            <section class="section" id="section-智慧與恩典的翻轉">
+<h2 id="智慧與恩典的翻轉">智慧與恩典的翻轉</h2>
+<p>不要用我們的理所當然去要求神，否則就是缺乏智慧。當神的恩典介入，人原有的原則便宣告無效，我們應為此而感恩讚美。恭喜弟兄姐妹，能領悟這真理。不要因詩歌太過熟悉而失去感動，要常存謙卑與感恩之心，面對這超越人的理所當然的屬天智慧。</p>
+            </section>
+            
+            <section class="section" id="section-恩典的奧秘與真實的救贖">
+<h2 id="恩典的奧秘與真實的救贖">恩典的奧秘與真實的救贖</h2>
+<p>當我們領述這比喻的精髓，我們必須懂得作者真正要表達的意涵。我們再唱一次這首詩歌，一起來。</p>
+<p>（詩歌吟唱：恩典讓卑微的生命得以看見，讓我這失喪的人能夠看見。）</p>
+<p>我們來看第一節的原文意涵。「Amazing Grace」，中文翻譯為「奇異恩典」，但原文的深度遠不止於此。作者約翰·牛頓曾是販賣黑奴的船長，一生作惡多端。若不了解他的背景，就不會懂得救恩的偉大。他深知自己就是那徹頭徹尾的「爛人」。沒有人比他更清楚自己的墮落。</p>
+<p>這段經文是多麼貼切。販賣黑奴的船長，無所不作，在經歷這一切之後寫下了這首歌。他深刻體會到自己就是那個距離完全仍有一步之遙的人。中文翻譯可惜了，因為原文那種對救恩的極度渴求與敬畏感難以完整呈現。</p>
+            </section>
+            
+            <section class="section" id="section-宣告救贖的大能">
+<h2 id="宣告救贖的大能">宣告救贖的大能</h2>
+<p>我們所宣告的是耶穌在十架上成就的赦罪大能，是修復人與神之間斷裂關係的偉大救贖。今日，我們奉主名宣告，寶血的恩典必然完全臨到教會的每一位弟兄姐妹。我們感謝神，我們不應將這恩典視為理所當然。人的理所當然，在神眼中絕非如此，而是極其珍貴的救贖。</p>
+<p>我們向主讚美、喝采、感恩，並敬拜祂。主啊，我們感謝你。當我們如同牛頓一樣，看見自己本是個罪人，卻竟得了救贖，這種震撼難以言喻。我們沒有比他好到哪裡去。因此，在唱詩歌時，讓我們再次明白救恩的奇妙。在人看似理所當然的事，在神眼中卻是極大的恩典。主，我們謝謝你，謝謝你所做的一切。</p>
+<p>（詩歌吟唱：恩典讓卑微的生命得以看見……）</p>
+            </section>
+     
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+    {
+        "keywords": ["公平是人類文明運作的基石", "顛覆了這個神聖不可侵犯的原則", "父親的心轉向兒女，就是不要激怒兒女", "父親的話可以建立，也可以拆毀", "母親主動打電話給前夫", "願意原諒他，並且跟他傳福音", "教會是可以成為一個屬靈的家的", "在基督裡面，教會是一個屬靈的家", "恢復就會帶來祝福"]
+    }
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
