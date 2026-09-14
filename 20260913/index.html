@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260913 主日信息</title>
+    <meta name="description" content="人生腳本營隊與服事歷程">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=LXGW+WenKai+Mono+TC&family=Zhi+Mang+Xing&family=Chiron+GoRound+TC&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+     <style>
+        /* From reference.md */
+        p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        p:nth-child(even) {
+            background: #ffffff;
+        }
+
+        /* From demo.html - Additional styles */
+        .markdown-preview p {
+            margin: 0;
+            padding: 0.5em;
+        }
+
+        .markdown-preview p:nth-child(odd) {
+            background: #f0f0f0;
+        }
+
+        .markdown-preview p:nth-child(even) {
+            background: #ffffff;
+        }
+
+
+        /* Add highlighting for keywords if needed, layout.js handles it */
+        /* Table styles from markdown */
+        .markdown-preview table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .markdown-preview th,
+        .markdown-preview td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .markdown-preview th {
+            background-color: #f2f2f2;
+        }
+
+        .markdown-preview h1 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-section p {
+            margin: 0;
+            padding: 0.5em;
+            font-size: 1.6em;
+            font-family: Chiron GoRound TC;
+        }
+
+        .collapsible-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .collapsible-header h2 {
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+
+        .collapsible-section.collapsed .collapsible-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            transition: max-height 0.3s ease;
+            max-height: 20000px;
+            overflow: hidden;
+        }
+
+        .collapsible-section.collapsed .collapsible-content {
+            max-height: 0;
+            padding: 0 20px;
+        }
+
+        .markdown-preview ol {
+            list-style: none;
+            counter-reset: custom-counter;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ol li {
+            counter-increment: custom-counter;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 18px;
+            padding: 18px 25px 18px 65px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25em;
+            line-height: 1.7;
+            border-left: 6px solid #667eea;
+            backdrop-filter: blur(8px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+            color: #2d3436;
+        }
+
+        .markdown-preview ol li::before {
+            content: counter(custom-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(118, 75, 162, 0.4);
+        }
+
+        .markdown-preview ol li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #764ba2;
+        }
+
+        /* Unordered List Styles */
+        .markdown-preview ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5em 0;
+        }
+
+        .markdown-preview ul li {
+            background: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            padding: 15px 25px 15px 50px;
+            border-radius: 14px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            line-height: 1.6;
+            border-left: 6px solid #764ba2;
+            backdrop-filter: blur(5px);
+            font-family: 'LXGW WenKai Mono TC', serif;
+        }
+
+        .markdown-preview ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(118, 75, 162, 0.2);
+        }
+
+        .markdown-preview ul li:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Adjustments for nested content in li */
+        .markdown-preview ol li br+b,
+        .markdown-preview ol li br+span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .section-read-button {
+            margin-left: auto;
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.16);
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .section-read-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .tts-current {
+            background: #fff3a3 !important;
+            border-radius: 6px;
+            box-shadow: 0 0 0 3px rgba(240, 180, 0, 0.45);
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
+    </style>
+</head>
+
+<body class="mobile-layout">
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="toggleLayout()" title="切換佈局 (Mobile/PC)" id="layout-btn">📱</button>
+        <button class="control-btn" onclick="toggleZoom()" title="縮放">🔍</button>
+        <button class="control-btn" onclick="toggleEffects()" title="提詞器" id="tele-btn">✨</button>
+        <button class="control-btn" onclick="toggleTOC()" title="目錄">📋</button>
+        <div class="speed-control" id="speed-control" style="display: none;">
+            <input type="range" id="scroll-speed" min="1" max="10" value="6" title="捲動速度">
+        </div>
+    </div>
+
+    <!-- Teleprompter Guide Line -->
+    <div id="tele-line" class="tele-line"></div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>📋 目錄</h3>
+        <ul id="toc-list"></ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-size: 36px; line-height: 1.6; text-align: center; font-family: 'Zhi Mang Xing';">
+                <h1 id="main-title">20260913 主日信息</h1>
+            </div>
+            <div
+                style="font-size: 26px; line-height: 1.6; text-align: center; font-family: 'LXGW WenKai Mono TC', monospace;">
+                <p class="subtitle">聚會開場與講員介紹
+                    <a href="https://www.youtube.com/live/o9v7MAszCek?si=2cSXQC6XPxPsrnzv">
+                        <img src="image.jpg" alt="20260913 主日信息" style="width: 50%; display: block; margin: 0 auto;">
+                    </a>
+                    <a href="https://www.youtube.com/live/o9v7MAszCek?si=2cSXQC6XPxPsrnzv" target="_blank">
+                        YouTube 直播來源
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content markdown-preview" id="main-content">
+<h2 id="聚會開場與講員介紹">聚會開場與講員介紹</h2>
+<p>在整天的聚會當中，弟兄姐妹都展現出極大的屬靈熱情與戰鬥精神。回顧過去兩天直到今天主日，看見許多弟兄姐妹齊聚一堂，特別歡迎來自龍潭的弟兄姐妹一同參與，現場洋溢著喜樂與活力。</p>
+<p>在聚會正式開始前，先向在座所有的弟兄姐妹隆重介紹今天的主日講員——<strong>錢玉芬老師</strong>。錢老師擁有國立政治大學新聞研究所博士學位，隨後轉向心理學領域深造並投入教學研究，在政治大學心理學系任教長達 <strong>25 年</strong>，亦曾在台灣大學通識教育中開設心理學課程。此外，錢老師曾於台灣神學院開課，目前則在<strong>靈糧神學院擔任專任師資暨牧靈諮商碩士科主任</strong>。</p>
+<p>十多年前，許多弟兄姐妹便透過 GOOD TV（好消息電視台）的《家庭會客室》等優質節目認識錢老師，從中學習如何陪伴與引導青少年。錢老師在心理專業與基督教信仰的整合服事上，帶給廣大教會、家庭與信徒極深遠的幫助。今天非常感恩能邀請錢老師親臨現場分享寶貴信息。</p>
+<p>在把時間交給講員之前，全體會眾同心向神獻上禱告：</p>
+<blockquote>
+<p>主啊，我們感謝讚美祢！祢是深愛我們的主，親自為我們預備如此優秀、忠心的講員成為我們極大的幫助。主啊，不論是夫妻之間的婚姻關係、父母與兒女的親子溝通，或是人與人之間的人際相處，更重要的是我們與祢之間那份至關緊要的親密關係，我們在祢面前都有許多需要學習與調整之處。求主今天大大恩膏錢玉芬老師，使她口中有話語、心中有能力，滿有祢聖靈特別的同在與榮光；求祢特別賜給我們每一位弟兄姐妹謙卑受教的心與能聽的耳，讓今天分享的「人生腳本」信息深深扎根在我們心裡，叫我們在祢的愛與真理中得著醫治、不斷成長。如此感恩禱告，乃是奉靠主耶穌基督得勝的聖名，阿們！</p>
+</blockquote>
+<hr />
+<h2 id="人生腳本營隊與服事歷程">人生腳本營隊與服事歷程</h2>
+<p>大家早安！非常感恩，教會為期三天的「人生腳本營隊」今天已進入第三天。今天主日的信息與營隊的主題密切相連，但即便沒有全程參與營隊的弟兄姐妹也完全不用擔心，今天的信息依然是一堂完整、獨立且能深入反思的專題，盼望為每一位敞開生命的契機。</p>
+<p>回顧我整體的服事歷程，大約在 1997 年受邀於中華福音神學院延伸制開課。當時神學院的行政同工便對我說：「錢老師，以您的專業在神學院教書肯定沒問題，不過未來您跨教會的服事將會大幅增加。」這句話如今確實成為真實的寫照。</p>
+<p>在華神開課之後，我開始廣泛受邀至各教會主領社區講座。早期社區講座非常盛行，我便將心理專業結合信仰帶給大眾。然而每一次講座結束後，我與聽眾心中往往都帶有一種未被完全滿足的渴求。因為一場講座雖然開啟了一扇窗、點出了一個人心深處的重大需要，但大家隨即會問：「然後呢？接下來我們該如何面對與解決？」就是這份不斷思考「然後呢」的負擔，推動著我一路服事至今。</p>
+<p>目前我也在 GOOD TV 好消息電視台籌備一個全新的深度節目《童年經驗》，與一線主持人白家綺攜手合作，解析一個來賓的童年經驗的故事，盼望引導觀眾從童年的傷痛中看見屬靈的亮光與出路。這個節目預計錄製滿一年播出的份量。基督教媒體的資源十分有限，完全仰賴弟兄姐妹的愛心奉獻與代禱支持，願神親自使用這樣的影音事工祝福更多心靈。</p>
+<p>「童年經驗」是我一生在專業與信仰上最專注的核心主題。我在政大心理系的定位原本是工商心理學，然而在 1995 年一次傳福音的經歷中，當被問及過往生活時，我意外地流下了眼淚。當時我並沒有多說什麼，只提到自己從小到大與家人的關係相當疏離空白，當下心中便湧出無比心酸的淚水。那次流淚深深開啟了我，促使我決心走上人心關懷與心靈醫治的道路。</p>
+<p>我們推動「人生腳本」營隊教案的異象，正是要進入職場與一般社區。這套教案的特色在於：在關鍵之處帶入基督信仰，但在多數時候則是先進入人心深處去耕耘。當一個人的心田被真誠地犁過，願意信任你並將內心深處向你敞開時，福音的種子就能落在好土裡，生根發芽。</p>
+<hr />
+<h2 id="立體的悲劇你真的認識自己嗎">立體的悲劇：你真的認識自己嗎？</h2>
+<p>今天我們要探討的核心主題是：<strong>「你真的認識自己嗎？」</strong></p>
+<p>我們先來看一段引人深思的影片，這個短片很可愛，內容其實是個廣告。片中主角左顧右盼照鏡子，對自己的外貌橫看豎看都不滿意，於是買了一套「醫美 DIY」工具組，按照說明書操作想要消除不喜歡的部位。不料一按下按鈕，效果過頭了，想要尋找「復原鍵（Undo）」，卻發現復原鍵只印在說明書上，現實中根本無法回頭，最終把自己搞得面目全非，這個叫立體的悲劇，彷彿成了畢卡索立體派筆下的抽象怪物。</p>
+<p>這部片子表面幽默，本質上卻是一場「立體的悲劇」。請問在座每一位弟兄姐妹：你喜歡你自己嗎？你真的認識你自己嗎？你所認識的自己，究竟是從哪裡來的呢？</p>
+<p>我們一同翻開聖經，恭讀<strong>哥林多前書十三章 11-12 節</strong>：</p>
+<blockquote>
+<p>「我作孩子的時候，話語像孩子，心思像孩子，意念像孩子；既成了人，就把孩子的事丟棄了。我們如今彷彿對著鏡子觀看，模糊不清，到那時就要面對面了。我如今所知道的有限，到那時就全知道，如同主知道我一樣。」</p>
+</blockquote>
+<p>使徒保羅在這裡提出了一個極具洞察力的隱喻——<strong>「鏡子」</strong>。在保羅的時代，鏡子並非現代清晰的玻璃水銀鏡，而是由青銅金屬打磨而成的銅鏡，映照出來的影像模糊昏暗，如同猜謎。保羅藉此指出：我們活在世上就像孩子的階段，對自己的認識極其有限，只能透過環境中一面面模糊的鏡子來揣摩自己的模樣。</p>
+<p>如果一個人沒有正確地看見自己，那就是一場心靈的災難。打個比方：就像一個天生清秀端正的女孩，若照到一面扭曲變形的「妖怪鏡」，在鏡中看到自己成了醜陋的妖怪，便深信自己真的是個妖怪。這面鏡子本身是扭曲偏差的，任何投射進去的人事物都會被扭曲。</p>
+<hr />
+<h2 id="心理學與哲學的自我二元論">心理學與哲學的「自我二元論」</h2>
+<p>那麼，人究竟是透過什麼途徑來認識自己的呢？在科學心理學的發展史上，1879 年德國學者馮特（Wilhelm Wundt）在萊比錫大學建立了全世界第一個心理學實驗室，奠定了心理學的實證基礎；到了 1890 年，著名哲學家兼心理學家<strong>威廉·詹姆士（William James）<strong>提出了著名的</strong>「自我二元論（Duality of Self）」</strong>。</p>
+<p>詹姆士指出，自我可以劃分為兩個基本面向：</p>
+<ol>
+<li><strong>主我（I）</strong>：主動的自我、經驗與觀察的主體。</li>
+<li><strong>客我（Me）</strong>：被動的自我、被觀察與定義的對象（自我形象）。</li>
+</ol>
+<p>打個比方：「主我（I）」就像是一位作者，作者去收集資料，然後形成書；而「客我（Me）」就像是一本書，很被動地呈現出書中所記錄的一切內容。客我（Me）本身無法自行改變，翻到第 7 頁就是呈現第 7 頁的內容，翻到第 50 頁就是呈現第 50 頁的內容。書本身是不會變的，除非作者（主我 I）有意識地決定重新蒐集資料、重新改寫書本。</p>
+<p>後來著名的個體社會學大師<strong>米德（George Herbert Mead）<strong>進一步發展出</strong>「符號互動論與鏡中自我（Looking-glass Self）」</strong>：他有一個很重要的理論觀點，就是叫做形象互動理論。主我（I）無法直接孤立地看見客我（Me），必須透過外界環境、重要他人以及社會互動的反饋（鏡子）來蒐集資訊，進而拼湊、塑造出客我（Me）的自我形象。</p>
+<p>然而，從聖經真理的眼光來看：<strong>若我們單單依賴環境、他人眼光與世俗評價來認識自己，所塑造出來的自我形象往往是錯誤且不健康的。</strong></p>
+<p>因為在受造的世界裡，沒有任何一面人造的鏡子具備 360 度完全無偏差的焦點與比例。在成長環境中，我們的缺點往往被周遭放大檢視，優點卻被忽視縮小。唯有創造宇宙與生命的上帝，才能以 360 度全方位的完全焦點與精準比例看透我們。</p>
+<hr />
+<h2 id="聖經觀點始祖犯罪與羞恥感進入">聖經觀點：始祖犯罪與羞恥感進入</h2>
+<p>人對自我認知的扭曲與偏差，其根源究竟在於何處？我們必須回到<strong>創世記三章 6-8 節</strong>尋找答案：</p>
+<blockquote>
+<p>「於是女人見那棵樹的果子好作食物，也悅人的眼目，且是可喜愛的，能使人有智慧，就摘下果子來吃了，又給她丈夫，她丈夫也吃了。他們二人的眼睛就明亮了，才知道自己是赤身露體，便拿無花果樹的葉子為自己編做裙子。天起了涼風，耶和華神在園中行走。那人和他妻子聽見神的聲音，就藏在園裡的樹木中，躲避耶和華神的面。」</p>
+</blockquote>
+<p>這段經文生動記錄了全人類歷史墮落的關鍵轉折：</p>
+<ol>
+<li><strong>帶著羞恥感為自我命名</strong>：始祖吃了分別善惡樹的果子後，聖經記載他們的眼睛就明亮了。眼睛明亮好像是一個正向的價值，然而這份明亮並非正向的領悟，而是伴隨著強烈的<strong>羞恥感</strong>。當他們看見自己赤身露體時，產生了醜陋與自卑的感覺，急忙拿無花果樹的葉子為自己編做裙子來遮掩自己。</li>
+<li><strong>切斷與神的連結，走向自我中心</strong>：當聽見耶和華神在園中行走的聲音時，始祖立刻藏在樹木中躲避神的面。人從此不再從上帝完全良善的眼光來定義自己，而是斷絕了與神的眼光連結，轉而以自我為中心、帶著深沉的羞恥感來解讀自己與世界。</li>
+</ol>
+<p><strong>全人類最根本的問題，正是自我認識產生了致命的扭曲——帶著羞恥感定義自己，形成了病態而不健康的自我形象。</strong></p>
+<p>所謂「自我形象」，並非別人實際上如何看待我，而是「我主觀認為別人如何看待我」。許多人在成長過程中被羞恥感深深捆綁，即便是極其優秀、成就卓越的人，當受到他人真誠的稱讚時，內心第一個反應往往不是感恩與喜樂，而是恐慌與防衛，下意識地連聲推辭：「沒有啦！你們看錯了！」內心深處極度害怕一旦露出破綻或表現軟弱，就會遭到無情的鄙視與拋棄。</p>
+<hr />
+<h2 id="現場自我檢測兩大人生腳本試題">現場自我檢測：兩大人生腳本試題</h2>
+<p>為了讓大家能具體體會人生腳本如何深刻影響我們的情感與行為，我們在現場進行 10 題簡易自我評估量表。請大家誠實面對內心最深處的直覺反應來作答：</p>
+<ul>
+<li>完全符合自身經常出現的念頭：打圈給兩分（計 2 分）</li>
+<li>完全不符合：打叉不用給分（計 0 分）</li>
+<li>介於符合與不符合之間，或難以抉擇：打問號要給一分（計 1 分）</li>
+</ul>
+<h3 id="第一組試題腳本一自我檢測第-1-至-5-題">第一組試題：腳本一自我檢測（第 1 至 5 題）</h3>
+<ol>
+<li>我內心深處覺得，我一定要表現得好，別人才會真正愛我。</li>
+<li>老實說，我工作或服事極其認真的真正動力，是渴望獲得他人的肯定與讚賞。</li>
+<li>當有人真誠肯定我的優異表現時，我心裡常覺得對方一定是看錯了。</li>
+<li>小時候我常有被忽視或孤單的經驗。</li>
+<li>當別人稱讚我時，我內心深處常感到很不踏實、很虛假。</li>
+</ol>
+<h3 id="第二組試題腳本五自我檢測第-6-至-10-題">第二組試題：腳本五自我檢測（第 6 至 10 題）</h3>
+<ol start="6">
+<li>小時候我常因為被比較而覺得難過、憤怒或恐懼。</li>
+<li>我內心覺得把事情做好是理所當然的責任，不值得任何誇耀或喜悅。</li>
+<li>大部分的時間都在計劃怎麼完成工作，連做夢都會夢見工作計劃正在進行。</li>
+<li>老實說，我是個得失心非常重的人。</li>
+<li>無論別人如何肯定我當前的成就，我總是在擔憂下一個挑戰自己將無法達標。</li>
+</ol>
+<p><strong>分數計算與落點分析</strong>：
+計分的方法是一到五題計算出一個分數，六到十題算另外一個分數（每組滿分為 10 分）：</p>
+<ul>
+<li><strong>7 分以上（含 7 分）</strong>：屬於高分組（此腳本的核心受影響者）。</li>
+<li><strong>3 分以下</strong>：屬於低分組。</li>
+</ul>
+<hr />
+<h2 id="腳本一深度解析不會有人喜歡我">腳本一深度解析：不會有人喜歡我</h2>
+<p>第 1 至 5 題所測量的是經典的<strong>人生腳本一：「不會有人喜歡我」</strong>。這份問卷經過嚴謹的統計分析檢驗，證實個人的現況心理狀態與童年成因具有顯著的統計相關性。</p>
+<h3 id="1-現況核心表現渴求愛卻本能地拒絕愛">1. 現況核心表現：渴求愛，卻本能地拒絕愛</h3>
+<p>腳本一高分者的生命呈現出一種令人心痛的矛盾：<strong>內心極度渴望被愛與被肯定，但當真誠的愛臨到時，卻在第一時間懷疑、恐懼並本能地將對方推開。</strong>
+因為在他們的潛意識深處，總有一個揮之不去的聲音在吶喊：「我不值得被愛」、「如果讓你真正認識真實的我，你一定會轉身離開我」。這種內在恐慌常導致他們在親密關係中不斷藉故試探、胡鬧、挑釁，甚至主動破壞關係以自我保護。</p>
+<h3 id="2-童年深層成因成長過程中的孤單與不被看重">2. 童年深層成因：成長過程中的孤單與不被看重</h3>
+<p>成因就是成長過程當中孤單跟不被看重。這種腳本的形成，主要源於成長過程中經歷了強烈的孤單感、被遺棄感或被邊緣化的創傷。如果真的用在教會裡面，其實我們可以帶入內在醫治，因為從小到大很多孤單經驗往往在心靈深處留下了無形的烙印。</p>
+<p>在此分享我個人的真實童年經歷：</p>
+<ul>
+<li>小時候家境清寒貧困，有一次我滿懷期待跑到鄰居家看電視，卻當場被對方無情地驅趕出門。被趕出來的那一刻，我照到了一面巨大的「妖怪鏡」，深信自己是因為家裡窮、自己很糟糕，所以注定是個不受歡迎的人。</li>
+<li>幼年尚未就讀小學時，父母忙於生計外出工作，兄姐都在學校上課，經常只留下我一個人孤伶伶地在家。某天早晨在院子裡學火雞啼叫，不料激怒了鄰居飼養的一大群火雞，火雞群衝過院子圍攻啄咬我，每一隻站立起來都比幼小的我還高。那場恐怖的驚嚇在我頭部留下了永久長不出頭髮的外傷，全家人甚至無人知曉傷痕是何時造成的。那份極度無助與孤立，深深在心中烙印下「我不重要、沒有人會愛我」的扭曲信念。</li>
+</ul>
+<h3 id="3-具體改善之道成為靈活的換鈔機與學會愛自己">3. 具體改善之道：成為靈活的「換鈔機」與學會愛自己</h3>
+<ul>
+<li><strong>成為靈活的「換鈔機」</strong>：學習讀懂別人表達愛的不同語言。別人習慣用「美金」的方式對你好，你卻固執地堅持非要「台幣」不可。我們無法強求身邊的人完全按照我們期待的公式來愛我們，但我們可以調整自己，如同靈活的換鈔機一般，將他人所付出的善意與關懷轉換為自己心靈能吸收的養分。</li>
+<li><strong>學會安頓與接納自己</strong>：不要總是帶著一個「缺愛的自己」到處向配偶、朋友或同工討債，認定全世界都虧欠了你。要在基督的恩典中學會自我照顧、安頓心靈，不再向外索求虛妄的補償。</li>
+</ul>
+<hr />
+<h2 id="腳本五深度解析不可能成功與內卷焦慮">腳本五深度解析：不可能成功與內卷焦慮</h2>
+<p>第 6 至 10 題所測量的是當代社會最普遍的<strong>人生腳本五：「不可能成功 / 成就壓力」</strong>。</p>
+<h3 id="1-現況核心表現成就壓力巨大毫無成功的喜悅">1. 現況核心表現：成就壓力巨大、毫無成功的喜悅</h3>
+<p>這類人生活在隨時恐懼自己無法達標的巨大張力之下。即便付出極大代價達成了目標，心中也只覺得「好家在這次過關了」、「這本來就是應該做的」，從來無法體會成就帶來的平安與喜悅，隨即又被下一輪挑戰的恐懼所吞噬。</p>
+<h3 id="2-童年深層成因頻繁被挑剔被比較的競爭陰影">2. 童年深層成因：頻繁被挑剔、被比較的競爭陰影</h3>
+<p>這類腳本源於成長歷程中，父母師長習慣性地將孩子與優秀的同儕比較。這種成長過程中的心理競爭無形陰影，在當代高壓競爭與焦慮的「內卷」社會文化中被推向極致；特別是許多名校優秀學子，正因為在成長過程中常常被挑剔，被比較，心中長年累積了無法言喻且無法負荷的深沉挫敗感。</p>
+<h3 id="3-具體改善之道三大屬靈操練">3. 具體改善之道：三大屬靈操練</h3>
+<ol>
+<li><strong>堅決停止比較</strong>：在生活中斷絕任何形式與他人的無益比較。</li>
+<li><strong>天天吃「龜苓膏」（生命歸零）</strong>：無論今天的表現是獲得掌聲還是遭遇挫敗，每晚睡前都要刻意在主面前「歸零」。將掌聲交給神，不迷失在人的讚美裡；成功跟失敗都要歸零，把我今天的失敗都交給神，不沉溺在自責的泥淖中。</li>
+<li><strong>感恩活在每一個當下</strong>：因著生命已在主前歸零，今天有飯吃就感恩享受，有任務就專注規劃，踏實地活在神所賜的此時此刻。</li>
+</ol>
+<hr />
+<h2 id="健康定義成功與活出獨特價值">健康定義成功與活出獨特價值</h2>
+<p>要徹底打破「不可能成功」的枷鎖，必須重新建立健康的成功定義：<strong>從零開始向上疊加恩典，而不是從 100 分往後倒扣懲罰。</strong></p>
+<p>分享我家老二的成長故事：孩子小學二年級時被送到連鎖美語補習班學習，升級考試考了 46.5 分未達標準。補習班主任來電通知孩子必須留級重讀，我誠懇地向主任致謝：「非常感謝補習班，因為在我心中是以零分為標準，你們已經把孩子從零分培養提升到 46.5 分了！」以零為基準向上疊加，看見的就是恩典與進步，而不是永遠不滿分的自責。</p>
+<p><strong>健康的成功定義包含兩大層面：</strong></p>
+<ol>
+<li><strong>活出神賦予你的獨特特色</strong>：全然接納自己的限制。我坦然承認自己口才並非天生流暢，錄影時也常會結巴，因為不好的都被剪掉了，所以大家在電視上看見的影片都覺得流暢。神依然能使用有限的我，將信息轉化為眾人的祝福。活出神造你的獨特樣式即可。</li>
+<li><strong>實踐自己內心認同的價值</strong>：在大學任教體系中，我也曾面臨升等研究與陪伴學生的衝突。當失戀流淚的學生前來敲門求助時，在我的價值天平上，陪伴挽救一個受傷的年輕生命，永遠重於一篇學術論文的撰寫。自掏腰包請學生吃火鍋、傾聽陪伴，這就是我所堅持並實踐的永恆價值。</li>
+</ol>
+<hr />
+<h2 id="聖經人物的腳本與突破摩西與保羅">聖經人物的腳本與突破：摩西與保羅</h2>
+<p>聖經中有兩位極具代表性的人物，鮮明地展現了不同人生腳本的掙扎、盲點與蒙神轉化的過程：</p>
+<h3 id="1-摩西的腳本我是拙口笨舌的自卑退縮型">1. 摩西的腳本：「我是拙口笨舌的」（自卑退縮型）</h3>
+<p>在<strong>出埃及記四章 10-14 節</strong>中，當耶和華呼召摩西帶領以色列百姓出埃及時，摩西對神說：「主啊，我素日不是能言的人……我本是拙口笨舌的。」</p>
+<p>在整個舊約歷史中，摩西先後多達五次拒絕神的呼召，甚至推辭到神向他發怒。然而，整段歷史中最令人得安慰的屬靈真理是：<strong>即使神向摩西發怒，神卻從未收回祂的呼召！</strong> 神堅定地使用摩西，並預備他的哥哥亞倫成為他的口。神對我們的呼召與揀選，絕不會因我們自認軟弱無能而被撤回。</p>
+<h3 id="2-保羅掃羅的腳本我是無可指責的自義盲目型">2. 保羅（掃羅）的腳本：「我是無可指責的」（自義盲目型）</h3>
+<p>有些人可能自認童年幸福、從未自卑，然而在整本新約聖經當中，就真實記載了尚未歸主的掃羅，因自以為義而瘋狂逼迫信徒。正如使徒行傳八章三節所記載，殘害教會進個人的家，拉著男女下在間裡。</p>
+<p>掃羅在<strong>腓立比書三章 4-6 節</strong>自述：出生第八天受割禮、以色列族便雅憫支派、純種希伯來人、法利賽人，就律法上的義而言是「無可指責的」。這種宛如「純種血統證明」般的極度優越感，使他落入「我是無可指責的，所有人都要聽我的」自義腳本中。自我感覺良好、自以為義的人生腳本，往往帶來更巨大的屬靈盲目與毀滅性破壞。</p>
+<hr />
+<h2 id="回歸屬神眼光放棄舊鏡子與生命歸零">回歸屬神眼光：放棄舊鏡子與生命歸零</h2>
+<p>十大人生腳本自我檢測，就像是一次<strong>「屬靈的核磁共振」或「心靈的腸胃鏡檢查」</strong>。你不要以為說啊，這是我上過人生腳本的營隊，就已經完全免疫了；只要我們足夠誠實，就能清楚照出心靈深處隱藏的傷痛、恐懼與焦慮根源。這些腳本在童年與成長中的形成並非你的過錯，許多是我們身處彎曲悖謬世代中所承擔的傷痕。</p>
+<p>要想徹底恢復神起初所賜榮美、健康的自我形象，我們必須在真理中做出兩項重大的生命抉擇：</p>
+<ol>
+<li><strong>果斷放棄舊有模糊扭曲的「妖怪鏡」</strong>：不再透過世俗環境與他人的眼光來衡量自我價值，將一切的成敗榮辱在十字架前徹底歸零。</li>
+<li><strong>第二個要恢復屬神的眼光</strong>：唯有回到創造主全知、全愛與永恆真理的焦點中，我們才能真實看見自己尊貴、蒙愛且滿有榮耀的樣式。</li>
+</ol>
+<p>讓我們一同在神施恩座前同心禱告：</p>
+<blockquote>
+<p>親愛的天父、主耶穌基督，我們來到祢的施恩寶座前。求祢親手挪去我們眼中一切人造、扭曲與變形的鏡子，親自醫治我們在童年與過往成長過程中所受的孤單、挫折與被比較的創傷。主啊，求祢賞賜我們屬靈的智慧，使我們能像祢那樣看、像祢那樣喝、像祢那樣去愛。讓我們不再被自卑退縮或自以為義的人生腳本所捆綁，而是每天在祢十字架的恩典中徹底歸零，勇敢活出祢在我們生命中所命定的獨特特色，忠心實踐神國度榮美的價值。感謝讚美主，將一切榮耀歸給祢，奉靠主耶穌基督得勝的聖名禱告，阿們！</p>
+</blockquote>
+
+        </main>
+    </div>
+    <!-- Include layout.js -->
+    <script src="../assets/js/layout.js"></script>
+
+    <!-- Add keywords config for highlighting -->
+    <script id="keywords-config" type="application/json">
+{
+        "keywords": [
+                "你真的認識自己嗎",
+                "哥林多前書十三章 11-12 節",
+                "創世記三章 6-8 節",
+                "帶著羞恥感為自我命名",
+                "切斷與神的連結，走向自我中心",
+                "分數計算與落點分析",
+                "7 分以上（含 7 分）",
+                "人生腳本一：「不會有人喜歡我",
+                "成為靈活的「換鈔機",
+                "學會安頓與接納自己",
+                "天天吃「龜苓膏」（生命歸零）",
+                "感恩活在每一個當下",
+                "健康的成功定義包含兩大層面",
+                "活出神賦予你的獨特特色",
+                "實踐自己內心認同的價值",
+                "出埃及記四章 10-14 節",
+                "腓立比書三章 4-6 節",
+                "果斷放棄舊有模糊扭曲的「妖怪鏡",
+                "第二個要恢復屬神的眼光"
+        ]
+}
+    </script>
+
+    <script>
+        // 設定摺疊功能的預設狀態 (true 為展開，false 為收合)
+        window.COLLAPSIBLE_DEFAULT_EXPANDED = true;
+    </script>
+</body>
+
+</html>
