@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>diagram.svg</title>
+<title>jesus_genealogy_key_figures_cuv.svg</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; overflow: hidden; font-family: sans-serif; background: #fff; }
@@ -20,6 +20,9 @@
   #view.drag { cursor: grabbing; }
   #stage { transform-origin: 0 0; }
   #stage svg { display: block; max-width: none; }
+  /* mermaid 低估 CJK <br/> 兩行高度, 第二行被 foreignObject 裁掉: 強制可見 */
+  #stage foreignObject { overflow: visible !important; }
+  #stage g.node div { overflow: visible !important; height: auto !important; }
   /* search highlight: whole node + label bg */
   #stage g.node.found rect.label-container { stroke: #e00; stroke-width: 3px; }
   #stage g.node.found div { background: #ffeb3b; }
@@ -27,6 +30,17 @@
   #stage g.node.current div { background: #ffb300; }
   #stage .edgeLabel.found div { background: #ffeb3b; outline: 2px solid #e00; }
   #stage .edgeLabel.current div { background: #ffb300; outline: 3px solid #e00; }
+  #legendBtn { width: auto; }
+  #legendPanel {
+    position: fixed; top: 49px; right: 0; bottom: 0; width: 300px; z-index: 9;
+    background: #fff; border-left: 1px solid #ccc; padding: 12px;
+    overflow-y: auto; display: none; font-size: 14px;
+  }
+  #legendPanel.open { display: block; }
+  #legendPanel h3 { font-size: 16px; margin-bottom: 8px; }
+  #legendPanel h4 { font-size: 14px; margin: 10px 0 4px; color: #555; }
+  #legendPanel .leg-item { padding: 6px 8px; border-bottom: 1px solid #eee; cursor: pointer; }
+  #legendPanel .leg-item:hover { background: #fff9c4; }
 </style>
 </head>
 <body>
@@ -35,6 +49,7 @@
   <button id="zout" title="縮小">−</button>
   <button id="zreset" title="重設 1:1" style="width:auto">1:1</button>
   <button id="zfit" title="適應視窗" style="width:auto">⤢</button>
+  <button id="legendBtn" title="圖例">圖例</button>
   <span id="zoomLabel">100%</span>
   <input id="q" type="search" placeholder="搜尋關鍵字…" />
   <button id="qprev" title="上一個">‹</button>
@@ -43,6 +58,10 @@
   <span id="qcount"></span>
 </div>
 <div id="view"><div id="stage">載入中…</div></div>
+<aside id="legendPanel">
+  <h3>圖例 <span id="legendCount"></span></h3>
+  <div id="legendList">載入中…</div>
+</aside>
 <script>
 (function () {
   var view = document.getElementById('view');
@@ -86,6 +105,9 @@
   };
   document.getElementById('zreset').onclick = function () { s = 1; tx = 0; ty = 0; apply(); };
   document.getElementById('zfit').onclick = fit;
+  document.getElementById('legendBtn').onclick = function () {
+    document.getElementById('legendPanel').classList.toggle('open');
+  };
   view.addEventListener('wheel', function (e) {
     e.preventDefault();
     var r = view.getBoundingClientRect();
@@ -128,6 +150,7 @@
   var q = document.getElementById('q');
   var qcount = document.getElementById('qcount');
   var nodes = [], hits = [], idx = 0;
+  var legendItems = [];
   function clearMark() {
     stage.querySelectorAll('.found,.current').forEach(function (el) {
       el.classList.remove('found'); el.classList.remove('current');
@@ -153,8 +176,18 @@
     var kw = q.value.trim().toLowerCase();
     clearMark();
     if (!kw) return;
+    var seen = [];
     hits = nodes.filter(function (el) {
-      return (el.textContent || '').toLowerCase().indexOf(kw) !== -1;
+      var t = (el.textContent || '').toLowerCase();
+      if (t.indexOf(kw) !== -1) { seen.push(el); return true; }
+      return false;
+    });
+    legendItems.forEach(function (it) {
+      var key = (it.name + ' ' + it.note).toLowerCase();
+      if (key.indexOf(kw) !== -1 && seen.indexOf(it.el) === -1) {
+        seen.push(it.el);
+        hits.push(it.el);
+      }
     });
     if (!hits.length) { qcount.textContent = '0 件'; return; }
     hits.forEach(function (el) { el.classList.add('found'); });
@@ -168,13 +201,61 @@
   document.getElementById('qnext').onclick = function () { gotoHit(idx + 1); };
   document.getElementById('qprev').onclick = function () { gotoHit(idx - 1); };
   document.getElementById('qclear').onclick = function () { q.value = ''; clearMark(); q.focus(); };
+  // ---- legend: 節點第二行說明集中在此, 點擊定位到該人名 ----
+  function buildLegend(items) {
+    legendItems = items;
+    var list = document.getElementById('legendList');
+    list.innerHTML = '';
+    function group(title, arr) {
+      if (!arr.length) return;
+      var h = document.createElement('h4');
+      h.textContent = title + ' (' + arr.length + ')';
+      list.appendChild(h);
+      arr.forEach(function (it) {
+        var d = document.createElement('div');
+        d.className = 'leg-item';
+        d.textContent = it.name + ' — ' + it.note;
+        d.title = '定位到 ' + it.name;
+        d.onclick = function () {
+          q.value = it.name;
+          doSearch();
+          if (window.innerWidth < 700) document.getElementById('legendPanel').classList.remove('open');
+        };
+        list.appendChild(d);
+      });
+    }
+    group('第一', items.filter(function (it) { return it.note.indexOf('第一') !== -1; }));
+    group('其他說明', items.filter(function (it) { return it.note.indexOf('第一') === -1; }));
+    document.getElementById('legendCount').textContent = items.length ? items.length + ' 項' : '';
+  }
 
   // ---- load svg inline so its text is searchable ----
-  fetch('diagram.svg').then(function (res) {
+  fetch('jesus_genealogy_key_figures_cuv.svg').then(function (res) {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     return res.text();
   }).then(function (svgText) {
     stage.innerHTML = svgText;
+    // 族譜節點只留名: <br/> 後第二行說明抽出 → 圖例面板, 節點縮回單行尺寸
+    var legend = [];
+    stage.querySelectorAll('g.node').forEach(function (gn) {
+      var p = gn.querySelector('p');
+      var br = p && p.querySelector('br');
+      if (!p || !br) return;
+      var nm = '', note = '', c = p.firstChild;
+      while (c && c !== br) { nm += c.textContent || ''; c = c.nextSibling; }
+      var n = br.nextSibling;
+      while (n) { note += n.textContent || ''; n = n.nextSibling; }
+      while (br.nextSibling) p.removeChild(br.nextSibling);
+      p.removeChild(br);
+      if (note.trim()) legend.push({ name: nm.trim(), note: note.trim(), el: gn });
+      var rc = gn.querySelector('rect.label-container');
+      var fo = gn.querySelector('foreignObject');
+      var lb = gn.querySelector('g.label');
+      if (rc) { rc.setAttribute('width', '152'); rc.setAttribute('height', '45'); rc.setAttribute('x', '-76'); rc.setAttribute('y', '-22.5'); }
+      if (fo) { fo.setAttribute('width', '120'); fo.setAttribute('height', '21'); }
+      if (lb) lb.setAttribute('transform', 'translate(-60, -10.5)');
+    });
+    buildLegend(legend);
     var svg = stage.querySelector('svg');
     if (svg) {
       // fixed pixel size so 1:1 = full resolution, pan/zoom via #stage
@@ -187,8 +268,9 @@
     doSearch();
   }).catch(function (err) {
     // file:// 下 fetch 被擋時降級為 <img> (可看圖, 無搜尋)
-    stage.innerHTML = '<img id="imgFallback" src="diagram.svg" alt="diagram" draggable="false" style="display:block;max-width:none" />';
+    stage.innerHTML = '<img id="imgFallback" src="jesus_genealogy_key_figures_cuv.svg" alt="diagram" draggable="false" style="display:block;max-width:none" />';
     qcount.textContent = '搜尋需 http 模式';
+    document.getElementById('legendList').textContent = '圖例需 http 模式';
     q.disabled = true;
     fit();
   });
