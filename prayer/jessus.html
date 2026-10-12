@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>diagram.svg</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; font-family: sans-serif; background: #fff; }
+  #bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+    display: flex; gap: 8px; align-items: center; padding: 8px 12px;
+    background: #f4f4f4; border-bottom: 1px solid #ccc; flex-wrap: wrap;
+  }
+  #bar button { font-size: 18px; width: 36px; height: 32px; cursor: pointer; }
+  #zoomLabel { min-width: 60px; text-align: center; font-size: 14px; }
+  #q { height: 32px; font-size: 15px; padding: 0 8px; width: 160px; }
+  #qcount { font-size: 14px; min-width: 56px; text-align: center; color: #333; }
+  #view { position: fixed; inset: 49px 0 0 0; overflow: hidden; touch-action: none; cursor: grab; }
+  #view.drag { cursor: grabbing; }
+  #stage { transform-origin: 0 0; }
+  #stage svg { display: block; max-width: none; }
+  /* search highlight: whole node + label bg */
+  #stage g.node.found rect.label-container { stroke: #e00; stroke-width: 3px; }
+  #stage g.node.found div { background: #ffeb3b; }
+  #stage g.node.current rect.label-container { stroke: #e00; stroke-width: 5px; }
+  #stage g.node.current div { background: #ffb300; }
+  #stage .edgeLabel.found div { background: #ffeb3b; outline: 2px solid #e00; }
+  #stage .edgeLabel.current div { background: #ffb300; outline: 3px solid #e00; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <button id="zin" title="放大">+</button>
+  <button id="zout" title="縮小">−</button>
+  <button id="zreset" title="重設 1:1" style="width:auto">1:1</button>
+  <button id="zfit" title="適應視窗" style="width:auto">⤢</button>
+  <span id="zoomLabel">100%</span>
+  <input id="q" type="search" placeholder="搜尋關鍵字…" />
+  <button id="qprev" title="上一個">‹</button>
+  <button id="qnext" title="下一個">›</button>
+  <button id="qclear" title="清除" style="width:auto">✕</button>
+  <span id="qcount"></span>
+</div>
+<div id="view"><div id="stage">載入中…</div></div>
+<script>
+(function () {
+  var view = document.getElementById('view');
+  var stage = document.getElementById('stage');
+  var label = document.getElementById('zoomLabel');
+  var s = 1, tx = 0, ty = 0;
+  var MIN = 0.05, MAX = 20;
+  function apply() {
+    stage.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + s + ')';
+    label.textContent = Math.round(s * 100) + '%';
+  }
+  function zoomAt(cx, cy, f) {
+    var ns = Math.min(MAX, Math.max(MIN, s * f));
+    tx = cx - (cx - tx) * (ns / s);
+    ty = cy - (cy - ty) * (ns / s);
+    s = ns;
+    apply();
+  }
+  function fit() {
+    var svg = stage.querySelector('svg');
+    var r = view.getBoundingClientRect();
+    if (!svg || !svg.viewBox || !svg.viewBox.baseVal || !svg.viewBox.baseVal.width) {
+      var img = stage.querySelector('img');
+      if (img && img.naturalWidth) s = Math.min(r.width / img.naturalWidth, 1);
+      else return;
+    } else {
+      var vb = svg.viewBox.baseVal;
+      s = Math.min(r.width / vb.width, r.height / vb.height);
+      s = Math.min(Math.max(s, MIN), 1);
+    }
+    tx = 0; ty = 0;
+    apply();
+  }
+  document.getElementById('zin').onclick = function () {
+    var r = view.getBoundingClientRect();
+    zoomAt(r.width / 2, r.height / 2, 1.25);
+  };
+  document.getElementById('zout').onclick = function () {
+    var r = view.getBoundingClientRect();
+    zoomAt(r.width / 2, r.height / 2, 0.8);
+  };
+  document.getElementById('zreset').onclick = function () { s = 1; tx = 0; ty = 0; apply(); };
+  document.getElementById('zfit').onclick = fit;
+  view.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    var r = view.getBoundingClientRect();
+    zoomAt(e.clientX - r.left, e.clientY - r.top, e.deltaY < 0 ? 1.15 : 1 / 1.15);
+  }, { passive: false });
+  var drag = null;
+  view.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    drag = { x: e.clientX - tx, y: e.clientY - ty };
+    view.classList.add('drag');
+    view.setPointerCapture(e.pointerId);
+  });
+  view.addEventListener('pointermove', function (e) {
+    if (!drag) return;
+    tx = e.clientX - drag.x;
+    ty = e.clientY - drag.y;
+    apply();
+  });
+  function endDrag() { drag = null; view.classList.remove('drag'); }
+  view.addEventListener('pointerup', endDrag);
+  view.addEventListener('pointercancel', endDrag);
+  // 雙指 pinch
+  var pinch = 0;
+  view.addEventListener('touchmove', function (e) {
+    if (e.touches.length !== 2) return;
+    e.preventDefault();
+    var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY);
+    if (pinch > 0) {
+      var r = view.getBoundingClientRect();
+      var mx = (e.touches[0].clientX + e.touches[1].clientX) / 2 - r.left;
+      var my = (e.touches[0].clientY + e.touches[1].clientY) / 2 - r.top;
+      zoomAt(mx, my, d / pinch);
+    }
+    pinch = d;
+  }, { passive: false });
+  view.addEventListener('touchend', function () { pinch = 0; });
+
+  // ---- search (needs inline SVG: <img> content is opaque to JS) ----
+  var q = document.getElementById('q');
+  var qcount = document.getElementById('qcount');
+  var nodes = [], hits = [], idx = 0;
+  function clearMark() {
+    stage.querySelectorAll('.found,.current').forEach(function (el) {
+      el.classList.remove('found'); el.classList.remove('current');
+    });
+    hits = []; idx = 0; qcount.textContent = '';
+  }
+  function centerOn(el) {
+    var r = el.getBoundingClientRect(), vr = view.getBoundingClientRect();
+    if (!r.width && !r.height) return;
+    tx += (vr.left + vr.width / 2) - (r.left + r.width / 2);
+    ty += (vr.top + vr.height / 2) - (r.top + r.height / 2);
+    apply();
+  }
+  function gotoHit(i) {
+    if (!hits.length) return;
+    idx = (i + hits.length) % hits.length;
+    stage.querySelectorAll('.current').forEach(function (el) { el.classList.remove('current'); });
+    hits[idx].classList.add('current');
+    centerOn(hits[idx]);
+    qcount.textContent = (idx + 1) + '/' + hits.length;
+  }
+  function doSearch() {
+    var kw = q.value.trim().toLowerCase();
+    clearMark();
+    if (!kw) return;
+    hits = nodes.filter(function (el) {
+      return (el.textContent || '').toLowerCase().indexOf(kw) !== -1;
+    });
+    if (!hits.length) { qcount.textContent = '0 件'; return; }
+    hits.forEach(function (el) { el.classList.add('found'); });
+    gotoHit(0);
+  }
+  var deb = null;
+  q.addEventListener('input', function () { clearTimeout(deb); deb = setTimeout(doSearch, 200); });
+  q.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); if (hits.length) gotoHit(idx + 1); else doSearch(); }
+  });
+  document.getElementById('qnext').onclick = function () { gotoHit(idx + 1); };
+  document.getElementById('qprev').onclick = function () { gotoHit(idx - 1); };
+  document.getElementById('qclear').onclick = function () { q.value = ''; clearMark(); q.focus(); };
+
+  // ---- load svg inline so its text is searchable ----
+  fetch('diagram.svg').then(function (res) {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.text();
+  }).then(function (svgText) {
+    stage.innerHTML = svgText;
+    var svg = stage.querySelector('svg');
+    if (svg) {
+      // fixed pixel size so 1:1 = full resolution, pan/zoom via #stage
+      var vb = svg.viewBox && svg.viewBox.baseVal;
+      if (vb && vb.width) { svg.style.width = vb.width + 'px'; svg.style.height = vb.height + 'px'; }
+      svg.removeAttribute('width');
+    }
+    nodes = Array.prototype.slice.call(stage.querySelectorAll('g.node, g.edgeLabel'));
+    fit();
+    doSearch();
+  }).catch(function (err) {
+    // file:// 下 fetch 被擋時降級為 <img> (可看圖, 無搜尋)
+    stage.innerHTML = '<img id="imgFallback" src="diagram.svg" alt="diagram" draggable="false" style="display:block;max-width:none" />';
+    qcount.textContent = '搜尋需 http 模式';
+    q.disabled = true;
+    fit();
+  });
+  apply();
+})();
+</script>
+</body>
+</html>
