@@ -210,6 +210,34 @@ flowchart TD
     Elkanah_Samuel --> Samuel[撒母耳\n先知、士師]
     Samuel --> Joel_Samuel[約珥\n長子]
     Samuel --> Abijah_Samuel[亞比亞\n次子]
+    %% 以利亞：提斯比人、寄居基列（王上 17:1）；基列屬迦得地業（書 13:24-28）
+    Gad -. 支派關係 .-> Elijah[以利亞\n先知]
+    Benjamin -. 支派關係 .-> ElishaProphet[以利沙\n先知；沙法之子]
+    %% 大衛時期先知：拿單、迦得（父系未記，虛線支派關係）
+    Judah -. 支派關係 .-> NathanProphet[拿單\n先知；大衛宮廷]
+    Judah -. 支派關係 .-> GadProphet[迦得\n先見；大衛宮廷]
+    %% 大先知與亡國期：耶利米、以西結、以賽亞、但以理（父系已記，虛線支派關係）
+    Reuben -. 支派關係 .-> Ahijah[亞希雅\n示羅先知]
+    Benjamin -. 支派關係 .-> Jeremiah[耶利米\n祭司希勒家之子；大先知]
+    Levi -. 支派關係 .-> Ezekiel[以西結\n祭司布西之子；大先知]
+    Levi -. 支派關係 .-> Isaiah[以賽亞\n大先知；亞摩斯之子]
+    Levi -. 支派關係 .-> Daniel[但以理\n大先知]
+    Benjamin -. 支派關係 .-> Ezra_Scribe[以斯拉\n祭司、文士；撒萊雅之子]
+    Levi -. 支派關係 .-> Nehemiah[尼希米\n省長；哈迦利亞之子]
+    %% 十二小先知（父系多未記，虛線支派關係）
+    Judah -. 支派關係 .-> Hosea[何西阿\n備利之子]
+    Judah -. 支派關係 .-> Joel_Prophet[約珥\n毗土珥之子]
+    Judah -. 支派關係 .-> Amos_Prophet[阿摩司\n提哥亞牧人]
+    Judah -. 支派關係 .-> Obadiah[俄巴底亞\n先知]
+    Judah -. 支派關係 .-> Jonah[約拿\n亞米太之子]
+    Judah -. 支派關係 .-> Micah[彌迦\n摩利沙人]
+    Judah -. 支派關係 .-> Nahum_Prophet[那鴻\n伊勒歌斯人]
+    Judah -. 支派關係 .-> Habakkuk[哈巴谷\n先知]
+    Judah -. 支派關係 .-> Zephaniah[西番雅\n希西家玄孫；古示之子]
+    Judah -. 支派關係 .-> Haggai[哈該\n先知]
+    Judah -. 支派關係 .-> Zechariah[撒迦利亞\n比利家之子]
+    Judah -. 支派關係 .-> Malachi[瑪拉基\n先知]
+
 
     %% 約瑟支派：以法蓮、瑪拿西、約書亞、基甸
     JosephSon --> Manasseh_Tribe[瑪拿西]
@@ -450,11 +478,11 @@ flowchart TD
         LRed[紅色] --- LRedNote[聖經中的第一人]
         LPink[粉紅] --- LPinkNote[女性人物（虛線框）]
         LBlue[藍色] --- LBlueNote[非第一、經文明記特殊作為者]
-        LDashNote[虛線箭頭＝非父子關係（支派、建造、妻妾）]
+        LPurple[紫色] --- LPurpleNote[先知]
     end
     style LRed fill:#e53935,stroke:#b71c1c,stroke-width:2px,color:#fff
     style LPink fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
-    style LBlue fill:#1e88e5,stroke:#0d47a1,stroke-width:2px,color:#fff
+    style LPurple fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
     %% 特別人物標記：藍色（以諾創5:24；挪亞創6:9；約瑟創41:39-41；迦勒民14:24；雅比斯代上4:10）
     style G fill:#1e88e5,stroke:#0d47a1,stroke-width:2px,color:#fff
     style J fill:#1e88e5,stroke:#0d47a1,stroke-width:2px,color:#fff
@@ -507,3 +535,27 @@ flowchart TD
     style Paul fill:#e53935,stroke:#b71c1c,stroke-width:2px,color:#fff
     style Anna fill:#e53935,stroke:#b71c1c,stroke-width:2px,color:#fff
     style MaryMag fill:#e53935,stroke:#b71c1c,stroke-width:2px,color:#fff
+    %% 先知標記：紫色
+    style Elijah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style ElishaProphet fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style NathanProphet fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style GadProphet fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Ahijah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Jeremiah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Ezekiel fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Isaiah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Daniel fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Ezra_Scribe fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Nehemiah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Hosea fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Joel_Prophet fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Amos_Prophet fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Obadiah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Jonah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Micah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Nahum_Prophet fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Habakkuk fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Zephaniah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Haggai fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Zechariah fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Malachi fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#fff

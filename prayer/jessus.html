@@ -41,6 +41,19 @@
   #legendPanel h4 { font-size: 14px; margin: 10px 0 4px; color: #555; }
   #legendPanel .leg-item { padding: 6px 8px; border-bottom: 1px solid #eee; cursor: pointer; }
   #legendPanel .leg-item:hover { background: #fff9c4; }
+  #printIndex { display: none; }
+  /* 列印/PDF: 隱藏工具列, SVG 縮放至頁寬, 文字索引接在圖後 (PDF 內可搜尋) */
+  @media print {
+    html, body { overflow: visible; height: auto; background: #fff; }
+    #bar, #legendPanel { display: none !important; }
+    #view { position: static; overflow: visible; }
+    #stage { transform: none !important; }
+    #stage svg { width: 100% !important; height: auto !important; }
+    #printIndex { display: block; font-size: 11px; line-height: 1.5; }
+    #printIndex h2 { font-size: 16px; margin: 0 0 8px; page-break-before: always; }
+    #printIndex h4 { font-size: 13px; margin: 12px 0 4px; color: #444; }
+    #printIndex .pi-item { padding: 1px 0; border-bottom: 1px dotted #ddd; break-inside: avoid; }
+  }
 </style>
 </head>
 <body>
@@ -50,6 +63,7 @@
   <button id="zreset" title="重設 1:1" style="width:auto">1:1</button>
   <button id="zfit" title="適應視窗" style="width:auto">⤢</button>
   <button id="legendBtn" title="圖例">圖例</button>
+  <button id="pdfBtn" title="列印 / 存 PDF" style="width:auto">🖨</button>
   <span id="zoomLabel">100%</span>
   <input id="q" type="search" placeholder="搜尋關鍵字…" />
   <button id="qprev" title="上一個">‹</button>
@@ -58,10 +72,11 @@
   <span id="qcount"></span>
 </div>
 <div id="view"><div id="stage">載入中…</div></div>
-<aside id="legendPanel" class="open">
+<aside id="legendPanel">
   <h3>圖例 <span id="legendCount"></span></h3>
   <div id="legendList">載入中…</div>
 </aside>
+<div id="printIndex"></div>
 <script>
 (function () {
   var view = document.getElementById('view');
@@ -202,8 +217,8 @@
   document.getElementById('qnext').onclick = function () { gotoHit(idx + 1); };
   document.getElementById('qprev').onclick = function () { gotoHit(idx - 1); };
   document.getElementById('qclear').onclick = function () { q.value = ''; clearMark(); q.focus(); };
-  // 靜態圖例 (SVG 內 61 條 <br/> 第二行說明): file:// 無法 fetch 時照樣顯示
-  var LEGEND_STATIC = [{"name":"亞伯","note":"無後"},{"name":"夏娃","note":"第一個女人"},{"name":"以諾城","note":"第一座城"},{"name":"拿瑪","note":"女兒"},{"name":"西頓","note":"長子"},{"name":"尼拜約","note":"長子"},{"name":"以掃","note":"長子"},{"name":"掃羅","note":"第一位君王"},{"name":"底拿","note":"女兒"},{"name":"約沙","note":"亞瑪謝之子"},{"name":"耶戶","note":"約示比之子"},{"name":"細撒","note":"示非之子"},{"name":"細布業","note":"長子"},{"name":"米利暗","note":"女兒"},{"name":"撒母耳","note":"先知、士師"},{"name":"約珥","note":"長子"},{"name":"亞比亞","note":"次子"},{"name":"約書亞／何西阿","note":"嫩的兒子；摩西改名"},{"name":"基甸","note":"士師"},{"name":"參孫","note":"拿細耳人；士師"},{"name":"他瑪","note":"女兒"},{"name":"拔示巴","note":"所羅門之母"},{"name":"所羅門","note":"馬太線"},{"name":"拿單","note":"路加線"},{"name":"雅比斯","note":"禱告蒙應允"},{"name":"哈悉勒玻尼","note":"女兒"},{"name":"毗努伊勒","note":"基多之祖"},{"name":"以謝珥","note":"戶沙之祖"},{"name":"亞施戶","note":"提哥亞之祖"},{"name":"基綠","note":"書哈之弟兄"},{"name":"提欣拿","note":"珥拿轄之祖"},{"name":"約押","note":"革夏納欣人之祖"},{"name":"比提雅","note":"法老女兒"},{"name":"米利暗","note":"女兒"},{"name":"益巴","note":"以實提摩之祖"},{"name":"雅列","note":"基多之祖"},{"name":"希伯","note":"梭哥之祖"},{"name":"耶古鐵","note":"撒挪亞之祖"},{"name":"基伊拉","note":"迦米人"},{"name":"以實提摩","note":"瑪迦人"},{"name":"珥","note":"利迦之祖"},{"name":"拉大","note":"瑪利沙之祖"},{"name":"亞實比族","note":"織細麻布"},{"name":"耶哥尼雅","note":"被擄"},{"name":"約瑟","note":"馬利亞的丈夫"},{"name":"洗魯雅","note":"大衛的姊妹"},{"name":"約押","note":"大衛軍隊元帥"},{"name":"亞比篩","note":"勇士統領"},{"name":"亞撒黑","note":"勇士"},{"name":"雅朔班","note":"三勇士之首"},{"name":"以利亞撒","note":"三勇士"},{"name":"沙瑪","note":"三勇士"},{"name":"比拿雅","note":"三十勇士首領"},{"name":"底波拉","note":"第一位女士師；先知"},{"name":"撒迦利亞","note":"祭司"},{"name":"施洗約翰","note":"第一位施洗者"},{"name":"司提反","note":"第一位殉道者"},{"name":"哥尼流及其家人","note":"第一批外邦歸信者"},{"name":"保羅","note":"外邦人的使徒"},{"name":"亞拿","note":"女先知"},{"name":"抹大拉的馬利亞","note":"第一位見證復活"}];
+  // 靜態圖例 (SVG 內 84 條 <br/> 第二行說明): file:// 無法 fetch 時照樣顯示
+  var LEGEND_STATIC = [{"name":"亞伯","note":"無後"},{"name":"夏娃","note":"第一個女人"},{"name":"以諾城","note":"第一座城"},{"name":"拿瑪","note":"女兒"},{"name":"西頓","note":"長子"},{"name":"尼拜約","note":"長子"},{"name":"以掃","note":"長子"},{"name":"掃羅","note":"第一位君王"},{"name":"底拿","note":"女兒"},{"name":"約沙","note":"亞瑪謝之子"},{"name":"耶戶","note":"約示比之子"},{"name":"細撒","note":"示非之子"},{"name":"細布業","note":"長子"},{"name":"米利暗","note":"女兒"},{"name":"撒母耳","note":"先知、士師"},{"name":"約珥","note":"長子"},{"name":"亞比亞","note":"次子"},{"name":"以利亞","note":"先知"},{"name":"以利沙","note":"先知；沙法之子"},{"name":"拿單","note":"先知；大衛宮廷"},{"name":"迦得","note":"先見；大衛宮廷"},{"name":"亞希雅","note":"示羅先知"},{"name":"耶利米","note":"祭司希勒家之子；大先知"},{"name":"以西結","note":"祭司布西之子；大先知"},{"name":"以賽亞","note":"大先知；亞摩斯之子"},{"name":"但以理","note":"大先知"},{"name":"以斯拉","note":"祭司、文士；撒萊雅之子"},{"name":"尼希米","note":"省長；哈迦利亞之子"},{"name":"何西阿","note":"備利之子"},{"name":"約珥","note":"毗土珥之子"},{"name":"阿摩司","note":"提哥亞牧人"},{"name":"俄巴底亞","note":"先知"},{"name":"約拿","note":"亞米太之子"},{"name":"彌迦","note":"摩利沙人"},{"name":"那鴻","note":"伊勒歌斯人"},{"name":"哈巴谷","note":"先知"},{"name":"西番雅","note":"希西家玄孫；古示之子"},{"name":"哈該","note":"先知"},{"name":"撒迦利亞","note":"比利家之子"},{"name":"瑪拉基","note":"先知"},{"name":"約書亞／何西阿","note":"嫩的兒子；摩西改名"},{"name":"基甸","note":"士師"},{"name":"參孫","note":"拿細耳人；士師"},{"name":"他瑪","note":"女兒"},{"name":"拔示巴","note":"所羅門之母"},{"name":"所羅門","note":"馬太線"},{"name":"拿單","note":"路加線"},{"name":"雅比斯","note":"禱告蒙應允"},{"name":"哈悉勒玻尼","note":"女兒"},{"name":"毗努伊勒","note":"基多之祖"},{"name":"以謝珥","note":"戶沙之祖"},{"name":"亞施戶","note":"提哥亞之祖"},{"name":"基綠","note":"書哈之弟兄"},{"name":"提欣拿","note":"珥拿轄之祖"},{"name":"約押","note":"革夏納欣人之祖"},{"name":"比提雅","note":"法老女兒"},{"name":"米利暗","note":"女兒"},{"name":"益巴","note":"以實提摩之祖"},{"name":"雅列","note":"基多之祖"},{"name":"希伯","note":"梭哥之祖"},{"name":"耶古鐵","note":"撒挪亞之祖"},{"name":"基伊拉","note":"迦米人"},{"name":"以實提摩","note":"瑪迦人"},{"name":"珥","note":"利迦之祖"},{"name":"拉大","note":"瑪利沙之祖"},{"name":"亞實比族","note":"織細麻布"},{"name":"耶哥尼雅","note":"被擄"},{"name":"約瑟","note":"馬利亞的丈夫"},{"name":"洗魯雅","note":"大衛的姊妹"},{"name":"約押","note":"大衛軍隊元帥"},{"name":"亞比篩","note":"勇士統領"},{"name":"亞撒黑","note":"勇士"},{"name":"雅朔班","note":"三勇士之首"},{"name":"以利亞撒","note":"三勇士"},{"name":"沙瑪","note":"三勇士"},{"name":"比拿雅","note":"三十勇士首領"},{"name":"底波拉","note":"第一位女士師；先知"},{"name":"撒迦利亞","note":"祭司"},{"name":"施洗約翰","note":"第一位施洗者"},{"name":"司提反","note":"第一位殉道者"},{"name":"哥尼流及其家人","note":"第一批外邦歸信者"},{"name":"保羅","note":"外邦人的使徒"},{"name":"亞拿","note":"女先知"},{"name":"抹大拉的馬利亞","note":"第一位見證復活"}];
   // ---- legend: 節點第二行說明集中在此, 點擊定位到該人名 ----
   function buildLegend(items) {
     legendItems = items;
@@ -232,6 +247,27 @@
     document.getElementById('legendCount').textContent = items.length ? items.length + ' 項' : '';
   }
   buildLegend(LEGEND_STATIC.map(function (it) { return { name: it.name, note: it.note, el: null }; }));
+  // ---- 列印/PDF 文字索引: LEGEND_STATIC 轉為可搜尋文字, 接在 SVG 後 ----
+  var pi = document.getElementById('printIndex');
+  var piFirst = LEGEND_STATIC.filter(function (it) { return it.note.indexOf('第一') !== -1; });
+  var piOther = LEGEND_STATIC.filter(function (it) { return it.note.indexOf('第一') === -1; });
+  var piH = document.createElement('h2');
+  piH.textContent = '耶穌家譜關鍵人物 — 文字索引 (' + LEGEND_STATIC.length + ' 項)';
+  pi.appendChild(piH);
+  function piGroup(title, arr) {
+    var h = document.createElement('h4');
+    h.textContent = title + ' (' + arr.length + ')';
+    pi.appendChild(h);
+    arr.forEach(function (it) {
+      var d = document.createElement('div');
+      d.className = 'pi-item';
+      d.textContent = it.name + ' — ' + it.note;
+      pi.appendChild(d);
+    });
+  }
+  piGroup('第一', piFirst);
+  piGroup('其他說明', piOther);
+  document.getElementById('pdfBtn').onclick = function () { window.print(); };
 
   // ---- load svg inline so its text is searchable ----
   fetch('jesus_genealogy_key_figures_cuv.svg').then(function (res) {
