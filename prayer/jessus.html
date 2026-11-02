@@ -30,6 +30,11 @@
   #stage g.node.current div { background: #ffb300; }
   #stage .edgeLabel.found div { background: #ffeb3b; outline: 2px solid #e00; }
   #stage .edgeLabel.current div { background: #ffb300; outline: 3px solid #e00; }
+  #stage.lineage-active g.node:not(.lineage):not(.current),
+  #stage.lineage-active path.flowchart-link:not(.lineage),
+  #stage.lineage-active g.edgeLabel { opacity: 0.15; }
+  #stage g.node.lineage rect.label-container { stroke: #1565c0 !important; stroke-width: 7px !important; }
+  #stage path.lineage { stroke: #1565c0 !important; stroke-width: 8px !important; }
   #legendBtn { width: auto; }
   #legendPanel {
     position: fixed; top: 49px; right: 0; bottom: 0; width: 300px; z-index: 9;
@@ -66,8 +71,10 @@
   <button id="pdfBtn" title="列印 / 存 PDF" style="width:auto">🖨</button>
   <span id="zoomLabel">100%</span>
   <input id="q" type="search" placeholder="搜尋關鍵字…" />
-  <button id="qprev" title="上一個">‹</button>
-  <button id="qnext" title="下一個">›</button>
+  <button id="qprev" title="上一個（Shift+Enter）" aria-label="上一個搜尋結果">↑</button>
+  <button id="qnext" title="下一個（Enter）" aria-label="下一個搜尋結果">↓</button>
+  <button id="ancestors" title="顯示目前人物的所有父母及祖先" style="width:auto">↑ 父系</button>
+  <button id="descendants" title="顯示目前人物的所有子女及後代" style="width:auto">↓ 子系</button>
   <button id="qclear" title="清除" style="width:auto">✕</button>
   <span id="qcount"></span>
 </div>
@@ -166,7 +173,47 @@
   var qcount = document.getElementById('qcount');
   var nodes = [], hits = [], idx = 0;
   var legendItems = [];
+  function clearLineage() {
+    stage.classList.remove('lineage-active');
+    stage.querySelectorAll('.lineage').forEach(function (el) { el.classList.remove('lineage'); });
+  }
+  function showLineage(up) {
+    clearLineage();
+    var selected = hits[idx];
+    if (!selected || !selected.matches('g.node')) return;
+    stage.classList.add('lineage-active');
+    var map = new Map(), edges = [];
+    stage.querySelectorAll('g.node[id]').forEach(function (node) {
+      var match = node.id.match(/-flowchart-(.+)-\d+$/);
+      if (match) map.set(match[1], node);
+    });
+    stage.querySelectorAll('path.flowchart-link[data-id]').forEach(function (path) {
+      if (path.classList.contains('edge-pattern-dotted') || path.classList.contains('edge-pattern-dashed')) return;
+      if (!path.hasAttribute('marker-end')) return;
+      var id = path.getAttribute('data-id').replace(/_\d+$/, '');
+      map.forEach(function (node, from) {
+        var prefix = 'L_' + from + '_';
+        if (id.indexOf(prefix) !== 0) return;
+        var to = id.slice(prefix.length);
+        if (map.has(to)) edges.push({from: node, to: map.get(to), path: path});
+      });
+    });
+    var visited = new Set([selected]), queue = [selected];
+    while (queue.length) {
+      var current = queue.shift();
+      edges.forEach(function (edge) {
+        if ((up ? edge.to : edge.from) !== current) return;
+        edge.path.classList.add('lineage');
+        var next = up ? edge.from : edge.to;
+        next.classList.add('lineage');
+        if (!visited.has(next)) { visited.add(next); queue.push(next); }
+      });
+    }
+  }
+  document.getElementById('ancestors').onclick = function () { showLineage(true); };
+  document.getElementById('descendants').onclick = function () { showLineage(false); };
   function clearMark() {
+    clearLineage();
     stage.querySelectorAll('.found,.current').forEach(function (el) {
       el.classList.remove('found'); el.classList.remove('current');
     });
@@ -180,6 +227,7 @@
     apply();
   }
   function gotoHit(i) {
+    clearLineage();
     if (!hits.length) return;
     idx = (i + hits.length) % hits.length;
     stage.querySelectorAll('.current').forEach(function (el) { el.classList.remove('current'); });
@@ -210,9 +258,14 @@
     gotoHit(0);
   }
   var deb = null;
-  q.addEventListener('input', function () { clearTimeout(deb); deb = setTimeout(doSearch, 200); });
+  q.addEventListener('input', function () { clearTimeout(deb); deb = setTimeout(function () { deb = null; doSearch(); }, 200); });
   q.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') { e.preventDefault(); if (hits.length) gotoHit(idx + 1); else doSearch(); }
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (deb !== null) { clearTimeout(deb); deb = null; doSearch(); }
+      else if (hits.length) gotoHit(idx + (e.shiftKey ? -1 : 1));
+      else doSearch();
+    }
   });
   document.getElementById('qnext').onclick = function () { gotoHit(idx + 1); };
   document.getElementById('qprev').onclick = function () { gotoHit(idx - 1); };
