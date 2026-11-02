@@ -73,6 +73,12 @@ flowchart TD
     R --> S[拿鶴]
     S --> T[他拉]
     T --> U[亞伯拉罕]
+    %% 羅得與摩押族（創世記 11:27；19:37；路得記 1:4）
+    T --> Haran[哈蘭]
+    Haran --> Lot[羅得]
+    Lot --> Moab[摩押]
+    Moab -. 後裔 .-> Moabites[摩押族]
+    Moabites -. 族屬 .-> Ruth
     U --> V[以撒]
     %% 麥基洗德：撒冷王、至高神的祭司（創世記 14:18-20；詩篇 110:4；希伯來書 7:1-3）
     U -.->|獻十分之一| Melchizedek[麥基洗德\n祭司王預表基督]
@@ -108,6 +114,11 @@ flowchart TD
     Midian --> Eldaah[以勒大]
     %% 以撒的雙子（創世記 25:24-26）
     V --> Esau[以掃\n長子]
+    %% 以掃即以東（創世記 36:1）；希律家族的以土買出身見約瑟夫《猶太古史》14.1.3
+    Esau -. 族群 .-> Idumeans[以東人／以土買人]
+    Idumeans -. 以土買出身 .-> AntipaterFather[安提帕特／安提帕]
+    AntipaterFather --> AntipaterIdumean[安提帕特]
+    AntipaterIdumean --> HerodGreat[大希律王]
     V --> W[雅各]
 
     %% 雅各十二子與女兒
@@ -265,12 +276,23 @@ flowchart TD
 
     %% 猶大支派主線：耶穌出自猶大
     Judah --> Perez[法勒斯]
+    %% 猶大與兒媳他瑪生法勒斯、謝拉（創世記 38:6-30；馬太福音 1:3）
+    Judah -. 兒媳 .-> TamarJudah[他瑪（猶大兒媳）]
+    TamarJudah --> Perez
+    Judah --> ZerahJudah[謝拉（猶大之子）]
+    TamarJudah --> ZerahJudah
     Perez --> Hezron[希斯崙]
     Hezron --> Ram[亞蘭]
     Ram --> Amminadab[亞米拿達]
     Amminadab --> Nahshon[拿順]
     Nahshon --> Salmon[撒門]
+    %% 撒門、喇合、波阿斯、路得、俄備得、耶西與大衛（馬太福音 1:5-6）
     Salmon --> Boaz[波阿斯]
+    %% 路得：波阿斯的妻、俄備得之母（路得記 3:11；4:13-17）
+    Boaz -.->|妻| Ruth[路得\n賢德女子]
+    %% 拿俄米是路得的婆婆（路得記 1:3-4、16-17）
+    Naomi[拿俄米\n路得的婆婆] -. 婆媳 .-> Ruth
+    Ruth --> Obed
     Boaz --> Obed[俄備得]
     Obed --> Jesse[耶西]
     Jesse --> David[大衛]
@@ -474,6 +496,76 @@ flowchart TD
     Phanuel[法內力] --> Anna[亞拿\n女先知]
     Asher -. 支派關係 .-> Anna
     MaryMag[抹大拉的馬利亞\n第一位見證復活]
+    %% 羅得次女所生便亞米為亞捫人之祖（創世記 19:38）
+    Lot --> BenAmmi[便亞米]
+    BenAmmi -. 後裔 .-> Ammonites[亞捫人]
+    %% 迦南七族（申命記 7:1）；族群關係不表示逐代父子
+    subgraph Nations[外邦民族、城市與帝國]
+        Canaanites[迦南人]
+        Hittites[赫人]
+        Hivites[希未人]
+        Perizzites[比利洗人]
+        Girgashites[革迦撒人]
+        Amorites[亞摩利人]
+        Jebusites[耶布斯人]
+        Philistines[非利士人]
+        Phoenicians[腓尼基人]
+        Tyre[推羅]
+        SidonCity[西頓城]
+        Arameans[亞蘭人]
+        Damascus[大馬士革]
+        Egyptians[埃及人]
+        Assyria[亞述帝國]
+        Nineveh[尼尼微]
+        Babylon[巴比倫帝國]
+        Persia[波斯帝國]
+        Jerusalem[耶路撒冷]
+        Temple[耶路撒冷聖殿]
+    end
+    %% 迦南與列國：虛線表示族群、地區或歷史關係，非逐代家譜
+    Canaan -. 後裔 .-> Canaanites
+    Heth -. 後裔 .-> Hittites
+    Sidon -. 地名相關 .-> SidonCity
+    Phoenicians -. 城市 .-> Tyre
+    Phoenicians -. 城市 .-> SidonCity
+    Arameans -. 城市 .-> Damascus
+    Mizraim -. 後裔 .-> Egyptians
+    Assyria -. 城市 .-> Nineveh
+    Jebusites -. 曾居 .-> Jerusalem
+    Jerusalem -. 所在 .-> Temple
+    %% 外邦人物與民族（書 2:1；撒上 17:4；撒下 11:3；王下 5:1；王上 16:31）
+    Canaanites -. 耶利哥人 .-> Rahab[喇合]
+    Salmon -.->|妻| Rahab
+    Rahab --> Boaz
+    Philistines -. 族屬 .-> Goliath[歌利亞]
+    David -. 擊敗 .-> Goliath
+    Hittites -. 族屬 .-> Uriah[烏利亞]
+    Uriah -.->|妻| Bathsheba
+    Arameans -. 元帥 .-> Naaman[乃縵]
+    ElishaProphet -. 醫治麻瘋 .-> Naaman
+    SidonCity -. 王之女 .-> Jezebel[耶洗別]
+    Ahab[亞哈] -.->|妻| Jezebel
+    Tyre -. 王 .-> Hiram[希蘭]
+    Hiram -. 協助建王宮 .-> David
+    Hiram -. 供應建材 .-> Temple
+    Solomon -. 建造 .-> Temple
+    %% 米甸與摩西、基甸（出埃及記 2:15-21；士師記 6–7）
+    Midian -. 後裔 .-> Midianites[米甸人]
+    Midianites -. 掠奪以色列 .-> W
+    Gideon -. 擊敗 .-> Midianites
+    Moses -. 曾居米甸 .-> Midianites
+    %% 帝國與先知、列王（王下 17:6；25:8-11；拉 1:1-4；拿 1:2）
+    Egyptians -. 奴役 .-> W
+    Moses -. 領以色列人出埃及 .-> Egyptians
+    Jonah -. 奉差遣 .-> Nineveh
+    Assyria -. 滅北國以色列 .-> NorthernKingdom[北國以色列]
+    Babylon -. 滅南國猶大 .-> SouthernKingdom[南國猶大]
+    Babylon -. 摧毀 .-> Temple
+    Babylon -. 王 .-> Nebuchadnezzar[尼布甲尼撒]
+    Persia -. 王 .-> Cyrus[古列]
+    Persia -. 征服 .-> Babylon
+    Cyrus -. 准許歸回重建 .-> Temple
+    %% 屬靈與民族身分有別，外邦人並非均不認識耶和華
     %% 圖例（轉 SVG 後可見）
     subgraph Legend[圖例]
         direction TB
@@ -515,7 +607,10 @@ flowchart TD
     style Dinah fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
     style Miriam fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
     style TamarD fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
+    style TamarJudah fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
     style Bathsheba fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
+    style Ruth fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
+    style Naomi fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
     style Naamah fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
     style Hagar fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
     style Keturah fill:#ffb6c1,stroke:#c71585,stroke-width:2px,stroke-dasharray: 5 5
