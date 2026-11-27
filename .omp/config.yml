@@ -1,0 +1,14 @@
+skills:
+  enablePiUser: false
+  enableAgentsUser: true 
+  ignoredSkills:
+    - bios-build-guard
+    - bios-config
+    - bios-release
+    - porting-auto-merge
+    - svn-diff-analyzer
+    - svn-searcher
+    - agent-mermaid
+    - archify
+    - graphify
+    - jev-systemone
